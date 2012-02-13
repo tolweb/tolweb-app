@@ -1,0 +1,1271 @@
+<?xml version="1.0"?>
+<response xmlns="http://www.eol.org/transfer/content/0.1"
+    xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:dwc="http://rs.tdwg.org/dwc/dwcore/" xmlns:tol="http://tolweb.org/webservices/content/0.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.eol.org/transfer/content/0.1 http://services.eol.org/schema/content_0_1.xsd">
+    <taxon>
+        <dc:identifier>tol-node-id-15991</dc:identifier>
+        <dc:source>http://tolweb.org/Monotremata/15991</dc:source>
+        <dwc:ScientificName>Monotremata</dwc:ScientificName>
+        <dataObject>
+            <dc:identifier>tol-text-id-121482</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dc:title xml:lang="en">Introduction</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Monotremata/15991</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Archer, M., T. F. Flannery, A. Ritchie, and R. E. Molnar. 1985. First
+                Mesozoic mammal from Australia-An early Cretaceous monotreme. Nature 318:363-366.</reference>
+            <reference>Archer, M., P. Murray, S. Hand, and H. Godthelp. 1993. Reconsideration of
+                monotreme relationships based on the skull and dentition of the Miocence Obduron
+                dicksoni. Pages 75-94 in Mammal Phylogeny. Volume 1. Mesozoic Differentiation,
+                Multituberculates, Monotremes, Early Eutherians, and Marsupials. (F. S. Szalay, M.
+                J. Novacek, and M. C. McKenna, eds.). Springer Verlag, New York.</reference>
+            <reference>Augee, M. L., ed. 1992. Platypus and Echidnas. Royal Zoological Society of
+                New South Wales.</reference>
+            <reference>Flannery, T. F., M. Archer, T. H. Rich, and R. Jones. A new family of
+                monotremes from the Cretaceous of Australia. Nature 377:418-420.</reference>
+            <reference>Gemmell, N. J., T.R. Grant, P.S. Western, J. Walmsley, J. M. Watson, N.D.
+                Murray, and J.A. Marshall Graves. 1995. Determining platypus relationships.
+                Australian Journal of Zoology 43:283-291.</reference>
+            <reference>Griffiths, M. 1978. The Biology of the Monotremes. Academic Press, New York.</reference>
+            <reference>Griffiths, M. 1999. Monotremes. Pages 295�302 in Encyclopedia of
+                Reproduction, vol. 3. J.D. Neill, ed. Academic Press, San Diego.</reference>
+            <reference>Gr�tzner, F., J. Deakin, W. Rens, N. El-Mogharbel and J.A. Marshall Graves.
+                2003. The monotreme genome: a patchwork of reptile, mammal and unique features?
+                Comparative Biochemistry and Physiology A. Molecular and Integreative Physiology
+                136(4):867�881.</reference>
+            <reference>Gr�tzner, F. and J.A. Marshall Graves. 2004. A platypus� eye view of the
+                mammalian genome. Current Opinion in Genetics &amp; Development 14(6):642-649.</reference>
+            <reference>Macrini, T. E., T. Rowe, and M. Archer. 2006. Description of a cranial
+                endocast from a fossil platypus, Obdurodon dicksoni (Monotremata,
+                Ornithorhynchidae), and the relevance of endocranial characters to monotreme
+                monophyly. Journal of Morphology 267(8):1000-1015.</reference>
+            <reference>Marshall-Graves, J. A. 1996. Mammals that break the rules: genetics of
+                marsupials and monotremes. Annual Review of Genetics 30:233�266.</reference>
+            <reference>Musser, A. M. 2003. Review of the monotreme fossil record and comparison of
+                palaeontological and molecular data. Comparative Biochemistry and Physiology A.
+                Molecular and Integreative Physiology 136(4):927-942.</reference>
+            <reference>Musser, A. M. and M. Archer. 1998. New information about the skull and
+                dentary of the Miocene platypus Obdurodon dicksoni, and a discussion of
+                ornithorhynchid relationships. Philosophical Transactions of the Royal Society of
+                London Series B 353:1063-1079.</reference>
+            <reference>Pascual, R. M. Archer, E. O. Juareguizar, J. L. Prado, H. Godthelp, and S. J.
+                Hand. 1992. First discovery of monotremes in South America. Nature 356:704-706.</reference>
+            <reference>Retief, J. D., R. J. Winkfein, and G. H. Dixon. 1993. Evolution of the
+                monotremes - the sequences of the protamine p1 genes of platypus and echidna.
+                European Journal of Biochemistry 218:457-461.</reference>
+            <reference>Rich, T. H., J. A. Hopson, A. M. Musser, T. F. Flannery, and P. Vickers-Rich.
+                2005. Independent origins of middle ear bones in monotremes and therians. Science
+                307:910-914.</reference>
+            <reference>Rowe, T., T. H. Rich, P. Vickers-Rich, M. Springer, and M. O. Woodburne.
+                2008. The oldest platypus and its bearing on divergence timing of the platypus and
+                echidna clades. Proceeding of the National Academy of Science (USA)105(4):1238-1242.</reference>
+            <reference>Wilson, D. E., and D. M. Reeder, eds. 2005. Mammal Species of the World.
+                Third Edition. Johns Hopkins University Press, Baltimore, MD.</reference>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-121483</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dc:title xml:lang="en">Characteristics</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Monotremata/15991</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Archer, M., T. F. Flannery, A. Ritchie, and R. E. Molnar. 1985. First
+                Mesozoic mammal from Australia-An early Cretaceous monotreme. Nature 318:363-366.</reference>
+            <reference>Archer, M., P. Murray, S. Hand, and H. Godthelp. 1993. Reconsideration of
+                monotreme relationships based on the skull and dentition of the Miocence Obduron
+                dicksoni. Pages 75-94 in Mammal Phylogeny. Volume 1. Mesozoic Differentiation,
+                Multituberculates, Monotremes, Early Eutherians, and Marsupials. (F. S. Szalay, M.
+                J. Novacek, and M. C. McKenna, eds.). Springer Verlag, New York.</reference>
+            <reference>Augee, M. L., ed. 1992. Platypus and Echidnas. Royal Zoological Society of
+                New South Wales.</reference>
+            <reference>Flannery, T. F., M. Archer, T. H. Rich, and R. Jones. A new family of
+                monotremes from the Cretaceous of Australia. Nature 377:418-420.</reference>
+            <reference>Gemmell, N. J., T.R. Grant, P.S. Western, J. Walmsley, J. M. Watson, N.D.
+                Murray, and J.A. Marshall Graves. 1995. Determining platypus relationships.
+                Australian Journal of Zoology 43:283-291.</reference>
+            <reference>Griffiths, M. 1978. The Biology of the Monotremes. Academic Press, New York.</reference>
+            <reference>Griffiths, M. 1999. Monotremes. Pages 295�302 in Encyclopedia of
+                Reproduction, vol. 3. J.D. Neill, ed. Academic Press, San Diego.</reference>
+            <reference>Gr�tzner, F., J. Deakin, W. Rens, N. El-Mogharbel and J.A. Marshall Graves.
+                2003. The monotreme genome: a patchwork of reptile, mammal and unique features?
+                Comparative Biochemistry and Physiology A. Molecular and Integreative Physiology
+                136(4):867�881.</reference>
+            <reference>Gr�tzner, F. and J.A. Marshall Graves. 2004. A platypus� eye view of the
+                mammalian genome. Current Opinion in Genetics &amp; Development 14(6):642-649.</reference>
+            <reference>Macrini, T. E., T. Rowe, and M. Archer. 2006. Description of a cranial
+                endocast from a fossil platypus, Obdurodon dicksoni (Monotremata,
+                Ornithorhynchidae), and the relevance of endocranial characters to monotreme
+                monophyly. Journal of Morphology 267(8):1000-1015.</reference>
+            <reference>Marshall-Graves, J. A. 1996. Mammals that break the rules: genetics of
+                marsupials and monotremes. Annual Review of Genetics 30:233�266.</reference>
+            <reference>Musser, A. M. 2003. Review of the monotreme fossil record and comparison of
+                palaeontological and molecular data. Comparative Biochemistry and Physiology A.
+                Molecular and Integreative Physiology 136(4):927-942.</reference>
+            <reference>Musser, A. M. and M. Archer. 1998. New information about the skull and
+                dentary of the Miocene platypus Obdurodon dicksoni, and a discussion of
+                ornithorhynchid relationships. Philosophical Transactions of the Royal Society of
+                London Series B 353:1063-1079.</reference>
+            <reference>Pascual, R. M. Archer, E. O. Juareguizar, J. L. Prado, H. Godthelp, and S. J.
+                Hand. 1992. First discovery of monotremes in South America. Nature 356:704-706.</reference>
+            <reference>Retief, J. D., R. J. Winkfein, and G. H. Dixon. 1993. Evolution of the
+                monotremes - the sequences of the protamine p1 genes of platypus and echidna.
+                European Journal of Biochemistry 218:457-461.</reference>
+            <reference>Rich, T. H., J. A. Hopson, A. M. Musser, T. F. Flannery, and P. Vickers-Rich.
+                2005. Independent origins of middle ear bones in monotremes and therians. Science
+                307:910-914.</reference>
+            <reference>Rowe, T., T. H. Rich, P. Vickers-Rich, M. Springer, and M. O. Woodburne.
+                2008. The oldest platypus and its bearing on divergence timing of the platypus and
+                echidna clades. Proceeding of the National Academy of Science (USA)105(4):1238-1242.</reference>
+            <reference>Wilson, D. E., and D. M. Reeder, eds. 2005. Mammal Species of the World.
+                Third Edition. Johns Hopkins University Press, Baltimore, MD.</reference>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-121484</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dc:title xml:lang="en">Discussion of Phylogenetic Relationships</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <dc:source>http://tolweb.org/Monotremata/15991</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Archer, M., T. F. Flannery, A. Ritchie, and R. E. Molnar. 1985. First
+                Mesozoic mammal from Australia-An early Cretaceous monotreme. Nature 318:363-366.</reference>
+            <reference>Archer, M., P. Murray, S. Hand, and H. Godthelp. 1993. Reconsideration of
+                monotreme relationships based on the skull and dentition of the Miocence Obduron
+                dicksoni. Pages 75-94 in Mammal Phylogeny. Volume 1. Mesozoic Differentiation,
+                Multituberculates, Monotremes, Early Eutherians, and Marsupials. (F. S. Szalay, M.
+                J. Novacek, and M. C. McKenna, eds.). Springer Verlag, New York.</reference>
+            <reference>Augee, M. L., ed. 1992. Platypus and Echidnas. Royal Zoological Society of
+                New South Wales.</reference>
+            <reference>Flannery, T. F., M. Archer, T. H. Rich, and R. Jones. A new family of
+                monotremes from the Cretaceous of Australia. Nature 377:418-420.</reference>
+            <reference>Gemmell, N. J., T.R. Grant, P.S. Western, J. Walmsley, J. M. Watson, N.D.
+                Murray, and J.A. Marshall Graves. 1995. Determining platypus relationships.
+                Australian Journal of Zoology 43:283-291.</reference>
+            <reference>Griffiths, M. 1978. The Biology of the Monotremes. Academic Press, New York.</reference>
+            <reference>Griffiths, M. 1999. Monotremes. Pages 295�302 in Encyclopedia of
+                Reproduction, vol. 3. J.D. Neill, ed. Academic Press, San Diego.</reference>
+            <reference>Gr�tzner, F., J. Deakin, W. Rens, N. El-Mogharbel and J.A. Marshall Graves.
+                2003. The monotreme genome: a patchwork of reptile, mammal and unique features?
+                Comparative Biochemistry and Physiology A. Molecular and Integreative Physiology
+                136(4):867�881.</reference>
+            <reference>Gr�tzner, F. and J.A. Marshall Graves. 2004. A platypus� eye view of the
+                mammalian genome. Current Opinion in Genetics &amp; Development 14(6):642-649.</reference>
+            <reference>Macrini, T. E., T. Rowe, and M. Archer. 2006. Description of a cranial
+                endocast from a fossil platypus, Obdurodon dicksoni (Monotremata,
+                Ornithorhynchidae), and the relevance of endocranial characters to monotreme
+                monophyly. Journal of Morphology 267(8):1000-1015.</reference>
+            <reference>Marshall-Graves, J. A. 1996. Mammals that break the rules: genetics of
+                marsupials and monotremes. Annual Review of Genetics 30:233�266.</reference>
+            <reference>Musser, A. M. 2003. Review of the monotreme fossil record and comparison of
+                palaeontological and molecular data. Comparative Biochemistry and Physiology A.
+                Molecular and Integreative Physiology 136(4):927-942.</reference>
+            <reference>Musser, A. M. and M. Archer. 1998. New information about the skull and
+                dentary of the Miocene platypus Obdurodon dicksoni, and a discussion of
+                ornithorhynchid relationships. Philosophical Transactions of the Royal Society of
+                London Series B 353:1063-1079.</reference>
+            <reference>Pascual, R. M. Archer, E. O. Juareguizar, J. L. Prado, H. Godthelp, and S. J.
+                Hand. 1992. First discovery of monotremes in South America. Nature 356:704-706.</reference>
+            <reference>Retief, J. D., R. J. Winkfein, and G. H. Dixon. 1993. Evolution of the
+                monotremes - the sequences of the protamine p1 genes of platypus and echidna.
+                European Journal of Biochemistry 218:457-461.</reference>
+            <reference>Rich, T. H., J. A. Hopson, A. M. Musser, T. F. Flannery, and P. Vickers-Rich.
+                2005. Independent origins of middle ear bones in monotremes and therians. Science
+                307:910-914.</reference>
+            <reference>Rowe, T., T. H. Rich, P. Vickers-Rich, M. Springer, and M. O. Woodburne.
+                2008. The oldest platypus and its bearing on divergence timing of the platypus and
+                echidna clades. Proceeding of the National Academy of Science (USA)105(4):1238-1242.</reference>
+            <reference>Wilson, D. E., and D. M. Reeder, eds. 2005. Mammal Species of the World.
+                Third Edition. Johns Hopkins University Press, Baltimore, MD.</reference>
+        </dataObject>
+    </taxon>
+    <taxon>
+        <dc:identifier>tol-node-id-16250</dc:identifier>
+        <dc:source>http://tolweb.org/Tachyglossidae/16250</dc:source>
+        <dwc:ScientificName>Tachyglossidae</dwc:ScientificName>
+        <dcterms:created>2008-Apr-8 00:00:00</dcterms:created>
+        <dcterms:modified>2008-Apr-8 00:00:00</dcterms:modified>
+        <dataObject>
+            <dc:identifier>tol-text-id-162624</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Apr-8 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Apr-8 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Introduction</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Tachyglossidae/16250</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Augee, M. L., ed. 1992. Platypus and Echidnas. Royal Zoological Society of
+                New South Wales.</reference>
+            <reference>Augee, M. L. and B. Gooden. 1993. Echidnas of Australia and New Guinea.
+                Australian Natural History Series, NSW University Press.</reference>
+            <reference>Flannery, T. F. and C. P. Groves. 1998. A revision of the genus Zaglossus
+                (Monotremata, Tachyglossidae), with description of new species and subspecies.
+                Mammalia 62:367-396.</reference>
+            <reference>Griffiths, M. 1999. Monotremes. Pages 295�302 in Encyclopedia of
+                Reproduction, vol. 3. J.D. Neill, ed. Academic Press, San Diego.</reference>
+            <reference>Griffiths, M., R. T. Wells, and D. J. Barrie. 1991. Observations on the
+                skulls of fossil and extant echidnas (Monotremata: Tachyglossidae). Australian
+                Mammalogy 14:87-101.</reference>
+            <reference>Lee, M. H., R. Shroff, S. J. B. Cooper, and R. Hope. 1999. Evolution and
+                molecular characterization of a beta-globin gene from the Australian echidna
+                Tachyglossus aculeatus (Monotremata). Molecular Phylogenetics and Evolution
+                12:205-214.</reference>
+            <reference>Musser, A. M. 2003. Review of the monotreme fossil record and comparison of
+                palaeontological and molecular data. Comparative Biochemistry and Physiology A.
+                Molecular and Integreative Physiology 136(4):927-942.</reference>
+            <reference>Retief, J. D., R. J. Winkfein, and G. H. Dixon. 1993. Evolution of the
+                monotremes - the sequences of the protamine p1 genes of platypus and echidna.
+                European Journal of Biochemistry 218:457-461.</reference>
+            <reference>Wilson, D. E., and D. M. Reeder, eds. 2005. Mammal Species of the World.
+                Third Edition. Johns Hopkins University Press, Baltimore, MD.</reference>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-162625</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Apr-8 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Apr-8 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Characteristics</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Tachyglossidae/16250</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Augee, M. L., ed. 1992. Platypus and Echidnas. Royal Zoological Society of
+                New South Wales.</reference>
+            <reference>Augee, M. L. and B. Gooden. 1993. Echidnas of Australia and New Guinea.
+                Australian Natural History Series, NSW University Press.</reference>
+            <reference>Flannery, T. F. and C. P. Groves. 1998. A revision of the genus Zaglossus
+                (Monotremata, Tachyglossidae), with description of new species and subspecies.
+                Mammalia 62:367-396.</reference>
+            <reference>Griffiths, M. 1999. Monotremes. Pages 295�302 in Encyclopedia of
+                Reproduction, vol. 3. J.D. Neill, ed. Academic Press, San Diego.</reference>
+            <reference>Griffiths, M., R. T. Wells, and D. J. Barrie. 1991. Observations on the
+                skulls of fossil and extant echidnas (Monotremata: Tachyglossidae). Australian
+                Mammalogy 14:87-101.</reference>
+            <reference>Lee, M. H., R. Shroff, S. J. B. Cooper, and R. Hope. 1999. Evolution and
+                molecular characterization of a beta-globin gene from the Australian echidna
+                Tachyglossus aculeatus (Monotremata). Molecular Phylogenetics and Evolution
+                12:205-214.</reference>
+            <reference>Musser, A. M. 2003. Review of the monotreme fossil record and comparison of
+                palaeontological and molecular data. Comparative Biochemistry and Physiology A.
+                Molecular and Integreative Physiology 136(4):927-942.</reference>
+            <reference>Retief, J. D., R. J. Winkfein, and G. H. Dixon. 1993. Evolution of the
+                monotremes - the sequences of the protamine p1 genes of platypus and echidna.
+                European Journal of Biochemistry 218:457-461.</reference>
+            <reference>Wilson, D. E., and D. M. Reeder, eds. 2005. Mammal Species of the World.
+                Third Edition. Johns Hopkins University Press, Baltimore, MD.</reference>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-162626</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Apr-8 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Apr-8 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Discussion of Phylogenetic Relationships</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <dc:source>http://tolweb.org/Tachyglossidae/16250</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Augee, M. L., ed. 1992. Platypus and Echidnas. Royal Zoological Society of
+                New South Wales.</reference>
+            <reference>Augee, M. L. and B. Gooden. 1993. Echidnas of Australia and New Guinea.
+                Australian Natural History Series, NSW University Press.</reference>
+            <reference>Flannery, T. F. and C. P. Groves. 1998. A revision of the genus Zaglossus
+                (Monotremata, Tachyglossidae), with description of new species and subspecies.
+                Mammalia 62:367-396.</reference>
+            <reference>Griffiths, M. 1999. Monotremes. Pages 295�302 in Encyclopedia of
+                Reproduction, vol. 3. J.D. Neill, ed. Academic Press, San Diego.</reference>
+            <reference>Griffiths, M., R. T. Wells, and D. J. Barrie. 1991. Observations on the
+                skulls of fossil and extant echidnas (Monotremata: Tachyglossidae). Australian
+                Mammalogy 14:87-101.</reference>
+            <reference>Lee, M. H., R. Shroff, S. J. B. Cooper, and R. Hope. 1999. Evolution and
+                molecular characterization of a beta-globin gene from the Australian echidna
+                Tachyglossus aculeatus (Monotremata). Molecular Phylogenetics and Evolution
+                12:205-214.</reference>
+            <reference>Musser, A. M. 2003. Review of the monotreme fossil record and comparison of
+                palaeontological and molecular data. Comparative Biochemistry and Physiology A.
+                Molecular and Integreative Physiology 136(4):927-942.</reference>
+            <reference>Retief, J. D., R. J. Winkfein, and G. H. Dixon. 1993. Evolution of the
+                monotremes - the sequences of the protamine p1 genes of platypus and echidna.
+                European Journal of Biochemistry 218:457-461.</reference>
+            <reference>Wilson, D. E., and D. M. Reeder, eds. 2005. Mammal Species of the World.
+                Third Edition. Johns Hopkins University Press, Baltimore, MD.</reference>
+        </dataObject>
+    </taxon>
+    <taxon>
+        <dc:identifier>tol-node-id-16253</dc:identifier>
+        <dc:source>http://tolweb.org/Ornithorhynchus+anatinus/16253</dc:source>
+        <dwc:ScientificName>Ornithorhynchus anatinus</dwc:ScientificName>
+        <dcterms:created>2008-Apr-8 00:00:00</dcterms:created>
+        <dcterms:modified>2008-Apr-8 00:00:00</dcterms:modified>
+        <dataObject>
+            <dc:identifier>tol-text-id-162622</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Apr-8 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Apr-8 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Introduction</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Ornithorhynchus+anatinus/16253</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Archer, M., T. F. Flannery, A. Ritchie, and R. E. Molnar. 1985. First
+                Mesozoic mammal from Australia-An early Cretaceous monotreme. Nature 318:363-366.</reference>
+            <reference>Archer, M., P. Murray, S. Hand, and H. Godthelp. 1993. Reconsideration of
+                monotreme relationships based on the skull and dentition of the Miocence Obduron
+                dicksoni. Pages 75-94 in Mammal Phylogeny. Volume 1. Mesozoic Differentiation,
+                Multituberculates, Monotremes, Early Eutherians, and Marsupials. (F. S. Szalay, M.
+                J. Novacek, and M. C. McKenna, eds.). Springer Verlag, New York.</reference>
+            <reference>Augee, M. L., ed. 1992. Platypus and Echidnas. Royal Zoological Society of
+                New South Wales.</reference>
+            <reference>Gemmell, N. J., T.R. Grant, P.S. Western, J. Walmsley, J. M. Watson, N.D.
+                Murray, and J.A. Marshall Graves. 1995. Determining platypus relationships.
+                Australian Journal of Zoology 43:283-291.</reference>
+            <reference>Grant, T. 1995. The Platypus: A Unique Mammal. University of New South Wales
+                Press, Sydney.</reference>
+            <reference>Grant, T. 2007. Platypus. CSIRO Publishing, Victoria.</reference>
+            <reference>Grant, T. R. and P. D. Temple-Smith. 1998. Field biology of the platypus
+                (Ornithorhynchus anatinus): historical and current perspectives. Philosophical
+                Transactions of the Royal Society of London Series B 353:1081-1091.</reference>
+            <reference>Griffiths, M. 1999. Monotremes. Pages 295�302 in Encyclopedia of
+                Reproduction, vol. 3. J.D. Neill, ed. Academic Press, San Diego.</reference>
+            <reference>Gr�tzner, F. and J.A. Marshall Graves. 2004. A platypus� eye view of the
+                mammalian genome. Current Opinion in Genetics &amp; Development 14(6):642-649.</reference>
+            <reference>Gr�tzner, F., W. Rens, E. Tsend-Ayush, N. El-Mogharbel, P. C. O�Brien PC, R.
+                C. Jones, M. A. Ferguson-Smith, and J. A. Marshall Graves. 2004. In the platypus a
+                meiotic chain of ten sex chromosomes shares genes with the bird Z and mammal X
+                chromosomes. Nature 432:913�917.</reference>
+            <reference>Janke, A., N. J. Gemmell, G. Feldmaier-Fuchs, A. von Haeseler, and S. P��bo.
+                1996. The mitochondrial genome of a monotreme - The platypus (Ornithorhynchus
+                anatinus). Journal of Molecular Evolution 42:153-159.</reference>
+            <reference>Moyal, A. 2001. Platypus�the extraordinary story of how a curious creature
+                baffled the world. The Johns Hopkins University Press, Baltimore</reference>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-162623</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Apr-8 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Apr-8 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Characteristics</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Ornithorhynchus+anatinus/16253</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Archer, M., T. F. Flannery, A. Ritchie, and R. E. Molnar. 1985. First
+                Mesozoic mammal from Australia-An early Cretaceous monotreme. Nature 318:363-366.</reference>
+            <reference>Archer, M., P. Murray, S. Hand, and H. Godthelp. 1993. Reconsideration of
+                monotreme relationships based on the skull and dentition of the Miocence Obduron
+                dicksoni. Pages 75-94 in Mammal Phylogeny. Volume 1. Mesozoic Differentiation,
+                Multituberculates, Monotremes, Early Eutherians, and Marsupials. (F. S. Szalay, M.
+                J. Novacek, and M. C. McKenna, eds.). Springer Verlag, New York.</reference>
+            <reference>Augee, M. L., ed. 1992. Platypus and Echidnas. Royal Zoological Society of
+                New South Wales.</reference>
+            <reference>Gemmell, N. J., T.R. Grant, P.S. Western, J. Walmsley, J. M. Watson, N.D.
+                Murray, and J.A. Marshall Graves. 1995. Determining platypus relationships.
+                Australian Journal of Zoology 43:283-291.</reference>
+            <reference>Grant, T. 1995. The Platypus: A Unique Mammal. University of New South Wales
+                Press, Sydney.</reference>
+            <reference>Grant, T. 2007. Platypus. CSIRO Publishing, Victoria.</reference>
+            <reference>Grant, T. R. and P. D. Temple-Smith. 1998. Field biology of the platypus
+                (Ornithorhynchus anatinus): historical and current perspectives. Philosophical
+                Transactions of the Royal Society of London Series B 353:1081-1091.</reference>
+            <reference>Griffiths, M. 1999. Monotremes. Pages 295�302 in Encyclopedia of
+                Reproduction, vol. 3. J.D. Neill, ed. Academic Press, San Diego.</reference>
+            <reference>Gr�tzner, F. and J.A. Marshall Graves. 2004. A platypus� eye view of the
+                mammalian genome. Current Opinion in Genetics &amp; Development 14(6):642-649.</reference>
+            <reference>Gr�tzner, F., W. Rens, E. Tsend-Ayush, N. El-Mogharbel, P. C. O�Brien PC, R.
+                C. Jones, M. A. Ferguson-Smith, and J. A. Marshall Graves. 2004. In the platypus a
+                meiotic chain of ten sex chromosomes shares genes with the bird Z and mammal X
+                chromosomes. Nature 432:913�917.</reference>
+            <reference>Janke, A., N. J. Gemmell, G. Feldmaier-Fuchs, A. von Haeseler, and S. P��bo.
+                1996. The mitochondrial genome of a monotreme - The platypus (Ornithorhynchus
+                anatinus). Journal of Molecular Evolution 42:153-159.</reference>
+            <reference>Moyal, A. 2001. Platypus�the extraordinary story of how a curious creature
+                baffled the world. The Johns Hopkins University Press, Baltimore</reference>
+        </dataObject>
+    </taxon>
+    <taxon>
+        <dc:identifier>tol-node-id-16248</dc:identifier>
+        <dc:source>http://tolweb.org/Diprotodontia/16248</dc:source>
+        <dwc:ScientificName>Diprotodontia</dwc:ScientificName>
+        <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+        <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+        <dataObject>
+            <dc:identifier>tol-text-id-163095</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Introduction</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Diprotodontia/16248</dc:source>
+            <dc:description xml:lang="en"/>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-163096</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Characteristics</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Diprotodontia/16248</dc:source>
+            <dc:description xml:lang="en"/>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-163097</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Discussion of Phylogenetic Relationships</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <dc:source>http://tolweb.org/Diprotodontia/16248</dc:source>
+            <dc:description xml:lang="en"/>
+        </dataObject>
+    </taxon>
+    <taxon>
+        <dc:identifier>tol-node-id-121589</dc:identifier>
+        <dc:source>http://tolweb.org/Vombatiformes/121589</dc:source>
+        <dwc:ScientificName>Vombatiformes Burnett 1830</dwc:ScientificName>
+        <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+        <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+        <dataObject>
+            <dc:identifier>tol-text-id-163074</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Introduction</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Vombatiformes/121589</dc:source>
+            <dc:description xml:lang="en"/>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-163075</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Characteristics</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Vombatiformes/121589</dc:source>
+            <dc:description xml:lang="en"/>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-163076</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Discussion of Phylogenetic Relationships</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <dc:source>http://tolweb.org/Vombatiformes/121589</dc:source>
+            <dc:description xml:lang="en"/>
+        </dataObject>
+    </taxon>
+    <taxon>
+        <dc:identifier>tol-node-id-121599</dc:identifier>
+        <dc:source>http://tolweb.org/Vombatidae/121599</dc:source>
+        <dwc:ScientificName>Vombatidae Burnett 1829</dwc:ScientificName>
+        <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+        <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+        <dataObject>
+            <dc:identifier>tol-text-id-163083</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Introduction</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Vombatidae/121599</dc:source>
+            <dc:description xml:lang="en"/>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-163084</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Characteristics</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Vombatidae/121599</dc:source>
+            <dc:description xml:lang="en"/>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-163085</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Discussion of Phylogenetic Relationships</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <dc:source>http://tolweb.org/Vombatidae/121599</dc:source>
+            <dc:description xml:lang="en"/>
+        </dataObject>
+    </taxon>
+    <taxon>
+        <dc:identifier>tol-node-id-121600</dc:identifier>
+        <dc:source>http://tolweb.org/Vombatus+ursinus/121600</dc:source>
+        <dwc:ScientificName>Vombatus ursinus Shaw 1800</dwc:ScientificName>
+        <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+        <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+        <dataObject>
+            <dc:identifier>tol-text-id-163086</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Introduction</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Vombatus+ursinus/121600</dc:source>
+            <dc:description xml:lang="en"/>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-163087</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Characteristics</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Vombatus+ursinus/121600</dc:source>
+            <dc:description xml:lang="en"/>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-163088</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2008-Aug-15 00:00:00</dcterms:created>
+            <dcterms:modified>2008-Aug-15 00:00:00</dcterms:modified>
+            <dc:title xml:lang="en">Discussion of Phylogenetic Relationships</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <dc:source>http://tolweb.org/Vombatus+ursinus/121600</dc:source>
+            <dc:description xml:lang="en"/>
+        </dataObject>
+    </taxon>
+    <taxon>
+        <dc:identifier>tol-node-id-16421</dc:identifier>
+        <dc:source>http://tolweb.org/Homo+sapiens/16421</dc:source>
+        <dwc:ScientificName>Homo sapiens</dwc:ScientificName>
+        <dataObject>
+            <dc:identifier>tol-text-id-109292</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dc:title xml:lang="en">Introduction</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Homo+sapiens/16421</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Atkinson, Q. D., R. D. Gray, and A. J. Drummond. 2008. mtDNA variation
+                predicts population size in humans and reveals a major Southern Asian chapter in
+                human prehistory. Molecular Biology and Evolution 25:468-474.</reference>
+            <reference>Ayala, F. J. 1995. The myth of eve - molecular-biology and human origins.
+                Science 270:1930-1936.</reference>
+            <reference>Ayala, F. J. and A. A. Escalante. 1996. The evolution of human populations: A
+                molecular perspective. Molecular Phylogenetics and Evolution 5:188-201.</reference>
+            <reference>Ayala, F. J., A. Escalante, C. O'hUigin, and J. Klein. 1994. Molecular
+                genetics of speciation and human origins. Proceedings of the National Academy of
+                Sciences (USA) 91:6787-6794.</reference>
+            <reference>Barbujani, G., A. Magagni, E. Minch, and L. L. Cavalli-Sforza. 1997. An
+                apportionment of human DNA diversity. Proceedings of the National Academy of
+                Sciences (USA) 94:4516-4519.</reference>
+            <reference>Bolnick, D. A., D. I. Bolnick, and D. G. Smith. 2006. Asymmetric male and
+                female genetic histories among Native Americans from Eastern North America.
+                Molecular Biology and Evolution 23:2161-2174.</reference>
+            <reference>Brown, R.A. and G.J. Armelagos. 2001. Apportionment of racial diversity: A
+                review. Evolutionary Anthropology 10: 34-40.</reference>
+            <reference>Cann, R. L., M. Stoneking, and A. C. Wilson. 1987. Mitochondrial DNA and
+                human evolution. Nature 325:31-36.</reference>
+            <reference>Carroll, S. B. 2003. Genetics and the making of Homo sapiens. Nature
+                422:849?857.</reference>
+            <reference>Cavalli-Sforza, L. L., P. Menozzi, and A. Piazza. 1994. The History and
+                Geography of Human Genes. Princeton University Press, Princeton.</reference>
+            <reference>Chikhi, L., G. Destro-Bisol, G. Bertorelle, V. Pascali, and G. Barbujani.
+                1998. Clines of nuclear DNA markers suggest a largely neolithic ancestry of the
+                European gene pool. Proceedings of the National Academy of Sciences (USA)
+                95:9053-9058.</reference>
+            <reference>Comas, D., F. Calafell, E. Mateu, A. Perez-Lezaun, E. Bosch, R.
+                Martinez-Arias, J. Clarimon, F. Facchini, G. Fiori, D. Luiselli, D. Pettener, J.
+                Bertranpetit. 1998. Trading genes along the silk road: mtDNA sequences and the
+                origin of central Asian populations. American Journal of Human Genetics
+                63:1824-1838.</reference>
+            <reference>Destro-Bisol, G., F. Donati, V. Coia, Il. Boschi, F. Verginelli, A. Cagli�,
+                S. Tofanelli, G. Spedini, and C. Capelli. 2004. Variation of female and male
+                lineages in sub-Saharan populations: the importance of sociocultural factors.
+                Molecular Biology and Evolution 21(9):1673-1682.</reference>
+            <reference>Disotell, T. R. 1999. Human evolution: Origins of modern humans still look
+                recent. Current Biology 9:R647-R650.</reference>
+            <reference>Disotell, T. R. 1999. Human evolution: The southern route to Asia. Current
+                Biology 9:R925-R928.</reference>
+            <reference>Ebersberger, I., P. Galgoczy, S. Taudien, S. Taenzer, M. Platzer, and A. von
+                Haeseler. 2007. Mapping human genetic ancestry. Molecular Biology and Evolution
+                24:2266-2276.</reference>
+            <reference>Goebel, T., M. R. Waters, and D. H. O'Rourke. 2008. The Late Pleistocene
+                dispersal of modern humans in the Americas. Science 319(5869):1497-1502.</reference>
+            <reference>Goldstein, D. B., A. R. Linares, L. L. Cavalli-Sforza, and M. W. Feldman.
+                1995. Genetic absolute dating based on microsatellites and the origin of modern
+                humans. Proceedings of the National Academy of Sciences (USA) 92:6723-6727.</reference>
+            <reference>Gonz�lez-Jos�, R., A. Gonz�lez-Mart�n, Miquel Hern�ndez, H. M. Pucciarelli,
+                M. Sardi, A. Rosales, and S. van der Molen. 2003. Craniometric evidence for
+                Palaeoamerican survival in Baja California. Nature 425:62-65.</reference>
+            <reference>Hammer, M. F. 1995. A recent common ancestry for human Y chromosomes. Nature
+                378:376-378.</reference>
+            <reference>Hammer, M. F., T. Karafet, A. Rasanayagam, E. T. Wood, T. K. Altheide, T.
+                Jenkins, R. C. Griffiths, A. R. Templeton, and S. L. Zegura. 1998. Out of Africa and
+                back again: Nested cladistic analysis of human Y chromosome variation. Molecular
+                Biology and Evolution 15:427-441.</reference>
+            <reference>Harding, R. M., S. M. Fullerton, R. C. Griffiths, J. Bond, M. J. Cox, J. A.
+                Schneider, D. S. Moulin, and J. B. Clegg. 1997. Archaic African and Asian lineages
+                in the genetic ancestry of modern humans. American Journal of Human Genetics
+                60:772-789.</reference>
+            <reference>Harpending, H. C., M. A. Batzer, M. Gurven, L. B. Jorde, A. R. Rogers, and S.
+                T. Sherry. 1998. Genetic traces of ancient demography. Proceedings of the National
+                Academy of Sciences (USA) 95:1961-1967.</reference>
+            <reference>Harris, E. E. and J. Hey. 1999. X chromosome evidence for ancient human
+                histories. Proceedings of the National Academy of Sciences (USA) 96:3320-3324.</reference>
+            <reference>Harris, E. E. and J. Hey. 1999. Human demography in the pleistocene: Do
+                mitochondrial and nuclear genes tell the same story? Evolutionary Anthropology
+                8:81-86.</reference>
+            <reference>Hawks, J., K. Hunley, S. H. Lee, and M. Wolpoff. 2000. Population bottlenecks
+                and Pleistocene human evolution. Molecular Biology and Evolution 17:2-22.</reference>
+            <reference>Hill, C., P. Soares, M. Mormina, V. Macaulay, W. Meehan, J. Blackburn, D.
+                Clarke, J. Maripa Raja, P. Ismail, D. Bulbeck, S. Oppenheimer, and M.Richards. 2006.
+                Phylogeography and ethnogenesis of aboriginal Southeast Asians. Molecular Biology
+                and Evolution 23(12):2480-2491.</reference>
+            <reference>Hinds, D. A., L. L. Stuve, G. B. Nilsen, E. Halperin, E. Eskin, D. G.
+                Ballinger, K. A. Frazer, D. R. Cox. 2005. Whole-genome patterns of common DNA
+                variation in three human populations. Science 307(5712):1072-1079.</reference>
+            <reference>Horai S. , K. Hayasaka, R. Kondo, K. Tsugane, and N. Takahata. 1995. The
+                recent African origin of modern humans revealed by complete sequences of hominoid
+                mitochondrial DNAs. Proceedings of the National Academy of Sciences (USA)
+                92:532-536.</reference>
+            <reference>Jin, L., P. A. Underhill, V. Doctor, R. W. Davis, P. D. Shen, L. L.
+                Cavalli-Sforza, and P. J. Oefner. 1999. Distribution of haplotypes from a chromosome
+                21 region distinguishes multiple prehistoric human migrations. Proceedings of the
+                National Academy of Sciences (USA) 96:3796-3800.</reference>
+            <reference>Jorde, L.B., M. Bamshad, and A. R. Rogers. 1998. Using mitochondrial and
+                nuclear DNA markers to reconstruct human evolution. BioEssays 20:126-136.</reference>
+            <reference>Jorde, L. B., A. R. Rogers, M. Bamshad, W. S. Watkins, P. Krakowiak, S. Sung,
+                J. Kere, and H. C. Harpending. 1997. Microsatellite diversity and the demographic
+                history of modern humans. Proceedings of the National Academy of Sciences (USA)
+                94:3100-3103.</reference>
+            <reference>Jorde, L. B., W. S.Watkins, M. J. Bamshad, M. E. Dixon, C. E. Ricker, M. T.
+                Seielstad, and M. A. Batzer. 2000. The distribution of human genetic diversity: A
+                comparison of mitochondrial, autosomal, and Y-chromosome data. American Journal of
+                Human Genetics 66: 979-988.</reference>
+            <reference>Kayser, M. S. Brauer, R. Cordaux, A. Casto, O. Lao, L. A. Zhivotovsky, C.
+                Moyse-Faurie, R. B. Rutledge, W. Schiefenhoevel, D. Gil, A. A. Lin, P. A. Underhill,
+                P. J. Oefner, R. J. Trent, and M. Stoneking. 2006. Melanesian and Asian origins of
+                Polynesians: mtDNA and Y chromosome gradients across the Pacific. Molecular Biology
+                and Evolution 23:2234-2244.</reference>
+            <reference>Kivisild, T., M. J. Bamshad, K. Kaldma, M. Metspalu, E. Metspalu, M. Reidla,
+                S. Laos, J. Parik, W. S. Watkins, M. E. Dixon, S. S. Papiha, S. S. Mastana, M. R.
+                Mir, V. Ferak, and R. Villems. 1999. Deep common ancestry of Indian and
+                western-Eurasian mitochondrial DNA lineages. Current Biology 9:1331-1334.</reference>
+            <reference>Li, J. Z., D. M. Absher, H. Tang, A. M. Southwick, A. M. Casto, S.
+                Ramachandran, H. M. Cann, G. S. Barsh, M. Feldman, L. L. Cavalli-Sforza, and R. M.
+                Myers. 2008. Worldwide human relationships inferred from genome-wide patterns of
+                variation. Science 319(5866):1100-1104.</reference>
+            <reference>Maddison, D. R. 1991. African origin of human mitochondrial DNA reexamined.
+                Systematic Zoology 40:355-363.</reference>
+            <reference>Maddison, D. R., M. Ruvolo, and D. L. Swofford. 1992. Geographic origins of
+                human mitochondrial DNA - phylogenetic evidence from control region sequences.
+                Systematic Biology 41:111-124.</reference>
+            <reference>Marshall, E. 1998. DNA studies challenge the meaning of race. Science 282
+                (5389):654-655.</reference>
+            <reference>Merriwether, D. A., F. Rothhammer, and R. E. Ferrell. 1995. Distribution of
+                the four founding lineage haplotypes in native Americans suggests a single wave of
+                migration for the New World. American Journal of Physical Anthropology 98:411-30.</reference>
+            <reference>Mishmar, D., E. Ruiz-Pesini, P. Golik, V. Macaulay, A. G. Clark, S. Hosseini,
+                M. Brandon, K. Easley, E. Chen, M. D. Brown, R. I. Sukernik, A. Olckers, and D. C.
+                Wallace. 2003. Natural selection shaped regional mtDNA variation in humans.
+                Proceedings of the National Academy of Sciences (USA) 100:171-176.</reference>
+            <reference>Mountain, J. L. 1998. Molecular evolution and modern human origins.
+                Evolutionary Anthropology 7:21-37.</reference>
+            <reference>Owens, K. and M. C. King. 1999. Genomic views of human history. Science
+                286:451-453.</reference>
+            <reference>P�abo, S. 1999. Human evolution. Trends in Biochemical Sciences 24
+                (12):M13-M16</reference>
+            <reference>P�abo, S. 2001. Genomics and society - The human genome and our view of
+                ourselves. Science 291 (5507):1219-1220.</reference>
+            <reference>Patterson, N., D. J. Richter, S. Gnerre, E. S. Lander, and D. Reich. 2006.
+                Genetic evidence for complex speciation of humans and chimpanzees. Nature
+                441:1103�1108.</reference>
+            <reference>Relethford, J. H. 1998. Genetics of modern human origins and diversity.
+                Annual Review of Anthropology 27:1-23.</reference>
+            <reference>Rohde, D. L. T., S. Olson, and J. T. Chang. 2004. Modelling the recent common
+                ancestry of all living humans. Nature 431:562 - 566.</reference>
+            <reference>Rosenberg, N. A., J. K. Pritchard, J. L. Weber, H. M. Cann, K. K. Kidd, L. A.
+                Zhivotovsky and M. W. Feldman. 2002. Genetic structure of human populations. Science
+                298:2381-2385.</reference>
+            <reference>Ruiz-Linares, A., D. Ortiz-Barrientos, M. Figueroa, N. Mesa, J. G. Munera, G.
+                Bedoya, I. D. Velez, L. F. Garcia, A. Perez-Lezaun, J. Bertranpetit, M. W. Feldman,
+                and D. B. Goldstein. 1999. Microsatellites provide evidence for Y chromosome
+                diversity among the founders of the New World. Proceedings of the National Academy
+                of Sciences (USA) 96:6312-6317.</reference>
+            <reference>Seielstad, M.T., E. Minch, and L.L. Cavalli-Sforza. 1998. Genetic evidence
+                for a higher female migration rate in humans. Nature Genetics 20:278-280.</reference>
+            <reference>Seielstad, M., E. Bekele, M. Ibrahim, A. Tour�, and M. Traor�. 1999. A view
+                of modern human origins from Y chromosome microsatellite variation. Genome Research
+                9: 558-567.</reference>
+            <reference>Sherry, S. T., M. A. Batzer, and H. C. Harpending. 1998. Modeling the genetic
+                architecture of modern populations. Annual Review of Anthropology 27:153-169.</reference>
+            <reference>Sykes, B. D. (ed.) 1999. The Human Inheritance: Genes, Language, and
+                Evolution. Oxford University Press, Oxford, New York.</reference>
+            <reference>Takahata, N. 1995. A genetic perspective on the origin and history of humans.
+                Annual Review of Ecology and Systematics 26:343-372.</reference>
+            <reference>Templeton, A. R. 1993. The "Eve" hypothesis: a genetic critique and
+                reanalysis. American Anthropologist 95:51-72.</reference>
+            <reference>Templeton, A. R. 1998. Human races: A genetic and evolutionary perspective.
+                American Anthropologist 100:632-650.</reference>
+            <reference>Tishkoff, S. A., E. Dietzsch, W. Speed. A. J. Pakstis, J. R. Kidd, K. Cheung,
+                B. Bonne-Tamir, A. S. Santachiara-Benerecetti, P. Moral, M. Krings, S. P�abo, E.
+                Watson, N. Risch, T. Jenkins, and K. K. Kidd. Global patterns of linkage
+                disequilibrium at the CD4 locus and modern human origins. Science 271:1380-1387.</reference>
+            <reference>Tishkoff, S. A., M. K. Gonder, B. M. Henn, H. Mortensen, A. Knight, C.
+                Gignoux, N. Fernandopulle, G. Lema, T. B. Nyambo, U. Ramakrishnan, F. A. Reed, and
+                J. L. Mountain. 2007. History of click-speaking populations of Africa inferred from
+                mtDNA and Y chromosome genetic variation. Molecular Biology and Evolution
+                24:2180-2195.</reference>
+            <reference>Vigilant, L., M. Stoneking, H. Harpending, K. Hawkes, and A. C. Wilson. 1991.
+                African populations and the evolution of human mitochondrial DNA. Science
+                253:1503-1507.</reference>
+            <reference>Wills, C. 1995. When did Eve live? An evolutionary detective story. Evolution
+                49:593-607.</reference>
+            <reference>Zietkiewicz, E., V. Yotova, M. Jarnik, M. Korah-Laskowska, K. K. Kidd, D.
+                Modiano, R. Scozzari, M. Stoneking, S. Tishkoff, M. Batzer, and D. Labuda. 1998.
+                Genetic structure of the ancestral population of modern humans. Journal of Molecular
+                Evolution 47:146-155.</reference>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-109293</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dc:title xml:lang="en">Characteristics</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Homo+sapiens/16421</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Atkinson, Q. D., R. D. Gray, and A. J. Drummond. 2008. mtDNA variation
+                predicts population size in humans and reveals a major Southern Asian chapter in
+                human prehistory. Molecular Biology and Evolution 25:468-474.</reference>
+            <reference>Ayala, F. J. 1995. The myth of eve - molecular-biology and human origins.
+                Science 270:1930-1936.</reference>
+            <reference>Ayala, F. J. and A. A. Escalante. 1996. The evolution of human populations: A
+                molecular perspective. Molecular Phylogenetics and Evolution 5:188-201.</reference>
+            <reference>Ayala, F. J., A. Escalante, C. O'hUigin, and J. Klein. 1994. Molecular
+                genetics of speciation and human origins. Proceedings of the National Academy of
+                Sciences (USA) 91:6787-6794.</reference>
+            <reference>Barbujani, G., A. Magagni, E. Minch, and L. L. Cavalli-Sforza. 1997. An
+                apportionment of human DNA diversity. Proceedings of the National Academy of
+                Sciences (USA) 94:4516-4519.</reference>
+            <reference>Bolnick, D. A., D. I. Bolnick, and D. G. Smith. 2006. Asymmetric male and
+                female genetic histories among Native Americans from Eastern North America.
+                Molecular Biology and Evolution 23:2161-2174.</reference>
+            <reference>Brown, R.A. and G.J. Armelagos. 2001. Apportionment of racial diversity: A
+                review. Evolutionary Anthropology 10: 34-40.</reference>
+            <reference>Cann, R. L., M. Stoneking, and A. C. Wilson. 1987. Mitochondrial DNA and
+                human evolution. Nature 325:31-36.</reference>
+            <reference>Carroll, S. B. 2003. Genetics and the making of Homo sapiens. Nature
+                422:849?857.</reference>
+            <reference>Cavalli-Sforza, L. L., P. Menozzi, and A. Piazza. 1994. The History and
+                Geography of Human Genes. Princeton University Press, Princeton.</reference>
+            <reference>Chikhi, L., G. Destro-Bisol, G. Bertorelle, V. Pascali, and G. Barbujani.
+                1998. Clines of nuclear DNA markers suggest a largely neolithic ancestry of the
+                European gene pool. Proceedings of the National Academy of Sciences (USA)
+                95:9053-9058.</reference>
+            <reference>Comas, D., F. Calafell, E. Mateu, A. Perez-Lezaun, E. Bosch, R.
+                Martinez-Arias, J. Clarimon, F. Facchini, G. Fiori, D. Luiselli, D. Pettener, J.
+                Bertranpetit. 1998. Trading genes along the silk road: mtDNA sequences and the
+                origin of central Asian populations. American Journal of Human Genetics
+                63:1824-1838.</reference>
+            <reference>Destro-Bisol, G., F. Donati, V. Coia, Il. Boschi, F. Verginelli, A. Cagli�,
+                S. Tofanelli, G. Spedini, and C. Capelli. 2004. Variation of female and male
+                lineages in sub-Saharan populations: the importance of sociocultural factors.
+                Molecular Biology and Evolution 21(9):1673-1682.</reference>
+            <reference>Disotell, T. R. 1999. Human evolution: Origins of modern humans still look
+                recent. Current Biology 9:R647-R650.</reference>
+            <reference>Disotell, T. R. 1999. Human evolution: The southern route to Asia. Current
+                Biology 9:R925-R928.</reference>
+            <reference>Ebersberger, I., P. Galgoczy, S. Taudien, S. Taenzer, M. Platzer, and A. von
+                Haeseler. 2007. Mapping human genetic ancestry. Molecular Biology and Evolution
+                24:2266-2276.</reference>
+            <reference>Goebel, T., M. R. Waters, and D. H. O'Rourke. 2008. The Late Pleistocene
+                dispersal of modern humans in the Americas. Science 319(5869):1497-1502.</reference>
+            <reference>Goldstein, D. B., A. R. Linares, L. L. Cavalli-Sforza, and M. W. Feldman.
+                1995. Genetic absolute dating based on microsatellites and the origin of modern
+                humans. Proceedings of the National Academy of Sciences (USA) 92:6723-6727.</reference>
+            <reference>Gonz�lez-Jos�, R., A. Gonz�lez-Mart�n, Miquel Hern�ndez, H. M. Pucciarelli,
+                M. Sardi, A. Rosales, and S. van der Molen. 2003. Craniometric evidence for
+                Palaeoamerican survival in Baja California. Nature 425:62-65.</reference>
+            <reference>Hammer, M. F. 1995. A recent common ancestry for human Y chromosomes. Nature
+                378:376-378.</reference>
+            <reference>Hammer, M. F., T. Karafet, A. Rasanayagam, E. T. Wood, T. K. Altheide, T.
+                Jenkins, R. C. Griffiths, A. R. Templeton, and S. L. Zegura. 1998. Out of Africa and
+                back again: Nested cladistic analysis of human Y chromosome variation. Molecular
+                Biology and Evolution 15:427-441.</reference>
+            <reference>Harding, R. M., S. M. Fullerton, R. C. Griffiths, J. Bond, M. J. Cox, J. A.
+                Schneider, D. S. Moulin, and J. B. Clegg. 1997. Archaic African and Asian lineages
+                in the genetic ancestry of modern humans. American Journal of Human Genetics
+                60:772-789.</reference>
+            <reference>Harpending, H. C., M. A. Batzer, M. Gurven, L. B. Jorde, A. R. Rogers, and S.
+                T. Sherry. 1998. Genetic traces of ancient demography. Proceedings of the National
+                Academy of Sciences (USA) 95:1961-1967.</reference>
+            <reference>Harris, E. E. and J. Hey. 1999. X chromosome evidence for ancient human
+                histories. Proceedings of the National Academy of Sciences (USA) 96:3320-3324.</reference>
+            <reference>Harris, E. E. and J. Hey. 1999. Human demography in the pleistocene: Do
+                mitochondrial and nuclear genes tell the same story? Evolutionary Anthropology
+                8:81-86.</reference>
+            <reference>Hawks, J., K. Hunley, S. H. Lee, and M. Wolpoff. 2000. Population bottlenecks
+                and Pleistocene human evolution. Molecular Biology and Evolution 17:2-22.</reference>
+            <reference>Hill, C., P. Soares, M. Mormina, V. Macaulay, W. Meehan, J. Blackburn, D.
+                Clarke, J. Maripa Raja, P. Ismail, D. Bulbeck, S. Oppenheimer, and M.Richards. 2006.
+                Phylogeography and ethnogenesis of aboriginal Southeast Asians. Molecular Biology
+                and Evolution 23(12):2480-2491.</reference>
+            <reference>Hinds, D. A., L. L. Stuve, G. B. Nilsen, E. Halperin, E. Eskin, D. G.
+                Ballinger, K. A. Frazer, D. R. Cox. 2005. Whole-genome patterns of common DNA
+                variation in three human populations. Science 307(5712):1072-1079.</reference>
+            <reference>Horai S. , K. Hayasaka, R. Kondo, K. Tsugane, and N. Takahata. 1995. The
+                recent African origin of modern humans revealed by complete sequences of hominoid
+                mitochondrial DNAs. Proceedings of the National Academy of Sciences (USA)
+                92:532-536.</reference>
+            <reference>Jin, L., P. A. Underhill, V. Doctor, R. W. Davis, P. D. Shen, L. L.
+                Cavalli-Sforza, and P. J. Oefner. 1999. Distribution of haplotypes from a chromosome
+                21 region distinguishes multiple prehistoric human migrations. Proceedings of the
+                National Academy of Sciences (USA) 96:3796-3800.</reference>
+            <reference>Jorde, L.B., M. Bamshad, and A. R. Rogers. 1998. Using mitochondrial and
+                nuclear DNA markers to reconstruct human evolution. BioEssays 20:126-136.</reference>
+            <reference>Jorde, L. B., A. R. Rogers, M. Bamshad, W. S. Watkins, P. Krakowiak, S. Sung,
+                J. Kere, and H. C. Harpending. 1997. Microsatellite diversity and the demographic
+                history of modern humans. Proceedings of the National Academy of Sciences (USA)
+                94:3100-3103.</reference>
+            <reference>Jorde, L. B., W. S.Watkins, M. J. Bamshad, M. E. Dixon, C. E. Ricker, M. T.
+                Seielstad, and M. A. Batzer. 2000. The distribution of human genetic diversity: A
+                comparison of mitochondrial, autosomal, and Y-chromosome data. American Journal of
+                Human Genetics 66: 979-988.</reference>
+            <reference>Kayser, M. S. Brauer, R. Cordaux, A. Casto, O. Lao, L. A. Zhivotovsky, C.
+                Moyse-Faurie, R. B. Rutledge, W. Schiefenhoevel, D. Gil, A. A. Lin, P. A. Underhill,
+                P. J. Oefner, R. J. Trent, and M. Stoneking. 2006. Melanesian and Asian origins of
+                Polynesians: mtDNA and Y chromosome gradients across the Pacific. Molecular Biology
+                and Evolution 23:2234-2244.</reference>
+            <reference>Kivisild, T., M. J. Bamshad, K. Kaldma, M. Metspalu, E. Metspalu, M. Reidla,
+                S. Laos, J. Parik, W. S. Watkins, M. E. Dixon, S. S. Papiha, S. S. Mastana, M. R.
+                Mir, V. Ferak, and R. Villems. 1999. Deep common ancestry of Indian and
+                western-Eurasian mitochondrial DNA lineages. Current Biology 9:1331-1334.</reference>
+            <reference>Li, J. Z., D. M. Absher, H. Tang, A. M. Southwick, A. M. Casto, S.
+                Ramachandran, H. M. Cann, G. S. Barsh, M. Feldman, L. L. Cavalli-Sforza, and R. M.
+                Myers. 2008. Worldwide human relationships inferred from genome-wide patterns of
+                variation. Science 319(5866):1100-1104.</reference>
+            <reference>Maddison, D. R. 1991. African origin of human mitochondrial DNA reexamined.
+                Systematic Zoology 40:355-363.</reference>
+            <reference>Maddison, D. R., M. Ruvolo, and D. L. Swofford. 1992. Geographic origins of
+                human mitochondrial DNA - phylogenetic evidence from control region sequences.
+                Systematic Biology 41:111-124.</reference>
+            <reference>Marshall, E. 1998. DNA studies challenge the meaning of race. Science 282
+                (5389):654-655.</reference>
+            <reference>Merriwether, D. A., F. Rothhammer, and R. E. Ferrell. 1995. Distribution of
+                the four founding lineage haplotypes in native Americans suggests a single wave of
+                migration for the New World. American Journal of Physical Anthropology 98:411-30.</reference>
+            <reference>Mishmar, D., E. Ruiz-Pesini, P. Golik, V. Macaulay, A. G. Clark, S. Hosseini,
+                M. Brandon, K. Easley, E. Chen, M. D. Brown, R. I. Sukernik, A. Olckers, and D. C.
+                Wallace. 2003. Natural selection shaped regional mtDNA variation in humans.
+                Proceedings of the National Academy of Sciences (USA) 100:171-176.</reference>
+            <reference>Mountain, J. L. 1998. Molecular evolution and modern human origins.
+                Evolutionary Anthropology 7:21-37.</reference>
+            <reference>Owens, K. and M. C. King. 1999. Genomic views of human history. Science
+                286:451-453.</reference>
+            <reference>P�abo, S. 1999. Human evolution. Trends in Biochemical Sciences 24
+                (12):M13-M16</reference>
+            <reference>P�abo, S. 2001. Genomics and society - The human genome and our view of
+                ourselves. Science 291 (5507):1219-1220.</reference>
+            <reference>Patterson, N., D. J. Richter, S. Gnerre, E. S. Lander, and D. Reich. 2006.
+                Genetic evidence for complex speciation of humans and chimpanzees. Nature
+                441:1103�1108.</reference>
+            <reference>Relethford, J. H. 1998. Genetics of modern human origins and diversity.
+                Annual Review of Anthropology 27:1-23.</reference>
+            <reference>Rohde, D. L. T., S. Olson, and J. T. Chang. 2004. Modelling the recent common
+                ancestry of all living humans. Nature 431:562 - 566.</reference>
+            <reference>Rosenberg, N. A., J. K. Pritchard, J. L. Weber, H. M. Cann, K. K. Kidd, L. A.
+                Zhivotovsky and M. W. Feldman. 2002. Genetic structure of human populations. Science
+                298:2381-2385.</reference>
+            <reference>Ruiz-Linares, A., D. Ortiz-Barrientos, M. Figueroa, N. Mesa, J. G. Munera, G.
+                Bedoya, I. D. Velez, L. F. Garcia, A. Perez-Lezaun, J. Bertranpetit, M. W. Feldman,
+                and D. B. Goldstein. 1999. Microsatellites provide evidence for Y chromosome
+                diversity among the founders of the New World. Proceedings of the National Academy
+                of Sciences (USA) 96:6312-6317.</reference>
+            <reference>Seielstad, M.T., E. Minch, and L.L. Cavalli-Sforza. 1998. Genetic evidence
+                for a higher female migration rate in humans. Nature Genetics 20:278-280.</reference>
+            <reference>Seielstad, M., E. Bekele, M. Ibrahim, A. Tour�, and M. Traor�. 1999. A view
+                of modern human origins from Y chromosome microsatellite variation. Genome Research
+                9: 558-567.</reference>
+            <reference>Sherry, S. T., M. A. Batzer, and H. C. Harpending. 1998. Modeling the genetic
+                architecture of modern populations. Annual Review of Anthropology 27:153-169.</reference>
+            <reference>Sykes, B. D. (ed.) 1999. The Human Inheritance: Genes, Language, and
+                Evolution. Oxford University Press, Oxford, New York.</reference>
+            <reference>Takahata, N. 1995. A genetic perspective on the origin and history of humans.
+                Annual Review of Ecology and Systematics 26:343-372.</reference>
+            <reference>Templeton, A. R. 1993. The "Eve" hypothesis: a genetic critique and
+                reanalysis. American Anthropologist 95:51-72.</reference>
+            <reference>Templeton, A. R. 1998. Human races: A genetic and evolutionary perspective.
+                American Anthropologist 100:632-650.</reference>
+            <reference>Tishkoff, S. A., E. Dietzsch, W. Speed. A. J. Pakstis, J. R. Kidd, K. Cheung,
+                B. Bonne-Tamir, A. S. Santachiara-Benerecetti, P. Moral, M. Krings, S. P�abo, E.
+                Watson, N. Risch, T. Jenkins, and K. K. Kidd. Global patterns of linkage
+                disequilibrium at the CD4 locus and modern human origins. Science 271:1380-1387.</reference>
+            <reference>Tishkoff, S. A., M. K. Gonder, B. M. Henn, H. Mortensen, A. Knight, C.
+                Gignoux, N. Fernandopulle, G. Lema, T. B. Nyambo, U. Ramakrishnan, F. A. Reed, and
+                J. L. Mountain. 2007. History of click-speaking populations of Africa inferred from
+                mtDNA and Y chromosome genetic variation. Molecular Biology and Evolution
+                24:2180-2195.</reference>
+            <reference>Vigilant, L., M. Stoneking, H. Harpending, K. Hawkes, and A. C. Wilson. 1991.
+                African populations and the evolution of human mitochondrial DNA. Science
+                253:1503-1507.</reference>
+            <reference>Wills, C. 1995. When did Eve live? An evolutionary detective story. Evolution
+                49:593-607.</reference>
+            <reference>Zietkiewicz, E., V. Yotova, M. Jarnik, M. Korah-Laskowska, K. K. Kidd, D.
+                Modiano, R. Scozzari, M. Stoneking, S. Tishkoff, M. Batzer, and D. Labuda. 1998.
+                Genetic structure of the ancestral population of modern humans. Journal of Molecular
+                Evolution 47:146-155.</reference>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-121506</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dc:title xml:lang="en">Discussion of Phylogenetic Relationships</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <dc:source>http://tolweb.org/Homo+sapiens/16421</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Atkinson, Q. D., R. D. Gray, and A. J. Drummond. 2008. mtDNA variation
+                predicts population size in humans and reveals a major Southern Asian chapter in
+                human prehistory. Molecular Biology and Evolution 25:468-474.</reference>
+            <reference>Ayala, F. J. 1995. The myth of eve - molecular-biology and human origins.
+                Science 270:1930-1936.</reference>
+            <reference>Ayala, F. J. and A. A. Escalante. 1996. The evolution of human populations: A
+                molecular perspective. Molecular Phylogenetics and Evolution 5:188-201.</reference>
+            <reference>Ayala, F. J., A. Escalante, C. O'hUigin, and J. Klein. 1994. Molecular
+                genetics of speciation and human origins. Proceedings of the National Academy of
+                Sciences (USA) 91:6787-6794.</reference>
+            <reference>Barbujani, G., A. Magagni, E. Minch, and L. L. Cavalli-Sforza. 1997. An
+                apportionment of human DNA diversity. Proceedings of the National Academy of
+                Sciences (USA) 94:4516-4519.</reference>
+            <reference>Bolnick, D. A., D. I. Bolnick, and D. G. Smith. 2006. Asymmetric male and
+                female genetic histories among Native Americans from Eastern North America.
+                Molecular Biology and Evolution 23:2161-2174.</reference>
+            <reference>Brown, R.A. and G.J. Armelagos. 2001. Apportionment of racial diversity: A
+                review. Evolutionary Anthropology 10: 34-40.</reference>
+            <reference>Cann, R. L., M. Stoneking, and A. C. Wilson. 1987. Mitochondrial DNA and
+                human evolution. Nature 325:31-36.</reference>
+            <reference>Carroll, S. B. 2003. Genetics and the making of Homo sapiens. Nature
+                422:849?857.</reference>
+            <reference>Cavalli-Sforza, L. L., P. Menozzi, and A. Piazza. 1994. The History and
+                Geography of Human Genes. Princeton University Press, Princeton.</reference>
+            <reference>Chikhi, L., G. Destro-Bisol, G. Bertorelle, V. Pascali, and G. Barbujani.
+                1998. Clines of nuclear DNA markers suggest a largely neolithic ancestry of the
+                European gene pool. Proceedings of the National Academy of Sciences (USA)
+                95:9053-9058.</reference>
+            <reference>Comas, D., F. Calafell, E. Mateu, A. Perez-Lezaun, E. Bosch, R.
+                Martinez-Arias, J. Clarimon, F. Facchini, G. Fiori, D. Luiselli, D. Pettener, J.
+                Bertranpetit. 1998. Trading genes along the silk road: mtDNA sequences and the
+                origin of central Asian populations. American Journal of Human Genetics
+                63:1824-1838.</reference>
+            <reference>Destro-Bisol, G., F. Donati, V. Coia, Il. Boschi, F. Verginelli, A. Cagli�,
+                S. Tofanelli, G. Spedini, and C. Capelli. 2004. Variation of female and male
+                lineages in sub-Saharan populations: the importance of sociocultural factors.
+                Molecular Biology and Evolution 21(9):1673-1682.</reference>
+            <reference>Disotell, T. R. 1999. Human evolution: Origins of modern humans still look
+                recent. Current Biology 9:R647-R650.</reference>
+            <reference>Disotell, T. R. 1999. Human evolution: The southern route to Asia. Current
+                Biology 9:R925-R928.</reference>
+            <reference>Ebersberger, I., P. Galgoczy, S. Taudien, S. Taenzer, M. Platzer, and A. von
+                Haeseler. 2007. Mapping human genetic ancestry. Molecular Biology and Evolution
+                24:2266-2276.</reference>
+            <reference>Goebel, T., M. R. Waters, and D. H. O'Rourke. 2008. The Late Pleistocene
+                dispersal of modern humans in the Americas. Science 319(5869):1497-1502.</reference>
+            <reference>Goldstein, D. B., A. R. Linares, L. L. Cavalli-Sforza, and M. W. Feldman.
+                1995. Genetic absolute dating based on microsatellites and the origin of modern
+                humans. Proceedings of the National Academy of Sciences (USA) 92:6723-6727.</reference>
+            <reference>Gonz�lez-Jos�, R., A. Gonz�lez-Mart�n, Miquel Hern�ndez, H. M. Pucciarelli,
+                M. Sardi, A. Rosales, and S. van der Molen. 2003. Craniometric evidence for
+                Palaeoamerican survival in Baja California. Nature 425:62-65.</reference>
+            <reference>Hammer, M. F. 1995. A recent common ancestry for human Y chromosomes. Nature
+                378:376-378.</reference>
+            <reference>Hammer, M. F., T. Karafet, A. Rasanayagam, E. T. Wood, T. K. Altheide, T.
+                Jenkins, R. C. Griffiths, A. R. Templeton, and S. L. Zegura. 1998. Out of Africa and
+                back again: Nested cladistic analysis of human Y chromosome variation. Molecular
+                Biology and Evolution 15:427-441.</reference>
+            <reference>Harding, R. M., S. M. Fullerton, R. C. Griffiths, J. Bond, M. J. Cox, J. A.
+                Schneider, D. S. Moulin, and J. B. Clegg. 1997. Archaic African and Asian lineages
+                in the genetic ancestry of modern humans. American Journal of Human Genetics
+                60:772-789.</reference>
+            <reference>Harpending, H. C., M. A. Batzer, M. Gurven, L. B. Jorde, A. R. Rogers, and S.
+                T. Sherry. 1998. Genetic traces of ancient demography. Proceedings of the National
+                Academy of Sciences (USA) 95:1961-1967.</reference>
+            <reference>Harris, E. E. and J. Hey. 1999. X chromosome evidence for ancient human
+                histories. Proceedings of the National Academy of Sciences (USA) 96:3320-3324.</reference>
+            <reference>Harris, E. E. and J. Hey. 1999. Human demography in the pleistocene: Do
+                mitochondrial and nuclear genes tell the same story? Evolutionary Anthropology
+                8:81-86.</reference>
+            <reference>Hawks, J., K. Hunley, S. H. Lee, and M. Wolpoff. 2000. Population bottlenecks
+                and Pleistocene human evolution. Molecular Biology and Evolution 17:2-22.</reference>
+            <reference>Hill, C., P. Soares, M. Mormina, V. Macaulay, W. Meehan, J. Blackburn, D.
+                Clarke, J. Maripa Raja, P. Ismail, D. Bulbeck, S. Oppenheimer, and M.Richards. 2006.
+                Phylogeography and ethnogenesis of aboriginal Southeast Asians. Molecular Biology
+                and Evolution 23(12):2480-2491.</reference>
+            <reference>Hinds, D. A., L. L. Stuve, G. B. Nilsen, E. Halperin, E. Eskin, D. G.
+                Ballinger, K. A. Frazer, D. R. Cox. 2005. Whole-genome patterns of common DNA
+                variation in three human populations. Science 307(5712):1072-1079.</reference>
+            <reference>Horai S. , K. Hayasaka, R. Kondo, K. Tsugane, and N. Takahata. 1995. The
+                recent African origin of modern humans revealed by complete sequences of hominoid
+                mitochondrial DNAs. Proceedings of the National Academy of Sciences (USA)
+                92:532-536.</reference>
+            <reference>Jin, L., P. A. Underhill, V. Doctor, R. W. Davis, P. D. Shen, L. L.
+                Cavalli-Sforza, and P. J. Oefner. 1999. Distribution of haplotypes from a chromosome
+                21 region distinguishes multiple prehistoric human migrations. Proceedings of the
+                National Academy of Sciences (USA) 96:3796-3800.</reference>
+            <reference>Jorde, L.B., M. Bamshad, and A. R. Rogers. 1998. Using mitochondrial and
+                nuclear DNA markers to reconstruct human evolution. BioEssays 20:126-136.</reference>
+            <reference>Jorde, L. B., A. R. Rogers, M. Bamshad, W. S. Watkins, P. Krakowiak, S. Sung,
+                J. Kere, and H. C. Harpending. 1997. Microsatellite diversity and the demographic
+                history of modern humans. Proceedings of the National Academy of Sciences (USA)
+                94:3100-3103.</reference>
+            <reference>Jorde, L. B., W. S.Watkins, M. J. Bamshad, M. E. Dixon, C. E. Ricker, M. T.
+                Seielstad, and M. A. Batzer. 2000. The distribution of human genetic diversity: A
+                comparison of mitochondrial, autosomal, and Y-chromosome data. American Journal of
+                Human Genetics 66: 979-988.</reference>
+            <reference>Kayser, M. S. Brauer, R. Cordaux, A. Casto, O. Lao, L. A. Zhivotovsky, C.
+                Moyse-Faurie, R. B. Rutledge, W. Schiefenhoevel, D. Gil, A. A. Lin, P. A. Underhill,
+                P. J. Oefner, R. J. Trent, and M. Stoneking. 2006. Melanesian and Asian origins of
+                Polynesians: mtDNA and Y chromosome gradients across the Pacific. Molecular Biology
+                and Evolution 23:2234-2244.</reference>
+            <reference>Kivisild, T., M. J. Bamshad, K. Kaldma, M. Metspalu, E. Metspalu, M. Reidla,
+                S. Laos, J. Parik, W. S. Watkins, M. E. Dixon, S. S. Papiha, S. S. Mastana, M. R.
+                Mir, V. Ferak, and R. Villems. 1999. Deep common ancestry of Indian and
+                western-Eurasian mitochondrial DNA lineages. Current Biology 9:1331-1334.</reference>
+            <reference>Li, J. Z., D. M. Absher, H. Tang, A. M. Southwick, A. M. Casto, S.
+                Ramachandran, H. M. Cann, G. S. Barsh, M. Feldman, L. L. Cavalli-Sforza, and R. M.
+                Myers. 2008. Worldwide human relationships inferred from genome-wide patterns of
+                variation. Science 319(5866):1100-1104.</reference>
+            <reference>Maddison, D. R. 1991. African origin of human mitochondrial DNA reexamined.
+                Systematic Zoology 40:355-363.</reference>
+            <reference>Maddison, D. R., M. Ruvolo, and D. L. Swofford. 1992. Geographic origins of
+                human mitochondrial DNA - phylogenetic evidence from control region sequences.
+                Systematic Biology 41:111-124.</reference>
+            <reference>Marshall, E. 1998. DNA studies challenge the meaning of race. Science 282
+                (5389):654-655.</reference>
+            <reference>Merriwether, D. A., F. Rothhammer, and R. E. Ferrell. 1995. Distribution of
+                the four founding lineage haplotypes in native Americans suggests a single wave of
+                migration for the New World. American Journal of Physical Anthropology 98:411-30.</reference>
+            <reference>Mishmar, D., E. Ruiz-Pesini, P. Golik, V. Macaulay, A. G. Clark, S. Hosseini,
+                M. Brandon, K. Easley, E. Chen, M. D. Brown, R. I. Sukernik, A. Olckers, and D. C.
+                Wallace. 2003. Natural selection shaped regional mtDNA variation in humans.
+                Proceedings of the National Academy of Sciences (USA) 100:171-176.</reference>
+            <reference>Mountain, J. L. 1998. Molecular evolution and modern human origins.
+                Evolutionary Anthropology 7:21-37.</reference>
+            <reference>Owens, K. and M. C. King. 1999. Genomic views of human history. Science
+                286:451-453.</reference>
+            <reference>P�abo, S. 1999. Human evolution. Trends in Biochemical Sciences 24
+                (12):M13-M16</reference>
+            <reference>P�abo, S. 2001. Genomics and society - The human genome and our view of
+                ourselves. Science 291 (5507):1219-1220.</reference>
+            <reference>Patterson, N., D. J. Richter, S. Gnerre, E. S. Lander, and D. Reich. 2006.
+                Genetic evidence for complex speciation of humans and chimpanzees. Nature
+                441:1103�1108.</reference>
+            <reference>Relethford, J. H. 1998. Genetics of modern human origins and diversity.
+                Annual Review of Anthropology 27:1-23.</reference>
+            <reference>Rohde, D. L. T., S. Olson, and J. T. Chang. 2004. Modelling the recent common
+                ancestry of all living humans. Nature 431:562 - 566.</reference>
+            <reference>Rosenberg, N. A., J. K. Pritchard, J. L. Weber, H. M. Cann, K. K. Kidd, L. A.
+                Zhivotovsky and M. W. Feldman. 2002. Genetic structure of human populations. Science
+                298:2381-2385.</reference>
+            <reference>Ruiz-Linares, A., D. Ortiz-Barrientos, M. Figueroa, N. Mesa, J. G. Munera, G.
+                Bedoya, I. D. Velez, L. F. Garcia, A. Perez-Lezaun, J. Bertranpetit, M. W. Feldman,
+                and D. B. Goldstein. 1999. Microsatellites provide evidence for Y chromosome
+                diversity among the founders of the New World. Proceedings of the National Academy
+                of Sciences (USA) 96:6312-6317.</reference>
+            <reference>Seielstad, M.T., E. Minch, and L.L. Cavalli-Sforza. 1998. Genetic evidence
+                for a higher female migration rate in humans. Nature Genetics 20:278-280.</reference>
+            <reference>Seielstad, M., E. Bekele, M. Ibrahim, A. Tour�, and M. Traor�. 1999. A view
+                of modern human origins from Y chromosome microsatellite variation. Genome Research
+                9: 558-567.</reference>
+            <reference>Sherry, S. T., M. A. Batzer, and H. C. Harpending. 1998. Modeling the genetic
+                architecture of modern populations. Annual Review of Anthropology 27:153-169.</reference>
+            <reference>Sykes, B. D. (ed.) 1999. The Human Inheritance: Genes, Language, and
+                Evolution. Oxford University Press, Oxford, New York.</reference>
+            <reference>Takahata, N. 1995. A genetic perspective on the origin and history of humans.
+                Annual Review of Ecology and Systematics 26:343-372.</reference>
+            <reference>Templeton, A. R. 1993. The "Eve" hypothesis: a genetic critique and
+                reanalysis. American Anthropologist 95:51-72.</reference>
+            <reference>Templeton, A. R. 1998. Human races: A genetic and evolutionary perspective.
+                American Anthropologist 100:632-650.</reference>
+            <reference>Tishkoff, S. A., E. Dietzsch, W. Speed. A. J. Pakstis, J. R. Kidd, K. Cheung,
+                B. Bonne-Tamir, A. S. Santachiara-Benerecetti, P. Moral, M. Krings, S. P�abo, E.
+                Watson, N. Risch, T. Jenkins, and K. K. Kidd. Global patterns of linkage
+                disequilibrium at the CD4 locus and modern human origins. Science 271:1380-1387.</reference>
+            <reference>Tishkoff, S. A., M. K. Gonder, B. M. Henn, H. Mortensen, A. Knight, C.
+                Gignoux, N. Fernandopulle, G. Lema, T. B. Nyambo, U. Ramakrishnan, F. A. Reed, and
+                J. L. Mountain. 2007. History of click-speaking populations of Africa inferred from
+                mtDNA and Y chromosome genetic variation. Molecular Biology and Evolution
+                24:2180-2195.</reference>
+            <reference>Vigilant, L., M. Stoneking, H. Harpending, K. Hawkes, and A. C. Wilson. 1991.
+                African populations and the evolution of human mitochondrial DNA. Science
+                253:1503-1507.</reference>
+            <reference>Wills, C. 1995. When did Eve live? An evolutionary detective story. Evolution
+                49:593-607.</reference>
+            <reference>Zietkiewicz, E., V. Yotova, M. Jarnik, M. Korah-Laskowska, K. K. Kidd, D.
+                Modiano, R. Scozzari, M. Stoneking, S. Tishkoff, M. Batzer, and D. Labuda. 1998.
+                Genetic structure of the ancestral population of modern humans. Journal of Molecular
+                Evolution 47:146-155.</reference>
+        </dataObject>
+    </taxon>
+    <taxon>
+        <dc:identifier>tol-node-id-52476</dc:identifier>
+        <dc:source>http://tolweb.org/Fossil+Caprinae/52476</dc:source>
+        <dwc:ScientificName>Fossil Caprinae</dwc:ScientificName>
+        <dcterms:created>2006-Feb-23 00:00:00</dcterms:created>
+        <dataObject>
+            <dc:identifier>tol-text-id-109300</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2006-Feb-23 00:00:00</dcterms:created>
+            <dc:title xml:lang="en">Introduction</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Fossil+Caprinae/52476</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Lalueza-Fox, C., J. Castresana, L. Sampietro, T. Marques-Bonet, J. A.
+                Alcover, and J. Bertranpetit. 2005. Molecular dating of caprines using ancient DNA
+                sequences of Myotragus balearicus, an extinct endemic Balearic mammal. BMC
+                Evolutionary Biology 5: Art. No. 70.</reference>
+            <reference>McKenna, M. C. and S. K. Bell. 1997. Classification of Mammals Above the
+                Species Level. Columbia University Press, New York.</reference>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-109301</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2006-Feb-23 00:00:00</dcterms:created>
+            <dc:title xml:lang="en">Characteristics</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <audience>Expert users</audience>
+            <dc:source>http://tolweb.org/Fossil+Caprinae/52476</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Lalueza-Fox, C., J. Castresana, L. Sampietro, T. Marques-Bonet, J. A.
+                Alcover, and J. Bertranpetit. 2005. Molecular dating of caprines using ancient DNA
+                sequences of Myotragus balearicus, an extinct endemic Balearic mammal. BMC
+                Evolutionary Biology 5: Art. No. 70.</reference>
+            <reference>McKenna, M. C. and S. K. Bell. 1997. Classification of Mammals Above the
+                Species Level. Columbia University Press, New York.</reference>
+        </dataObject>
+        <dataObject>
+            <dc:identifier>tol-text-id-109302</dc:identifier>
+            <dataType>http://purl.org/dc/dcmitype/Text</dataType>
+            <mimeType>text/html</mimeType>
+            <dcterms:created>2006-Feb-23 00:00:00</dcterms:created>
+            <dc:title xml:lang="en">Discussion of Phylogenetic Relationships</dc:title>
+            <dc:language>en</dc:language>
+            <license>http://creativecommons.org/licenses/by-nc/3.0/</license>
+            <dcterm:bibliographicCitation xmlns:dcterm="http://purl.org/dc/terms/"/>
+            <audience>General public</audience>
+            <dc:source>http://tolweb.org/Fossil+Caprinae/52476</dc:source>
+            <dc:description xml:lang="en"/>
+            <reference>Lalueza-Fox, C., J. Castresana, L. Sampietro, T. Marques-Bonet, J. A.
+                Alcover, and J. Bertranpetit. 2005. Molecular dating of caprines using ancient DNA
+                sequences of Myotragus balearicus, an extinct endemic Balearic mammal. BMC
+                Evolutionary Biology 5: Art. No. 70.</reference>
+            <reference>McKenna, M. C. and S. K. Bell. 1997. Classification of Mammals Above the
+                Species Level. Columbia University Press, New York.</reference>
+        </dataObject>
+    </taxon>
+</response>

@@ -1,0 +1,33 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	 <bean id="configurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	   <property name="location"><value>classpath:application.properties</value></property>
+	 </bean>
+	 <bean id="hostInfo" class="org.tolweb.content.export.HostInfo">
+	 	<constructor-arg>
+	 		<value>${hostprefix}</value>
+	 	</constructor-arg>
+	 </bean>
+	 <bean id="servicesInfo" class="org.tolweb.content.export.ServicesInfo">
+	 	<constructor-arg>
+	 		<value>${treeserviceurl}</value>
+	 	</constructor-arg>
+	 	<constructor-arg>
+	 		<value>${contentserviceurl}</value>
+		</constructor-arg>	 		 		
+	 </bean>
+	 <bean id="dropFileInfo" class="org.tolweb.content.export.DropFileInfo">
+	 	<constructor-arg>
+	 		<value>${droplocation}</value>
+		</constructor-arg>	 	
+	 	<constructor-arg>
+	 		<value>${dropfilename}</value>
+	 	</constructor-arg>
+	 </bean>
+	 <bean id="configInfo" class="org.tolweb.content.export.ConfigurationInfo">
+	 	<constructor-arg>
+	 		<value>${includeall}</value>
+	 	</constructor-arg>
+	 </bean>	 
+</beans>
+	 

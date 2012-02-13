@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="all" name="tolweb-content-export">
+    <target name="init">
+    	<property name="libs.dir" location="${basedir}/lib"/>    	
+        <property location="tmp-classes" name="classes.dir"/>
+        <property location="src" name="src.dir"/>
+        <property location="tests" name="tests.dir"/>
+        <property location="dist" name="dist.dir"/>
+        <property location="doc/api" name="javadoc.dir"/>
+        <property name="project.name" value="${ant.project.name}"/>
+        <property location="${dist.dir}/${project.name}.jar" name="jar"/>
+        <property name="tests.dir" value="tests"/>
+        <property name="testreports.dir" value="${tests.dir}/reports"/>
+        <property name="manifest.file" value="${basedir}/META-INF/MANIFEST.MF"/>
+    	<property name="application.props.dev" value="${src.dir}/application.properties"/>
+		<property name="application.props.live" value="${src.dir}/applicationlive.properties"/>
+		<property name="batch.execute.script" value="${basedir}/tolweb-content-export-batch.bash"/>
+		<property name="zip.execute.script" value="${basedir}/zipdropfile.bash"/>
+		<property name="batch.execute.script.dist" value="${dist.dir}/tolweb-content-export-batch.bash"/>
+		<property name="zip.execute.script.dist" value="${dist.dir}/zipdropfile.bash"/>		
+        <path id="compile.classpath">
+            <fileset dir="${libs.dir}">
+                <include name="*.jar"/>
+            </fileset>
+        </path>    	
+    </target>
+
+    <target depends="init" description="Clean all build products." name="clean">
+        <delete dir="${classes.dir}"/>
+        <delete dir="${javadoc.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+    
+    <target depends="clean" name="compile">
+		<taskdef name="groovyc"
+        	 classname="org.codehaus.groovy.ant.Groovyc"
+         	classpathref="compile.classpath"/>
+        <mkdir dir="${classes.dir}"/>
+
+		<groovyc srcdir="${src.dir}" destdir="${classes.dir}">
+		  <classpath>
+		    <pathelement path="${src.dir}"/>
+		    <pathelement path="${tests.dir}"/>
+		    <path refid="compile.classpath"/>
+		  </classpath>
+		  <javac source="1.5" target="1.5" debug="on" deprecation="true"/>
+		</groovyc>
+    </target>
+
+	<target name="prejar">
+		<delete file="${classes.dir}/application.properties"/>
+		<delete file="${classes.dir}/applicationContext.xml"/>
+		<delete file="${classes.dir}/log4j.properties"/>
+		
+<!-- 
+		<copy file="${application.props.dev}" tofile="${classes.dir}/application.properties"/>
+ -->		
+		<copy file="${application.props.live}" tofile="${classes.dir}/application.properties"/>
+		<copy file="${src.dir}/applicationContext.xml" tofile="${classes.dir}/applicationContext.xml"/>
+		<copy file="${src.dir}/log4j.properties" tofile="${classes.dir}/log4j.properties"/>
+	</target>
+
+    <target depends="compile,prejar" name="jar" >
+		<unjar dest="${classes.dir}">
+			<fileset dir="${libs.dir}" includes="**/*.jar" excludes="**/junit*.jar"/>
+			<patternset>
+				<include name="**/*.class"/>
+			</patternset>
+		</unjar>
+		<mkdir dir="${dist.dir}"/>
+        <jar basedir="${classes.dir}" compress="true" manifest="${manifest.file}" jarfile="${jar}"/>
+    </target>
+    
+    <target depends="jar" name="deploy">
+		<copy file="${batch.execute.script}" tofile="${batch.execute.script.dist}"/>
+		<copy file="${zip.execute.script}" tofile="${zip.execute.script.dist}"/>    
+		<tar destfile="${dist.dir}/tol-content-export-deploy.tar" basedir="${dist.dir}"/>
+		<gzip destfile="${dist.dir}/tol-content-export-deploy.tar.gz" src="${dist.dir}/tol-content-export-deploy.tar"/>		    
+    </target>
+</project>
