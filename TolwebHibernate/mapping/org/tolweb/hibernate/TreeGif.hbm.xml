@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.TreeGif"
+        table="TreeGifs"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="height"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="height"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <property
+            name="pageId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="page_id"
+        />
+
+        <property
+            name="width"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="width"
+        />
+
+        <property
+            name="mapString"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="mapstring"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-TreeGif.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

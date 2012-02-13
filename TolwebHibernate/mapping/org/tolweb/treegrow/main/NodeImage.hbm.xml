@@ -1,0 +1,1059 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.treegrow.main.NodeImage"
+        table="Images"
+        dynamic-update="false"
+        dynamic-insert="false"
+        discriminator-value="0"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="id"
+            column="image_id"
+            type="int"
+            unsaved-value="-1"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <discriminator
+            column="discriminator"
+            type="int"
+        />
+
+        <property
+            name="checkedOut"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="checked_out"
+        />
+
+        <property
+            name="onlineCheckedOut"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="online_checked_out"
+        />
+
+        <property
+            name="isSpecimen"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_specimen"
+        />
+
+        <property
+            name="isBodyParts"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_body_parts"
+        />
+
+        <property
+            name="isUltrastructure"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_ultrastructure"
+        />
+
+        <property
+            name="usePermission"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="use_permission"
+        />
+
+        <property
+            name="location"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="location"
+        />
+
+        <property
+            name="copyrightOwner"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="copyright_owner"
+        />
+
+        <property
+            name="copyrightEmail"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="copyright_email"
+        />
+
+        <property
+            name="copyrightUrl"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="copyright_url"
+        />
+
+        <many-to-one
+            name="copyrightOwnerContributor"
+            class="org.tolweb.treegrow.main.Contributor"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="copyright_contributor_id"
+        />
+
+        <many-to-one
+            name="contributor"
+            class="org.tolweb.treegrow.main.Contributor"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="contributor_id"
+        />
+
+        <property
+            name="creationDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="creation_date"
+        />
+
+        <property
+            name="additionalDateTimeInfo"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="additional_time_info"
+        />
+
+        <property
+            name="alive"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="alive"
+        />
+
+        <property
+            name="season"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="season"
+        />
+
+        <property
+            name="imageType"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="image_type"
+        />
+
+        <property
+            name="userCreationDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="user_creation_date"
+        />
+
+        <property
+            name="lastEditedDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="last_edited_date"
+        />
+
+        <property
+            name="checkoutDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="checkout_date"
+        />
+
+        <many-to-one
+            name="checkedOutContributor"
+            class="org.tolweb.treegrow.main.Contributor"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="checkout_contributor_id"
+            not-null="false"
+        />
+
+        <many-to-one
+            name="lastEditedContributor"
+            class="org.tolweb.treegrow.main.Contributor"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="last_edited_contributor_id"
+            not-null="false"
+        />
+
+        <property
+            name="scientificName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="scientific_name"
+        />
+
+        <property
+            name="altText"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="alt_text"
+        />
+
+        <property
+            name="reference"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="reference"
+        />
+
+        <property
+            name="creator"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="creator"
+        />
+
+        <property
+            name="identifier"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="specimen_identifier"
+        />
+
+        <property
+            name="acknowledgements"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="acknowledgements"
+        />
+
+        <property
+            name="geoLocation"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="geo_location"
+        />
+
+        <property
+            name="stage"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="life_stage"
+        />
+
+        <property
+            name="bodyPart"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="body_part"
+        />
+
+        <property
+            name="size"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="size"
+        />
+
+        <property
+            name="view"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="view"
+        />
+
+        <property
+            name="period"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="period"
+        />
+
+        <property
+            name="collection"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="collection"
+        />
+
+        <property
+            name="collectionAcronym"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="collection_acronym"
+        />
+
+        <property
+            name="type"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="type"
+        />
+
+        <property
+            name="collector"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="collector"
+        />
+
+        <property
+            name="sex"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="sex"
+        />
+
+        <property
+            name="comments"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="comments"
+        />
+
+        <property
+            name="copyrightDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="copyright_date"
+        />
+
+        <property
+            name="isFossil"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="fossil"
+        />
+
+        <property
+            name="inPublicDomain"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="public_domain"
+        />
+
+        <set
+            name="nodesSet"
+            table="Images_To_Nodes"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="image_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.hibernate.MappedNode"
+                  column="node_id"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <property
+            name="isPeopleWorking"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_people_working"
+        />
+
+        <property
+            name="isEquipment"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_equipment"
+        />
+
+        <property
+            name="isHabitat"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_habitat"
+        />
+
+        <property
+            name="behavior"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="behavior"
+        />
+
+        <property
+            name="notes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="notes"
+        />
+
+        <property
+            name="voucherNumber"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="voucher_number"
+        />
+
+        <property
+            name="voucherNumberCollection"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="voucher_number_collection"
+        />
+
+        <property
+            name="modificationPermitted"
+            type="java.lang.Boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="modification_permitted"
+        />
+
+        <many-to-one
+            name="keywords"
+            class="org.tolweb.treegrow.main.Keywords"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="keywords_id"
+            unique="true"
+        />
+
+        <many-to-one
+            name="languages"
+            class="org.tolweb.treegrow.main.Languages"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="languages_id"
+            unique="true"
+        />
+
+        <property
+            name="artisticInterpretation"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="artistic"
+        />
+
+        <property
+            name="technicalInformation"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="technical_information"
+        />
+
+        <set
+            name="permissionsSet"
+            table="Image_Permissions"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="image_id"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.hibernate.ImagePermission"
+              >
+
+        <many-to-one
+            name="contributor"
+            class="org.tolweb.treegrow.main.Contributor"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="contributor_id"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <property
+            name="title"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="title"
+        />
+
+        <property
+            name="isPrimaryImage"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="isPrimaryImage"
+        />
+
+        <property
+            name="publicDomainAddress"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="publicDomainAddress"
+        />
+
+        <property
+            name="publicDomainAuthor"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="publicDomainAuthor"
+        />
+
+        <property
+            name="publicDomainCreator"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="publicDomainCreator"
+        />
+
+        <property
+            name="publicDomainPublicationDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="publicDomainPublicationDate"
+        />
+
+        <property
+            name="publicDomainPublisher"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="publicDomainPublisher"
+        />
+
+        <property
+            name="publicDomainSourceName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="publicDomainSourceName"
+        />
+
+        <property
+            name="publicDomainSourceUrl"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="publicDomainSourceUrl"
+        />
+
+        <property
+            name="publicDomainTitle"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="publicDomainTitle"
+        />
+
+        <property
+            name="attachmentComments"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="attachmentComments"
+        />
+
+        <property
+            name="dontKnowAttachment"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="dontKnowAttachment"
+        />
+
+        <property
+            name="isUnapproved"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="isUnapproved"
+        />
+
+        <property
+            name="showImageInfoLink"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="showImageInfoLink"
+        />
+
+        <property
+            name="showImageInfoLinkForInlineImage"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="showImageInfoLinkForInlineImage"
+        />
+
+        <property
+            name="sourceDbId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="sourceDbId"
+        />
+
+        <property
+            name="otherSourceCollectionInfo"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="otherSourceCollectionInfo"
+        />
+
+        <property
+            name="sourceCollectionTitle"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="sourceCollectionTitle"
+        />
+
+        <property
+            name="sourceCollectionUrl"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="sourceCollectionUrl"
+        />
+
+        <property
+            name="considerForPodcast"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="considerForPodcast"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-NodeImage.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+        <subclass
+            name="org.tolweb.hibernate.Document"
+            dynamic-update="false"
+            dynamic-insert="false"
+            discriminator-value="3"
+        >
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="description"
+        />
+
+        <property
+            name="isAdvanced"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_advanced"
+        />
+
+        <property
+            name="isBeginner"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_beginner"
+        />
+
+        <property
+            name="isDataset"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_dataset"
+        />
+
+        <property
+            name="isIntermediate"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_intermediate"
+        />
+
+        <property
+            name="isLecture"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_lecture"
+        />
+
+        <property
+            name="isLesson"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_lesson"
+        />
+
+        <property
+            name="isLessonSupport"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_lesson_support"
+        />
+
+        <property
+            name="isLiterature"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_literature"
+        />
+
+        <property
+            name="isPresentation"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_presentation"
+        />
+
+        <property
+            name="isResearch"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_research"
+        />
+
+        <property
+            name="isStandards"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_standards"
+        />
+
+        <property
+            name="isTeacherResource"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_teacher_resource"
+        />
+
+        <property
+            name="isVocabulary"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_vocabulary"
+        />
+
+        <property
+            name="isFiction"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_fiction"
+        />
+
+        <property
+            name="isNonFiction"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_non_fiction"
+        />
+
+        <property
+            name="otherContent"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="other_content"
+        />
+
+	    <!--
+            	To add non XDoclet property mappings, create a file named
+                hibernate-properties-Document.xml
+		containing the additional properties and place it in your merge dir.
+	    -->
+
+        </subclass>
+        <subclass
+            name="org.tolweb.hibernate.Sound"
+            dynamic-update="false"
+            dynamic-insert="false"
+            discriminator-value="1"
+        >
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="description"
+        />
+
+        <property
+            name="runningTime"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="running_time"
+        />
+
+        <property
+            name="isEnvironmental"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_environmental"
+        />
+
+        <property
+            name="isNarrative"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_narrative"
+        />
+
+        <property
+            name="isOrganism"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_organism"
+        />
+
+	    <!--
+            	To add non XDoclet property mappings, create a file named
+                hibernate-properties-Sound.xml
+		containing the additional properties and place it in your merge dir.
+	    -->
+
+        </subclass>
+        <subclass
+            name="org.tolweb.hibernate.Movie"
+            dynamic-update="false"
+            dynamic-insert="false"
+            discriminator-value="2"
+        >
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="description"
+        />
+
+        <property
+            name="runningTime"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="running_time"
+        />
+
+        <property
+            name="useFlashVideo"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="useFlashVideo"
+        />
+
+	    <!--
+            	To add non XDoclet property mappings, create a file named
+                hibernate-properties-Movie.xml
+		containing the additional properties and place it in your merge dir.
+	    -->
+
+        </subclass>
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.treegrow.main.Keywords"
+        table="Keywords"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="id"
+            column="keyword_id"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="additionalKeywords"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="additional_keywords"
+        />
+
+        <property
+            name="biodiversity"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="biodiversity"
+        />
+
+        <property
+            name="biogeography"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="biogeography"
+        />
+
+        <property
+            name="conservation"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="conservation"
+        />
+
+        <property
+            name="ecology"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="ecology"
+        />
+
+        <property
+            name="evolution"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="evolution"
+        />
+
+        <property
+            name="genetics"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="genetics"
+        />
+
+        <property
+            name="histology"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="histology"
+        />
+
+        <property
+            name="lifehistory"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="lifehistory"
+        />
+
+        <property
+            name="methods"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="methods"
+        />
+
+        <property
+            name="molecular"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="molecular"
+        />
+
+        <property
+            name="morphology"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="morphology"
+        />
+
+        <property
+            name="neurobiology"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="neurobiology"
+        />
+
+        <property
+            name="paleobiology"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="paleobiology"
+        />
+
+        <property
+            name="phylogenetics"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="phylogenetics"
+        />
+
+        <property
+            name="physiology"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="physiology"
+        />
+
+        <property
+            name="taxonomy"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="taxonomy"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Keywords.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

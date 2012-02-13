@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.EditHistory"
+        table="EditHistories"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="createdContributorId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="createdContributorId"
+        />
+
+        <property
+            name="creationDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationDate"
+        />
+
+        <property
+            name="lockedContributorId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="lockedContributorId"
+        />
+
+        <property
+            name="lockedDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="lockedDate"
+        />
+
+        <property
+            name="lastEditedDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="lastEditedDate"
+        />
+
+        <property
+            name="lastEditedContributorId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="lastEditedContributorId"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-EditHistory.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

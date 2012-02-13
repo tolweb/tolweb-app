@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.ArchivedPage"
+        table="ArchivedPages"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="archiveDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="archiveDate"
+        />
+
+        <property
+            name="majorRevision"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="majorRevision"
+        />
+
+        <property
+            name="pageId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="pageId"
+        />
+
+        <property
+            name="pageTitle"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="pageTitle"
+        />
+
+        <property
+            name="nodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="nodeId"
+        />
+
+        <property
+            name="status"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="status"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ArchivedPage.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

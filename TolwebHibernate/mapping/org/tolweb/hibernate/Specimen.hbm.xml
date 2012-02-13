@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.Specimen"
+        table="Specimens"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="molecularData"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="molecularData"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="description"
+        />
+
+        <many-to-one
+            name="node"
+            class="org.tolweb.hibernate.MappedNode"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="nodeId"
+        />
+
+        <many-to-one
+            name="editHistory"
+            class="org.tolweb.hibernate.EditHistory"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="editHistoryId"
+        />
+
+        <property
+            name="type"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="type"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Specimen.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

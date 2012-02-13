@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.treegrow.main.Languages"
+        table="Languages"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="id"
+            column="language_id"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="english"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="english"
+        />
+
+        <property
+            name="french"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="french"
+        />
+
+        <property
+            name="german"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="german"
+        />
+
+        <property
+            name="otherLanguage"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="other_language"
+        />
+
+        <property
+            name="spanish"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="spanish"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Languages.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

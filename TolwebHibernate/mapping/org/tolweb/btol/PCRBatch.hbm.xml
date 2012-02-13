@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.btol.PCRBatch"
+        table="PCRBatches"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <many-to-one
+            name="protocol"
+            class="org.tolweb.btol.PCRProtocol"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="protocolId"
+        />
+
+        <property
+            name="reactionVolume"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="reactionVolume"
+        />
+
+        <many-to-one
+            name="forwardPrimer"
+            class="org.tolweb.btol.Primer"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="forwardPrimerId"
+        />
+
+        <many-to-one
+            name="reversePrimer"
+            class="org.tolweb.btol.Primer"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="reversePrimerId"
+        />
+
+        <set
+            name="reactions"
+            table="ReactionsToBatches"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+            sort="natural"
+            order-by="reactionId asc"
+        >
+
+              <key
+                  column="batchId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.PCRReaction"
+                  column="reactionId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <property
+            name="contributorId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="contributorId"
+        />
+
+        <property
+            name="imageFilename1"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="imageFilename1"
+        />
+
+        <property
+            name="imageFilename2"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="imageFilename2"
+        />
+
+        <property
+            name="creationDay"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationDay"
+        />
+
+        <property
+            name="creationMonth"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationMonth"
+        />
+
+        <property
+            name="creationYear"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationYear"
+        />
+
+        <property
+            name="notes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="notes"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PCRBatch.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

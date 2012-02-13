@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.MediaSurvey"
+        table="MediaSurveys"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="-1"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="educationComments"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="educationComments"
+        />
+
+        <property
+            name="educationLevel"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="educationLevel"
+        />
+
+        <property
+            name="mediaComments"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="mediaComments"
+        />
+
+        <property
+            name="mediaId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="mediaId"
+        />
+
+        <property
+            name="mediaUse"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="mediaUse"
+        />
+
+        <property
+            name="respondentAge"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="respondentAge"
+        />
+
+        <property
+            name="respondentLocation"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="respondentLocation"
+        />
+
+        <property
+            name="studentCount"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="studentCount"
+        />
+
+        <property
+            name="suggestions"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="suggestions"
+        />
+
+        <property
+            name="timestamp"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="timestamp"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-MediaSurvey.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

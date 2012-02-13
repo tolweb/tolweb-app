@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.btol.GeneFragmentNodeStatus"
+        table="GeneFragmentNodeStatuses"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <many-to-one
+            name="geneFragment"
+            class="org.tolweb.btol.GeneFragment"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="geneFragmentId"
+        />
+
+        <property
+            name="nodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="nodeId"
+        />
+
+        <property
+            name="source"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="source"
+        />
+
+        <property
+            name="sourceDbId"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="sourceDbId"
+        />
+
+        <property
+            name="status"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="status"
+        />
+
+        <property
+            name="statusNotes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="statusNotes"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-GeneFragmentNodeStatus.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

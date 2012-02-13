@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.btol.PCRReaction"
+        table="PCRReactions"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <many-to-one
+            name="extraction"
+            class="org.tolweb.btol.SpecimenExtraction"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="extractionId"
+        />
+
+        <property
+            name="isNegativeControl"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="isNegativeControl"
+        />
+
+        <property
+            name="btolCode"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="btolCode"
+        />
+
+        <property
+            name="sequencingDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="sequencingDate"
+        />
+
+        <property
+            name="sequencingResults"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="sequencingResults"
+        />
+
+        <property
+            name="bandIntensity"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="bandIntensity"
+        />
+
+        <property
+            name="reactionResult"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="reactionResult"
+        />
+
+        <set
+            name="chromatograms"
+            table="ReactionChromatograms"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+            sort="unsorted"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="reactionId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.Chromatogram"
+                  column="chromatogramId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <property
+            name="notes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="notes"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PCRReaction.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

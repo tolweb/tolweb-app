@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.AutoReconciliationRecord"
+        table="AutoReconciliationLog"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="-1"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="taxaImportId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="taxaImportId"
+        />
+
+        <property
+            name="cladeName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="cladeName"
+        />
+
+        <property
+            name="nodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="nodeId"
+        />
+
+        <property
+            name="timestamp"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="timestamp"
+        />
+
+        <property
+            name="reconcileType"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="reconcileType"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-AutoReconciliationRecord.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

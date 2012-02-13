@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.btol.Sequence"
+        table="Sequences"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <set
+            name="chromatograms"
+            table="ChromatogramsToSequences"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+            sort="unsorted"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="sequenceId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.Chromatogram"
+                  column="chromatogramId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <property
+            name="fasta"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="fasta"
+        />
+
+        <property
+            name="contributorId"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="contributorId"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Sequence.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

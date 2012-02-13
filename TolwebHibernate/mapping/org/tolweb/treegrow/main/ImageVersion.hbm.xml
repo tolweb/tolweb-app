@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.treegrow.main.ImageVersion"
+        table="Image_Versions"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="versionId"
+            column="version_id"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <many-to-one
+            name="contributor"
+            class="org.tolweb.treegrow.main.Contributor"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="contributor_id"
+        />
+
+        <property
+            name="fileName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="filename"
+        />
+
+        <many-to-one
+            name="image"
+            class="org.tolweb.treegrow.main.NodeImage"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="image_id"
+        />
+
+        <property
+            name="isMaster"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_master"
+        />
+
+        <property
+            name="isMaxSize"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_maxsize"
+        />
+
+        <property
+            name="versionName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <property
+            name="fileSize"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="filesize"
+        />
+
+        <property
+            name="height"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="height"
+        />
+
+        <property
+            name="width"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="width"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ImageVersion.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

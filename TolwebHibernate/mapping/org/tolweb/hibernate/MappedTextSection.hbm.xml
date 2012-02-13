@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.MappedTextSection"
+        table="SECTIONS"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="textSectionId"
+            column="section_id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="order"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="page_order"
+        />
+
+        <property
+            name="notes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="notes"
+        />
+
+        <property
+            name="heading"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="section_title"
+        />
+
+        <property
+            name="text"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="section_text"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-MappedTextSection.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

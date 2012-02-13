@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.NodeRetirementRecord"
+        table="NodeRetirementLog"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="-1"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="nodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="nodeId"
+        />
+
+        <property
+            name="nodeName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="nodeName"
+        />
+
+        <property
+            name="retiredFromClade"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="retiredFromClade"
+        />
+
+        <property
+            name="retiredBy"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="retiredBy"
+        />
+
+        <property
+            name="timestamp"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="timestamp"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-NodeRetirementRecord.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

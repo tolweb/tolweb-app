@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.GlossaryEntry"
+        table="Glossary"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="glossaryId"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="definition"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="def"
+        />
+
+        <property
+            name="hide"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="hide"
+        />
+
+        <property
+            name="word"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="word"
+        />
+
+        <set
+            name="plurals"
+            table="Glossary_Plurals"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="natural"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="glossary_id"
+              >
+              </key>
+
+              <element
+                  column="plural"
+                  type="string"
+                  not-null="false"
+                  unique="false"
+              />
+
+        </set>
+
+        <set
+            name="synonyms"
+            table="Glossary_Synonyms"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="natural"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="glossary_id"
+              >
+              </key>
+
+              <element
+                  column="syn"
+                  type="string"
+                  not-null="false"
+                  unique="false"
+              />
+
+        </set>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-GlossaryEntry.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

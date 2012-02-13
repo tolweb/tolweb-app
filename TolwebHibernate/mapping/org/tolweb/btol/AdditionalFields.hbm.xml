@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.btol.AdditionalFields"
+        table="AdditionalFields"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="adultPriority"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="adultPriority"
+        />
+
+        <property
+            name="dnaPriority"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="dnaPriority"
+        />
+
+        <property
+            name="larvaePriority"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="larvaePriority"
+        />
+
+        <property
+            name="nodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="nodeId"
+        />
+
+        <property
+            name="habitat"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="habitat"
+        />
+
+        <property
+            name="location"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="location"
+        />
+
+        <property
+            name="tierNotes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="tierNotes"
+        />
+
+        <property
+            name="tier"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="tier"
+        />
+
+        <property
+            name="larvalSpecimensState"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="larvalSpecimensState"
+        />
+
+        <property
+            name="larvalNotes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="larvalNotes"
+        />
+
+        <property
+            name="larvalDestinationPersonId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="larvalDestinationPersonId"
+        />
+
+        <property
+            name="larvalPossessionPersonId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="larvalPossessionPersonId"
+        />
+
+        <property
+            name="adultDestinationPersonId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="adultDestinationPersonId"
+        />
+
+        <property
+            name="adultNotes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="adultNotes"
+        />
+
+        <property
+            name="adultPossessionPersonId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="adultPossessionPersonId"
+        />
+
+        <property
+            name="adultSpecimensState"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="adultSpecimensState"
+        />
+
+        <property
+            name="dnaDestinationPersonId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="dnaDestinationPersonId"
+        />
+
+        <property
+            name="dnaNotes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="dnaNotes"
+        />
+
+        <property
+            name="dnaPossessionPersonId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="dnaPossessionPersonId"
+        />
+
+        <property
+            name="dnaSpecimensState"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="dnaSpecimensState"
+        />
+
+        <property
+            name="mtGenomeState"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="mtGenomeState"
+        />
+
+        <property
+            name="geographicDistribution"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="geographicDistribution"
+        />
+
+        <property
+            name="microCTState"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="microCTState"
+        />
+
+        <property
+            name="microCTNotes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="microCTNotes"
+        />
+
+        <property
+            name="microCTPossessionPersonId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="microCTPossessionPersonId"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-AdditionalFields.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.btol.PCRProtocol"
+        table="PCRProtocols"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="a1Temp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="a1Temp"
+        />
+
+        <property
+            name="a1Time"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="a1Time"
+        />
+
+        <property
+            name="a2Temp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="a2Temp"
+        />
+
+        <property
+            name="a2Time"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="a2Time"
+        />
+
+        <property
+            name="c1Cycles"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="c1Cycles"
+        />
+
+        <property
+            name="c2Cycles"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="c2Cycles"
+        />
+
+        <property
+            name="d1Temp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="d1Temp"
+        />
+
+        <property
+            name="d1Time"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="d1Time"
+        />
+
+        <property
+            name="d2Temp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="d2Temp"
+        />
+
+        <property
+            name="d2Time"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="d2Time"
+        />
+
+        <property
+            name="ddH20Prop"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="ddH20Prop"
+        />
+
+        <property
+            name="dntpConc"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="dntpConc"
+        />
+
+        <property
+            name="dntpProp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="dntpProp"
+        />
+
+        <property
+            name="e1Temp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="e1Temp"
+        />
+
+        <property
+            name="e1Time"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="e1Time"
+        />
+
+        <property
+            name="e2Time"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="e2Time"
+        />
+
+        <property
+            name="e2Temp"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="e2Temp"
+        />
+
+        <property
+            name="forwardPrimerConc"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="forwardPrimerConc"
+        />
+
+        <property
+            name="forwardPrimerProp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="forwardPrimerProp"
+        />
+
+        <property
+            name="iniDTemp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="iniDTemp"
+        />
+
+        <property
+            name="iniDTime"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="iniDTime"
+        />
+
+        <property
+            name="mgCl2Added"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="mgCl2Added"
+        />
+
+        <property
+            name="reversePrimerConc"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="reversePrimerConc"
+        />
+
+        <property
+            name="reversePrimerProp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="reversePrimerProp"
+        />
+
+        <property
+            name="stages"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="stages"
+        />
+
+        <property
+            name="taqName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="taqName"
+        />
+
+        <property
+            name="taqProp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="taqProp"
+        />
+
+        <property
+            name="templateProp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="templateProp"
+        />
+
+        <property
+            name="tenXBufferProp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="tenXBufferProp"
+        />
+
+        <property
+            name="protocolType"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="protocolType"
+        />
+
+        <property
+            name="finalExtentionTemp"
+            type="float"
+            update="true"
+            insert="true"
+            access="property"
+            column="finalExtentionTemp"
+        />
+
+        <property
+            name="finalExtentionTime"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="finalExtentionTime"
+        />
+
+        <property
+            name="defunct"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="defunct"
+        />
+
+        <property
+            name="notes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="notes"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PCRProtocol.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

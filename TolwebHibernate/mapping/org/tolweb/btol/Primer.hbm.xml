@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.btol.Primer"
+        table="Primers"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="code"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="code"
+        />
+
+        <property
+            name="creationDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationDate"
+        />
+
+        <property
+            name="developerId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="developerId"
+        />
+
+        <many-to-one
+            name="gene"
+            class="org.tolweb.btol.Gene"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="geneId"
+        />
+
+        <property
+            name="isForward"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="isForward"
+        />
+
+        <property
+            name="reference"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="reference"
+        />
+
+        <property
+            name="sequence"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="sequence"
+        />
+
+        <set
+            name="synonyms"
+            table="PrimerSynonyms"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+            sort="natural"
+            order-by="synonym asc"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="primerId"
+              >
+              </key>
+
+              <element
+                  column="synonym"
+                  type="string"
+                  not-null="false"
+                  unique="false"
+              />
+
+        </set>
+
+        <property
+            name="privateFlag"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="privateFlag"
+        />
+
+        <property
+            name="createdContributorId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="createdContributorId"
+        />
+
+        <property
+            name="defunct"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="defunct"
+        />
+
+        <property
+            name="creationDay"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationDay"
+        />
+
+        <property
+            name="creationMonth"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationMonth"
+        />
+
+        <property
+            name="creationYear"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationYear"
+        />
+
+        <property
+            name="notes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="notes"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Primer.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

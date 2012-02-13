@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.btol.SpecimenExtraction"
+        table="SpecimenExtractions"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="code"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="code"
+        />
+
+        <many-to-one
+            name="sourceCollection"
+            class="org.tolweb.btol.SourceCollection"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="collectionId"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <property
+            name="protocol"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="protocol"
+        />
+
+        <many-to-one
+            name="specimen"
+            class="org.tolweb.btol.Specimen"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="specimenId"
+        />
+
+        <property
+            name="dnaCollections"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="dnaCollections"
+        />
+
+        <property
+            name="method"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="method"
+        />
+
+        <property
+            name="person"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="person"
+        />
+
+        <property
+            name="target"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="target"
+        />
+
+        <property
+            name="creationDay"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationDay"
+        />
+
+        <property
+            name="creationMonth"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationMonth"
+        />
+
+        <property
+            name="creationYear"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationYear"
+        />
+
+        <property
+            name="notes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="notes"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-SpecimenExtraction.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

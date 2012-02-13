@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.btol.Gene"
+        table="Genes"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="drosophilaName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="drosophilaName"
+        />
+
+        <property
+            name="triboliumLength"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="triboliumLength"
+        />
+
+        <property
+            name="synonyms"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="synonyms"
+        />
+
+        <property
+            name="hidden"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="hidden"
+        />
+
+        <property
+            name="important"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="important"
+        />
+
+        <property
+            name="abbreviatedName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="abbreviatedName"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Gene.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

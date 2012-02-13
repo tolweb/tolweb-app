@@ -1,0 +1,1435 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.MappedAccessoryPage"
+        table="ACCESSORY_PAGES"
+        dynamic-update="false"
+        dynamic-insert="false"
+        discriminator-value="0"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="accessoryPageId"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <discriminator
+            column="discriminator"
+            type="int"
+        />
+
+        <set
+            name="editComments"
+            table="EditComments"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+            sort="natural"
+            order-by="page_order desc"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="page_id"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.hibernate.EditComment"
+              >
+        <property
+            name="comment"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="comment"
+        />
+
+        <property
+            name="commentContributorId"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="commentContributorId"
+        />
+
+        <property
+            name="commentDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="commentDate"
+        />
+
+        <property
+            name="order"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="page_order"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <set
+            name="contributors"
+            table="ACC_PAGE_CONTRIBUTORS"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+            sort="natural"
+            order-by="page_order asc"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="page_id"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.treegrow.page.AccessoryPageContributor"
+              >
+
+        <property
+            name="contributorId"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="contributor_id"
+        />
+
+        <property
+            name="isAuthor"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_author"
+        />
+
+        <property
+            name="isContact"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_contact"
+        />
+
+        <property
+            name="isCopyOwner"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_copy_owner"
+        />
+
+        <property
+            name="order"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="page_order"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <property
+            name="submittedContributorId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="submitted_contributor_id"
+        />
+
+        <property
+            name="submissionDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="submission_date"
+        />
+
+        <property
+            name="treehouseType"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="treehouse_type"
+        />
+
+        <property
+            name="isInvestigation"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_investigation"
+        />
+
+        <property
+            name="isStory"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_story"
+        />
+
+        <property
+            name="isArtAndCulture"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_artandculture"
+        />
+
+        <property
+            name="isTeacherResource"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_teacherresource"
+        />
+
+        <property
+            name="isGame"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_game"
+        />
+
+        <property
+            name="isBeginnerLevel"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_beginner"
+        />
+
+        <property
+            name="isIntermediateLevel"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_intermediate"
+        />
+
+        <property
+            name="isAdvancedLevel"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_advanced"
+        />
+
+        <property
+            name="isBiography"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_biography"
+        />
+
+        <property
+            name="creationDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="creation_date"
+        />
+
+        <property
+            name="lastEditedContributorId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="last_edited_contributor_id"
+        />
+
+        <property
+            name="lastEditedDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="last_edited_date"
+        />
+
+        <property
+            name="comments"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="comments"
+        />
+
+        <property
+            name="scientificName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="scientific_name"
+        />
+
+        <set
+            name="nodesSet"
+            table="Acc_Pages_To_Nodes"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="natural"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="acc_page_id"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.hibernate.AccessoryPageNode"
+              >
+        <property
+            name="isPrimaryAttachedNode"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_primary"
+        />
+
+        <many-to-one
+            name="node"
+            class="org.tolweb.hibernate.MappedNode"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="node_id"
+        />
+
+        <property
+            name="showLink"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="show_link"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <property
+            name="order"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="menu_order"
+        />
+
+        <property
+            name="internetInfo"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="internetinfo_text"
+        />
+
+        <property
+            name="modificationPermitted"
+            type="java.lang.Boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="modification_permitted"
+        />
+
+        <property
+            name="aboutPageProgress"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="aboutpage_progress"
+        />
+
+        <property
+            name="pageContentProgress"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="pagecontent_progress"
+        />
+
+        <property
+            name="mediaProgress"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="media_progress"
+        />
+
+        <property
+            name="refsProgress"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="refs_progress"
+        />
+
+        <property
+            name="learningProgress"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="learning_progress"
+        />
+
+        <property
+            name="attachProgress"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="attach_progress"
+        />
+
+        <property
+            name="notesProgress"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="notes_progress"
+        />
+
+        <property
+            name="portfolioProgress"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="portfolio_progress"
+        />
+
+        <many-to-one
+            name="keywords"
+            class="org.tolweb.treegrow.main.Keywords"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="keywords_id"
+            unique="true"
+        />
+
+        <many-to-one
+            name="portfolio"
+            class="org.tolweb.hibernate.Portfolio"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="portfolio_id"
+            unique="true"
+        />
+
+        <property
+            name="isSubmittedToTeacher"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="isSubmittedToTeacher"
+        />
+
+        <property
+            name="gradeLevel"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="grade_level"
+        />
+
+        <property
+            name="gradeModifiable"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="grade_modifiable"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="description"
+        />
+
+        <property
+            name="isClassroom"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_classroom"
+        />
+
+        <property
+            name="isField"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_field"
+        />
+
+        <property
+            name="isFieldTrip"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_field_trip"
+        />
+
+        <property
+            name="isHomeBased"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_home_based"
+        />
+
+        <property
+            name="isInformal"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_informal"
+        />
+
+        <property
+            name="isLab"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_lab"
+        />
+
+        <property
+            name="isMuseumBased"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_museum_based"
+        />
+
+        <property
+            name="isWebBased"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_web_based"
+        />
+
+        <property
+            name="isArts"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_arts"
+        />
+
+        <property
+            name="isHealth"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_health"
+        />
+
+        <property
+            name="isLanguageArts"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_language_arts"
+        />
+
+        <property
+            name="isMathematics"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_mathematics"
+        />
+
+        <property
+            name="isSocialStudies"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_social_studies"
+        />
+
+        <property
+            name="isTechnology"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_technology"
+        />
+
+        <property
+            name="isHandsOnLearning"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_hands_on_learning"
+        />
+
+        <property
+            name="isInquiryLearning"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_inquiry_learning"
+        />
+
+        <property
+            name="isDemonstration"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_demonstration"
+        />
+
+        <property
+            name="isDiscussion"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_discussion"
+        />
+
+        <property
+            name="isLearningModules"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_learning_modules"
+        />
+
+        <property
+            name="isLecture"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_lecture"
+        />
+
+        <property
+            name="isMovement"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_movement"
+        />
+
+        <property
+            name="isPresentation"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_presentation"
+        />
+
+        <property
+            name="isRolePlaying"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_role_playing"
+        />
+
+        <property
+            name="isTechnologyIntegration"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_technology_integration"
+        />
+
+        <property
+            name="isVisualInstruction"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_visual_instruction"
+        />
+
+        <property
+            name="otherLearningStrategy"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="other_learning_strategy"
+        />
+
+        <property
+            name="isCrossAge"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_cross_age"
+        />
+
+        <property
+            name="isHeterogeneous"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_heterogeneous"
+        />
+
+        <property
+            name="isHomogeneous"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_homogeneous"
+        />
+
+        <property
+            name="isIndividualized"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_individualized"
+        />
+
+        <property
+            name="isLargeGroup"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_large_group"
+        />
+
+        <property
+            name="isSmallGroup"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_small_group"
+        />
+
+        <property
+            name="sequenceContext"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="sequence_context"
+        />
+
+        <property
+            name="timeFrame"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="time_frame"
+        />
+
+        <many-to-one
+            name="languages"
+            class="org.tolweb.treegrow.main.Languages"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="languages_id"
+            unique="true"
+        />
+
+        <property
+            name="nationalStandardsSubjects"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="national_standards_subjects"
+        />
+
+        <property
+            name="nationalStandardsValue"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="national_standards_value"
+        />
+
+        <property
+            name="stateStandards"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="state_standards"
+        />
+
+        <property
+            name="stateStandardsSubjects"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="state_standards_subjects"
+        />
+
+        <property
+            name="stateStandardsValue"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="state_standards_value"
+        />
+
+        <property
+            name="nationalStandardsId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="national_standards_id"
+        />
+
+        <property
+            name="stateStandardsId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="state_standards_id"
+        />
+
+        <property
+            name="editHistoryId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="editHistoryId"
+        />
+
+        <property
+            name="isSubmitted"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_submitted"
+        />
+
+        <property
+            name="isTreehouse"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_treehouse"
+        />
+
+        <property
+            name="menu"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="menu"
+        />
+
+        <property
+            name="pageTitle"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="page_title"
+        />
+
+        <property
+            name="copyright"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="page_copyrightholder"
+        />
+
+        <property
+            name="copyrightYear"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="page_copyrightdate"
+        />
+
+        <property
+            name="text"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="main_text"
+        />
+
+        <property
+            name="references"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="refs"
+        />
+
+        <property
+            name="status"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="status"
+        />
+
+        <property
+            name="useContent"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="use_content"
+        />
+
+        <set
+            name="internetLinks"
+            table="InternetLinks"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+            sort="natural"
+            order-by="link_order asc"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="acc_page_id"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.treegrow.page.InternetLink"
+              >
+
+        <property
+            name="order"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="link_order"
+        />
+
+        <property
+            name="comments"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="comments"
+        />
+
+        <property
+            name="siteName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="siteName"
+        />
+
+        <property
+            name="url"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="url"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <property
+            name="contributorId"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="contributor_id"
+        />
+
+        <property
+            name="usePermission"
+            type="byte"
+            update="true"
+            insert="true"
+            access="property"
+            column="use_permission"
+        />
+
+        <property
+            name="acknowledgements"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="acknowledgements"
+        />
+
+        <property
+            name="notes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="notes"
+        />
+
+        <property
+            name="isArticle"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_article"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-MappedAccessoryPage.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+        <subclass
+            name="org.tolweb.hibernate.TeacherResource"
+            dynamic-update="false"
+            dynamic-insert="false"
+            discriminator-value="1"
+        >
+
+        <property
+            name="resourceType"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="resource_type"
+        />
+
+        <set
+            name="supportMaterials"
+            table="SupportMaterials"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+            sort="natural"
+            order-by="support_order asc"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="teacher_resource_id"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.hibernate.SupportMaterial"
+              >
+        <property
+            name="text"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="text"
+        />
+
+        <property
+            name="title"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="title"
+        />
+
+        <property
+            name="order"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="support_order"
+        />
+
+        <property
+            name="documentType"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="document_type"
+        />
+
+        <property
+            name="isLearner"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_learner"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <set
+            name="supportMaterialDocuments"
+            table="SupportMaterialDocuments"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+            sort="natural"
+            order-by="support_order asc"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="teacher_resource_id"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.hibernate.SupportMaterialDocument"
+              >
+        <property
+            name="documentId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="document_id"
+        />
+
+        <property
+            name="order"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="support_order"
+        />
+
+        <property
+            name="documentType"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="document_type"
+        />
+
+        <property
+            name="isLearner"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_learner"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <property
+            name="learnerSectionIntro"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="learner_section_intro"
+        />
+
+        <property
+            name="evaluation"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="evaluation"
+        />
+
+        <property
+            name="introduction"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="introduction"
+        />
+
+        <property
+            name="learningObjective"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="learning_objective"
+        />
+
+        <property
+            name="lesson"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="lesson"
+        />
+
+        <property
+            name="physicalMaterials"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="physical_materials"
+        />
+
+        <property
+            name="preparation"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="preparation"
+        />
+
+        <property
+            name="priorKnowledge"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="prior_knowledge"
+        />
+
+        <property
+            name="supportMaterialsProgress"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="support_materials_progress"
+        />
+
+	    <!--
+            	To add non XDoclet property mappings, create a file named
+                hibernate-properties-TeacherResource.xml
+		containing the additional properties and place it in your merge dir.
+	    -->
+        <subclass
+            name="org.tolweb.hibernate.Webquest"
+            dynamic-update="false"
+            dynamic-insert="false"
+            discriminator-value="2"
+        >
+        <property
+            name="processIntroduction"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="process_introduction"
+        />
+
+        <property
+            name="task"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="task"
+        />
+
+        <property
+            name="conclusion"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="conclusion"
+        />
+
+        <property
+            name="teacherTips"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="teacher_tips"
+        />
+
+        <property
+            name="conclusionProgress"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="evaluation_progress"
+        />
+
+        <property
+            name="processProgress"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="process_progress"
+        />
+
+        <property
+            name="teacherPageProgress"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="teacher_page_progress"
+        />
+
+	    <!--
+            	To add non XDoclet property mappings, create a file named
+                hibernate-properties-Webquest.xml
+		containing the additional properties and place it in your merge dir.
+	    -->
+
+        </subclass>
+
+        </subclass>
+
+    </class>
+
+</hibernate-mapping>

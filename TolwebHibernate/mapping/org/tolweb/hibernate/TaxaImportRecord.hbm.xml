@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.TaxaImportRecord"
+        table="TaxaImportLog"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="-1"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="ingest"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="ingest"
+        />
+
+        <property
+            name="reconcileWithPrevious"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="reconcileWithPrevious"
+        />
+
+        <property
+            name="preserveNodeProperties"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="preserveNodeProperties"
+        />
+
+        <property
+            name="preserveNodeName"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="preserveNodeName"
+        />
+
+        <property
+            name="uploadedBy"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="uploadedBy"
+        />
+
+        <property
+            name="timestamp"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="timestamp"
+        />
+
+        <property
+            name="basalNodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="basalNodeId"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-TaxaImportRecord.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

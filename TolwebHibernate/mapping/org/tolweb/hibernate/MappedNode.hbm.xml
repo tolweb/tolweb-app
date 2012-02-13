@@ -1,0 +1,516 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.MappedNode"
+        table="NODES"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="nodeId"
+            column="node_id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <set
+            name="ancestors"
+            table="NODEANCESTORS"
+            lazy="true"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="node_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.hibernate.MappedNode"
+                  column="ancestor_id"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <property
+            name="pageId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="page_id"
+        />
+
+        <property
+            name="parentNodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="parentnode_id"
+        />
+
+        <property
+            name="authorityDate"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="auth_year"
+        />
+
+        <property
+            name="orderOnParent"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="order_on_parent"
+        />
+
+        <property
+            name="nodeRankInteger"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="node_Rank"
+        />
+
+        <property
+            name="isSubmitted"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_submitted"
+        />
+
+        <property
+            name="orderOnPage"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="order_on_page"
+        />
+
+        <property
+            name="namesNotes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="namesNotes"
+        />
+
+        <property
+            name="combinationAuthor"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="combinationAuthor"
+        />
+
+        <property
+            name="combinationDate"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="combinationDate"
+        />
+
+        <property
+            name="isNewCombination"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="isNewCombination"
+        />
+
+        <property
+            name="italicizeName"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="italicizeName"
+        />
+
+        <property
+            name="nameComment"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="nameComment"
+        />
+
+        <property
+            name="showAuthorityInContainingGroup"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="showAuthorityInContainingGroup"
+        />
+
+        <property
+            name="treeOrder"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="treeOrder"
+        />
+
+        <property
+            name="status"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="status"
+        />
+
+        <many-to-one
+            name="extendedNodeProperties"
+            class="org.tolweb.hibernate.ExtendedNodeProperties"
+            cascade="all"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="extendedNodePropertiesId"
+        />
+
+        <property
+            name="updated"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="updated"
+        />
+
+        <property
+            name="created"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="created"
+        />
+
+        <property
+            name="lastInactivated"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="lastInactivated"
+        />
+
+        <property
+            name="lastActivated"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="lastActivated"
+        />
+
+        <property
+            name="lastRetired"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="lastRetired"
+        />
+
+        <property
+            name="extinct"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="node_Extinct"
+        />
+
+        <property
+            name="phylesis"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="node_Phylesis"
+        />
+
+        <property
+            name="confidence"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="node_Confidence"
+        />
+
+        <property
+            name="isLeaf"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="node_Leaf"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="node_Name"
+        />
+
+        <property
+            name="nameAuthority"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="authority"
+        />
+
+        <property
+            name="showPreferredAuthority"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="show_supertitle_authority"
+        />
+
+        <property
+            name="showNameAuthority"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="show_name_authority"
+        />
+
+        <property
+            name="showImportantAuthority"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="show_important_authority"
+        />
+
+        <set
+            name="synonyms"
+            table="OTHERNAMES"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+            sort="natural"
+            order-by="name_order asc"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="node_id"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.hibernate.MappedOtherName"
+              >
+
+        <property
+            name="authorityYear"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="auth_year"
+        />
+
+        <property
+            name="order"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="name_order"
+        />
+
+        <property
+            name="comment"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="comment"
+        />
+
+        <property
+            name="italicize"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="italicize"
+        />
+
+        <property
+            name="isCommonName"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_commonname"
+        />
+
+        <property
+            name="isDontList"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_dontlist"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <property
+            name="authority"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="authority"
+        />
+
+        <property
+            name="isImportant"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_important"
+        />
+
+        <property
+            name="isPreferred"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_preferred"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="node_Note"
+        />
+
+        <property
+            name="dontPublish"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="dont_publish"
+        />
+
+        <property
+            name="hasIncompleteSubgroups"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="hasIncompleteSubgroups"
+        />
+
+        <property
+            name="sourceDbNodeId"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="sourceDbNodeId"
+        />
+
+        <property
+            name="sourceDbId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="sourceDbId"
+        />
+
+        <property
+            name="trunkNode"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="isTrunkNode"
+        />
+
+        <property
+            name="rankName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="rankName"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-MappedNode.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.PortfolioSection"
+        table="PortfolioSections"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="section_id"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="order"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="section_order"
+        />
+
+        <property
+            name="title"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="title"
+        />
+
+        <set
+            name="pages"
+            table="PortfolioPages"
+            lazy="false"
+            inverse="false"
+            cascade="all-delete-orphan"
+            sort="natural"
+            order-by="page_order asc"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="section_id"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.hibernate.PortfolioPage"
+              >
+        <property
+            name="comments"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="comments"
+        />
+
+        <property
+            name="includeInternetLinks"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="include_internet_links"
+        />
+
+        <property
+            name="includeLearningInfo"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="include_learning_info"
+        />
+
+        <property
+            name="includeReferences"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="include_references"
+        />
+
+        <property
+            name="destinationId"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="destination_id"
+        />
+
+        <property
+            name="order"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="page_order"
+        />
+
+        <property
+            name="destinationType"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="destination_type"
+        />
+
+        <property
+            name="externalPageName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="external_page_name"
+        />
+
+        <property
+            name="externalPageUrl"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="external_page_url"
+        />
+
+        <property
+            name="isExternal"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_external"
+        />
+
+        <property
+            name="imageId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="image_id"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <property
+            name="instructions"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="instructions"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PortfolioSection.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.FeatureGroup"
+        table="FeatureGroups"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="-1"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="nodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="nodeId"
+        />
+
+        <property
+            name="imageId"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="imageId"
+        />
+
+        <property
+            name="groupDescription"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="groupDescription"
+        />
+
+        <property
+            name="featureText"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="featureText"
+        />
+
+        <property
+            name="active"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="active"
+        />
+
+        <property
+            name="createdDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="createdDate"
+        />
+
+        <property
+            name="categoryValue"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="category"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-FeatureGroup.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="all" name="tolwebhibernate">
+    <target name="init">
+    	<property name="libs.dir" location="${basedir}/../WebappLibsTapestry4.0"/>    	
+    	<property environment="env"/>
+        <property location="classes" name="classes.dir"/>
+        <property location="src" name="src.dir"/>
+        <property location="mapping" name="mapping.dir"/>
+        <property location="doc/api" name="javadoc.dir"/>
+        <property name="project.name" value="${ant.project.name}"/>
+        <property location="${project.name}.jar" name="jar"/>
+        <property name="dist.dir" value="dist"/>
+        <property name="context.dir" value="context"/>
+        <property name="HostPrefix" value="dmandel:fr33ze34@tolweb.org:"/>
+    	<property name="onlinecontributorsdir" value="${env.HOME}/OnlineContributors"/>
+        <property name="tests.dir" value="tests"/>
+        <property name="war" value="onlinecontributors.war"/>
+        <property name="testreports.dir" value="${tests.dir}/reports"/>
+        <property name="treegrow.dir" value="${basedir}/../TreeGrow"/>
+    	<property name="ant.regexp.regexpimpl" value="org.apache.tools.ant.util.regexp.JakartaOroRegexp"/>
+    	<property name="xdoclet.lib.dir" value="/home/dmandel/xdoclet2/lib"/>
+    	<path id="compile.classpath">
+            <fileset dir="${libs.dir}">
+            	<include name="*.jar"/>            	
+            	<exclude name="TolwebHibernate.jar"/>            	
+            </fileset>
+        </path> 
+        <path id="test.classpath">
+            <path refid="compile.classpath"/>
+            <pathelement location="${classes.dir}"/>
+            <pathelement location="${tests.dir}"/>
+            <pathelement location="/home/dmandel/p6spy.jar"/>
+        </path>               
+    </target>
+
+    <target name="compile" depends="init">
+        <mkdir dir="${classes.dir}"/>
+        <!-- copy over all the Hibernate Mapping files (*.hbm.xml) -->
+        <copy todir="${classes.dir}">
+        	<fileset dir="${mapping.dir}"/>
+  		</copy>
+        <javac debug="true" deprecation="true" destdir="${classes.dir}" srcdir="${src.dir}">
+            <classpath refid="compile.classpath" />
+        </javac>
+    </target>
+    
+    <target name="prewarlocal">
+	    <delete file="${classes.dir}/dbconnection.properties"/>
+        <copy file="dbconnectiondev.properties" tofile="${classes.dir}/dbconnection.properties"/>    
+        <copy file="spy.properties" todir="${classes.dir}"/>
+    </target>
+    
+    <target name="prewartolweb">
+	    <delete file="${classes.dir}/dbconnection.properties"/>    
+        <copy file="dbconnectionlive.properties" tofile="${classes.dir}/dbconnection.properties"/>        
+    </target>
+	
+	<target name="copytestfiles">
+        <delete file="${classes.dir}/applicationContext.xml"/>
+        <delete file="${tests.dir}/applicationContext.xml"/>
+        <copy file="applicationContext.xml" tofile="${tests.dir}/applicationContext.xml"/>
+<!--    	<copy file="ehcache.xml" todir="${classes.dir}"/>		-->
+	</target>
+	
+	<target name="nondbtests" depends="init,compile,copytestfiles">
+        <javac srcdir="${tests.dir}" includes="**/*Test.java" debug="true">
+            <classpath refid="test.classpath"/>
+        </javac>		
+        <junit printsummary="yes" haltonfailure="no">
+            <classpath refid="test.classpath"/>
+            <formatter type="xml"/>
+            <batchtest todir="${tests.dir}">
+                <fileset dir="${tests.dir}" includes="**/CacheAccessTest.class"/>
+                <fileset dir="${tests.dir}" includes="**/TextPreparerTest.class"/>            	
+            </batchtest>
+        </junit>
+        <junitreport todir="${tests.dir}">
+            <fileset dir="${tests.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${testreports.dir}"/>
+        </junitreport>		
+	</target>
+	
+	<target name="schemaupdate" depends="init,generate">
+	    <taskdef name="schemaupdate"
+	        classname="org.hibernate.tool.hbm2ddl.SchemaUpdateTask"
+	        classpathref="compile.classpath"/>
+	    <schemaupdate
+	        properties="hibernate.properties"
+	        quiet="no">
+	        <fileset dir="${classes.dir}">
+	            <include name="**/MappedAccessoryPage.hbm.xml"/>
+	        	<include name="**/MappedNode.hbm.xml"/>
+	        	<include name="**/Keywords.hbm.xml"/>	        	
+	        </fileset>
+	    </schemaupdate>
+	</target>
+    
+    <target name="dbtests" depends="init,compile,copytestfiles">
+        <javac srcdir="${tests.dir}" includes="**/*Test.java" debug="true">
+            <classpath refid="test.classpath"/>
+        </javac>
+    	<!--    	
+        <taskdef name="dbunit" 
+                 classname="org.dbunit.ant.DbUnitTask"/>
+        - set up operation ->
+
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/contributors.xml"/>
+        </dbunit>
+
+    	<dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/nodes.xml"/>
+        </dbunit>
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/othernames.xml"/>
+        </dbunit>
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/images.xml"/>
+        </dbunit>  
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/imagestonodes.xml"/>
+        </dbunit>
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/accessorypages.xml"/>
+        </dbunit>        
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/accessorypagecontributors.xml"/>
+        </dbunit>        
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/internetlinks.xml"/>
+        </dbunit>        
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/accessorypagestonodes.xml"/>
+        </dbunit>        
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/pages.xml"/>
+        </dbunit>    	
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/textsections.xml"/>
+        </dbunit>    	    	
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/nodeancestors.xml"/>
+        </dbunit> 
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/pageancestors.xml"/>
+        </dbunit>
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/glossary.xml"/>
+        </dbunit>
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/glossaryplurals.xml"/>
+        </dbunit>
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/glossarysynonyms.xml"/>
+        </dbunit>    	
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/titleillustrations.xml"/>
+        </dbunit>    	
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/pagecontributors.xml"/>
+        </dbunit>
+        <dbunit driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://tolweb.org/test"
+                userid="test"
+                password="test">
+            <classpath refid="test.classpath"/>                
+            <operation type="CLEAN_INSERT" 
+                  src="${tests.dir}/treegifs.xml"/>
+        </dbunit>
+         run all tests in the source tree -->
+        <junit printsummary="yes" haltonfailure="no">
+            <classpath refid="test.classpath"/>
+            <formatter type="xml"/>
+            <batchtest todir="${tests.dir}">
+                <fileset dir="${tests.dir}" includes="**/PortfolioTest.class"/>
+            </batchtest>
+        </junit>
+        <junitreport todir="${tests.dir}">
+            <fileset dir="${tests.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${testreports.dir}"/>
+        </junitreport>
+    </target>
+    
+    <!-- 
+    	guilty-party: Andrew J Lenards <lenards@email.arizona.edu>
+    	date: 2010 Feb. 23
+    	about:  So we were using xdoclet tags to generate Hibernate mapping 
+    	files.  This has become fragile, annoying, and a downright pain.  With 
+    	one final action on my part, I am freeing any future development from 
+    	this and burdening you with editing the Hibernate Mappings (*.hbm.xml) 
+    	by hand (or forcing you to switch to JPA Annotations).  This Ant task 
+    	used to include a generate step, like so: 
+    	
+        	<target depends="init,compile,generate" name="jar" >
+        	
+        If for some reason you have failed w/ annotations of hand-edits, one 
+        option may be to include the above to see if you get workable hbm's. 
+        
+        Good luck - and trust, xdoclet is a pain. 
+     -->
+    <target name="jar" depends="init,compile">
+        <jar basedir="${classes.dir}" compress="true" jarfile="${jar}"/>
+    	<copy file="${jar}" todir="${libs.dir}"/>
+    </target>
+
+    <target name="all" depends="init,jar" description="Build everything."/>
+
+    <target name="javadoc" depends="init" description="Javadoc for my API.">
+        <mkdir dir="${javadoc.dir}"/>
+        <javadoc destdir="${javadoc.dir}" packagenames="*">
+            <sourcepath>
+                <pathelement location="${src.dir}"/>
+            </sourcepath>
+        </javadoc>
+    </target>
+
+    <target name="clean" depends="init" description="Clean all build products.">
+        <delete dir="${classes.dir}"/>
+        <delete dir="${javadoc.dir}"/>
+        <delete dir="${dist.dir}"/>
+        <delete file="${jar}"/>
+        <delete>
+            <fileset dir="${src.dir}" includes="**/*.class"/>
+        </delete>        
+        <delete>
+            <fileset dir="${tests.dir}" includes="**/*.class"/>
+            <fileset dir="${tests.dir}" includes="**/*.html"/>            
+            <fileset dir="${tests.dir}" includes="**/*.xml"/>            
+        </delete>
+        <delete dir="${tests.dir}/reports"/>
+    </target>
+    
+    <target name="generate" depends="init,compile" description="Generate hibernate mapping files">
+    	<!--
+        <path id="xdoclet.task.classpath">
+        	<fileset dir="${xdoclet.lib.dir}" includes="**/*.jar"/>
+        </path>
+        <taskdef
+            name="xdoclet"
+            classname="org.xdoclet.ant.XDocletTask"
+            classpathref="xdoclet.task.classpath"/>
+    	 <xdoclet verbose="yes">
+    	    
+            <fileset dir="${src.dir}">
+                <include name="**/*.java"/>
+            </fileset>
+            <fileset dir="${treegrow.dir}/src">
+            	<include name="**/*.java"/>
+            </fileset> 
+    	 	<component classname="org.xdoclet.plugin.hibernate.HibernateMappingPlugin" 
+    	 	             destdir="${classes.dir}"/>
+		</xdoclet>    	-->
+    	
+    	
+    	<taskdef name="hibernatedoclet"
+            classname="xdoclet.modules.hibernate.HibernateDocletTask"/>
+        <hibernatedoclet
+            destdir="${classes.dir}"
+            excludedtags="@version,@author,@todo"
+            mergedir="${classes.dir}"
+            verbose="true">
+            <fileset dir="${src.dir}">
+                <include name="**/*.java"/>
+            </fileset>            
+            <fileset dir="${treegrow.dir}/src">
+            	<include name="**/*.java"/>
+            </fileset>            
+            <hibernate version="2.0"/>
+        </hibernatedoclet>
+    	<!-- this is supposed to upgrade the schema to hibernate3 -->
+    	<replace dir="${classes.dir}" value="&lt;hibernate-mapping default-lazy=&quot;false&quot; &gt;">
+    	         <include name="**/*.hbm.xml"/>
+    	         <replacetoken><![CDATA[<hibernate-mapping>]]></replacetoken>
+		</replace>
+		<replace dir="${classes.dir}" value="Hibernate Mapping DTD 3.0">
+    	         <include name="**/*.hbm.xml"/>
+    	         <replacetoken>Hibernate Mapping DTD 2.0</replacetoken>
+		</replace>
+		<replace dir="${classes.dir}" value="hibernate-mapping-3.0.dtd">
+			<include name="**/*.hbm.xml"/>
+			<replacetoken>hibernate-mapping-2.0.dtd</replacetoken>
+		</replace>
+		<copy file="${src.dir}/org/tolweb/hibernate/PageAncestor.hbm.xml" todir="${classes.dir}/org/tolweb/hibernate"/>    	
+    </target>    
+</project>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.btol.GeneFragment"
+        table="GeneFragments"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="abbreviatedName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="abbreviatedName"
+        />
+
+        <many-to-one
+            name="gene"
+            class="org.tolweb.btol.Gene"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="geneId"
+        />
+
+        <property
+            name="important"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="important"
+        />
+
+        <property
+            name="requiredForTier"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="requiredForTier"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-GeneFragment.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

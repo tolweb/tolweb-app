@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.Portfolio"
+        table="Portfolios"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <set
+            name="sections"
+            table="PortfoliosToSections"
+            lazy="false"
+            inverse="false"
+            cascade="all-delete-orphan"
+            sort="natural"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="portfolio_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.hibernate.PortfolioSection"
+                  column="section_id"
+                  outer-join="true"
+               />
+
+        </set>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Portfolio.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

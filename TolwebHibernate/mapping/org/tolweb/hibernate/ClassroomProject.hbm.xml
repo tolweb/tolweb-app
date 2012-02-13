@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.ClassroomProject"
+        table="ClassroomProjects"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="projectId"
+            column="project_id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="classGroup"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="class_group"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="description"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <many-to-one
+            name="teacher"
+            class="org.tolweb.treegrow.main.Contributor"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="teacher_id"
+        />
+
+        <set
+            name="students"
+            lazy="false"
+            inverse="false"
+            cascade="all-delete-orphan"
+            sort="unsorted"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="project_id"
+              >
+              </key>
+
+              <one-to-many
+                  class="org.tolweb.hibernate.Student"
+              />
+        </set>
+
+        <property
+            name="studentAges"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="student_ages"
+        />
+
+        <property
+            name="pseudonym"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="pseudonym"
+        />
+
+        <property
+            name="isApproved"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_approved"
+        />
+
+        <property
+            name="isClosed"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_closed"
+        />
+
+        <property
+            name="password"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="password"
+        />
+
+        <set
+            name="additionalEditors"
+            table="Additional_Contributors_To_Projects"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="project_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.treegrow.main.Contributor"
+                  column="contributor_id"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ClassroomProject.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

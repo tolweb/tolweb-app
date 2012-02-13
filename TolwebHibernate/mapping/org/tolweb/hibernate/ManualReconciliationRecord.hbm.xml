@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.hibernate.ManualReconciliationRecord"
+        table="ManualReconciliationLog"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+        <cache usage="nonstrict-read-write" />
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="-1"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="basalNodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="basalNodeId"
+        />
+
+        <property
+            name="sourceNodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="sourceNodeId"
+        />
+
+        <property
+            name="sourceNodeName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="sourceNodeName"
+        />
+
+        <property
+            name="sourceNodeManifest"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="sourceNodeManifest"
+        />
+
+        <property
+            name="targetNodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="targetNodeId"
+        />
+
+        <property
+            name="targetNodeName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="targetNodeName"
+        />
+
+        <property
+            name="targetNodeManifest"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="targetNodeManifest"
+        />
+
+        <property
+            name="resolvedBy"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="resolvedBy"
+        />
+
+        <property
+            name="timestamp"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="timestamp"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ManualReconciliationRecord.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

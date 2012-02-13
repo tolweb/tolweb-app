@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.btol.Specimen"
+        table="Specimens"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="family"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="family"
+        />
+
+        <property
+            name="genus"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="genus"
+        />
+
+        <property
+            name="species"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="species"
+        />
+
+        <property
+            name="subfamily"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="subfamily"
+        />
+
+        <property
+            name="tribe"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="tribe"
+        />
+
+        <property
+            name="collectionDataSourceId"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="collectionDataSourceId"
+        />
+
+        <property
+            name="collectionTime"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="collectionTime"
+        />
+
+        <property
+            name="adminDivision1"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="adminDivision1"
+        />
+
+        <property
+            name="adminDivision2"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="adminDivision2"
+        />
+
+        <property
+            name="collection"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="collection"
+        />
+
+        <property
+            name="collectionDataSource"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="collectionDataSource"
+        />
+
+        <property
+            name="collectionMethod"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="collectionMethod"
+        />
+
+        <property
+            name="collector"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="collector"
+        />
+
+        <property
+            name="country"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="country"
+        />
+
+        <property
+            name="credit"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="credit"
+        />
+
+        <property
+            name="currentCondition"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="currentCondition"
+        />
+
+        <property
+            name="elevation"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="elevation"
+        />
+
+        <property
+            name="habitat"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="habitat"
+        />
+
+        <property
+            name="identificationNotes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="identificationNotes"
+        />
+
+        <property
+            name="identificationStatus"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="identificationStatus"
+        />
+
+        <property
+            name="latitude"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="latitude"
+        />
+
+        <property
+            name="lifeStage"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="lifeStage"
+        />
+
+        <property
+            name="location1"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="location1"
+        />
+
+        <property
+            name="location2"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="location2"
+        />
+
+        <property
+            name="longitude"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="longitude"
+        />
+
+        <property
+            name="nodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="nodeId"
+        />
+
+        <property
+            name="preservationMethod"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="preservationMethod"
+        />
+
+        <property
+            name="sex"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="sex"
+        />
+
+        <property
+            name="creationDay"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationDay"
+        />
+
+        <property
+            name="creationMonth"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationMonth"
+        />
+
+        <property
+            name="creationYear"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="creationYear"
+        />
+
+        <property
+            name="notes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="notes"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Specimen.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

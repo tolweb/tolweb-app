@@ -1,0 +1,347 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.btol.Project"
+        table="Projects"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <set
+            name="contributors"
+            table="ProjectContributors"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="projectId"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.btol.ProjectContributor"
+              >
+        <property
+            name="contributorId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="contributorId"
+        />
+
+        <property
+            name="membershipStatus"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="membershipStatus"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <set
+            name="workingGroups"
+            table="ProjectWorkingGroups"
+            lazy="false"
+            inverse="false"
+            cascade="all"
+            sort="unsorted"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="projectId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.WorkingGroup"
+                  column="workingGroupId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <property
+            name="rootNodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="rootNodeId"
+        />
+
+        <set
+            name="additionalFieldsSet"
+            table="AdditionalFieldsToProjects"
+            lazy="true"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="projectId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.AdditionalFields"
+                  column="fieldsId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <set
+            name="genesSet"
+            table="GenesToProjects"
+            lazy="true"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="projectId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.Gene"
+                  column="geneId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <set
+            name="primersSet"
+            table="PrimersToProjects"
+            lazy="true"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="projectId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.Primer"
+                  column="primerId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <set
+            name="protocolsSet"
+            table="ProtocolsToProjects"
+            lazy="true"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="projectId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.PCRProtocol"
+                  column="protocolId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <set
+            name="extractionsSet"
+            table="ExtractionsToProjects"
+            lazy="true"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="projectId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.SpecimenExtraction"
+                  column="extractionId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <set
+            name="pcrBatchesSet"
+            table="BatchesToProjects"
+            lazy="true"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="projectId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.PCRBatch"
+                  column="batchId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <property
+            name="domain"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="domain"
+        />
+
+        <set
+            name="statusesSet"
+            table="StatusesToProjects"
+            lazy="true"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="projectId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.GeneFragmentNodeStatus"
+                  column="statusId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <set
+            name="chromatogramBatchesSet"
+            table="ChromatogramBatchesToProjects"
+            lazy="true"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="projectId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.ChromatogramBatch"
+                  column="chromatogramBatchId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <set
+            name="specimensSet"
+            table="SpecimensToProjects"
+            lazy="true"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="projectId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.Specimen"
+                  column="specimenId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <set
+            name="geneFragmentsSet"
+            table="GeneFragmentsToProjects"
+            lazy="true"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="projectId"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.btol.GeneFragment"
+                  column="geneFragmentId"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="name"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Project.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>
