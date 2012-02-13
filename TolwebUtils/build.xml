@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="all" name="tolwebutils">
+    <target name="init">
+    	<property name="libs.dir" location="${basedir}/../WebappLibsTapestry4.0"/>    	
+        <property location="classes" name="classes.dir"/>
+        <property location="src" name="src.dir"/>
+        <property location="doc/api" name="javadoc.dir"/>
+        <property name="project.name" value="${ant.project.name}"/>
+        <property location="${project.name}.jar" name="jar"/>
+    	<property name="onlinecontributorsdir" value="/home/dmandel/OnlineContributors"/>
+        <property name="treegrowserver.dir" value="/home/dmandel/TreeGrowServer"/>
+        <property name="tests.dir" value="tests"/>
+        <property name="testreports.dir" value="${tests.dir}/reports"/>
+        <property name="onlinecontributors.dir" value="/home/dmandel/OnlineContributors"/>    	
+        <path id="compile.classpath">
+            <fileset dir="${libs.dir}">
+                <include name="*.jar"/>
+            </fileset>
+        </path>    	
+    </target>
+
+    <target depends="init" name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac debug="true" deprecation="true" destdir="${classes.dir}" srcdir="${src.dir}">
+            <classpath refid="compile.classpath" />        	
+        </javac>
+    </target>
+ 
+
+    <target depends="init,compile" name="jar" >
+        <jar basedir="${classes.dir}" compress="true" jarfile="${jar}"/>
+    	<copy file="${jar}" todir="${libs.dir}"/>
+    </target>
+
+    <target depends="init,jar" description="Build everything." name="all"/>
+
+    <target depends="init" description="Javadoc for my API." name="javadoc">
+        <mkdir dir="${javadoc.dir}"/>
+        <javadoc destdir="${javadoc.dir}" packagenames="*">
+            <sourcepath>
+                <pathelement location="${src.dir}"/>
+            </sourcepath>
+        </javadoc>
+    </target>
+
+    <target depends="init" description="Clean all build products." name="clean">
+        <delete dir="${classes.dir}"/>
+        <delete dir="${javadoc.dir}"/>
+        <delete dir="${dist.dir}"/>
+        <delete file="${jar}"/>
+        <delete>
+            <fileset dir="${src.dir}" includes="**/*.class"/>
+        </delete>
+    </target>
+</project>

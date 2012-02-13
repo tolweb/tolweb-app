@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	 <bean id="configurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	   <property name="location"><value>classpath:dbconnection.properties</value></property>
+	 </bean>
+	<bean id="baseDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"><value>${dbdriver}</value></property>		
+		<property name="username"><value>${dbuser}</value></property>
+		<property name="password"><value>${dbpassword}</value></property>		
+	</bean>
+ 	<bean id="dataSource" parent="baseDataSource">
+		<property name="url"><value>${dbbaseurl}${dbmiscname}?zeroDateTimeBehavior=convertToNull&amp;jdbcCompliantTruncation=false</value></property>
+	</bean>
+	<bean id="miscMappingResources" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>	
+				<value>org/tolweb/hibernate/ClassroomProject.hbm.xml</value>
+		        <value>org/tolweb/treegrow/main/Contributor.hbm.xml</value>
+		        <value>org/tolweb/hibernate/MappedNode.hbm.xml</value>
+				<value>org/tolweb/hibernate/ExtendedNodeProperties.hbm.xml</value>				
+				<value>org/tolweb/treegrow/main/Keywords.hbm.xml</value>
+				<value>org/tolweb/treegrow/main/Languages.hbm.xml</value>			        
+		        <value>org/tolweb/treegrow/main/NodeImage.hbm.xml</value>                                
+		        <value>org/tolweb/treegrow/main/ImageVersion.hbm.xml</value>                       				
+			</list>
+		</constructor-arg>
+	</bean>		
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource"><ref local="dataSource"/></property>
+		<property name="mappingResources">
+			<ref bean="miscMappingResources" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">${showsql}</prop>
+				<prop key="hibernate.cglib.use_reflection_optimizer">${useoptimizer}</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+			</props>			
+		</property>
+	</bean>
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+       <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>		
+	<bean id="baseMiscDAO" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager"><ref local="transactionManager"/></property>
+		<property name="transactionAttributes"><props><prop key="*">PROPAGATION_NOT_SUPPORTED</prop></props></property>
+		<property name="target"><ref local="glossaryDAOTarget"/></property>
+	</bean>
+	<bean id="baseWorkingDAO" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager"><ref local="transactionManager"/></property>
+		<property name="transactionAttributes"><props><prop key="*">PROPAGATION_NOT_SUPPORTED</prop></props></property>
+		<property name="target"><ref local="workingNodeDAOTarget"/></property>
+	</bean>	
+    <bean id="workingNodeDAO" parent="baseWorkingDAO">
+		<property name="target"><ref local="workingNodeDAOTarget"/></property>
+    </bean>
+    <bean id="workingNodeDAOTarget" class="org.tolweb.dao.FilteredNodeDAOImpl">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+		<property name="isWorking"><value>true</value></property>					
+    </bean>	   
+    <bean id="contributorDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="contributorDAOTarget"/></property>
+		<property name="transactionAttributes">
+			<props><prop key="addProject,addContributor,saveContributor">PROPAGATION_SUPPORTS</prop></props>
+		</property>
+    </bean>
+    <bean id="contributorDAOTarget" class="org.tolweb.dao.ContributorDAOImpl">
+		<property name="sessionFactory"><ref local="sessionFactory"/></property>
+	</bean>     
+    <bean id="imageDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="imageDAOTarget"/></property>
+    </bean>
+    <bean id="imageDAOTarget" class="org.tolweb.dao.ImageDAOImpl">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+		<property name="nodeDAO"><ref bean="workingNodeDAO"/></property>				            
+		<property name="contributorDAO"><ref bean="contributorDAO"/></property>	
+		<property name="imageUtils"><ref bean="imageUtils"/></property>
+    </bean>	
+    <bean id="glossaryDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="glossaryDAOTarget"/></property>
+    </bean>    
+    <bean id="glossaryDAOTarget" class="org.tolweb.dao.GlossaryDAOImpl">
+		<property name="sessionFactory"><ref local="sessionFactory"/></property>		
+	</bean>            
+    <bean id="imageUtils" class="org.tolweb.misc.ImageUtilsImpl">
+        <property name="urlPrefix"><value>/tree/ToLimages/</value></property>    
+        <property name="thumbnailUrlPrefix"><value>/tree/ToLthumbs/</value></property>            
+        <property name="imagesDirectory"><value>/data/1.XLive/images/</value></property>
+        <property name="thumbsDirectory"><value>/data/1.XLive/thumbs/</value></property>
+        <property name="contributorsImagesDirectory"><value>/data/1.XLive/contributorsimages/</value></property>
+        <property name="contributorsUrlPrefix"><value>/contributorsimages/</value></property>
+        <property name="defaultThumbnailHeight"><value>100</value></property>
+		<property name="imagesServerPrefix"><value>http://tolweb.org</value></property>      
+    </bean>
+	<bean id="configuration" class="org.tolweb.misc.Configuration">
+		<property name="learningEditorEmail"><value>${learningeditoremail}</value></property>
+		<property name="notesEditorEmail"><value>${noteseditoremail}</value></property>
+		<property name="templatesDirectory"><value>${templatesdir}</value></property>
+		<property name="smtpHost"><value>${smtpHost}</value></property>
+		<property name="useExternalStylesheets"><value>${useExternalStylesheets}</value></property>
+		<property name="hostPrefix"><value>${hostprefix}</value></property>
+		<property name="isBtol"><value>${isBtol}</value></property>		
+		<property name="useNewTreeDrawing"><value>${useNewTreeDrawing}</value></property>
+		<property name="searchUrl"><value>${searchUrl}</value></property>
+	</bean>    
+</beans>
