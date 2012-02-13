@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="net/sf/tacos/ajax/components/AjaxDirectLink.java" kind="src" path="src"/>
+	<classpathentry kind="src" path="tests"/>
+	<classpathentry kind="src" path="fixscripts"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/TreeGrowServer"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/TolwebHibernate"/>
+	<classpathentry kind="src" path="/TreeGrow"/>
+	<classpathentry kind="src" path="/TolwebUtils"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/WebappLibsTapestry4.0"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

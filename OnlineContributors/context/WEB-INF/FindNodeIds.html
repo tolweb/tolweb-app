@@ -1,0 +1,25 @@
+<html jwcid="@SearchWrapper" title="Tree of Life Node Ids Search">
+	<h2>Search for Node Ids by Group Name</h2>
+	<form jwcid="@Form" listener="listener:doSearch">
+		<input jwcid="@Hidden" value="ognl:pageSize"/>
+		<p>
+        	<span jwcid="@FieldLabel" field="ognl:components.groupNameField"/> 
+        	<input type="text" jwcid="groupNameField@TextField" value="ognl:groupName" validators="validators:required" displayName="Group Name*"/>  
+        	<input jwcid="@Submit" type="Submit" value="Find Node Id..."/> 
+        	<label><input type="checkbox" jwcid="@Checkbox" value="ognl:matchExactly"/>match exactly by group name</label>
+        </p>
+	</form>
+	
+	<span jwcid="@If" condition="ognl:nodes != null && !nodes.isEmpty">
+		<h2>Results</h2>
+		<table jwcid="table@contrib:Table" source="ognl:nodes" columns="name, ID:getNodeId()" 
+	    	row="ognl:node" convertor="ognl:convertor" pageSize="ognl:currentPageSize"/>
+	    <span jwcid="nameColumnHeader@Block">Name</span>
+	    <span jwcid="nameColumnValue@Block">
+	        <a jwcid="@GenericLink" href="ognl:previewPageUrl" target="branch" disabled="ognl:!nodeHasPage">
+	            <span jwcid="@Insert" value="ognl:node.name"/>
+	        </a>
+	    </span>
+	    <span jwcid="IDColumnHeader@Block">ID</span>
+	</span>
+</html>

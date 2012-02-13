@@ -1,0 +1,24 @@
+<span jwcid="@If" condition="ognl:portfolio != null && !portfolio.isEmpty">
+<div id="portfopages">
+    <a name="portfopages"></a>
+    <h3>Portfolio Pages </h3>
+    <span jwcid="@Foreach" source="ognl:portfolio.sections" value="ognl:currentSection">
+        <h4 jwcid="@If" condition="ognl:portfolio.sections.size > 1">
+            <span jwcid="@Insert" value="ognl:currentSection.title" raw="ognl:true"/>
+		</h4>
+        <span jwcid="@Foreach" source="ognl:currentSection.pages" value="ognl:currentPage">
+            <dl>
+                <dt>
+	                <a jwcid="@ExternalLink" page="PortfolioViewPage" class="goto2"
+	                    parameters="ognl:{treehouse.id, currentPage.destinationType, currentPage.destinationId}">                    
+						<span jwcid="@Insert" value="ognl:currentPage.pageTitle"/>                    
+	                </a></dt>
+	                <dd class="floatleft">
+					<img jwcid="@ViewPortfolioPageImage" portfolioPage="ognl:currentPage"/>
+                    </dd>
+                <dd><span jwcid="@Insert" value="ognl:currentPage.comments"/></dd>
+            </dl>
+        </span>
+    </span>
+</div>
+</span>

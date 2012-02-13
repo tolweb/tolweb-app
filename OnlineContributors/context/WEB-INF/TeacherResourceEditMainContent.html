@@ -1,0 +1,82 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:false" title="Edit Teacher Resource Main Content"
+	additionalDelegate="ognl:delegate">
+<div id="trhs2editpgtop">
+	<a name="trhs2text"></a>
+		<h3 class="sectionheaderblub">Step 2. Edit Main Content</h3>    		
+        <div class="boxtocpages">
+			<div jwcid="@TreehouseImportantDiv">
+				<li><a href="#trhstitles">Titles</a> </li>
+				<li><a href="#learnobjsection">Objective </a></li>
+				<li><a href="#prep">Preparation</a></li>
+				<li><a href="#priorknow">Prior Knowledge</a>	</li>
+				<li><a href="#physicalobjects">Physical Materials/Tools</a></li>
+				<li><a href="#teacherresintro">Introduction</a></li>
+				<li><a href="#content">Lesson/Activity/Project </a></li>
+				<li><a href="#evaluation">Evaluation </a></li>
+				<li><a href="#addmedia">Add Media </a></li>
+	        </div>
+			<div jwcid="@TeacherResourceHelpDiv">
+  				<li><a jwcid="@HelpLink" pageName="TeacherResourceHelpMessagesPage" helpName="Lesson Main Page" noDiv="ognl:true">Lesson Main Page</a></li>
+	        </div>
+			<div jwcid="@TreehouseWarningDiv">
+				<p class="importantnartop">Add the main content of your teacher resource here. <strong>Note that in  <strong><strong>Step #5</strong> </strong>Edit Learning Information,  
+                you will add grade level, standards, time frame and more. </strong></p>
+                <div class="spacer">&nbsp;</div>
+            </div>
+        </div>
+		<div id="teachercontent">
+			<a name="trhslesactprjcontent"></a>
+			<h3 class="sectionheaderblubtop">Teacher Resource Main Content</h3>
+			<div class="boxtoc">
+				<span jwcid="@TreehouseTitles"/>
+        	</div> 
+        </div>
+		<span jwcid="@TeacherResourceTeacherFields"/>    
+        <div class="spacer">&nbsp;</div>          
+		<div class="boxtoc" id="teacherresintro"><a name="teacherresintro"></a>
+        	<a jwcid="@HelpLink" helpName="Introduction" pageName="TeacherResourceHelpMessagesPage"/> 
+			<h4>Introduction</h4>
+			<div class="instructionshrt">
+			<p>Add an introduction for your lesson that discusses the topic covered. 
+				<ul class="inlinetoc">            
+	                <li>Add text with the <a href="#htmleditor1">ToL Easy Editor</a> below<!-- , or</li>
+					<li>Add a document to link to for the introduction: 
+	     			<input type="button" value="Add  Document" onClick="javascript:doImageSearch();return false;"  class="padbuttonsm"></li> -->
+				</ul>
+			</div>
+			<a name="htmleditor1"></a>
+			<span jwcid="@HTMLEditorBox"/>
+	        <textarea jwcid="@PreparedTextArea" valuePath="introduction" cols="ognl:60" rows="ognl:20" useEditor="prop:useHTMLEditor"></textarea>
+		</div>
+        <div class="topbottom2">
+			<a href="#trhseditnav">top</a> | <a href="#trhssavepreview">go to save and preview!</a>
+		</div>
+		<div class="spacer">&nbsp;</div>
+		<div id="lessoncontent" class="boxtoc">
+            <a jwcid="@HelpLink" pageName="TeacherResourceHelpMessagesPage" helpName="Lesson/Activity/Project Content"/>
+			<h4><a name="content"></a>Lesson/Activity/Project</h4>
+			<div class="instructionshrt">
+				<p>Enter the steps of the lesson, activity or project.
+				<ul class="inlinetoc">            
+                    <li>Add text with the <a href="#htmleditor2">ToL Easy Editor</a> below
+				</ul>
+			</div>
+			<a name="htmleditor2"></a>
+            <span jwcid="@HTMLEditorBox" idIndex="ognl:2"/>
+			<textarea jwcid="@PreparedTextArea" valuePath="lesson" cols="ognl:60" rows="ognl:40" useEditor="prop:useHTMLEditor"></textarea>
+        </div>
+        <div class="topbottom2">
+			<a href="#trhseditnav">top</a> | <a href="#trhssavepreview">go to save and preview!</a>
+		</div>
+		<div class="spacer">&nbsp;</div>
+		<div id="evaluation" class="boxtoc">
+            <a name="evaluation"></a>
+            <a jwcid="@HelpLink" pageName="TeacherResourceHelpMessagesPage" helpName="Evaluation"/>
+			<h4>Evaluation</h4>
+			<div class="indentleft">
+                <p>Briefly explain the methods of assessment used to evaluate the learning objectives of this resource. 
+                    Add rubrics and other assessment materials in Step #6 Edit Support Materials.</p>
+				<textarea jwcid="@TextArea" value="ognl:treehouse.evaluation" cols="60" rows="5"></textarea>
+			</div>
+		</div>
+</html>

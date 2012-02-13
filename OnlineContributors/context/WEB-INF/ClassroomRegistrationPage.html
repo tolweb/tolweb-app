@@ -1,0 +1,228 @@
+<html jwcid="@BuildTreehouseWrapper" title="Classroom Registration">	
+<div class="floatright">
+ <ul class="pages">
+   <li class="small">Return to the:
+     <ul>
+     <li><a jwcid="@PageLink" page="TreehouseMaterialsManager">Treehouse Manager</a></li> 
+     <li><a jwcid="@PageLink" page="ClassroomProjectsMaterialsManager">Classroom Manager</a></li>
+     </ul></li>
+     </ul>
+</div>
+<h2 class="clear">Register a Classroom Project </h2>
+<div id="trhsmanagercontainer">
+ <div class="solidborder"><h3 class="highlight">Information and Instructions</h3>
+    <p>Teachers, use this option to allow your students to complete individual, group and whole class projects. Students do <em>not</em> need to have email addresses to register and will log-in with pseudonyms.  See the sections below to register projects as well as get instructions and review information on how we protect student privacy.</p>
+	
+
+    <ul class="links">
+  <li><a href="#teacherinfo">Teacher Information</a></li>
+  <li><a href="#classinfo">Classroom Project Information </a>
+    <ul class="small" style="list-style: none">
+      <li><a href="#projectdescription">Description of Project </a></li>
+      <li><a href="#studentinformation">Student Information:</a>
+           
+                <span class="small">information needed for us to protect student privacy</span>
+          </li>
+            <li><a href="#submitreg">Submit Classroom Project Registration</a></li>
+  
+    </ul>
+  </li>
+      <li><a href="#instructions">Student Registration Instructions</a></li>
+    <li><a href="#printed">Contributor Information Printed on Project Treehouses:</a> <span class="small"> information on how we protect student privacy</span> </li>
+
+  </ul>
+  
+  </div>
+<form jwcid="@Form" delegate="ognl:beans.delegate" listener="ognl:listeners.submitProject">
+<div class="solidborder"> <h3 style="background-color: #D6D6EA;">Teacher Information</h3>
+<span jwcid="@If" condition="ognl:!hasLocationAndInstitution"><p><strong><a name="teacherinfo"></a>In order to register your class you must provide us with the following information:</strong></p></span>
+  <p><em><span jwcid="@Insert" value="ognl:contributor.displayName"/> -- <span jwcid="@Insert" value="ognl:contributor.category"/></em></p>
+  <p> 
+      <span jwcid="@If" condition="ognl:!@org.tolweb.treegrow.main.StringUtils@notEmpty(contributor.institution)">
+          <span jwcid="@FieldLabel" field="component:institutionField"/><input jwcid="institutionField@TextField" value="ognl:contributor.institution" displayName="Institution/School" validators="validators:required" />
+      </span>
+      <span jwcid="@Else">
+          Institution/School:&nbsp;&nbsp;<span jwcid="@Insert" value="ognl:contributor.institution"/>
+	  </span>
+  </p>
+  <p> 
+      <span jwcid="@If" condition="ognl:!hasLocation">
+          <p class="error">Please enter your location information</p>
+          <table>
+              <tr>
+                  <td>City</td><td><input jwcid="@TextField" value="ognl:contributor.city"/></td>
+              </tr>
+              <tr>
+                  <td>State</td><td><input jwcid="@TextField" value="ognl:contributor.state"/></td>
+              </tr>
+              <tr>
+                  <td>Country</td><td><input jwcid="@TextField" value="ognl:contributor.country"/></td>
+              </tr>
+          </table>
+      </span>
+      <span jwcid="@If" condition="ognl:hasLocation">      
+          Location: <span jwcid="@Insert" value="ognl:contributor.city"/> <span jwcid="@Insert" value="ognl:contributor.state"/> <span jwcid="@Insert" value="ognl:contributor.country"/>
+	  </span>
+  </p>  
+  
+  </div>
+
+<div class="solidborder"><a name="classinfo"></a><h3 style="background-color: #D6D6EA;">Classroom Project Information</h3>
+   
+<div class="stickies" style="width: auto; margin: 10px 0 0 0;">
+  <p class="large"><strong>Instructions</strong></p>
+  <ul class="large" style="letter-spacing: normal; list-style-type: none;">
+ 
+    <li style="padding-bottom: 5px;"><strong>Required fields</strong>
+      <ul>
+        <li>Fill out the required field in red in the box below to register a classroom project. Return to this form to register as many projects as you would like. You can register a classroom project for each class period you have, or you can register group projects within your classes. Do whatever makes managing your classroom projects fit your needs. </li>
+      </ul>
+    </li> 
+    <li style="padding-bottom: 5px;"><strong>Create a student pseudonym</strong>      
+      <ul>
+        <li>Student pseudonyms function as the User ID that students will use to login and contribute treehouses. </li>
+        <li>Student pseudonyms  will be printed on any treehouse or media contributed by the student. </li>
+ <li>Please see the <a href="#pseudoreqs">guidelines for creating pseudonyms</a> before you create one.</li>
+        <li>The pseudonym that you choose will be used for each student in the project, plus a number assigned according to the number of students in the group. For example, if you choose the pseudonym "zebra" and indicate there are 5 people in the project, then the pseudonyms that are generated for login IDs will be zebra1 through zebra5. You will initially need to assign the students their pseudonyms from the list generated and keep a record of students' names and the pseudonyms they have been assigned. Note that after students login for the first time you will be able to see students' real names alongside their pseudonyms in the Classroom Project Manager .</li>
+               </ul>
+    </li>
+    <li><strong>Create a project password</strong>
+      <ul>
+        <li>You have the choice to either create and assign  projects the same <strong>password</strong>, or to let students choose their own password when they login for the first time. Passwords will be used for logging in.</li>
+      </ul>
+    </li>
+    </ul>
+  </div>
+
+	<table class="border">
+		<tr>
+			<th style="background-color: #A2C9A2;" class="center">
+                <h4 style="margin: 5px;"><a name="projectdescription" id="projectdescription"></a>
+                <strong>Description of Project</strong></h4>
+			</th>
+		</tr>
+		<tr>
+            <td class="contributor">
+                <p><strong class="red"><span jwcid="@FieldLabel" field="component:projectNameField"/>
+					<input jwcid="projectNameField@TextField" value="ognl:project.name" type="text" size="50" displayName="Project Title" validators"validators:required"/></strong>
+				</p>
+				<p><strong>Class Period / Group</strong>  
+					<input jwcid="@TextField" value="ognl:project.classGroup" type="text" size="10"/>
+				</p>           
+				<p><strong class="red"><span jwcid="@FieldLabel" field="component:descriptionArea"/></strong></p>
+				<p><textarea jwcid="descriptionArea@TextArea" validators="validators:required" value="ognl:project.description" displayName="Description" cols="60" rows="10"></textarea></p>
+			</td>
+		</tr>
+		<tr>
+			<td class="contributor">
+				<span jwcid="@If" condition="ognl:existingPseudonym">
+					<p class="error">That pseudonym already exists in the system.  Please choose another pseudonym</p>
+				</span>
+        		<p>
+        		<p><strong class="red"><span jwcid="@FieldLabel" field="component:pseudonymField"/></strong>
+          			<input jwcid="pseudonymField@TextField" value="ognl:project.pseudonym" name="textfield" type="text" size="25" displayName="Student pseudonym" validators="validators:required"/>
+				</p>
+				 <ul class="small">
+       		    <li style="list-style-type: none;"><strong class="red"><a name="pseudoreqs"></a>*Guidelines:</strong>
+       		      <ul class="small">
+       		        <li>A pseudonym<strong> cannot</strong> have a number for its final character (e.g. <strong>don't </strong>enter starfish2, <strong>do</strong> enter 2starfish).</li>
+   		            <li>We suggest that you use an organism name, and that you use all lower case characters. </li>
+       		        <li>Pseudonyms should <strong>not</strong> be recognizable names, like "susie".</li>
+       		      </ul>
+       		    </li>
+          </ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="strong"><strong class="red"><span jwcid="@FieldLabel" field="ognl:components.numStudentsField"/></strong>
+				<input jwcid="numStudentsField@TextField" displayName="Create pseudonyms for" validators="validators:min=1,max=500"
+                	value="ognl:numPseudonyms" type="text" size="5" translator="translator:number"/> students.<br /><span class="small">
+*You will be able to add additional students but you cannot reduce the number of pseudonyms created. </span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span jwcid="@If" condition="ognl:noPasswordSelected">
+					<p class="error">Please type a password for the project.</p>
+				</span>                
+                <p><strong class="red">Student password.</strong></p>
+				<ul class="nodisc">                    
+                    <span jwcid="@RadioGroup" selected="ognl:passwordSelection">
+                    <li><label><input jwcid="@Radio" value="ognl:@org.tolweb.tapestry.ClassroomRegistrationPage@STUDENT_PASSWORD"/>
+						Students will create their own password </label></li>
+					<li><label><input jwcid="@Radio" value="ognl:@org.tolweb.tapestry.ClassroomRegistrationPage@PROJECT_PASSWORD"/>
+					I will create and assign a project password for all members of the project to use.
+              		<ul>
+                		<li>Write password in this space:
+							<input jwcid="@TextField" value="ognl:password" type="text" size="10"/>
+                    	</li>
+              		</ul>
+         			</li>
+                    </span>
+         		</ul>
+			</td>
+		</tr>
+     <th style="background-color: #A2C9A2;" class="center">
+		<h4 style="margin: 5px;"><a name="studentinformation" id="studentinformation"></a><strong class="red">Student Information </strong></h4>
+	 </th>         
+  <tr>     
+      <td>
+    <span jwcid="@RadioGroup" selected="ognl:project.studentAges">
+<p>        
+    <input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.hibernate.ClassroomProject@STUDENTS_UNDER_13"/>    
+    <strong>The students in my classroom are <em>under</em> 13 years of age. My students will register as treehouse builders for the classroom project with pseudonyms. Please note that even if you have a mixed age classroom, with only some students who are under 13, you must check this option. </strong></p>
+<p style="padding: 0 40px;"><em>When students are under 13 you must receive written parental consent in order for students' names and contact information to be printed on the ToL. </em></p>
+<p>
+    <input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.hibernate.ClassroomProject@STUDENTS_UNDER_18"/>
+    <strong>The students in my classroom are 13 years of age and over. My students  will  register as treehouse builders for the classroom project with pseudonyms. </strong></p>
+	<p style="padding: 0 40px;"><em>When students are 13 and over you can allow the students to print their names and contact information on their work if your school district or organization's policy allows for such personal information to be printed, even if you do not obtain parental consent (though we recommend that you do).</em></p>
+	<p style="background-color: #ffffcc; font-weight: bold;"><em><strong>*Please note that unless a child is 18 years or older, they cannot have self-identifying images of themselves published on the Tree of Life without written parental consent.</strong></em></p>
+	<p>
+    <input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.hibernate.ClassroomProject@STUDENTS_OVER_18"/>
+    <strong>My students are 18 years of age and over. </strong></p>
+	<p style="padding: 0 40px;">For students who are 18 years of age and over there are no restrictions on printing a student's name, contact information and self identifying photographs as long as the student wishes to have this personal information posted. Therefore, if students are 18 years of age and over, and you, as well as your students would like their names to appear on their work, please let us know and we will accommodate this request. If students are 18 and over you can also allow them to register on their own, and if you would like to have access to editing their work online, they can add you as an author.  </p>
+ </span>
+    </td>
+        </tr>
+  </table>
+	<a name="submitreg" id="submitreg"></a><div class="stickies" style="width: auto; margin: 0 0 10px 0;"> <p class="large"><strong class="red">
+    	<input type="checkbox" jwcid="agreementBox@Checkbox" value="ognl:agreementSelected" displayName="ognl:checkboxDisplayName" validators="validators:required"/>
+		<span jwcid="@FieldLabel" field="component:agreementBox" raw="ognl:true" prerender="ognl:false"/></strong>
+		
+		<input type="submit" jwcid="@Submit"  value="Submit Classroom Project Registration" class="center" style="padding: 5px;"/>
+	</p> 
+	
+  <p class="large">After you submit a classroom project, it will need to be approved before your students can register. As soon as your project has been approved you will receive a message saying that your project has been activated. This message will contain the ID# of the project and links to <a href="#instructions"><strong>instructions for how your students should log-in and register.</strong></a></p>
+ <p class="large">Once you have registered class projects you can access them via the link in the Treehouse Manager for the 
+     <strong><a jwcid="@PageLink" page="ClassroomProjectsMaterialsManager">Classroom Project Manager</a></strong> 
+      The Classroom Project Manager will list 
+     the projects that you have registered and display the project ID# next to a summary description. In the Classroom Project Manager you can choose to view and edit students' treehouses. In 
+     addition you can add students to existing projects and give others, such as a 
+     teaching assistant, permission to view and edit project pages.</p>
+ </div>
+ </div>
+
+ <div class="solidborder">
+<a name="instructions"></a>
+<h3 class="highlight">Instructions for Student Registration and How to Begin Building </h3>
+ <p><strong>To get started building:</strong> </p>
+
+  <ul>
+    <li><strong>Read through <a href="/tree/learn/TreebuilderTools/ClassHowtoBegin.html" target="NewWindow">Classroom Projects: How to Begin</a></strong> and the general <a href="/tree/learn/TreebuilderTools/HowtoBegin.html" target="NewWindow"><strong>How to Begin page.</strong></a></li>
+    <li><strong>View <a href="/tree/learn/TreebuilderTools/StudentLogin.html" target="NewWindow">Instructions for how your students should log-in and register</a></strong></li>
+  </ul>
+</div>
+<a name="printed"></a>
+  <div class="solidborder"><h3 class="highlight">Contributor Information Printed on Student Class Project Pages</h3>
+    <p>Unless you receive verification of consent in writing from parents, for students under 13  the information printed on a treehouse page will display:</p>
+  <ul>
+    <li> the student's pseudonym</li>
+    <li> the name of the class project </li>
+    <li>the name of the school</li>
+    <li>the school location (if teacher agrees to print it)  </li>
+    <li>the teacher's name and email address (if allowed to print) or profile. </li>
+      </ul>
+  <p>For students who are 13 and over, and 18 and over, if you (the teacher) request that they have their names displayed, we can do so. Otherwise the information that is displayed is the same as for students who are under 13 years of age. Only students who are 18 and over can print their contact information (e.g. email addresses, etc.) and self-identifying photos on the ToL without written and verifiable parental consent.</p>
+
+ </div>
+</form></html>

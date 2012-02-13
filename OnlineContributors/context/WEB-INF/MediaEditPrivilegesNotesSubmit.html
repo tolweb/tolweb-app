@@ -1,0 +1,33 @@
+<div id="privileges" class="whitebox"> <a name="privileges"></a> 	
+	<a jwcid="@HelpLink" pageName="ognl:page.helpPageName" helpName="Editing Privileges"/>
+	<h4>Editing Privileges</h4>
+   <strong>People who can edit this form: </strong>
+	<ul class="box1">
+        <span jwcid="@If" condition="ognl:media.copyrightOwnerContributor != null" element="ognl:null">
+            <li>Copyright Owner: <strong><span jwcid="@Insert" value="ognl:media.copyrightOwnerContributor.displayName"/></strong></li>
+        </span>
+        <span jwcid="@If" condition="ognl:media.contributor != null" element="ognl:null">
+            <li>Contributor: <strong><span jwcid="@Insert" value="ognl:media.contributor.displayName"/></strong></li>
+        </span>
+            <li class="smallbold">ToL Editor/Project Administrator</li>
+            <li id="addpriv"><a jwcid="@LinkSubmit" listener="ognl:page.listeners.editImagePermissions" href="#">Allow another ToL contributor to 
+                edit this form</a></li>
+            <span jwcid="@For" source="ognl:media.permissionsSet" element="ognl:null" value="ognl:currentPermission" convertor="ognl:permissionConvertor">
+                <li>Editor: <strong><span jwcid="@Insert" value="ognl:currentPermission.contributor.displayName"/></strong>
+                <a jwcid="@LinkSubmit" selected="ognl:page.editorToDelete" tag="ognl:currentPermission" class="remove">Remove</a>
+            </li>
+                </span>
+        </ul>
+</div>
+<div id="notes" class="whitebox"> <a name="notes"></a> 	 <div class="spacer">&nbsp;</div>
+	<a jwcid="@HelpLink" pageName="ognl:page.helpPageName" helpName="Notes" />
+    <h4 class="floatleft">Notes</h4>
+    <textarea jwcid="@TextArea" value="ognl:media.notes" cols="45" rows="4"></textarea>
+	<div class="spacer">&nbsp;</div>
+	<label><input jwcid="@Checkbox" value="prop:media.considerForPodcast"/> consider for ToL podcast feed</label><div class="spacer">&nbsp;</div>
+</div>    
+<a name="subm"></a> 
+<input id="subm" class="floatright" type="submit" jwcid="@Submit" value="ognl:'Submit ' + page.mediaType + ' Data'" listener="ognl:page.listeners.doSave"/>
+<span jwcid="@If" condition="ognl:page.selectedAnchor">
+	<script jwcid="@Script" script="JumpToAnchor.script" anchor="ognl:page.selectedAnchor"/>
+</span>

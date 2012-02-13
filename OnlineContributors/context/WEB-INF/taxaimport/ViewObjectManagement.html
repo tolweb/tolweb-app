@@ -1,0 +1,66 @@
+<html jwcid="@FeaturesWrapper" title="Object Management">
+<form jwcid="@Form" listener="ognl:listeners.doSearch">
+	<p>[<a jwcid="@PageLink" page="xml/TaxaImportHome" >Taxa Import Home</a>]</p>
+	<h2 class="clear">Object Management</h2>
+	<p>
+		Manage Objects for Clade: <span jwcid="@TextField" value="ognl:basalNodeId" translator="translator:number" />
+		<input jwcid="@Submit" value="Search..."/>  
+		<a jwcid="@PageLink" page="FindNodeIds" renderer="ognl:renderer">Find node id...</a>
+	</p>
+
+	<span jwcid="@If" condition="ognl:currentBasalNodeId != null">
+		<table jwcid="table@contrib:Table" source="ognl:nodeIds" row="ognl:currentBasalNodeId" 
+	        	columns="ognl:columnsString" class="border" pageSize="5">
+			<!-- "!basalNode, !objectManifest, !taxaImport, !autoRecLog, !objectRecLog, !manage"; -->        	
+	        <span jwcid="basalNodeColumnHeader@Block">basal node</span>
+	        <span jwcid="basalNodeColumnValue@Block">
+	        	<a jwcid="@Any" element="a" href="prop:workingURL"><span jwcid="@Insert" value="ognl:currentBasalNodeName" /></a>
+			</span>		
+	        <span jwcid="objectManifestColumnHeader@Block">manifest</span>
+	        <span jwcid="objectManifestColumnValue@Block">
+	            <a jwcid="@ExternalLink" page="taxaimport/ViewObjectManifest" parameters="ognl:{currentBasalNodeId, true}">latest</a> 
+	            [<a jwcid="@PageLink" page="taxaimport/ViewAllObjectManifests">view all</a>]
+			</span>
+	        <span jwcid="taxaImportColumnHeader@Block">taxa import</span>
+	        <span jwcid="taxaImportColumnValue@Block">
+	            <a jwcid="@ExternalLink" page="taxaimport/ViewTaxaImportRecord" parameters="ognl:{currentBasalNodeId, true}">latest</a> 
+	            [<a jwcid="@PageLink" page="taxaimport/ViewAllTaxaImportRecords">view all</a>]
+			</span>
+	        <span jwcid="autoRecLogColumnHeader@Block">auto-rec log</span>
+	        <span jwcid="autoRecLogColumnValue@Block">
+	        	<a jwcid="@ExternalLink" page="taxaimport/ViewAutoReconciliationRecord" parameters="ognl:{currentBasalNodeId, true}">latest</a>	        
+			</span>
+	        <span jwcid="objectRecLogColumnHeader@Block">object-rec log</span>
+	        <span jwcid="objectRecLogColumnValue@Block">
+	        	<a jwcid="@DirectLink" listener="ognl:listeners.objectRecLink" parameters="ognl:{currentBasalNodeId}">latest</a>	        
+			</span>
+	        <span jwcid="manageColumnHeader@Block">manage orphaned nodes</span>
+	        <span jwcid="manageColumnValue@Block">
+	        	<a jwcid="@DirectLink" listener="ognl:listeners.manageLink" parameters="ognl:{currentBasalNodeId}">manage</a>
+			</span>				
+	    </table>
+    </span>
+    
+    <h2 class="clear">Recent Taxa Imports</h2>
+	<table jwcid="table2@contrib:Table" source="ognl:records" row="ognl:currentRecord" 
+        	columns="ognl:recentColumnsString" class="border" pageSize="5">
+		<!-- "!basalNode, !uploadedBy, !timestamp, !view"; -->        	
+        <span jwcid="basalNode2ColumnHeader@Block">basal node</span>
+        <span jwcid="basalNode2ColumnValue@Block">
+        	<a jwcid="@Any" element="a" href="prop:recordURL"><span jwcid="@Insert" value="ognl:currentRecordNode"/></a>
+		</span>		
+        <span jwcid="uploadedByColumnHeader@Block">uploaded by</span>
+        <span jwcid="uploadedByColumnValue@Block">
+        	<span jwcid="@Insert" value="ognl:currentRecordUpload"/>
+		</span>	
+        <span jwcid="timestampColumnHeader@Block">timestamp</span>
+        <span jwcid="timestampColumnValue@Block">
+        	<span jwcid="@Insert" value="ognl:currentRecordTimestamp"/>
+		</span>	
+        <span jwcid="viewColumnHeader@Block"></span>
+        <span jwcid="viewColumnValue@Block">
+        	<a jwcid="@DirectLink" listener="ognl:listeners.viewLink" parameters="ognl:{currentRecordNodeId}">view</a>
+		</span>							
+    </table>    
+</form>    
+</html>

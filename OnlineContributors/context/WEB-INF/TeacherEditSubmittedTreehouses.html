@@ -1,0 +1,92 @@
+<html jwcid="@BuildTreehouseWrapper" title="Teacher Review Page">
+<div class="floatright">
+ <ul class="pages">
+
+   <li class="small">Return to the:
+     <ul><li><a href="/onlinecontributors/app?service=page&page=TreehouseMaterialsManager">Treehouse Manager</a></li> 
+     <li class="small"><a href="/onlinecontributors/app?service=page&page=ClassroomProjectsMaterialsManager">Classroom Manager</a>
+     </ul>
+     </li>
+     </ul>
+</div>
+
+<h2 class="clear">Review Submitted Treehouses</h2>
+<div class="instructions">
+  <p style="margin-bottom: 0; padding: 0;"><strong> We really appreciate your assistance with the publication process.</strong></p>
+  <p><strong class="large">Check for the points listed below and return the treehouse to the student to revise if work needs to be done in one or more areas.</strong> You can add comments for the student(s) by clicking approve/revise, the history link or by choosing to edit the treehouse and going to step #7 Edit Notes/Comments. You can also choose to edit the page yourself to fix problems. To facilitate communication, 
+    when you click the approve/revise links a checklist  and comments box will appear for you to fill out. <strong>Note that</strong> the student was asked to <a href="/tree/learn/TreebuilderTools/BuildingGuide/PublishChecklist.html" target="fullHelpWindow">fill out a publishing checklist</a> before they submitted their treehouse. </p>
+  <ol class="browndash">
+    <li><strong class="red">Check that personal information (name, photo, address, or email) that is not permissible  is not posted. </strong></li>
+    <li><strong class="red">Check that copyright rules are followed.</strong> Teachers should make sure that all images have copyright and/or credits information listed underneath them and all media files have copyright and/or credits information when they are clicked on. Students must have received <a href="/tree/learn/TreebuilderTools/BuildingGuide/copyrightletter.html" target="fullHelpWindow">permission in writing</a> for any copyrighted materials they use. We really appreciate your assistance because we need to ensure that copyright laws have been followed. Any questionable material will have to be deleted by the student from the treehouse and the ToL database. <a href="/tree/learn/TreebuilderTools/trcopyright.html" target="fullHelpWindow">Review Copyright Rules and Issues </a></li>
+    <li><strong>Check  style and content.</strong> We have standard <a href="/tree/learn/TreebuilderTools/BuildingGuide/PageDesign.html" target="fullHelpWindow">ToL design guidelines</a>  that pages should follow, and the <a href="/tree/learn/TeacherResources/BasicGuidelines.html" target="fullHelpWindow">Basic Treehouse Guidelines</a>   provide a good example of what makes a well-rounded page.   We understand the Easy Editor has quirks and it is fairly simple for us to fix formatting problems for you and your students.
+                However, students' pages should be as<strong> free of spelling and grammar errors</strong> as possible before they are submitted.</li>
+  </ol>
+</div>
+<table jwcid="@contrib:Table" source="ognl:treehouses" row="ognl:currentTreehouse" class="greyborder"
+	columns="title, submittedContributor, submissionDate, !edit, !approve, !reject"/>
+	<span jwcid="titleColumnHeader@Block">
+		<p>Page Title</p><p align="left"><span class="small">Click below to view pages.</span></p>
+    </span>
+    <span jwcid="titleColumnValue@Block"><a jwcid="@GenericLink" href="ognl:currentViewUrl" renderer="ognl:rendererFactory.viewPageRenderer" class="ognl:viewLinkClass"><span jwcid="@Insert" value="ognl:currentTreehouse.pageTitle"/></a></span>
+    <span jwcid="submittedContributorColumnHeader@Block"><p>Submitter</p></span>
+    <span jwcid="submittedContributorColumnValue@Block"><span jwcid="@Insert" value="ognl:currentTreehouse.submittedContributor.displayName"/></span>
+    <span jwcid="submissionDateColumnHeader@Block"><p>Submission Date</p></span>
+    <span jwcid="submissionDateColumnValue@Block"><span jwcid="@Insert" value="ognl:currentTreehouse.submissionDate"/></span>
+	<span jwcid="editColumnHeader@Block"><p>Edit treehouse</p></span>
+	<span jwcid="editColumnValue@Block">
+        <span jwcid="@If" condition="ognl:!currentTreehouse.isSubmitted" element="ognl:null">
+	        <a jwcid="@EditTreehouseLink" treehouse="ognl:currentTreehouse">Edit</a>
+            <ul class="browndash5">
+        		<li><a jwcid="@ExternalLink" page="TreehouseEditNotes" 
+                    parameters="ognl:currentTreehouse.accessoryPageId" anchor="commquest"
+                    renderer="ognl:rendererFactory.editLinkRenderer">history</a></li>
+			</ul>
+        </span>
+        <span jwcid="@Else" element="ognl:null">
+		    This treehouse was submitted to the ToL Learning Materials Editor for publication
+            on <span jwcid="@Insert" value="ognl:currentTreehouse.submissionDate"/>            
+        </span>
+    </span>
+	<span jwcid="approveColumnHeader@Block">
+		<div align="left">
+			<p>Approve <span class="small">(submit to the ToL for publication)</span></p>
+		</div>
+	</span>
+	<span jwcid="approveColumnValue@Block">
+        <span jwcid="@If" condition="ognl:!currentTreehouse.isSubmitted"><a jwcid="@DirectLink" listener="ognl:listeners.approveTreehouse" parameters="ognl:currentTreehouse.accessoryPageId">Approve</a></span>
+	</span>
+	<span jwcid="rejectColumnHeader@Block">
+	  	<div align="left">
+			<p>Return<span class="small">(to student to revise)</span></p>
+		</div>
+	</span>
+	<span jwcid="rejectColumnValue@Block">
+        <span jwcid="@If" condition="ognl:!currentTreehouse.isSubmitted"><a jwcid="@DirectLink" listener="ognl:listeners.rejectTreehouse" parameters="ognl:currentTreehouse.accessoryPageId">Return</a></span>
+	</span>
+</html>
+<span jwcid="@If" condition="ognl:submittedTreehouse != null">
+    <span jwcid="@If" condition="ognl:wasApprovedTreehouse" element="ognl:null">
+<span jwcid="@TreehouseSubmittedEmail" emailAddresses="ognl:{configuration.learningEditorEmail}" 
+	treehouse="ognl:submittedTreehouse" isStudent="ognl:false" isTeacher="ognl:true"/>
+	</span>
+    <span jwcid="@Else" element="ognl:null">
+	<span jwcid="@MailBlock" smtp="localhost" subject="Student Treehouse Submission Not Approved" to="ognl:{contributor.email, configuration.learningEditorEmail}" from="treehouses@tolweb.org" html="ognl:false">
+        Hello, this email is a record that your student's treehouse submission, '<span jwcid="@Insert" value="ognl:submittedTreehouse.pageTitle"/>' was not approved for publication to the Tree of Life.
+        <span jwcid="@If" condition="ognl:checkedAreas">
+        You marked the following areas as needing attention:
+		<span jwcid="@Insert" value="ognl:'\n'" raw="ognl:true"/>
+        <span jwcid="@Insert" value="ognl:checkedAreas"/>
+        </span>
+        <span jwcid="@If" condition="ognl:comments">
+    	You had the following comments regarding the student's submission:
+
+            <span jwcid="@Insert" value="ognl:'\n'" raw="ognl:true"/>            
+            <span jwcid="@Insert" value="ognl:comments"/>
+
+                        
+        </span>
+        
+        Thank you for contributing treehouses to the Tree of Life.
+	</span> 
+    </span>   
+</span>

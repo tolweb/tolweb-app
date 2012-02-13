@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application PUBLIC 
+  "-//Apache Software Foundation//Tapestry Specification 4.0//EN" 
+  "http://jakarta.apache.org/tapestry/dtd/Tapestry_4_0.dtd">
+<application name="onlinecontributors">
+    <description>Online contribution tools for the Tree of Life</description>
+    <library id="contrib" specification-path="/org/apache/tapestry/contrib/Contrib.library"/>
+	<library id="tacos" specification-path="/net/sf/tacos/Tacos.library"/>  
+
+    <page name="TreehouseImagesManager" specification-path="/WEB-INF/ImagesManager.page"/>
+    <page name="UserImageSearchResults" specification-path="/WEB-INF/ImageSearchResults.page"/>
+    <page name="ViewBonusPage" specification-path="/WEB-INF/ViewTreehouse.page"/>
+    <page name="ImageContributorDetailPage" specification-path="/WEB-INF/ContributorDetailPage.page"/>
+    <!-- page aliasing needed to support the live URL rewrites that are currently active -->
+    <page name="content/ToLPageContentService" specification-path="/WEB-INF/content/PageContentService.page"/>
+    <page name="Home" specification-path="/WEB-INF/ContributorLogin.page"/>
+<!--	<page name="Exception" specification-path="/WEB-INF/OnlineContributorsExceptionPage.page"/> -->
+    <meta key="org.apache.tapestry.output-encoding">iso-8859-1</meta>    
+    <meta key="org.apache.tapestry.page-class-packages" value="org.tolweb.btol.tapestry,org.tolweb.tapestry"/>
+    <!--  this is no longer used in the current Tapestry version (July 9, 2008)
+	<extension name="org.apache.tapestry.multipart-decoder" class="org.apache.tapestry.multipart.DefaultMultipartDecoder">
+		<configure property="maxSize" type="double" value="134217728"/>
+	</extension>
+	  -->
+</application>

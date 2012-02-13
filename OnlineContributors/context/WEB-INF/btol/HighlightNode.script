@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+	<input-symbol key="additionalFieldsId" class="java.lang.Long"/>
+	<input-symbol key="tierCallback" class="java.lang.Integer"/>
+	<input-symbol key="larvalCallback" class="java.lang.Integer"/>
+	<body>
+	<![CDATA[		
+	var waitingForClose = false;
+	
+    function prepareSendValue() {
+    	var args = prepareSendValue.arguments;
+    	var callbackType = args[0];    	
+    	var newValue = args[1];
+    	waitingForClose = true;
+    	sendValue(callbackType, ${additionalFieldsId}, newValue);
+    }
+    function recvCompletions(arr) {
+    	alert('completion args are: ' + arr);
+    	/*var openerDoc = window.opener.document;
+    	var callbackType = arr[0];
+    	for (var i = 1; i < arr.length; i += 4) {
+    		var anchorLinkId = arr[i];
+	    	var anchorLink = openerDoc.getElementById(anchorLinkId);
+	    	if (anchorLink != null) {
+		    	anchorLink.className = arr[i + 1];
+		    	anchorLink.innerHTML = arr[i + 2];
+		    	var actualClass = arr[i + 3];
+		    	anchorLink.setAttribute('actualClass', actualClass);
+		    }
+	    }
+	    waitingForClose = false;*/
+    }    
+    function sendNodeNameValue() {
+    	alert("send nodenamevalue getting called");
+		sendValue(document.getElementById('nameField').value);  
+		return false;    
+    }
+       
+	]]>    
+    </body>
+	<initialization>
+	//document.getElementById("Form").onSubmit = sendNodeNameValue();
+	</initialization>    
+</script>

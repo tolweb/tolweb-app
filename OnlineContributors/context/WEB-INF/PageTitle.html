@@ -1,0 +1,8 @@
+<span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(node.pageSupertitle)">
+<h2 class="supertitle"><span jwcid="@Insert" value="ognl:node.pageSupertitle" raw="ognl:true"/><span jwcid="@If" condition="ognl:isExtinct"><img jwcid="@Image" image="ognl:extinctImage" class="h1img" alt="group is extinct" /></span></h2>
+</span>
+<h1 jwcid="@Any" element="h1" class="ognl:titleClass"><a jwcid="@EditBranchLeafPageLink" editPageName="EditTaxonNames">edit taxon names</a><span jwcid="@Insert" value="ognl:node.pageTitle" raw="ognl:true"/><span jwcid="@If" condition="ognl:isExtinct"><img jwcid="@Image" image="ognl:extinctImage" class="h1img" alt="group is extinct" /></span>
+<span jwcid="@If" condition="ognl:isIndexPage"><a jwcid="@GenericLink" href="ognl:workingUrl"><img src="img/12pxglobe.gif"/></a><span class="taxonsampling">BTOL Taxon Sampling</span></span></h1>
+<span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(node.pageSubtitle && !isIndexPage)" element="ognl:null">
+<h2 class="subtitle"><span jwcid="@Insert" value="ognl:node.pageSubtitle" raw="ognl:true"/></h2>
+</span>

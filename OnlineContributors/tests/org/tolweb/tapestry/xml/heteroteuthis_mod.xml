@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tree-of-life-web version="1.0">
+  <nodes>
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" leaf="true" italicize-name="true" is-new-combination="false">
+      <name>Heteroteuthis dispar</name>
+      <auth-date>2009</auth-date>
+      <authority>Eumel</authority>
+      <rank>Species</rank>
+      <geographic-distribution>
+        <description>(AF) South Africa.</description>
+      </geographic-distribution>
+    </node>
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" leaf="true" italicize-name="true" is-new-combination="false">
+      <name>Heteroteuthis hawaiiensis</name>
+      <auth-date>2009</auth-date>
+      <authority>Eumel</authority>
+      <rank>Species</rank>
+      <geographic-distribution>
+        <description>(AF) South Africa.</description>
+      </geographic-distribution>
+    </node>
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" leaf="true" italicize-name="true" is-new-combination="false">
+      <name>Heteroteuthis dagamensis</name>
+      <auth-date>2009</auth-date>
+      <authority>Eumel</authority>
+      <rank>Species</rank>
+      <geographic-distribution>
+        <description>(AF) South Africa.</description>
+      </geographic-distribution>
+    </node>
+    <node extinct="false" position-confidence="tentative" leaf="false" italicize-name="true" is-new-combination="false" has-page="true">
+      <name>Heteroteuthis novadagamensis</name>
+      <auth-date>2009</auth-date>
+      <authority>Eumel</authority>
+      <rank>Species</rank>
+      <geographic-distribution>
+        <description>(AF) South Africa.</description>
+      </geographic-distribution>
+      <nodes>
+	    <node extinct="false" position-confidence="incertaesedis" leaf="true" italicize-name="true" is-new-combination="true" combination-date="2009">
+	      <name>Heteroteuthis Neuro novamensisii</name>
+	      <auth-date>2009</auth-date>
+	      <authority>Lenards</authority>
+	      <rank>Species</rank>
+	      <geographic-distribution>
+	        <description>(AF) Florida.</description>
+	      </geographic-distribution>
+	    </node>
+	    <node extinct="false" position-confidence="incertaesedis" leaf="true" italicize-name="true" is-new-combination="true" combination-date="2009">
+	      <name>Heteroteuthis Neuro minnesotaensis</name>
+	      <auth-date>2009</auth-date>
+	      <authority>Lenards</authority>
+	      <rank>Species</rank>
+	      <geographic-distribution>
+	        <description>(AF) Minnesota.</description>
+	      </geographic-distribution>
+	    </node>
+	    <node extinct="true" position-confidence="confident" leaf="true" italicize-name="true" is-new-combination="true" combination-date="2009" has-page="false">
+	      <name>Heteroteuthis Neuro arizonis</name>
+	      <auth-date>2009</auth-date>
+	      <authority>Lenards</authority>
+	      <rank>Species</rank>
+	      <geographic-distribution>
+	        <description>(AF) Mexico.</description>
+	      </geographic-distribution>
+	    </node>
+      </nodes>
+    </node>
+  </nodes>
+</tree-of-life-web>
+

@@ -1,0 +1,14 @@
+<html jwcid="@Wrapper" title="Batch Upload Results">
+	<h1>Batch Upload Results</h1>
+    <p>Your batch was successfully uploaded.</p>
+    <p>If you believe there was an error in the upload, you may <a jwcid="@DirectLink" listener="ognl:listeners.deleteAll">delete</a> 
+    	all of the images uploaded in this batch.</p>
+    <span jwcid="@If" condition="ognl:zipEntriesNoXML.size > 0 || xmlEntriesNoZip.size > 0">
+        <p>
+            There were some entries in the zip file or xml that we were unable to
+            match up.  You may view <a jwcid="@DirectLink" listener="ognl:listeners.viewMissingEntries">the list</a>
+            if you want more details.
+        </p>
+    </span>
+	<table jwcid="@ImageSearchResultsComponent"/>    
+</html>

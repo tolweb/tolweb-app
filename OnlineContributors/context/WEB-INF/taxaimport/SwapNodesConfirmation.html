@@ -1,0 +1,60 @@
+<html jwcid="@FeaturesWrapper" title="Manual Reconciliation Confirmation">
+  <form jwcid="@Form">
+  	<p>[<a jwcid="@DirectLink" listener="ognl:listeners.manageLink" 
+  		parameters="ognl:{basalNodeId}">Return to Object Management for clade</a>] 
+  		[<a jwcid="@PageLink" page="xml/TaxaImportHome">Return to Taxa Import Workflow Home...</a>]</p>
+
+	<h2 class="clear">Manual Reconciled Nodes in Clade <span jwcid="@Insert" value="ognl:currentBasalNodeName"/></h2>
+
+	<div style="float: right">	
+	</div>
+	
+	<h4>Manual Reconciled Nodes</h4>	
+	<span jwcid="@If" condition="ognl:manualReconcileRecords != null && !manualReconcileRecords.isEmpty">
+	<span jwcid="@For" source="ognl:manualReconcileRecords" value="ognl:currentManualReconcileRecord" index="ognl:index">
+			<li>manual reconcile: <ul>  
+				<li>source node: <span jwcid="@Insert" value="ognl:currentManualReconcileRecord.sourceNodeName"/>
+					(<span jwcid="@Insert" value="ognl:currentManualReconcileRecord.sourceNodeId"/>)
+					<span jwcid="@HideablePanel" idBase="literal:sourceXml" idSuffix="ognl:index" 
+						panelContent="ognl:currentSourceManifestXml" 
+						toggleLinkText="literal:show source node manifest" />
+				</li>
+				<span jwcid="@If" condition="ognl:targetHasInfo">			
+				<li>target node/new parent node: <span jwcid="@Insert" value="ognl:currentManualReconcileRecord.targetNodeName"/>
+					(<span jwcid="@Insert" value="ognl:currentManualReconcileRecord.targetNodeId"/>)
+					<span jwcid="@HideablePanel" idBase="literal:targetXml" idSuffix="ognl:index" 
+						panelContent="ognl:currentTargetManifestXml" toggleLinkText="literal:show target node manifest" />
+				</li>
+				<li>reconciled by: <span jwcid="@Insert" value="ognl:currentManualReconcileRecord.resolvedBy" /></li>
+				<li>timestamp: <span jwcid="@Insert" value="ognl:currentManualReconcileRecord.timestamp" /></li>
+				</span>
+			</ul>			
+			</li>
+	</span>
+	</span>
+	<span jwcid="@Else">
+	<p>no manual reconciled nodes...</p>
+	</span>
+	
+	<h4>Retired Nodes</h4>	
+	<span jwcid="@If" condition="ognl:nodeRetirementRecords != null && !nodeRetirementRecords.isEmpty">
+	<ul jwcid="@For" source="ognl:nodeRetirementRecords" value="ognl:currentNodeRetirementRecord" element="ul">
+			<li>node: <span jwcid="@Insert" value="ognl:currentNodeRetirementRecord.nodeName"/> 
+					(<span jwcid="@Insert" value="ognl:currentNodeRetirementRecord.nodeId"/>)
+				<ul>
+					<li>retired from: <span jwcid="@Insert" value="ognl:currentRetiredCladeName" /></li>
+					<li>retired by: <span jwcid="@Insert" value="ognl:currentNodeRetirementRecord.retiredBy"/></li>
+					<li>timestamp: <span jwcid="@Insert" value="ognl:currentNodeRetirementRecord.timestamp"/></li>
+				</ul>  
+			</li>
+	</ul>	
+	</span>
+	<span jwcid="@Else">
+	<p>no retired nodes...</p>
+	</span>
+	<h5>Page Validity Check:</h5>
+	<span jwcid="@HideablePanel" idBase="literal:pageValidity" idSuffix="literal:650" 
+		panelContent="ognl:outputLogString" 
+		toggleLinkText="literal:show page validity check results" />
+  </form>
+</html>	

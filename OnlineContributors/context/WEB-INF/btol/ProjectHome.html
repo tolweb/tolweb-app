@@ -1,0 +1,67 @@
+<html jwcid="@ScientificWrapper" title="ognl:'Databases Home Page for Project ' + project.name">
+	<h2 class="clear"><span jwcid="@Insert" value="ognl:project.name"/> Databases Home</h2>
+    <table cellpadding="10" cellspacing="2">
+        <tr align="center">
+            <td rowspan="2" style="width: 550px;">
+	    		<span jwcid="@If" condition="prop:canViewMolecular">
+				    <h3>Molecular Workspace</h3>    
+			        <dt>Genes</dt>
+				    <dd><a jwcid="@PageLink" page="btol/ViewAllGenes">View all genes</a></dd>
+				    <dd><a jwcid="@DirectLink" listener="listener:addNewGene">Add a new gene</a></dd>
+				    <dt>Gene Fragments</dt>
+				    <dd><a jwcid="@PageLink" page="btol/ViewAllGeneFragments">View all gene fragments</a></dd>
+				    <dd><a jwcid="@DirectLink" listener="listener:addNewGeneFragment">Add a new gene fragment</a></dd>
+			        <dt>Primers</dt>
+				    <dd><a jwcid="@PageLink" page="btol/ViewAllPrimers">View all primers</a></dd>
+				    <dd><a jwcid="@DirectLink" listener="listener:addNewPrimer">Add a new primer</a></dd>    
+				    <dt>PCR Protocols</dt>    
+				    <dd><a jwcid="@PageLink" page="btol/ViewAllProtocols">View all PCR protocols</a></dd>
+				    <dd><a jwcid="@DirectLink" listener="listener:addNewProtocol">Add a new PCR protocol</a></dd>
+				    <dt>Specimens</dt>
+				    <dd><a jwcid="@PageLink" page="btol/ViewAllSpecimens">View all Specimens</a></dd>    
+				    <dd><a jwcid="@PageLink" page="btol/UploadSpecimens">Upload new Specimens</a></dd> 
+			        <dd><a jwcid="@PageLink" page="btol/FindSpecimens">Search for Specimens</a></dd>       
+				    <dt>DNA Extractions</dt>
+				    <dd><a jwcid="@PageLink" page="btol/ViewAllExtractions">View all DNA Extractions</a></dd>    
+				    <dd><a jwcid="@PageLink" page="btol/UploadExtractions">Upload new DNA Extractions</a></dd>
+				    <dt>PCR Reactions</dt>
+				    <dd><a jwcid="@PageLink" page="btol/UploadPCRReactions">Upload new PCR Reactions</a></dd>
+				    <dd><a jwcid="@PageLink" page="btol/AddImagesToPCRBatches">Add images to existing PCR Reactions</a></dd>
+				    <dd><a jwcid="@PageLink" page="btol/FindPCRBatches">Search for PCR Reactions</a></dd>
+			    </span>            
+	        </td>
+            <td rowspan="2"><div style="width:80px"></div></td>
+            <td>
+    <img jwcid="@Image" image="prop:beetleImage"/>
+    		</td>
+        </tr>
+        
+        <tr align="center">
+            <td>
+                <dt><a href="/SpecimenPreservationInstructions">Instructions for preserving and handling DNA specimens</a></dt>
+                <br/>
+                <dt>Simple lists of specimens needed:</dt>
+			    <dd><a href="/needed/dna">for DNA</a></dd>
+				<dd><a href="/needed/adult">for Adult Morphology</a></dd>
+			    <dd><a href="/needed/larvae">for Larval Morphology</a></dd>
+			    <br/>
+			    <dt>DNA Specimen status lists:</dt>
+			    <dd><a jwcid="@ExternalLink" page="btol/TextOnlyDNAStatus" parameters="ognl:{1}">Specimens still needed for DNA</a></dd>
+			    <dd><a jwcid="@ExternalLink" page="btol/TextOnlyDNAStatus" parameters="ognl:{2}">Specimens sufficient for DNA</a></dd>
+			    <dd><a jwcid="@ExternalLink" page="btol/TextOnlyDNAStatus" parameters="ognl:{3}">All Specimens, DNA status</a></dd>    
+			    <br/>
+			    <dt>People</dt>
+			    <dd><a jwcid="@PageLink" page="btol/TWiGComposition">TWiG Composition</a></dd>    
+			    <dd><a jwcid="@DirectLink" listener="listener:editMyInformation">Change Information about Me</a></dd>
+			    <dd><a jwcid="@PageLink" page="btol/ViewAllPeople">View all people</a></dd>
+			    <span jwcid="@If" condition="prop:canViewMolecular">    
+			    <dd><a jwcid="@DirectLink" listener="listener:addNewPerson">Add a new person</a></dd>
+			    <dt>Additional Information</dt>
+			    <dd><a href="/TaxaCriteria">Criteria for choosing BTOL taxa</a></dd>
+			    </span>    
+    		</td>
+		</tr>
+    </table>
+    <h3>Additional Websites</h3>
+    <a href="http://insects.oeb.harvard.edu/ATOL/index.htm" target="_blank">Harvard BToL Proposal Website</a>
+</html>

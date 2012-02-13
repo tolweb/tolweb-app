@@ -1,0 +1,137 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:false" title="Edit Teacher Resource Support Materials" 
+	additionalDelegate="ognl:delegate">
+<div id="trhs2editpgtop">
+	<a name="trhs2text"></a>
+		<h3 class="sectionheaderblub">Step 6. Edit Support Materials</h3>    		
+        <div class="boxtocpages">
+			<div jwcid="@TreehouseImportantDiv">            
+				<li><a href="#supportmats">Compose Support Materials</a></li>
+				<li><a href="#supportmats">Add Support Material Documents</a></li>
+				<li><a href="#learnerintro">Learner Section</a></li>
+				
+			</div>
+			<div jwcid="@TeacherResourceHelpDiv">
+		        <li><span><a jwcid="@HelpLink" noDiv="ognl:true" helpName="Compose Support Materials" pageName="TeacherResourceHelpMessagesPage">Compose Support Materials</a></span></li>
+				<li><span><a jwcid="@HelpLink" noDiv="ognl:true" helpName="Add Documents As Support Materials" pageName="TeacherResourceHelpMessagesPage">Add Support Documents</a></span></li>
+				<li><span><a jwcid="@HelpLink" noDiv="ognl:true" helpName="Learner Section" pageName="TeacherResourceHelpMessagesPage">Learner Section</a></span></li>
+		    </div>        
+			<div jwcid="@TreehouseWarningDiv"/>    
+			<div class="importantnartop">
+				<h5><strong>Edit Support Materials Instructions</strong></h5>
+				<dl><dt><a href="#composemats">Compose Support Materials</a> </dt>
+				  <dd>  Use this section to create materials with the treehouse HTML editor. </dd>
+				  <dt><a href="#trhsadddocs">Add Support Material Documents</a> </dt>
+				
+				  <dd>Use this section to add documents (in MSWord format etc.) to be used as support materials.</dd>
+				  <dt><a href="#learnerintro">Learner Section Intstructions</a></dt>
+				  <dd>Use this section if you would like to add an introduction or instructions for students for a separate &quot;learner section&quot; page.</dd>
+				</dl>
+			</div>            
+		</div>
+<div class="spacer">&nbsp;</div>
+        </div>
+<div class="boxtocpages"><a name="supportmats"></a>
+		<h3 class="sectionheaderblubtop"> Teacher Resource Support Materials</h3>
+		<div id="supportmats">
+			<a name="composemats"></a><h3>Compose Support Materials</h3>
+            <a jwcid="@HelpLink" helpName="Compose Support Materials" pageName="TeacherResourceHelpMessagesPage"/>
+            <span jwcid="@For" source="ognl:treehouse.supportMaterials" element="ognl:null"
+                value="ognl:currentSupportMaterial" convertor="ognl:supportMaterialConvertor" index="ognl:index">
+                <table valign="bottom" class="supportmatstable">
+          <tr>
+            <th class="xpadtop"><span style="margin-top: 40px;">Document Type</span></th>
+            <th>Show Link in Learner Section</th>
+            </tr>
+          <tr>
+
+            <td><label>
+                <select jwcid="@PropertySelection" model="ognl:supportMaterialTypeModel" value="ognl:currentSupportMaterial.documentType"/>
+              </label>
+            </td>
+            <td><input jwcid="@Checkbox" type="checkbox" value="ognl:currentSupportMaterial.isLearner"/></td>
+			<td class="moveupdown">
+				<ul>
+			        <li jwcid="@If" condition="ognl:supportMaterialCanMoveUp">
+						<a jwcid="@LinkSubmit" selected="ognl:supportMaterialMoveUpIndex" tag="ognl:index"><img src="/tree/learn/lisa.images/trhouseimage/Up.gif">Up</a>
+			        </li>
+			        <li jwcid="@If" condition="ognl:supportMaterialCanMoveDown">
+						<a jwcid="@LinkSubmit" selected="ognl:supportMaterialMoveDownIndex" tag="ognl:index"><img src="/tree/learn/lisa.images/trhouseimage/Down.gif">Down</a>
+			        </li>
+			        <li><a jwcid="@LinkSubmit" selected="ognl:supportMaterialDeleteIndex" tag="ognl:index">&#8211; Delete</a></li>
+			  	</ul>
+			</td>
+           </tr>
+        </table> 	<h4>Title</h4>
+         <p class="instructionshrt">The title you add will serve as the page title and the link to this support material.</p>
+
+			  <div id="supportmattitle"><label class="contentlabel">
+			         <input jwcid="@TextField" value="ognl:currentSupportMaterial.title" size="50"/></label></div>
+		<div class="spacer">&nbsp;</div>
+				   <div id="supportmatcontent">
+				  <h4>Support Material Content</h4> 
+  		</div>
+                   <span jwcid="@If" condition="ognl:index == 0" element="ognl:null">
+                   	<div jwcid="@HTMLEditorBox"/>
+                   </span>
+                       <div class="spacer">&nbsp;</div>
+				  			  <p><textarea cols="ognl:70" rows="ognl:30" jwcid="@PreparedTextArea" valuePath="text" 
+                                    targetObject="ognl:currentSupportMaterial" useEditor="prop:useHTMLEditor"></textarea></p>
+                                </span>
+			   <div class="importantaddfield" style="margin: 0 10px;">
+				  <label><strong>Add fields for
+                   <input jwcid="@TextField" displayName="Number of extra fields" translator="translator:number"
+                   		validators="validators:min=1,max=10" value="ognl:numNewFields" size="5"/>
+more support materials</strong></label>
+			      <input type="submit" jwcid="@Submit" value="Submit"/>
+			 </div>
+			  <div class="spacer">&nbsp;</div>
+
+</div>
+		  </div>
+<div class="topbottom2">
+	<a href="#trhseditnav">top</a> | <a href="#trhssavepreview">go to save and preview!</a>
+</div>
+<div class="spacer">&nbsp;</div>
+<div id="trhsadddocs" class="boxtoc"><a name="trhsadddocs"></a>
+ <h4>Add Support Material Documents</h4>
+	<a jwcid="@HelpLink" helpName="Add Documents As Support Materials" pageName="TeacherResourceHelpMessagesPage"/>										 
+    <table valign="bottom">
+        <tr>
+                        <th class="xpadtop" style="min-width: 120px;"> Documents </th>
+                        <th class="xpadtop"><span style="margin-top: 40px;">Document Type</span></th>
+                        <th>Show Link in Learner Section</th>
+        </tr>
+		<tr jwcid="@For" source="ognl:treehouse.supportMaterialDocuments" value="ognl:currentSupportMaterialDocument"
+            convertor="ognl:supportMaterialDocumentConvertor" element="tr" index="ognl:index">
+            			<td><span jwcid="@Insert" value="ognl:currentDocumentString"/></td>
+                        <td><label><select jwcid="@PropertySelection" model="ognl:supportMaterialTypeModel" value="ognl:currentSupportMaterialDocument.documentType"/></label></td>
+                        <td><input jwcid="@Checkbox" type="checkbox" value="ognl:currentSupportMaterialDocument.isLearner"/></td>
+						<td class="moveupdown">
+							<ul>
+						        <li jwcid="@If" condition="ognl:supportMaterialDocumentCanMoveUp">
+									<a jwcid="@LinkSubmit" selected="ognl:supportMaterialDocumentMoveUpIndex" tag="ognl:index"><img src="/tree/learn/lisa.images/trhouseimage/Up.gif">Up</a>
+						        </li>
+						        <li jwcid="@If" condition="ognl:supportMaterialDocumentCanMoveDown">
+									<a jwcid="@LinkSubmit" selected="ognl:supportMaterialDocumentMoveDownIndex" tag="ognl:index"><img src="/tree/learn/lisa.images/trhouseimage/Down.gif">Down</a>
+						        </li>
+						        <li><a jwcid="@LinkSubmit" selected="ognl:supportMaterialDocumentDeleteIndex" tag="ognl:index">&#8211; Delete</a></li>
+						  	</ul>
+						</td>
+ 		</tr>
+        <tr>
+                        <td><a jwcid="@LinkSubmit" listener="ognl:listeners.addSupportDocument">Add Document</a></td>                          				
+		</tr>                        
+                        </table>
+</div>
+<div class="spacer">&nbsp;</div>
+<div id="learnerintro" class="boxtoc"> <a name="learnerintro"></a>
+<a jwcid="@HelpLink" pageName="TeacherResourceHelpMessagesPage" helpName="Learner Section"/>
+<h4>Learner Section Instructions</h4>
+<p class="instructionshrt">If you would like to have a separate learner section for students to follow the assignment, you can write an introduction to the activity and add instructions for students here. As you add support materials for students be sure and check the box to have them shown in the learner section.</p>
+	<div jwcid="@HTMLEditorBox" idIndex="ognl:2"/>
+    <textarea jwcid="@PreparedTextArea" valuePath="learnerSectionIntro" cols="ognl:70" rows="ognl:30"></textarea>
+	</div>
+	
+  
+	<div class="spacer">&nbsp;</div>
+</html>

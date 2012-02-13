@@ -1,0 +1,10 @@
+<span jwcid="@If" condition="ognl:useCache && output != null">
+	<span jwcid="@Insert" value="ognl:output" raw="ognl:true"/>
+</span>
+<span jwcid="@Else">
+	<h4 class="open" id="navlinked" onclick="changeclass('navlinked', 'open', 'closed'); changeclass('navlinkedmenu', 'open', 'closed')">linked groups</h4>                   <ul id="navlinkedmenu" class="open">	                <li class="listintro">This page is linked to several groups:</li>
+		<span jwcid="@Foreach" source="ognl:processedLinkedGroups" value="ognl:currentLinkedGroup">
+	        <li><a jwcid="@GenericLink" href="ognl:currentLinkedGroupLinkString" disabled="ognl:!currentLinkedGroupHasPage"><span jwcid="@Insert" value="ognl:currentLinkedGroup.name"/></a></li>
+	    </span>
+	</ul>
+</span>

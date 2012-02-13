@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+<input-symbol key="pageName" class="java.lang.String" required="no"/>
+<input-symbol key="previewUrl" class="java.lang.String" required="no"/>
+<input-symbol key="previewSelected" class="java.lang.Boolean" required="no"/>
+<body>
+<unique>
+<![CDATA[	
+var newWindowName = 'previewWindow';
+var previewUrl = '${previewUrl}';
+function openWindow(href,w_width,w_height) {
+	if(!w_width) { w_width = 400; }
+	if(!w_height) { w_height= 300; }
+	var win = window.open(href, '', 'fullscreen=no,toolbar=no,status=no,menubar=no,scrollbars=yes,resizable=yes,directories=no,location=no,width=' + w_width + ',height=' + w_height);
+	win.focus();
+}
+function doImageSearch() {
+	openWindow('/onlinecontributors/app?service=external&page=TreehouseImageSearch&sp=l0&sp=TF1&sp=TF1',800,500);
+}
+function openImagesManager() {
+	openWindow('/onlinecontributors/app?service=page&page=TreehouseImagesManager',800,500);
+}
+function openPreview() {
+	var win = window.open('/onlinecontributors/app?service=page&page=${pageName}', 'preview', 'fullscreen=no,toolbar=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes,directories=yes,location=yes,width=800,height=500');
+	win.focus();
+}
+function openPreviewInOpener() {
+	var url = '/onlinecontributors/app?service=page&page=${pageName}';
+	var opener = window.opener;
+	var win;
+	if (opener != null && !opener.closed) {
+		win = opener;	
+		win.location = url;
+	} else {
+		previewWindow = getOpenerOrPreview(url);
+		win = previewWindow;
+	}
+	win.focus();
+}
+function getOpenerOrPreview(url) {
+	if (url == null) {
+		url = previewUrl;
+	}
+	if (window.opener != null && !window.opener.closed) {
+		return window.opener;
+	} else {
+		return window.open(url, newWindowName, 'fullscreen=no,toolbar=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes,directories=yes,location=yes,width=800,height=500');
+	}
+}
+function redirectPreview() {
+	var window = getOpenerOrPreview();
+	window.location = previewUrl;
+}
+]]>
+</unique>
+</body>
+<initialization>
+<unique>
+<if expression="previewSelected">
+redirectPreview();
+</if>
+</unique>
+</initialization>
+</script>

@@ -1,0 +1,15 @@
+<html jwcid="@NewBarebonesFormWrapper" title="Submitted for publication" bodyId="trhsdatabody">
+<h2>Treehouse Submitted</h2>
+<span jwcid="@If" element="ognl:null" condition="ognl:!isStudent">
+<p>Thank you for your treehouse submission.  Your treehouse has been forwarded to our treehouse editor for
+content verification.  You will receive an email when your treehouse is published.</p>
+</span>
+<span jwcid="@Else" element="ognl:null">
+<p>Thank you for your treehouse submission.  Your treehouse has been forwarded to your teacher for
+content verification.  Your teacher will review the treehouse and either forward it to the Tree of Life
+Learning Materials editor or return it to you for revisions.</p>    
+</span>
+<p align="center"><a href="javascript:window.close();">Close Window</p>
+</html>
+<span jwcid="@TreehouseSubmittedEmail" emailAddresses="ognl:emailAddresses" 
+	treehouse="ognl:treehouse" isStudent="ognl:isStudent"/>

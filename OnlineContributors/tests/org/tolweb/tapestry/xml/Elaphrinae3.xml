@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tree-of-life-web version="1.0">
+  <node>
+    <name>Elaphrinae</name>
+    <rank>Subfamily</rank>
+    <auth-date>1837</auth-date>
+    <authority>Erichson</authority>
+    <source-information>
+      <source-id>LorenzCarabCat</source-id>
+      <source-key>356826</source-key>
+    </source-information>
+    <nodes>
+      <node>
+        <name>Diacheila</name>
+        <rank>Genus</rank>
+        <auth-date>1844</auth-date>
+        <authority>Motschulsky</authority>
+        <source-information>
+          <source-id>LorenzCarabCat</source-id>
+          <source-key>356827</source-key>
+        </source-information>
+        <othernames>
+          <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+            <name>Diaheila</name>
+            <authority>Motschulsky</authority>
+            <auth-date>1844</auth-date>
+          </othername>
+          <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+            <name>Diachila</name>
+            <authority>Motschulsky</authority>
+            <auth-date>1850</auth-date>
+          </othername>
+          <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+            <name>Arctobia</name>
+            <authority>Thomson, C.G.</authority>
+            <auth-date>1859</auth-date>
+          </othername>
+        </othernames>
+        <nodes>
+          <node is-new-combination="true" italicize-name="true" leaf="false">
+            <name>Diacheila arctica</name>
+            <rank>Species</rank>
+            <auth-date>1810</auth-date>
+            <authority>Gyllenhal</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356831</source-key>
+            </source-information>
+            <nodes>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Diacheila arctica arctica</name>
+                <rank>Subspecies</rank>
+                <auth-date>1810</auth-date>
+                <authority>Gyllenhal</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356832</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Diacheila octonotata</name>
+                    <authority>Motschulsky</authority>
+                    <auth-date>1851</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="true" italicize-name="true" leaf="true">
+                <name>Diacheila arctica amoena</name>
+                <rank>Subspecies</rank>
+                <auth-date>1835</auth-date>
+                <authority>Faldermann</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356834</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Diacheila subpolaris</name>
+                    <authority>LeConte</authority>
+                    <auth-date>1863</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                    <name>Diacheila americana</name>
+                    <authority>Motschulsky</authority>
+                    <auth-date>1864</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+            </nodes>
+          </node>
+          <node is-new-combination="false" italicize-name="true" leaf="true">
+            <name>Diacheila fausti</name>
+            <rank>Species</rank>
+            <auth-date>1887</auth-date>
+            <authority>Heyden</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356837</source-key>
+            </source-information>
+          </node>
+          <node is-new-combination="true" italicize-name="true" leaf="true">
+            <name>Diacheila polita</name>
+            <rank>Species</rank>
+            <auth-date>1835</auth-date>
+            <authority>Faldermann</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356838</source-key>
+            </source-information>
+            <othernames>
+              <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                <name>Diacheila xiaoxinganensis</name>
+                <authority>Li &amp; Liang</authority>
+                <auth-date>1992</auth-date>
+              </othername>
+            </othernames>
+          </node>
+        </nodes>
+      </node>
+      <node>
+        <name>Blethisa</name>
+        <rank>Genus</rank>
+        <auth-date>1810</auth-date>
+        <authority>Bonelli</authority>
+        <source-information>
+          <source-id>LorenzCarabCat</source-id>
+          <source-key>356840</source-key>
+        </source-information>
+        <othernames>
+          <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+            <name>Helobium</name>
+            <authority>Leach</authority>
+            <auth-date>1815</auth-date>
+          </othername>
+          <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+            <name>Helobia</name>
+            <authority>Curtis</authority>
+            <auth-date>1826</auth-date>
+          </othername>
+          <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+            <name>Rhaphiona</name>
+            <authority>Fischer von Waldheim in Zoubkoff</authority>
+            <auth-date>1829</auth-date>
+          </othername>
+        </othernames>
+        <nodes>
+          <node is-new-combination="false" italicize-name="true" leaf="true">
+            <name>Blethisa catenaria</name>
+            <rank>Species</rank>
+            <auth-date>1944</auth-date>
+            <authority>Brown</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356844</source-key>
+            </source-information>
+          </node>
+          <node is-new-combination="false" italicize-name="true" leaf="true">
+            <name>Blethisa eschscholtzii</name>
+            <rank>Species</rank>
+            <auth-date>1829</auth-date>
+            <authority>Zoubkoff</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356845</source-key>
+            </source-information>
+            <othernames>
+              <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                <name>Blethisa foveata</name>
+                <authority>Gebler</authority>
+                <auth-date>1829</auth-date>
+              </othername>
+              <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                <name>Blethisa victor</name>
+                <authority>Fischer von Waldheim</authority>
+                <auth-date>1842</auth-date>
+              </othername>
+            </othernames>
+          </node>
+          <node is-new-combination="false" italicize-name="true" leaf="true">
+            <name>Blethisa inexpectata</name>
+            <rank>Species</rank>
+            <auth-date>1983</auth-date>
+            <authority>Goulet &amp; Smetana</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356848</source-key>
+            </source-information>
+          </node>
+          <node is-new-combination="false" italicize-name="true" leaf="true">
+            <name>Blethisa julii</name>
+            <rank>Species</rank>
+            <auth-date>1863</auth-date>
+            <authority>LeConte</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356849</source-key>
+            </source-information>
+          </node>
+          <node is-new-combination="true" italicize-name="true" leaf="false">
+            <name>Blethisa multipunctata</name>
+            <rank>Species</rank>
+            <auth-date>1758</auth-date>
+            <authority>Linnaeus</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356850</source-key>
+            </source-information>
+            <nodes>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Blethisa multipunctata multipunctata</name>
+                <rank>Subspecies</rank>
+                <auth-date>1758</auth-date>
+                <authority>Linnaeus</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356851</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Blethisa curtula</name>
+                    <authority>Motschulsky</authority>
+                    <auth-date>1844</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                    <name>Blethisa aerosa</name>
+                    <authority>DallaTorre</authority>
+                    <auth-date>1877</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="2">
+                    <name>Blethisa chlorotica</name>
+                    <authority>DallaTorre</authority>
+                    <auth-date>1877</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="3">
+                    <name>Blethisa rufipes</name>
+                    <authority>DallaTorre</authority>
+                    <auth-date>1877</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Blethisa multipunctata aurata</name>
+                <rank>Subspecies</rank>
+                <auth-date>1828</auth-date>
+                <authority>Fischer von Waldheim</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356856</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Blethisa hudsonica</name>
+                    <authority>Casey</authority>
+                    <auth-date>1924</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+            </nodes>
+          </node>
+          <node is-new-combination="false" italicize-name="true" leaf="true">
+            <name>Blethisa oregonensis</name>
+            <rank>Species</rank>
+            <auth-date>1853</auth-date>
+            <authority>LeConte</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356858</source-key>
+            </source-information>
+            <othernames>
+              <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                <name>Blethisa acutangula</name>
+                <authority>Chaudoir</authority>
+                <auth-date>1861</auth-date>
+              </othername>
+              <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                <name>Blethisa columbica</name>
+                <authority>Casey</authority>
+                <auth-date>1909</auth-date>
+              </othername>
+            </othernames>
+          </node>
+          <node is-new-combination="false" italicize-name="true" leaf="true">
+            <name>Blethisa quadricollis</name>
+            <rank>Species</rank>
+            <auth-date>1847</auth-date>
+            <authority>Haldeman</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356861</source-key>
+            </source-information>
+            <othernames>
+              <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                <name>Blethisa americana</name>
+                <authority>Harris, T.W.</authority>
+                <auth-date>1869</auth-date>
+              </othername>
+            </othernames>
+          </node>
+          <node is-new-combination="false" italicize-name="true" leaf="true">
+            <name>Blethisa tuberculata</name>
+            <rank>Species</rank>
+            <auth-date>1844</auth-date>
+            <authority>Motschulsky</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356863</source-key>
+            </source-information>
+            <othernames>
+              <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                <name>Blethisa kaszabi</name>
+                <authority>Jedlicka</authority>
+                <auth-date>1967</auth-date>
+              </othername>
+            </othernames>
+          </node>
+        </nodes>
+      </node>
+      <node>
+        <name>Elaphrus</name>
+        <rank>Genus</rank>
+        <auth-date>1775</auth-date>
+        <authority>Fabricius</authority>
+        <source-information>
+          <source-id>LorenzCarabCat</source-id>
+          <source-key>356865</source-key>
+        </source-information>
+        <nodes>
+          <node>
+            <name>Arctelaphrus</name>
+            <rank>Subgenus</rank>
+            <auth-date>1926</auth-date>
+            <authority>Semenov</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356866</source-key>
+            </source-information>
+            <nodes>
+              <node is-new-combination="false" italicize-name="true" leaf="false">
+                <name>Elaphrus lapponicus</name>
+                <rank>Species</rank>
+                <auth-date>1810</auth-date>
+                <authority>Gyllenhal</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356867</source-key>
+                </source-information>
+                <nodes>
+                  <node is-new-combination="false" italicize-name="true" leaf="true">
+                    <name>Elaphrus lapponicus lapponicus</name>
+                    <rank>Subspecies</rank>
+                    <auth-date>1810</auth-date>
+                    <authority>Gyllenhal</authority>
+                    <source-information>
+                      <source-id>LorenzCarabCat</source-id>
+                      <source-key>356868</source-key>
+                    </source-information>
+                    <othernames>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                        <name>Elaphrus elongatus</name>
+                        <authority>Fischer von Waldheim</authority>
+                        <auth-date>1828</auth-date>
+                      </othername>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                        <name>Elaphrus obscurior</name>
+                        <authority>Kirby</authority>
+                        <auth-date>1837</auth-date>
+                      </othername>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="2">
+                        <name>Elaphrus viridis</name>
+                        <authority>Sparre-Schneider</authority>
+                        <auth-date>1888</auth-date>
+                      </othername>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="3">
+                        <name>Elaphrus violaceus</name>
+                        <authority>Lutshnik</authority>
+                        <auth-date>1936</auth-date>
+                      </othername>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="4">
+                        <name>Elaphrus viridis</name>
+                        <authority>Jedlicka</authority>
+                        <auth-date>1956</auth-date>
+                      </othername>
+                    </othernames>
+                  </node>
+                  <node is-new-combination="false" italicize-name="true" leaf="true">
+                    <name>Elaphrus lapponicus obliteratus</name>
+                    <rank>Subspecies</rank>
+                    <auth-date>1853</auth-date>
+                    <authority>Mannerheim</authority>
+                    <source-information>
+                      <source-id>LorenzCarabCat</source-id>
+                      <source-key>356874</source-key>
+                    </source-information>
+                  </node>
+                </nodes>
+              </node>
+            </nodes>
+          </node>
+          <node>
+            <name>Neoelaphrus</name>
+            <rank>Subgenus</rank>
+            <auth-date>1951</auth-date>
+            <authority>Hatch</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356875</source-key>
+            </source-information>
+            <nodes>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus cicatricosus</name>
+                <rank>Species</rank>
+                <auth-date>1848</auth-date>
+                <authority>LeConte</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356877</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus rhodeanus</name>
+                    <authority>Casey</authority>
+                    <auth-date>1924</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus clairvillei</name>
+                <rank>Species</rank>
+                <auth-date>1837</auth-date>
+                <authority>Kirby</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356879</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus politus</name>
+                    <authority>LeConte</authority>
+                    <auth-date>1850</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                    <name>Elaphrus frosti</name>
+                    <authority>Hippisley</authority>
+                    <auth-date>1922</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="2">
+                    <name>Elaphrus torreyensis</name>
+                    <authority>Tanner</authority>
+                    <auth-date>1942</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="3">
+                    <name>Elaphrus lynni</name>
+                    <authority>Pierce</authority>
+                    <auth-date>1948</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus cupreus</name>
+                <rank>Species</rank>
+                <auth-date>1812</auth-date>
+                <authority>Duftschmid</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356884</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus arcticus</name>
+                    <authority>Dejean</authority>
+                    <auth-date>1826</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus fuliginosus</name>
+                <rank>Species</rank>
+                <auth-date>1830</auth-date>
+                <authority>Say</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356887</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus japonicus</name>
+                <rank>Species</rank>
+                <auth-date>1954</auth-date>
+                <authority>Ueno</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356888</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus laevigatus</name>
+                <rank>Species</rank>
+                <auth-date>1852</auth-date>
+                <authority>LeConte</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356889</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus politus</name>
+                    <authority>Casey</authority>
+                    <auth-date>1897</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                    <name>Elaphrus caseyi</name>
+                    <authority>Leng</authority>
+                    <auth-date>1918</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus lindrothi</name>
+                <rank>Species</rank>
+                <auth-date>1983</auth-date>
+                <authority>Goulet</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356892</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus olivaceus</name>
+                <rank>Species</rank>
+                <auth-date>1863</auth-date>
+                <authority>LeConte</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356893</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus potanini</name>
+                <rank>Species</rank>
+                <auth-date>1889</auth-date>
+                <authority>Semenov</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356894</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus pyrenoeus</name>
+                <rank>Species</rank>
+                <auth-date>1850</auth-date>
+                <authority>Motschulsky</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356895</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus pyrenaeus</name>
+                    <authority>Fairmaire &amp; Laboulb??ne</authority>
+                    <auth-date>1854</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                    <name>Elaphrus nevadensis</name>
+                    <authority>Jeanne</authority>
+                    <auth-date>1967</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus sibiricus</name>
+                <rank>Species</rank>
+                <auth-date>1844</auth-date>
+                <authority>Motschulsky</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356898</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus dauricus</name>
+                    <authority>Morawitz, A.</authority>
+                    <auth-date>1862</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus splendidus</name>
+                <rank>Species</rank>
+                <auth-date>1828</auth-date>
+                <authority>Fischer von Waldheim</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356900</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus splendidulus</name>
+                    <authority>Motschulsky</authority>
+                    <auth-date>1850</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus sugai</name>
+                <rank>Species</rank>
+                <auth-date>1987</auth-date>
+                <authority>Nakane</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356902</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus uliginosus</name>
+                <rank>Species</rank>
+                <auth-date>1792</auth-date>
+                <authority>Fabricius</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356903</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus impressifrons</name>
+                    <authority>Chaudoir</authority>
+                    <auth-date>1842</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                    <name>Elaphrus italicus</name>
+                    <authority>DallaTorre</authority>
+                    <auth-date>1877</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="2">
+                    <name>Elaphrus purkynei</name>
+                    <authority>Obenberger</authority>
+                    <auth-date>1917</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="3">
+                    <name>Elaphrus laevisculptus</name>
+                    <authority>B??nninger</authority>
+                    <auth-date>1919</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="4">
+                    <name>Elaphrus bedeli</name>
+                    <authority>Mequignon</authority>
+                    <auth-date>1924</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="5">
+                    <name>Elaphrus viridicupreus</name>
+                    <authority>Louvet</authority>
+                    <auth-date>1925</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+            </nodes>
+          </node>
+          <node>
+            <name>Elaphrus</name>
+            <rank>Subgenus</rank>
+            <auth-date>1775</auth-date>
+            <authority>Fabricius</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356910</source-key>
+            </source-information>
+            <othernames>
+              <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+                <name>Trichelaphrus</name>
+                <authority>Semenov</authority>
+                <auth-date>1926</auth-date>
+              </othername>
+            </othernames>
+            <nodes>
+              <node is-new-combination="false" italicize-name="true" leaf="false">
+                <name>Elaphrus americanus</name>
+                <rank>Species</rank>
+                <auth-date>1831</auth-date>
+                <authority>Dejean</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356912</source-key>
+                </source-information>
+                <nodes>
+                  <node is-new-combination="false" italicize-name="true" leaf="true">
+                    <name>Elaphrus americanus americanus</name>
+                    <rank>Subspecies</rank>
+                    <auth-date>1831</auth-date>
+                    <authority>Dejean</authority>
+                    <source-information>
+                      <source-id>LorenzCarabCat</source-id>
+                      <source-key>356913</source-key>
+                    </source-information>
+                    <othernames>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                        <name>Elaphrus intermedius</name>
+                        <authority>Kirby</authority>
+                        <auth-date>1837</auth-date>
+                      </othername>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                        <name>Elaphrus punctatissimus</name>
+                        <authority>LeConte</authority>
+                        <auth-date>1850</auth-date>
+                      </othername>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="2">
+                        <name>Elaphrus sinuatus</name>
+                        <authority>LeConte</authority>
+                        <auth-date>1850</auth-date>
+                      </othername>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="3">
+                        <name>Elaphrus gratiosus</name>
+                        <authority>Mannerheim</authority>
+                        <auth-date>1853</auth-date>
+                      </othername>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="4">
+                        <name>Elaphrus bituberosus</name>
+                        <authority>Casey</authority>
+                        <auth-date>1924</auth-date>
+                      </othername>
+                    </othernames>
+                  </node>
+                  <node is-new-combination="false" italicize-name="true" leaf="true">
+                    <name>Elaphrus americanus sylvanus</name>
+                    <rank>Subspecies</rank>
+                    <auth-date>1982</auth-date>
+                    <authority>Goulet</authority>
+                    <source-information>
+                      <source-id>LorenzCarabCat</source-id>
+                      <source-key>356920</source-key>
+                    </source-information>
+                  </node>
+                </nodes>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus californicus</name>
+                <rank>Species</rank>
+                <auth-date>1843</auth-date>
+                <authority>Mannerheim</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356921</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus similis</name>
+                    <authority>LeConte</authority>
+                    <auth-date>1848</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                    <name>Elaphrus hesperius</name>
+                    <authority>Casey</authority>
+                    <auth-date>1920</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus citharus</name>
+                <rank>Species</rank>
+                <auth-date>1997</auth-date>
+                <authority>Goulet &amp; Smetana</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356924</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus comatus</name>
+                <rank>Species</rank>
+                <auth-date>1983</auth-date>
+                <authority>Goulet</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356925</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus finitimus</name>
+                <rank>Species</rank>
+                <auth-date>1920</auth-date>
+                <authority>Casey</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356926</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus foveatus</name>
+                    <authority>Pierce</authority>
+                    <auth-date>1948</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="false">
+                <name>Elaphrus hypocrita</name>
+                <rank>Species</rank>
+                <auth-date>1926</auth-date>
+                <authority>Semenov</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356928</source-key>
+                </source-information>
+                <nodes>
+                  <node is-new-combination="false" italicize-name="true" leaf="true">
+                    <name>Elaphrus hypocrita hypocrita</name>
+                    <rank>Subspecies</rank>
+                    <auth-date>1926</auth-date>
+                    <authority>Semenov</authority>
+                    <source-information>
+                      <source-id>LorenzCarabCat</source-id>
+                      <source-key>356929</source-key>
+                    </source-information>
+                  </node>
+                  <node is-new-combination="false" italicize-name="true" leaf="true">
+                    <name>Elaphrus hypocrita araxellus</name>
+                    <rank>Subspecies</rank>
+                    <auth-date>1963</auth-date>
+                    <authority>Iablokoff-Khnzorian</authority>
+                    <source-information>
+                      <source-id>LorenzCarabCat</source-id>
+                      <source-key>356931</source-key>
+                    </source-information>
+                  </node>
+                </nodes>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus lecontei</name>
+                <rank>Species</rank>
+                <auth-date>1876</auth-date>
+                <authority>Crotch</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356932</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus devinctus</name>
+                    <authority>Casey</authority>
+                    <auth-date>1920</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                    <name>Elaphrus spissicornis</name>
+                    <authority>Casey</authority>
+                    <auth-date>1924</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus lheritieri</name>
+                <rank>Species</rank>
+                <auth-date>1947</auth-date>
+                <authority>Antoine</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356935</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus marginicollis</name>
+                <rank>Species</rank>
+                <auth-date>1983</auth-date>
+                <authority>Goulet</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356936</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus mimus</name>
+                <rank>Species</rank>
+                <auth-date>1983</auth-date>
+                <authority>Goulet</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356937</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="true" italicize-name="true" leaf="true">
+                <name>Elaphrus riparius</name>
+                <rank>Species</rank>
+                <auth-date>1758</auth-date>
+                <authority>Linnaeus</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356938</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus paludosus</name>
+                    <authority>Olivier</authority>
+                    <auth-date>1790</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                    <name>Elaphrus dilaticollis</name>
+                    <authority>Sahlberg, R.F.</authority>
+                    <auth-date>1844</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="2">
+                    <name>Elaphrus baschkiricus</name>
+                    <authority>Motschulsky</authority>
+                    <auth-date>1844</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="3">
+                    <name>Elaphrus violaceomaculatus</name>
+                    <authority>Motschulsky</authority>
+                    <auth-date>1845</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="4">
+                    <name>Elaphrus nigrescens</name>
+                    <authority>Letzner</authority>
+                    <auth-date>1849</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="5">
+                    <name>Elaphrus smaragdinus</name>
+                    <authority>Letzner</authority>
+                    <auth-date>1849</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="6">
+                    <name>Elaphrus viridis</name>
+                    <authority>Letzner</authority>
+                    <auth-date>1849</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="7">
+                    <name>Elaphrus latiusculus</name>
+                    <authority>Motschulsky</authority>
+                    <auth-date>1850</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="8">
+                    <name>Elaphrus atratulus</name>
+                    <authority>Wagner</authority>
+                    <auth-date>1917</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="9">
+                    <name>Elaphrus cupritarsis</name>
+                    <authority>B??nninger</authority>
+                    <auth-date>1919</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="10">
+                    <name>Elaphrus rubescens</name>
+                    <authority>Antoine</authority>
+                    <auth-date>1920</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus ruscarius</name>
+                <rank>Species</rank>
+                <auth-date>1830</auth-date>
+                <authority>Say</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356950</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus texanus</name>
+                    <authority>Casey</authority>
+                    <auth-date>1924</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus smaragdiceps</name>
+                <rank>Species</rank>
+                <auth-date>1889</auth-date>
+                <authority>Semenov</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356952</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus tibetanus</name>
+                <rank>Species</rank>
+                <auth-date>1904</auth-date>
+                <authority>Semenov</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356953</source-key>
+                </source-information>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus trossulus</name>
+                <rank>Species</rank>
+                <auth-date>1904</auth-date>
+                <authority>Semenov</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356954</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus parviceps</name>
+                    <authority>VanDyke</authority>
+                    <auth-date>1925</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus tuberculatus</name>
+                <rank>Species</rank>
+                <auth-date>1878</auth-date>
+                <authority>M??klin</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356956</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus latipennis</name>
+                    <authority>Sahlberg, J.</authority>
+                    <auth-date>1880</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                    <name>Elaphrus costulifer</name>
+                    <authority>Semenov</authority>
+                    <auth-date>1904</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="2">
+                    <name>Elaphrus orientalis</name>
+                    <authority>Semenov</authority>
+                    <auth-date>1904</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="3">
+                    <name>Elaphrus normalis</name>
+                    <authority>Poppius</authority>
+                    <auth-date>1908</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="4">
+                    <name>Elaphrus tumidiceps</name>
+                    <authority>Munster</authority>
+                    <auth-date>1924</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus viridis</name>
+                <rank>Species</rank>
+                <auth-date>1878</auth-date>
+                <authority>Horn, G.</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356962</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus horni</name>
+                    <authority>Csiki</authority>
+                    <auth-date>1927</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus weissi</name>
+                <rank>Species</rank>
+                <auth-date>1996</auth-date>
+                <authority>Dostal</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356964</source-key>
+                </source-information>
+              </node>
+            </nodes>
+          </node>
+          <node>
+            <name>Elaphroterus</name>
+            <rank>Subgenus</rank>
+            <auth-date>1895</auth-date>
+            <authority>Semenov</authority>
+            <source-information>
+              <source-id>LorenzCarabCat</source-id>
+              <source-key>356965</source-key>
+            </source-information>
+            <othernames>
+              <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+                <name>Elaphrotatus</name>
+                <authority>Semenov</authority>
+                <auth-date>1895</auth-date>
+              </othername>
+            </othernames>
+            <nodes>
+              <node is-new-combination="false" italicize-name="true" leaf="false">
+                <name>Elaphrus angusticollis</name>
+                <rank>Species</rank>
+                <auth-date>1844</auth-date>
+                <authority>Sahlberg, R.F.</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356967</source-key>
+                </source-information>
+                <nodes>
+                  <node is-new-combination="false" italicize-name="true" leaf="true">
+                    <name>Elaphrus angusticollis angusticollis</name>
+                    <rank>Subspecies</rank>
+                    <auth-date>1844</auth-date>
+                    <authority>Sahlberg, R.F.</authority>
+                    <source-information>
+                      <source-id>LorenzCarabCat</source-id>
+                      <source-key>356968</source-key>
+                    </source-information>
+                    <othernames>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                        <name>Elaphrus angustus</name>
+                        <authority>Chaudoir</authority>
+                        <auth-date>1850</auth-date>
+                      </othername>
+                    </othernames>
+                  </node>
+                  <node is-new-combination="false" italicize-name="true" leaf="true">
+                    <name>Elaphrus angusticollis longicollis</name>
+                    <rank>Subspecies</rank>
+                    <auth-date>1880</auth-date>
+                    <authority>Sahlberg, J.</authority>
+                    <source-information>
+                      <source-id>LorenzCarabCat</source-id>
+                      <source-key>356970</source-key>
+                    </source-information>
+                    <othernames>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                        <name>Elaphrus costulatus</name>
+                        <authority>Semenov</authority>
+                        <auth-date>1895</auth-date>
+                      </othername>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                        <name>Elaphrus jakowlewi</name>
+                        <authority>Semenov</authority>
+                        <auth-date>1895</auth-date>
+                      </othername>
+                    </othernames>
+                  </node>
+                </nodes>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="false">
+                <name>Elaphrus aureus</name>
+                <rank>Species</rank>
+                <auth-date>1821</auth-date>
+                <authority>M??ller, P.</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356973</source-key>
+                </source-information>
+                <nodes>
+                  <node is-new-combination="false" italicize-name="true" leaf="true">
+                    <name>Elaphrus aureus aureus</name>
+                    <rank>Subspecies</rank>
+                    <auth-date>1821</auth-date>
+                    <authority>M??ller, P.</authority>
+                    <source-information>
+                      <source-id>LorenzCarabCat</source-id>
+                      <source-key>356974</source-key>
+                    </source-information>
+                    <othernames>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                        <name>Elaphrus littoralis</name>
+                        <authority>Dejean</authority>
+                        <auth-date>1826</auth-date>
+                      </othername>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                        <name>Elaphrus smaragdinus</name>
+                        <authority>Reitter</authority>
+                        <auth-date>1887</auth-date>
+                      </othername>
+                    </othernames>
+                  </node>
+                  <node is-new-combination="false" italicize-name="true" leaf="true">
+                    <name>Elaphrus aureus tschitscherini</name>
+                    <rank>Subspecies</rank>
+                    <auth-date>1898</auth-date>
+                    <authority>Semenov</authority>
+                    <source-information>
+                      <source-id>LorenzCarabCat</source-id>
+                      <source-key>356977</source-key>
+                    </source-information>
+                    <othernames>
+                      <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                        <name>Elaphrus tchitcherini</name>
+                        <authority>Semenov</authority>
+                        <auth-date>1926</auth-date>
+                      </othername>
+                    </othernames>
+                  </node>
+                </nodes>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus punctatus</name>
+                <rank>Species</rank>
+                <auth-date>1844</auth-date>
+                <authority>Motschulsky</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356979</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus cribratus</name>
+                    <authority>Semenov</authority>
+                    <auth-date>1889</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus purpurans</name>
+                <rank>Species</rank>
+                <auth-date>1891</auth-date>
+                <authority>Hausen</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356981</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus pallipes</name>
+                    <authority>Horn, G.</authority>
+                    <auth-date>1878</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+              <node is-new-combination="false" italicize-name="true" leaf="true">
+                <name>Elaphrus ullrichii</name>
+                <rank>Species</rank>
+                <auth-date>1842</auth-date>
+                <authority>Redtenbacher, W.</authority>
+                <source-information>
+                  <source-id>LorenzCarabCat</source-id>
+                  <source-key>356983</source-key>
+                </source-information>
+                <othernames>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="0">
+                    <name>Elaphrus ulrichii</name>
+                    <authority>Gaubil</authority>
+                    <auth-date>1849</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="1">
+                    <name>Elaphrus beraneki</name>
+                    <authority>Reitter</authority>
+                    <auth-date>1887</auth-date>
+                  </othername>
+                  <othername is-important="false" is-preferred="false" italicize-name="true" sequence="2">
+                    <name>Elaphrus baraneki</name>
+                    <authority>Semenov</authority>
+                    <auth-date>1895</auth-date>
+                  </othername>
+                </othernames>
+              </node>
+            </nodes>
+          </node>
+        </nodes>
+      </node>
+    </nodes>
+  </node>
+</tree-of-life-web>

@@ -1,0 +1,18 @@
+<html jwcid="@btol/ProjectWrapper" title="Upload Extractions Results">
+	<h2 class="clear">Upload Extractions Results</h2>
+    <p>Here are the results of your upload.  If something looks awry, you may <a jwcid="@DirectLink" listener="listener:deleteAll">delete</a> all of
+    	the extractions.</p>
+	<table jwcid="table@contrib:Table" source="prop:extractions" 
+        columns="code:Code:sequenceCode, date:Date:creationDateString, person:Who Extracted:person, method:Method:method, target:Extraction Target:target, 
+        dnaCollections:DNA Collections:dnaCollections, notes, !edit, !delete" 
+    	row="prop:currentExtraction" pageSize="100">
+        <span jwcid="editColumnHeader@Block"></span>
+        <span jwcid="editColumnValue@Block">
+            <a jwcid="@ExternalLink" page="btol/EditSpecimenExtraction" parameters="ognl:{currentExtraction.id, pageName}">edit</a>
+		</span>
+        <span jwcid="deleteColumnHeader@Block"></span>
+        <span jwcid="deleteColumnValue@Block">
+            <a jwcid="@btol/DeleteObjectLink" idToDelete="prop:currentExtraction.id"/>
+		</span>
+    </table>
+</html>

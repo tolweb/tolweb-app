@@ -1,0 +1,119 @@
+<html jwcid="@Shell" title="ognl:title" stylesheet="ognl:stylesheet" delegate="ognl:delegate">
+	<body jwcid="@Body" id="ognl:styleId">
+        <a name="pagetop" id="pagetop"></a>
+        <span jwcid="@If" condition="ognl:page.isEditedOrSubmitted" element="ognl:null">
+            <p class="error"><span jwcid="@Insert" value="ognl:page.lockedOrSubmittedMessage" raw="ognl:true"/></p>
+        </span>
+        <span jwcid="@Else" element="ognl:null">
+        <span jwcid="@If" condition="ognl:page.previewSelected"> <div jwcid="@RedirectDiv" url="ognl:page.redirectLocation"/></span>
+    	<form jwcid="treehouseForm@Form" listener="ognl:page.listeners.formSubmitted" delegate="ognl:page.validationDelegate">
+		<div id="detrhsheader"> <img jwcid="@Any" element="img" src="ognl:iconUrl" class="icon"/>
+		     <h1 jwcid="@Any" element="h1" id="ognl:treehouseHeadlineId">
+                 <span jwcid="@If" condition="ognl:!isTeacherResourceSelection" element="ognl:null">
+			         <span jwcid="@Insert" value="ognl:treehouse.treehouseTypeString"/>
+                 </span>
+                 <span jwcid="@Else" element="ognl:null">
+                     teacher resource
+                 </span>
+		     </h1>
+		</div>
+		<div id="trhseditnav"><a name="trhseditnav"></a>
+			<span jwcid="@If" condition="ognl:isMainEditPage" element="ognl:null">
+                <div id="navlinksrightmain">
+                    <a href="#savework" class="navlinkstop">Save your Work / Help</a>
+                    <span jwcid="@If" condition="ognl:canGoToManager" element="ognl:null">
+                    	<a href="javascript:window.opener.focus();" class="navlinkstop"> Treehouse  Manager / Search Results</a>
+                    </span>
+				</div>
+            </span>
+            <span jwcid="@Else" element="ognl:null">
+				<div id="navlinksright">
+					<a jwcid="@LinkSubmit" page="TreehouseEditor" listener="ognl:page.listeners.returnToEditor" class="navlinkstop">Treehouse Editor Main</a>
+                    <span jwcid="@If" condition="ognl:canGoToManager" element="ognl:null">
+                    	<a href="javascript:window.opener.focus();" class="navlinkstop"> Treehouse  Manager / Search Results</a>
+                    </span>
+				</div>
+            </span>
+            <span jwcid="@If" condition="ognl:!isMainEditPage" element="ognl:null">
+				<div jwcid="@EditTreehouseStepNavigation"/>
+            </span>                
+		</div>   
+		<div id="trhsformcontainer">
+		<a name="trhsformcontainer"></a>     
+        <span jwcid="@If" condition="ognl:!isMainEditPage" element="ognl:null">
+<div id="buildtrhssidebar">
+ <h3 style="margin-bottom: 0;">Building Treehouses</h3>
+	  <ul id="builderstoolkitmenu" class="open"><li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/toolkithome.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();"><strong>Builders Toolkit</strong></a></li>
+                <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/HowtoBegin.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">How to Begin </a></li>
+                <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/BuildingSteps.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Building Steps</a></li>
+                <li class="borderbottom"><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/HowRylanTrhs.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">How Rylan Built his Treehouse </a></li>
+
+        <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/BuildersGuide.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Builders Planning Guide</a></li>
+                <li><a href="javascript: w = window.open('/tree/learn/TeacherResources/BasicGuidelines.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Treehouse Guidelines</a></li>
+                <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/PageDesign.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Design Guidelines</a> </li>
+                <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/AddTextHTMLEditor.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Using the Easy Editor </a></li>
+                <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/OtherEditors.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Transfer Text to the Easy Editor</a></li>
+                <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/AttachToToL.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Attaching your Work</a></li>
+
+                <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/SciNames.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Help with Scientific Names</a></li>
+                
+                <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/AddingTextFAQ.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Building F.A.Q</a></li>
+          </ul>
+              <ul><li><a href="/tree/learn/TreebuilderTools/BuildingGuide/AddingMedia.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();"><strong>Add Images/Media</strong></a></li>
+                <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/trcopyright.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Copyright Rules</a></li>
+                <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/MediaSearchHelpCS.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Find Media on the ToL</a></li>
+
+             <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/ToLTech/Toltech.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Multimedia Reference</a></li>
+             <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/FindMediaWWW.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Find Media on the WWW </a></li>
+             <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/AddingMedia2.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Upload Media to the ToL</a> </li>
+             <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/HelpImageForm.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Help Filling out Image/Media Form </a></li>
+             <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BuildingGuide/AddingMedia3.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();">Insert Media into Treehouses </a></li>
+			  <li><a href="javascript: w = window.open('/onlinecontributors/app?service=page&page=ImageContributorsPage">Media Contributors</a></li>
+
+          </ul>
+  
+              <ul>
+                <li>
+                <a href="javascript: w = window.open('/tree/learn/TeacherResources/BuildingforTeachers.html', 'FullHelpWindow', 'width=800,height=500,resizable,scrollbars=yes'); w.focus();"><strong>Building for Teachers</strong></a></ul>
+          <ul>
+              
+                <li><a href="javascript: w = window.open('/tree/learn/LearningGetHelp.html"><strong>Contact us</strong></a></li>
+               
+                <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/BugsUpdates.html">Bugs and Updates </a></li>
+
+                <li><a href="javascript: w = window.open('/tree/learn/LearningGetHelp.html">Report bugs</a></li>
+          </ul>
+ 
+
+   <h4> <a href="javascript: w = window.open('/tree/learn/LearningGetHelp.html"></a></h4>
+     <h4> <a href="javascript: w = window.open('/tree/learn/LearningGetHelp.html"></a></h4>
+	</div>            
+		<div class="spacer">&nbsp;</div> 
+        </span>
+        <span jwcid="@RenderBody"/>
+         	<span jwcid="@If" condition="ognl:!isMainEditPage && !isPublish && !isNotes" element="ognl:null">                 
+				<div class="spacer">&nbsp;</div> 
+				<div class="spacer">&nbsp;</div>
+                <div id="trhssavepreview"> 
+                    <a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Save and Preview"/>
+					<h3><strong> Save and Preview Your Treehouse</strong></h3>
+					<input jwcid="@Submit" listener="ognl:page.listeners.previewSubmit" type="button" class="trhssavebutton" value="Save and Preview"/>
+				<p>	After you click the "Save and Preview" button a preview of your treehouse will open in this window. Click "return to editing" at the top of your treehouse preview to get back to this form.</p>
+					<p> Once the current version of your work has been saved, you can close this window and come back whenever you are ready to add more information.</p>
+					<div class="topbottom2"> <a href="#pagetop">top</a></div>
+					<p>Contact the ToL Learning Materials Editor at 
+                        <a jwcid="@EncodedMailLink" email="learning@tolweb.org" linkText="learning@tolweb.org"/> with any comments, problems or questions.</p>
+				</div>
+				<div class="savesspacer">&nbsp;</div>
+            </span>
+         </div>
+    </form>
+         <script jwcid="@Script" script="ClickHandler.script"/>
+         <script jwcid="@Script" script="EditTreehouseFunctions.script" pageName="TreehousePreviewPage"/>
+         <span jwcid="@If" condition="ognl:onSubmitString">
+	         <script jwcid="@Script" script="treehouses/Onsubmit.script" form="component:treehouseForm"
+	             javascript="ognl:onSubmitString"/>
+         </span>
+         </span>
+    </body>
+</html>

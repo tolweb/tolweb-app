@@ -1,0 +1,19 @@
+<div id="pagestatus"> 
+	<span jwcid="@If" condition="ognl:page.isWorking && canEdit">
+		<a jwcid="@ExternalLink" page="EditPageStatus" parameters="ognl:{contributor.email, contributor.password, page.node.nodeId}" renderer="ognl:rendererFactory.editLinkRenderer" class="editpage">edit page status</a>
+	</span>
+	<a jwcid="@Any" element="a" href="/tree/home.pages/pagestatus.html" class="ognl:classString">
+		<span jwcid="@Insert" value="ognl:statusString"/><span jwcid="@Insert" value="ognl:statusImageString" raw="ognl:true"/>
+	</a>         
+	<span jwcid="@If" condition="ognl:page.isWorking && contributor == null">
+        <a jwcid="@DirectLink" listener="ognl:listeners.goToLogin" parameters="ognl:{isBranchOrLeaf ? page.node.name : page.treehouse.accessoryPageId}" class="viewlink" id="workinglogin">log in</a>
+    </span>     
+    <span jwcid="@If" condition="ognl:page.isWorking && contributor != null">
+    	<div id="workinglogin">
+            You are logged in as <span jwcid="@Insert" value="ognl:contributor.displayName"/>.  [<a jwcid="@DirectLink" listener="listener:logout">log out</a>]
+            <span jwcid="@If" condition="ognl:contributor.isCoreScientificContributor">
+            <a jwcid="@PageLink" page="UserSubmitPublication" class="editpage submit">Publication Manager</a>
+            </span>
+        </div>    
+    </span>
+</div>

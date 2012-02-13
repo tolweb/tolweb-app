@@ -1,0 +1,37 @@
+<html jwcid="@btol/ProjectWrapper" title="View All Specimens" includeDojo="ognl:true">
+<h2 class="clear">All Specimens</h2>
+<!--
+<div jwcid="extractionDisplay@Any" id="extractionDisplay" style="float:right; background-color: #f8f6eb; margin-left: 10px; color:#444466; ">
+    <span jwcid="@If" condition="ognl:selectedExtraction != null">
+            <p style="padding:10px 10px 20px 10px;">
+        <span class="boldtext"><span jwcid="@Insert" value="prop:selectedExtraction.sequenceCode"/></span>
+            </p>
+    </span>
+    <span jwcid="@Else">
+        <span jwcid="@If" condition="prop:noMatchingExtraction">
+            <p>
+            <span class="error">There is no specimen named <span jwcid="@Insert" value="prop:specimenName"/>.</span>
+    		</p>            
+        </span>
+    </span>
+</div>
+<form jwcid="@Form">
+<p>Show extractions from source collection: <input jwcid="@PropertySelection" value="ognl:selectedCollection" model="prop:collectionSelectionModel" onchange="document.forms[0].submit()"/></p>
+</form>
+<p>
+<form jwcid="@tacos:AjaxForm" listener="listener:findExtraction">
+    Enter the code to get information about an extraction  <input jwcid="@TextField" value="prop:extractionName"/>
+    <span jwcid="@If" condition="prop:isSafari">
+    <a jwcid="@tacos:AjaxSubmit" updateComponents="ognl:{'extractionDisplay'}" value="Show Extraction Info"/>        
+    </span>
+    <span jwcid="@Else">
+    <a jwcid="@tacos:AjaxSubmit" updateComponents="ognl:{'extractionDisplay'}"
+     effects="template:{highlight:{any:'[255,255,184], 1000, 1000'}}" value="Show Extraction Info"/>
+    </span>
+</form>
+</p>-->
+<table jwcid="@btol/SpecimensTable" specimens="prop:specimens" showExtractions="ognl:true"/>
+<p>
+<a jwcid="@DirectLink" listener="listener:editNewObject">Add another Specimen</a>
+</p>
+</html>

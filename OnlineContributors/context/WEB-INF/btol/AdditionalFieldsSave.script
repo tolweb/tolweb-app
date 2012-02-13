@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+	<input-symbol key="additionalFieldsId" class="java.lang.Long"/>
+	<input-symbol key="tierCallback" class="java.lang.Integer"/>
+	<input-symbol key="larvalCallback" class="java.lang.Integer"/>
+	<input-symbol key="movedFields" class="java.lang.Boolean"/>
+	<input-symbol key="arrayVals" class="java.lang.String"/>	
+	<body>
+	<![CDATA[		
+	
+    function prepareSendValue() {
+    	var args = prepareSendValue.arguments;
+    	var callbackType = args[0];    	
+    	var newValue = args[1];
+    	waitingForClose = true;
+    	sendValue(callbackType, ${additionalFieldsId}, newValue);
+    }
+    function recvCompletions(arr) {
+    	var openerDoc = window.opener.document;
+    	var callbackType = arr[0];
+    	var delimiter = ":";
+    	if (callbackType.indexOf(delimiter) != -1) {
+    		var pieces = callbackType.split(delimiter);
+    		// first arr element is the id name
+    		var popupBox = document.getElementById(pieces[0]);
+    		if (popupBox) {
+    			// second is the selected index -- convert to number
+    			var index = pieces[1] * 1;
+    			popupBox.selectedIndex = index;
+    		}
+    	}
+    	var trueString = "true";
+    	for (var i = 1; i < arr.length; i += 7) {
+    		var anchorLinkId = arr[i];
+	    	var anchorLink = openerDoc.getElementById(anchorLinkId);
+	    	if (anchorLink != null) {
+		    	anchorLink.className = arr[i + 1];
+		    	anchorLink.innerHTML = arr[i + 2];
+		    	var actualClass = arr[i + 3];
+		    	anchorLink.setAttribute('actualClass', actualClass);
+		    	var extraAttribute = arr[i + 4];
+		    	if (extraAttribute == trueString) {
+		    		anchorLink.setAttribute('alwaysshow', '1');
+		    	} else {
+		    		anchorLink.removeAttribute('alwaysshow');
+		    	}	    	
+		    } else {
+		    	//alert("null link is: " + anchorLinkId);
+		    }
+		    var ulId = arr[i + 5];
+		    var ul = openerDoc.getElementById(ulId);
+		    if (ul != null) {
+		    	var openMostAttribute = arr[i + 6];
+		    	if (openMostAttribute == trueString) {
+		    		ul.setAttribute('showmost', '1');
+		    	} else {
+		    		ul.removeAttribute('showmost');
+		    	}
+		    }
+	    }
+    }    
+	]]>    
+    </body>
+	<initialization>
+		if (${movedFields}) {
+			var newFields = ${arrayVals};
+			recvCompletions(newFields);	
+		}
+	</initialization>    
+</script>

@@ -1,0 +1,20 @@
+<html jwcid="@AboutWrapper" title="Tree of Life News Items">
+	<form jwcid="@Form">
+		<div style="float: right;">
+			<a jwcid="@PageLink" page="admin/ViewAllNewsItems">View News Items...</a>
+		</div>
+		<h2 class="clear"><span jwcid="@Insert" value="ognl:actionVerb"/> Tree of Life News Items <span jwcid="@If" condition="ognl:newsItemId != null">#</span><span jwcid="@Insert" value="ognl:newsItemId"/></h2>
+		<p>
+			<input jwcid="@Hidden" value="ognl:newsItemId"/>
+			<textarea jwcid="@TextArea" value="ognl:newsItemText" rows="25" cols="75"></textarea>
+		</p>
+		<p>
+			<label>Posted by: <input jwcid="@TextField" size="40" value="ognl:newsItemPostedBy"/></label>
+		</p>
+		<p>
+			<label><input type="checkbox" jwcid="@Checkbox" value="ognl:newsItemActive"/> Active?</label>
+		</p>
+		<input jwcid="@Submit" value="Preview" listener="ognl:listeners.doSaveAndPreview"/>
+		<input jwcid="@Submit" value="Cancel" listener="ognl:listeners.cancel" />	    
+	</form>
+</html>

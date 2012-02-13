@@ -1,0 +1,24 @@
+    <ul class="formsummary">
+        <span jwcid="@If" condition="ognl:hasSubmitter">
+	        <li>Registration submitted by <span jwcid="@Insert" value="ognl:submitterName"/> on <span jwcid="@Insert" value="ognl:submissionDate"/> (server time)</li>
+        </span>
+        <span jwcid="@If" condition="ognl:hasConfirmer">
+        	<li>Confirmed by <span jwcid="@Insert" value="ognl:confirmerName"/> on <span jwcid="@Insert" value="ognl:editedContributor.confirmationDate"/> (server time)</li>
+        </span>
+        <span jwcid="@If" condition="ognl:hasLastEdited">
+        	<li>Form last edited by <span jwcid="@Insert" value="ognl:lastEditedName"/> on <span jwcid="@Insert" value="ognl:lastEditedDate"/> (server time) </li>
+        </span>
+        <li>People who can edit this form: 
+            <ul>
+                <li>Registrant: <strong><span jwcid="@Insert" value="ognl:editedContributor.displayName"/></strong></li>
+                <li><strong>ToL Editor/Project Administrator</strong></li>
+                <li jwcid="@For" source="ognl:editedContributor.contributorPermissions" value="ognl:currentPermission"
+                    convertor="ognl:permissionConvertor">
+                Associate Editor: <strong><span jwcid="@Insert" value="ognl:currentContributorName"/></strong> 
+                	<a jwcid="@LinkSubmit" selected="ognl:page.editorToDelete" tag="ognl:currentPermission" class="remove">Remove</a>
+                </li>
+                <li id="addpriv"><a jwcid="@LinkSubmit" selected="ognl:page.addEditorSelected" tag="ognl:true">Allow another ToL contributor to 
+                    edit registration information</a></li>
+            </ul>
+        </li>
+    </ul>

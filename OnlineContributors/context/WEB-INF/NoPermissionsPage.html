@@ -1,0 +1,17 @@
+<html jwcid="@Wrapper" title="Insufficient Permissions">
+<h2 class="clear">Insufficient Permissions</h2>
+<p>You do not have permissions to view this page while it is under development.
+   <span jwcid="@If" condition="ognl:hasGroups">
+       If you like, you may view the development version of your page<span jwcid="@Insert" value="ognl:sOrNull"/>:
+       <ul jwcid="@For" source="ognl:nodeNames" value="ognl:nodeName" class="nodisc">
+	       <li><a jwcid="@TolPageLink" tolPage="ognl:nodeName" isWorking="ognl:true" textSameAsLink="ognl:true"/></li>
+       </ul>
+   </span>
+   <span jwcid="@If" condition="ognl:contributor.isCoreScientificContributor || contributor.isAccessoryContributor" element="ognl:null">
+   You may <span jwcid="@If" condition="ognl:hasGroups">also </span> return to the <a jwcid="@PageLink" page="ScientificMaterialsManager">scientific materials manager</a>.
+   </span>
+   <span jwcid="@Else">
+   You may return to the <a jwcid="@GenericLink" href="ognl:publicUrl">public version</a> of the page you were viewing.
+   </span>
+</p>
+</html>

@@ -1,0 +1,65 @@
+<html jwcid="@FeaturesWrapper" title="Reattach Objects">
+  <form jwcid="@Form" listener="ognl:listeners.processManifest">
+  	<p>[<a jwcid="@PageLink" page="xml/TaxaImportHome">Return to Taxa Import Workflow Home...</a>]</p>
+	<h2 class="clear">Orphaned Nodes in Clade <span jwcid="@Insert" value="ognl:currentBasalNodeName"/></h2>
+
+	<div style="float: right">	
+	</div>	
+	<table jwcid="@For" source="ognl:nodes" value="ognl:currentNode" element="table">
+		<tr>
+			<td>node: <span jwcid="@Insert" value="ognl:currentNode.name"/> </td>
+			<td>old node id: <span jwcid="@Insert" value="ognl:currentNode.id"/> </td>  
+		</tr>
+		<tr>
+			<td colspan="2"> 
+			<span jwcid="@If" condition="ognl:currentNode.hasAttachments">
+				new node id:
+				<span jwcid="@TextField" value="ognl:currentNode.newId" translator="translator:number" /> 
+				<!-- / --> 
+				<a jwcid="@PageLink" page="FindNodes" renderer="ognl:renderer">Find new node id...</a>
+			</span>	
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">	  
+				<span jwcid="@If" condition="ognl:currentNode.hasAttachments">
+					<ul>
+						<span jwcid="@If" condition="ognl:currentNode.hasPageAttachment">
+							<li>page id: <span jwcid="@Insert" value="ognl:currentNode.page.id"/></li>
+						</span>
+						<span jwcid="@If" condition="ognl:!currentAccessoryPages.empty">
+						<li>accessory pages:
+							<ul jwcid="@For" source="ognl:currentAccessoryPages" value="ognl:currentAccessoryPage" element="ul">
+								<li>accessory page id: <span jwcid="@Insert" value="ognl:currentAccessoryPage.id" /></li>
+							</ul>
+						</li>
+						</span>
+						<span jwcid="@If" condition="ognl:!currentOtherNames.empty">
+						<li>other names:
+							<ul jwcid="@For" source="ognl:currentOtherNames" value="ognl:currentOtherName" element="ul">
+								<li>other name id: <span jwcid="@Insert" value="ognl:currentOtherName.id" /></li>
+							</ul>
+						</li>
+						</span>
+						<span jwcid="@If" condition="ognl:!currentMediaFiles.empty">
+						<li>media files:
+							<ul jwcid="@For" source="ognl:currentMediaFiles" value="ognl:currentMediaFile" element="ul">
+								<li>media id: <span jwcid="@Insert" value="ognl:currentMediaFileLink" raw="ognl:true" /></li>
+							</ul>
+						</li>
+						</span>
+						<span jwcid="@If" condition="ognl:!currentContributors.empty">
+						<li>contributors:
+							<ul jwcid="@For" source="ognl:currentContributors" value="ognl:currentContributor" element="ul">
+								<li>contributor id: <span jwcid="@Insert" value="ognl:currentContributorLink" raw="ognl:true" /></li>
+							</ul>
+						</li>
+						</span>
+					</ul>
+				</span>	  
+			</td>
+		</tr>
+	</table>
+	<input type="submit" value="Reattach..." /> 
+  </form>
+</html>

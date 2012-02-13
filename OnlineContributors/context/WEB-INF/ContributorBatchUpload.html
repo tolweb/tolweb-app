@@ -1,0 +1,43 @@
+<html jwcid="@Wrapper" title="Batch Uploading ToL People">
+<h2 class="clear">Batch Uploading ToL People</h2>
+	<span jwcid="@If" condition="ognl:error">
+        <p class="red"><span jwcid="@Insert" value="ognl:error"/></p>
+    </span>
+    <p>Below, you can upload batches of people to the ToL database.</p>
+    <form jwcid="@Form" listener="ognl:listeners.doUpload">        
+	<ol>
+        <li>Create an <strong>XML file</strong> containing the data (name, email, permissions, etc.) 
+        	for each of the image files. 
+            See the instructions for <a href="#xml">Creating People Batch Data XML Files</a> below</li>
+        <li> Use the <strong>Browse</strong> (<strong>Choose File</strong>) button 
+            to locate the <strong class="large highlight">XML file</strong>
+            <input class="block" jwcid="@Upload" file="ognl:xmlFile"/>
+        </li>     
+        <li>Check the following box to update people information that are already in the database.  
+            (This happens when the xml file contains an email address that matches an existing record in
+            the database.): <input jwcid="@Checkbox" value="ognl:updateExistingContributors"/>
+        </li>
+        <li>Click on the <strong>Upload File</strong> button to initiate 
+            the upload. 
+            <input jwcid="@Submit" value="Upload File" class="block"/>
+		</li>
+        <li>Once the upload is complete, you will see a confirmation message in 
+            this window. 
+            <ul>
+                <li>If the upload was successful, you'll get an overview of the people that were uploaded.  If the results of the upload were not what you expected, you can delete all of the newly uploaded people from the overview page.</li>
+                <li>If the upload fails, please try again. 
+                    If it won't work the second time, please contact 
+                    <script language="JavaScript" type="text/JavaScript">
+					    var e1 = "treegrow";
+					    var e2 = "tolweb";
+					    var e3 = "org";
+					    document.write("<a href=\"" + "m" + "a" + "i" + "l" + "t" + "o:")
+					    document.write(e1 + "@" + e2 + "." + e3 + "\">")
+					    document.write(e1 + "@" + e2 + "." + e3 + "</a>,")
+					</script>
+                    and we will investigate the problem. </li>
+            </ul>
+        </li>
+    </ol>
+    </form>  
+</html>

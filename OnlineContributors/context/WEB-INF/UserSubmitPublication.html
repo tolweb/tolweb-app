@@ -1,0 +1,45 @@
+<html jwcid="@ScientificWrapper" title="Publication Manager" includeDojo="ognl:true"> 
+<h2 class="clear">Publication Manager</h2>
+	        <p>Here is an overview of the ToL pages you have worked on. Other contributors with editing privileges 
+                for a given branch may also have made changes to these pages.  Click on a 
+                <em>preview</em> link to view the current version of the page on the <em>ToL Development Site</em> 
+                (it will open in a new window).</p> 
+	        <p>The pages listed inside a grey box constitute a <em>publication batch</em>.  By default a publication batch will be published in its entirety when you click on the <em>Publish checked pages</em> button; however, if you remove the check mark from a page listing, it will be withheld from publication.  Note that the publication of some pages may be dependent upon the publication of others; i. e., you cannot publish the page for a group if the page for the containing group has not yet been published.</p>
+	        <p class="bottomborder"><img src="/tree/img/tinypage.gif" alt="page exists on public ToL site" class="top"> Page exists on public ToL site <img src="/tree/img/tinynewpage.gif" alt="new page" class="top" style="margin-left: 25px"> New page, not yet on public ToL site
+	        </p>
+	      <p class="error bottomborder">If you see a red message next to a page listing, this means that the node that this page is attached to is currently <b>checked out</b> by a ToL contributor.  In order to be able to publish such pages, you need to request that the contributor checks the relevant nodes back in.  To check in a downloaded branch, open the file in <em class="TGmain">TreeGrow</em>, and select <em>Check in Tree</em> from the <em>File</em> menu.</p>
+    <span jwcid="@If" condition="prop:isEditor">
+        <h4>Submit Entire Branch</h4>
+		<a jwcid="@PageLink" page="admin/SubmitBranchPublication">Submit an entire branch for publication</a>
+    </span>          
+    	<h4>Branch &amp; Leaf Pages</h4>
+		<span jwcid="@BatchDisplay"/>
+    <span jwcid="@If" condition="ognl:editedAccessoryPages.size > 0">
+		<h4>Articles/Notes</h4>
+        <form jwcid="@Form" listener="ognl:listeners.submitAccessoryPages">
+	        <div class="publish">        
+	            <ul class="links">
+	                <span jwcid="@Foreach" source="ognl:editedAccessoryPages" value="ognl:currentEditedAccessoryPage">
+				       <li>
+			           		<input jwcid="@Checkbox" value="ognl:currentEditedAccessoryPage.shouldBePublished"
+			                   disabled="ognl:!canPublishAccessoryPage"/> 
+				           <span jwcid="@If" condition="ognl:accessoryPageExistsInPublic" element="ognl:null">
+				           		<img src="/tree/img/tinypage.gif" alt="page exists on public ToL site" class="details">
+				           </span>
+				           <span jwcid="@Else" element="ognl:null">
+				               <img src="/tree/img/tinynewpage.gif" alt="new page" class="details">
+				           </span>
+				           	<span jwcid="@Insert" value="ognl:currentEditedAccessoryPage.page.menu"/>
+				           <a jwcid="@GenericLink" href="ognl:currentAccessoryPageUrl"
+				           		renderer="ognl:rendererFactory.previewLinkRenderer" class="preview">preview</a>
+				           <span jwcid="@If" condition="ognl:currentEditedAccessoryPage.page.isSubmitted" class="error">
+				               <span jwcid="@AccessoryPageSubmittedMessage" accPage="ognl:currentEditedAccessoryPage.page"
+                                   objectType="ognl:currentEditedAccessoryPage.page.articleNoteTypeString"/>
+				           </span>
+						</li>                
+	               </span>
+	            </ul>
+	        </div>
+        </form>
+    </span>
+</html>

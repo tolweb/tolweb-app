@@ -1,0 +1,46 @@
+<html jwcid="@ScientificMaterialsWrapper" title="ognl:title">
+<span jwcid="@If" condition="ognl:!published && !rejected && !batchClosed && !noPermissions">
+    <h2 class="clear">Publish Submitted ToL Pages</h2>
+    <p>Here is an overview of the ToL pages that have been submitted to you. 
+       Click on a taxon name to get a preview of the page on the ToL development site.  
+       Changes may have been made by you or by other ToL contributors with editing privileges for these pages.
+    </p>
+	<h4>Branch &amp; Leaf Pages</h4>
+	<span jwcid="@BatchDisplay" isEditor="ognl:true"/>
+</span>
+
+<span jwcid="@Else">
+    <span jwcid="@If" condition="ognl:published || rejected">
+    <h2>Batch successfully <span jwcid="@Insert" value="ognl:published ? 'Published' : 'Rejected'"/></h2>
+    <span jwcid="@If" condition="ognl:unpublishedNodeNames">
+        <p>The following nodes weren't published because they were downloaded in TreeGrow: <span jwcid="@Insert" value="ognl:unpublishedNodeNames"/></p>
+    </span>
+    <span jwcid="@MailBlock" from="ognl:contributor.email" to="ognl:{contributor.email, batchToBePublished.submittedContributor.email, 'beetle@ag.arizona.edu'}"
+        smtp="localhost" subject="Your Tree of Life Submission" html="ognl:false">
+Hello, this note is to let you know that your Tree of Life Submission rooted at page(s): <span jwcid="@Insert" value="ognl:rootPagesString"/>
+has <span jwcid="@Insert" value="ognl:rejected ? 'not' : null"/> been approved.
+
+You may view your page(s) using the following urls:
+<span jwcid="@For" source="ognl:rootPagesList" value="ognl:currentRootGroupName">
+<span jwcid="@Insert" value="ognl:currentLinkURL"/><span jwcid="@Insert" value="ognl:'\n'"/>
+</span>
+<span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(comments)">
+The scientific materials editor, <span jwcid="@Insert" value="ognl:contributor.displayName"/>, had the following
+comments regarding your submission:<span jwcid="@Insert" value="ognl:'\n\n'"/>
+<span jwcid="@Insert" value="ognl:comments"/>
+</span>
+Thank you for contributing materials to the Tree of Life.    
+    </span>
+    </span>
+    
+    <span jwcid="@If" condition="ognl:batchClosed">
+        <h2 class="clear">Batch Closed</h2>
+        The submission you have selected has been closed and is not available for publication.
+    </span>
+    
+    <span jwcid="@If" condition="ognl:noPermissions">
+        <h2 class="clear">No Permissions</h2>
+        You do not have permissions to publish the selected batch.
+    </span>
+</span>
+</html>

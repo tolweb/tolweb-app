@@ -1,0 +1,54 @@
+<html jwcid="@BuildTreehouseWrapper" title="Approve/Reject Treehouse Contributor">
+	<h2 class="clear">
+        <span jwcid="@If" condition="ognl:isApprove">
+            <span jwcid="@Insert" value="ognl:approveString"/> '<span jwcid="@Insert" value="ognl:editedContributor.displayName"/>' for Treehouse Building
+        </span>
+        <span jwcid="@Else">
+			<span jwcid="@Insert" value="ognl:rejectString"/>  '<span jwcid="@Insert" value="ognl:editedContributor.displayName"/>' for Treehouse Building
+        </span> 
+    </h2>
+    <span jwcid="@If" condition="ognl:isApprove">
+    <pre>
+		Hello, 
+		
+		You can now log into the ToL contribution system using your e-mail 
+		address as the User ID and the following password: &lt;password&gt;
+		
+		To change your password or update your registration information, 
+		log in on the following web page: 
+
+		http://tolweb.org/onlinecontributors/app?service=page&page=TreehouseContributorLogin 
+		and then follow the 'Update your registration information' link.
+
+		To get help building your treehouses, have a look at the Treehouse Builders' Toolkit 
+		located on the Tree of Life Website at: http://tolweb.org/tree/learn/TreebuilderTools/toolkithome.html
+		        
+		The toolkit can provide you with information on how to get started and tips on 
+		how to make your treehouse be the best it can be.        
+        
+        &lt;comments&gt;
+    </pre>
+    </span>
+    <span jwcid="@If" condition="ognl:!isApprove">
+    <pre>
+		Hello,
+
+		We regret to inform you that we cannot register you as a Treehouse Builder at 
+		the present time. Either your plans for treehouse building do not fit with the 
+		goals of the Learning with the Tree of Life project or the information that you 
+		entered in some of the required fields is not valid.  Please contact us if you 
+		would like to discuss this matter further.
+        
+        &lt;comments&gt;
+
+		Regards,
+		Lisa Schwartz
+    </pre>
+    </span>
+    Please enter any comments you would like to send the authors in the text box below:
+    <form jwcid="@Form" listener="ognl:listeners.commentsSubmit">
+        <input jwcid="@Hidden" value="ognl:returnPageName"/>        
+	    <p><span jwcid="@TextArea" value="ognl:comments" rows="30" cols="60"/></p>	
+        <span jwcid="@Submit" value="ognl:isApprove ? approveString : rejectString"/>
+    </form>
+</html>

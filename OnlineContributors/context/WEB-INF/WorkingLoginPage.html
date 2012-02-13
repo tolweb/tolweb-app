@@ -1,0 +1,23 @@
+<span jwcid="@Wrapper" title="Tree of Life Development Site Login">
+<h1>Development Site Log In</h1>
+<p>Please take a moment to log in to the development site of the Tree of Life.</p>
+<p>Once you log in, a cookie will be set on your computer so you will not be presented with this screen again.</p>
+<p>If you have further questions, please email <a jwcid="@EncodedMailLink" email="treegrow@tolweb.org" text="treegrow@tolweb.org"/>.</p>	
+<span jwcid="@If" condition="ognl:error">
+<span class="error">The typed username/password combination is incorrect</span>    
+</span>
+<form jwcid="@Form" listener="ognl:listeners.loginFormSubmit">
+    <table>
+        <tr>
+			<td>Username:</td><td><input jwcid="@TextField" value="ognl:username"/></td>
+        </tr>
+        <tr>
+        	<td>Password:</td><td><input jwcid="@TextField" hidden="ognl:true" value="ognl:password"/></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td align="right"><input jwcid="@Submit" label="Login"/></td>
+         </tr>
+    </table>
+</form>
+</span>

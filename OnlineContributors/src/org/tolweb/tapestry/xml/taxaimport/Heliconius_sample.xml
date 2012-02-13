@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tree-of-life-web xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="taxaimport.xsd">
+  <node extinct="false" id="72254" position-confidence="0" phylesis="monophyletic" leaf="true" has-page="true" ancestor-with-page="72231" italicize-name="true" incomplete-subgroups="false" show-authority="true" show-authority-containing="false" is-new-combination="false" combination-date="null" child-count="2">
+    <name>Heliconius pachinus</name>
+    <description>some description</description>
+    <authority>Salvin</authority>
+    <name-comment>name comment</name-comment>
+    <combination-author>comboAuthor</combination-author>
+    <auth-date>1871</auth-date>
+    <rank>tribe</rank>
+    <geographic-distribution>
+    	<description>Arizona, New Mexico</description>
+    </geographic-distribution>
+    <othernames>
+      <othername is-important="true" is-preferred="false" sequence="0" italicize-name="true">
+        <name>Heliconius cydno pachinus</name>
+        <authority>Salvin</authority>
+        <auth-date>1871</auth-date>
+        <comments>Lamas (2004) views &lt;em&gt;pachinus&lt;/em&gt; as a subspecies of &lt;em&gt;H. cydno&lt;/em&gt;</comments>
+      </othername>
+      <othername>
+      	<name>Test 1</name>
+      </othername>
+      <othername>
+      	<name>Test 2</name>
+      </othername>      
+    </othernames>
+    <nodes>
+    	<node extinct="false" id="1555" position-confidence="0" phylesis="monophyletic" leaf="true" has-page="true" ancestor-with-page="72231" italicize-name="true" incomplete-subgroups="false" show-authority="true" show-authority-containing="false" is-new-combination="false" combination-date="null" child-count="2">
+    		<name>Butterfly 1</name>
+    	</node>
+    	<node extinct="false" id="1557" position-confidence="0" phylesis="monophyletic" leaf="true" has-page="true" ancestor-with-page="72231" italicize-name="true" incomplete-subgroups="false" show-authority="true" show-authority-containing="false" is-new-combination="false" combination-date="null" child-count="2">
+    		<name>Butterfly 2</name>
+    	</node>    		
+    </nodes>
+    <source-information>
+		<source-id>BGGGH001</source-id>
+		<source-key>TOL_TST11221</source-key>
+    </source-information>
+  </node>
+</tree-of-life-web>

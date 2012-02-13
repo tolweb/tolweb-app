@@ -1,0 +1,53 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:false" title="Web Quest Introduction and Task" additionalDelegate="ognl:delegate">
+<div id="trhs2editpgtop">
+	<a name="trhs2text"></a>
+	<h3 class="sectionheaderblub">Step 2. Web Quest Introduction and Task</h3>
+    <div class="boxtocpages">
+        <div jwcid="@TreehouseImportantDiv">
+      		<li><a href="#trhstitles">Titles</a> </li>
+			<li><a href="#wqintro">Introduction</a></li>
+			<li><a href="#wqtask">Task</a></li>
+			<li><a href="#addmedia">Add Media</a></li>            
+        </div>
+		<div jwcid="@WebquestHelpDiv">
+  			<li><a jwcid="@HelpLink" pageName="WebquestHelpMessagesPage" helpName="WebQuest Introduction and Task" noDiv="ognl:true">WebQuest Introduction and Task</a></li>
+        </div>
+		<div jwcid="@TreehouseWarningDiv">
+			<div class="importantnartop">
+                <h5>WebQuest Instructions</h5>
+				The learners who will engage in the WebQuest are the intended audience for the sections that you will compose on this page.
+			</div>
+            <div class="spacer">&nbsp;</div>
+        </div>
+    </div>
+	<div id="webquestcontent">
+		<a name="webquestcontent"></a>
+		<h3 class="sectionheaderblubtop"> WebQuest Introduction and Task </h3>
+		<div class="boxtoc" id="wqintro"><a name="wqintro"></a>
+			<span jwcid="@TreehouseTitles"/>
+        	<a jwcid="@HelpLink" pageName="WebquestHelpMessagesPage" helpName="WebQuest Introduction"/>
+			<h4>Introduction</h4>
+			<p class="instructionshrtlrg">
+				Add an introduction for your WebQuest. Remember, your audience is the learners that will 
+                engage in the WebQuest.</p>
+            <div jwcid="@HTMLEditorBox" idIndex="ognl:1"/>
+            <textarea jwcid="@PreparedTextArea" valuePath="introduction" cols="ognl:60" rows="ognl:30" useEditor="prop:useHTMLEditor"></textarea>
+        </div>
+		<div class="topbottom2">
+			<a href="#trhseditnav">top</a> | <a href="#trhssavepreview">go to save and preview!</a>
+		</div>
+		<div class="spacer">&nbsp;</div>
+        <div id="wqtask" class="boxtoc">
+            <a name="wqtask"></a>
+            <a jwcid="@HelpLink" pageName="WebquestHelpMessagesPage" helpName="WebQuest Task"/>
+            <h4>Task</h4>
+            <div class="instructionshrtlrg">
+				<p>Enter the task for this WebQuest. The task should relate the objective(s) of the WebQuest, 
+                   but not how the objectives will be met. For example, if students need to create their own 
+                   treehouse that explores the relationship between an organism and its habitat, this objective 
+                   would be stated here.</p>
+			</div>
+            <div jwcid="@HTMLEditorBox" idIndex="ognl:2"/>
+            <textarea jwcid="@PreparedTextArea" valuePath="task" cols="ognl:60" rows="ognl:30" useEditor="prop:useHTMLEditor"></textarea>
+        </div>
+</html>

@@ -1,0 +1,32 @@
+<span jwcid="@If" condition="ognl:page.selectedHelpTopic" element="ognl:null" volatile="ognl:true">
+	<html jwcid="@HelpWindow" objectType="Treehouse" helpTitle="ognl:page.selectedHelpTopic" helpString="ognl:page.helpContentForSelectedTopic" isImages="ognl:false"/>
+</span>
+<span jwcid="@Else" element="ognl:null">
+	<html jwcid="@Shell" stylesheet="ognl:assets.stylesheet" title="ognl:'All ' + pageType + ' Data Entry Help Topics'">
+	    <body jwcid="@Body" id="trhshelp">    
+		<div id="trhssectionlinks">   
+		    <h3><span jwcid="@Insert" value="ognl:pageType"/> Contribution Help Sections</h3>
+		    <ul>
+		        <span jwcid="@Foreach" source="ognl:page.messageMap.keys" value="ognl:page.currentKey" element="li">
+		            <a jwcid="@Any" element="a" href="ognl:'#' + page.currentKey.key"><span jwcid="@Insert" value="ognl:page.currentKey.key"/></a>
+		        </span>
+		    </ul>
+		<div id="trhshelplist">
+		<h4><a name="trhshelplist"></a>More Help for Treehouse Builders </h4>
+		  <ul><li><a href="/tree/learn/TreebuilderTools/BuildingGuide/BuildersGuide.html">Treehouse Builder's Guide</a></li>
+		<li><a href="/tree/learn/TreebuilderTools/AlltheHTML.html">All the HTML you need</a></li>
+		</ul>
+		<p>&nbsp; </p>
+		</div> </div>    
+		
+		<div id="allhints">
+		<h2><img src="/tree/images/tip.gif" border="0" class="inlineimg"><span jwcid="@Insert" value="ognl:pageType"/> Data Entry Help Topics</h2>
+		<span jwcid="@Foreach" source="ognl:page.messageMap.keys" value="ognl:page.currentKey">
+		    <div class="helpdiv">
+		        <a jwcid="@Any" name="ognl:page.currentKey.key"/><h3><span jwcid="@Insert" value="ognl:page.currentKey.key"/></h3>
+		        <span jwcid="@Insert" value="ognl:page.messageMap.get(page.currentKey)" raw="ognl:true"/>
+		    </div>
+		</span>
+	    </body>
+	</html>
+</span>

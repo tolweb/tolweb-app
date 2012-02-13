@@ -1,0 +1,46 @@
+<h4 class="open" id="articles" onclick="changeclass('articles', 'open', 'closed'); changeclass('articlesmenu', 'open', 'closed')">articles &amp; notes</h4>  
+ <ul id="articlesmenu" class="open">
+     <span jwcid="@If" condition="ognl:isBranchOrLeaf && !includeLinkPrefix && !isPeopleList && !isImageGallery && !isMovieGallery">
+         <li class="thispage"><span jwcid="@Insert" value="ognl:actualPageTitle"/> <span jwcid="@Insert" value="ognl:branchOrLeafString"/> Page</li>
+     </span>
+     <span jwcid="@Else">
+		<li><a jwcid="@Any" element="a" href="ognl:pageURL"><span jwcid="@Insert" value="ognl:actualPageTitle"/> <span jwcid="@Insert" value="ognl:branchOrLeafString"/> Page</a></li>                 
+     </span>             
+     <span jwcid="@Foreach" source="ognl:articles" value="ognl:currentArticle">
+		<li jwcid="@Any" element="li" class="ognl:liArticleClass">
+            <a jwcid="@GenericLink" disabled="ognl:isThisPage" href="ognl:currentArticleURL">
+                <span jwcid="@Insert" value="ognl:currentArticle[0]"/>
+            </a>
+        </li>
+     </span>
+     <span jwcid="@Foreach" source="ognl:notes" value="ognl:currentNote">
+		<li jwcid="@Any" element="li" class="ognl:liNoteClass">
+            <a jwcid="@GenericLink" disabled="ognl:isThisPage" href="ognl:currentNoteURL">
+                <span jwcid="@Insert" value="ognl:currentNote[0]"/>
+            </a>
+        </li>
+     </span>
+ </ul>
+<span jwcid="@If" condition="ognl:!includeLinkPrefix && showTreehousesMenu">
+<h4 class="open" id="treehouses" onclick="changeclass('treehouses', 'open', 'closed'); changeclass('treehmenu', 'open', 'closed')">Treehouses</h4>  
+<ul id="treehmenu" class="open">
+	<li jwcid="@TreehousesMenu" node="ognl:node" treehouses="ognl:treehouses" title="ognl:title"/>                            
+ </ul>
+</span>
+<h4 class="open" id="collections" onclick="changeclass('collections', 'open', 'closed'); changeclass('collectionsmenu', 'open', 'closed')">collections</h4>  
+<ul id="collectionsmenu" class="open">
+	<li jwcid="@Any" element="li" class="ognl:liImageClass">
+		<a jwcid="@Any" element="a" href="ognl:imagesUrl" disabled="ognl:isImageGallery"><span jwcid="@Insert" value="ognl:actualPageTitle"/> Images</a>
+    </li>
+	<li jwcid="@Any" element="li" class="ognl:liMovieClass">
+		<a jwcid="@Any" element="a" href="ognl:moviesUrl" disabled="ognl:isMovieGallery"><span jwcid="@Insert" value="ognl:actualPageTitle"/> Movies</a>
+    </li>    
+</ul>
+<h4 class="open" id="people" onclick="changeclass('people', 'open', 'closed'); changeclass('peoplemenu', 'open', 'closed')">people</h4>  
+<ul id="peoplemenu" class="open">
+	<li jwcid="@Any" element="li" class="ognl:liPeopleClass">
+        <a jwcid="@ExternalLink" page="PeopleList" parameters="ognl:node.id" disabled="ognl:isPeopleList">
+			<span jwcid="@Insert" value="ognl:actualPageTitle"/> People
+		</a>
+    </li>
+</ul>

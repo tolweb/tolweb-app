@@ -1,0 +1,20 @@
+<html jwcid="@Wrapper" title="Batch Upload Missing Entries">
+	<h1>Batch Upload Missing Entries</h1>
+    <p><a jwcid="@PageLink" page="ImageZipUploadResults">Return to batch upload results</a></p>
+    <span jwcid="@If" condition="ognl:zipEntriesNoXML.size > 0">
+        <p>
+	        The follwing files in the zip file did not have an xml entry:
+            <ul jwcid="@Foreach" source="ognl:zipEntriesNoXML" element="ul" value="ognl:currentString">
+                <li><span jwcid="@Insert" value="ognl:currentString"/></li>
+            </ul>
+        </p>
+    </span>
+    <span jwcid="@If" condition="ognl:xmlEntriesNoZip.size > 0">
+        <p>
+	        The follwing entries in the xml file did not have a corresponding file in the zip file:
+            <ul jwcid="@Foreach" source="ognl:xmlEntriesNoZip" element="ul" value="ognl:currentString">
+                <li><span jwcid="@Insert" value="ognl:currentString"/></li>
+            </ul>
+        </p>
+    </span>    
+</html>

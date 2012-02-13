@@ -1,0 +1,52 @@
+<html jwcid="@ScientificWrapper" title="Submit an Entire Branch For Publication" includeDojo="ognl:true">
+	<span jwcid="@If" condition="prop:wasPublished">
+    <h2 class="clear">Branch successfully published</h2>
+    </span>
+    <span jwcid="@Else">
+	<h2 class="clear">Submit an entire branch for publication</h2>
+	<div jwcid="branchSubmitPublication@Any" id="branchSubmitPublication">
+        <span jwcid="@If" condition="prop:delegate.hasErrors">
+    		<span jwcid="@ErrorBox" delegate="prop:delegate"/>
+        </span>
+        <span jwcid="@If" condition="prop:noRootGroup">
+		<form jwcid="@tacos:AjaxForm" delegate="prop:delegate">
+        	Name of root node of branch: <span class="boldtext">
+        	<input jwcid="@TextField" value="prop:branchPublicationRootName"/></span>
+        	<input jwcid="@tacos:AjaxSubmit" listener="listener:setRootGroup" 
+        	updateComponents="ognl:{'branchSubmitPublication'}" value="Set branch to be published"/>
+        </form>
+        </span>
+        <span jwcid="@Else">
+            <p>Root group: <span jwcid="@Insert" value="prop:rootGroupName"/> 
+            <a jwcid="@tacos:AjaxDirectLink" listener="listener:changeRootGroupName" 
+            updateComponents="ognl:{'branchSubmitPublication'}">change</a></p>
+		    Cutoff groups:
+		    <span jwcid="@If" condition="prop:hasCutoff">
+		        <ul class="nodisc">
+		            <li jwcid="@tacos:PartialFor" source="prop:cutoffNodeWrappers" value="ognl:currentCutoffNode" element="li">
+		            	<span jwcid="@If" condition="ognl:currentCutoffNode.isNew">
+                            <form jwcid="@tacos:AjaxForm" delegate="ognl:delegate">
+                                Cutoff Group: <input jwcid="@TextField" value="ognl:newCutoffGroupName"/><input jwcid="@tacos:AjaxSubmit" listener="listener:applyCutoffGroupName" updateComponents="branchSubmitPublication" value="Add"/>
+                            </form>
+                        </span>
+                        <span jwcid="@Else">
+                            <span jwcid="@Insert" value="ognl:currentCutoffNode.nodeName"/> <a jwcid="@tacos:AjaxDirectLink" listener="listener:removeCutoffNode" parameters="ognl:currentCutoffNode.nodeId" updateComponents="branchSubmitPublication">remove</a>
+                        </span>    
+		            </li>
+		        </ul>
+		    </span>      
+            <span jwcid="@If" condition="ognl:canAddAnother">
+                <a jwcid="@tacos:AjaxDirectLink" listener="listener:addCutoffNode" updateComponents="branchSubmitPublication">Add cutoff group</a>
+            </span>                  
+        </span>
+        <span jwcid="@If" condition="ognl:!noRootGroup">
+            <p>
+	        <form jwcid="@Form" listener="listener:submitBranch">
+	            Revision Type: <input jwcid="@PropertySelection" model="prop:revisionTypeModel" value="prop:revisionType"/>
+	            <input jwcid="@Submit" value="Submit Branch"/>
+	        </form>
+            </p>
+        </span>
+	</div>
+    </span>
+</html>

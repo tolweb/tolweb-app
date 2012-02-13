@@ -1,0 +1,73 @@
+<html jwcid="@btol/ProjectWrapper" title="Edit PCR Protocol">
+	<span jwcid="@If" condition="ognl:wasSaved">
+        <h2 class="clear">Protocol successfully saved</h2>
+        You may now return to your edit form.
+        <p class="center">
+            <a href="javascript:window.close();">Close Window</a>
+        </p>
+    </span>
+    <span jwcid="@Else">
+	<h2 class="clear">Edit PCR Protocol</h2>
+    <span jwcid="@If" condition="ognl:validationDelegate.hasErrors">
+        <h3 class="error"><span jwcid="@Delegator" delegate="ognl:validationDelegate.firstError"/></h3>
+    </span>
+    <span jwcid="@Else">
+    	<p>Fields marked with a '*' are required.</p>        
+    </span>    
+    <form jwcid="@beanform/BeanForm" bean="ognl:protocol" properties="ognl:propertiesString" save="listener:saveProtocol"
+        delegate="bean:validationDelegate" clientValidationEnabled="ognl:true" method="post"
+    	readOnly="ognl:false"/>
+    </span>
+</html>
+<div jwcid="protocolTypeBeanFieldBlock@Block">
+    <input jwcid="protocolTypeBeanField@PropertySelection" value="ognl:protocol.protocolType" 
+    	displayName="message:protocolType" model="ognl:protocolTypeSelectionModel"/>
+</div>
+<div jwcid="iniDTimeBeanFieldBlock@Block">
+    <input jwcid="iniDTimeBeanField@PropertySelection" value="ognl:protocol.iniDTime"
+    	displayName="message:iniDTime" model="ognl:minutesSecondsSelectionModel"/>
+</div>
+<div jwcid="d1TimeBeanFieldBlock@Block">
+    <input jwcid="d1TimeBeanField@PropertySelection" value="ognl:protocol.d1Time"
+    	displayName="message:d1Time" model="ognl:minutesSecondsSelectionModel"/>    
+</div>
+<div jwcid="a1TimeBeanFieldBlock@Block">
+    <input jwcid="a1TimeBeanField@PropertySelection" value="ognl:protocol.a1Time"
+    	displayName="message:a1Time" model="ognl:minutesSecondsSelectionModel"/>    
+</div>
+<div jwcid="e1TimeBeanFieldBlock@Block">
+    <input jwcid="e1TimeBeanField@PropertySelection" value="ognl:protocol.e1Time"
+    	displayName="message:e1Time" model="ognl:minutesSecondsSelectionModel"/>    
+</div>
+<div jwcid="d2TimeBeanFieldBlock@Block">
+    <input jwcid="d2TimeBeanField@PropertySelection" value="ognl:protocol.d2Time"
+    	displayName="message:d2Time" model="ognl:minutesSecondsSelectionModel"/>    
+</div>
+<div jwcid="a2TimeBeanFieldBlock@Block">
+    <input jwcid="a2TimeBeanField@PropertySelection" value="ognl:protocol.a2Time"
+    	displayName="message:a2Time" model="ognl:minutesSecondsSelectionModel"/>    
+</div>
+<div jwcid="e2TimeBeanFieldBlock@Block">
+    <input jwcid="e2TimeBeanField@PropertySelection" value="ognl:protocol.e2Time"
+    	displayName="message:e2Time" model="ognl:minutesSecondsSelectionModel"/>    
+</div>
+<div jwcid="notesBeanFieldBlock@Block">
+    <input jwcid="notesBeanField@TextArea" value="ognl:protocol.notes"
+    	displayName="message:notes" rows="10" cols="60"/>    
+</div>
+<div jwcid="stagesBeanFieldBlock@Block">
+    <input jwcid="stagesBeanField@PropertySelection" value="ognl:protocol.stages"
+        displayName="message:stages" model="ognl:cyclesModel"/>
+</div>
+<div jwcid="recipeBeanFieldLabel@Block">
+    <td colspan="2" class="header">RECIPE</td>
+</div>
+<div jwcid="cycleBeanFieldLabel@Block">
+    <td colspan="2" class="header">CYCLE</td>
+</div>
+<div jwcid="stage1BeanFieldLabel@Block">
+    <td colspan="2" class="subheader">STAGE 1</td>
+</div>
+<div jwcid="stage2BeanFieldLabel@Block">
+    <td colspan="2" class="subheader">STAGE 2</td>
+</div>

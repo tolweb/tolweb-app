@@ -1,0 +1,10 @@
+<h4 class="open" id="navprefs" onclick="changeclass('navprefs', 'open', 'closed'); changeclass('navprefsmenu', 'open', 'closed')">options</h4>                   
+<ul id="navprefsmenu" class="open">
+	<li><a href="/tree/home.pages/mytol.html">Setting Preferences</a></li>
+	<li><a onclick="updatePreference('Show_glossary'); return false;" href="#"><span jwcid="@Insert" value="ognl:glossString"/></a></li>
+	<span jwcid="@If" condition="ognl:isBranchOrLeaf">
+		<li><a onclick="updatePreference('Move_internet_info'); return false;" href="#"><span jwcid="@Insert" value="ognl:internetLinksString"/></a></li>
+		<li><a onclick="updatePreference('Show_taxon_list'); return false;" href="#"><span jwcid="@Insert" value="ognl:taxonListsString"/></a></li>
+		<li><a onclick="updatePreference('Show_random_images'); return false;" href="#"><span jwcid="@Insert" value="ognl:randomPicsString"/></a></li>
+	</span>
+</ul>     

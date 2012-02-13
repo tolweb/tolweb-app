@@ -1,0 +1,53 @@
+<html jwcid="@NewBarebonesFormWrapper" bodyId="ognl:@org.tolweb.tapestry.AbstractWrappablePage@MEDIA_SEARCH_BODY" title="ognl:titleString"
+ additionalDelegate="ognl:delegate">
+<span jwcid="@If" condition="ognl:newObjectUploaded">
+	<div jwcid="@RedirectDiv" url="ognl:editObjectUrl"/>
+</span>
+	<h2><span jwcid="@Insert" value="ognl:titleString"/></h2>    
+	<div class="box1">
+        <span jwcid="@If" condition="ognl:newObjectUploaded" element="ognl:null">
+        <p style="font-weight: bold; font-size: larger;">File Successfully Uploaded</p>
+        <p>You may <a href="javascript:window.close()">close this window</a>, upload more files, or search for additional files.</p>
+        </span>                
+        <p jwcid="@If" condition="ognl:!searchMedia" class="ognl:instructionsPClass">
+			Images displayed on ToL pages are retrieved from the ToL 
+	        image database. <span jwcid="@If" condition="ognl:isPageSearch">Use the fields below to find the image you want, and then 
+	        insert the code provided into your page.</span> Note that not all ToL images are available for use on all ToL pages.  Your search will retrieve only images that have been released by their copyright owners for your intended use.            
+        </p>
+	    <p jwcid="@Else" class="ognl:instructionsPClass">
+			Media files displayed on ToL pages are retrieved from the ToL 
+	        media database. Note that not all ToL media files are available for use on all ToL pages.  Your search will 
+            retrieve only files that have been released by their copyright owners for your intended use.                        
+	    </p>
+    <span jwcid="@ImageSearch" 
+        callbackType="ognl:callbackType" linkString="ognl:selectString" 
+    	searchPageName="ArticleNoteImageSearch" searchOnlyContributorsImages="ognl:false"
+    	wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@NEW_FORM_WRAPPER"
+    	imageUse="ognl:@org.tolweb.treegrow.main.NodeImage@RESTRICTED_USE" editedObjectId="ognl:pageId"
+    	groupName="ognl:groupName" returnPageName="ognl:returnPageName"
+    	instructions="ognl:instructionsString" buttonText="ognl:'Find ' + (searchMedia ? 'Media' : 'Images')" />
+	</div>
+	<a name="upload"></a> 
+    <span jwcid="@If" condition="ognl:!searchMedia" element="ognl:null">
+    <h4 class="topborder"><strong>Add a New Image to the ToL Database</strong></h4>
+	<div class="box1">
+	    <p class="small">If you would like to use an image that is not yet in the ToL database, you can upload it here.  Please be sure to provide data for the image in the form that opens after the image is uploaded.</p>
+		<p>Choose a file to upload from your computer then click on the Upload New Image 
+		    button.</p>
+	<form jwcid="@UploadNewImageForm" isTreehouses="ognl:true" nodeId="ognl:newImageNodeId" fromPageEditing="ognl:isPageSearch"/>
+	</div>    
+    </span>
+    <span jwcid="@Else" element="ognl:null">
+    <h4 class="topborder"><strong>Add a New Media File to the ToL Database</strong></h4>
+	<div class="box1">
+	    <p class="small">If you would like to use a media file that is not yet in the ToL database, you can upload it here.  Please be sure to provide data for the media file in the form that opens after the file is uploaded.</p>
+		<p>Choose a file to upload from your computer then click on the Upload New Media 
+		    button.</p>
+	<form jwcid="@UploadNewMediaForm" isTreehouses="ognl:true" nodeId="ognl:newImageNodeId"
+    	fromPageEditing="ognl:isPageSearch"/>
+	</div>    
+    </span>    
+<span jwcid="@If" condition="ognl:callbackType ==  @org.tolweb.tapestry.ImageSearchResults@NO_CALLBACK">
+<script jwcid="@Script" script="Tinymcepopup.script" opener="window.opener"/>    
+</span>
+</html>

@@ -1,0 +1,26 @@
+<input jwcid="@Hidden" value="ognl:page.editedObjectId"/>
+<input jwcid="@Hidden" value="ognl:page.fromPageEditing"/>
+<div id="summary" class="whitebox"> 
+  <span jwcid="@If" condition="ognl:!isDocument" element="ognl:null">
+	  <div id="thumbn"><image jwcid="@ImageThumbnail" image="ognl:media" isPreview="ognl:true"/></div>
+  </span>
+  <a jwcid="@HelpLink" helpName="ognl:page.mediaType + ' Data'" pageName="ognl:page.helpPageName"/>
+  <ul class="formsummary">
+      <li class="url">http://tolweb.org/tree/ToL<span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/>s/<span jwcid="@Insert" value="ognl:media.location" /></li>
+      <li>ToL <span jwcid="@Insert" value="ognl:page.mediaType"/> ID# <span jwcid="@Insert" value="ognl:media.id" /></li>
+      <li class="tinytext"><span jwcid="@If" condition="ognl:media.contributor != null"> 
+        Contributed by <span jwcid="@Insert" value="ognl:media.contributor.displayName" /> 
+        on <span jwcid="@Insert" value="ognl:media.creationDate" /> (server 
+        time)</span> <a jwcid="@LinkSubmit" listener="ognl:page.listeners.submitContributorSearchSubmit">edit</a></li>
+      <li class="tinytext"><span jwcid="@If" condition="ognl:media.lastEditedContributor != null"> 
+        Image data last edited by <span jwcid="@Insert" value="ognl:media.lastEditedContributor.displayName" /> 
+        on <span jwcid="@Insert" value="ognl:media.lastEditedDate" /> (server 
+        time) </span></li>
+      <span jwcid="@If" condition="ognl:isImage" element="ognl:null">
+      <li id="imgversions"><a jwcid="@LinkSubmit" listener="ognl:page.listeners.editImageVersions">View/upload/delete versions of this image</a></li>
+      </span>
+      <span jwcid="@Else" element="ognl:null">
+          <li><label>Replace this <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/> with a new version <input jwcid="@Upload" file="ognl:page.uploadFile" /></label></li>
+      </span>
+  </ul>
+</div>

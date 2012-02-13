@@ -1,0 +1,39 @@
+<html jwcid="@ScientificWrapper" title="Page Search Results">
+<h1 class="superheader"><a jwcid="@PageLink" page="ScientificMaterialsManager">Scientific Materials Manager</a></h1>
+    <h2 class="clear">Multiple Groups Match Your Search Criteria</h2>
+    <span jwcid="@If" element="ognl:null" condition="ognl:nodes.size > 0">
+	    <p>Please select the page you want to edit from the list below, 
+	        or <a jwcid="@PageLink" page="ScientificMaterialsManager">search again</a>.</p>    
+	    <table jwcid="@contrib:Table" columns="group" pagesDisplayed="50" source="ognl:nodes" 
+	        row="ognl:currentNode"/>
+		<span jwcid="groupColumnHeader@Block">Name</span>
+	    <span jwcid="groupColumnValue@Block">
+	        <a jwcid="@GenericLink" href="ognl:currentNodeLink"><span jwcid="@Insert" value="ognl:currentNode.name"/></a>
+	    </span>
+    </span>
+    <span jwcid="@Else">
+    <p>There are no groups in the ToL database that match your search criteria, 
+        please check your spelling and <a jwcid="@PageLink" page="ScientificMaterialsManager">search again</a>.</p>        
+    </span>
+<p class="box"><strong>Please note</strong>: you can only edit pages 
+        for groups that are represented in the ToL database. If you want to add 
+        a new group, you can do so in <em>TreeGrow</em>, or you can send a message 
+        to 
+        <script language=javascript>
+    var e1 = "treegrow";
+    var e2 = "tolweb";
+    var e3 = "org";
+    document.write("<a href=\"" + "m" + "a" + "i" + "l" + "t" + "o:")
+    document.write(e1 + "@" + e2 + "." + e3 + "\">")
+    document.write(e1 + "@" + e2 + "." + e3 + "</a>,")
+
+</script>
+         and we'll create it for you.  Also, if you don't have editing privileges for a group, you can request a review of your group assignment from       <script language=javascript>
+    var e1 = "treegrow";
+    var e2 = "tolweb";
+    var e3 = "org";
+    document.write("<a href=\"" + "m" + "a" + "i" + "l" + "t" + "o:")
+    document.write(e1 + "@" + e2 + "." + e3 + "\">")
+    document.write(e1 + "@" + e2 + "." + e3 + "</a>.")
+</script></p>    
+</html>

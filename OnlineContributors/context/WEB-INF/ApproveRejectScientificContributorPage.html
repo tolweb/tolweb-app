@@ -1,0 +1,48 @@
+<html jwcid="@ScientificWrapper" title="Approve/Reject Contributor">
+	<h2 class="clear">
+        <span jwcid="@If" condition="ognl:isApprove">
+            <span jwcid="@Insert" value="ognl:approveString"/> '<span jwcid="@Insert" value="ognl:contributor.displayName"/>'
+        </span>
+        <span jwcid="@Else">
+			<span jwcid="@Insert" value="ognl:rejectString"/>  '<span jwcid="@Insert" value="ognl:contributor.displayName"/>'
+        </span> 
+    </h2>
+    <span jwcid="@If" condition="ognl:isApprove">
+    <pre>
+Hello, we are happy to inform you that you are now registered
+as a contributor to the Tree of Life Web Project.
+
+You can login as a Tree of Life contributor with the following User ID and
+password.
+
+User ID:
+Use your full e-mail address
+Password:
+&lt;password&gt;
+
+We recommend that you log in and change your password to something that's easy for you 
+to remember. To log in go to:
+http://contribute.tolweb.org/
+
+After you log in, follow the 'Update registration information' link to change
+your password or update your registration information.
+
+In order to get started, have a look at the ToL documentation for scientific contributors:
+http://tolweb.org/tree/sep/scicontent.html
+
+If you have any questions, or if you need help with anything, please contact treegrow@tolweb.org
+
+The Tree of Life editor, <span jwcid="@Insert" value="ognl:contributor.displayName"/> (<span jwcid="@Insert" value="ognl:contributor.email"/>), 
+had the following comments:
+
+        
+        &lt;comments&gt;
+    </pre>
+    </span>
+    Please enter any comments you would like to send the authors in the text box below:
+    <form jwcid="@Form" listener="ognl:listeners.commentsSubmit">
+        <input jwcid="@Hidden" value="ognl:returnPageName"/>
+	    <p><span jwcid="@TextArea" value="ognl:comments" rows="20" cols="60"/></p>	
+        <span jwcid="@Submit" value="ognl:isApprove ? approveString : rejectString"/>
+    </form>
+</html>

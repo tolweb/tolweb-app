@@ -1,0 +1,38 @@
+<html jwcid="@btol/ProjectWrapper" title="Edit Specimen Extraction">
+	<span jwcid="@If" condition="ognl:wasSaved">
+        <h2 class="clear">Extraction successfully saved</h2>
+        You may now return to your edit form, reload your browser and it will appear in the list.
+        <p class="center">
+            <a href="javascript:window.close();">Close Window</a>
+        </p>
+    </span>
+    <span jwcid="@Else">
+	<h2 class="clear">Edit Specimen Extraction</h2>
+    <span jwcid="@If" condition="ognl:validationDelegate.hasErrors">
+        <h3 class="error"><span jwcid="@Delegator" delegate="ognl:validationDelegate.firstError"/></h3>
+    </span>
+    <span jwcid="@Else">
+    	<p>Fields marked with a '*' are required.</p>        
+    </span>    
+    <form jwcid="@beanform/BeanForm" bean="ognl:extraction" properties="ognl:propertiesString" save="listener:saveExtraction"
+        delegate="bean:validationDelegate" clientValidationEnabled="ognl:true" method="post"
+    	readOnly="ognl:false"/>
+    </span>
+    <div jwcid="specimenIdBeanFieldBlock@Block">
+        <input jwcid="specimenIdBeanField@TextField" value="ognl:specimenId" translator="translator:number" validators="validators:min=0" displayName="message:specimenId"/>
+    </div>
+	<div jwcid="sourceDatabaseBeanFieldBlock@Block">
+	    <input jwcid="sourceDatabaseBeanField@PropertySelection" value="ognl:extraction.sourceCollection"
+	    	displayName="message:sourceDatabase" model="ognl:sourceDatabaseSelectionModel"/>
+	</div>    
+    <div jwcid="extractionDateBeanFieldBlock@Block">
+    	<span jwcid="extractionDateBeanField@btol/ThreeFieldDate" year="ognl:extraction.creationYear"
+        month="ognl:extraction.creationMonth" day="ognl:extraction.creationDay" displayName="message:extractionDate"/>
+    </div>
+    <div jwcid="notesBeanFieldBlock@Block">
+    	<textarea jwcid="notesBeanField@TextArea" displayName="message:notes" cols="70" rows="8" value="ognl:extraction.notes"/>
+    </div> 
+    <div jwcid="codeBeanFieldBlock@Block">
+        <span jwcid="@Insert" value="prop:extraction.code"/>
+	</div>   
+</html>    

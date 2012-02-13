@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<LayerNode name="a">
+   <FieldNode id="650" name="a1"/>
+   <FieldNode id="666" name="a2"/>
+</LayerNode>

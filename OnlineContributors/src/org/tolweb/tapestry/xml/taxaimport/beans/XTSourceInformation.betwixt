@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<info primitiveTypes="element">
+  <element name="source-information">
+    <element name="source-id" property="sourceId"/>
+    <element name="source-key" property="sourceKey"/>
+    <addDefaults/>
+  </element>
+</info>

@@ -1,0 +1,91 @@
+<html jwcid="@FeaturesWrapper" title="Auto Reconciliation Log">
+  <form jwcid="@Form" listener="ognl:listeners.processManifest">
+  	<p>[<a jwcid="@PageLink" page="xml/TaxaImportHome">Return to Taxa Import Workflow Home...</a>]</p>
+	<h2 class="clear">Auto-Reconciled Nodes in Clade <span jwcid="@Insert" value="ognl:currentBasalNodeName"/></h2>
+	<p>
+		
+	</p>
+	<h4>Matched Nodes</h4>
+	<p>
+		<span jwcid="@If" condition="ognl:matchedRecords == null || matchedRecords.isEmpty">
+		No matched nodes found...
+		</span>
+		<span jwcid="@Else">
+		<ul jwcid="@For" source="ognl:matchedRecords" value="ognl:currentMatchedRecord" element="ul">
+			<li>node: <span jwcid="@Insert" value="ognl:currentMatchedRecord.cladeName"/> 
+				(<span jwcid="@Insert" value="ognl:currentMatchedRecord.nodeId"/>)  
+				matched: <span jwcid="@Insert" value="ognl:currentMatchedRecord.timestamp"/></li>
+		</ul>
+		</span>
+	</p>
+	<h4>New Nodes</h4>
+	<p>
+		<span jwcid="@If" condition="ognl:newRecords == null || newRecords.isEmpty">
+		No new nodes found...
+		</span>
+		<span jwcid="@Else">	
+		<ul jwcid="@For" source="ognl:newRecords" value="ognl:currentNewRecord" element="ul">
+			<li>node: <span jwcid="@Insert" value="ognl:currentNewRecord.cladeName"/> 
+				(<span jwcid="@Insert" value="ognl:currentNewRecord.nodeId"/>)  
+				created: <span jwcid="@Insert" value="ognl:currentNewRecord.timestamp"/></li>
+		</ul>
+		</span>
+	</p>
+	<h4>Orphaned Nodes [<a jwcid="@DirectLink" listener="ognl:listeners.manageLink" parameters="ognl:{currentBasalNodeId}">Manage...</a>]</h4>
+	<p>
+		<span jwcid="@If" condition="ognl:swapTuples == null || swapTuples.isEmpty">
+		No orphaned nodes found...
+		</span>
+		<span jwcid="@Else">		
+		<table jwcid="@For" source="ognl:swapTuples" value="ognl:currentTuple" element="table">
+			<tr>
+				<td>
+					node: <span jwcid="@Insert" value="ognl:currentTuple.metaNode.node.name"/> <br/>
+					orphaned: <span jwcid="@Insert" value="ognl:currentTuple.metaNode.node.updated"/></td>
+				<td>source node id: <span jwcid="@Insert" value="ognl:currentTuple.metaNode.node.id"/> </td>  
+			</tr>
+			<tr>
+				<td colspan="2">	  
+					<span jwcid="@If" condition="ognl:currentTuple.metaNode.hasAttachments">
+						<ul>
+							<span jwcid="@If" condition="ognl:currentTuple.metaNode.hasPageAttached">
+								<li>page id: <span jwcid="@Insert" value="ognl:currentTuple.metaNode.page.pageId"/></li>
+							</span>
+							<span jwcid="@If" condition="ognl:!currentTuple.metaNode.accessoryPages.empty">
+							<li>accessory pages:
+								<ul jwcid="@For" source="ognl:currentTuple.metaNode.accessoryPages" value="ognl:currentAccessoryPage" element="ul">
+									<li>accessory page id: <span jwcid="@Insert" value="ognl:currentAccessoryPage.id" /></li>
+								</ul>
+							</li>
+							</span>
+							<span jwcid="@If" condition="ognl:!currentTuple.metaNode.otherNameIds.empty">
+							<li>other names:
+								<ul jwcid="@For" source="ognl:currentTuple.metaNode.otherNameIds.keySet" value="ognl:currentOtherNameId" element="ul">
+									<li>other name id: <span jwcid="@Insert" value="ognl:currentOtherNameId" />
+										<span jwcid="@Insert" value="ognl:currentOtherNameText" /></li>
+								</ul>
+							</li>
+							</span>
+							<span jwcid="@If" condition="ognl:!currentTuple.metaNode.media.empty">
+							<li>media files:
+								<ul jwcid="@For" source="ognl:currentTuple.metaNode.media" value="ognl:currentMediaFile" element="ul">
+									<li>media id: <span jwcid="@Insert" value="ognl:currentMediaFile.id" /></li>
+								</ul>
+							</li>
+							</span>
+							<span jwcid="@If" condition="ognl:!currentTuple.metaNode.contributors.empty">
+							<li>contributors:
+								<ul jwcid="@For" source="ognl:currentTuple.metaNode.contributors" value="ognl:currentContributor" element="ul">
+									<li>contributor id: <span jwcid="@Insert" value="ognl:currentContributor.id" /></li>
+								</ul>
+							</li>
+							</span>
+						</ul>
+					</span>	  
+				</td>
+			</tr>
+		</table>	
+		</span>
+	</p>
+  </form>
+</html>

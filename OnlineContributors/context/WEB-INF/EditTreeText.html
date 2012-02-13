@@ -1,0 +1,36 @@
+<html jwcid="@EditBranchLeafPageWrapper" title="ognl:('Edit ' + tolPageName + (node.isLeaf ? ' Lead Text' : ' Tree Text'))"
+	editedObjects="ognl:('Lead Text' + (node.isLeaf ? '' : '/Text After Tree'))" notesProperty="page.tolPage.treeTextNotes" additionalDelegate="ognl:baseDelegate">
+	<div class="whitebox" id="treetext">
+        <div class="instructions">
+            <h5 id="trigger1" class="triup" onclick="showbranch('help1', 'show', 'hide'); showbranch('trigger1', 'tridown', 'triup')">Instructions</h5>
+			<div id="help1" class="hide">                     
+                <p jwcid="@If" condition="ognl:!node.isLeaf">You can add brief comments immediately above or below the tree or taxon list. Literature 
+                   sources and features of the tree that are important for navigation should be listed after 
+                   the tree. For example, on the adephagan beetle page, the text after the tree mentions 
+                   and provides links to two groups of adephagans that coleopterists might expect to find as 
+                   terminal taxa in the tree, but which don't appear there.</p>
+                <p jwcid="@Else">
+					You can add a brief comment immediately above the containing group link.                     
+                </p>
+			</div>
+		</div>
+	    <ul class="box1">
+			<li>
+                <label>Lead Text 
+		    	<div class="box1">
+                    <textarea jwcid="@TextArea" value="ognl:tolPage.leadText" cols="60" rows="20" mce_editable="true"></textarea>
+				</div>
+				</label>
+			</li>
+            <li jwcid="@If" condition="ognl:!node.isLeaf">
+                <label>Text After Tree 
+                <div class="box1">
+                    <textarea jwcid="@TextArea" value="ognl:tolPage.postTreeText" cols="60" rows="20" mce_editable="true"></textarea>
+				</div>
+				</label>
+			</li>
+		</ul>
+	</div>
+    <div jwcid="@AutoSave" autoSaveFrequency="ognl:900" contributorId="ognl:contributor.id" 
+    	editHistoryId="ognl:page.editedPage.editHistoryId"/>    
+</html>

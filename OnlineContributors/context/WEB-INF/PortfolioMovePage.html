@@ -1,0 +1,13 @@
+<div class="moveupdown">
+    <span jwcid="@If" condition="ognl:page.pageCanMoveBoth" element="ognl:null">
+        <a jwcid="@LinkSubmit" selected="ognl:page.moveUpPageIndex" tag="ognl:page.selectedPageTag"><img src="/tree/learn/lisa.images/trhouseimage/Up.gif">Up</a>
+        <a jwcid="@LinkSubmit" selected="ognl:page.moveDownPageIndex" tag="ognl:page.selectedPageTag"><img src="/tree/learn/lisa.images/trhouseimage/Down.gif">Down</a>
+    </span>
+    <span jwcid="@If" condition="ognl:page.pageCanMoveDown" element="ognl:null">           
+		<a jwcid="@LinkSubmit" selected="ognl:page.moveDownPageIndex" tag="ognl:page.selectedPageTag"><img src="/tree/learn/lisa.images/trhouseimage/Down.gif">Down</a>
+    </span>
+    <span jwcid="@If" condition="ognl:page.pageCanMoveUp" element="ognl:null">
+		<a jwcid="@LinkSubmit" selected="ognl:page.moveUpPageIndex" tag="ognl:page.selectedPageTag"><img src="/tree/learn/lisa.images/trhouseimage/Up.gif">Up</a>
+    </span>
+	<a jwcid="@LinkSubmit" selected="ognl:page.deletePageIndex" tag="ognl:page.selectedPageTag">&#8211; Delete</a>
+</div>

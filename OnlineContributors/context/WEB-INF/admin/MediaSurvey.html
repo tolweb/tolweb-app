@@ -1,0 +1,84 @@
+<form jwcid="@Form" listener="ognl:listeners.mediaSurveySubmit">	   
+<div id="survey">
+<h5>Tree of Life Media Use Survey</h5>
+<p>The information you provide in this survey will help us improve the ToL media collection.  We are trying to find out what kinds of people are using our images, movies, sounds, etc., what they are using them for, and what we could do to make the collection more useful to them.</p>
+<em>How do you use this <span jwcid="@Insert" value="ognl:mediaTypeDescription"/>?</em>
+<ul class="box1">
+  <li>
+    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:isBrowsingForFun"/>I'm browsing for fun.</label>
+  </li>
+  <li>
+    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:isMaterialsForOwnProjects"/>I'm looking for materials to use in my own research/media projects.</label>
+  </li>
+  <li>
+    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:isClassroomMaterials"/>I'm a teacher/librarian, and I am using this material in the classroom.</label>
+  </li>
+  <li>
+    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:isForStudentStudies"/>I'm a student, and I am using this material in my studies.</label>
+  </li>
+
+  <li>
+    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:isForParentLearning"/>I'm a parent, and I'm using this material to learn with my children.</label> 
+  </li>
+</ul>
+
+<label><span class="textarealabel">Comments</span> 
+	<textarea jwcid="@TextArea" value="ognl:mediaUseComments" cols="80" rows="3"></textarea></label>
+
+<em>If you are a teacher/professor/librarian:</em>
+<label>How many students will benefit from this material? <input jwcid="@TextField" size="5" value="ognl:studentCount"/></label>
+
+<em>At what level do you teach/learn?</em>
+<ul class="box1">
+	   
+  <li>
+    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:isElementarySchool"/>Kindergarden/elementary school</label>
+  </li>
+  <li>
+    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:isMiddleSchool"/>Middle school</label>
+  </li>
+  <li>
+    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:isHighSchool"/>High school</label>
+  </li>
+  <li>
+    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:isCollegeOrUniversity"/>College/university</label>
+  </li>
+  <li>
+    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:isInformalEducation"/>Informal education (museum, youth group, lifelong learning, etc.)</label> 
+  </li>
+</ul>
+ 
+<label><span class="textarealabel">Comments</span>
+	<textarea jwcid="@TextArea" value="ognl:educationComments" cols="80" rows="3"></textarea></label>
+
+<em>How old are you? </em>
+<span jwcid="@RadioGroup" selected="ognl:respondentAge">
+<ul class="box1">
+  <li>
+    <label><input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.hibernate.MediaSurvey@YOUNGER_THAN_13"/>Younger than 13 years</label>
+  </li>
+  <li>
+    <label><input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.hibernate.MediaSurvey@BETWEEN_14_AND_19"/>14-19 years</label>
+  </li>
+  <li>
+    <label><input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.hibernate.MediaSurvey@BETWEEN_20_AND_30"/>20-30 years</label>
+  </li>
+  <li>
+    <label><input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.hibernate.MediaSurvey@BETWEEN_30_AND_60"/>30-60 years</label>
+  </li>
+  <li>
+    <label><input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.hibernate.MediaSurvey@OLDER_THAN_60"/>Older than 60 years </label>
+  </li>
+</ul>
+</span>
+
+<em>Where in the world do you live/learn/teach? </em>
+<label> City, State/Province, Country: <input jwcid="@TextField" size="50" value="ognl:geoLocation"/></label>
+
+<em>Do you have any suggestion on how we could improve the Tree of Life media collection? </em>
+<input type="submit" name="Submit_0" id="subm" value="Submit Survey" class="floatright"/> 
+<label><span class="textarealabel">Comments</span>
+	<textarea jwcid="@TextArea" value="ognl:suggestions" cols="80" rows="3"></textarea></label>
+
+</div>
+</form>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree-of-life-web version="1.0">
+  <nodes>
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+      <name>Eudyptula neominor</name>
+      <rank>Family</rank>
+      <othernames>
+	      <othername is-important="true" is-preferred="false" sequence="0" italicize-name="true">
+	        <name>Fairy Penguin</name>
+	        <authority>Shaw</authority>
+	        <auth-date>1800</auth-date>
+	      </othername>
+	  </othernames>      
+    </node>      
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+      <name>Spheniscus magellanicus</name>
+      <rank>Family</rank>
+      <othernames>
+	      <othername is-important="true" is-preferred="false" sequence="0" italicize-name="true">
+	        <name>Magellanic Penguin</name>
+	        <authority>Shaw</authority>
+	        <auth-date>1800</auth-date>
+	      </othername>
+	  </othernames>      
+	</node>
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+      <name>Spheniscus neodemersus </name>
+      <rank>Family</rank>
+      <othernames>
+	      <othername is-important="true" is-preferred="false" sequence="0" italicize-name="true">
+	        <name>Jackass Penguin</name>
+	        <authority>Shaw</authority>
+	        <auth-date>1800</auth-date>
+	      </othername>
+	  </othernames>      
+	</node>
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+      <name>Spheniscus humboldti</name>
+      <rank>Family</rank>
+      <othernames>
+	      <othername is-important="true" is-preferred="false" sequence="0" italicize-name="true">
+	        <name>Humboldt Penguin</name>
+	        <authority>Shaw</authority>
+	        <auth-date>1800</auth-date>
+	      </othername>
+	      <othername is-important="true" is-preferred="false" sequence="0" italicize-name="true">
+	        <name>Humboldtian Penguin</name>
+	        <authority>Shaw</authority>
+	        <auth-date>1800</auth-date>
+	      </othername>	      
+	  </othernames>      
+	</node>
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+      <name>Spheniscus mendiculus</name>
+      <rank>Family</rank>
+      <othernames>
+	      <othername is-important="true" is-preferred="false" sequence="0" italicize-name="true">
+	        <name>Galápagos Penguin</name>
+	        <authority>Shaw</authority>
+	        <auth-date>1800</auth-date>
+	      </othername>
+	  </othernames>      
+	</node>
+  </nodes>
+</tree-of-life-web>

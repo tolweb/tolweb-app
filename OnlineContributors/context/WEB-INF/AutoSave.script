@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!-- $Id: AutoSave.script 2005 2005-09-22 00:50:09Z dmandel $ -->
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+	<input-symbol key="autoSaveFrequency" class="java.lang.Integer"/>
+	<input-symbol key="valuePath" class="java.lang.String"/>
+	<input-symbol key="textareaId" class="java.lang.String"/>
+	<input-symbol key="editedObjectId" class="java.lang.Long"/>
+	<input-symbol key="contributorId" class="java.lang.Integer"/>
+	<input-symbol key="editHistoryId" class="java.lang.Long"/>
+	<body>
+    function prepareDoAutoSave() {
+    	// trigger a tinymce save so that the proper value is in the textArea
+    	try { tinyMCE.triggerSave(); } catch(e) {}
+    	// the first arg is the ognl expression to set
+    	var valuePath = '${valuePath}';
+    	// get the value of the text area
+    	var textArea = document.getElementById('${textareaId}');
+    	var value;
+    	if (textArea != null) {
+    		value = textArea.value;
+    	}
+    	doAutoSave(valuePath, value, '${editedObjectId}', '${contributorId}', '${editHistoryId}');
+    }
+    
+    function AutoSaveInitTimer()
+    {
+		window.setInterval("prepareDoAutoSave()", ${autoSaveFrequency});
+    }
+    
+    function autoSaveSuccessful(arr) {
+    	var returnVal = arr[0];
+    	if (returnVal == "false") {
+    		alert("You have logged out of the editing system.  You will need to log in to the system again if \n you want to resume editing.  This editing window will close after you click 'OK'");
+    		window.close();
+    	} else {    
+    		window.status = "Autosave successfully completed at: " + new Date().toString();
+    	}
+    }
+	</body>
+	
+	<initialization>
+	    AutoSaveInitTimer();
+	</initialization>
+</script>

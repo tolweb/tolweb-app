@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree-of-life-web version="1.0">
+	<node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+	  <name>Diprotodon</name>
+	  <auth-date>1838</auth-date>
+	  <authority>Owens</authority>	      
+	  <rank>Genus</rank>
+	  <geographic-distribution>
+	    <description>Australia</description>
+	  </geographic-distribution>
+	  <nodes>
+	  	<node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+	  		<name>Diprotodon opatum-minor Parent</name>
+	  		<nodes> 
+			    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+			      <name>Diprotodon opatum</name>
+			      <rank>Species</rank>
+			      <geographic-distribution>
+			        <description>Australia</description>
+			      </geographic-distribution>    
+			    </node>
+			    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+			      <name>Diprotodon minor</name>
+			      <rank>Species</rank>
+			      <geographic-distribution>
+			        <description>Australia</description>
+			      </geographic-distribution>
+			    </node>	      		
+	  		</nodes>
+	  	</node>
+	    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+	      <name>Diprotodon loderi</name>
+	      <rank>Species</rank>
+	      <geographic-distribution>
+	        <description>Australia</description>
+	      </geographic-distribution>    
+	    </node>
+	    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+	      <name>Diprotodon annextans</name>
+	      <rank>Species</rank>
+	      <geographic-distribution>
+	        <description>Australia</description>
+	      </geographic-distribution>
+	    </node>		    		    		    	      
+	  </nodes>    
+	</node>      
+</tree-of-life-web>

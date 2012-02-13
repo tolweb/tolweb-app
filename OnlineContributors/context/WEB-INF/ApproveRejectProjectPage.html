@@ -1,0 +1,15 @@
+<html jwcid="@BuildTreehouseWrapper" title="ognl:(isApprove ? 'Approve ' : 'Reject ') + project.name">
+	<h2 class="clear">
+        <span jwcid="@If" condition="ognl:isApprove">
+            Approve Project '<span jwcid="@Insert" value="ognl:project.name"/>' to begin work
+        </span>
+        <span jwcid="@Else">
+            Reject Project '<span jwcid="@Insert" value="ognl:project.name"/>' to begin work
+        </span> 
+    </h2>
+    Please enter any comments you would like to send to the authors in the text box below:
+    <form jwcid="@Form" listener="ognl:listeners.commentsSubmit">
+	    <p><span jwcid="@TextArea" value="ognl:comments" rows="30" cols="60"/></p>	
+        <span jwcid="@Submit" value="ognl:isApprove ? 'Approve Project' : 'Reject Project'"/>
+    </form>
+</html>

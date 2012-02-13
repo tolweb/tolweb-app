@@ -1,0 +1,9 @@
+<div id="randompics">
+	<h3><a name="randompics"></a> Random Images from this group</h3>
+	<span jwcid="@Foreach" source="ognl:pics" value="ognl:currentRandomPic">
+	<div style="display: inline">
+		<a jwcid="@Any" element="a" href="ognl:pageURL"><img jwcid="@Any" element="img" src="ognl:imgLocation"/></a>
+	    <a jwcid="@Any" element="a" href="ognl:pageURL" style="display: block"><span jwcid="@Insert" value="ognl:currentRandomPic[1]"/></a>
+	</div>
+	</span>
+</div>

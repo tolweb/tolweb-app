@@ -1,0 +1,26 @@
+<span jwcid="@NewBarebonesFormWrapper" title="ognl:'Search for an ' + mediaType + ' to Copy'">
+	<form jwcid="@Form">
+		<a jwcid="@ReturnToEditingLink"/>
+    </form>
+    <h2>Search for an <span jwcid="@Insert" value="ognl:mediaType"/> to copy</h2>
+    <span jwcid="@ImageSearch" 
+        instructions="ognl:instructions" 
+        linkString="select"
+        callbackType="ognl:@org.tolweb.tapestry.ImageSearchResults@COPY_IMAGE_CALLBACK"
+    	searchOnlyContributorsImages="ognl:false"
+        wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@FORM_WRAPPER"
+        searchPageName="CopyImageDataSearch" 
+    	editedObjectId="ognl:editedObjectId"
+    	mediaType="ognl:mediaType"
+    	returnPageName="ognl:returnPageName"
+    	buttonText="ognl:'Find ' + mediaType + 's'"
+    	/>
+    	<p>Copying data from another media file will make things a lot
+easier when you upload multiple files with similar data. However, note that
+any data you may already have entered in a form will be
+overwritten with the copied data; so use the <em>Copy Data</em> tool before 
+            entering any data, and be sure to check your data to 
+            avoid applying the wrong data to a file!</p>
+            <p>Click on the <em>Return to Editing</em> link above if you've changed your mind about copying data.</p>
+</span>
+

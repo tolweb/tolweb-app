@@ -1,0 +1,45 @@
+<html jwcid="@BuildTreehouseWrapper" title="Approve Interface">
+<h2 class="clear">Submit Treehouse '<span jwcid="@Insert" value="ognl:treehouseToApproveOrReject.pageTitle"/>' to the ToL for Publication</h2>
+	<div class="instructions">
+	  <p class="clear"> <strong>Check off the areas below before the treehouse is submitted for publication. It is especially important that you ensure personal information and copyright rules are  followed. </strong></p><p>Comments that you add will be published in the Page Communication/History section (step #7) of the student's treehouse, and they will also be sent via email to you and the learning materials editor.</p>
+  </div>
+<span jwcid="@If" condition="ognl:delegate.hasErrors">
+<span class="error"><span jwcid="@Delegator" delegate="ognl:delegate.firstError"/></span>
+</span>   
+<form jwcid="@Form" listener="ognl:listeners.commentsSubmit" delegate="ognl:delegate">
+<input jwcid="@Hidden" value="ognl:isTeacherApproval"/>
+<input jwcid="@Hidden" value="ognl:returnPageName"/>
+<p><strong>Please check that the areas listed below have been reviewed for and meet  ToL guidelines.</strong></p>
+   <ul class="nodiscspaced" style="padding-right: 150px;">
+   <li>
+     <input jwcid="@Checkbox" value="ognl:personalInfoSelected" displayName="Student Personal Information" validators="validators:required"/><strong>Student Personal Information</strong>
+  <ul style="padding-right: 150px;"><li>
+     Make sure that student personal information (e.g. name, photos, email, address) is not displayed unless the student has permission in writing from the parent/guardian and school.</li>
+   </ul></li>
+   <li>
+     <input jwcid="@Checkbox" value="ognl:imageCopyrightSelected" displayName="Media Copyright" validators="validators:required"/>
+  <strong>Copyright of Media Files</strong> (Review <a href="/tree/learn/TreebuilderTools/trcopyright.html" target="newHelpWindow"> Copyright Rules and Issues</a> | <a href="/tree/learn/TreebuilderTools/CopyrightQuiz.html" target="newHelpWindow">The Copyright Quiz</a>)
+  <ul style="padding-right: 150px;">
+    <li>Make sure that all images have copyright and/or credits information listed underneath them and all media files have copyright/credits information when they are clicked on.</li>
+    <li>Make sure that images marked as copyrighted to the student were created by the student (the default copyright owner when an image/media file is uploaded is the person logged in, and this can confuse students).</li>
+
+    <li> Make sure that the source for all images found outside of the ToL on the web is indicated, e.g. the name of the site and its URL (web address), and that permission has been received in writing for any copyrighted media files found on the web. </li>
+  </ul>
+   </li>
+   <li>
+     <input jwcid="@Checkbox" value="ognl:grammarSelected" displayName="Grammar" validators="validators:required"/>
+ <strong>Content/Style/Spelling/Grammar</strong> (Review <a href="http://www.tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/DesignGuidelines.html" target="newHelpWindow">ToL Design Guidelines</a> and the <span class="circle"><a href="http://www.tolweb.org/tree/learn/TeacherResources/BasicGuidelines.html" target="newHelpWindow">Basic Treehouse Guidelines</a></span>)
+  <ul class="nodiscspaced" style="padding-right: 150px;">
+
+    <li><strong> Please</strong> approve student work unless there are glaring spelling and grammar errors or lack of basic content. It is easy for us to reformat student pages and we realize that there are quirks in the Easy Editor that may cause formatting problems for students. </li>
+  </ul>
+   </li>
+   </ul>
+ <p>Comments<br />
+   <textarea jwcid="@TextArea" value="ognl:comments" cols="60" rows="30"/> </p>
+
+<input jwcid="@Submit" listener="ognl:listeners.dontPublish" value="Return to the Review Page"/>
+<input jwcid="@Submit" value="Submit to the ToL for Publication"/>
+   <p class="large"><strong>Thank you, we really appreciate your assistance with the publication process.</strong></p>
+  </form>
+</html>

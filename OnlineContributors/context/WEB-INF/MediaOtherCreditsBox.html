@@ -1,0 +1,49 @@
+<div id="credits" class="whitebox"> <a name="credits"></a>
+    <a jwcid="@HelpLink" helpName="Other Credits" pageName="ognl:page.helpPageName"/>
+    <h4>Other Credits</h4>
+    <ul>
+        <li>
+            <label> <span class="textarealabel">Acknowledgements</span><textarea jwcid="@TextArea" value="ognl:media.acknowledgements" cols="40" rows="4"></textarea>
+            </label>
+        </li>
+        <li>
+            <label>Creator 
+            <input jwcid="@TextField" type="text" value="ognl:media.creator" size="40" /><span class="tinytext">(if different from copyright owner)</span>
+            </label>
+        </li> 
+    </ul>
+	<h5 onclick="showbranch('othercredits', 'show', 'hide'); showbranch('creditstrigger', 'tridown', 'triup')" id="creditstrigger" class="triup">Reference/Source</h5> 
+	<div id="othercredits" class="hide">                       
+    <ul>
+        <li>                     <label> <span class="textarealabel">Reference</span><span class="tinytext">(e. g., a book or article)</span><textarea jwcid="@TextArea" value="ognl:media.reference" cols="40" rows="3"></textarea>
+            </label>
+        </li> 
+		<li><strong>Source</strong>
+		<ul>
+			<li><label>Title of Source Page
+		            <input jwcid="@TextField" value="prop:media.sourceCollectionTitle" size="40" type="text"/> </label></li>
+			<li><label>Url of Source Page 
+		            <input jwcid="@TextField" value="prop:media.sourceCollectionUrl" size="40" type="text"/> </label></li>
+			<li><label>Source Collection <select jwcid="@PropertySelection" model="prop:selectionModel" value="prop:foreignDatabase"/></label>
+			</li>
+			<li><span class="tinytext">Add info for another source collection here:</span>
+		                  	<ul>
+		                  	    <li>
+		                  	        <label>Collection 
+		                  	            <input jwcid="@TextField" value="prop:collectionName" size="40"/>
+		                  	            </label>
+		              	        </li>
+		                  	    <li>
+		                  	        <label>Homepage 
+		                  	            <input jwcid="@TextField" value="prop:collectionHomepage" size="40"/>
+		                  	            </label>
+		              	        </li>
+		              	    </ul>
+			</li>
+            <span jwcid="@InvokeListener" listener="listener:addOtherMediaCollection"/>
+			<li><label><span class="textarealabel">Additional Source Info</span> <textarea jwcid="@TextArea" value="prop:media.otherSourceCollectionInfo" cols="40" rows="2"></textarea> </label></li>
+	 	</ul>
+	</li>
+    </ul>
+	</div>
+</div>

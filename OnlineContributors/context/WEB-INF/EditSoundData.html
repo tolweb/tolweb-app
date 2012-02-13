@@ -1,0 +1,104 @@
+<html jwcid="@NewFormWrapper" title="Edit Sound Data" bodyId="sounddatabody" isImage="ognl:true" 
+	buttonString="Submit Sound Data" listener="ognl:listeners.doSave"
+	rightSideBlock="ognl:components.rightSideBlock" 
+	saveInstructionsBlock="ognl:components.saveInstructionsBlock"
+	tocBlock="ognl:components.tocBlock"> 
+<span jwcid="@If" condition="ognl:wrongPassword">
+    <span class="error">
+        You have entered a wrong username/password combination.  Please check your typing and try again.
+    </span>
+</span>
+<span jwcid="@Else">
+	<h2>Edit Sound Data</h2>
+	<div jwcid="@MediaSummaryBox" isImage="ognl:false"/>
+	<div jwcid="@MediaTipsBox" isDocument="ognl:false"/>
+ 	<div jwcid="@MediaCopyrightBox"/>
+    <div jwcid="mediaUsePermsBox@MediaUsePermissionBox"/>
+	<div jwcid="@MediaOtherCreditsBox"/>
+	<div jwcid="@MediaNodeAttachmentsBox"/>            
+  <div id="mediacontent" class="whitebox"> <a name="mediacontent"></a><a jwcid="@HelpLink" helpName="Media Content" pageName="SoundHelpMessagesPage"/>
+            <h4>Sound Content</h4>
+            <div jwcid="@MediaTitleField"/>
+            <div jwcid="@MediaDescriptionArea"/>
+			<ul class="box1">
+                <li>                     
+                    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:sound.isOrganism"/>
+					Organism Sound</label>
+                </li>
+                <li>                     
+                    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:sound.isEnvironmental"/>
+                    Environmental Sound</label>
+                </li>
+                <li>                     
+                    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:sound.isNarrative"/>
+					Narrative/Interpretation</label>
+                </li>
+			</ul>
+			
+            <div class="spacer">&nbsp;</div>
+			<h5 id="subjecttrigger"  class="triup" onclick="showbranch('subject', 'show', 'hide'); showbranch('subjecttrigger', 'tridown', 'triup')">Subject/Keywords</h5>
+            <div id="subject" class="hide">                
+                <div jwcid="instructionsBlock@Block">
+                <p class="instructions">Some sounds may be particularly suitable 
+                    to illustrate a particular subject; e.g., a recording of an endangered species is relevant to Conservation Biology, a mating call is an illustration of Neurobiology & Behavior, a soundtrack recorded during a dinosaur dig is relevant to Paleobiology, etc. 
+                    You can select additional subjects below, but be sure to limit 
+                    your selection to topics for which your sound has special 
+                    relevance. Additional subjects that are not covered in this 
+                    list can be entered in the <strong>Key Words</strong> field 
+                    below.</p>
+                </div>
+				<div jwcid="@Keywords" keywords="ognl:sound.keywords" instructionsBlock="ognl:components.instructionsBlock"/>
+            </div>
+	    	            </div>    
+	<div jwcid="@MediaPlaceTimeBox"/> 
+	<div jwcid="@MediaSpecimenBox" isSound="ognl:true"/>
+	<div jwcid="@MediaCommentsBox"/>
+	<div jwcid="@MediaAltTextBox"/>    
+	<div id="mediatype" class="whitebox"> <a name="mediatype"></a>            
+    	<a jwcid="@HelpLink" pageName="SoundHelpMessagesPage" helpName="Sound Type" />
+    	<h4>Sound Type</h4>
+        <div class="indentleft">   
+        	<select jwcid="@PropertySelection" model="ognl:@org.tolweb.tapestry.EditSoundData@SOUNDTYPE_MODEL" value="ognl:imageTypeString"/>
+			<p class="inline">
+                <label><input jwcid="@Checkbox" value="ognl:sound.artisticInterpretation" name="" type="checkbox"/>
+			Fiction/Performance/Artistic representation</label>
+       </p>      <div class="spacer">&nbsp;</div>
+        <label><span class="textarealabel2">Technical Information</span>
+             <textarea jwcid="@TextArea" value="ognl:sound.technicalInformation" name="$TextArea$1" cols="35" rows="3"></textarea>
+		</label>
+        <div class="indentleft"><p>   <label> Running time
+        	<input jwcid="@TextField" value="ognl:sound.runningTime" size="10"/>        </label>
+    		</p>
+        </div>
+        <div jwcid="@MediaLanguages" languages="ognl:sound.languages"/>
+      </div>
+	</div>
+	<div jwcid="@MediaEditPrivilegesNotesSubmit"/>
+</span>
+</html>
+   <div jwcid="rightSideBlock@Block">
+       <a jwcid="@PageLink" page="SoundHelpMessagesPage" id="viewallhelp" target="SoundHelpWindow">View All Edit Sound Data Help Topics</a>
+   </div>
+   <div jwcid="saveInstructionsBlock@Block">
+		<span jwcid="@MediaSaveInstructions"/>
+   </div>
+   <div jwcid="tocBlock@Block">
+     <h3>Sound Data Sections</h3>
+	      <ul>
+        <li><a href="#copyright">Copyright Information</a></li>
+        <li id="mediauselink"><a href="#mediause">Use Permitted by Copyright Owner</a></li>
+        <li><a href="#credits">Other Credits</a></li>
+        <li><a href="#attach">Attached to Group(s)</a></li>
+
+        <li><a href="#mediacontent">Sound Content</a></li>
+        <li><a href="#location">Place &amp; Time</a></li>
+        <li><a href="#specimen">Specimen Information</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#alttext">Alternative Text</a></li>
+
+        <li><a href="#mediatype">Sound Type/Technical Information</a></li>
+        <li><a href="#privileges">Editing Privileges</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#subm">Submit Sound Data</a></li>
+    </ul>
+   </div>

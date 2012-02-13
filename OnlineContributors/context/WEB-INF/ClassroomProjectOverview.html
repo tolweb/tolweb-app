@@ -1,0 +1,11 @@
+<html jwcid="@BuildTreehouseWrapper" title="ognl:project.name">
+	<p align="right">
+        <span jwcid="@If" condition="ognl:studentId">
+            <a jwcid="@ExternalLink" page="ContributorDetailPage" parameters="ognl:studentId">Back to Student Page</a> | 
+        </span>
+        <a jwcid="@ExternalLink" page="ContributorDetailPage" parameters="ognl:project.teacher.id">Back to Teacher Page</a>
+	</p>
+	<h1 class="clear"><span jwcid="@Insert" value="ognl:project.name"/><span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(project.classGroup)">, <span jwcid="@Insert" value="ognl:project.classGroup"/></span></h1>
+    <h2 class="subtitle"><strong>Class Project Treehouses</strong></h2>
+    <table jwcid="@ProjectTreehouses" treehouses="ognl:treehouses" isEditPage="ognl:false"/>
+</html>

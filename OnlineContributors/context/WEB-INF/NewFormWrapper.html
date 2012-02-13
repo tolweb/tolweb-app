@@ -1,0 +1,22 @@
+<html jwcid="@Shell" title="ognl:title" delegate="ognl:delegate">
+<body jwcid="@Body" id="ognl:bodyId">
+<form jwcid="@Form" listener="ognl:page.listeners.doSave">
+<div id="skip" class="hidden"><a href="#formcontainer" title="Skip navigation">Skip to Edit Form</a></div>
+<span jwcid="@RenderBlock" block="ognl:rightSideBlock"/>
+<span jwcid="@If" condition="ognl:!volatile" element="ognl:null">
+	<div id="sectionlinks">
+	    <span jwcid="@RenderBlock" block="ognl:tocBlock"/>
+	    <div id="savedata">
+	        <input type="submit" jwcid="@Submit" class="center" value="ognl:buttonString"  onClick="ognl:!isImage ? 'openPreview()' : null" listener="ognl:page.listeners.previewSubmit"/>
+	        <span jwcid="@RenderBlock" block="ognl:saveInstructionsBlock"/>
+	    </div>
+	</div>
+</span>
+<div id="formcontainer">
+<span jwcid="@RenderBody"/>
+</div>        
+<script jwcid="@Script" script="ShowBranch.script"/>
+<script jwcid="@Script" script="ClickHandler.script"/>
+</form>
+</body>
+</html>

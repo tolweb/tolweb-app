@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:element name="geographic-distribution">
+	<xs:complexType>
+	  <xs:sequence>
+	    <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1" />
+	  </xs:sequence>
+	</xs:complexType>
+  </xs:element>
+
+  <xs:element name="source-information">  
+	<xs:complexType>
+	  <xs:sequence>
+	   	<xs:element name="source-id" type="xs:string" minOccurs="0" maxOccurs="1" />
+	   	<xs:element name="source-key" type="xs:string" minOccurs="0" maxOccurs="1" />
+	  </xs:sequence>
+	</xs:complexType>
+  </xs:element>
+
+  <xs:element name="othername">
+    <xs:complexType>
+      <xs:sequence>
+    	<xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="1" />
+    	<xs:element name="authority" type="xs:string" minOccurs="0" maxOccurs="1" />
+    	<xs:element name="auth-date" type="xs:string" minOccurs="0" maxOccurs="1" />
+    	<xs:element name="comments" type="xs:string" minOccurs="0" maxOccurs="1" />
+      </xs:sequence>  
+      <xs:attribute name="is-important" type="xs:boolean" />
+      <xs:attribute name="is-preferred" type="xs:boolean" />
+      <xs:attribute name="sequence" type="xs:integer" />
+      <xs:attribute name="italicize-name" type="xs:boolean" />                   
+    </xs:complexType>
+  </xs:element>
+ 
+  <xs:element name="othernames" >
+    <xs:complexType>
+      <xs:sequence>
+      	<xs:element ref="othername" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="nodes">
+    <xs:complexType>
+      <xs:sequence>
+      	<xs:element ref="node" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+   
+  <xs:element name="node">
+    <xs:complexType>
+      <xs:sequence>
+ 		<xs:element name="name" type="xs:string" minOccurs="0" />
+ 		<xs:element name="description" type="xs:string" minOccurs="0" />
+ 		<xs:element name="authority" type="xs:string" minOccurs="0" />
+ 		<xs:element name="name-comment" type="xs:string" minOccurs="0" />
+ 		<xs:element name="combination-author" type="xs:string" minOccurs="0" />
+ 		<xs:element name="auth-date" type="xs:integer" minOccurs="0" />
+ 		<xs:element name="rank" type="xs:string" minOccurs="0" />
+ 		<xs:element ref="geographic-distribution" minOccurs="0" />
+ 		<xs:element ref="othernames" minOccurs="0" />
+ 		<xs:element ref="nodes" minOccurs="0" />
+ 		<xs:element ref="source-information" minOccurs="0"  />
+      </xs:sequence>
+      <xs:attribute name="extinct" type="xs:boolean" />
+      <xs:attribute name="id" type="xs:positiveInteger" />
+      <xs:attribute name="position-confidence" type="xs:integer" />
+      <xs:attribute name="phylesis" type="xs:string" />
+      <xs:attribute name="leaf" type="xs:boolean" />
+      <xs:attribute name="has-page" type="xs:boolean" />
+      <xs:attribute name="ancestor-with-page" type="xs:integer" />
+      <xs:attribute name="italicize-name" type="xs:boolean" />
+      <xs:attribute name="incomplete-subgroups" type="xs:boolean" />
+      <xs:attribute name="show-authority" type="xs:boolean" />
+      <xs:attribute name="show-authority-containing" type="xs:boolean" />
+      <xs:attribute name="is-new-combination" type="xs:boolean" />
+      <xs:attribute name="combination-date" type="xs:string" />
+      <xs:attribute name="child-count" type="xs:integer" />  
+    </xs:complexType>
+  </xs:element>
+     
+  <xs:element name="tree-of-life-web">
+    <xs:complexType>
+      <xs:sequence>
+      	<xs:element ref="node" minOccurs="1" maxOccurs="1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+      
+</xs:schema>

@@ -1,0 +1,13 @@
+<div class="moveupdownsect">
+    <span jwcid="@If" condition="ognl:page.sectionCanMoveBoth" element="ognl:null">
+        <a jwcid="@LinkSubmit" selected="ognl:page.moveUpSectionIndex" tag="ognl:page.sectionIndex"><img src="/tree/learn/lisa.images/trhouseimage/Up.gif">Up</a>
+        <a jwcid="@LinkSubmit" selected="ognl:page.moveDownSectionIndex" tag="ognl:page.sectionIndex"><img src="/tree/learn/lisa.images/trhouseimage/Down.gif">Down</a>
+    </span>
+    <span jwcid="@If" condition="ognl:page.sectionCanMoveDown" element="ognl:null">           
+		<a jwcid="@LinkSubmit" selected="ognl:page.moveDownSectionIndex" tag="ognl:page.sectionIndex"><img src="/tree/learn/lisa.images/trhouseimage/Down.gif">Down</a>
+    </span>
+    <span jwcid="@If" condition="ognl:page.sectionCanMoveUp" element="ognl:null">
+		<a jwcid="@LinkSubmit" selected="ognl:page.moveUpSectionIndex" tag="ognl:page.sectionIndex"><img src="/tree/learn/lisa.images/trhouseimage/Up.gif">Up</a>
+    </span>
+	<a jwcid="@LinkSubmit" selected="ognl:page.deleteSectionIndex" tag="ognl:page.sectionIndex">&#8211; Delete</a>
+</div>

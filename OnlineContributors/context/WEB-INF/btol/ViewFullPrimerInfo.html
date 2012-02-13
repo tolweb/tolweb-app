@@ -1,0 +1,44 @@
+<html jwcid="@btol/ProjectWrapper" title="ognl:'Primer Information For Primer ' + primer.name">
+<h2 class="clear"><span jwcid="@Insert" value="ognl:primer.name"/></h2> <a jwcid="@PageLink" page="btol/ViewAllPrimers">Back to all primers</a>
+<table>
+    <tr>
+        <th>Gene</th>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Sequence (length) <em>Reverse complement</em></th>        
+        <th></th>
+        <th>Synonyms</th>       
+        <th>Creation Date</th>        
+        <th>Developer</th>
+        <th>Reference</th>
+        <th>ID</th>                     
+    </tr>
+    <tr>
+        <td><span jwcid="@Insert" value="ognl:primer.gene.name"/></td>
+        <td><span jwcid="@Insert" value="ognl:primer.name"/></td>        
+        <td><span jwcid="@Insert" value="ognl:primer.code"/></td>
+        <td>
+            <span jwcid="@Insert" value="ognl:primer.sequence"/> (<span jwcid="@Insert" value="ognl:primer.sequence.length()"/>)
+            <em><span jwcid="@Insert" value="ognl:primer.reverseComplement"/></em>
+		</td>        
+        <td><span jwcid="@Insert" value="ognl:primer.directionString"/></td>    
+        <td><span jwcid="@Insert" value="ognl:primer.synonymsString"/></td>                                 
+        <td><span jwcid="@Insert" value="ognl:primer.creationDateString"/></td>    
+        <span jwcid="@If" condition="ognl:primer.developer != null">
+	        <td><span jwcid="@Insert" value="ognl:primer.developer.displayName"/></td>  
+        </span>
+        <span jwcid="@Else">
+            <td>&nbsp;</td>
+        </span>
+        <td><span jwcid="@Insert" value="ognl:primer.reference"/></td>                                                 
+        <td><span jwcid="@Insert" value="ognl:primer.id"/></td>        
+    </tr>
+    <tr>
+        <th colspan="9">Notes</th>               
+    </tr>
+    <tr>
+        <td colspan="9"><span jwcid="@Insert" value="ognl:primer.notes"/></td>
+    </tr>
+</table>
+    <a jwcid="@ExternalLink" page="btol/EditPrimer" parameters="ognl:{primer.id, 'btol/ViewAllPrimers'}">edit this primer</a>
+</html>

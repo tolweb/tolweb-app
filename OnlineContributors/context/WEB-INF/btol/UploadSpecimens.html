@@ -1,0 +1,18 @@
+<html jwcid="@btol/ProjectWrapper" title="Upload Specimens">
+	<h2 class="clear">Upload Specimens</h2>
+    <span jwcid="@If" condition="ognl:errorMessage || delegate.hasErrors">
+		<div class="fix">
+			<h3>Error</h3>
+			<ul>
+				<li><span jwcid="@Delegator" delegate="prop:delegate.firstError"/></li>
+			</ul>
+        </div>
+    </span>    
+    <h4>Text Format</h4>
+    <p>Text should be in a tab-separated format with the fields according to <a href="btol/specimens.csv">this example</a><p/>
+    <h4>Reaction Text</h4>
+    <form jwcid="@Form" success="listener:uploadSpecimens">
+		<span jwcid="@btol/UploadFileOrTypeText" objectType="specimens"/>
+        <input jwcid="@Submit" value="Upload Specimens"/>
+    </form>
+</html>

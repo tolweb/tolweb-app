@@ -1,0 +1,88 @@
+<html jwcid="@BuildTreehouseWrapper" title="Edit New Classroom Projects">
+	<a jwcid="@PageLink" page="TreehouseMaterialsManager">Back to Treehouse Materials Manager</a>
+	<h2 class="clear">Edit New Classroom Projects</h2>
+		<table jwcid="table@contrib:Table" source="ognl:newProjects" columns="!TeacherInformation, !Details, !Approve, !Reject"/>
+        <span jwcid="TeacherInformationColumnHeader@Block">Teacher Information</span>
+        <span jwcid="TeacherInformationColumnValue@Block">
+            <span jwcid="@Insert" value="ognl:components.table.tableRow.teacher.displayName"/>, 
+            <span jwcid="@Insert" value="ognl:components.table.tableRow.teacher.institution"/>,
+            <span jwcid="@Insert" value="ognl:components.table.tableRow.teacher.city"/>,
+            <span jwcid="@Insert" value="ognl:components.table.tableRow.teacher.state"/>,            
+            <span jwcid="@Insert" value="ognl:components.table.tableRow.teacher.country"/>,            
+        </span>
+        <span jwcid="DetailsColumnHeader@Block">&nbsp;</span>
+		<span jwcid="DetailsColumnValue@Block">   
+			<span jwcid="@ClassroomProjectDetails" project="ognl:components.table.tableRow"/>
+		</span>
+        <span jwcid="ApproveColumnHeader@Block">&nbsp;</span>
+		<span jwcid="ApproveColumnValue@Block">
+            <a jwcid="@DirectLink" listener="ognl:listeners.approveProject" parameters="ognl:components.table.tableRow.projectId">Approve</a>
+        </span>
+        <span jwcid="RejectColumnHeader@Block">&nbsp;</span>
+		<span jwcid="RejectColumnValue@Block">
+            <a jwcid="@DirectLink" listener="ognl:listeners.rejectProject" parameters="ognl:components.table.tableRow.projectId">Reject</a>
+        </span>
+</html>
+
+
+<span jwcid="@If" condition="ognl:wasApprovedProject">
+	<span jwcid="@MailBlock" smtp="localhost" subject="Classroom Project Approved" to="ognl:{toEmail, configuration.learningEditorEmail}" from="treehouses@tolweb.org" html="ognl:false" bcc="">
+Hello, we are happy to inform you that your classroom project, '<span jwcid="@Insert" value="ognl:approvedOrRejectedProject.name"/>' was 
+approved.
+
+The student pseudonyms for this project are:
+<span jwcid="@Insert" value="ognl:approvedOrRejectedProject.pseudonym"/>1-<span jwcid="@Insert" value="ognl:approvedOrRejectedProject.pseudonym"/><span jwcid="@Insert" value="ognl:approvedOrRejectedProject.students.size"/>
+<span jwcid="@If" condition="ognl:approvedOrRejectedProject.useProjectPassword" element="ognl:null">
+The student password is: 
+<span jwcid="@Insert" value="ognl:approvedOrRejectedProject.password"/>
+</span>
+<span jwcid="@Else" element="ognl:null">
+The students will create their own passwords
+</span>
+
+For their initial login, students should follow these instructions: 
+http://www.tolweb.org/tree/learn/TreebuilderTools/StudentLogin.html
+
+To view and edit this classroom project and the students' treehouses,
+login as a treehouse builder and from the Treehouse Manager click on the link 
+for the Classroom Project Manager.  When you select to view this project, you 
+will see the students' treehouses listed, and their real names will be 
+displayed next to their pseudonyms.
+
+For assistance see:
+How to Begin Class Treehouse Building Projects.
+http://www.tolweb.org/tree/learn/TreebuilderTools/ClassHowtoBegin.html
+The Teacher Resources Section
+http://www.tolweb.org/tree/learn/TeacherResources/TeacherResources.html
+The Building Steps Page
+http://www.tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/
+BuildingSteps.html
+
+Let us know if you have any questions.
+Enjoy building!
+
+<span jwcid="@If" condition="ognl:comments">
+The treehouse editor, <span jwcid="@Insert" value="ognl:contributor.displayName"/> (<span jwcid="@Insert" value="ognl:contributor.email"/>) had the following comments regarding your submission:
+
+                        
+            <span jwcid="@Insert" value="ognl:comments"/>
+
+                        
+        </span>
+	</span>
+</span>
+<span jwcid="@If" condition="ognl:wasRejectedProject">
+	<span jwcid="@MailBlock" smtp="localhost" subject="Classroom Project Not Approved" to="ognl:{toEmail, global.configuration.learningEditorEmail}" from="treehouses@tolweb.org" html="ognl:false">
+        Hello, we are writing to inform you that your classroom project, '<span jwcid="@Insert" value="ognl:approvedOrRejectedProject.name"/>' was not approved for publication to the Tree of Life.
+        <span jwcid="@If" condition="ognl:comments">
+    	The treehouse editor, <span jwcid="@Insert" value="ognl:contributor.displayName"/> (<span jwcid="@Insert" value="ognl:contributor.email"/>) had the following comments regarding your submission:
+
+                        
+            <span jwcid="@Insert" value="ognl:comments"/>
+
+                        
+        </span>
+        
+        Thank you for contributing treehouses to the Tree of Life.
+	</span>        
+</span>

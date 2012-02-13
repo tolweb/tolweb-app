@@ -1,0 +1,50 @@
+<html jwcid="@ScientificWrapper" title="Scientific Materials Manager">
+	<h2 class="clear">Scientific Materials Manager</h2>
+    <dl class="indent">
+        <span jwcid="@If" condition="ognl:isCoreContributor">
+	        <dt>Branch or Leaf Pages</dt>
+	        <dd class="small">Create, revise, delete branch or leaf pages.  Follow a Quicklink, and navigate to the page you want to edit, or find the relevant group using the search field.</dd>
+			<dd><strong>Quicklinks</strong>: <span jwcid="@Insert" value="ognl:quicklinksString" raw="ognl:true"/></dd>
+	        <dd> <form jwcid="@Form" listener="ognl:listeners.doEditPageSearch">
+	            <label>Edit page for group: 
+	            <input jwcid="@TextField" value="ognl:nodeName"/>
+	            <input jwcid="@Submit" value="Go"/>
+	            </label>
+	            </form>                    </dd>
+        </span>
+		<dt><a jwcid="@PageLink" page="ArticleNoteManager">Articles/Notes</a></dt>
+        <dd class="small">Edit articles or notes.</dd>
+        <span jwcid="@If" condition="ognl:canDoEditorTasks">
+	        <dd><a jwcid="@PageLink" page="EditSubmittedArticleNotes">Edit Submitted Articles/Notes</a></dd>
+	        <dd><a jwcid="@PageLink" page="EditNewScientificContributors">Approve/Reject New Scientific Contributors</a></dd>            
+        </span>        
+        <dt><a jwcid="@PageLink" page="ImagesManager">Media</a></dt>
+        <dd class="small">Upload image, sound, or video files, pdf documents, etc. Edit data 
+            for media files.</dd>
+	    <dt><a jwcid="@PageLink" page="UserSubmitPublication">Publication Manager</a></dt>
+        <dd class="small">This interface allows you to submit some or all of your work for publication.</dd>
+        <span jwcid="@If" condition="prop:canDoEditorTasks">
+            <dt><a jwcid="@PageLink" page="ViewOpenBatches">View open batch publications</a></dt>
+            <dd class="small">This interface allows you to view batch publications that are open.</dd>
+        </span>        
+        <span jwcid="@If" condition="prop:canDoEditorTasks">
+            <dt><a jwcid="@PageLink" page="xml/DownloadUploadXML">Batch upload XML</a></dt>
+            <dd class="small">This interface allows you to batch upload xml representation of Tree of Life nodes</dd>
+        </span>
+		<dt><a jwcid="@ExternalLink" page="ContributorDetailPage" parameters="ognl:currentContributorId">View my profile page</a></dt>
+        <dd class="small">View your profile details and contributions (e.g. pages, media, projects).</dd>
+		<dt><a jwcid="@ExternalLink" page="ContributorLicenseConfirmation" parameters="ognl:currentContributorId">Review license defaults</a></dt>  
+        <dd class="small">Review your default choices for text and media licenses (e.g. ToL Use Only, Creative Commons, etc).</dd>
+        <dt><a jwcid="@DirectLink" listener="ognl:listeners.editRegistrationInfo">Update my registration information</a></dt>
+        <dd class="small">Update your name, address, password, and other personal information.</dd>
+		<span jwcid="@If" condition="ognl:projects.size > 0">
+            <dt>Scientific Projects</dt>
+            <dd class="small">Click on any of the links below to go to the home page for that project</dd>
+            <dd jwcid="@For" source="ognl:projects" value="ognl:currentProject" element="dd">
+                <a jwcid="@ExternalLink" page="btol/ProjectHome" parameters="ognl:currentProject[0]">
+                <span jwcid="@Insert" value="ognl:currentProject[1]"/>
+                </a>
+            </dd>
+        </span>
+    </dl>
+</html>

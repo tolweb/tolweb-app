@@ -1,0 +1,34 @@
+<html jwcid="@StaticWrapper">
+	<h2>You searched for groups matching '<span jwcid="@Insert" value="prop:searchTaxon"/>'</h2>
+	<p>	The search string "<strong><span jwcid="@Insert" value="prop:searchTaxon"/></strong>" appears in the following 
+		group names or in other names (synonyms, vernacular names) applied 
+		to these groups:</p>
+ 
+    <ul class="nodisc ilink">
+    	<span jwcid="@For" source="prop:groupSearchResults" value="prop:currentGroupSearchResult">
+  			<li><span jwcid="@Insert" value="prop:currentGroup" raw="ognl:true"/> 
+  				<span jwcid="@Insert" value="prop:currentContainingGroup" raw="ognl:true"/>
+  				
+  				<span jwcid="@If" condition="ognl:currentGroupSearchResult.relatedGroups != null">
+	  				<ul>
+	  					<span jwcid="@For" source="prop:currentGroupSearchResult.relatedGroups"
+	  						value="prop:currentRelatedGroupSearchResult">
+	  						<li>
+	  							<span jwcid="@Insert" value="prop:currentRelatedGroup" raw="ognl:true"/> 
+  								<span jwcid="@Insert" value="prop:currentRelatedContainingGroup" raw="ognl:true"/>
+  							</li>
+	  					</span>
+	  				</ul>
+  				</span>
+  				
+  			</li>
+  		</span>
+    </ul>
+    <!--   
+	<span jwcid="@If" condition="prop:showSeeAllResultsLink">
+		<a jwcid="@DirectLink" listener="ognl:listeners.seeAllResults">See all results...</a>
+	</span>
+	 -->	
+	<h2>Search Again</h2>
+	<span jwcid="@GroupSearchBox" />
+</html>

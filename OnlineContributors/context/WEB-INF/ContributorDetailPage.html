@@ -1,0 +1,110 @@
+<html jwcid="@Wrapper" title="ognl:title">
+	<span jwcid="@If" condition="ognl:viewedContributor != null" element="ognl:null">
+        <p align="right">
+			<a href="javascript:history.go(-1)">Back to List</a>        
+        </p>
+		<h2 class="clear"><span jwcid="@Insert" value="ognl:viewedContributor.displayName"/>
+        </h2>
+		<img jwcid="@ContributorImage" contributor="ognl:viewedContributor"/>
+        <span jwcid="@If" element="ognl:null" condition="ognl:isStudent">
+        <p>This treehouse contributor is part of a classroom project</p>
+        </span>        
+        <span jwcid="@Else" element="ognl:null">
+	    <p>
+	        <span jwcid="@Insert" value="ognl:viewedContributor.bio" raw="ognl:true"/>
+	    </p>
+        </span>
+	    <table>
+			<span jwcid="@If" condition="ognl:canEditInfo">
+                <tr>
+        		<td colspan="2"><a jwcid="@DirectLink" listener="ognl:listeners.editInfo" parameters="ognl:viewedContributor.id" class="editlinklong">Edit</a></td>
+                </tr>
+        	</span>
+            <span jwcid="@If" condition="ognl:isStudent" element="ognl:null">
+                <tr>
+                    <td>Class Project</td>
+                    <td><a jwcid="@ExternalLink" page="ClassroomProjectOverview" 
+                        parameters="ognl:{viewedContributor.project.projectId, viewedContributor.id}"><span jwcid="@Insert" value="ognl:viewedContributor.project.name"/></a></td>                        
+                </tr>
+                <tr>
+                    <td>Teacher</td>
+                    <td><a jwcid="@ContributorNameAndProfileLink" contributor="ognl:viewedContributor.teacher"/></td> 
+                </tr>
+            </span>             
+	        <tr>
+	            <td>Contributor Type:</td>
+	            <td><span jwcid="@Insert" value="ognl:contributorTypeString"/></td>
+	        </tr>
+	        <span jwcid="@If" condition="ognl:viewedContributor.institution">
+		        <tr>
+		            <td>Institution:</td>
+		            <td><span jwcid="@Insert" value="ognl:viewedContributor.institution"/></td>
+		        </tr>            
+	        </span>  
+			<span jwcid="@If" condition="ognl:associatedGroups != null && !associatedGroups.isEmpty">
+				<tr>
+					<td><span jwcid="@Insert" value="ognl:attachedGroupsHeading"/>:</td>
+					<td><span jwcid="@Insert" value="ognl:associatedGroupString" raw="ognl:true"/></td>
+				</tr>
+			</span>
+	        <span jwcid="@If" condition="ognl:hasSubjectAreasOfInterest">
+	            <tr>
+	                <td>Subject Areas of Interest:</td>
+	                <td><span jwcid="@Insert" value="ognl:viewedContributor.interestsString"/></td>
+				</tr>
+	        </span>  
+	        <span jwcid="@If" condition="ognl:hasGeographicAreasOfInterest">
+	            <tr>
+	                <td>Geographic Areas of Interest:</td>
+	                <td><span jwcid="@Insert" value="ognl:viewedContributor.geographicAreaInterest"/></td>
+	            </tr>
+	        </span>
+	        <span jwcid="@If" condition="ognl:!isStudent && !viewedContributor.dontShowEmail && @org.tolweb.treegrow.main.StringUtils@notEmpty(viewedContributor.email)">
+		        <tr>
+		            <td>Email:</td>
+		            <td><a jwcid="@EncodedMailLink" email="ognl:viewedContributor.email"/></td>
+		        </tr>
+	        </span>
+            <span jwcid="@If" condition="ognl:isStudent">
+                <tr>
+                    <td>Teacher Email:</td>
+                    <td><a jwcid="@EncodedMailLink" email="ognl:viewedContributor.teacher.email"/></td>
+            </span>
+	        <span jwcid="@If" condition="ognl:viewedContributor.homepage">
+		        <tr>
+		            <td>Webpage:</td>
+		            <td>
+						<a jwcid="@Any" href="ognl:viewedContributor.homepage"><span jwcid="@Insert" value="ognl:viewedContributor.homepage"/></a>                    
+	                </td>
+		        </tr>
+	        </span>
+	        <span jwcid="@If" condition="ognl:hasPublishedPages">
+	            <tr>
+	                <td>Published Tree of Life Pages:</td>
+	                <td><a jwcid="@ExternalLink" page="ViewPublishedPages" parameters="ognl:{viewedContributor.id}">View pages</a></td>
+	            </tr>
+	        </span>
+			<span jwcid="@If" condition="ognl:numImages > 0">            
+	        <tr>
+		    	<td>Tree of Life Media Files:</td>
+	            <td>
+                    <a jwcid="@ExternalLink" page="ContributorImagesPage" parameters="ognl:{viewedContributor.id}">View media</a>
+				</td>
+	        </tr>        
+            </span>
+            <span jwcid="@If" condition="ognl:hasProjects">
+            <tr>
+                <td>Class Projects:</td>
+                <td><a jwcid="@ExternalLink" page="ViewContributorProjectsPage" parameters="ognl:{viewedContributor.id}">View projects</a> (and their published treehouses)</td>
+            </tr>
+            </span>
+	        <tr>
+		    	<td>Contributor ID:</td>
+	            <td><span jwcid="@Insert" value="ognl:viewedContributor.id"/></td>
+	        </tr>       
+	    </table>
+    </span>
+    <span jwcid="@Else" class="error">
+        Sorry, we are unable to locate a contributor with the specified id.
+    </span>
+</html>

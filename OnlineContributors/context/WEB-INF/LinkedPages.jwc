@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component-specification
+    PUBLIC "-//Apache Software Foundation//Tapestry Specification 3.0//EN"
+    "http://jakarta.apache.org/tapestry/dtd/Tapestry_3_0.dtd">
+<component-specification class="org.tolweb.tapestry.LinkedPages" allow-informal-parameters="no">
+    <description>Component responsible for generating the html for linked pages (bonus pages, treehouses, biographies)</description>
+	<parameter name="node" type="org.tolweb.hibernate.MappedNode" direction="in" required="yes"/>
+    <parameter name="isBranchOrLeaf" type="boolean" direction="in" required="no" default-value="false"/>
+    <parameter name="includeLinkPrefix" type="boolean" direction="in" required="no" default-value="false"/>
+    <parameter name="title" type="java.lang.String" direction="in" required="no" default-value="''">
+        <description>This is used on non-branch or leaf pages in order to identify which page one is currently viewing
+            </description>
+    </parameter>
+    <parameter name="isPeopleList" type="boolean" direction="in" required="no" default-value="false"/>
+    <parameter name="isImageGallery" type="boolean" direction="in" required="no" default-value="false"/>    
+    <parameter name="isMovieGallery" type="boolean" direction="in" required="no" default-value="false"/>
+    <property-specification name="notes" type="java.util.List"/>
+    <property-specification name="articles" type="java.util.List"/>    
+    <property-specification name="currentNote" type="java.lang.Object[]"/>
+    <property-specification name="currentArticle" type="java.lang.Object[]"/>
+	<property-specification name="isThisPage" type="boolean"/>
+</component-specification>

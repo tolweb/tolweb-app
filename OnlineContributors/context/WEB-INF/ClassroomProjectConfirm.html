@@ -1,0 +1,25 @@
+<html jwcid="@BuildTreehouseWrapper" title="Confirm Project Details">
+<span jwcid="@If" condition="ognl:!projectSubmitted">
+<h1 class="clear">Confirm Project Details</h1>
+<p>Please review your project's details below.  If everything looks good, press the 
+'Submit for Approval' button.  If you see something you would like to change, press
+the 'Return to Editing' button.</p>
+<span jwcid="@ClassroomProjectDetails" project="ognl:project"/>
+<form jwcid="@Form">
+    <input type="submit" jwcid="@Submit" listener="ognl:listeners.submitProject" value="Submit for Approval"/>
+    <input type="submit" jwcid="@Submit" listener="ognl:listeners.editProject" value="Return to Editing"/>
+</form>
+</span>
+<span jwcid="@If" condition="ognl:projectSubmitted">
+<h1 class="clear">Project Submitted</h1>
+<p>Your project has been submitted and forwarded to the Treehouses editor for approval.
+   Once your project has been approved, you will receive an email from the Tree of Life
+   Learning Materials Manager.</p>
+<p><a jwcid="@PageLink" page="TreehouseMaterialsManager">Return</a> to the Treehouse Materials Manager.</p>
+<span jwcid="@MailBlock" from="treehouses@tolweb.org" to="ognl:{configuration.learningEditorEmail}" smtp="localhost"
+    subject="ognl:'New Classroom Project Submission by ' + contributor.displayName + ' at ' + new java.util.Date()">
+Contributor <span jwcid="@Insert" value="ognl:contributor.displayName"/> has submitted a new Classroom Project entitled
+<span jwcid="@Insert" value="ognl:project.name"/>.  Login to the Treehouse Materials Manager in order to approve or reject this project.    
+</span>
+</span>
+</html>

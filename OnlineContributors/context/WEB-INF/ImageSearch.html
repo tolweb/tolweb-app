@@ -1,0 +1,49 @@
+<form jwcid="@Form" listener="ognl:listeners.doSearch" delegate="ognl:beans.delegate" method="get">
+<span jwcid="@If" condition="ognl:noResults">
+    <span class="error">Sorry, there were no results matching the specified criteria.  
+    Please revise your search terms.</span>
+</span>
+<span jwcid="@If"  condition="ognl:!showStrongInstructions" element="ognl:null">            
+<p>Find <span jwcid="@Insert" value="ognl:mediaType != null ? mediaType.toLowerCase() : ''"/><span jwcid="@If" condition="ognl:showS" element="ognl:null">s</span> that match the following criteria:</p>
+</span>
+<span jwcid="@Else">
+<strong><p>Find <span jwcid="@Insert" value="ognl:mediaType != null ? mediaType.toLowerCase() : ''"/><span jwcid="@If" condition="ognl:showS" element="ognl:null">s</span> that match the following criteria:</p></strong>
+</span>
+  <table jwcid="@Any" element="table" class="ognl:tableClass">
+    <tr>   
+       <th jwcid="@Any" element="ognl:headerElement" class="ognl:thclass">Text in Any <span jwcid="@Insert" value="ognl:mediaType"/> Data Field</th>
+      <td><input jwcid="@TextField" value="ognl:anyText" type="text"/></td>
+    </tr>
+    <tr>                   <th jwcid="@Any" element="ognl:headerElement" class="ognl:thclass"><span jwcid="@FieldLabel" field="ognl:components.idfield"/></th>
+      <td><input jwcid="idfield@TextField" value="ognl:imageId" translator="translator:number" validators="validators:min=1" displayName="ognl:mediaIdString"/></td>
+    </tr>
+    <tr>                   <th jwcid="@Any" element="ognl:headerElement" class="ognl:thclass">Scientific Name</th>
+      <td><input jwcid="@TextField" value="ognl:scientificName" type="text"/></td>
+    </tr>
+    <tr>                   <th jwcid="@Any" element="ognl:headerElement" class="ognl:thclass">Copyright Owner</th>
+      <td><input jwcid="@TextField" value="ognl:copyrightOwner" type="text"/></td>
+    </tr>
+    <tr>  
+          <th jwcid="@Any" element="ognl:headerElement" class="ognl:thclass">File Name</th>
+      <td><input jwcid="@TextField" type="text" value="ognl:filename"/></td>
+    </tr>        
+    <tr>                   <th jwcid="@Any" element="ognl:headerElement" class="ognl:thclass">Attached to Group</th>
+      <td><input jwcid="@TextField" value="ognl:groupNameProperty" type="text"/></td>
+                </tr>
+    <span jwcid="@If" condition="prop:showPodcastsCheckbox" class="prop:thclass">
+    <tr>
+        <th jwcid="@Any" element="prop:headerElement" class="prop:thclass">Podcast</th>
+        <td><input jwcid="@Checkbox" value="prop:searchOnlyPodcasts"/></td>
+    </tr>
+    </span>
+    <span jwcid="@If" condition="ognl:showMediaTypeSelection" element="ognl:null">
+    <tr>
+                   <th jwcid="@Any" element="ognl:headerElement" class="ognl:thclass">Media Type</th>
+      <td><input jwcid="@PropertySelection" value="ognl:mediaTypeSelection" model="ognl:mediaTypeModel"/></td>        
+    </tr>
+    </span>    
+    <tr>                   <td>&nbsp;</td>
+      <td class="right"> <input jwcid="@Submit" type="submit" name="Submit" value="ognl:buttonText"/></td>
+    </tr>
+  </table>
+</form>

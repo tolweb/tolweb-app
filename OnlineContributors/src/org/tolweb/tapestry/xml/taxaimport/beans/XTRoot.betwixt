@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<info primitiveTypes="element">
+  <hide property='hasSingleRootNode'/>
+  <element name="tree-of-life-web">
+  	<attribute name="version" property="version"/>
+    <element name="node" property="node" />
+    <addDefaults />
+  </element>
+</info>

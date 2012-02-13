@@ -1,0 +1,12 @@
+<html jwcid="@Wrapper" title="ognl:pageTitle">
+<h1 class="superheader"><a jwcid="@ExternalLink" page="btol/ProjectHome" parameters="ognl:projectId"><span jwcid="@Insert" value="ognl:projectName"/> Databases Home</a></h1>
+<h2 class="clear"><span jwcid="@Insert" value="ognl:pageTitle"/></h2>
+<div style="float: right; padding: 5px;">
+	<a jwcid="@ExternalLink" page="btol/TextOnlyDNAStatus" parameters="ognl:{mode, 8221, 'yes'}">Show as HTML</a>
+</div>
+<br/>
+<p class="pre">
+<span jwcid="@Insert" value="ognl:headingString" raw="ognl:true"/>       
+<span jwcid="@Insert" value="ognl:displayString" raw="ognl:true"/>
+</p>
+</html>

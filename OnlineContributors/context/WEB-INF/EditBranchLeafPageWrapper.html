@@ -1,0 +1,125 @@
+<html jwcid="@Shell" title="ognl:title" stylesheet="ognl:tolformsNewCss" delegate="ognl:additionalDelegate">
+<body jwcid="@Body" id="articlesbody">
+                	<div jwcid="@NotificationBox" initialClass="hide">
+                        <span jwcid="@Insert" value="ognl:page.downloadedMessage" raw="ognl:true"/>
+					</div>
+<form jwcid="@Form" listener="ognl:page.listeners.doSave" delegate="ognl:page.validationDelegate">
+<input jwcid="@Hidden" value="ognl:page.editedObjectId"/>
+<input jwcid="@Hidden" value="ognl:page.otherEditUrl" id="otherEditUrl"/>
+<span jwcid="@If" condition="ognl:page.previewSelected">
+	<div jwcid="@RedirectDiv" url="ognl:previewUrl"/>
+</span>    
+<div id="skip" class="hidden"><a href="#formcontainer" title="Skip navigation">Skip to Edit Form</a></div>
+<a jwcid="@PageLink" page="ScientificMaterialsManager" class="managerlink">Scientific Materials Manager</a>
+<span jwcid="@If" condition="ognl:!page.error" element="ognl:null">
+<div id="sectionlinks">
+        <h3>Edit <span jwcid="@Insert" value="ognl:page.tolPageName"/></h3>
+        <ul>
+            <li jwcid="@Any" element="li" class="ognl:taxonNamesClass"><a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="EditTaxonNames" disabled="ognl:isThisPage">Taxon Names</a></li>
+            <li jwcid="@Any" element="li" class="ognl:groupPropertiesClass"><a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="EditGroupProperties" disabled="ognl:isThisPage">Properties of <span jwcid="@Insert" value="ognl:page.tolPageName"/></a></li>
+            <span jwcid="@If" condition="ognl:hasPage" element="ognl:null">
+            <li jwcid="@Any" element="li" class="ognl:tillusClass"><a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="EditTitleIllustrationsNew" disabled="ognl:isThisPage">Title Illustrations</a></li>
+            <li jwcid="@Any" element="li" class="ognl:leadTextClass"><a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="EditTreeText" disabled="ognl:isThisPage">Lead Text<span jwcid="@If" element="ognl:null" condition="ognl:!page.node.isLeaf">/After Tree Text</span></a></li>
+            <li jwcid="@Any" element="li">
+                <span jwcid="@Insert" value="ognl:openManageSpan" raw="ognl:true"/><a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="EditManageTextSections" disabled="ognl:isThisPage">Manage Text Sections</a><span jwcid="@Insert" value="ognl:closeManageSpan" raw="ognl:true"/>
+            	<ul>
+                    <span jwcid="@For" source="ognl:tolPage.textSections" convertor="ognl:textSectionsConvertor"
+                        element="li" value="ognl:currentTextSection" class="ognl:currentTextSectionsClass" index="ognl:page.index">
+						<a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="ognl:textSectionEditTag" disabled="ognl:isThisPage"><span jwcid="@Insert" value="ognl:currentTextSection.heading"/></a>
+                    </span>
+                </ul>
+            </li>
+            <li jwcid="@Any" element="li" class="ognl:referencesClass"><a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="EditReferences" disabled="ognl:isThisPage">References</a></li>
+            <li jwcid="@Any" element="li" class="ognl:internetInfoClass"><a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="EditInternetLinks" disabled="ognl:isThisPage">Information on the Internet</a></li>
+            <li jwcid="@Any" element="li" class="ognl:pageAuthorsClass"><a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="EditPageContributors" disabled="ognl:isThisPage">Page Authors/Credits</a></li>
+            <li jwcid="@If" condition="ognl:!page.isDownloadedInTreeGrow" element="li">
+            <a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="EditDeletePageConfirm" class="delete">Delete the <span jwcid="@Insert" value="ognl:pageType"/> Page for This Group</a>
+            </li>
+            <li jwcid="@Else" element="li">
+			<a onclick="changeclass('confirm', 'show', 'hide')" class="delete">Delete the <span jwcid="@Insert" value="ognl:pageType"/> Page for This Group</a>
+            </li>
+            <li jwcid="@If" condition="ognl:!page.isDownloadedInTreeGrow" class="ognl:moveBranchClass" element="li">
+                <a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="EditMoveBranch" disabled="ognl:isThisPage" class="delete">Move branch (under development)</a>
+			</li>            
+            </span>
+            <span jwcid="@Else" element="ognl:null">
+                <li jwcid="@If" condition="ognl:!page.isDownloadedInTreeGrow" element="li">
+            		<a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="ognl:@org.tolweb.tapestry.AbstractPageEditingPage@NEW_PAGE" class="delete">Create a <span jwcid="@Insert" value="ognl:pageType"/> Page for this Group</a>
+                </li>                
+                <li jwcid="@Else" element="li">
+					<a onclick="changeclass('confirm', 'show', 'hide')" class="delete">Create a <span jwcid="@Insert" value="ognl:pageType"/> Page for this Group</a>                    
+                </li>
+                <li jwcid="@If" condition="ognl:!page.isDownloadedInTreeGrow" class="ognl:moveBranchClass" element="li">
+                    <a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="EditMoveBranch" disabled="ognl:isThisPage" class="delete">Move branch (under development)</a>
+				</li>                
+            </span>
+            <li jwcid="@Any" element="li" class="ognl:mediaManagerClass"><a jwcid="@LinkSubmit" selected="ognl:page.otherEditPageName" tag="EditBranchLeafMedia" disabled="ognl:isThisPage">Upload/Edit Media Files</a></li>
+        </ul>
+        <div id="savedata">
+		<input jwcid="@Submit" value="View Page" onclick="openPreviewInOpener()" class="center" listener="ognl:page.listeners.previewSubmit"/>
+		<p>Here's how you can make sure your data are saved to the ToL database:</p>
+            <ul>
+	    <li>Data are saved if you go to another form by clicking on a link in the sidebar above.</li>
+	    <li>Data are saved whenever you click on the <strong>View Page</strong> button above.</li>
+	    <li>If you want to leave this window without going through <strong>View Page</strong>, you can click on the <strong>Save</strong> button below to make sure your data have been committed to the database. </li>
+	  	    </ul>
+		<input jwcid="@Submit" value="Save" class="center"/>
+         </div>
+</div>    
+</span>    
+<div id="formcontainer">
+    <span jwcid="@If" condition="ognl:!isMedia" element="ognl:null">
+    <span jwcid="@If" condition="ognl:page.error" element="ognl:null">
+        <span class="error"><span jwcid="@Insert" value="ognl:page.error" raw="ognl:true"/></span>
+    </span>
+    <span jwcid="@Else">
+		<h2><span class="edit"><span jwcid="@Insert" value="ognl:actionType"/></span> <em><span jwcid="@Insert" value="ognl:page.tolPageName"/></em> <span jwcid="@Insert" value="ognl:editedObjects"/></h2>
+		<div jwcid="@EditHistoryDiv" previewUrl="ognl:previewUrl" editHistory="ognl:editHistory"/>        
+		<span jwcid="@RenderBody"/>
+		<div class="whitebox" id="notes">
+	        <h4>Notes</h4>
+	            <p class="instructions">Notes are not printed on web pages. You can 
+	                use this space to record notes for yourself or for your co-authors.</p>
+			<textarea jwcid="@TextArea" value="ognl:notes" cols="60" rows="4" class="box1"></textarea> 
+		</div>
+	    <a name="articlepreview"></a> 
+	    <input jwcid="@Submit" value="Save" id="savebutton"/>                 
+	    <input jwcid="@Submit" onclick="openPreviewInOpener()" value="View Page" id="previewbutton" listener="ognl:page.listeners.previewSubmit"/> 
+	    <div class="spacer">&nbsp;</div>
+		<div id="articlesubmit">
+			<a name="articlesubmit"></a> 
+	        <input jwcid="@Submit" listener="ognl:page.listeners.publicationSubmit" value="Publication Manager" id="submitbutton"/>
+		</div>
+    </span>
+	<div class="instructions"> 
+		<p>Use <strong>View Page </strong> to save the information entered 
+            above to the ToL database and to switch to the window with the 
+            updated version of the page you are editing. This preview is located 
+            on the ToL development server, which is password protected, so 
+            it can be accessed only by ToL contributors and their collaborators. 
+        </p>
+        <p>If you click on <strong>Save</strong>, the data in this form will 
+            be saved to the ToL database, and you can move to another window 
+            in your browser without having to worry about losing any of your 
+            changes. </p>
+                      <p>When you are ready to release one or more pages on the public version 
+            of the ToL site, click on <strong>Publication Manager</strong>. 
+            This will take you to a form that let's you select the pages you 
+            want to have published.</p>
+	</div> 
+    <span jwcid="@Insert" value="ognl:'</div>'" raw="ognl:true"/>
+    </span>
+</form>    
+<span jwcid="@Else" element="ognl:null">
+     <span jwcid="@RenderBody"/>
+    <span jwcid="@Insert" value="ognl:'</div>'" raw="ognl:true"/>     
+</span>
+<script jwcid="@Script" script="ShowBranch.script"/>
+<script jwcid="@Script" script="ClickHandler.script"/>
+<script jwcid="@Script" script="EditTreehouseFunctions.script" pageName="TitleIllustrationsPreviewPage" 
+	previewUrl="ognl:previewUrl" previewSelected="ognl:new java.lang.Boolean(page.previewSelected)"/>
+<!--
+<script jwcid="@Script" script="SubmitOnUnload.script"/>
+-->
+</body>
+</html>

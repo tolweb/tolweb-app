@@ -1,0 +1,6 @@
+<span jwcid="@If" condition="ognl:hasImage">
+	<a jwcid="@GenericLink" href="ognl:page.destinationUrl" renderer="ognl:page.renderer">                        
+			<img jwcid="@Any" src="ognl:thumbnailUrl" class="thumbnailgoto"/>
+	</a>
+	<p class="captionleft"><span jwcid="@Insert" value="ognl:copyrightString" raw="ognl:true"/></p>
+</span>

@@ -1,0 +1,19 @@
+<span jwcid="@MailBlock" from="treegrow@tolweb.org" smtp="localhost" subject="Tree of Life Web Project Registration"
+            to="ognl:{contributor.email}" html="ognl:false">
+Hello, 
+<span jwcid="@If" condition="ognl:otherRegisteringContributor" element="ognl:null">    
+We are sending you this message to let you know that [<span jwcid="@Insert" value="ognl:otherRegisteringContributor.displayName"/> (<span jwcid="@Insert" value="ognl:otherRegisteringContributor.email"/>)] has registered you with the Tree of Life Web Project (http://tolweb.org) as a biologist or enthusiast interested in <span jwcid="@Insert" value="ognl:groupOrGroups"/> <span jwcid="@Insert" value="ognl:nodesString"/>.  Registered biolgists/enthusiasts are listed on Tree of Life People pages, which are linked in the right sidebar of each ToL branch and leaf page.  For example, your name and contact information appears on the People page for <span jwcid="@Insert" value="ognl:firstNodeString"/>: <span jwcid="@Insert" value="ognl:listPageUrl"/>.
+ Please note that registered biologists/enthusiasts do not have editing privileges for Tree of Life content.  If you would like to author pages or upload images or other media to the project, you should register as a Scientific Contributor or Media Contributor. For more information, see http://contribute.tolweb.org/</span>
+<span jwcid="@Else" element="ognl:null">
+Thank you for registering as a biologist or enthusiast in the Tree of Life Web Project.
+</span>
+
+Should you wish to update your personal information, or remove your name, you may do so by signing in on the following page:  http://contribute.tolweb.org/  
+To sign in you will need to use the following:
+
+    Username:  use your full e-mail address
+    Password:  <span jwcid="@Insert" value="ognl:plaintextPassword"/>
+
+    
+Once you sign in, you can change your information, as well as your password.    
+</span>

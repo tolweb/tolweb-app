@@ -1,0 +1,112 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:false" title="ognl:'Step #' + stepNumber + ' Add Portfolio Pages'">
+	<div id="trhs2editpgtop">
+		<a name="trhs2text"></a>
+		<h3 class="sectionheaderblub">Step <span jwcid="@Insert" value="ognl:stepNumber"/>. Add Portfolio Pages </h3>    		
+        <div class="boxtocpages">
+            <div jwcid="@TreehouseImportantDiv">
+				<li><a href="#addportfopages">Add Portfolio Pages </a></li>
+	        </div>
+            <div jwcid="@RenderBlock" block="ognl:helpBlock"/>
+            <div jwcid="portfolioHelpBlock@Block" >
+                <div jwcid="@PortfolioHelpDiv">
+                  <li><a jwcid="@HelpLink" noDiv="ognl:true" pageName="TreehouseHelpMessagesPage" helpName="Add Portfolio Pages and Sections">Add Portfolio Pages and Sections</a></li>
+                  <li><a jwcid="@HelpLink" noDiv="ognl:true" pageName="TreehouseHelpMessagesPage" helpName="Edit Portfolio Page Links">Edit Portfolio Page Links</a></li>
+                  <li><a jwcid="@HelpLink" noDiv="ognl:true" pageName="TreehouseHelpMessagesPage" helpName="Export Data To Other Contributions you have Authored">Export Data To Other Contributions</a></li>                  
+                </div>
+			</div>
+            <div jwcid="teacherResourceHelpBlock@Block">
+                <div jwcid="@TeacherResourceHelpDiv">
+                  <li><a jwcid="@HelpLink" noDiv="ognl:true" pageName="TeacherResourceHelpMessagesPage" helpName="Add Portfolio Pages and Sections">Add Portfolio Pages and Sections</a></li>
+                  <li><a jwcid="@HelpLink" noDiv="ognl:true" pageName="TeacherResourceHelpMessagesPage" helpName="Edit Portfolio Page Links">Edit Portfolio Page Links</a></li>
+                  <li><a jwcid="@HelpLink" noDiv="ognl:true" pageName="TeacherResourceHelpMessagesPage" helpName="Export Data To Other Contributions you have Authored">Export Data To Other Contributions</a></li>                  
+                </div>
+            </div>
+			<p> <img src="/tree/learn/lisa.images/trhouseimage/portfolio2.jpg" width="230" height="168" alt="add ToL pages organized according to a theme in order to create a Portfolio" style="margin-left: 30px;"></p>
+			<div jwcid="@TreehouseWarningDiv"/>	   
+            <div class="spacer">&nbsp;</div>
+        </div>
+        <div class="spacer">&nbsp;</div>
+	</div>    
+	<a name="addportfopages"></a>
+    <div class="boxtoc" id="addportfopages">
+		<h4> Portfolio Pages</h4>
+        <a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Add Portfolio Pages and Sections"/>
+		<div class="instructionssm">
+            <p>
+		            Add ToL pages  to your portfolio.   <em>You can only add ToL pages that you have authored or that you have permission to edit.</em> Every time you add a link, a comments box will appear where you can tell visitors to your portfolio about the pages it contains. You can change the order of the portfolio page links that you add with the arrow buttons on the left.</p>
+		          <p> If you would like, you can add sections to your portfolio and then add portfolio page links to the sections that you create. Add 
+                      <input jwcid="@TextField" displayName="Number of additional sections" translator="translator:number"
+                       value="ognl:numNewFields" size="5" validators="validators:min=1,max=10"/> sections to this portfolio
+		            <input jwcid="@Submit" name="Submit" value="Add Sections" class="padbuttonsm"/>
+			</p>
+		</div>
+        <span jwcid="@If" condition="ognl:!hasAnyPages" element="ognl:null">
+			<div class="indentleft"><input name="Add link" type="button" value="Add ToL page link" class="padbuttonfleftsm" jwcid="@Submit" selected="ognl:sectionToAddPageTo" tag="ognl:portfolio.sections.first()"/></div>    
+        </span>
+		<span jwcid="@PortfolioSectionList" sectionListHeader="Portfolio Sections"/>
+        <span jwcid="@For" source="ognl:portfolio.sections" value="ognl:currentSection" 
+            index="ognl:sectionIndex" element="ognl:null" convertor="ognl:sectionConvertor">
+            <span jwcid="@If" condition="ognl:hasAnyPages">
+			<div class="linksection">            
+            <span jwcid="@If" condition="ognl:portfolio.sections.size > 1" element="ognl:null">
+	                <div class="sectionheader">	
+						<div jwcid="@PortfolioMoveSection"/>
+		                <h5 class="lnksectitle">
+		                    <a jwcid="@Any" element="a" name="ognl:getSectionAnchorName(sectionIndex)" id="ognl:getSectionAnchorName(sectionIndex)"></a>Portfolio section title
+							<input jwcid="@TextField" value="ognl:currentSection.title" size="50"/>
+		                </h5>
+					</div>
+					<div class="spacer">&nbsp;</div>
+            </span>
+            <span jwcid="@If" condition="ognl:sectionIndex == 0">
+				<a jwcid="@HelpLink" helpName="Edit Portfolio Page Links" pageName="TreehouseHelpMessagesPage"/>                                        
+            </span>
+            <span jwcid="@For" source="ognl:currentSection.pages" value="ognl:currentPage" 
+                index="ognl:pageIndex" element="ognl:null" convertor="ognl:pageConvertor">
+                <div jwcid="@Any" class="linkresource" element="div" id="ognl:getPageAnchorName(sectionIndex, pageIndex)">
+                <a jwcid="@Any" element="a" name="ognl:getPageAnchorName(sectionIndex, pageIndex)"></a>
+				<div jwcid="@PortfolioMovePage"/>
+                <img jwcid="@PortfolioPageImage" isEdit="ognl:true" portfolioPage="ognl:currentPage">
+					<a jwcid="@LinkSubmit" selected="ognl:pageToAddImageTo" tag="ognl:currentPage">change image</a><br/>
+                    <a jwcid="@LinkSubmit" selected="ognl:pageToDeleteImageFrom" tag="ognl:currentPage">delete</a>
+				</img>                
+		  		<dl>
+				     <dt><span jwcid="@Insert" value="ognl:currentPage.pageTitle"/></dt>
+				     <dd><span jwcid="@Insert" value="ognl:currentPage.pageSummaryString"/></dd>
+					 <dd><span jwcid="@Insert" value="ognl:currentURL"/></dd>
+	      		</dl>
+		  <div class="indentleft"> <label><strong>Comments:</strong>
+				<p>
+              <textarea name="textarea" jwcid="@TextArea" value="ognl:currentPage.comments" cols="50" rows="5"/></p>
+          </label>
+                   <!--
+				 		  <p>
+				    Add an image to accompany the link to this page.
+				      <input type="submit" name="Submit" value="Add Image" class="padbuttonsm">
+		    </p> -->
+                 <a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Export Data To Other Contributions You Have Authored"/>
+				   <p class="small">Here you can choose to display some of the data sections of this portfolio on the pages that you include in the portfolio. 
+			       Export the following sections of this portfolio:</p>
+				   <ul class="inline"><li>
+                     <input jwcid="@Checkbox" value="ognl:currentPage.includeReferences"/>
+    References</li>
+				   <li>
+                     <input jwcid="@Checkbox" value="ognl:currentPage.includeInternetLinks"/>
+    Internet Links</li>
+		                       <li><input jwcid="@Checkbox" selected="ognl:currentPage.includeLearningInfo"/>
+    Learning Information </li>
+				  				   </ul>
+</div>                     
+                                   		  </div>       
+            </span>
+        <span jwcid="@If" condition="ognl:hasAnyPages" element="ognl:null">
+            <div class="spacer">&nbsp;</div>
+			<input name="Add link" type="button" value="Add ToL page link" class="padbuttonfleftsm" jwcid="@Submit" selected="ognl:sectionToAddPageTo" tag="ognl:currentSection"/>
+            <div class="spacer">&nbsp;</div>            
+        </span>
+		</div>
+        </span>
+		<div class="spacer">&nbsp;</div>            
+        </span>
+        </div>
+</html>

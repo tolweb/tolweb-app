@@ -1,0 +1,11 @@
+<ul class="nodisc">
+  <span jwcid="@For" source="prop:filteredSynonyms" value="prop:currentOtherName">
+	<li><span jwcid="@Insert" value="prop:formattedCurrentOtherName" raw="ognl:true"/></li>
+  </span>
+  <span jwcid="@If" condition="ognl:commonNamesString.length() > 0">
+	<li> 
+		<strong>Vernacular Names: </strong>
+		<span jwcid="@Insert" value="prop:commonNamesString"/>
+	</li>
+  </span>	
+</ul>

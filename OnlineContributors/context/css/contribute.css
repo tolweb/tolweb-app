@@ -1,0 +1,80 @@
+/* Boxes */.box1 {margin: 15px 0 5px 25px;} .box1 strong 
+{margin-right: 10px;} .box2 {margin: 15px 0 15px 50px;} div.help {float: 
+right;clear: right;}div.help em {font-size: 10px;padding-right: 
+15px;}div.help img {display: inline;vertical-align: middle;}div.help a 
+{margin: 0;padding: 0;} div.whitebox, div.yellowbox {margin: 6px 
+0;padding: 10px;background-color: #fff;border: 1px solid #ccc;clear: 
+both;}div.yellowbox {background-color: #ffffcc;padding: 10px 
+25px;}div.yellowbox p {font-size: 10px;margin: 0 10px 15px 25px;} 
+div.login {border: 1px solid #908d80;background:  #f8f6eb;padding: 0 
+10px;float: right;width: 220px;margin-left: 10px;} div.login h4 
+{font-size: 11px;padding: 0;margin: 5px 0;} div.login table {font-size: 
+10px;background:  #f8f6eb;padding: 0;margin: 0;} div.login table td, 
+div.login table th {padding: 0 5px;} div.login input {font-size: 10px;} 
+div.login .tiny {font-weight: normal;} /* Summary Section 
+*/ul.passwords {margin: 5px 0;padding: 5px;list-style-type: 
+none;list-style-image: none;width: 450px;float: left;} ul.formsummary 
+{margin: 5px 0;padding: 5px;background-color: #f5f5f5;border: 1px solid 
+#ccc;list-style-type: none;list-style-image: none;width: 450px;float: 
+left;} ul.formsummary ul {list-style-type: none;list-style-image: none;} 
+ul.formsummary li {font-size: 9px;margin: 2px 0;} ul.formsummary li 
+strong {margin-right: 10px;} ul.formsummary label {font-weight: normal;} 
+/* Tips & Instructions */.instructions {font-size: 10px;font-family: 
+Arial, Helvetica, sans-serif;margin: 10px;background-color: 
+#ffffcc;padding: 5px;border: 1px solid #ccc;}p.instructions {margin: 15px 
+0 5px 0;} dl.instructions {margin: 0;padding: 0 10px 10px 10px;} 
+dl.instructions dd {margin: 0 0 0 5px;} /* General Styles */ .dimmed 
+{color: #999;} .url {font: italic 10px Arial, Helvetica, 
+sans-serif;color: #0000cf;} .tinyright {font-size: 9px;font-weight: 
+normal;color: #000;float: right;padding: 2px 5px;margin: 0 80px;border: 
+1px solid #ccc;}/* Form elements */label {font-weight: bold; color: 
+#5d5040;}li.checkbox {text-indent: -35px; padding: 0 20px;} li.checkbox 
+label {font-weight: normal;}ul.inline label {font-weight: normal;} ol 
+input.block {margin: 15px 0;} label input {margin-left: 15px;}a.remove, 
+a.add {text-decoration: none;} a.remove, a.smadd {font-size: 9px;padding: 
+0 40px;} .radio {float: left;margin: 0;margin-left: 30px;} .radiobox 
+{color: #000;font-weight: normal;margin-left: 40px;} ul.radiogroup 
+{margin: 5px 10px 5px 40px;padding: 0;}ul.radiogroup li {text-indent: 
+-40px;padding: 0 10px;}ul.radiogroup label {font-weight: normal;color: 
+#000066;padding: 0 25px 0 5px;} ul.radiogroup li p {font-size: 10px;} 
+ul.radiogroup li div.show {border: 1px solid #ccc;background: 
+#f2f2ff;padding: 5px;margin: 5px 15px 10px 0;} ul.radiogroup li div.show 
+ul {list-style-type: disc;list-style-position: outside;padding: 0 0 0 
+25px;}ul.radiogroup li div.show ul li {font-size: 10px;margin: 
+5px;text-indent: 0;} ul.radiogroup li div.show, ul.radiogroup ul li 
+{text-indent: 0 ! important;} .textarealabel {vertical-align: 
+top;padding-right: 15px;}textarea.box1 {display: block;margin: 15px 0 
+15px 30px;} ul.box1 li textarea {margin: 15px 0 15px 25px;} 
+label.rememberdefault {display: block;margin: 20px 30px;font-weight: 
+normal;}label.rememberdefault input {margin-right: 15px;} /* Special 
+Styles */.toolbox img.bfl {padding:0; margin-right: 5px}div.picbox, 
+div.picboxfl, div.picboxfr {border: 1px solid #eee;margin: 15px;}div.picbox img, div.picbox p, div.picboxfl img, 
+div.picboxfl p, div.picboxfr img, div.picboxfr p {margin: 5px 
+auto;padding: 5px 10px;}div.picboxfl {float: left;}div.picboxfr {float: 
+right;}ul.registration {list-style-type: none;list-style-image: 
+none;line-height: 3;padding: 0;width: 450px;float: left;} ul.registration 
+ul, ul.reguse {list-style-type: none;list-style-image: none;} 
+ul.registration label.checkbox {font-weight: normal;font-size: 10px;} 
+div.registerhelp {width: 200px;margin: 0 0 0 460px;}div.registerhelp p 
+{font-size: 10px;line-height: 1.2;margin: 5px;background-color: 
+#ffffcc;padding: 8px;border: 1px solid #ccc;}div.registerhelp strong 
+{color: #000;}#submitregistration {clear: both;margin: 20px 0 0 
+300px;}ul.reguse p {margin: 5px 0 0 35px; padding: 5px; background-color: 
+#f9f9f9; border: 1px solid #ccc;font-family: Arial, Helvetica, 
+sans-serif;} ul.reguse select {display: block; margin: 5px 35px;} 
+ul.reguse li.retroactive {margin: 10px 0; background-color:#ffd9dc; 
+padding: 5px 5px 5px 0; border: 1px solid #ccc;} 
+th.thumbnailColumnHeader, th.dataColumnHeader {padding-top: 
+25px;}td.thumbnailColumnValue {text-align: 
+center;}td.thumbnailColumnValue a {margin: 2px auto;} 
+td.thumbnailColumnValue img {border: 1px solid #ccc;}div.publish 
+{border: 1px solid #ccc;padding: 10px;margin: 15px 0;background: #f2f2f2;} 
+.publish ul ul {background: #fff;margin: 5px 25px;font-size: 
+10px;padding: 5px;}.publish ul ul.publishsub {background: 
+#f2f2f2;font-size: 11px;}.publish textarea {width: 100%;margin: 5px 
+0;}.publish label {display: block;margin: 5px;} a.preview, a.uncheck 
+{font-size: 9px;margin-left: 10px;}a.uncheck {border: 1px solid 
+#ccc;padding: 2px 10px;background: #fff;}.publish .error, .publish select 
+{font: 9px Arial, Helvetica, sans-serif;margin-left: 15px;}img.details 
+{padding: 0 10px;vertical-align: middle;}img.contportrait	
+{max-height: 300px}

@@ -1,0 +1,71 @@
+<span jwcid="@If" condition="ognl:useCache && output != null" element="ognl:null">
+	<span jwcid="@Insert" value="ognl:output" raw="ognl:true"/>
+</span>
+<span jwcid="@Else" element="ognl:null">
+<div id="quicknav" class="quicknavleft">
+	<ul>
+	    <li><a title="show/hide quick navigation" class="compass" onClick="switchClass('compass', 'hidden', 'shown'); switchClass('hidden_nav', 'hidden', 'shown')">
+            <img jwcid="@Image" image="ognl:compassAsset" id="compass" class="shown"/></a>
+	    </li>
+	</ul>
+	<ul jwcid="@Any" id="hidden_nav" class="ognl:navClass">
+    	<li class="separate"><img jwcid="@Image" image="ognl:leftDoubleArrows"/>
+			<span jwcid="@RenderBlock" block="ognl:containingGroupsBlock"/>
+    	</li>
+		<li jwcid="@Any" element="li" id="left_arrow" class="ognl:parentGroupClassName">
+			<span jwcid="@RenderBlock" block="ognl:containingGroupBlock"/>
+        </li>
+    	<li class="separate"><img jwcid="@Image" image="ognl:upDownArrows"/>
+        	<span jwcid="@RenderBlock" block="ognl:otherGroupsBlock"/>
+		</li>
+		<li id="up_arrow" jwcid="@Any" element="li" class="ognl:groupsHelperToUse.previousSiblingClassName">
+            <span jwcid="@RenderBlock" block="ognl:previousSiblingBlock"/>
+        </li>
+		<li id="down_arrow" jwcid="@Any" element="li" class="ognl:groupsHelperToUse.nextSiblingClassName">
+            <span jwcid="@RenderBlock" block="ognl:nextSiblingBlock"/>            
+		</li>
+		<li class="separate"><img jwcid="@Image" image="ognl:subgroupsArrow"/>
+			<span jwcid="@RenderBlock" block="ognl:subgroupsBlock"/>
+		</li>
+	</ul>
+</div>
+</span>
+<span jwcid="containingGroupsBlock@Block">
+	<span jwcid="@If" condition="ognl:notRoot">    
+		<ul>
+		    <li class="list_header">Containing Groups</li>
+		    <li jwcid="@TolPagesList" node="ognl:node" pages="ognl:ancestorPages"/>
+		</ul>    
+	</span>
+</span>
+<span jwcid="containingGroupBlock@Block">
+	<span jwcid="@If" condition="ognl:notRoot">    
+		<a jwcid="@TolPageLink" tolPage="ognl:null" groupName="ognl:parentGroupName" title="ognl:'containing group: ' + parentGroupName"></a>    
+	</span>
+</span>
+<span jwcid="otherGroupsBlock@Block">
+	<span jwcid="@If" condition="ognl:notRoot">
+		<ul>
+	        <li class="list_header">Other <span jwcid="@Insert" value="ognl:parentGroupName"/></li>
+			<li jwcid="@TolPagesList" node="ognl:node" pages="ognl:siblingPages"/>
+		</ul>
+	</span>    
+</span>
+<span jwcid="previousSiblingBlock@Block">
+	<span jwcid="@If" condition="ognl:groupsHelperToUse.hasPreviousSibling">
+	    <a jwcid="@TolPageLink" tolPage="ognl:null" groupName="ognl:groupsHelperToUse.previousSiblingName" title="ognl:'previous group in ' + parentGroupName + ': ' + groupsHelperToUse.previousSiblingName"></a>
+	</span>    
+</span>
+<span jwcid="nextSiblingBlock@Block">
+    <span jwcid="@If" condition="ognl:groupsHelperToUse.hasNextSibling">
+		<a jwcid="@TolPageLink" tolPage="ognl:null" groupName="ognl:groupsHelperToUse.nextSiblingName" title="ognl:'next group in ' + parentGroupName + ': ' + groupsHelperToUse.nextSiblingName"></a>
+    </span>                        
+</span>
+<span jwcid="subgroupsBlock@Block">
+	<span jwcid="@If" condition="ognl:hasSubgroups">
+		<ul>
+            <li class="list_header">Subgroups</li>
+            <li jwcid="@TolPagesList" node="ognl:node" pages="ognl:subgroupPages"/>
+		</ul>
+    </span>
+</span>

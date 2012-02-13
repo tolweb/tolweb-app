@@ -1,0 +1,70 @@
+<html jwcid="@TreehouseWrapper" treehouse="ognl:treehouse" additionalPageShortName="ognl:treehouse.resourceTypeString"
+	bodyId="trteachtheme" teacherResourceBlock="ognl:components.headerBlock" showLearningInfo="ognl:false">
+	<span jwcid="headerBlock@Block">
+		<div id="teachlrnsect2">
+	        <ul>
+				<li><span jwcid="@Insert" value="ognl:treehouse.resourceTypeString"/> Main Page</li>
+                <span jwcid="@If" condition="ognl:page.treehouse.hasLearnerSection"> |
+				<li><a jwcid="@ExternalLink" page="TeacherResourceViewLearner" parameters="ognl:{treehouse.accessoryPageId}">Learner Section</a></li>
+                </span>
+	    	</ul>
+		</div>
+    </span>
+    <ul class="inlinetrhstoc1">
+		<li jwcid="@RenderBlock" block="ognl:pageContentMenuBlock"/>
+	</ul>
+    <span jwcid="@If" condition="ognl:treehouse.hasOverview">
+		<div id="overview">
+	        <a name="overview"></a>
+			<h3 class="overview">Overview</h3>
+			<p><span jwcid="@Insert" value="ognl:overview" raw="ognl:true"/></p>
+		</div>
+	</span>
+    <span jwcid="@If" condition="ognl:treehouse.hasAnyLearningInfo">
+		<div id="learninfo">
+	        <a name="learninfo"></a><a name="learninginfo"></a>
+	        <h3>Learning Information </h3>    
+	        <ul jwcid="@TreehouseLearningInfo" treehouse="ognl:treehouse"/>
+	    </div>
+    </span>
+    <span jwcid="@If" condition="ognl:treehouse.hasIntroduction">
+		<div id="intro">
+            <a name="intro"></a>
+			<h3>Introduction</h3>
+			<span jwcid="@Insert" value="ognl:introduction" raw="ognl:true"/>
+		</div>        
+    </span>
+    <span jwcid="@TeacherResourcePreparation"/>
+    <span jwcid="@If" condition="ognl:treehouse.hasLesson">
+		<div id="lessonproject">
+            <a name="lessonproject"></a>
+			<h3><span jwcid="@Insert" value="ognl:treehouse.resourceTypeString"/></h3>
+			<span jwcid="@Insert" value="ognl:lesson" raw="ognl:true"/>
+		</div>        
+    </span>
+    <span jwcid="@If" condition="ognl:treehouse.hasEvaluation">
+        <div id="evaluation">
+            <a name="evaluation"></a>
+            <h3>Evaluation</h3>
+            <p><span jwcid="@Insert" value="ognl:evaluation" raw="ognl:true"/></p>
+        </div>
+    </span>
+	<span jwcid="@SupportMaterials" hasMaterials="ognl:treehouse.hasSupportMaterials || treehouse.hasLearnerSection"
+        supportMaterialDocuments="ognl:treehouse.supportMaterialDocuments" 
+        supportMaterials="ognl:treehouse.supportMaterials"/>
+	<span jwcid="@TeacherResourceEducationStandards"/>
+	<span jwcid="@PortfolioPages"/>    
+</html>
+<span jwcid="contentMenuBlock@Block">
+	<span jwcid="@If" condition="ognl:page.treehouse.hasOverview"><li class="nopadleft"><a href="#overview">Overview</a></li></span>
+	<span jwcid="@If" condition="ognl:page.treehouse.hasAnyLearningInfo"><li><a href="#learninfo">Learning Information</a></li></span>
+	<span jwcid="@If" condition="ognl:page.treehouse.hasIntroduction"><li><a href="#intro">Introduction</a></li></span>
+	<span jwcid="@If" condition="ognl:page.treehouse.hasPreparation"><li><a href="#prep">Preparation</a></li></span>
+	<span jwcid="@If" condition="ognl:page.treehouse.hasPhysicalObjects"><li><a href="#physicalobjects">Materials/Tools</a></li></span>
+	<span jwcid="@If" condition="ognl:page.treehouse.hasPriorKnowledge"><li><a href="#priorknow">Prior Knowledge</a></li></span>
+	<span jwcid="@If" condition="ognl:page.treehouse.hasLesson"><li><a href="#lessonproject"><span jwcid="@Insert" value="ognl:page.treehouse.resourceTypeString"/></a></li></span>
+    <span jwcid="@If" condition="ognl:page.treehouse.hasEvaluation"><li><a href="#evaluation">Evaluation</a></li></span>
+	<span jwcid="@If" condition="ognl:page.treehouse.hasSupportMaterials || page.treehouse.hasLearnerSection"><li><a href="#supportmats">Support Materials</a></li></span>
+	<span jwcid="@If" condition="ognl:page.treehouse.hasStandards"><li><a href="#standards">Education Standards</a></li></span>
+	<span jwcid="@If" condition="ognl:page.treehouse.hasPortfolio"><li><a href="#portfopages">Portfolio Pages</a></li></span>
+</span>

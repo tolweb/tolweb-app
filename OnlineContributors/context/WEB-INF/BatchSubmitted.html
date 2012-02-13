@@ -1,0 +1,15 @@
+<html jwcid="@NewBarebonesFormWrapper" title="Pages Submitted" bodyId="articlesbody">
+<h2>Pages Submitted</h2>
+<span jwcid="@Insert" value="ognl:rootGroupName"/> submitted for publication. Thank you!
+<span jwcid="@If" condition="ognl:publicationBatchId != null">
+An editor will now review your submission. Usually submissions are published or
+revisions are requested within 24 hours.
+<span jwcid="@BatchSubmittedEmail" publicationBatchId="ognl:publicationBatchId" rootGroupName="ognl:rootGroupName"
+	submissionComment="prop:submissionComment"/>
+</span>
+<!--
+<p>
+<a href="javascript:window.close();">close window</a>    
+</p>
+-->
+</html>

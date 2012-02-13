@@ -1,0 +1,38 @@
+<span jwcid="@Wrapper" title="ToL Media Manager">
+<a jwcid="editLink@DirectLink" listener="ognl:listeners.editObject"/>
+<span jwcid="@If" condition="ognl:newObjectUploaded">
+	<div jwcid="@RedirectDiv" url="ognl:editObjectUrl"/>
+</span>
+
+<h2 class="clear">Tree of Life Media Manager</h2>
+
+		<ul class="links">
+              <li><a href="#upload">Upload a new media file </a></li>
+              <li><a href="#edit">Edit data for one of my media files
+                in the ToL database</a></li>
+              <li><a href="#delete">Delete one of my media files from 
+                the ToL database</a></li>
+              <li><a jwcid="@DirectLink" listener="ognl:listeners.editRegistrationInfo">Update my registration information</a></li>                            
+        </ul>
+		<a name="upload"></a>                                                                 
+        <h3>Upload a new media file</h3>	                   
+        <form jwcid="@UploadNewMediaForm"/>
+
+<a name="edit"></a> 
+
+            <h3>Edit data for one of my media files in the ToL database</h3>	
+<span jwcid="@ImageSearch" searchPageName="ognl:pageName" showMediaTypeSelection="ognl:true" showPodcastsCheckbox="ognl:true"
+callbackType="ognl:@org.tolweb.tapestry.ImageSearchResults@EDIT_IMAGE_CALLBACK" instructions="<p>When you click on the <em>edit</em> link next a thumbnail, a new window will open that lets you edit the data for this image.</p>
+<p>Please note that you can edit only one image at a time.  If you would like to edit several images in a row, make sure to submit your image data before clicking on a new <em>edit</em> link.</p>" linkString="edit"
+	buttonText="Find Media"/> 
+<p>Note: You will only be able to edit data for media files that you have contributed yourself 
+or for which you own the copyright.</p><a name="delete"></a> 
+
+            <h3 class="red">Delete one of my media files from the ToL database</h3>
+			<span jwcid="@ImageSearch" searchPageName="ognl:pageName" showMediaTypeSelection="ognl:true"
+            callbackType="ognl:@org.tolweb.tapestry.ImageSearchResults@DELETE_IMAGE_CALLBACK" showPodcastsCheckbox="ognl:true" 
+            instructions="Click the 'delete' link to delete that image" linkString="delete"
+            buttonText="Find Media"/>            
+           <p>Note: You will only be able to delete media files that you have contributed yourself 
+or for which you own the copyright.</p>    
+</span>

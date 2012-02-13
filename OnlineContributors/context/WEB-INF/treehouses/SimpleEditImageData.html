@@ -1,0 +1,417 @@
+<html jwcid="wrapper@treehouses/EditSimpleMediaWrapper" title="Step 1. Copyright and ToL Use (ToL Simple Media Form)">
+	<span jwcid="@If" condition="ognl:!isNew">
+		<div id="thumbn">
+			<image jwcid="@ImageThumbnail" image="ognl:image" isPreview="ognl:true"/>
+		</div>
+		<div id="summary">
+            <span jwcid="@If" condition="ognl:image.isUnapproved">
+            <p>This image is not yet uploaded to the database.  To upload it, you must complete this form then click <a href="#subm">save and submit</a>.</p>
+            </span>
+            <span jwcid="@Else">
+			<p>Changes to your media file will not be saved until you  click <a href="#subm">save and submit</a>.<br/>
+            <a href="#podcast"><strong>Have your media file considered for the ToL Podcasting series</strong></a></p>             
+            </span>
+			<table class="summarytop">
+				<th>Media File Summary</th>
+				<tr>
+					<td>
+			            <ul class="formsummary">
+							<li class="url">http://tolweb.org/tree/ToLimages/<span jwcid="@Insert" value="ognl:image.location" /></li>
+							<li>ToL Image ID# <span jwcid="@Insert" value="ognl:image.id" /></li>
+							<li>Title: <span jwcid="@Insert" value="ognl:image.location"/></li>
+							<li>Copyright: <span jwcid="@Insert" value="ognl:copyrightString" raw="ognl:true"/></li>
+	                        <span jwcid="@If" condition="ognl:hasAcks">
+								<li>Acknowledgements: <span jwcid="@Insert" value="ognl:image.acknowledgements"/></li>
+	                        </span>
+							<li>ToL Use: <span jwcid="@Insert" value="ognl:useString" raw="ognl:true"/></li>
+						</ul>
+					</td>
+					<td>
+			            <h5>Image Versions</h5>
+			            <ul>
+							<li id="imgversions"><a jwcid="@LinkSubmit" listener="listener:editImageVersions">View/Upload/Delete versions of this image</a></li>
+						</ul>
+			            <ul class="formsummary">
+							<li class="tinytext"><span jwcid="@If" condition="ognl:image.contributor != null"> Contributed by <span jwcid="@Insert" value="ognl:image.contributor.displayName" /> on <span jwcid="@Insert" value="ognl:image.creationDate" /> (server time)</span> <a jwcid="@LinkSubmit" listener="listener:submitContributorSearchSubmit">edit</a></li>
+							<li class="tinytext"><span jwcid="@If" condition="ognl:image.lastEditedContributor != null"> Image data last edited by <span jwcid="@Insert" value="ognl:image.lastEditedContributor.displayName" /> on <span jwcid="@Insert" value="ognl:image.lastEditedDate" /> (server time) </span></li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</span>
+    <span jwcid="@Else">
+		<div id="summary">
+			<p class="instructtop">Your media file will not be uploaded until you complete <a href="#step1CopyrightUse">step #1</a> and <a href="#step2GroupType">step #2</a> and click <a href="#subm">save and submit</a>.
+            <br/><a href="#podcast"><strong>Have your media file considered for the ToL Podcasting series</strong></a></p>
+			<p><strong>After</strong> you complete this form your image file will be displayed in the upper left corner of this page. If you want to change the image you uploaded, you can do so by choosing the view/upload/dete link that will be at the top of the page. </p>
+		</div>
+    </span>
+    <span jwcid="@If" condition="ognl:errorMessage">
+		<div class="fix">
+			<h3>Error</h3>
+			<ul>
+				<li><span jwcid="@Insert" value="ognl:errorMessage"/></li>
+			</ul>
+        </div>
+    </span>
+	<a name="step1CopyrightUse"></a>
+	<h2 class="copychoicelong required">Step 1. Copyright and ToL Use</h2> 
+	<div id="copyrightpg">
+		<p style="margin: 10px 0 0 0; padding-bottom: 0;" class="required">Check the correct option (1-5) below, then fill out the copyright information</p><p> <a style="padding: 0 15px 0 15px;" id="whatiscopyrghttrig" class="triup" onclick="showbranch('copyrightwhatis', 'show', 'hide'); showbranch('whatiscopyrghttrig', 'tridown', 'triup')">What is copyright?</a></p>
+		<p id="copyrightwhatis" class="hide">Copyright is a kind of law. It says that if you make something, then it belongs to you. If you write a book, or you write some music, or you paint a picture, then the 
+            thing you made belongs to you. Other people cannot make a copy of it unless you say that they can. <a href="/tree/learn/TreebuilderTools/trcopyright.html" target="copyright">Read more about copyright rules and issues.</a></p>
+ 		<div class="copychoice whitebox">
+             <div class="floatleft">
+				<img src="/tree/learn/lisa.images/trhouseimage/mine2smnowords.jpg" alt="I created this media .file" width="140" height="101" class="crbefore" />
+				<label class="crchoices">
+                    <span class="copyrightcheck"><strong class="large">1.</strong></span>
+                    <input jwcid="@Checkbox"  id="checkbox1" value="ognl:useOption1Selected" onclick="checkboxSubmit(this.id)"/>
+				</label>
+                <span jwcid="@If" condition="ognl:useOption1Selected">
+                	<div class="crspacer">&nbsp;</div>
+                </span>
+			</div>
+             <span jwcid="@If" condition="ognl:!useOption1Selected">
+			<p class="crchoices"><strong class="large">I created this media file</strong></p>
+			<p id="moreinfo1trigger" class="triup" onclick="showbranch('moreinfo1', 'show', 'hide'); showbranch('moreinfo1trigger', 'tridown', 'triup')">why select this choice?</p>
+			<p id="moreinfo1" class="firstcr hide">Select this choice if you created this image, and are the copyright holder.</p>
+            </span>
+			<span jwcid="@Else">
+ <div class="aftercheck">
+     <p class="crchoices"> <strong class="large">I created this media file</strong></p>
+
+  <p>I created this image file and I own the copyright. 
+  </p>
+     
+      
+   
+      <ul class="crdata">
+      
+      <li> 
+        <label>
+          <strong><span class="large">Copyright &copy; <span jwcid="@If" condition="ognl:contributor"><span jwcid="@Insert" value="ognl:contributor.displayName"/></span></span></strong></label>
+        </li>           
+			<li>   <label><strong class="large">Copyright Date</strong> 
+			<input jwcid="@TextField" value="ognl:image.copyrightDate" size="4"/>	</label></li>
+
+			<li><label>  <span class="small"> (Optional) Additional 
+      Credits <input jwcid="@TextField" value="ognl:image.acknowledgements" size="40" /></span></label></li>
+  </ul> 
+<span jwcid="@treehouses/UsePermissionRadiosWithDefault"/>
+	</div>
+            </span>
+     
+      
+   
+  <div class="crspacernoclear">&nbsp;</div>
+  
+  
+   </div>
+   
+  <div class="copychoice whitebox">
+        <div class="floatleft"> 
+            <img src="/tree/learn/lisa.images/trhouseimage/otherToL3sm.jpg" alt="antoher ToL users gave me permission to use this media file" width="140" height="101" class="crbefore"/> 
+<label class="crchoices"><span class="copyrightcheck"><strong class="large">2.</strong></span><input jwcid="@Checkbox"  id="checkbox2" value="ognl:useOption2Selected" onclick="checkboxSubmit(this.id)"/>
+
+</label>
+<span jwcid="@If" condition="ognl:useOption2Selected">
+<div class="crspacer2">&nbsp;</div>    
+</span>
+</div>
+<p class="crchoices"><strong class="large">Another ToL Contributor Created this Media File</strong>
+<span jwcid="@If" condition="ognl:!useOption2Selected">
+ <p id="moreinfo2trigger" class="triup" onclick="showbranch('moreinfo2', 'show', 'hide'); showbranch('moreinfo2trigger', 'tridown', 'triup')">why select this choice?</p>
+
+ <p id="moreinfo2" class="hide">Select this choice if another 
+Tree of Life contributor created this 
+image and gave you permission 
+to use it. </p>
+ </span>
+<span jwcid="@Else">
+ <div class="aftercheck">
+     <p>
+Another 
+Tree of Life contributor created this 
+image and gave me permission 
+to use it. </p> 
+
+ 
+
+<ul class="crdata"><li>
+		        <label> <strong><span class="large">Copyright &copy; 
+                    <span jwcid="@If" condition="ognl:image.copyrightOwnerContributor != null"><span jwcid="@Insert" value="ognl:image.copyrightOwnerContributor.displayName"/></span>
+                    <span jwcid="@Else">another registered ToL contributor</span></span>.</strong></label>
+		        </li>
+
+		          <li class="noindent">
+		            <label> A ToL contributor other than myself owns the copyright for this image/media file </label>
+		            <label>and they gave me permission to upload it to the ToL database. </label>
+		            <div id="copycontributor">
+					<a jwcid="@LinkSubmit" listener="ognl:page.listeners.contributorSearchSubmit" class="button">Select a Contributor from the ToL database</a>
+                    </div>
+	            </li>
+						<li>   <label><strong class="large">Copyright Date</strong> 
+			<input jwcid="@TextField" value="ognl:image.copyrightDate" size="4"/>	</label></li>
+
+				 <li>
+		        <span class="small">(Optional) Additional 
+	            Credits <input jwcid="@TextField" value="ognl:image.acknowledgements" size="40" /></span></li>
+  
+		      </ul>
+<span jwcid="@treehouses/UsePermissionRadiosWithDefault"/>
+</div>
+</span>
+				  <div class="crspacernoclear">&nbsp;</div>
+
+				
+    </div>
+<div class="copychoice whitebox"><div class="floatleft"><img src="/tree/learn/lisa.images/trhouseimage/MediaFoundWWWperm.jpg" alt="media found with permission" width="140" height="101" class="crbefore"/>
+<label class="crchoices"><span class="copyrightcheck"><strong class="large">3.</strong></span><input jwcid="@Checkbox"  id="checkbox3" value="ognl:useOption3Selected" onclick="checkboxSubmit(this.id)"/></label></div>
+<p class="crchoices"><strong class="large">I found this media file somewhere and received permission  to use it. </strong> 
+	<span jwcid="@If" condition="ognl:!useOption3Selected">     
+        <p id="moreinfo3trigger" class="triup" onclick="showbranch('moreinfo3', 'show', 'hide'); showbranch('moreinfo3trigger', 'tridown', 'triup')">why select this choice?</p>
+     </span>        
+        <p jwcid="@Any" id="moreinfo3" class="ognl:otherPersonTextClass"><span class="fix">Select this choice <strong><em class="underline">only</em></strong> if you received permission 
+in writing from the copyright holder to use this media file.</span> <a href="http://www.tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/copyrightletter.html" target="copyrightletter">If you haven't yet received 
+permission, use this text in an email or letter to ask for permission</a>. Note that if you can't get permission you may want to try creating your own media file by drawing or 
+using a digital camera.</p>
+    <span jwcid="@If" condition="ognl:useOption3Selected">
+     <ul class="crdata">
+    <li>
+      <label><strong><span class="large">Copyright &copy; someone who is <em class="underline">not</em> a ToL contributor</span></strong></label>
+      </li>
+              
+            <li class="noindent">
+
+              <label>A person who is not a registered ToL Contributor owns the copyright for this image/media file and they gave me permission in writing to upload it to the ToL database<strong>.</strong></label>
+            </li>
+  </ul><ul class="radiogroup indentleftlrg">
+      			<li><label><strong class="large">Copyright Date</strong><input jwcid="@TextField" value="ognl:image.copyrightDate" size="4"/>	</label></li>
+                <li>Name of Copyright Owner <input jwcid="@TextField" value="ognl:image.copyrightOwner" size="40"/></li>
+			   
+                <li>Email of Copyright Owner 
+                  <input jwcid="@TextField" value="ognl:image.copyrightEmail" size="40"/></li>
+			 <li> 
+      Homepage URL <input jwcid="@TextField" value="ognl:image.copyrightUrl" size="40"/></li>
+
+            
+	     </ul>
+	<span jwcid="@treehouses/UsePermissionRadiosWithDefault" ulClass="radiogroup indentleftlrg"/>  
+    </span>
+       <div class="crspacernoclear">&nbsp;</div>
+ </div>
+<div class="copychoice whitebox"><div class="floatleft">
+
+ <img src="/tree/learn/lisa.images/trhouseimage/MediaFoundWWWNOPERM.jpg" alt="I found media that I want to use and did not receive permission from the copyright owner" class="crbefore" />
+ <label class="crchoices"><span class="copyrightcheck"><strong class="large">4.</strong></span><input jwcid="@Checkbox"  id="checkbox4" value="ognl:useOption4Selected" onclick="showNoPermissionsMessage()"/>
+ </label></div>
+ <p class="crchoices"><strong class="large">I found this media file somewhere and <span class="underline">have not received permission to use it.</span> </strong></p>
+   <p id="moreinfo4trigger" class="triup" onclick="showbranch('moreinfo4', 'show', 'hide'); showbranch('moreinfo4trigger', 'tridown', 'triup')">why select this choice?</p>
+
+   <p id="moreinfo4" class="hide"><span class="fix">If you found this media file on the web or elswehere and did not receive permission in writing to use it, you cannot upload it to the ToL database until you receive permission from the copyright holder. <a href="http://www.tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/copyrightletter.html" target="copyrightletter">Use this text in an email or letter to ask for permission</a>. Note that there are some sites that may allow for use of media files on other web sites, however in the majority of cases the term "educational use" does not mean that you can post a media file on another site, but rather that you can download the file for use within a classroom. <br /><br /> Note also that if you can't get permission you may want to try creating your own media file by drawing or using a digital camera.</span></p>
+   <div class="crspacernoclear">&nbsp;</div>
+</div>
+<div class="copychoice whitebox"><div class="floatleft">
+	  <img src="/tree/learn/lisa.images/trhouseimage/publicdomainsm.jpg" class="crbefore" alt="this media file is in the public domain" />
+	  <label class="crchoices"><span class="copyrightcheck"><strong class="large">5.</strong></span><input jwcid="@Checkbox"  id="checkbox5" value="ognl:useOption5Selected" onclick="checkboxSubmit(this.id)"/></label></div>
+ 	<p class="crchoices"><strong class="large">This media file is clearly marked as in the Public Domain.</strong></p>
+	<span jwcid="@If" condition="ognl:!useOption5Selected">
+   <p id="moreinfo5trigger" class="triup" onclick="showbranch('moreinfo5', 'show', 'hide'); showbranch('moreinfo5trigger', 'tridown', 'triup')">why select this choice?</p>
+   <p id="moreinfo5" class="hide">Select this choice if you are certain materials are considered to be in the public domain. When a media file is in the public domain the original copyright owner has released the work to the public, which means that you may use the media file in your treehouse page and that you can modify it to your liking. You must be able to provide the source of the media file and the name of the organization, and you should record who created the media file if that is available. Deciding whether a resource is in the public domain can be tricky, so unless a resource is clearly marked as public domain, you should not assume that it is freely available (e.g. just because a copyright owner is not listed does not mean a media file is in the public domain). Please view our <a href="http://www.tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/FindMediaWWW.html" target="publicdomain"> list of web sites that provide media files in the public domain</a>.  
+	</span>
+    <span jwcid="@Else">
+   <p>When a media file is in the public domain the original copyright owner has released the work to the public, which means that you may use the media file in your treehouse page and that you can modify it to your liking. Select this choice if you are certain materials are considered to be in the public domain. <span class="red">Deciding whether a resource is in the public domain can be tricky, so unless a resource is clearly marked as public domain,<em> you should not assume</em> that it is freely available(e.g. just because a copyright owner is not listed does not mean a media file is in the public domain). Please view our <a class="underline" href="http://www.tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/FindMediaWWW.html" target="publicdomain"> list of web sites that provide media files</a>  in the public domain. </span> </p> 
+   <ul class="crdata">
+    <li>
+      <label><strong><span class="large">Public Domain Media File </span></strong></label>
+
+    </li>
+              
+            <li>When a media file is in the public domain the original copyright owner has released the work to the public, which means that you may use the media file in your treehouse page and that you can modify it to your liking. The  media file will be displayed with its source in order to acknowledge the source of the file.</li>
+  </ul>
+   <span jwcid="@RadioGroup" selected="ognl:publicDomainSourceSelection">
+     <ul>
+<li>       <label>
+         <input jwcid="@Radio" value="ognl:wwwSelection"/>
+         Found on the WWW </label>
+
+       </li><ul class="radiogroup indentleftlrg">
+                <li>Name of web site/source of public domain media file (e.g. US Fish and Wildlife)
+                  <input jwcid="@TextField" value="ognl:image.publicDomainSourceName" size="60"/></li>
+			   
+                <li>Web address of source of media file (homepage URL)
+                  <input jwcid="@TextField" value="ognl:image.publicDomainSourceUrl" size="40"/></li>
+				<li>Web address of page media file found 
+        <input jwcid="@TextField" value="ognl:image.publicDomainAddress" size="40"/></li>
+			 <li>Creator of media file (if listed)
+			   <input jwcid="@TextField" value="ognl:image.publicDomainCreator" size="40"/></li>
+      </ul>
+	   <li>
+
+       <label>
+         <input jwcid="@Radio" value="ognl:printSelection"/>
+         Found in a book, print resource or other material that has been released into the public domain </label>
+       </li><ul class="radiogroup indentleftlrg">
+                <li>Title of source
+                  <input jwcid="@TextField" value="ognl:image.publicDomainTitle" size="60"/></li>
+			   
+                <li>Publisher
+                  <input jwcid="@TextField" value="ognl:image.publicDomainPublisher" size="40"/></li>
+				<li>Author 
+                  <input jwcid="@TextField" value="ognl:image.publicDomainAuthor" size="40"/></li>
+
+			 <li>Publication date 
+			   <input jwcid="@TextField" value="ognl:image.publicDomainPublicationDate" size="40"/></li>
+      </ul>
+     </ul>
+     </span>
+   
+      <ul class="radiogroup indentleftlrg"> <li> <input type="radio" name="UseModel3Radio" checked="checked" value="2"/> 
+ <label><strong class="large">Use Model #3</strong> (default). Use on ToL and share with other scientific/educational projects.
+ <select name="ModificationPermittedSelect">
+<option value="1">Modification Permitted</option>
+</select></label> </li>
+ 
+  <li>Media in the public domain is assigned ToL Use Model #3.</li>
+    </ul>        
+    </span>
+	<div class="crspacernoclear">&nbsp;</div> 
+</div>
+
+<a name="step2GroupType"></a>
+<h2 class="copychoicelong required">Step 2. Attach to Group &amp; Media Type </h2>
+ <div id="attach" class="whitebox"> 
+   
+   
+  <div class="help">
+
+    
+  <a href="javascript: w = window.open('/onlinecontributors/app?service=external/ImageHelpMessagesPage&amp;sp=SAttached+to+Group%28s%29', 'helpWindow', 'menubar=no,width=400,height=300,toolbar=yes,scrollbars=yes,resizable=yes,location=yes'); w.focus();">	<img src="/tree/images/tip.gif" border="0"></a>	</div>
+  <h3 class="required">Attach to Group:</h3>
+  <div class="greybox"><h4 class="required">I can attach the organism in my media file to a group of organisms in the ToL database.</h4>
+  <p><strong>Add a group of organisms from the ToL database that matches my media file.</strong><img src="/tree/learn/lisa.images/trhouseimage/attachimagesm.jpg" width="240" height="145"  class="floatright greyborder" /></p>
+  
+<ul class="box1">
+	<span jwcid="@For" source="ognl:image.nodesSet" element="ognl:null" value="ognl:currentNode" convertor="ognl:convertor"> 
+    	<li class="group"><span jwcid="@Insert" value="ognl:currentNode.name"/> <a jwcid="@LinkSubmit" listener="listener:removeGroup" selected="ognl:page.nodeToDelete" tag="ognl:currentNode" class="remove">Remove</a></li>
+    </span>
+    <li>&nbsp;</li>
+  	<li><a jwcid="@LinkSubmit" class="underline button" listener="listener:addGroupSubmit">Click Here to Select <span jwcid="@Insert" value="ognl:aOrAnother"/> Group of Organisms</a>
+    <ul class="indent">
+      <li>For example, if you have a picture of a whale, you can attach it to the Cetacea group (whales). You can try searching on the common name or the scientific name when you click the "select a group" button below. </li>
+    </ul>
+  </li>
+  
+<li class="small">For help see <a href="javascript: w = window.open('/tree/learn/TreebuilderTools/AttachMediaTrhs.html#wheremedia' 'fullHelpWindow', 'menubar=no,width=400,height=300,toolbar=yes,scrollbars=yes,resizable=yes,location=yes'); w.focus();">Where Should I Attach My Work?</a></li>
+    </ul>
+  
+<p style="margin-top: -10px;"> <strong><em>ONLY</em> If the group you attached your media file not identify the organism to the species level, add the <label>scientific name:</label>
+
+  <input jwcid="@TextField" value="ognl:image.scientificName" size="30"/>
+</strong></p>
+    <ul class="box1">
+      <ul class="indent">
+        <li>For example, if you have a picture of a bobcat, since we do not have a species page for bobcats you can type in Lynx rufus.</li>
+        <li>For assistance see <a href="tree/learn/TreebuilderTools/BuildingGuide/SciNames.html#waysearchnames" target="fullHelpWindow">Help with Scientific Names</a></li>
+      </ul>
+    </ul>
+
+<div id="attach2"> <a name="attach2"></a>
+   
+   
+  <div class="help">
+    
+  <a href="javascript: w = window.open('/onlinecontributors/app?service=external/ImageHelpMessagesPage&amp;sp=SAttached+to+Group%28s%29', 'helpWindow', 'menubar=no,width=400,height=300,toolbar=yes,scrollbars=yes,resizable=yes,location=yes'); w.focus();">	<img src="/tree/images/tip.gif" border="0">  </a>    </div>
+  <h4 class="required">I don't know where to attach this media file! </h4>
+  <p>If, after doing some research you still have absolutely no idea where to attach your media file, please check the box below. Note that media that is not attached to a group will not be found as readily in searches. However, we will soon have a feature that will allow others to help identify media files that are not attached to a group of organisms.</p>
+
+    <label  class="grey">
+      <input jwcid="@Checkbox" value="ognl:image.dontKnowAttachment"/>
+      <strong>    I do not know where to attach this media file  </strong></label>
+  <div class="spaced">
+  <p class="floatleft"><strong>Comments</strong></p>
+  <p>
+
+    <textarea jwcid="@TextArea" cols="45" rows="4" class="spaced" value="ognl:image.attachmentComments"></textarea>
+  </p>
+  <p>In the space above, let us know any information you have that would assist someone in attaching your media file to a group. </p>
+  </div>
+ </div></div></div>
+ <div id="imgtype" class="whitebox"> <a name="imgtype"></a> 
+   
+   
+   
+  <div class="help">
+    
+  <a href="javascript: w = window.open('/onlinecontributors/app?service=external/ImageHelpMessagesPage&amp;sp=SImage+Type', 'helpWindow', 'menubar=no,width=400,height=300,toolbar=yes,scrollbars=yes,resizable=yes,location=yes'); w.focus();">	<img src="/tree/images/tip.gif" border="0">  </a>    </div>
+
+   <h4 class="required">Image Type</h4>
+	  <span jwcid="@RadioGroup" selected="ognl:image.imageType">   
+	  <ul>   
+	    <li>
+	      <label>
+	        <input jwcid="@Radio" value="ognl:photoString"/>
+	        Photograph</label>
+        <li> <label>
+
+	        <input jwcid="@Radio" value="ognl:diagramString"/>
+	        Diagram</label>
+        </li>
+	    <li>
+	       <label>
+	         <input jwcid="@Radio" value="ognl:drawingString"/>
+	         Drawing/Painting</label>
+        </li>	  
+	    <li> <label> <input jwcid="@Checkbox" value="ognl:image.artisticInterpretation"/>
+		    Artistic interpretation*<br />
+		    <span class="small">*Please let us know if this is an artistic representation of organism.</span></label>
+        </li>
+          </ul>
+      </span>
+	    <label class="box1 grey"><span class="textarealabel">Technical Information</span> <textarea jwcid="@TextArea" value="ognl:image.technicalInformation" cols="35" rows="2"></textarea></label>
+
+ </div>
+ <div id="comments" class="whitebox"> <a name="comments"></a>
+   
+  <div class="help">
+    
+  <a href="javascript: w = window.open('/onlinecontributors/app?service=external/ImageHelpMessagesPage&amp;sp=SComments', 'helpWindow', 'menubar=no,width=400,height=300,toolbar=yes,scrollbars=yes,resizable=yes,location=yes'); w.focus();">	<img src="/tree/images/tip.gif" border="0">  </a>    </div>  
+  
+ <h4 class="floatleft">Comments</h4>
+  <textarea jwcid="@TextArea" value="ognl:image.comments" cols="45" rows="4"></textarea> <div class="spacer">
+
+    <p>In the space above add information such as the common name of the organism. </p>
+  </div>
+  </div>
+  <div class="spacer">&nbsp;</div> 
+  <div id="notes indentleft"> <a name="notes"></a> 	
+	
+	<div class="help">	    
+	<a href="javascript:popup_window_13();">
+    	<img src="/tree/images/tip.gif" border="0">
+    </a>
+	
+	</div>
+<a name="podcast"></a>
+    <h4 class="floatleft">Notes</h4>
+    <textarea jwcid="@TextArea" value="prop:image.notes" cols="45" rows="4"></textarea>
+
+	<div class="spacer">
+	  <p>In the space above tell us details that will help us use this media file in a podcast. </p>
+	</div>
+	<label><input jwcid="@Checkbox" value="prop:image.considerForPodcast"/>
+	<strong> consider for ToL podcast feed</strong></label>
+	<div class="spacer"></div>
+
+</div> 
+ <div class="floatright">
+  <a name="subm"></a> <input jwcid="@Submit" value="save & submit data" id="subm" listener="listener:submitData"/>
+  <p class="checktoedit"><a jwcid="@LinkSubmit" listener="listener:goToStep3" class="noline">Edit additional information &gt;</a>
+ </div>
+
+       <div class="crspacernoclear">&nbsp;</div>
+
+  </div><div class="spacer">&nbsp;</div> 
+<script jwcid="@Script" script="CheckboxesSubmit.script" form="ognl:imageForm"/>
+</html>

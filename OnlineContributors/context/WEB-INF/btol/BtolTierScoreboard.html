@@ -1,0 +1,16 @@
+<div class="tierScoreboard">
+	<span class="tierScoreText">
+	    <span jwcid="@If" condition="prop:showTier0">Tier 0: 
+	        <span jwcid="@Insert" class="tierScore" value="prop:tier0Score" /><span jwcid="@If" condition="prop:showTier1">,</span>
+	    </span> 
+	    <span jwcid="@If" condition="prop:showTier1">Tier 1: 
+	        <span jwcid="@Insert" class="tierScore" value="prop:tier1Score" /><span jwcid="@If" condition="prop:showTier2">,</span>
+	    </span> 
+	    <span jwcid="@If" condition="prop:showTier2">Tier 2: 
+	        <span jwcid="@Insert" class="tierScore" value="prop:tier2Score" /><span jwcid="@If" condition="prop:showTier3">,</span>
+	    </span> 
+	    <span jwcid="@If" condition="prop:showTier3">Tier 3: 
+	        <span jwcid="@Insert" class="tierScore" value="prop:tier3Score" />
+	    </span>
+    </span>
+</div>

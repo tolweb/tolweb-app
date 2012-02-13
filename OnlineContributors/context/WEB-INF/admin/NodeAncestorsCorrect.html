@@ -1,0 +1,26 @@
+<html jwcid="@FeaturesWrapper" title="Node Ancestors Correction" includeDojo="ognl:true">
+  <h2 class="clear">Node Ancestors Correction</h2>
+  <div style="float: right; display:block; font-size:10px; background-color:#ffffbb; text-decoration:none; text-align:center; padding:1px 5px; margin:1px 0 0 auto; border:1px solid #ddd; color:#908d80;">
+	<span jwcid="test@NodeIdSearch" update="node" />
+  </div>
+  <span jwcid="@If" condition="ognl:!correctionDone">
+	  <form jwcid="@Form">
+		    <ul>
+		   		<span jwcid="@For" source="ognl:validationDelegate.fieldTracking" value="ognl:currentFieldTracking">
+		  		<li jwcid="@If" condition="ognl:currentFieldTracking.inError"  class="error" element="li">
+		  			<span jwcid="@Delegator" delegate="ognl:currentFieldTracking.errorRenderer"/>
+		  		</li>
+		   		</span>
+		    </ul>	  
+			<p>Enter node id: <input jwcid="node@TextField" value="ognl:nodeId" translator="translator:number" validators="validators:required" /> 
+				<a jwcid="@PageLink" page="FindNodeIds" renderer="ognl:renderer">Find node id...</a></p>
+			<p><input jwcid="@Submit" value="Correct" listener="listener:doCorrection" /></p>	
+	  </form>
+  </span>
+  <span jwcid="@Else">
+  	<form jwcid="@Form">
+  	<p>Correction operation complete.</p>
+  	<p><input jwcid="@Submit" value="Correct Another Node" listener="listener:correctAnotherNode" /></p>
+  	</form>
+  </span>
+</html>

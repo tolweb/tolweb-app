@@ -1,0 +1,22 @@
+<html jwcid="@NewFormWrapper" title="ognl:'Edit Page Status for ' + (tolPage != null ? tolPage.groupName : '')" 
+isAccPage="ognl:false" bodyId="tillusbody" isTillus="ognl:true" volatile="ognl:true">
+    <span jwcid="@Hidden" value="ognl:editedObjectId"/>
+	<span jwcid="@If" condition="ognl:previewSelected">
+    	<div jwcid="@RedirectDiv" url="ognl:workingUrl"/>
+    </span>
+    <span jwcid="@If" condition="ognl:!error">
+        <h2>Edit Page Status for Page <span jwcid="@Insert" value="ognl:tolPage.groupName"/></h2>
+        <select jwcid="@PropertySelection" model="ognl:statusSelectionModel" value="ognl:tolPage.status"/>
+        <input type="submit" jwcid="@Submit" class="floatright" value="Save & Preview"  onClick="openPreview()" listener="ognl:listeners.previewSubmit"/>
+	    <span jwcid="@If" condition="ognl:hasPublicPage" element="ognl:null">
+		    <div class="spacer">&nbsp;</div>
+			<div id="articlesubmit">
+				<a name="articlesubmit"></a> 		 <input jwcid="@Submit" id="submitbutton" value="Submit Page Status" listener="ognl:listeners.publicationSubmit"/>
+			</div>
+        </span>
+    </span>
+    <span jwcid="@Else">
+        <span jwcid="@Insert" value="ognl:error" class="error"/>
+    </span>     
+    <script jwcid="@Script" script="EditTreehouseFunctions.script" pageName="TitleIllustrationsPreviewPage"/>           
+</html>

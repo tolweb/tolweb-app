@@ -1,0 +1,134 @@
+			<span jwcid="@RadioGroup" selected="prop:usePermissionSelection">
+            <span jwcid="@RenderBody"/>
+			<ul class="radiogroup">
+                <li>                     
+                    <input type="radio" jwcid="@Radio" value="ognl:creativeCommonsUse"/>
+                    <label id="usetrigger4" class="triup" onclick="showbranch('use4', 'show', 'hide'); showbranch('usetrigger4', 'tridown', 'triup')">
+                    Release to the public under a Creative Commons License <img src="/tree/img/cctiny.gif" alt=" "></label>
+		    		<select jwcid="@PropertySelection" value="prop:ccLicenseSelection" model="prop:ccLicenseModel"/>
+					<select jwcid="@PropertySelection" value="prop:ccLicenseVersionSelection" model="prop:ccLicenseVersionModel"/>
+        		    <span jwcid="@InvokeListener" listener="listener:setCCLicense"/>
+                    <div jwcid="@RenderBlock" block="ognl:use4Block"/>
+                </li>
+                <li>                     
+                    <span jwcid="@If" condition="ognl:!dontShowOption3">
+                    <input type="radio" jwcid="@Radio" value="ognl:everywhereUse"/>
+                    <label id="usetrigger3" class="triup" onclick="showbranch('use3', 'show', 'hide'); showbranch('usetrigger3', 'tridown', 'triup')">
+                    Use on ToL and share with other scientific/educational projects.</label>
+                    <select jwcid="@PropertySelection" model="ognl:selectionModel" value="ognl:shareModificationValue"/>                    
+                    </span>                    
+					<div jwcid="@RenderBlock" block="ognl:use3Block"/>                
+                </li>                
+                <li>
+                    <input type="radio" id="tolUseRadio" jwcid="@Radio" value="ognl:tolUse"/>
+                    <label id="usetrigger2" class="triup" onclick="showbranch('use2', 'show', 'hide'); showbranch('usetrigger2', 'tridown', 'triup')">
+                    Tree of Life use only. </label>
+                    <span jwcid="@If" condition="ognl:!dontShowTolModOption">
+                    <select jwcid="@PropertySelection" model="ognl:selectionModel" value="ognl:tolModificationValue"/>
+                    </span>
+                    <div jwcid="@RenderBlock" block="ognl:use2Block"/>                
+                </li>
+                <span jwcid="@If" condition="ognl:isImage" element="ognl:null">                 
+				<li><input type="radio" jwcid="@Radio" value="ognl:restrictedUse"/>
+				        <label id="usetrigger1" class="triup" onclick="showbranch('use1', 'show', 'hide'); showbranch('usetrigger1', 'tridown', 'triup')">
+				        Restricted to one-time use in specified location. Do not modify.</label>	
+                    <div jwcid="@RenderBlock" block="ognl:use1Block"/>
+				</li>
+                </span>
+                <li>
+                    <input type="radio" id="publicDomainRadio" jwcid="@Radio" value="ognl:publicDomainUse" onclick="javascript:toggleNoCopyrightBox();" />
+                    <label id="usetrigger5" class="triup" onclick="showbranch('use5', 'show', 'hide'); showbranch('usetrigger5', 'tridown', 'triup')">
+                    Public Domain. </label>
+                    <div jwcid="@RenderBlock" block="ognl:use5Block"/>                
+                </li>                
+            </ul>
+          	</span>
+                
+   <div jwcid="use1BlockDefault@Block">
+   <div id="use1" class="hide">                         
+       <p> This option gives media contributors strict control 
+       over the use of their materials. <em>Restricted use</em>
+       media are provided only for specific use on a particular 
+	   ToL page.  While these files may be featured in ToL media 
+       search results, they are not available for any other use 
+       without prior consultation with the copyright owner.
+	   Restricted media may not generally be modified or edited. 
+       However, the context or presentation of a file may change 
+       if the look of the ToL web site is updated or if new 
+       features affecting page layout are developed.</p>
+   </div>
+   </div>
+   <div jwcid="use2BlockDefault@Block">
+   <div id="use2" class="hide">                         
+            <p>If you select this option, other ToL contributors will 
+                be able to use your media to illustrate the content 
+                of their pages (i.e., branch &amp; leaf pages, other 
+                articles &amp; notes, or treehouses). In addition, 
+                these media may be displayed on the ToL site through 
+                various search and random sampler devices, and they 
+                may be featured on ToL documentation pages (e.g., 
+                the <a href="/tree/learn/concepts/concepts.html">Phylogenetic 
+                Biology</a> pages). Whenever a contribution is displayed 
+                on a ToL page, it will be accompanied by a copyright 
+                notice informing visitors that the material is protected 
+                by copyright law.</p>
+            <p>If you select <strong>Modification permitted</strong>, 
+                other ToL contributors will be able to use your contribution, 
+                in whole or in part, in their own derivative media projects 
+                If you select <strong>Minor modifications only</strong>, 
+                your file cannot be excerpted or used in the creation 
+                of derivative media projects. However, the context or 
+                presentation of your file may change if the look of the ToL 
+                web site is updated, or if new features affecting page 
+                layout are developed.</p>
+   </div>
+   </div>
+   <div jwcid="use3BlockDefault@Block">
+   <div id="use3" class="hide">
+            <p>This option covers all ToL use detailed in option 2. 
+                In addition, it allows the ToL to share materials 
+                with <a href="/tree/home.pages/ToLPartners.html" target="documentation">select, 
+                non-commercial, scientific or educational partner 
+                projects</a>. This means that your media may be exported 
+                to the databases of ToL partner projects, and they 
+                may be displayed on the web sites of these projects. 
+                Note that the ToL does not share materials with commercial 
+                content providers. Also, the ToL requires collaborating 
+                projects to always credit authors and copyright owners 
+                when displaying materials imported from the ToL collection.</p>
+            <p> We encourage ToL contributors to choose this option 
+                in order to maximize the dissemination of their materials 
+                through not-for-profit projects, and to participate 
+                to the fullest in an emerging, international community 
+                of scientific and educational content providers.</p>
+
+                        <p>If you select <strong>Modification permitted</strong>, 
+                other ToL contributors and partner projects will be 
+                able to use your contribution, in whole or in part, 
+                in their own derivative media projects. If you select <strong>Minor 
+                modifications only</strong>, your file cannot be excerpted 
+                or used in the creation of derivative media projects. 
+                However, the context or presentation of your file may change if the look of the ToL web site is updated, if new features affecting page layout are developed, or if your media file is displayed on the web site of a partner project.</p>
+        </div></div>
+   <div jwcid="use4BlockDefault@Block">
+   <div id="use4" class="hide">                          
+ 	   <p><a href="http://tolweb.org/tree/home.pages/CCLicense.html">
+            <img src="EditImageData_files/CCsomerights.gif" alt=" " class="floatright"></a>
+        If you choose one of these options, you release your media file 
+        not only to the ToL and its partner projects, but also to the 
+        general public. Copyright notices for materials released under 
+        this option are marked with the Creative Commons icon and 
+        contain a link to the deed for the selected license. For more 
+        information about these licenses, go to the 
+        <a href="http://creativecommons.org/licenses/" target="documentation">Creative 
+            Commons web site</a>.</p>
+    </div>       
+	</div>
+    <div jwcid="use5BlockDefault@Block">
+    <div id="use5" class="hide">
+        <p>Materials in the public domain may be freely reproduced, distributed, 
+        modified, built upon, or otherwise exploited by anyone for any purpose, 
+        commercial or non-commercial, and in any way, with or without attribution 
+        to the original source.</p>
+    </div>       
+	</div>            

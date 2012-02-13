@@ -1,0 +1,108 @@
+<tree-of-life-web version="1.0">
+  <nodes>
+    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+      <name>Litokoala</name>
+  	  <auth-date>1839</auth-date>
+      <authority>Owens</authority>      
+      <rank>Genera</rank>
+      <geographic-distribution>
+        <description>Australia</description>
+      </geographic-distribution>
+    </node>
+    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+      <name>Koobor</name>
+  	  <auth-date>1839</auth-date>
+      <authority>Owens</authority>      
+      <rank>Genera</rank>
+      <geographic-distribution>
+        <description>Australia</description>
+      </geographic-distribution>
+    </node>    
+    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+      <name>Perikoala</name>
+  	  <auth-date>1839</auth-date>
+      <authority>Owens</authority>      
+      <rank>Genera</rank>
+      <geographic-distribution>
+        <description>Australia</description>
+      </geographic-distribution>
+    </node>    
+    <node extinct="true" position-confidence="tentative" phylesis="monophyletic" italicize-name="true">
+      <name>Cundokoala</name>
+  	  <auth-date>1839</auth-date>
+      <authority>Owens</authority>      
+      <rank>Genera</rank>
+      <geographic-distribution>
+        <description>Australia</description>
+      </geographic-distribution>
+    </node>    
+    <node extinct="true" position-confidence="tentative" phylesis="monophyletic" italicize-name="true">
+      <name>Nimiokoala</name>
+  	  <auth-date>1839</auth-date>
+      <authority>Owens</authority>      
+      <rank>Genera</rank>
+      <geographic-distribution>
+        <description>Australia</description>
+      </geographic-distribution>
+    </node>
+    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+      <name>Nimiokoala</name>
+  	  <auth-date>1839</auth-date>
+      <authority>Owens</authority>      
+      <rank>Genera</rank>
+      <geographic-distribution>
+        <description>Australia</description>
+      </geographic-distribution>
+    </node>
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+      <name>Phascolarctos</name>
+  	  <auth-date>1816</auth-date>
+      <authority>Blainville</authority>      
+      <rank>Genera</rank>
+      <geographic-distribution>
+        <description>Australia</description>
+      </geographic-distribution>
+      <nodes>
+    	<node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+	      <name>Phascolarctos cinereus</name>
+	  	  <auth-date>1817</auth-date>
+	      <authority>Goldfuss</authority>      
+	      <rank>Species</rank>
+	      <geographic-distribution>
+	        <description>Australia</description>
+	      </geographic-distribution>
+	      <othernames>
+		      <othername is-important="true" is-preferred="false" sequence="0" italicize-name="true">
+		        <name>koalas</name>
+		        <authority>Goldfuss</authority>
+		        <auth-date>1817</auth-date>
+		      </othername>
+		  </othernames>	
+		  <nodes>
+	    	<node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+		      <name>Phascolarctos cinereus cinereus</name>
+		      <rank>Species</rank>
+		    </node>		  
+		  </nodes> 
+	    </node>
+    	<node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+	      <name>Phascolarctos maris</name> 
+	      <rank>Species</rank>
+	      <geographic-distribution>
+	        <description>Australia</description>
+	      </geographic-distribution>
+	    </node>      
+    	<node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+	      <name>Phascolarctos stirtoni</name>  
+	      <rank>Species</rank>
+	      <geographic-distribution>
+	        <description>Australia</description>
+	      </geographic-distribution>
+	    </node>      	    	          
+      </nodes>
+    </node>
+
+
+    
+  </nodes>
+</tree-of-life-web>

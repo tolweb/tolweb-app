@@ -1,0 +1,35 @@
+<html jwcid="@TreehouseWrapper" treehouse="ognl:treehouse" bodyId="trwebqtheme"
+	additionalPageShortName="teachers">
+	<div id="learninfo">
+		<a name="learninfo"></a>
+		<h3>Learning Information </h3>
+		<div jwcid="@TreehouseLearningInfo" treehouse="ognl:webquest"/>
+    </div>
+	<div jwcid="@TeacherResourceEducationStandards"/>
+    <span jwcid="@If" condition="ognl:hasTips">    
+	    <div id="teachtips">
+	        <a name="teachtips"></a>
+	        <h3>Teacher Tips</h3>
+	        <span jwcid="@Insert" value="ognl:webquest.teacherTips" raw="ognl:true"/>
+		</div>
+	</span>
+	<div jwcid="@TeacherResourcePreparation"/>  
+</html>
+<span jwcid="contentMenuBlock@Block">
+	<li><a href="#content">Learning Information</a></li>
+    <span jwcid="@If" condition="ognl:page.webquest.hasStateStandards || page.webquest.hasNationalStandards">
+		<li><a href="#standards">Education Standards</a></li>
+    </span>
+    <span jwcid="@If" condition="ognl:page.hasTips">
+		<li><a href="#teachtips">Teacher Tips</a></li>
+    </span>
+    <span jwcid="@If" condition="ognl:page.webquest.hasPreparation">
+		<li><a href="#prep">Preparation</a></li>
+    </span>
+    <span jwcid="@If" condition="ognl:page.webquest.hasPhysicalObjects">
+		<li><a href="#physicalobjects">Materials/Tools</a></li>        
+    </span>
+    <span jwcid="@If" condition="ognl:page.webquest.hasPriorKnowledge">
+		<li><a href="#priorknow">Prior Knowledge</a></li>
+    </span>
+</span>

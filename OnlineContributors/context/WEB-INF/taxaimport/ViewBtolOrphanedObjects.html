@@ -1,0 +1,62 @@
+<html jwcid="@FeaturesWrapper" title="Orphaned BToL Data">
+  <span jwcid="@If" condition="ognl:viewToggle == null || viewToggle"> 
+  <form jwcid="@Form" listener="ognl:listeners.processOperations">
+    	<p>[<a jwcid="@PageLink" page="xml/TaxaImportHome">Return to Taxa Import Workflow Home...</a>]</p>
+	<h2 class="clear">Orphaned BToL Data</h2>
+	<span jwcid="@If" condition="ognl:btolTuples == null || btolTuples.isEmpty">
+		<p>
+	No orphaned data found...
+		</p>
+	</span>
+	<span jwcid="@Else">
+		<table jwcid="@For" source="ognl:btolTuples" value="ognl:currentTuple" element="table">
+			<!-- We only want to show the user btol nodes that we can't resolved through name matching -->
+			<span jwcid="@If" condition="ognl:currentTuple.targetNodeId == null && (currentTuple.hasAdditionalFields || currentTuple.hasStatuses)">
+			<tr> <!-- a matched btol node would have an target node id defined -->
+				<td>
+					node: <span jwcid="@Insert" value="ognl:currentTuple.node.name"/> <br/>
+					created: <span jwcid="@Insert" value="ognl:currentTuple.node.created"/>
+				</td>
+				<td>source node id: <span jwcid="@Insert" value="ognl:currentTuple.node.nodeId"/> <br/> 
+					updated: <span jwcid="@Insert" value="ognl:currentTuple.node.updated"/>
+				</td>  
+			</tr>
+			<tr>
+				<td colspan="2"> 
+				<span>
+					target node id:
+					<span jwcid="@TextField" value="ognl:currentTuple.targetNodeId" translator="translator:number" /> 
+					<!-- / --> 
+					<a jwcid="@PageLink" page="FindNodeIds" renderer="ognl:renderer">Find new node id...</a>
+				</span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">	  
+					<span jwcid="@If" condition="ognl:currentTuple.hasAdditionalFields || currentTuple.hasStatuses">
+						<span jwcid="@If" condition="ognl:currentTuple.hasAdditionalFields">
+							<p>Additional Fields attached...</p> 
+						</span>
+						<span jwcid="@If" condition="ognl:currentTuple.hasStatuses">
+							<p>Gene Fragment Node Status attached...</p>
+						</span>						
+					</span>
+				</td>
+			</tr>
+			</span>			
+		</table>
+		<input type="submit" value="Execute..." />	
+	</span>	
+  
+  </form>
+  </span>
+  <span jwcid="@Else">
+  	<form jwcid="@Form">
+  		<input jwcid="@Hidden" value="ognl:viewToggle"/>
+  		<input jwcid="@Hidden" value="ognl:confirmMessage"/>
+  	</form>
+  	<h2 class="clear">Orphaned BToL Data</h2>
+  	<p><span jwcid="@Insert" value="ognl:confirmMessage"/></p>
+  	<p><a jwcid="@PageLink" page="xml/TaxaImportHome">Return to Taxa Import Workflow Home...</a></p>
+  </span>
+</html>

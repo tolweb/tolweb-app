@@ -1,0 +1,36 @@
+<span jwcid="@If" condition="ognl:noResults">
+    <span class="error">Sorry, there were no results that match what you searched for in our database. 
+Please revise your search terms and try again.</span>
+</span>
+<span jwcid="@RenderBody"/>
+<form jwcid="@Form" listener="ognl:listeners.doSearch">
+  <input type="hidden" jwcid="@Hidden" value="ognl:checkPermissions"/>
+  <input type="hidden" jwcid="@Hidden" value="ognl:editedObjectTypeProperty"/>
+  <table cellpadding="5">
+    <tr>                   <td jwcid="@Any" element="ognl:headerElement" class="ognl:headerClass">Words in the title</td>
+      <td><input jwcid="@TextField" value="ognl:title" type="text" name="textfield"/></td>
+
+                </tr>
+    <tr>                   <td jwcid="@Any" element="ognl:headerElement" class="ognl:headerClass">Copyright Year</td>
+      <td><input jwcid="@TextField" value="ognl:copyrightYear" type="text" name="textfield"/></td>
+    </tr>
+    <tr>                   <td jwcid="@Any" element="ognl:headerElement" class="ognl:headerClass">Attached to Group</td>
+      <td><input jwcid="@TextField" value="ognl:groupName" type="text" name="textfield"/></td>
+    </tr>
+    <tr>                   <td jwcid="@Any" element="ognl:headerElement" class="ognl:headerClass"><span jwcid="@Insert" value="ognl:objectType"/> ID</td>
+      <td><input jwcid="@TextField" value="ognl:treehouseId" type="text" name="textfield"/></td>
+    </tr>   
+	<span jwcid="@If" condition="ognl:contributor.isLearningEditor" element="ognl:null">
+    <tr>
+        <td jwcid="@Any" element="ognl:headerElement" class="ognl:headerClass">
+            Author Last Name or Pseudonym
+        </td>
+        <td><input jwcid="@TextField" value="ognl:lastName" type="text"/></td>
+    </tr>
+    </span>
+                <tr>                   <td>&nbsp;</td>
+      <td align="right"> <input jwcid="@Submit" type="button" name="Button" value="ognl:submitButtonString"/><span jwcid="@If" condition="ognl:isTreehouses">or
+      <input jwcid="@Submit" type="button" name="Button" value="Show All My Treehouses" listener="ognl:listeners.showAllMyTreehousesSelected"/></span></td>
+    </tr>
+  </table>
+</form>

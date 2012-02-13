@@ -1,0 +1,20 @@
+<table jwcid="table@contrib:Table" source="ognl:images" columns="File:getLocation(), ID:getId(), !thumbnail, !data" row="ognl:image"/>
+<span jwcid="thumbnailColumnHeader@Block">Thumbnail</span>
+<span jwcid="thumbnailColumnValue@Block">
+    <img jwcid="@ImageThumbnail" image="ognl:image"/>
+</span>
+<span jwcid="selectColumnHeader@Block">&nbsp;</span>
+<span jwcid="selectColumnValue@Block">
+        <!-- <span jwcid="@If" condition="ognl:canEdit"> -->
+            <a jwcid="@ViewImageLink" image="ognl:image" classString="viewlink">view <span jwcid="@Insert" value="ognl:image.mediaTypeDescription"/></a>
+			<a jwcid="@EditImageLink" editWindowName="ognl:editWindowName" image="ognl:image" classString="editlink">edit</a>
+        <!-- </span>
+        <span jwcid="@If" condition="ognl:!canEdit">
+        	<span jwcid="@ImageCheckedOutMessage" image="ognl:image"/>
+        </span> -->
+</span>        
+<span jwcid="dataColumnHeader@Block">Image Data</span>
+<span jwcid="dataColumnValue@Block">
+        <img jwcid="@ImageDataBlock" image="ognl:image" showThumbnail="ognl:false" dontShowNotes="ognl:false" 
+        onlyShowCopyright="ognl:false" isBatchUploadResults="ognl:true"/>
+</span>

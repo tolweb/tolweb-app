@@ -1,0 +1,78 @@
+<html jwcid="@EditBranchLeafPageWrapper" title="ognl:'Edit ' + tolPageName + ' ' + textSection.heading"
+	editedObjects="ognl:textSection.heading" previewAnchor="ognl:textSection.headingNoSpaces" 
+	notesProperty="page.textSection.notes" additionalDelegate="ognl:delegate">
+	<input jwcid="@Hidden" value="ognl:textSectionId"/>
+	<div class="whitebox" id="introduction">
+		<div class="instructions">                 
+		<h5 id="trigger1" class="triup" onclick="showbranch('help1', 'show', 'hide'); showbranch('trigger1', 'tridown', 'triup')">Instructions </h5> <p>The text box below features an <strong>Easy Editor</strong>
+			that will let you format your text without knowledge of HTML codes.
+			This feature is still very much under development, so bear with us as
+			we fix bugs and add new features. If you would rather write 
+        	<a href="javascript: w = window.open('/tree/sep/html.html', 'documentation', 'width=900, height=700, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">HTML 
+                codes</a> by hand, you can switch to advanced mode.</p>
+		<input jwcid="@SetEditorPreferenceButton"/>
+        <div id="help1" class="hide"> 		    <h6>Writing a Custom Text Section</h6>
+                                         <p>ToL page authors can erect additional text sections according 
+                        to the special requirements of their group. Such additional 
+                        topics may provide information about biogeography, life 
+                        history, life cycle, fossil specimens, putative characteristics 
+                        of the ancestor of the group, topics relating the organisms 
+                        to humans (e.g., medical importance, economic importance), 
+                        etc. </p>
+                    <p>In order to keep branch and leaf pages at a manageable 
+                        size, custom text sections should not be too long, and 
+                        there should not be too many of them on any given page. 
+                        Also, branch pages should not take too long to load in 
+                        a browser, so large illustrations should be avoided. If 
+                        you would like to provide detailed information (i.e., 
+                        more than three or four paragraphs) or large media files 
+                        for any particular topic, or if there are many different 
+                        topics worth covering for your group, you should consider 
+                        creating <a href="javascript: w = window.open('/tree/sep/articlesnotes.html', 'documentation', 'width=900, height=700, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">scientific 
+                        articles or notes</a> for some of your topics. </p>
+
+	            <h6>Inserting Images</h6>
+                                      <p>Note that images and other media displayed on ToL pages 
+                        are retrieved from the ToL media database. Not all ToL 
+                        images are available for use on all ToL pages. You will 
+                        only be able to select images that have been released 
+                        by their copyright owners for your intended use. If you 
+                        would like to use your own images, you first need to upload 
+                        the files using the <a href="javascript: w = window.open('/onlinecontributors/app?service=page&page=ImagesManager', 'imagesManagerWindow', 'width=900, height=700, scrollbars=yes, resizable=yes'); w.focus();">ToL 
+                        media contribution tools</a>. See <a href="javascript: w = window.open('/tree/sep/images.html', 'documentation', 'width=900, height=700, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">Illustrations 
+                        for Tree of Life Pages</a> for advice on obtaining images 
+                        for your ToL pages. </p>
+                    <p>To add an image to your page, click on the <strong>Insert 
+                        Image</strong> button <img src="/tree/img/InsertImage.gif" alt=" " />                         in the <em>Easy Mode</em> editor or on the <span class="blue">Add Image</span>                         link in the <em>Advanced Mode</em> editor. 
+                        This will open a window that will allow you to search 
+                        the <em>ToL Image Database</em> according to a variety of criteria. </p>
+                        
+
+                     <p>  <strong><em>Easy Mode</em></strong>: Once you have found an image you would like to use, click on the <span class="blue">select</span> link.  The image will then be inserted at a standard size (250 pixels or smaller) with a default caption (the name of the organism and the copyright notice).  If you would like to explore other size options, click on the <span class="blue">options</span> link next to an image, and then click on the select link next to your preferred image size.  Once the image is inserted in the editor text field, you can format the image 
+                       display using the buttons next to the <strong>Insert Image</strong>                         button <img src="/tree/img/InsertImage.gif" alt=" " />.</p>
+                        
+                   <p>  <strong><em>Advanced Mode</em></strong>:   Once you have found an image you would like to use, copy the <strong>ToL 
+                        Image Code</strong> from the yellow box and paste it in the text box in the location where you would like to have the image 
+                        displayed. The default image code provides a standard sized image (250 pixels or smaller) with a default caption (the name of the organism and the copyright notice). You can also
+                   click on the <span class="blue">options</span> link to explore other size options.
+
+                 For additional formatting
+                        options, e.g., for left-aligned or floating images or for the display 
+                        of several images next to one another, please have a look 
+                        at the <a href="javascript: w = window.open('/tree/sep/html.html', 'documentation', 'width=900, height=700, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">HTML 
+                        for Tree of Life Pages</a> page.</p>
+
+                </div>
+            </div>
+        <p jwcid="@If" condition="ognl:delegate == null">
+			<a jwcid="@ExternalLink" title="Add an image from the ToL database" page="ArticleNoteImageSearch" 
+                parameters="ognl:{node.nodeId, true, true}" class="addimage" renderer="ognl:rendererFactory.imagesSearchRenderer">Add Image</a>            
+        </p>
+        <textarea jwcid="@PreparedTextArea" useEditor="ognl:delegate != null" 
+            valuePath="text" targetObject="ognl:textSection" useTreehouseImageFormat="ognl:false" 
+            rows="40" cols="75" textAreaId="textSectionsArea"></textarea>
+	</div>    
+    <div jwcid="@TextSectionAutoSave" autoSaveFrequency="ognl:120" textareaId="textSectionsArea" valuePath="text"
+    	editedObjectId="ognl:textSectionId" contributorId="ognl:contributor.id" 
+    	editHistoryId="ognl:page.editedPage.editHistoryId"/>
+</html>

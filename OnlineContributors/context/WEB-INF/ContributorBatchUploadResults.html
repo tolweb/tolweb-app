@@ -1,0 +1,107 @@
+<html jwcid="@Wrapper" title="People Batch Upload Results">
+<h2 class="clear">Upload Results</h2>
+<span jwcid="@If" condition="ognl:deletedAllContributors" element="ognl:null">
+<p>
+All of the new people you uploaded have been deleted.  You may 
+return to the <a jwcid="@PageLink" page="ContributorBatchUpload">people batch upload page</a>
+if you would like to try again.
+</p>
+</span>
+<span jwcid="@Else" element="ognl:null">
+<p>
+Here are the results of your upload.  If the results were not what you expected, you may 
+<a jwcid="@DirectLink" listener="ognl:listeners.deleteAllNewContributors">remove
+all of the new people from the database</a>.  People that existed in the database before the upload will not
+be removed.
+</p>
+<table jwcid="@For" source="ognl:contributors" value="ognl:currentContributor" volatile="ognl:true" element="table">
+    	<span jwcid="@InvokeListener" listener="listener:clearStoredProperties"/>
+        <tr>
+            <td>Surname</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.surname"/>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.firstName"/>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <span jwcid="@Insert" value="ognl:currentContributor.email"/>
+                <span jwcid="@If" condition="ognl:currentContributor.dontShowEmail">
+                    (Do not publish email)
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>Webpage URL</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.homepage"/>
+        </tr>
+        <tr>
+            <td>Institution</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.institution"/></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.address"/></td>
+        </tr>
+        <tr>
+            <td>Bio</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.bio" raw="ognl:true"/></td>
+        </tr>
+        <tr>
+            <td>Groups with Editing Permission</td>
+            <td><span jwcid="@Insert" value="ognl:groupsWithEditingPermission"/></td>
+        </tr>    
+        <tr>
+            <td>Groups with no Editing Permission</td>
+            <td><span jwcid="@Insert" value="ognl:groupsNoEditingPermission"/></td>
+        </tr>
+        <tr>
+            <td>Willing to coordinate ToL Groups</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.willingToCoordinate"/></td>
+        </tr>
+        <tr>
+            <td>Comments</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.notes"/></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.phone"/></td>
+        </tr>
+        <tr>
+            <td>Fax</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.fax"/></td>
+        </tr>
+        <tr>
+            <td>Contributor Type</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.contributorTypeString"/></td>
+        </tr>
+        <tr>
+            <td>Geographic Interest Area</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.geographicAreaInterest"/></td>
+        </tr>
+        <tr>
+            <td>Interests</td>
+            <td><span jwcid="@Insert" value="ognl:currentContributor.interestsString"/></td>
+        </tr>
+        <span jwcid="@If" condition="ognl:hasUnmatchedGroups">
+           	<tr>
+               <td class="error">Unmatched Group Names in the ToL database:</td>
+               <td class="error"><span jwcid="@Insert" value="ognl:unmatchedGroups"/>
+           	</tr>
+        </span>
+    <span jwcid="@If" condition="ognl:currentContributorIsNew && shouldSendEmail">
+    <span jwcid="@If" condition="ognl:currentContributor.isCoreScientificContributor" element="ognl:null">
+<span jwcid="@NewScientificContributorEmail" contributor="ognl:currentContributor" 
+nodesString="ognl:groupsWithEditingPermission" editingContributor="ognl:contributor"/>
+    </span>
+    <span jwcid="@Else">
+<span jwcid="@NewNonCoreContributorEmail" contributor="ognl:currentContributor" 
+    nodesString="ognl:groupsNoEditingPermission" otherRegisteringContributor="ognl:contributor"
+	firstNodeId="ognl:currentFirstNodeId"/>    
+    </span>
+    </span>
+</table>
+</span>
+</html>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<info primitiveTypes='element'>
+	<element name='LayerNode'>
+		<attribute name="name" property="name"/>
+		<element name="FieldNode" property="nodes" updater="addFieldNode"/>
+		<addDefaults/>
+	</element>
+</info>

@@ -1,0 +1,12 @@
+<span jwcid="body@Block">
+<form jwcid="@Form">
+<input jwcid="@Hidden" value="ognl:returnPageName"/>
+<input jwcid="@Hidden" value="ognl:editedObjectId"/>
+<a jwcid="@ReturnToEditingLink"/>
+</form>
+<h2 align="center">Search for groups in the Tree of Life</h2>
+<form jwcid="@NodesSearch" onlySelectPagedNodes="ognl:onlySelectPagedNodes" returnPageName="ognl:returnPageName"
+	wrapperType="ognl:wrapperType" bodyStyle="ognl:bodyStyle" editedObjectId="ognl:editedObjectId"
+	callbackType="ognl:callbackType" requireEditPermissions="ognl:requireEditPermissions"/>
+</span>
+<span jwcid="@WrapperChooser" wrapperType="ognl:wrapperType" title="Find Groups in the ToL" block="ognl:components.body"/>

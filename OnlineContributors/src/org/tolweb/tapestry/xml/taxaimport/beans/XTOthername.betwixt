@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<info primitiveTypes="element">
+  <element name="othername">
+    <attribute name="is-important" property="isImportant"/>
+    <attribute name="is-preferred" property="isPreferred"/>
+    <attribute name="italicize-name" property="italicizeName"/>
+    <attribute name="sequence" property="sequence" />
+    <element name="auth-date" property="date" />
+    <element name="comments" property="comments" />
+    <addDefaults/>
+  </element>
+</info>

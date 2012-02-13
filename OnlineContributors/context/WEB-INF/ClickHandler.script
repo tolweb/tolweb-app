@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+<body>
+<unique>
+	<![CDATA[
+function clickHandler (evt) {
+  if (document.layers)
+    return false;
+  else if (evt.stopPropagation) {
+    evt.stopPropagation();
+    evt.preventDefault();
+  }
+  else if (window.event)
+    return false;
+}
+function initClickPrevention () {
+  if (document.layers) {
+    window.captureEvents(Event.CLICK);
+    window.onclick = clickHandler;
+  }
+  else if (document.all && !document.getElementById)
+    document.onclick = clickHandler;
+  else if (document.all)
+    document.attachEvent('onclick', clickHandler);
+  else if (document.addEventListener)
+    document.addEventListener('click', clickHandler, true);
+}
+function stopClickPrevention () {
+  if (document.layers) {
+    window.releaseEvents(Event.CLICK);
+    window.onclick = null;
+  }
+  else if (document.all && !document.getElementById)
+    document.onclick = null;
+  else if (document.all)
+    document.detachEvent('onclick', clickHandler);
+  else if (document.addEventListener)
+    document.removeEventListener('click', clickHandler, true);
+}
+initClickPrevention();		
+	]]>
+</unique>	
+</body>
+<initialization>
+<unique>
+	<![CDATA[
+		stopClickPrevention();
+	]]>
+</unique>
+</initialization>
+</script>

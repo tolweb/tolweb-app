@@ -1,0 +1,226 @@
+<html jwcid="@EditBranchLeafPageWrapper" editedObjects="Taxon Names" notesProperty="page.node.namesNotes"
+	title="ognl:'Edit ' + tolPageName + ' Taxon Names'" >
+        <div class="whitebox" id="groupname">
+			<h4>Group Name</h4>
+            <div class="instructions">                 
+                <h5 id="trigger1" class="triup" onclick="showbranch('help1', 'show', 'hide'); showbranch('trigger1', 'tridown', 'triup')">Instructions</h5>
+                <div id="help1" class="hide">                     
+                    <h6>Group Name</h6>
+                    <p>By default, the <strong>Group Name</strong> is used as 
+                        the title for your branch or leaf page and as the name 
+                        that is displayed in the tree or taxon list of the containing 
+                        group. Please enter only plain text in the <strong>Group 
+                        Name</strong> field, i. e., don't use HTML code. If you 
+                        want the group name to be displayed in italics, check 
+                        the <strong>italicize</strong> box. This box is selected 
+                        by default on leaf pages.</p>
+
+                    <p>When naming a group in the Tree of Life, you will usually 
+                        want to use the valid, scientific name for the <em>entire</em>                         group. However, in the case of prominent groups that have 
+                        a widely used common name (e.g., <em>Green Plants</em>                         or <em>Animals</em>), this name may be a better choice, 
+                        especially if several scientific names have been proposed, 
+                        but none of them has been accepted universally. If a group 
+                        does not (yet) have a formal, scientific name, you can 
+                        circumscibe the group in plain language, e. g., <em>Western 
+                        Palearctic water frogs</em>. Here are a few additional 
+                        guidelines on the choice of group names:</p>
+                    <ul class="disc">
+                        <li>Do not use names that refer only to some part of your 
+                            group (e.g., <strong>not</strong> &quot;Basal Coleoptera&quot;)</li>
+
+                        <li>Do not include information on ranks in your group 
+                            name (e.g., <em>not</em> &quot;Order Coleoptera&quot;)</li>
+                        <li>In the case of subgenera or subspecies, use the full 
+                            name, not just the name referring to the subtaxon 
+                            (e.g., Rhyzodiastes (Rhyzostrix) rather than just 
+                            Rhyzostrix).</li>
+                        <li>Always use the most specific scientific name available 
+                            for a group; i. e., in the case of a monotypic genus, 
+                            use the name of the species, not the name of the genus 
+                            as the group name. If you would rather use a higher 
+                            taxonomic category as the principal name for your 
+                            group, have a look at the <strong>preferred label 
+                            </strong><img src="/tree/img/label.gif" title="preferred label" alt="preferred label">                             option in the <strong>Other Names Instructions</strong>                             below. The <strong>Other Names</strong> list also 
+                            lets you designate <strong>important names</strong>                             <img src="/tree/img/important.gif" title="important name" alt="important name">, 
+                            which will be printed as subtitles on the ToL page.</li>
+
+                    </ul>
+                    <h6>Author Data</h6>
+                    <p>Entering author data for names is optional. Please use 
+                        only four-digit numbers for the <strong>Date</strong>                         entry. If you want to have these data displayed on ToL 
+                        pages, you need to select one or both of the <strong>display 
+                        in ...</strong> boxes. If the taxon name constitutes a 
+                        new combination, check the <strong>new combination</strong>                         box to have the original author data printed in parentheses. 
+                        You can also provide information about the <strong>New 
+                        Combination Author</strong>. If both author and new combination 
+                        author are provided and the <strong>display in ...</strong>                         box is selected, the name of the new combination author 
+                        will be printed after the name of the original author, 
+                        i.e., <em>Taxon Name (Author Date) New Combination Author 
+                        Date</em>. The <strong>Comment</strong> field allows you 
+                        to provide additional information, e. g., <em>in</em>                         ..., <em>nec</em>..., <em>sensu</em>..., <em>partim</em>..., 
+                        <em>emend</em>..., etc., which will be printed after the 
+                        author data.</p>
+
+                    <h6>Description</h6>
+                    <p> The Description field can be used to provide information 
+                        that may make it easier for non-specialists to recognize 
+                        or interpret a given group of organisms. For example this 
+                        field can contain a brief description of the kinds of 
+                        organisms contained within the group or a list of well-known 
+                        subgroups. In the current default version of the ToL, 
+                        descriptions are printed together with the taxon name 
+                        in the tree or list of taxa on the page of the containing 
+                        group. Description entries should therefore be rather 
+                        brief. Common names or other alternative names for a group 
+                        can be used in descriptions, but these names should also 
+                        be entered in the Other Names list, so that they will 
+                        be available in taxon searches.</p>
+                    </div>
+            </div>
+            <label class="box1">Group Name <input jwcid="@TextField" value="ognl:node.name" type="text" size="40"/></label>
+            <label>            <input jwcid="@Checkbox" value="ognl:node.italicizeName"/>
+            italicize</label> 
+            <div id="authority" class="darkbox">                 
+                <ul class="tinytext">
+                    <li>                         <label>                         <input jwcid="@Checkbox" value="ognl:node.showNameAuthority"/>
+                        display in page titles</label>
+                    </li>
+                    <li>                         <label>                         <input jwcid="@Checkbox" value="ognl:node.showAuthorityInContainingGroup"/>
+                        display in tree/list of containing group</label>
+                    </li>              
+                </ul>
+                <h5>Author Data</h5>
+                <ul class="box1">
+                    <li>                         <label>Author 
+                        <input jwcid="@TextField" value="ognl:node.nameAuthority" size="25"/>
+                        </label>
+
+                        <label class="box1">
+                        <span jwcid="@FieldLabel" field="ognl:components.nodeAuthDateField" displayName="Date"/>
+                        <input jwcid="nodeAuthDateField@TextField" size="4" displayName="Node Authority Date"
+                            translator="translator:number"  value="ognl:node.authorityDate"/>
+                        </label>
+                    </li>
+                    <li><label>                         <input jwcid="@Checkbox" value="ognl:node.isNewCombination"/>
+                       new combination</label></li>
+                    <li>                         <label>New Combination Author 
+                        <input jwcid="@TextField" value="ognl:node.combinationAuthor" size="25"/>
+
+                        </label>
+                        <label class="box1">
+                        <span jwcid="@FieldLabel" field="ognl:components.combinationDateField" displayName="Date"/>
+                        <input jwcid="combinationDateField@TextField" size="4" displayName="Combination Date"
+                            translator="translator:number"  value="ognl:node.combinationDate"/>
+                        </label>
+                    </li>
+                    <li>                         <label>Comment 
+                        <input jwcid="@TextField" value="ognl:node.nameComment" size="40"/>
+                        </label>
+                    </li>
+                </ul>
+            </div> 
+            <label class="box1">Description <input type="text" size="50" jwcid="@TextField" value="ognl:node.description"/></label>
+		</div>	
+		<div class="whitebox" id="othernames">
+            <h4>Other Names for This Group</h4>
+            <div class="instructions">                 
+                <h5 id="trigger2" class="triup" onclick="showbranch('help2', 'show', 'hide'); showbranch('trigger2', 'tridown', 'triup')">Instructions </h5>
+
+                <div id="help2" class="hide">                     <p> The <strong>Other Names for This Group</strong> list should 
+                        be used to store information about other names that apply 
+                        to the <em>group as a whole</em>. These other names can 
+                        be synonyms, common names, or names representing different 
+                        taxonomic ranks in the case of monotypic taxa where two 
+                        or more ranks refer to the same group of organisms.You 
+                        can also provide information about the author for each 
+                        name. Check the <strong>italicize</strong> <img src="/tree/img/italics.gif"  title="italicize" alt="italicize">                         box, if a name should be displayed in italics. </p>
+                    <p>Entries in the <strong>Other Names</strong> list are used 
+                        in taxon name searches, so that visitors to the ToL site 
+                        will be able to find a given group using a variety of 
+                        different names, including common names. <strong>Other 
+                        Names</strong> are not generally printed on ToL pages 
+                        (except <strong>important names</strong> and <strong>preferred 
+                        labels</strong>, see below), but in the future, we will 
+                        make it possible for visitors to download this information 
+                        or to have it featured on pages by request. We will also 
+                        supplement the information provided by ToL authors with 
+                        data from a variety of different name servers.</p>
+
+                    <p>If you designate one or more of the names as <strong>important 
+                        names <img src="/tree/img/important.gif" title="important name" alt="important name"></strong>, 
+                        these names will be displayed in the subtitle of the ToL 
+                        page. If you designate one or more of the names as<strong>                         preferred labels</strong> <img src="/tree/img/label.gif" title="preferred label" alt="preferred label">, 
+                        these names will be displayed in the supertitle of the 
+                        ToL page. Also, <strong>preferred labels</strong> are 
+                        used instead of the group name to represent the taxon 
+                        in the tree or list on the page for the containing group. 
+                        The <strong>preferred label</strong> option is particularly 
+                        useful in the case of monotypic taxa, where the <strong>group 
+                        name</strong> should be the name of the lowest taxonomic 
+                        rank, but the name of a higher taxonomic rank can become 
+                        the prominent name on ToL pages if it is designated as 
+                        the <strong>preferred label</strong>. </p>
+
+                    <p>Click on <span class="blue">Add another name</span> to get a blank set of fields 
+                        for a new entry. You can also add several sets by entering 
+                        the number you want in the field and clicking on the Submit 
+                        button. Change the sequence of names in the list by 
+                        clicking on <span class="blue">up</span> or <span class="blue">down</span> in the left-hand column. Delete 
+                        a name from the list by clicking on <span class="blue">remove</span> in the right-hand 
+                        column.</p>
+                </div>
+            </div>
+            <table class="binbox">
+                <tbody>
+                    <tr>                         
+                    	<th>Shift</th>
+                        <th>Other Names for This Group</th>
+                        <th><img src="/tree/img/italics.gif" title="italicize name" alt="italicize"></th>
+                        <th><img src="/tree/img/important.gif" title="important name - subtitle" alt="important name"></th>
+                        <th><img src="/tree/img/label.gif" title="preferred label - supertitle" alt="preferred label"></th>
+						<th><img src="/tree/img/vernacular.gif" title="vernacular - common name" alt="vernacular"></th>
+						<th><img src="/tree/img/dontlist.gif" title="don't list name in Other Names section" alt="don't list"></th>                        
+                        <th>&nbsp;</th>
+                    </tr>
+					<tr jwcid="sortableTable@SortableTable" values="ognl:node.synonyms"
+	            		canMove="ognl:true" canRemove="ognl:true"
+	            		currentObject="ognl:currentSynonym" rowSpanString="ognl:rowspan"
+                		index="ognl:index">                        
+                        <td jwcid="@Any" element="td" class="datacell" rowspan="ognl:rowspan"><ul>
+                                <li>                                     <label class="main">Name 
+                                    <input jwcid="@TextField" value="ognl:currentSynonym.name" size="40"/>
+                                    </label>
+                                    <ul>
+                                        <li>Author
+											<input jwcid="@TextField" value="ognl:currentSynonym.authority" size="20"/>
+                                            <span jwcid="@FieldLabel" field="ognl:components.authDateField" displayName="Date"/>
+                                            <input jwcid="authDateField@TextField" size="4" displayName="Other Name Date"
+                                                translator="translator:number" value="ognl:currentSynonym.authorityYear"/>
+                                        </li>
+                                        <li>Comment 
+                                            <input jwcid="@TextField" value="ognl:currentSynonym.comment" size="30"/>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                            </ul></td>
+                        <td jwcid="@Any" element="td" class="datacell" rowspan="ognl:rowspan"><input jwcid="@Checkbox" value="ognl:currentSynonym.italicize"/></td>
+                        <td jwcid="@Any" element="td" class="datacell" rowspan="ognl:rowspan"><input jwcid="@Checkbox" value="ognl:currentSynonym.isImportant"/></td>
+                        <td jwcid="@Any" element="td" class="datacell" rowspan="ognl:rowspan"><input jwcid="@Checkbox" value="ognl:currentSynonym.isPreferred"/></td>
+                        <td jwcid="@Any" element="td" class="datacell" rowspan="ognl:rowspan"><input jwcid="@Checkbox" value="ognl:currentSynonym.isCommonName"/></td>
+                        <td jwcid="@Any" element="td" class="datacell" rowspan="ognl:rowspan"><input jwcid="@Checkbox" value="ognl:currentSynonym.isDontList"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" class="add"><a jwcid="@LinkSubmit" listener="ognl:listeners.addOtherName">Add another name</a>                             
+                        <label>Add <input jwcid="additionalOtherNamesField@TextField" displayName="Additional Other Names"
+                        			translator="translator:number" validators="validators:min=0" value="ognl:additionalOtherNamesToAdd" size="3" style="margin-left: 2px"/>
+                            <span jwcid="@FieldLabel" field="ognl:components.additionalOtherNamesField" displayName="more names" prerender="ognl:false"/>
+                            <input jwcid="@Submit" value="Add"/>
+                            </label> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+    <div jwcid="@AutoSave" autoSaveFrequency="ognl:900" contributorId="ognl:contributor.id" 
+    	editHistoryId="ognl:page.editedPage.editHistoryId"/>               
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+	<input-symbol key="id" class="java.lang.Long"/>
+	<body>
+	<![CDATA[		
+    function prepareSendValue() {
+    	var args = prepareSendValue.arguments;
+    	var callbackType = args[0];    	
+    	var newValue = args[1];
+    	sendValue(callbackType, ${id}, newValue);
+    }
+    function recvCompletions(arr) {
+    	var openerDoc = window.opener.document;
+    	var anchorLink = openerDoc.getElementById(arr[0]);
+    	if (anchorLink != null) {
+	    	anchorLink.className = arr[1];
+	    	anchorLink.innerHTML = arr[2];
+	    } else {
+	    	//alert("null link is: " + arr[0]);
+	    }
+    }    
+	]]>    
+    </body>
+</script>

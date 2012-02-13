@@ -1,0 +1,40 @@
+<html jwcid="@BuildTreehouseWrapper" title="Revise Interface">
+<h2 class="clear">Return Treehouse '<span jwcid="@Insert" value="ognl:treehouseToApproveOrReject.pageTitle"/>' for Revision </h2>
+	<div class="instructions">
+	  <p class="clear"> <strong>Check off and add comments for areas that need to be revised. </strong>Comments that you add will be published in the Page Communication/History section (step #7) of the student's treehouse, and they will also be sent to your email address.</p>
+  </div>
+<form jwcid="@Form" listener="ognl:listeners.commentsSubmit" delegate="ognl:delegate">
+	<input jwcid="@Hidden" value="ognl:returnPageName"/>	
+      <p><strong>Check off areas that need to be revised in order for the treehouse to be published. Use the comments box to add specific information (students can view this information in Step #7 Notes).</strong></p>
+      <ul class="nodiscspaced">
+        <li>
+          <input jwcid="@Checkbox" value="ognl:personalInfoSelected"/>
+  <strong>Student Personal Information</strong>
+  <ul style="padding-right: 150px;"><li>
+     Make sure that student personal information (e.g. name, photos, email, address) is not displayed unless the student has permission in writing from the parent/guardian and school.</li>
+   </ul></li>
+   <li>
+        <li>
+          <input jwcid="@Checkbox" value="ognl:imageCopyrightSelected"/>
+           <strong>Copyright of Media Files</strong>  (Review <a href="/tree/learn/TreebuilderTools/trcopyright.html" target="newHelpWindow"> Copyright Rules and Issues</a> | <a href="/tree/learn/TreebuilderTools/CopyrightQuiz.html" target="newHelpWindow">The Copyright Quiz</a>) 
+		  <ul style="padding-right: 150px;"> <li>Make sure that all images have copyright and/or credits information listed underneath them and all media files have copyright/credits information when they are clicked on.</li>
+		    <li>Make sure that images/media marked as copyrighted to the student were created by the student (the default copyright owner when a image/media file is uploaded is the person logged in, and this can confuse students).</li>
+		    <li> Make sure that the source for all images/media found outside of the ToL on the web is indicated, e.g. the name of the site and its URL (web address), and that permission has been received in writing for any copyrighted image/media files found elsewhere on the web.</li>
+		  </ul>
+        </li>
+               <li>
+          <input jwcid="@Checkbox" value="ognl:grammarSelected"/>
+          <strong>Content/Style/Spelling/Grammar</strong> (Review <a href="http://www.tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/DesignGuidelines.html" target="newHelpWindow">ToL Design Guidelines</a> and the <span class="circle"><a href="http://www.tolweb.org/tree/learn/TeacherResources/BasicGuidelines.html" target="newHelpWindow">Basic Treehouse Guidelines</a></span>) 
+          <ul class="nodiscspaced" style="padding-right: 150px;">
+            <li>We know that there are quirks in the Easy Editor that students may have trouble with, and we can easily reformat students' pages. Therefore, only if there are glaring spelling and grammar errors or lack of basic content should the treehouse be returned to the student so that they can revise their work. </li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Comments about areas that need to be revised</strong><br />
+<textarea jwcid="@TextArea" value="ognl:comments" cols="60" rows="30"/>
+</p>
+<input jwcid="@Submit" listener="ognl:listeners.dontPublish" value="Return to the Review Page"/>
+<input jwcid="@Submit" value="Return Treehouse to Student for Revision"/>
+<p class="large"><strong>Thank you, we really appreciate your assistance with the publication process.</strong></p>
+    </form>
+</html>

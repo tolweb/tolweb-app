@@ -1,0 +1,13 @@
+<span jwcid="link@Block">
+	<a jwcid="@ExternalLink" page="ognl:pageName" parameters="ognl:helpName" renderer="ognl:renderer">
+    	<img src="/tree/images/tip.gif" border="0"><span jwcid="@RenderBody"/>
+    </a>
+</span>
+<span jwcid="@If" condition="ognl:noDiv">
+    <span jwcid="@RenderBlock" block="ognl:components.link"/>
+</span>
+<span jwcid="@Else" element="ognl:null">
+	<div jwcid="@Any" element="div" class="ognl:divClass">
+	    <span jwcid="@RenderBlock" block="ognl:components.link"/>	
+	</div>
+</span>

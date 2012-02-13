@@ -1,0 +1,25 @@
+<html jwcid="@FeaturesWrapper" title="Node Object Manager Log">
+	<p style="float:right">
+		<a jwcid="@PageLink" page="ViewNodeObjectManagerLog" >Return to log...</a>
+    </p>
+	<h2 class="clear">
+		Node Object Management Record 
+		#<span jwcid="@Insert" value="prop:currentRecord.id" />
+	</h2>
+	<p>
+		Source Node: 
+		<span jwcid="@Insert" value="prop:sourceNode.name" />
+		(<span jwcid="@Insert" value="prop:sourceNode.nodeId" />)
+	</p>
+	<p>
+		Destination Node: 
+		<span jwcid="@Insert" value="prop:destNode.name" />
+		(<span jwcid="@Insert" value="prop:destNode.nodeId" />)
+	</p>
+	<p>
+		Log:
+		<span jwcid="@Insert" value="prop:currentRecord.logEntry" raw="ognl:true" />
+	</p>
+	<p>Modified By: <span jwcid="@Insert" value="prop:currentRecord.modifiedBy"/></p>
+	<p>Date: <span jwcid="@Insert" value="prop:currentRecord.timestamp"/></p>
+</html>

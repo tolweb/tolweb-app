@@ -1,0 +1,72 @@
+<table>
+  <tr class="yellowbg">
+    <th class="indentprojcolumn">
+        <span jwcid="@If" element="ognl:null" condition="ognl:!isEditPage">
+		Published Treehouses            
+        </span>
+        <span jwcid="@Else" element="ognl:null">
+        Treehouse Titles<br/><span class="trhspublished"><span class="tiny">Treehouse titles with a green background have  been published.</span></span>
+        </span>
+    </th>
+    <th class="IDColumnValue">ID</th>
+    <th class="editColumnValue">Author</th>
+    <span jwcid="@If" element="ognl:null" condition="ognl:isEditPage">
+    <th class="editColumnValue"><span class="selectColumnHeader"><span class="selectColumnValue"><strong>Add Comments<br>View Page History</strong></span></span></th>    
+    <th class="editColumnValue">Treehouse Preview</th>
+    <th class="selectColumnValue">Edit Treehouse</th>
+    <td class="selectColumnValue">&nbsp;</td>
+    </span>
+    </tr>
+	<span jwcid="@Foreach" source="ognl:treehouses" value="ognl:currentTreehouse">
+  <tr>
+    <td style="padding-left: 25px;" class="TreehouseColumnValue">
+        <span jwcid="@If" element="ognl:null" condition="ognl:isEditPage">
+        <a jwcid="@TreehouseTitleCondLink" isTreehouses="ognl:true" treehouse="ognl:currentTreehouse"/>
+        </span>
+        <span jwcid="@Else" element="ognl:null">
+        <a jwcid="@TolPageLink" tolPage="ognl:currentTreehouse"><span jwcid="@Insert" value="ognl:currentTreehouse.pageTitle"/></a>
+        </span>
+	</td>
+    <td class="IDColumnValue"><span jwcid="@Insert" value="ognl:currentTreehouse.accessoryPageId"/></td>
+    <td class="editColumnValue">
+        <span class="TreehouseColumnValue">
+            <ul class="nodisc">
+            <span jwcid="@Foreach" source="ognl:currentTreehouse.contributors" value="ognl:currentContributor">
+                <li><a jwcid="@ExternalLink" page="ContributorDetailPage" parameters="ognl:currentContributor.contributorId"><span jwcid="@Insert" value="ognl:isEditPage ? (currentContributor.contributor.firstName + ' ' + currentContributor.contributor.lastName) : currentContributor.contributor.displayName"/></a>
+                </li>
+            </span>
+			</ul>
+		</span>
+    </td>
+    <span jwcid="@If" element="ognl:null" condition="ognl:isEditPage">
+    <td class="editColumnValue">
+        <span jwcid="@If" condition="ognl:!currentTreehouse.isSubmitted" element="ognl:null">
+			<a jwcid="@ExternalLink" page="TreehouseEditNotes" 
+	                    parameters="ognl:currentTreehouse.accessoryPageId" anchor="commsection"
+	                    renderer="ognl:rendererFactory.editLinkRenderer">comments/questions<br/> page history</a>
+        </span>        
+	</td>    
+    <td class="editColumnValue"><a jwcid="@TolPageLink" tolPage="ognl:currentTreehouse" isWorking="true">preview</a></td>
+    <td class="selectColumnValue">
+        <span jwcid="@If" condition="ognl:currentTreehouse.isSubmitted" element="ognl:null">
+		    This treehouse has been submitted by <span jwcid="@Insert" value="ognl:currentTreehouse.submittedContributor.displayName"/> 
+            on <span jwcid="@Insert" value="ognl:currentTreehouse.submissionDate"/>
+        </span>        
+        <span jwcid="@Else" element="ognl:null">
+        	<a jwcid="@EditTreehouseLink" treehouse="ognl:currentTreehouse">edit</a>
+        </span>
+	</td>
+    <td class="selectColumnValue"><a href="#"><a jwcid="@DirectLink" listener="ognl:page.listeners.deleteTreehouse" parameters="ognl:currentTreehouse.accessoryPageId">delete</a></td>
+    </span>
+    </tr>
+  	</span>
+  <tr>
+    <td class="TitleColumnValue">&nbsp;</td>
+    <td class="IDColumnValue">&nbsp;</td>
+    <td class="editColumnValue">&nbsp;</td>
+    <td class="editColumnValue">&nbsp;</td>
+
+    <td class="selectColumnValue">&nbsp;</td>
+    <td class="selectColumnValue">&nbsp;</td>
+    </tr>
+  </table>

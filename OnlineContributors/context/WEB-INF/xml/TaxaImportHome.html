@@ -1,0 +1,58 @@
+<html jwcid="@FeaturesWrapper" title="Taxa Import Workflow - homepage">
+<h2 class="clear">Taxa Import Workflow</h2>
+    <dl class="indent">
+	    <dt><a jwcid="@PageLink" page="taxaimport/RemoveClade">Remove Clade</a></dt>
+        <dd class="small">This interface allows you to removal all descendent taxa from a given basal node.</dd>	    
+	    <dt><a jwcid="@PageLink" page="taxaimport/TaxaImport">Taxa Import</a></dt>
+        <dd class="small">This interface allows you to import taxa using the defined ingestion XML.</dd>
+	    <dt><a jwcid="@PageLink" page="taxaimport/ViewObjectManagement">Object Management</a></dt>
+        <dd class="small">This interface allows you to reattach objects attached to nodes in a given clade along with viewing various 
+        	related logs. If you just want to move objects from a SINGLE node to another node, you can also use the 
+        	<a jwcid="@PageLink" page="NodeObjectManager">Node Object Manager</a>.</dd>	
+	    <dt><a jwcid="@PageLink" page="taxaimport/ViewAllObjectManifests">View Object Manifests</a></dt>
+        <dd class="small">This interface allows you to view object manifests created for clades under construction.</dd>
+	    <dt><a jwcid="@PageLink" page="taxaimport/ViewAllTaxaImportRecords">View Taxa Import Records</a></dt>
+        <dd class="small">This interface allows you to view taxa import records created during the construction of clades.</dd>	
+	    <dt>Object Manifest</dt>
+        <dd class="small">This interface allows you to create a manifest (listing) of all objects (media, pages, etc) attached in a given clade.  
+        <strong>Note:</strong> only nodes with attachments will appear in an object manifest</dd>
+        <dd><form jwcid="@Form" listener="ognl:listeners.doObjectManifestCreate">
+	            <label>Create Object Manifest for Node Id: 
+	            	<input jwcid="@TextField" value="ognl:nodeId"/>
+	            	<input jwcid="@Submit" value="Create"/> 
+	            	<a jwcid="@PageLink" page="FindNodeIds" renderer="ognl:renderer">Find node id...</a>
+	            </label>
+	            </form>
+	    </dd>
+	    <dt><a jwcid="@PageLink" page="admin/NodeAncestorsCorrect">Node Ancestors Correction</a></dt>
+        <dd class="small">This interface allows you reset the ancestor relations for a node (adding them if they are not present).</dd>	    
+	    <dt>Page Validity Check</dt>
+        <dd class="small">This interface allows you to correct which page a given node believes it appears on.</dd>   
+        <dd><form jwcid="@Form" listener="ognl:listeners.doPageValidityCheck">
+	            <label>Node Id to check: 
+	            	<input jwcid="@TextField" value="ognl:pvcNodeId"/>
+	            	<input jwcid="@Submit" value="Do Check"/> 
+	            	<a jwcid="@PageLink" page="FindNodeIds" renderer="ognl:renderer">Find node id...</a>
+	            </label>
+		     </form>
+	    </dd>
+	    <dt>Extinct Check</dt>
+        <dd class="small">This interface allows you to cascade the extinct property throughout a clade rooted by the node-id passed.</dd>   
+        <dd><form jwcid="@Form" listener="ognl:listeners.doExtinctCheck">
+	            <label>Node Id to check: 
+	            	<input jwcid="@TextField" value="ognl:excNodeId"/>
+	            	<input jwcid="@Submit" value="Do Check"/> 
+	            	<a jwcid="@PageLink" page="FindNodeIds" renderer="ognl:renderer">Find node id...</a>
+	            </label>
+		     </form>
+	    </dd>	 
+	    <!--     
+	    <dt><a jwcid="@PageLink" page="taxaimport/ViewBtolOrphanedObjects">Manage BToL Data</a></dt>
+        <dd class="small">This interface allows you to view BToL data orphaned during Taxa Import process executions.</dd>
+          -->	
+	</dl>
+	
+	<dl class="indent">
+	
+	</dl>
+</html>

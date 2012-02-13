@@ -1,0 +1,23 @@
+<span jwcid="@If" condition="ognl:specimens != null && specimens.size > 0">
+<table jwcid="table@contrib:Table" source="prop:specimens" 
+    columns="btolSpecimenId:Specimen ID:btolSpecimenId,family:Family:family, genus:Genus:genus, species:Species:species, 
+    collectionDataSourceId:Collection Data Source Id:collectionDataSourceId, date:Collection Date:creationDateString, country:Country:country,
+    adminDivision1:First Administrative Division:adminDivision1, 
+    collection:Voucher Collection:collection, !extractions, !edit, !delete" 
+	row="prop:currentSpecimen" pageSize="100">
+	<span jwcid="extractionsColumnHeader@Block">Extractions</span>
+    <span jwcid="extractionsColumnValue@Block">
+        <span jwcid="@For" source="prop:extractions" value="prop:currentExtraction">
+			<a jwcid="@ExternalLink" page="btol/EditSpecimenExtraction" parameters="ognl:{currentExtraction.id}" renderer="ognl:page.rendererFactory.editLinkRenderer"><span jwcid="@Insert" value="prop:currentExtraction.sequenceCode"/></a>
+        </span>
+    </span>
+    <span jwcid="editColumnHeader@Block"></span>
+    <span jwcid="editColumnValue@Block">
+        <a jwcid="@ExternalLink" page="btol/EditSpecimen" parameters="ognl:{currentSpecimen.id, page.pageName}">edit</a>
+	</span>
+    <span jwcid="deleteColumnHeader@Block"></span>
+    <span jwcid="deleteColumnValue@Block">
+        <a jwcid="@btol/DeleteObjectLink" idToDelete="prop:currentSpecimen.id"/>
+	</span>
+</table> 
+</span>

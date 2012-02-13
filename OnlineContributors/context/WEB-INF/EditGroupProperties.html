@@ -1,0 +1,50 @@
+<html jwcid="@EditBranchLeafPageWrapper" editedObjects="Properties" notesProperty="page.node.namesNotes" 
+	title="ognl:'Edit ' + tolPageName + ' Properties'" >
+	<div class="whitebox" id="properties">
+    	<h4>Properties of <span jwcid="@Insert" value="ognl:tolPageName"/></h4>
+        <div class="instructions">                 
+            <h5 id="trigger3" class="triup" onclick="showbranch('help3', 'show', 'hide'); showbranch('trigger3', 'tridown', 'triup')">Instructions </h5>
+
+            <div jwcid="@Any" id="help3" class="ognl:showDownloadMessage">                     
+            		<p> Most of the properties in this form can also be set in <em>TreeGrow</em>,
+                    and if
+                    you want to set the properties of several groups, it
+                    is more efficient to do this in <em>TreeGrow</em>. If
+                    somebody has a node downloaded in TreeGrow, this form
+                    is locked.</p>
+			        <span jwcid="@If" condition="ognl:isDownloaded">
+				        <p class="red"><span jwcid="@Insert" value="prop:downloadedMessage" raw="ognl:true"/></p>  		
+				        <p class="red">You won't be able to edit it until it's been checked back in.</p>
+			    	</span>                    
+            </div>
+        </div>
+
+	    <ul id="taxonproperties">
+		    <li>
+		    	<label>Phylesis 
+		    		<input jwcid="@PropertySelection" model="ognl:phylesisModel" value="ognl:node.phylesis" disabled="ognl:disableEdit"/></label>
+		    </li>
+		    <li>
+		    	<label>Confidence of Placement in Tree 
+		    		<input jwcid="@PropertySelection" model="ognl:confidenceModel" value="ognl:node.confidence" disabled="ognl:disableEdit"/></label>
+		    </li>
+		    <li>
+		    	<label>Leaf/Branch 	<!-- if the node is not "leaf eligible", we want the branchLeaf selection disabled.  -->
+		    		<input jwcid="@PropertySelection" model="ognl:branchLeafModel" value="ognl:branchLeaf" disabled="ognl:!isLeafEligible || disableEdit"/></label>
+			</li>
+		    <li>
+		      	<label>Extinct 
+		      		<input jwcid="@PropertySelection" model="ognl:extinctModel" value="ognl:extinct" disabled="ognl:disableEdit"/></label>
+		    </li>
+	         <li>
+		        <label>Subgroups 
+		        	<input jwcid="@PropertySelection" model="ognl:subgroupsModel" value="ognl:subgroups" disabled="ognl:disableEdit"/></label>
+	        </li>
+	    	<li>
+	    		<label>Trunk <input jwcid="@PropertySelection" model="ognl:trunkModel" value="ognl:node.trunkNode"/></label>
+	    	</li>	        
+	    </ul>
+	</div>
+    <div jwcid="@AutoSave" autoSaveFrequency="ognl:900" contributorId="ognl:contributor.id" 
+    	editHistoryId="ognl:page.editedPage.editHistoryId"/>  
+</html>

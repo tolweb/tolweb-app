@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<info primitiveTypes="element">
+  <element name="contributor">
+    <attribute name="id" property="id"/>
+    <attribute name="type" property="type" />
+    <attribute name="data-table" property="datatable"/>
+    <addDefaults />
+  </element>
+</info>

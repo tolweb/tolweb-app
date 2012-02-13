@@ -1,0 +1,14 @@
+<span jwcid="@If" condition="ognl:page.portfolio.sections.size > 1">
+	<div class="indentleft">
+        <p><strong><span jwcid="@Insert" value="ognl:sectionListHeader"/>:</strong></p>
+		<ul class="inline">
+            <span jwcid="@For" source="ognl:page.portfolio.sections" value="ognl:page.currentSection"
+                index="ognl:page.sectionIndex" convertor="ognl:page.sectionConvertor" element="ognl:null">
+                <li>
+                	<a jwcid="@Any" element="a" href="ognl:'#linksection' + page.sectionIndex"><span jwcid="@Insert" value="ognl:page.currentSection.title"/><span jwcid="@If" element="ognl:null" condition="ognl:page.sectionIndex != page.portfolio.sections.size - 1">,</span></a>
+                </li>
+            </span>
+		</ul>
+        <div class="spacer">&nbsp;</div>
+	</div>
+</span>

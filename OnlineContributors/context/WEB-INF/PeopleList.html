@@ -1,0 +1,73 @@
+<span jwcid="@If" condition="ognl:hasError" element="ognl:null">
+<html jwcid="@Wrapper" title="No node with that id">
+    <h2 class="clear">Incorrect Node ID</h2>
+    Sorry, there is no node with that id.
+</html>
+</span>
+<span jwcid="@Else" element="ognl:null">
+<html jwcid="@BranchLeafWrapper" node="ognl:node" tolPage="ognl:tolPage"
+	showPageContentMenu="ognl:false" titleParam="ognl:'ToL People for ' + node.name" isPeopleList="ognl:true">
+	<span jwcid="@If" condition="ognl:coreContributors.size > 0">
+        <h2 class="clear">ToL Scientific Contributors for <span jwcid="@Insert" value="ognl:node.name"/></h2>
+        <ul class="contributors">
+        <span jwcid="@Foreach" source="ognl:coreContributors" value="ognl:currentContributor">
+            <li>
+                <a jwcid="@ContributorNameAndProfileLink" contributor="ognl:currentContributor"
+                    fromNodeId="ognl:node.nodeId"/>
+                <span class="institution"><span jwcid="@Insert" value="ognl:currentContributor.institution"/></span>
+                <span jwcid="@Insert" value="ognl:currentSciContrNodesString"/>
+            </li>
+        </span>
+       	<span jwcid="@If" condition="ognl:canAddScientificContributorToGroup">
+	        <a jwcid="@DirectLink" listener="ognl:listeners.addScientificContributorToGroup" 
+                parameters="ognl:node.nodeId" class="editlinklong">
+	            Add a person to this list
+	        </a>               
+        </span>
+        </ul>
+    </span>
+    <span jwcid="@If" condition="ognl:treehouseContributors.size > 0">
+        <h2 class="clear">ToL Treehouse Contributors for <span jwcid="@Insert" value="ognl:node.name"/></h2>
+        <ul class="contributors">
+        <span jwcid="@Foreach" source="ognl:treehouseContributors" value="ognl:currentContributor">
+            <li>
+                <a jwcid="@ContributorNameAndProfileLink" contributor="ognl:currentContributor"
+                    fromNodeId="ognl:node.nodeId"/>
+                <span class="institution"><span jwcid="@Insert" value="ognl:currentContributor.institution"/></span>                
+            </li>
+        </span>        
+        </ul>
+    </span>    
+    <span jwcid="@If" condition="ognl:mediaContributors.size > 0">
+        <h2 class="clear">ToL Media Contributors for <span jwcid="@Insert" value="ognl:node.name"/></h2>
+        <ul class="contributors">
+        <span jwcid="@Foreach" source="ognl:mediaContributors" value="ognl:currentContributor">
+            <li>
+                <a jwcid="@ContributorNameAndProfileLink" contributor="ognl:currentContributor"
+                    fromNodeId="ognl:node.nodeId"/>
+                <span class="institution"><span jwcid="@Insert" value="ognl:currentContributor.institution"/></span>                
+            </li>
+        </span>        
+        </ul>
+    </span>
+    <h2 class="clear">Other <span jwcid="@Insert" value="ognl:node.name"/> biologists and enthusiasts</h2>
+        <ul class="contributors">        
+        <span jwcid="@Foreach" source="ognl:otherContributors" value="ognl:currentContributor">
+            <li>
+                <a jwcid="@ContributorNameAndProfileLink" contributor="ognl:currentContributor"
+                    fromNodeId="ognl:node.nodeId"/>
+                <span class="institution"><span jwcid="@Insert" value="ognl:currentContributor.institution"/></span>                
+                <span jwcid="@Insert" value="ognl:currentNonSciContrNodesString"/>
+                <span jwcid="@If" condition="ognl:canRemoveNode">
+                    <a jwcid="@DirectLink" listener="ognl:listeners.removeNode" parameters="ognl:node.nodeId" class="deletelinklong">
+                        Remove my name from this list
+                    </a>
+                </span>
+            </li>            
+        </span>
+	    <span jwcid="@If" condition="ognl:canAddToList">
+	    <li><a jwcid="@DirectLink" listener="ognl:listeners.addUserToGroup" parameters="ognl:node.nodeId" class="editlinklong">Add my name to the list</a></li>
+	    </span>        
+        </ul>
+</html>
+</span>

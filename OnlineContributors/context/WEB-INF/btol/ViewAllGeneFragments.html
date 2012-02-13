@@ -1,0 +1,25 @@
+<html jwcid="@btol/ProjectWrapper" title="View All Gene Fragments">
+<h2 class="clear">All Gene Fragments</h2>
+	<table jwcid="table@contrib:Table" source="ognl:geneFragments" row="ognl:currentGeneFragment" 
+        	columns="ognl:columnsString" pageSize="30">
+        <span jwcid="requiredColumnHeader@Block">
+            <br/>
+            <br/>
+            <a href="#" class="tableHeaderTable">Required For Tier</a>
+        </span>        
+        <span jwcid="requiredColumnValue@Block">
+			<span jwcid="@Insert" value="ognl:requiredForTierText" />
+		</span>        
+        <span jwcid="editColumnHeader@Block"></span>
+        <span jwcid="editColumnValue@Block">
+            <a jwcid="@ExternalLink" page="btol/EditGeneFragment" parameters="ognl:{currentGeneFragment.id, pageName}">edit</a>
+		</span>
+        <span jwcid="deleteColumnHeader@Block"></span>
+        <span jwcid="deleteColumnValue@Block">
+            <a jwcid="@btol/DeleteObjectLink" idToDelete="ognl:currentGeneFragment.id"/>
+		</span>
+    </table>
+	<p>
+	<a jwcid="@DirectLink" listener="listener:editNewObject">Add another gene fragment</a>
+	</p>
+</html>

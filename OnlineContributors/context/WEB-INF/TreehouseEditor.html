@@ -1,0 +1,348 @@
+<html jwcid="@EditTreehouseWrapper" title="ognl:title" isMainEditPage="ognl:true">
+<h3 class="sectionheaderblubmnpg"> The Treehouse Editor </h3> 
+<div class="boxtocsmpad">
+    <div class="importantmainpg">
+        <div id="trhsformheader2"> 
+                 <h2 class="pagetitle2nomarg"><strong>You are editing</strong> <em><span jwcid="@Insert" value="ognl:treehouse.pageTitle"/></em></h2>
+                 
+	<p id="summarytrig2" class="triup" onclick="showbranch('summaryinfo',  'show', 'hide'); showbranch('summarytrig2', 'tridown', 'triup')" style="margin: 3px 0 0 15px;">
+		<strong> treehouse ID# <span jwcid="@Insert" value="ognl:treehouse.accessoryPageId"/></strong>
+		view treehouse URL and editing history
+	</p>
+    </div>
+	<div class="indentleft">
+        <ul id="summaryinfo" class="hide">
+			<li><em><span jwcid="@Insert" value="ognl:publicUrl"/></em></li>
+            <li>ToL Page ID# <span jwcid="@Insert" value="ognl:treehouse.accessoryPageId"/></li>
+		    <li> Contributed by <span jwcid="@Insert" 
+            	value="ognl:createdContributor != null ? createdContributor.displayName : ''"/>
+            	on <span jwcid="@Insert" value="ognl:creationDate"/> (server time)
+			</li>
+		    <li>
+                <span jwcid="@If" condition="ognl:treehouse.lastEditedContributor != null">
+                    Treehouse last edited by <span jwcid="@Insert" value="ognl:treehouse.lastEditedContributor.displayName"/>
+                    on <span jwcid="@Insert" value="ognl:treehouse.lastEditedDate"/>(server time)
+                </span>
+			</li>
+        </ul>
+  </div>
+    </div>
+	 <ol class="editstepsmainpg">
+      <li><span jwcid="@Any" element="span" class="ognl:aboutProgressClassname"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#aboutpage">About This Page</a>
+      <span jwcid="@If" element="ognl:null" condition="ognl:isWebquest">
+		<li><span class="needtoedit"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#wqintrotask">Introduction, Task</a></li>
+        <li><span class="needtoedit"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#process">Process</a></li>
+        <li><span class="needtoedit"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#eval">Evaluation, Conclusion</a></li>
+		<li><span class="needtoedit"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#teacherpg">Teacher Page</a></li>          
+      </span>
+      <span jwcid="@Else">
+      	<li><span jwcid="@Any" element="span" class="ognl:page.contentProgressClassname"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#pagecontent">Page Content</a></li>
+      </span>
+      <li><span jwcid="@Any" element="span" class="ognl:page.mediaProgressClassname"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#uploadedit">Upload/Edit Media</a> </li>
+      <li><span jwcid="@Any" element="span" class="ognl:page.refsProgressClassname"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#refs">References and Links</a></li>
+      <li><span jwcid="@Any" element="span" class="ognl:page.learningProgressClassname"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#learning">Learning Information</a></li>
+      <span jwcid="@If" element="ognl:null" condition="ognl:hasSupportMaterials">
+		<li><span class="needtoedit"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#supportmats">Support Materials</a></li>
+      </span>
+      <span jwcid="@If" element="ognl:null" condition="ognl:hasPortfolio">
+          <li><span class="needtoedit"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#portfopages">Portfolio Pages</a></li>
+      </span>
+       <li> <span jwcid="@Any" element="span" class="ognl:page.attachProgressClassname"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#attach">Attach to Group </a></li>
+      <li> <span jwcid="@Any" element="span" class="ognl:page.notesProgressClassname"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#notes">Add Notes/Comments</a></li>
+      <li><span class="needtoedit"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>.</span><a href="#publish">Publish</a></li>
+      </ol>
+     <span jwcid="@If" element="ognl:null" condition="ognl:beans.counter.resetStepNumber()"/>
+        <div class="mainpginstructions">
+  <p class="largetext">
+      <span jwcid="@If" element="ognl:null" condition="ognl:isTeacherResource || isWebquest">
+      	<a href="#chosesourcetype" class="blockpad">Treehouse Type: <span jwcid="@Insert" value="ognl:treehouse.resourceTypeString"/></a>
+      </span>
+      <strong>To complete your treehouse 
+    edit steps 1 - <span jwcid="@Insert" value="ognl:totalNumSteps"/>.
+      <br />
+  </strong><strong>Help is available</strong>  after you click a link to edit a treehouse building step.      </p>
+  <p>Before you begin editing you may <br /><a jwcid="@DirectLink" listener="ognl:listeners.copyDataSelected">copy data from another one of your treehouses</a></p>
+  
+ <p class="tenpad">Your progress is indicated to the right and in the navigation bar of each page by the color of each step:</p>
+  <ol class="editstepslist">
+    <li class="needtoedit">need to edit </li>
+	<li class="workinprocess">work in progress</li>
+	<li class="complete">complete</li>
+ </ol>
+ <p class="tenpad2">In order to have your work shown as complete you will need to check the box in the upper left hand corner of each page.</p>
+  </div>
+	</div>
+	<div class="spacer">&nbsp;</div>	
+	
+	<div id="trhsmaininstruct">
+        <a name="trhsmaininstruct"></a>
+        <span jwcid="@If" condition="ognl:isTeacherResource || isWebquest">
+			<div class="boxtocfst" id="chosesourcetype"><a name="chosesourcetype"></a>
+				<h4>Teacher Resource Type </h4>
+				<div class="importantnartop">
+		      		<span jwcid="@RenderBlock" block="ognl:teacherResourceDescriptionBlock"/>
+				</div>
+			</div>
+        </span>
+        <div jwcid="@Any" element="div" class="ognl:isTeacherResource || isWebquest ? 'boxtoc' : 'boxtocfst'"><a name="aboutpage"></a>
+	        <a jwcid="@PageLink" page="TreehouseEditAboutPage">
+                <img src="/tree/learn/lisa.images/trhouseimage/contributorinfoblu.jpg" alt="Contributor Information, author correspondent and acknowledgement information" width="255" height="115" class="floatright">
+			</a>
+			<h4> <a jwcid="@PageLink" page="TreehouseEditAboutPage">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Edit About this Page</a></h4>
+			<ul class="greydot">
+				<li>Decide on the ToL terms of use.</li>
+				<li>Complete author, copyright owner and correspondent information. </li>
+				<li>Add acknowledgements for those who helped in the creation of your treehouse.</li>
+			</ul>   
+            <div class="bottomspacer">&nbsp;</div>
+		   <div class="gotoedit">          
+			  
+                <a jwcid="@PageLink" page="TreehouseEditAboutPage">
+		       edit this step </a></div>
+        </div>
+        <span jwcid="@If" condition="ognl:isWebquest" element="ognl:null">
+	        <div class="boxtoc">
+	
+			  <a name="wqintrotask"></a>
+	
+			 <a jwcid="@PageLink" page="WebquestEditIntroduction"><img src="/tree/learn/lisa.images/trhouseimage/webquestintro.jpg" width="175" height="136" alt="ToL WebQuest Introduction and Task" class="floatright"></a>
+			  <h4><a jwcid="@PageLink" page="WebquestEditIntroduction">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Edit Introduction and Task </a></h4>
+			  <ul class="greydot">
+			  <li>Add an introduction  for the learners that will partake in the webquest.
+			  <li>Describe the task that the learners will engage by explaining the goals of the WebQuest.
+	          <li>Add media to	these	sections.              
+	          </li>
+			  </ul>
+			  <div class="spacer">&nbsp;</div><div class="bottomspacer">&nbsp;</div> <div class="gotoedit">
+                  <a jwcid="@PageLink" page="WebquestEditIntroduction">
+			       edit this step </a></div>
+	        </div>
+			<div class="boxtoc">
+				<a name="process"></a>
+				<a jwcid="@PageLink" page="WebquestEditProcess"><img src="/tree/learn/lisa.images/trhouseimage/webquestprocess.jpg" width="175" height="136" alt="ToL WebQuest Process" class="floatright"></a>
+		  		<h4><a jwcid="@PageLink" page="WebquestEditProcess">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Edit Process </a></h4>
+		  		<ul class="greydot">
+		  			<li>Guide learners through  the steps that they will have to go through to meet the goals of the WebQuest 
+		  			<li>Lead students to  resources and instruct them on what they need to do to complete the steps of the WebQuest.
+		  		</ul>
+		  		<div class="spacer">&nbsp;</div><div class="bottomspacer">&nbsp;</div> <div class="gotoedit">
+                      <a jwcid="@PageLink" page="WebquestEditProcess">edit this step </a></div>
+            </div>		
+            <div class="boxtoc">
+		  		<a name="eval"></a>
+				<a jwcid="@PageLink" page="WebquestEditConclusion"><img src="/tree/learn/lisa.images/trhouseimage/webquestconc.jpg" width="175" height="136" alt="ToL WebQuest Evaluation and Conclusion" class="floatright"></a>
+				<h4><a jwcid="@PageLink" page="WebquestEditConclusion">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Edit Evaluation and Conclusion </a></h4>
+				<ul class="greydot">
+					<li>Explain the methods of assessment used to evaluate learners who engaged in the WebQuest.
+					<li>Close the WebQuest with a conclusion</li>
+					<li>Add media to these sections.</li>
+		  		</ul>
+				<div class="spacer">&nbsp;</div>
+                <div class="bottomspacer">&nbsp;</div> 
+                <div class="gotoedit">          			              
+                    <a jwcid="@PageLink" page="WebquestEditConclusion">edit this step</a>
+				</div>
+            </div>
+			<div class="boxtoc">
+                <a name="teacherpg"></a>
+				<a jwcid="@PageLink" page="WebquestEditTeacher"><img src="/tree/learn/lisa.images/trhouseimage/webquestteacherpg.jpg" width="175" height="136" alt="ToL WebQuest Teacher Page" class="floatright"></a>
+				<h4><a jwcid="@PageLink" page="WebquestEditTeacher">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Edit Teacher Page </a></h4>
+				<p><span class="importantnartop">Add information for teachers to help them  use this WebQuest with their students.</span></p>
+				<div class="spacer">&nbsp;</div>
+				<div class="gotoedit2">
+                    <a jwcid="@PageLink" page="WebquestEditTeacher">edit this step</a>
+				</div>
+				<div class="bottomspacer">&nbsp;</div>
+			</div>
+        </span>
+        <span jwcid="@Else" element="ognl:null">
+	    <div class="boxtoc"><a name="pagecontent"></a>
+	    	<a jwcid="@PageLink" page="ognl:isTeacherResource && !isOther ? 'TeacherResourceEditMainContent' : 'TreehouseEditPageContent'"><img jwcid="@Any" element="img" src="ognl:isTeacherResource ? '/tree/learn/lisa.images/trhouseimage/teachercontent.jpg' : '/tree/learn/lisa.images/trhouseimage/mediastuffblu.jpg'" border="0" class="floatright" style="margin-top: 20px;"/></a>
+            <h4><a jwcid="@PageLink" page="ognl:isTeacherResource && !isOther ? 'TeacherResourceEditMainContent' : 'TreehouseEditPageContent'">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Edit Page Content</a></h4>
+	         <p><strong>Add text and media</strong> (images, sounds and movies) to your treehouse.</p>
+	         <ul class="greydot">
+	          <li>Compose treehouse page titles and text. </li>
+	          <li>Find media in the ToL database that you may use in your treehouse.</li>
+	          <li>Insert media (images, sounds and movies) into your treehouse page.</li>
+	        </ul>
+			  <div class="spacer">&nbsp;</div>
+		     <div class="gotoedit2">          
+               <a jwcid="@PageLink" page="ognl:isTeacherResource && !isOther ? 'TeacherResourceEditMainContent' : 'TreehouseEditPageContent'">edit this step </a></div>
+		     <div class="bottomspacer">&nbsp;</div>
+		</div>
+		</span>
+	    <div class="boxtoc"><a name="uploadedit"></a>
+			<a jwcid="@PageLink" page="TreehouseEditMedia" disabled="ognl:isToolTryout"><img src="/tree/learn/lisa.images/trhouseimage/uploadserver1.22.jpg" alt="Upload media to the ToL database" width="225" height="184" border="0" class="floatright"></a>
+			<h4><a jwcid="@PageLink" page="TreehouseEditMedia" disabled="ognl:isToolTryout"> Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Upload and/or Edit Media </a></h4>
+              <p>In order to insert media files (images, sounds and movies) you create yourself or find on the WWW into your treehouse, you will first need to upload (add) them to the ToL database.
+             <p>When you upload media to the ToL database you must add information, such as copyright, for each media file.</p>
+             <div class="spacer">&nbsp;</div>
+             <div class="gotoedit2">          
+               <a jwcid="@PageLink" page="TreehouseEditMedia" disabled="ognl:isToolTryout">edit this step</a></div>
+		<div class="bottomspacer">&nbsp;</div>
+      	</div>
+		<div class="boxtoc"><a name="refs"></a>
+			<a jwcid="@PageLink" page="TreehouseEditRefsInternetInfo"><img src="/tree/learn/lisa.images/trhouseimage/reflinksblu.jpg" alt="References and Information on the Internet" width="222" height="93" border="0" class="floatright" ></a>
+            <h4><a jwcid="@PageLink" page="TreehouseEditRefsInternetInfo">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Edit References and Information on the Internet</a></h4>
+			<p>Add reference materials and information on the Internet that you have used to create your treehouse and/or provide useful information for visitors. </p>
+		<div class="bottomspacer"></div>
+		   <div class="gotoedit2">          
+			  
+              <a jwcid="@PageLink" page="TreehouseEditRefsInternetInfo">
+		       edit this step </a></div>
+		   <div class="bottomspacer">&nbsp;</div>  </div>
+		<div class="boxtoc"><a name="learning"></a>
+			<a jwcid="@PageLink" page="TeacherResourceEditLearning"><img src="/tree/learn/lisa.images/trhouseimage/learninginfoblu.jpg" alt="Learning Information" width="219" height="145" border="0" class="floatright"></a>
+            <h4><a jwcid="@PageLink" page="TeacherResourceEditLearning">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Edit Learning Information</a></h4>
+			<p>Add learning resource information like learner level and treehouse type so that others can easily find, visit and use your treehouse.</p>
+            <div class="spacer">&nbsp;</div>
+            <div class="spacer">&nbsp;</div>
+            <div class="gotoedit">          
+              <a jwcid="@PageLink" page="TeacherResourceEditLearning">
+		       edit this step </a></div>
+			<div class="bottomspacer">&nbsp;</div>                    
+	  </div> 
+	<span jwcid="@If" element="ognl:null" condition="ognl:hasSupportMaterials">
+		<div class="boxtoc">
+		     <a name="supportmats"></a>
+		     <a jwcid="@PageLink" page="TeacherResourceEditSupportMaterials"><img src="/tree/learn/lisa.images/trhouseimage/supportmats.jpg" width="217" height="129" alt="Support Materials"  class="floatright" style="margin-left: 0;"></a>  
+             <h4> <a jwcid="@PageLink" page="TeacherResourceEditSupportMaterials">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Edit Support Materials</a></h4>
+			 <p><span class="importantnartop">Add support materials such as worksheets, vocabulary words, instructions and more. Create web-based materials or upload documents from your computer.</span></p>
+			 <div class="spacer">&nbsp;</div>
+            <div class="gotoedit2">          			                
+                <a jwcid="@PageLink" page="TeacherResourceEditSupportMaterials">edit this step</a>
+			</div>
+		     <div class="bottomspacer">&nbsp;</div> 
+		</div>
+    </span>
+    <span jwcid="@If" element="ognl:null" condition="ognl:hasPortfolio">
+		<div class="boxtoc">
+			<a name="portfopages"></a>
+            <a jwcid="@PageLink" page="TreehouseEditPortfolio"><img src="/tree/learn/lisa.images/trhouseimage/portfolio2.jpg" width="230" height="168" alt="Add Portfolio pages to your treehouse"  class="floatright" style="margin-left: 0;"></a>
+            <h4><a jwcid="@PageLink" page="TreehouseEditPortfolio">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Add Portfolio Pages </a></h4>
+			<p>Add ToL pages that work together as a group of related information in order to create a teacher resource portfolio.</p>
+			<p>You can add ToL pages to your portfolio that you have authored or for which you have editing privileges. The pages you add here will be listed in a portfolio menu that is accessible from every page of the teacher resource portfolio.</p>
+			<div class="spacer">&nbsp;</div>            
+			<div class="gotoedit2">
+                <a jwcid="@PageLink" page="TreehouseEditPortfolio">edit this step</a>
+			</div>
+      		<div class="bottomspacer">&nbsp;</div> 
+		</div>
+    </span>
+		<div class="boxtoc"><a name="attach"></a>
+			<a jwcid="@PageLink" page="TreehouseEditAttachments"><img src="/tree/learn/lisa.images/trhouseimage/attachlongsmblu.jpg" alt="Treehouses are attached to ToL Branch and Leaf pages" width="250" height="88" class="floatright" style="margin-top: 25px;"></a>
+            <h4><a jwcid="@PageLink" page="TreehouseEditAttachments">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Edit Attach to Group</a></h4>
+			<p>To publish your treehouse you must attach it to the Branch or Leaf page for the group of organisms on the Tree of Life that your treehouse is about. 
+				For example, if your treehouse is about Ants, you would attach it to the Ant branch page. Visitors to the ToL will then be able to access your treehouse from the Ants branch page, and from ToL searches for Ants.</p>
+            <div class="spacer">&nbsp;</div>            
+	 <div class="gotoedit">          
+            <a jwcid="@PageLink" page="TreehouseEditAttachments">edit this step </a>
+	  </div>
+                 		<div class="bottomspacer">&nbsp;</div>
+     </div>
+		<div class="boxtoc"> <a name="notes"></a> 
+		 <a jwcid="@PageLink" page="TreehouseEditNotes"><img src="/tree/learn/lisa.images/trhouseimage/notes.jpg" alt="add notes to yourself and ToL editors" width="155" height="96" class="floatright"></a>
+	        <h4><a jwcid="@PageLink" page="TreehouseEditNotes">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Add Notes, Questions and Comments</a></h4>
+	        <p>Add notes for yourself and/or questions and comments for ToL Editors or authors. Notes and comments will<em> not</em> be published on your treehouse. </p>
+		 <div class="spacer">&nbsp;</div> <div class="gotoedit2">          
+		 <a jwcid="@PageLink" page="TreehouseEditNotes">
+		       edit this step </a></div>
+  <div class="bottomspacer">&nbsp;</div>
+	  </div> 
+		<div class="boxtoc"><a name="publish"></a>
+			<h4><a jwcid="@PageLink" page="TreehouseEditPublish" disabled="ognl:isToolTryout">Step <span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/>. Publish Your Treehouse </a></h4>
+            <a jwcid="@PageLink" page="TreehouseEditPublish" disabled="ognl:isToolTryout"><img src="/tree/learn/lisa.images/trhouseimage/publisheditstuff.jpg" width="250" height="197" class="floatright" alt="publish your treehouse on the ToL"></a>
+			<p>When you are satisfied with your page you should submit it for publication on the ToL web site. As soon as your page has been approved for publication you will receive an email with its URL (web address). Visitors to the ToL will be able to 
+                access your treehouse via the group of organisms to which  you attached your treehouse. </p>
+	       <div class="spacer">&nbsp;</div>
+            <div class="gotoedit2">          
+			  
+             <a href="/onlinecontributors/app?service=page&page=TreehouseEditPublish">
+		       edit this step </a></div>
+            <div class="bottomspacer">&nbsp;</div>
+	  </div> 
+		<div class="saveworktoc">
+			<div class="trhshelpmini">
+				<h5 class="trhshelpheadmini"> <a name="gethelptoc"></a>Get Help</h5>
+				<ul style="margin: 10px 0;">
+					<li><strong>Detailed help for each step is available once you click a link to edit a treehouse building step.</strong> </li>
+	               <ul style="margin: 5px 0;">
+	      				<li></li>
+						<li><strong>View: </strong></li>
+						<li><a href="/tree/home.pages/treehouses.html" target="fullHelpWindow">Example Treehouses</a></li>
+                        <span jwcid="@If" condition="ognl:isWebquest">
+							<li><a href="http://www.tolweb.org/tree/learn/WebQuests/WebQuests.html" target="fullHelpWindow">Example WebQuests</a></li>
+							<li><a href="http://tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/ExampleEditingStepsAll.html" target="fullHelpWindow">Example editing form</a></li>
+							<li><a href="http://tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/WebQuestEditEx.html" target="fullHelpWindow">WebQuest Editing Form</a></li>
+			      		<li><a href="http://tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/HowRylanTrhs.html" target="fullHelpWindow" style="margin-right: 0;">Rylan's editing process</a></li>
+						<li><a jwcid="@PageLink" page="WebquestHelpMessagesPage" target="fullHelpWindow">All WebQuest Editing Help Topics</a></li>                            
+                        </span>
+                        <span jwcid="@If" condition="ognl:isPortfolio">
+							<li><a href="http://tolweb.org/tree/learn/Portfolios/Portfolios.html" target="fullHelpWindow">Example Portfolios</a></li>
+							<li><a href="http://tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/ExampleEditingStepsAll.html" target="fullHelpWindow">Example editing form</a></li>
+							<li><a href="http://tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/PortfoEditEx.html" target="fullHelpWindow">Portfolio Editing Form</a></li>                            
+			      		<li><a href="http://tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/HowRylanTrhs.html" target="fullHelpWindow" style="margin-right: 0;">Rylan's editing process</a></li>
+						<li><a jwcid="@PageLink" page="TreehouseHelpMessagesPage" target="fullHelpWindow">All Editing Help Topics</a></li>                            
+                        </span>
+                        <span jwcid="@If" condition="ognl:isTeacherResource">
+							<li><a href="/tree/learn/TeacherResources/ViewTeacherResources.html" target="fullHelpWindow">Example Teacher Resources</a></li>
+							<li><a href="http://tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/ExampleEditingStepsAll.html" target="fullHelpWindow">Example editing form</a></li>
+							<li><a href="http://tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/TeacherResEditEx.html" target="fullHelpWindow">Teacher Resource Editing Form</a></li>                            
+			      		<li><a href="http://tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/HowRylanTrhs.html" target="fullHelpWindow" style="margin-right: 0;">Rylan's editing process</a></li>
+						<li><a jwcid="@PageLink" page="TeacherResourceHelpMessagesPage" target="fullHelpWindow">All Teacher Resource Editing Help Topics</a></li>                            
+                        </span>
+                        <span jwcid="@If" condition="ognl:!isWebquest && !isPortfolio && !isTeacherResource">
+							<li><a href="http://tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/ExampleEditingStepsAll.html" target="fullHelpWindow">Example editing form</a></li>              
+			      		<li><a href="http://tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/HowRylanTrhs.html" target="fullHelpWindow" style="margin-right: 0;">Rylan's editing process</a></li>
+						<li><a jwcid="@PageLink" page="TreehouseHelpMessagesPage" target="fullHelpWindow">All Editing Help Topics</a></li>                                          
+                        </span>
+					</ul>
+					<li><strong>For more guidance see the:</strong></li>
+					<ul style="margin: 5px 0;">
+	                    <li><a href="/tree/learn/TreebuilderTools/toolkithome.html" target="fullHelpWindow">Builders Toolkit</a></li>
+	                    <li><strong><a href="/tree/learn/TreebuilderTools/BuildingGuide/BuildersGuide.html" target="fullHelpWindow"> Builders Guide</a> </strong></li>
+						<li><a href="/tree/learn/TeacherResources/TeacherResources.html" target="fullHelpWindow" style="margin-right: 0;">Teacher Resources page</a></li>
+					</ul>
+	    		</ul>
+			</div>
+            <h4><a name="savework"></a>Save your work! </h4>
+             <p>To save your work and preview your treehouse click Save and Preview at the bottom of each editing step's page. </p>
+	      	<p><strong>Warning! </strong>You <em>must</em>  click <strong>Save and Preview</strong> from each treehouse building step  before you close the treehouse editor window or you will lose your work.</p>
+
+			<p><em>Your ability to edit  will time-out in  1 hour of inactivity. </em>Therefore, we recommend that you save your work when you step away from the computer.	      </p>
+			
+			<div class="spacer">&nbsp;</div>
+			</div>
+			<div class="mailmetoc">Contact the ToL Learning Materials Editor,   at
+            <a jwcid="@EncodedMailLink" email="learning@tolweb.org"/> with any comments, problems or questions. We welcome your feedback.</div>
+			<div class="topbottom2">
+            <a href="#trhseditnav"><strong>top</strong></a>
+		</div>
+		<div class="spacer">&nbsp;</div> 
+	</div>         
+   <div class="spacer">&nbsp;</div>
+</html>
+<block jwcid="otherResourceDescriptionBlock@Block">
+    <p> You are editing an <strong>Other Teacher Resource Format</strong> treehouse. </p>
+</block>
+<block jwcid="lessonDescriptionBlock@Block">
+ <p>
+      You  are editing a <strong>Lesson/Project/Activity</strong> treehouse.</p>
+ <p>
+ This format is for creating a lesson plan with the information and materials needed to implement the resource. In addition you have several options for organizing and adding information. 
+ You can:</p>
+ <ul class="infolist">
+   <li>Create a separate section for students to view, the &quot;Learner Section&quot;</li>
+   <li>Add support materials such as worksheets</li>
+   <li>Group together ToL pages related to your lesson to form a teacher resource portfolio. </li>
+ </ul>
+</block>
+<block jwcid="webquestBlock@Block">
+<p>
+	You are editing a <strong>WebQuest </strong>treehouse. This format is
+	for creating  an interactive  web-based activity. The learners who will engage in the 
+	WebQuest are the audience of the WebQuest introduction, task, process, evaluation and conclusion. 
+	Some WebQuests can be embarked upon without teacher guidance, however the &quot;teacher page&quot; 
+	provides information that would help a teacher use the webquest with their classroom.
+</p>
+</block>

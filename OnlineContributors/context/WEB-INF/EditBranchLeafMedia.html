@@ -1,0 +1,64 @@
+<html jwcid="@EditBranchLeafPageWrapper" editedObjects="Page Authors/Credits" notesProperty="contributorsNote"
+	title="ToL Media Manager" isMedia="ognl:true">
+     <h2 class="clear">Tree of Life Media Manager</h2>	
+<span jwcid="@If" condition="ognl:editObjectUrl">
+	<div jwcid="@RedirectDiv" url="ognl:editObjectUrl"/>
+</span>	
+<div id="mediamanager" class="whitebox">                  <div class="instructions">
+	     <h5 id="trigger1" class="triup" onclick="showbranch('help1', 'show', 'hide'); showbranch('trigger1', 'tridown', 'triup')">Instructions 
+                </h5>
+                <div id="help1" class="hide"> 	<dl>
+                    <dt>Images </dt>
+
+                    <dd>Please upload only JPEG, GIF, or PNG files. Ideally your 
+                        master image should be around 800 pixels wide or high 
+                        (<a href="javascript: w = window.open('/tree/sep/expixel.html', 'helpWindow', 'menubar=no,width=850,height=750,toolbar=no,scrollbars=yes'); w.focus();">example</a>). 
+                        See <a href="javascript: w = window.open('/tree/sep/images.html', 'documentation', 'menubar=no,width=850,height=750,toolbar=no,scrollbars=yes'); w.focus();">Illustrations for 
+                        Tree of Life Pages</a> for more information.</dd>
+
+                    <dt>Documents </dt>
+                    <dd>Select this media type for uploading text files, PDF, Word, Excel, PowerPoint documents, etc. </dd>
+                    <dt>Size limit </dt>
+
+                    <dd> You may upload media files up to 5 megabytes. 
+                        Most sound and movie files under one minute will fit this 
+                        requirement. If you would like to contribute a larger file, contact <script language="JavaScript" type="text/JavaScript">
+    var e1 = "media";
+    var e2 = "tolweb";
+    var e3 = "org";
+    document.write("<a href=\"" + "m" + "a" + "i" + "l" + "t" + "o:")
+    document.write(e1 + "@" + e2 + "." + e3 + "\">")
+    document.write(e1 + "@" + e2 + "." + e3 + "</a>")
+</script> for instructions.</dd>
+                </dl>
+		</div>
+		</div>
+
+                     <ul class="links">
+              <li><a href="#upload">Upload a new media file </a></li>
+
+              <li><a href="#edit">Edit data for one of my media files
+                in the ToL database</a></li>
+              <li><a href="#delete">Delete one of my media files from 
+                the ToL database</a></li>
+              <li><a jwcid="@DirectLink" listener="ognl:listeners.goToRegistration" target="registration">Update my registration information</a></li> 	
+              </ul>
+				<a name="upload"></a> <h3 id="upload">Upload a new media file</h3>              
+                <form jwcid="@UploadNewMediaForm" noInstructions="ognl:true" inContainingForm="ognl:true" editedObjectId="ognl:node.nodeId" nodeId="ognl:node.nodeId"/>
+				<a name="edit"></a> <h3 id="edit">Edit data for one of my media files in the ToL database</h3>                
+				<form jwcid="@ImageSearch" searchPageName="ognl:pageName" callbackType="ognl:@org.tolweb.tapestry.ImageSearchResults@EDIT_IMAGE_CALLBACK"  groupName="ognl:nodeName"
+                instructions="ognl:instructions" 
+                	linkString="edit"
+					buttonText="Find Media" editedObjectId="ognl:node.nodeId"
+                	wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@NEW_FORM_WRAPPER"/>
+				<p>Note: You will only be able to edit data for media files that you have contributed yourself 
+				or for which you own the copyright.</p>
+				<a name="delete"></a>             
+                <h3  id="delete" class="red">Delete one of my media files from the ToL database</h3>
+				<form jwcid="@ImageSearch" searchPageName="ognl:pageName" callbackType="ognl:@org.tolweb.tapestry.ImageSearchResults@DELETE_IMAGE_CALLBACK" groupName="ognl:nodeName"
+	            instructions="Click the 'delete' link to delete that image" linkString="delete"
+	            buttonText="Find Media" editedObjectId="ognl:node.nodeId" 
+                wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@NEW_FORM_WRAPPER"/>
+    <div jwcid="@AutoSave" autoSaveFrequency="ognl:900" contributorId="ognl:contributor.id" 
+    	editHistoryId="ognl:page.editedPage.editHistoryId"/>
+</html>

@@ -1,0 +1,36 @@
+<html jwcid="@FeaturesWrapper" title="XML Taxa Import (Part of Custom Taxa Import workflow)" includeDojo="ognl:true">
+<h2 class="clear">XML Taxa Import</h2>
+	<!-- need to add this style as a class to the css -->
+	<div style="float: right; display:block; font-size:10px; background-color:#ffffbb; text-decoration:none; text-align:center; padding:1px 5px; margin:1px 0 0 auto; border:1px solid #ddd; color:#908d80;">
+	<span jwcid="test@NodeIdSearch" update="basal" />
+	</div>
+	<form jwcid="@Form" listener="listener:processInputXml">
+       <ul>
+       		<span jwcid="@For" source="ognl:validationDelegate.fieldTracking" value="ognl:currentFieldTracking">
+          		<li jwcid="@If" condition="ognl:currentFieldTracking.inError"  class="error" element="li">
+          			<span jwcid="@Delegator" delegate="ognl:currentFieldTracking.errorRenderer"/>
+          		</li>
+       		</span>
+       </ul> 	
+		<p>Enter basal node id: <input jwcid="basal@TextField" value="ognl:basalNodeId" translator="translator:number" validators="validators:required" /> 
+			<a jwcid="@PageLink" page="FindNodeIds" renderer="ognl:renderer">Find node id...</a>
+		</p>
+		<p><label><input type="checkbox" jwcid="@Checkbox" value="ognl:reconcileWithPrevious"/>reconcile with previous clades</label></p>
+		<p class="indent">
+			<label><input type="checkbox" jwcid="@Checkbox" value="ognl:preserveNodeProperties"/>preserve node properties unless replaced by new values (extinct, incertae
+sedis, monophyletic, etc.)</label>
+		</p>	
+		<p class="indent">
+			<label><input type="checkbox" jwcid="@Checkbox" value="ognl:preserveNodeName"/>preserve nodename data unless replaced by new values (authorities, etc.)</label>
+		</p>
+		<p class="indent">
+			<label><input type="checkbox" jwcid="@Checkbox" value="ognl:displayListsOnNewPages"/>display lists on new pages</label>
+		</p>					
+        <ul class="nodisc">
+        	<li>
+        		Locate the file you want to upload from your computer: <input jwcid="@Upload" file="ognl:uploadFile" />
+        	</li>
+        </ul>
+	    <input jwcid="@Submit" value="Import Taxa"/>
+	</form>
+</html>

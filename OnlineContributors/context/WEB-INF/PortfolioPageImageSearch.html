@@ -1,0 +1,16 @@
+<html jwcid="@NewBarebonesFormWrapper" title="Add Images" bodyId="trhsdatabody">
+<form jwcid="@Form">
+    <input jwcid="@Hidden" value="ognl:returnPageName"/>
+	<a jwcid="@ReturnToEditingLink"/>
+</form>
+<h2>Find Images to add</h2>
+<form jwcid="@ImageSearch" 
+    instructions="Click the 'select' link to add an image to your portfolio page" 
+    linkString="select"
+    callbackType="ognl:@org.tolweb.tapestry.ImageSearchResults@PORTFOLIO_ADDIMAGE_CALLBACK"
+    wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@FORM_WRAPPER"
+    searchPageName="PortfolioPageImageSearch" 
+	returnPageName="ognl:returnPageName"
+	buttonText="ognl:'Find Images'"
+	/>
+</html>

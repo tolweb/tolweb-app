@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="all" name="OnlineContributors">
+	<import file="${basedir}/../WebappLibsTapestry4.0/commonmacros.xml"/>	
+    <target name="init">
+    	<property name="libs.dir" location="${basedir}/../WebappLibsTapestry4.0"/>
+    	<property environment="env"/>
+        <property location="classes" name="classes.dir"/>
+        <property location="src" name="src.dir"/>
+        <property name="project.name" value="${ant.project.name}"/>
+        <property location="${project.name}.jar" name="jar"/>
+        <property name="dist.dir" value="dist"/>
+        <property name="context.dir" value="context"/>
+    	<property name="webinf.dir" value="${context.dir}/WEB-INF"/>
+    	<property name="application" value="${webinf.dir}/onlinecontributors.application"/>
+		<property name="application.dontuse" value="${application}.dontuse"/>
+    	<property name="application.btol" value="${webinf.dir}/onlinecontributorsbtol.application"/>
+      	<property name="application.live" value="${webinf.dir}/onlinecontributorslive.application"/>
+		<property name="application.beta" value="${webinf.dir}/onlinecontributorsbeta.application"/>
+        <property name="tests.dir" value="tests"/>
+        <property name="war" value="onlinecontributors.war"/>
+        <property name="testreports.dir" value="${tests.dir}/reports"/>
+        <property name="treegrow.dir" value="${basedir}/../TreeGrow"/>
+    	<property name="tolwebhibernate.dir" value="${basedir}/../TolwebHibernate"/>
+    	<property name="tolwebutils.dir" value="${basedir}/../TolwebUtils"/>
+      	<property name="treegrowserver.dir" value="${basedir}/../TreeGrowServer"/>    	
+    	<property name="ant.regexp.regexpimpl" value="org.apache.tools.ant.util.regexp.JakartaOroRegexp"/>
+    	<property name="webappinstall.dir" value="${env.HOME}/Jetty-4.2.19"/>
+        <path id="compile.classpath">
+            <fileset dir="${libs.dir}">
+                <include name="**/*.jar"/>
+            </fileset>
+        </path> 
+    	<path id="tasks.classpath">
+    		<fileset dir="${libs.dir}/xdocletjars">
+    			<include name="*.jar"/>
+    		</fileset>
+    	</path>
+        <path id="test.classpath">
+            <path refid="compile.classpath"/>
+            <pathelement location="${classes.dir}"/>
+            <pathelement location="${tests.dir}"/>
+        </path>   
+    </target>
+    <target depends="init" name="compile">
+        <ant dir="${treegrow.dir}" target="jar" inheritAll="false" />
+		<ant dir="${tolwebutils.dir}" target="jar" inheritall="false"/>    	    	    	
+    	<ant dir="${tolwebhibernate.dir}" target="jar" inheritall="false"/>
+       	<ant dir="${treegrowserver.dir}" target="jar" inheritall="false"/>    	
+        <mkdir dir="${classes.dir}"/>
+    	<mkdir dir="${classes.dir}/META-INF"/>
+		<copy todir="${classes.dir}/META-INF" failonerror="false" file="${src.dir}/META-INF/hivemodule.xml"/>
+        <javac debug="true" deprecation="true" destdir="${classes.dir}" srcdir="${src.dir}">
+            <classpath refid="compile.classpath" />
+        </javac>
+    </target>
+    
+    <target name="prewarlocal">
+	    <delete file="${classes.dir}/dbconnection.properties"/>
+        <copy file="${src.dir}/dbconnectiondev.properties" tofile="${classes.dir}/dbconnection.properties"/>
+    	<delete file="${classes.dir}/ehcache.xml"/>
+    	<copy file="${src.dir}/ehcache.xml" todir="${classes.dir}"/>    	    	
+    </target>
+    <target name="prewartolweb">
+	    <delete file="${classes.dir}/dbconnection.properties"/>    
+        <copy file="${src.dir}/dbconnectionlive.properties" tofile="${classes.dir}/dbconnection.properties"/>        
+    	<delete file="${classes.dir}/ehcache.xml"/>
+    	<copy file="${src.dir}/ehcache.xml" todir="${classes.dir}"/> 
+    	<move file="${application}" tofile="${application.dontuse}"/>
+    	<move file="${application.live}" tofile="${application}"/>
+    </target>
+    <target name="prewarbtol">
+	    <delete file="${classes.dir}/dbconnection.properties"/>    
+        <copy file="${src.dir}/dbconnectionbtol.properties" tofile="${classes.dir}/dbconnection.properties"/>        
+    	<delete file="${classes.dir}/ehcachebtol.xml"/>
+    	<copy file="${src.dir}/ehcachebtol.xml" tofile="${classes.dir}/ehcache.xml"/>
+    	<move file="${application}" tofile="${application.dontuse}"/>
+    	<move file="${application.btol}" tofile="${application}"/>
+    </target>
+    <target name="prewarbeta">
+	    <delete file="${classes.dir}/dbconnection.properties"/>    
+        <copy file="${src.dir}/dbconnectionbeta.properties" tofile="${classes.dir}/dbconnection.properties"/>        
+    	<delete file="${classes.dir}/ehcachebtol.xml"/>
+    	<copy file="${src.dir}/ehcachebtol.xml" tofile="${classes.dir}/ehcache.xml"/>
+    	<move file="${application}" tofile="${application.dontuse}"/>
+    	<move file="${application.beta}" tofile="${application}"/>
+    </target>
+    <target name="prewarplay">
+	    <delete file="${classes.dir}/dbconnection.properties"/>    
+        <copy file="${src.dir}/dbconnectionplay.properties" tofile="${classes.dir}/dbconnection.properties"/>        
+    	<delete file="${classes.dir}/ehcachebtol.xml"/>
+    	<copy file="${src.dir}/ehcachebtol.xml" tofile="${classes.dir}/ehcache.xml"/>
+    	<move file="${application}" tofile="${application.dontuse}"/>
+    	<move file="${application.beta}" tofile="${application}"/>
+    </target>        
+    <target name="prewarnewsystem">
+	    <delete file="${classes.dir}/dbconnection.properties"/>    
+        <copy file="${src.dir}/dbconnectionnewsystem.properties" tofile="${classes.dir}/dbconnection.properties"/>        
+    	<delete file="${classes.dir}/ehcache.xml"/>
+    	<copy file="${src.dir}/ehcache.xml" tofile="${classes.dir}/ehcache.xml"/>
+    </target>	
+	<target name="postwarbtol">
+		<move file="${application}" tofile="${application.btol}"/>
+		<move file="${application.dontuse}" tofile="${application}"/>
+	</target>
+	<target name="postwartolweb">
+		<move file="${application}" tofile="${application.live}"/>
+		<move file="${application.dontuse}" tofile="${application}"/>
+	</target>
+	<target name="postwarbeta">
+		<move file="${application}" tofile="${application.beta}"/>
+		<move file="${application.dontuse}" tofile="${application}"/>
+	</target>
+	<target name="postwarplay">
+		<move file="${application}" tofile="${application.beta}"/>
+		<move file="${application.dontuse}" tofile="${application}"/>
+	</target>		
+    <target depends="init,compile" name="war">
+        <delete file="${classes.dir}/applicationContext.xml"/>
+        <delete file="${classes.dir}/log4j.properties"/>    	
+        <copy file="${src.dir}/applicationContext.xml" todir="${classes.dir}"/>
+        <copy file="${src.dir}/log4j.properties" todir="${classes.dir}"/>
+        <!-- trying to get .betwixt files into the war 2008/04/18 -->
+        <copy todir="${classes.dir}/org/tolweb/tapestry/xml/taxaimport/beans">
+    		<fileset id="betwixts" dir="${src.dir}/org/tolweb/tapestry/xml/taxaimport/beans" excludes="**/*.java"/>
+  		</copy>
+  		<!-- below is an example of printing out the contents of a property set  
+  		<property name="f1.contents" refid="betwixts"/>
+		<echo>### betwixts.contents=${f1.contents}</echo>
+		 -->
+        <mkdir dir="${dist.dir}"/>
+       	<delete dir="${libs.dir}/bin"/>    	
+        <war destfile="${dist.dir}/${war}" webxml="${context.dir}/WEB-INF/web.xml">
+            <classes dir="${classes.dir}"/>
+            <fileset dir="${context.dir}">
+	            <exclude name="WEB-INF/web.xml"/>
+	            <exclude name="WEB-INF/classes/"/>
+            </fileset>
+            <lib dir="${libs.dir}" />
+        </war>
+    </target>
+	
+	<target name="copytestfiles">
+        <delete file="${classes.dir}/applicationContext.xml"/>
+        <delete file="${tests.dir}/applicationContext.xml"/>
+        <copy file="${src.dir}/dbconnectiontest.properties" tofile="dbconnection.properties"/>
+        <copy file="${src.dir}/applicationContext.xml" tofile="${tests.dir}/applicationContext.xml"/>
+        <copy file="${src.dir}/log4j.properties" todir="${tests.dir}"/>		
+    	<copy file="${src.dir}/ehcache.xml" todir="${classes.dir}"/>		
+	</target>
+	
+	<target depends="init,compile,copytestfiles" name="nondbtests">
+        <javac srcdir="${tests.dir}" includes="**/*Test.java" debug="true">
+            <classpath refid="test.classpath"/>
+        </javac>		
+        <junit printsummary="yes" haltonfailure="no">
+            <classpath refid="test.classpath"/>
+            <formatter type="xml"/>
+            <batchtest todir="${tests.dir}">
+                <fileset dir="${tests.dir}" includes="**/CacheAccessTest.class"/>
+                <fileset dir="${tests.dir}" includes="**/TextPreparerTest.class"/>            	
+            </batchtest>
+        </junit>
+        <junitreport todir="${tests.dir}">
+            <fileset dir="${tests.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${testreports.dir}"/>
+        </junitreport>		
+	</target>
+       
+    <target depends="clean,init,prewartolweb,war,postwartolweb" name="deploywar" description="Build war for deployment to the ToL website">
+    </target>
+    <target depends="init,clean,prewarbtol,war,postwarbtol" name="deploywarbtol" description="Build war for deployment to the BToL website">
+    </target>	
+    <target depends="init,prewarnewsystem,war" name="deploywarnewsystem" description="Build war for deployment to the newsystem.tolweb.org website">
+    </target>	
+    <target depends="init,clean,prewarbeta,war,postwarbeta" name="deploywarbeta" description="Build war for deployment to the beta website">
+    </target>
+    <target depends="init,clean,prewarplay,war,postwarplay" name="deploywarplay" description="Build war for deployment to the play/test website">
+    </target>        
+    <target depends="init,prewarlocal, war" name="deploywarlocal">
+        <delete file="${webappinstall.dir}/webapps/${war}"/>
+        <copy file="${dist.dir}/${war}" todir="${webappinstall.dir}/webapps"/>
+    </target>
+
+    <target depends="init,compile" name="jar" >
+        <!-- To make a standalone app, insert into <jar>: -->
+        <!-- <manifest><attribute name="Main-Class" value="com.foo.Main"/></manifest> -->
+        <jar basedir="${classes.dir}" compress="true" jarfile="${jar}"/>
+    </target>
+
+    <target depends="init,jar" description="Build everything." name="all"/>
+
+    <target depends="init" description="Javadoc for my API." name="javadoc">
+        <mkdir dir="${javadoc.dir}"/>
+        <javadoc destdir="${javadoc.dir}" packagenames="*">
+            <sourcepath>
+                <pathelement location="${src.dir}"/>
+            </sourcepath>
+        </javadoc>
+    </target>
+
+    <target depends="init" description="Clean all build products." name="clean">
+        <delete dir="${classes.dir}"/>
+        <delete dir="${javadoc.dir}"/>
+        <delete dir="${dist.dir}"/>
+        <delete file="${jar}"/>
+        <delete>
+            <fileset dir="${src.dir}" includes="**/*.class"/>
+        </delete>        
+        <delete>
+            <fileset dir="${tests.dir}" includes="**/*.class"/>
+            <fileset dir="${tests.dir}" includes="**/*.html"/>            
+            <fileset dir="${tests.dir}" includes="**/*.xml"/>            
+        </delete>
+        <delete dir="${tests.dir}/reports"/>
+    </target>
+    
+    <target name="generate" depends="init,compile" description="Generate hibernate mapping files">
+        <taskdef name="hibernatedoclet"
+            classname="xdoclet.modules.hibernate.HibernateDocletTask"/>
+        <hibernatedoclet
+            destdir="${classes.dir}"
+            excludedtags="@version,@author,@todo"
+            mergedir="${classes.dir}"
+            verbose="true">
+            <fileset dir="${src.dir}">
+                <include name="**/*.java"/>
+            </fileset>            
+            <fileset dir="${treegrow.dir}/src">
+            	<include name="**/*.java"/>
+            </fileset>            
+            <hibernate version="2.0"/>
+        </hibernatedoclet>
+    	<!-- Manually copy the PageAncestors since XDoclet can't seem to generate it -->
+    	<copy file="${src.dir}/org/tolweb/hibernate/PageAncestor.hbm.xml" todir="${classes.dir}/org/tolweb/hibernate"/>
+    </target>    
+</project>

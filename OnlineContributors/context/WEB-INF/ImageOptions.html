@@ -1,0 +1,34 @@
+<html jwcid="@NewBarebonesFormWrapper" title="ognl: 'ToL Image ' + image.id + ': Formatting Options'" bodyId="imgcodeoptions">
+	<a href="javascript:window.close();" class="closewindow">Close Window</a>
+    <span jwcid="@If" condition="ognl:!isResize" element="ognl:null">
+	<a href="javascript:history.go(-1)" class="closewindow">Back to Image Search Results</a>
+    </span>
+	<h3>ToL Image <span jwcid="@Insert" value="ognl:image.id"/>: Size Options</h3>
+    <img jwcid="@ImageThumbnail" image="ognl:image" classString="floatright"/>
+    <p jwcid="@If" condition="ognl:!isResize" class="large">
+		Select a <strong>size* </strong>for the image you will insert into your page. For more information about size <a href="#size">see below</a>.
+    </p>
+    <p jwcid="@Else" class="large">
+		Choose a new <strong>size*</strong> (<a href="#size">see below</a>) for the selected image. This window will stay open, so you can try out different sizes.  Click on <a href="javascript:window.close();" class="closewindow">Close Window</a> when you are done.</p>  
+		<p class="small">Note that you may encounter difficulties when trying to resize very large images in Internet Explorer.  If you cannot get the resizing to work, you need to delete the images and insert it again at a different size.  Follow the <em>options</em> link in the image search results to do this.</p>
+<h5>Select a Size*</h5>
+	<table class="imgcodes">
+	    <tr>         
+            <th>Size<a class="noline" href="#size">*</a></th>
+	        <th>ToL Image Code</th>	
+	    </tr>
+        <span jwcid="@Foreach" source="ognl:versions" value="ognl:currentVersion">
+            <tr jwcid="@ImageDescriptionRow" description="Centered image" classString="imgcenter" height="ognl:currentVersion.height" imgId="ognl:image.id"/>
+		    <tr class="spacer">         <td colspan="3">&nbsp;</td>
+		    </tr>
+        </span>
+            <tr jwcid="@ImageDescriptionRow" description="Centered image" classString="center" imgId="ognl:image.id"/>            
+	</table>
+	<a name="size"></a>
+    <ul class="hang">
+	  <li class="small"><strong>*Size:</strong> this refers to the height of the image in pixels. The maximum size in which you can display an image is constrained by the size of the master image or by the maximum size allowed by the copyright owner. In order to fit on most people's screens, <strong>images should not be wider that 800 pixels or higher than 600 pixels. Most images should actually be quite a bit smaller than that, </strong>because you probably want to show your image along with some text or other images.</li>
+	  <li class="small"><strong>*Master:</strong> if the Master is selected, the image will displayed at the size of the master image or the maximum size allowed by the copyright owner.</li>
+	</ul>
+	<a href="javascript:window.close();" class="closewindow">Close Window</a>  
+	<script jwcid="@Script" script="Tinymcepopup.script" opener="window.opener"/>
+</html>

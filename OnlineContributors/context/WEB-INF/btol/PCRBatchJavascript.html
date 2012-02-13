@@ -1,0 +1,12 @@
+<span jwcid="@Insert" value="prop:forwardPrimerJavascriptName"/>='<table><tr><th>Sequence</th><td><span jwcid="@Insert" value="ognl:batch.forwardPrimer.sequence"/></td></tr></table><br/><a jwcid="@ExternalLink" page="btol/ViewFullPrimerInfo" parameters="ognl:{batch.forwardPrimer.Id}">View full primer info</a>';
+<span jwcid="@Insert" value="prop:reversePrimerJavascriptName"/>='<table><tr><th>Sequence</th><td><span jwcid="@Insert" value="ognl:batch.reversePrimer.sequence"/></td></tr></table><br/><a jwcid="@ExternalLink" page="btol/ViewFullPrimerInfo" parameters="ognl:{batch.reversePrimer.Id}">View full primer info</a>';
+<span jwcid="@Insert" value="prop:protocolJavascriptName"/>='<span jwcid="@Insert" value="prop:protocolHtml" raw="ognl:true"/><br/><a jwcid="@ExternalLink" page="btol/ViewFullPCRProtocolInfo" parameters="ognl:{batch.protocol.id}">View full protocol info</a>';
+<span jwcid="@For" source="ognl:batch.reactions" value="ognl:currentReaction">
+    <span jwcid="@If" condition="ognl:currentReaction.hasNotes">
+<span jwcid="@Insert" value="prop:reactionNotesJavascriptName"/>='<table><tr><th>Notes</th><td><span jwcid="@Insert" value="ognl:currentReaction.notes"/></td></tr></table>';
+    </span>
+</span>
+<span jwcid="@For" source="prop:sequences" value="prop:currentSequence">
+<span jwcid="@Insert" value="prop:currentSequenceJavascriptName"/>='<table><tr><th>Fasta</th><td><span jwcid="@Insert" value="prop:fastaString" raw="ognl:true"/></td></tr></table>';
+</span>
+<script jwcid="@Script" script="../GlossaryTerms.script"/>

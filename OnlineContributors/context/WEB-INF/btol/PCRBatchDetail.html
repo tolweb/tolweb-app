@@ -1,0 +1,45 @@
+    <span jwcid="@Insert" value="ognl:batch.creationDateString"/> 
+	<span style="font-weight: bold"><span jwcid="@Insert" value="prop:geneName"/></span>
+    | <a jwcid="@ExternalLink" page="btol/ViewFullPrimerInfo" parameters="ognl:{batch.forwardPrimer.id}" onMouseOver="prop:forwardPrimerMouseOverString" onMouseOut="prop:mouseOutString"><span jwcid="@Insert" value="ognl:batch.forwardPrimer.name"/></a> 
+	<a jwcid="@ExternalLink" page="btol/ViewFullPrimerInfo" parameters="ognl:{batch.reversePrimer.id}" onMouseOver="prop:reversePrimerMouseOverString" onMouseOut="prop:mouseOutString"><span jwcid="@Insert" value="ognl:batch.reversePrimer.name"/></a> 
+	| <a jwcid="@ExternalLink" page="btol/ViewFullPCRProtocolInfo" parameters="ognl:{batch.protocol.id}" onMouseOver="prop:protocolMouseOverString" onMouseOut="prop:mouseOutString"><span jwcid="@Insert" value="ognl:batch.protocol.name"/></a> (<span jwcid="@Insert" value="ognl:batch.reactionVolume"/> ul)    
+	<span jwcid="@For" source="ognl:batch.reactions" value="prop:currentReaction">
+        <br/>        
+        <a jwcid="@GenericLink" href="#" disabled="ognl:!currentReaction.hasNotes" onMouseOver="prop:reactionNotesMouseOverString" onMouseOut="prop:mouseOutString"><span jwcid="@Insert" value="prop:currentReactionBtolCode"/></a>
+
+        <span jwcid="@If" condition="ognl:currentReaction.extraction">
+	        <span jwcid="@Insert" value="ognl:currentReaction.extraction.sequenceCode"/>
+        </span>
+        <span jwcid="@Else">
+            <span jwcid="@If" condition="ognl:currentReaction.isNegativeControl">
+            	Negative Control
+            </span>
+            <span jwcid="@Else">
+				This reaction has no extraction, it's id is <span jwcid="@Insert" value="ognl:currentReaction.id"/>                
+            </span>
+        </span>
+        <span jwcid="@Insert" value="ognl:currentReaction.sequencingDate"/>
+        <span jwcid="@Insert" value="ognl:currentReaction.sequencingResults"/>
+        <span jwcid="@For" source="prop:currentReactionsSequences" value="prop:currentSequence" index="prop:index">
+        	<a jwcid="@GenericLink" href="#" onMouseOver="prop:currentSequenceMouseOverString" onMouseOut="prop:mouseOutString">Sequence <span jwcid="@Insert" value="prop:index"/></a> | 
+    	</span>
+    </span>
+    <br/>
+    <span jwcid="@If" condition="ognl:showAddImageLink && canUploadAnother">
+        <a jwcid="@ExternalLink" page="btol/AddImagesToPCRBatches" parameters="ognl:batch.id">Add or replace images for this batch</a><br/><br/>
+    </span>
+    <span jwcid="@If" condition="prop:hasImages">
+    <img jwcid="@btol/GelImage" batch="prop:batch"/>
+    <!-- <img jwcid="@btol/GelImage" batch="prop:batch" useSecondImage="ognl:true"/> -->
+	<hr style="margin-bottom: 20px; margin-top: 20px;"/>
+    </span>
+    <span jwcid="@If" condition="prop:canUploadImage">
+		<span jwcid="@If" condition="prop:canUploadAnother">            
+        Image: <input jwcid="@Upload" file="prop:uploadFile"/>
+        <input jwcid="@InvokeListener" listener="listener:uploadImage"/>
+        <br/><br/>
+        </span>
+    </span>
+    <script type="text/javascript">
+    <span jwcid="pcrJavascript@btol/PCRBatchJavascript" batch="prop:batch" sequences="prop:allSequences"/>
+    </script>

@@ -1,0 +1,10 @@
+ The image was checked out  
+ <ul> 
+    <span jwcid="@If" condition="ognl:image.checkedOutContributor">
+	 	<li>by <span jwcid="@Insert" value="ognl:image.checkedOutContributor.displayName"/> (<span jwcid="@Insert" value="ognl:image.checkedOutContributor.email"/>)</li> 
+    </span>
+    <span jwcid="@If" condition="ognl:image.checkoutDate">
+	 	<li>at <span jwcid="@Insert" value="ognl:image.checkoutDate"/></li> 
+    </span>
+</ul> 
+You won't be able to edit the associated data until it has been checked back in.

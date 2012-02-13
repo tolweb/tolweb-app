@@ -1,0 +1,39 @@
+<html jwcid="@NewBarebonesFormWrapper" title="Add Document" cssName="trhsform.css" additionalDelegate="ognl:delegate">
+<span jwcid="@If" condition="ognl:newObjectUploaded">
+	<div jwcid="@RedirectDiv" url="ognl:editObjectUrl"/>
+</span>
+<h2>Add A Document </h2>
+<ul class="nodisc">
+  <li><span><a href="#find">Find a document in the ToL database</a></span></li>
+  <li><a href="#upload">Add a new document to the ToL database</a></li>
+</ul>
+<ul>
+	<li>Use the fields below to find or upload the document you want.</li>
+	<li> Then insert the document into your page by typing TOLMEDIA and the ID# of the document. </li>
+</ul>
+<h4 class="topborder">Find Documents</h4>
+<div class="box1">
+    <div class="indentleft">   <p class="small">Documents displayed on ToL pages are retrieved from the ToL media database. Note that not all ToL documents are available for use on all ToL pages.  Your search will retrieve only documents  that have been released by their copyright owners for your intended use.	    </p>
+<form jwcid="@ImageSearch" linkString="select" instructions="Click the 'select' link to select the document"
+    buttonText="Find Documents" callbackType="ognl:callbackType"
+	searchPageName="ognl:pageName" searchOnlyContributorsImages="ognl:false" 
+	imageUse="ognl:@org.tolweb.treegrow.main.NodeImage@RESTRICTED_USE"
+	mediaType="ognl:@org.tolweb.tapestry.ImageSearch@DOCUMENT" />
+	</div>
+</div>
+	<a name="upload"></a> <h4 class="topborder"><strong>Add a New Document  to the ToL Database</strong></h4>
+
+	<div class="box1"><div class="indentleft">
+	    <p class="small">You can also add a new document to the ToL database. Once the 
+	        document is uploaded, come back to this page, and find your document using the 
+	        file name or document  ID#. </p>
+		<ol>
+		  <li>Click browse to find and select a  file to upload from your computer.</li>
+	      <li> Then click on the Upload New Document 
+		        button.</li>
+	  </ol>
+        <form jwcid="@UploadNewImageForm" isTreehouses="ognl:true" 
+        mediaType="ognl:@org.tolweb.tapestry.ImageSearch@DOCUMENT"/>
+	</div>
+</div>
+</html>

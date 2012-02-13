@@ -1,0 +1,18 @@
+<html jwcid="@Wrapper" title="ognl:pageTitle">
+<h1 class="superheader"><a jwcid="@ExternalLink" page="btol/ProjectHome" parameters="ognl:{project.id}"><span jwcid="@Insert" value="ognl:project.name"/> Databases Home</a></h1>
+<h2 class="clear"><span jwcid="@Insert" value="ognl:pageTitle"/></h2>
+<div id="explanation">
+    <span jwcid="@If" condition="ognl:isDNA">
+	<p>Below is an approximate list of the taxa needed for the molecular genetic portion of the BToL project. We would very much appreciate any specimens you might be able to provide.</p> 
+    <span jwcid="@btol/DNASpecimenInstructions"/>
+    </span>
+</div>
+<H3>List of taxa needed</H3> 
+<p class="pre">
+*** = High priority
+*   = Medium Priority
+
+        
+<span jwcid="@Insert" value="ognl:displayString" raw="ognl:true"/>
+</p>
+</html>

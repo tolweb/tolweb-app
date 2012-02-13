@@ -1,0 +1,7 @@
+<ul class="flushleft nodisc">
+    <span jwcid="@For" source="prop:genes" value="prop:currentGene" element="li" volatile="ognl:true">
+    <span jwcid="@InvokeListener" listener="listener:setCurrentGeneStatus"/>
+    <input jwcid="@Checkbox" value="prop:showCurrentGene"/><span jwcid="@Insert" value="prop:currentGene.name"/> 
+    <span jwcid="@InvokeListener" listener="listener:addOrRemoveCurrentGene"/>
+    </span>
+</ul>

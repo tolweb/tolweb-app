@@ -1,0 +1,10 @@
+<ul class="flushleft nodisc">
+    <span jwcid="@For" source="prop:geneFragments" value="prop:currentGeneFragment" element="li" volatile="ognl:true">
+    <span jwcid="@InvokeListener" listener="listener:setCurrentGeneFragmentStatus"/>
+    <input jwcid="@Checkbox" value="prop:showCurrentGeneFragment"/><span jwcid="@Insert" value="prop:currentGeneFragment.name"/> 
+    <span jwcid="@InvokeListener" listener="listener:addOrRemoveCurrentGeneFragment"/>
+    </span>
+
+</ul>
+<input jwcid="@Submit" value="Select All Important Gene Fragments" listener="listener:selectImportantGeneFragments"/>&nbsp;
+<input jwcid="@Submit" value="Clear Selected Gene Fragments" listener="listener:clearSelectedGeneFragments"/>

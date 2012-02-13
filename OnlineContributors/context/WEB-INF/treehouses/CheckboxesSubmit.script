@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE script
+	PUBLIC "-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd"
+>
+<!--
+Adds calls to tinyMCE to save things
+
+	Input symbols:
+	field, form, validator:  As normal for a validation script.
+-->
+<script>
+	<input-symbol key="form" class="org.apache.tapestry.IForm" required="yes" />
+	<body>
+	<![CDATA[			
+			function checkboxSubmit(checkboxId) {
+				for (var i=1; i <=5; i++) {
+					checkIfNotSame(checkboxId, 'checkbox' + i);
+				}
+				var form = document.getElementById('${form.name}');				
+				form.submit();				
+			}
+			
+			function checkIfNotSame(checkboxId, refId) {
+				if (checkboxId != refId) {
+					var checkbox = document.getElementById(refId);
+					checkbox.checked = false;
+				}
+			}
+			
+			function showNoPermissionsMessage() {
+				alert("You may not use an image if you have not received permission to use it.");
+				var checkbox = document.getElementById('checkbox4');
+				checkbox.checked = false;
+			}
+	]]>   		
+	</body>
+</script>

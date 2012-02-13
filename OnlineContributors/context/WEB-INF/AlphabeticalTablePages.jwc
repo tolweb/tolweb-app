@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright 2004 The Apache Software Foundation
+  
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<!--  $Id: AlphabeticalTablePages.jwc 3283 2006-08-03 22:13:47Z dmandel $ -->
+<!DOCTYPE component-specification PUBLIC 
+  "-//Apache Software Foundation//Tapestry Specification 3.0//EN" 
+  "http://jakarta.apache.org/tapestry/dtd/Tapestry_3_0.dtd">
+	
+<component-specification class="org.tolweb.tapestry.AlphabeticalTablePages" 
+	allow-body="no" allow-informal-parameters="yes">
+	
+	<description>
+        A low level Table component that renders the pages in the table. 
+        This component must be wrapped by TableView. 
+	</description>
+
+	<component id="informal" type="Any" inherit-informal-parameters="yes"/>
+  
+	<component id="condCurrent" type="If">
+		<binding name="condition" expression="condCurrent"/>
+	</component>
+  
+	<component id="condOther" type="Else">
+	</component>
+  
+	<component id="iterPage" type="For">
+		<binding name="source" expression="letterList"/>
+		<binding name="value" expression="currentLetter"/>
+        <binding name="index" expression="currentLetterIndex"/>
+	</component>
+
+	<component id="insertCurrentPage" type="Insert">
+	    <binding name="value" expression="currentLetter"/>
+	</component>
+
+	<component id="insertOtherPage" type="Insert">
+	    <binding name="value" expression="currentLetter"/>
+	</component>
+
+	<component id="linkPage" type="DirectLink">
+	    <binding name="listener" expression="listeners.changePage"/>
+	    <binding name="parameters" expression="displayPageContext"/>
+	</component>
+
+	<component id="linkFirst" type="DirectLink">
+	    <binding name="listener" expression="listeners.changePage"/>
+	    <binding name="parameters" expression="firstPageContext"/>
+	    <binding name="disabled" expression="!condBack"/>
+	</component>
+
+	<component id="linkBack" type="DirectLink">
+	    <binding name="listener" expression="listeners.changePage"/>
+	    <binding name="parameters" expression="backPageContext"/>
+	    <binding name="disabled" expression="!condBack"/>
+	</component>
+
+	<component id="linkFwd" type="DirectLink">
+	    <binding name="listener" expression="listeners.changePage"/>
+	    <binding name="parameters" expression="fwdPageContext"/>
+	    <binding name="disabled" expression="!condFwd"/>
+	</component>
+	
+	<component id="linkLast" type="DirectLink">
+	    <binding name="listener" expression="listeners.changePage"/>
+	    <binding name="parameters" expression="lastPageContext"/>
+	    <binding name="disabled" expression="!condFwd"/>
+	</component>
+	<property-specification name="currentLetter" type="java.lang.String"/>
+    <property-specification name="currentLetterIndex" type="int"/>
+</component-specification>

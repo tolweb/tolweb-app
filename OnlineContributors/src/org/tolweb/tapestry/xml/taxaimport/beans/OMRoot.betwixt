@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<info primitiveTypes="element">
+  <element name="tree-of-life-web">
+    <attribute name="id" property="id" />
+	<attribute name="basal-node-id" property="basalNodeId" />
+	<attribute name="xmlns" property="xmlNamespace" />    
+    <addDefaults />
+  </element>
+</info>

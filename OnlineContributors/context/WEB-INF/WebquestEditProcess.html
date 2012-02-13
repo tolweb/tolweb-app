@@ -1,0 +1,120 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:false" title="Step #3 Edit Webquest Process" additionalDelegate="ognl:delegate">
+	<div id="trhs2editpgtop">
+		<a name="trhs2text"></a>
+		<h3 class="sectionheaderblub">Step 3. Webquest Process</h3>    		
+        <div class="boxtocpages">
+            <div jwcid="@TreehouseImportantDiv">
+                <li><a href="#wqprocessintro">Process Introduction</a></li>
+                <li><a href="#wqstepsresources">Add Process Steps and Resource Links </a></li>                
+	        </div>
+            <div jwcid="@WebquestHelpDiv">
+      			<li><a jwcid="@HelpLink" noDiv="ognl:true" pageName="WebquestHelpMessagesPage" helpName="WebQuest Process">WebQuest Process</a></li>
+            </div>
+			<p> <img src="/tree/learn/lisa.images/trhouseimage/webquestprocess.jpg" width="175" height="136" style="margin-left: 80px;"></p>
+			<div jwcid="@TreehouseWarningDiv"/>	   
+            <div class="spacer">&nbsp;</div>
+        </div>
+        <div class="spacer">&nbsp;</div>
+	</div> 
+    <h3 class="sectionheaderblubtop">WebQuest Process </h3><a name="wqprocess"></a>
+    <div class="boxtoc" id="wqprocessintro"><a name="wqprocessintro"></a>
+	<h4>Process Introduction</h4>
+    <a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Process Introduction"/>
+	<p class="instructions">
+		Add an introduction to the process section that provides an overview of the steps the learners will undertake in order to complete the WebQuest process.
+	</p>
+    <span jwcid="@HTMLEditorBox"/>
+    <p>
+		<textarea jwcid="@PreparedTextArea" valuePath="processIntroduction" cols="60" rows="20" useEditor="prop:useHTMLEditor"></textarea>
+	</p>
+
+    </div>
+	<div class="spacer">&nbsp;</div>    
+	<div class="boxtoc" id="wqstepsresources"> <a name="wqstepsresources"></a>
+    <h3>Add Process Steps and Resource Links</h3>
+    <a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="WebQuest Process Steps Resource Links"/>
+	<div class="instructionslrg">
+        <p>Add instructions and resources for your first WebQuest process step in the fields   below.				  
+		<label>  When you need them, add fields for 
+            <input jwcid="@TextField" displayName="Number of additional process steps" 
+                       translator="translator:number" validators="validators:min=1,max=10"value="ognl:numNewFields" size="5"/>
+		more process steps
+            <input jwcid="@Submit" name="Submit" value="Add Fields" class="padbuttonsm"/></label>
+		</p>
+	</div>
+	<span jwcid="@PortfolioSectionList" sectionListHeader="Process Steps"/>
+    <span jwcid="@For" source="ognl:portfolio.sections" value="ognl:currentSection" 
+        index="ognl:sectionIndex" element="ognl:null" convertor="ognl:sectionConvertor">
+		<div class="linksection">            
+            <div class="sectionheader">	
+				<span jwcid="@If" condition="ognl:portfolio.sections.size > 1" element="ognl:null">                    
+					<div jwcid="@PortfolioMoveSection"/>
+				</span>                    
+                <h4>
+                    <a jwcid="@Any" element="a" name="ognl:getSectionAnchorName(sectionIndex)" id="ognl:getSectionAnchorName(sectionIndex)"></a>
+                    Process Step <span jwcid="@Insert" value="ognl:sectionIndex + 1"/> Title
+                </h4>                    
+                <div class="indentleft">
+                    <p class="small">Type a title for this process step below.</p>
+					<p><input jwcid="@TextField" value="ognl:currentSection.title" size="50"/></p>
+                </div>
+				<h5>Process Step Instructions</h5>
+				<div class="indentleft">
+					<p class="small">Add general instructions for this process step.</p>
+					<textarea jwcid="@TextArea" value="ognl:currentSection.instructions" cols="50" rows="5"/>
+				</div>
+			</div>
+			<div class="spacer">&nbsp;</div>
+            <a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="WebQuest Resource Links and Instructions"/>
+			<h5>Resource Links and Instructions </h5>     		          
+            <p class="instructions">
+		         <strong>Add links to ToL pages or to WWW pages outside of the ToL web site</strong>. Every time you add a link, an instructions box will appear where 
+                   you can write instructions specific to that resource link. You can also  choose to add a thumbnail image to accompany the link. To change the order of the resource 
+                 links use the up and down arrow buttons on the left.</p>
+			<div class="spacer">&nbsp;</div>
+        <span jwcid="@For" source="ognl:currentSection.pages" value="ognl:currentPage" 
+            index="ognl:pageIndex" element="ognl:null" convertor="ognl:pageConvertor">
+            <div class="indentleft">
+            <div jwcid="@Any" class="linkresource" element="div" id="ognl:getPageAnchorName(sectionIndex, pageIndex)">
+            <a jwcid="@Any" element="a" name="ognl:getPageAnchorName(sectionIndex, pageIndex)"></a>
+			<div jwcid="@PortfolioMovePage"/>
+                 <img jwcid="@PortfolioPageImage" isEdit="ognl:true" portfolioPage="ognl:currentPage">
+				<a jwcid="@LinkSubmit" selected="ognl:pageToAddImageTo" tag="ognl:currentPage"><br />change image</a><br/>
+                <a jwcid="@LinkSubmit" selected="ognl:pageToDeleteImageFrom" tag="ognl:currentPage">delete</a>
+			</img>
+            <span jwcid="@If" condition="ognl:!currentPage.isExternal">
+	  		<dl>
+			     <dt><span jwcid="@Insert" value="ognl:currentPage.pageTitle"/></dt>
+			     <dd><span jwcid="@Insert" value="ognl:currentPage.pageSummaryString"/></dd>
+				 <dd><span jwcid="@Insert" value="ognl:currentURL"/></dd>
+      		</dl>
+            </span>
+            <span jwcid="@Else">
+				<dl class="externallink">
+					<dt>Name of Site/Page
+						<input jwcid="@TextField" value="ognl:currentPage.externalPageName" size="40" class="block"/>
+					</dt>
+	                 <dd>Page URL
+	                    <input jwcid="@TextField" value="ognl:currentPage.externalPageUrl" size="40" class="block"/>
+	                 </dd>
+				</dl>                
+            </span>
+	  <div class="indentleft"> 
+			<label><strong>Instructions</strong><br>
+		 	<span class="small">To format a list for this section use a hard return between items</span>.
+		  	<p><textarea name="textarea" jwcid="@TextArea" value="ognl:currentPage.comments" cols="50" rows="5"/></p>
+          	</label>
+		</div>
+                               		  </div> 
+            </div>      
+        </span>
+        <div class="indentleft">
+            <input name="Add link" jwcid="@Submit" value="Add ToL page link" class="padbuttonfleftsm" selected="ognl:sectionToAddPageTo" tag="ognl:currentSection"/>
+			<input name="Add link" jwcid="@Submit" value="Add link to external WWW page" class="padbuttonfleftsm" selected="ognl:sectionToAddExternalPageTo" tag="ognl:currentSection"/>
+        </div>
+        <div class="spacer">&nbsp;</div>
+	</div>
+	<div class="spacer">&nbsp;</div>            
+    </span>
+    </div>
+</html>

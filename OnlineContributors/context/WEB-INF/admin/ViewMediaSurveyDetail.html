@@ -1,0 +1,50 @@
+<span jwcid="@Wrapper" title="ognl:title">
+<br/>
+
+<h2 class="clear"><span jwcid="@Insert" value="ognl:title"/></h2>
+<table>
+   <tr>
+       <td>Id:</td>
+       <td><span jwcid="@Insert" value="ognl:detail.id"/></td>
+   </tr>
+   <tr>
+       <td>Media:</td>
+       <td><a jwcid="@ViewImageLink" image="ognl:image" 
+                disabled="ognl:false" title=""><span jwcid="@Insert" value="ognl:detail.mediaId"/></a></td>
+   </tr>
+   <tr>
+       <td>Media Use:</td>
+       <td><span jwcid="@Insert" value="ognl:detail.mediaUsageSpecificString"/></td>
+   </tr>
+   <tr>
+       <td>Media Use Comments:</td>
+       <td><span jwcid="@Insert" value="ognl:detail.mediaComments"/></td>
+   </tr>
+   <tr>
+       <td>Students:</td>
+       <td><span jwcid="@Insert" value="ognl:detail.studentCount"/></td>
+   </tr>
+   <tr>
+       <td>Education Level:</td>
+       <td><span jwcid="@Insert" value="ognl:detail.educationLevelString"/></td>
+   </tr>
+   <tr>
+       <td>Education Comments:</td>
+       <td><span jwcid="@Insert" value="ognl:detail.educationComments"/></td>
+   </tr>   
+   <tr>
+       <td>Age:</td>
+       <td><span jwcid="@Insert" value="ognl:detail.respondentAgeString"/></td>
+   </tr>   
+   <tr>
+       <td>Location:</td>
+       <td><span jwcid="@Insert" value="ognl:detail.respondentLocation"/></td>
+   </tr>   
+   <tr>
+       <td>Suggestions:</td>
+       <td><span jwcid="@Insert" value="ognl:detail.suggestions"/></td>
+   </tr>   
+
+   <a jwcid="@PageLink" page="admin/ViewAllMediaSurveys">Back</a>
+</table>
+</span>

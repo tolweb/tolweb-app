@@ -1,0 +1,10 @@
+<html jwcid="@Wrapper" title="Close Classroom Project">
+	<h2 class="clear">Really Close Project <span jwcid="@Insert" value="ognl:project.name"/>?</h2>
+	<p class="error">Closing this project will not allow students to log in to the system or edit their 
+        treehouses or media any longer.  You will still be able to edit their work.</p>
+	<form jwcid="@Form">
+        <input jwcid="@Hidden" value="ognl:projectId"/>
+        <input type="Submit" jwcid="@Submit" listener="ognl:listeners.closeProject" value="Yes, Close the Project"/>
+        <input type="Submit" jwcid="@Submit" listener="ognl:listeners.cancel" value="No, I Don't Want to Continue"/>
+    </form>
+</html>

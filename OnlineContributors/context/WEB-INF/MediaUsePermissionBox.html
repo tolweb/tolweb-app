@@ -1,0 +1,14 @@
+<div id="mediause" class="whitebox"><a name="mediause"></a>
+    <a jwcid="@HelpLink" pageName="ognl:page.helpPageName" helpName="Use Permitted by Copyright Owner" />
+	      <h4 class="long">Use Permitted by Copyright Owner</h4>
+           <p class="instructions">Click on the items in the list below to get 
+        more information about each option.</p>
+           <span jwcid="usePermissionRadios@UsePermissionRadios" permissableObject="ognl:media" isImage="ognl:true"
+           	use1Block="ognl:block1Param != null ? block1Param : usePermissionRadios.use1BlockDefault" 
+            use2Block="ognl:block2Param != null ? block2Param : usePermissionRadios.use2BlockDefault" 
+            use3Block="ognl:block3Param != null ? block3Param : usePermissionRadios.use3BlockDefault" 
+            use4Block="ognl:block4Param != null ? block4Param : usePermissionRadios.use4BlockDefault" 
+	        use5Block="ognl:block5Param != null ? block5Param : usePermissionRadios.use5BlockDefault"/>
+           <label class="rememberdefault"><input jwcid="@Checkbox" value="ognl:page.rememberSelected"/>
+            Remember this option for my future media contributions</label>
+           </div>

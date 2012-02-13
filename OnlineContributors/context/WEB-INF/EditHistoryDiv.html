@@ -1,0 +1,11 @@
+<div id="articlesummary" class="whitebox">
+    <ul class="box1">
+        <li><span jwcid="@Insert" value="ognl:previewUrl"/></li>
+        <li jwcid="@If" condition="ognl:editHistory.createdContributorId != null">
+			Created by <span jwcid="@Insert" value="ognl:createdContributorName"/>  on  <span jwcid="@Insert" value="ognl:createdDate"/>
+        </li>
+		<li jwcid="@If" condition="ognl:editHistory.lastEditedContributorId != null">
+            Last edited by <span jwcid="@Insert" value="ognl:lastEditedContributorName"/>  on  <span jwcid="@Insert" value="ognl:lastEditedDate"/>
+		</li>
+    </ul>
+</div>

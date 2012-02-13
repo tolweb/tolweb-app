@@ -1,0 +1,14 @@
+<span jwcid="@If" condition="ognl:useCache && output != null">
+	<span jwcid="@Insert" value="ognl:output" raw="ognl:true"/>
+</span>
+<span jwcid="@Else">
+	<span jwcid="@Foreach" source="ognl:tolPage.textSections" value="ognl:currentTextSection">
+        <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(currentTextSection.text)">
+		    <div jwcid="@Any" element="div" name="ognl:currentTextSectionHeading">
+				<h3><a jwcid="@EditBranchLeafPageLink" editPageName="EditTextSection" textSectionId="ognl:currentTextSection.textSectionId">edit this section</a><a jwcid="@Any" element="a" name="ognl:currentTextSectionHeading"></a> <span jwcid="@Insert" value="ognl:currentTextSection.heading" raw="ognl:true"/></h3>
+		        <span jwcid="@Insert" value="ognl:currentTextSectionText" raw="ognl:true"/>
+			</div>
+        </span>
+	</span>
+</span>
+<script jwcid="@Script" script="GlossaryTerms.script" vars="ognl:totalJavascriptString"/>

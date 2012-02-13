@@ -1,0 +1,34 @@
+<div class="imgdoc">
+	<span jwcid="@If" condition="ognl:showThumbnail" volatile="ognl:true">
+        <div class="thumbn">
+			<img jwcid="@ImageThumbnail" image="ognl:image" isPreview="ognl:isPreview" classString="ognl:isTitleIllustrations ? 'max200' : 'max300'"/>
+        </div>
+    </span>
+	<table class="imgdata">
+        <span jwcid="@If" condition="ognl:isEditSearchResults" volatile="ognl:true">
+			<tr class="imgcode">
+                <th></th>
+                <td jwcid="@If" condition="ognl:isWysiwygEditSearch" volatile="ognl:true">
+                	<a jwcid="@Any" element="a" href="ognl:insertImageString" class="editlink">select</a>
+                </td>
+				<td jwcid="@Else" class="code">
+					<span jwcid="@Insert" value="ognl:imageInsertCode" raw="ognl:true"/>
+                </td>
+                <td jwcid="@If" condition="ognl:showOptionsLink" volatile="ognl:true">
+                    <a jwcid="@ExternalLink" page="ImageOptions" parameters="ognl:{image.id, isWysiwygEditSearch}" class="editlink">size options</a>
+                </td>
+			</tr>
+        </span>
+	    <tr jwcid="@For" source="ognl:orderedList" element="tr" value="ognl:currentKey" volatile="ognl:true">
+	         <th>
+	             <span jwcid="@Insert" value="ognl:currentKey" raw="ognl:true"/>
+	         </th>
+	         <td>
+	             <span jwcid="@Insert" value="ognl:keysToValues.get(currentKey)" raw="true"/>
+                 <span jwcid="@If" condition="ognl:currentKey.equals(@org.tolweb.tapestry.ImageDataBlock@COPYRIGHT)" volatile="ognl:true">
+                     <a jwcid="@ContributorProfileLink" contributor="ognl:image.copyrightOwnerContributor"/>
+                 </span>
+	         </td>
+	     </tr>
+	</table>
+</div>

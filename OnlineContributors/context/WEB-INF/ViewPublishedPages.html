@@ -1,0 +1,42 @@
+<html jwcid="@Wrapper" title="ognl:'Tree of Life Pages by ' + contributor.displayName">
+    <p class="right">
+		<a jwcid="@ExternalLink" page="ContributorDetailPage" parameters="ognl:{contributor.id}">Back to Contributor Profile</a>            
+	</p>    
+	<h2>Tree of Life Pages by <span jwcid="@Insert" value="ognl:contributor.displayName"/></h2>
+		<span jwcid="@If" condition="ognl:hasBranchOrLeaf">
+		<h3>Branch and Leaf Pages</h3>
+        <ul class="nodisc">
+		<span jwcid="@Foreach" source="ognl:branchLeafPageNames" value="ognl:currentBranchLeafName">
+			<li>
+                <a jwcid="@TolPageLink" tolPage="ognl:currentBranchLeafName">
+                    <span jwcid="@Insert" value="ognl:currentBranchLeafName"/>
+                </a>
+            </li>
+		</span>
+        </ul>
+	</span>
+	<span jwcid="@If" condition="ognl:hasArticlesNotes">
+		<h3>Articles and Notes</h3>
+        <ul class="nodisc">
+		<span jwcid="@Foreach" source="ognl:articleNoteNamesIds" value="ognl:currentArticleNoteNameId">
+            <li>
+				<a jwcid="@GenericLink" href="ognl:currentArticleNoteHref">
+		            <span jwcid="@Insert" value="ognl:currentArticleNoteNameId[0]"/>
+				</a>
+            </li>
+		</span>    
+        </ul>
+	</span>
+	<span jwcid="@If" condition="ognl:hasTreehouses">
+		<h3>Treehouses</h3>
+        <ul class="nodisc">
+		<span jwcid="@Foreach" source="ognl:treehouseNamesIds" value="ognl:currentTreehouseNameId">
+            <li>
+				<a jwcid="@GenericLink" href="ognl:currentTreehouseUrl">
+		            <span jwcid="@Insert" value="ognl:currentTreehouseNameId[0]"/>
+				</a>
+            </li>
+		</span>    
+        </ul>
+	</span>
+</html>

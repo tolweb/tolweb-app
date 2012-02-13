@@ -1,0 +1,20 @@
+<html jwcid="@btol/ProjectWrapper" title="Add Images to PCR Batches">
+<h2 class="clear">Add Images to PCR Batches</h2>
+<span jwcid="@If" condition="ognl:batches.size > 0">
+    <span jwcid="@If" condition="prop:uploaded">
+        <h3>Your images have been uploaded</h3>
+    </span>
+	<form jwcid="@Form" listener="listener:doUpload">
+	<span jwcid="@For" source="prop:batches" value="prop:currentBatch">
+		<span jwcid="@btol/PCRBatchDetail" batch="prop:currentBatch" canUploadImage="ognl:true"/>    
+	</span>
+    <span jwcid="@If" condition="ognl:!uploaded">
+		<br/><br/>        
+		<input jwcid="@Submit" value="Upload Images"/>
+    </span>
+	</form>
+</span>
+<span jwcid="@Else">
+    Looks like all your PCR batches have images associated with them.  Good job!
+</span>
+</html>

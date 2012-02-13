@@ -1,0 +1,17 @@
+<html jwcid="@btol/ProjectWrapper" title="ognl:'PCR Protocol Information For ' + protocol.name">
+<h2 class="clear"><span jwcid="@Insert" value="ognl:protocol.name"/></h2> <a jwcid="@PageLink" page="btol/ViewAllProtocols">Back to all protocols</a>
+<table jwcid="@beanform/BeanForm" readOnly="ognl:true" properties="ognl:propertiesString" bean="ognl:protocol"/>
+<a jwcid="@ExternalLink" page="btol/EditPCRProtocol" parameters="ognl:{protocol.id, 'btol/ViewAllProtocols'}">edit this protocol</a>
+</html>
+<div jwcid="recipeBeanFieldLabel@Block">
+    <td colspan="2" class="header">RECIPE</td>
+</div>
+<div jwcid="cycleBeanFieldLabel@Block">
+    <td colspan="2" class="header">CYCLE</td>
+</div>
+<div jwcid="stage1BeanFieldLabel@Block">
+    <td colspan="2" class="subheader">STAGE 1</td>
+</div>
+<div jwcid="stage2BeanFieldLabel@Block">
+    <td colspan="2" class="subheader">STAGE 2</td>
+</div>

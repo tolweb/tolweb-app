@@ -1,0 +1,26 @@
+<html jwcid="@ScientificWrapper" title="Recent Activity">
+<h2 class="clear">Recent activity</h2>
+<form jwcid="@Form" success="listener:updateActivity">
+    Check activity for node: <input jwcid="@TextField" value="prop:nodeNameToCheck" validators="validators:required"/> since date: 
+    <input jwcid="@DatePicker" value="prop:activityDate" validators="validators:required"/>
+    <input jwcid="@Submit"/>
+</form>
+<h4>TreeGrow activity:</h4>
+<table>
+	<tr jwcid="@For" source="prop:uploadActivity" value="ognl:currentActivity" element="tr"> 
+		<td><a jwcid="@TolPageLink" tolPage="prop:currentUploadNodeName" isWorking="ognl:true"><span jwcid="@Insert" value="prop:currentUploadNodeName"/></a></td>
+        <td><span jwcid="@Insert" value="prop:currentUploadPersonName"/></td>
+        <td><span jwcid="@Insert" value="prop:currentUploadDate"/></td>
+        <td><span jwcid="@Insert" value="prop:currentUploadPublishDate"/></td>
+    </tr>
+</table>
+<h4>Page activity:</h4>
+<table>
+	<tr jwcid="@For" source="prop:pageActivity" value="ognl:currentActivity" element="tr"> 
+		<td><a jwcid="@TolPageLink" tolPage="prop:currentPageNodeName" isWorking="ognl:true"><span jwcid="@Insert" value="prop:currentPageNodeName"/></a></td>
+        <td><span jwcid="@Insert" value="prop:currentPagePersonName"/></td>
+        <td><span jwcid="@Insert" value="prop:currentPageDate"/></td>
+        <td><span jwcid="@Insert" value="prop:currentPagePublishDate"/></td>
+    </tr>    
+</table>
+</html>

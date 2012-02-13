@@ -1,0 +1,14 @@
+<html jwcid="@AboutWrapper" title="Tree of Life News Items">
+	<div style="float: right;">
+		<a jwcid="@PageLink" page="admin/EditNewsItem">Add News Item...</a>
+	</div>
+	<h2 class="clear">Tree of Life News Items</h2>
+	<table jwcid="table@contrib:Table" source="ognl:newsItems" row="ognl:currentNewsItem" 
+        	columns="ognl:columnsString" class="border" pageSize="50">
+        <span jwcid="editColumnHeader@Block"></span>
+        <span jwcid="editColumnValue@Block">
+            <a jwcid="@ExternalLink" page="admin/EditNewsItem" parameters="ognl:{currentNewsItem.newsItemId, pageName}">edit</a>
+		</span>
+    </table>
+    <a jwcid="@PageLink" page="admin/EditNewsItem">Add News Item...</a>
+</html>

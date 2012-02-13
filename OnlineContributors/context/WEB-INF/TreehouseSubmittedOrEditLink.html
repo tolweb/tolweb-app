@@ -1,0 +1,11 @@
+<span jwcid="@If" condition="ognl:canEdit" element="ognl:null">
+	<a jwcid="@EditTreehouseLink" treehouse="ognl:treehouse" pageName="ognl:editPageName" anchor="ognl:anchor">
+    	<span jwcid="@RenderBody"/>
+    </a>
+</span>
+<span jwcid="@Else">
+    <span jwcid="@If" condition="ognl:showSubmittedMessage" element="ognl:null">
+	    <span jwcid="@AccessoryPageSubmittedMessage" accPage="ognl:treehouse"
+	        objectType="ognl:objectType"/>
+    </span>
+</span>

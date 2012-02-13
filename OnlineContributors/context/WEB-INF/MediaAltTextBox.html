@@ -1,0 +1,10 @@
+<div id="alttext" class="whitebox"> <a name="alttext"></a>
+	<a jwcid="@HelpLink" pageName="ognl:page.helpPageName" helpName="Alternative Text" />
+	<h4 class="floatleft">Alternative Text</h4>
+    <span jwcid="@If" condition="ognl:isImage" element="ognl:null">
+        <input jwcid="@TextField" type="text" value="ognl:media.altText" size="40"/>
+    </span>
+    <span jwcid="@Else">
+        <input jwcid="@TextArea" value="ognl:media.altText" rows="4" cols="45"/>
+    </span>
+</div>    	

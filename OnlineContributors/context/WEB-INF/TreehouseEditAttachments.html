@@ -1,0 +1,87 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:false" title="ognl:'Step #' + stepNumber + ' Edit Attach To Group'">
+	<div id="trhs2attachpgtop">
+        <a name="trhs2attachpgtop"></a>
+		<h3 class="sectionheaderblubpg">Step <span jwcid="@Insert" value="ognl:stepNumber"/>. Edit Attach to Group</h3>
+        <div class="boxtocpages">
+			<div jwcid="@TreehouseImportantDiv">
+				<li><a href="#trhs2sciname">Organism Names</a></li>
+				<li><a href="#trhs2attach">Attach to Group of Organisms</a></li>
+	        </div>
+			<div jwcid="@TreehouseHelpDiv" 
+                exampleEditingFormUrl="/tree/learn/TreebuilderTools/BuildingGuide/ExampleEditingSteps6.html" 
+                stepNum="6">
+				<a jwcid="@GenericLink" renderer="ognl:helpLinkRenderer" href="/tree/learn/TreebuilderTools/AttachToToL.html">Attach Your  Work to <br> a ToL Branch or <br> Leaf Page </a>
+				<h5>Editing tip: </h5>
+  				<a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Organism Names" noDiv="ognl:true">Organism Names</a>
+  				<a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Attached to Group(s) of Organisms" noDiv="ognl:true">Attach to Group</a>
+	        </div>
+          	<p><a href="EditAttachPage.html"><img src="/tree/learn/lisa.images/trhouseimage/attachlongsmblu.jpg" alt="Treehouses are attached to ToL Branch and Leaf pages" width="250" height="88" class="imgpgs"></a></p>
+			<p class="widthsm">To publish your treehouse you must attach it to the Branch or Leaf page for the group of organisms on the 
+                Tree of Life that your treehouse is about.  For example, if your treehouse is about Ants, you would attach it to the Ant 
+                branch page. Visitors to the ToL will then be able to access your treehouse from the Ants branch page, and from ToL 
+                searches for Ants. </p> 
+			<div jwcid="@TreehouseWarningDiv"/>	   
+			<div class="spacer">&nbsp;</div>
+	  </div>      
+		<div class="spacer">&nbsp;</div>
+	</div>
+		
+		
+		        
+		<div id="trhs2sciname">
+            <a name="trhs2sciname"></a>
+           
+           <div class="spacer">&nbsp;</div>
+  				<a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Organism Names"/>
+             <h4 class="long2">Organism Names</h4>
+             <div class="indentleft"><p>In the space below write the scientific names of
+				the organism(s) that your treehouse page is about. Separate individual
+				names with a comma.  You may also include common names, but scientific
+				names are generally more precise in identifying a particular group of
+				organisms.</p> 
+            	<textarea jwcid="@TextArea" value="ognl:treehouse.scientificName" cols="50" rows="3"></textarea>
+			</div>
+        </div>
+        <div class="spacer">&nbsp;</div>
+		<div id="trhs2attach">
+            <a name="trhs2attach"></a>
+		<div class="spacer">&nbsp;</div>
+			<a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Attached to Group(s) of Organisms"/>
+			
+				<h4 class="long2">Attached to Group(s) of Organisms</h4>
+			
+            
+              <p>Attach your treehouse to the ToL branch or leaf page of the group of organism(s) that your treehouse page is about. Your treehouse page will be linked to the ToL branch or leaf pages for these groups. <a href="#imageattachbelow">See the image below</a>.</p>
+				<p>Click the &quot;Add Group&quot; link to search for a group to attach your page to. <a href="#imageattachbelow"></a>Once you select a group, the name of the group will show up in the Attached to Group column. You can attach your page to more than one group but you will need to choose a primary group. See the help topic for more information. </p>
+                
+                <div class="indentleft"> <table>
+                    <tr>
+                        <th style="min-width: 120px">Attached to Group</th><th>Primary Group</th><th><strong>Show Link in Treehouses Menu</strong></th> 
+                        <td>&nbsp;</td>
+					</tr>
+                    <span jwcid="@RadioGroup" selected="ognl:primaryGroup">
+                        <span jwcid="@ListEdit" source="ognl:nodesListEditMap.keys" value="ognl:nodesListEditMap.key" listener="ognl:listeners.synchronizeNode">
+                            <tr>
+								<td><span jwcid="@Insert" value="ognl:currentNode.node.name"/></td>
+                                <td><input type="radio" jwcid="@Radio" value="ognl:currentNode.node.nodeId"/></td>
+								<td><input type="checkbox" jwcid="@Checkbox" value="ognl:currentNode.showLink"/></td>
+                                <td> <a jwcid="@LinkSubmit" listener="ognl:listeners.removeGroup" selected="ognl:accPageNodeToDelete" tag="ognl:currentNode">Remove Group</a></td>
+                            </tr>
+                        </span>
+                    </span>
+                    <tr>
+                        <td><a jwcid="@LinkSubmit" listener="ognl:listeners.addGroupSubmit">Add Group</a></td>
+                    </tr>                        
+				</table>
+				
+				<a name="imageattachbelow"></a><img src="/tree/learn/lisa.images/trhouseimage/attach1.21blu.jpg" width="468" height="301" style="padding: 10px 10px 10px 30px;">
+            </div>
+            <div class="spacer">&nbsp;</div>
+            <div class="topbottom2">
+                <a href="#pagetop">top</a> | <a href="#trhssavepreview">go to save and preview!</a>
+            </div>
+        </div>
+	<span jwcid="@If" condition="ognl:selectedAnchor"> 
+        <script jwcid="@Script" script="JumpToAnchor.script" anchor="ognl:selectedAnchor"/>
+	</span>    
+</html>

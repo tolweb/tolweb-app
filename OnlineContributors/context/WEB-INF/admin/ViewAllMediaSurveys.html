@@ -1,0 +1,15 @@
+<html jwcid="@Wrapper" title="View All Media Surveys">
+<h2 class="clear">All Media Surveys</h2>
+	<table jwcid="table@contrib:Table" source="ognl:mediaSurveys" row="ognl:currentMediaSurvey" 
+        	columns="ognl:columnsString" class="border" pageSize="50">
+        <span jwcid="MediaColumnHeader@Block"></span>
+        <span jwcid="MediaColumnValue@Block">
+			<a jwcid="@ViewImageLink" image="ognl:image" 
+                disabled="ognl:false" title=""><span jwcid="@Insert" value="ognl:currentMediaSurvey.mediaId"/></a>
+		</span>        
+        <span jwcid="viewColumnHeader@Block"></span>
+        <span jwcid="viewColumnValue@Block">
+            <a jwcid="@ExternalLink" page="admin/ViewMediaSurveyDetail" parameters="ognl:{currentMediaSurvey.id, pageName}">view</a>
+		</span>
+    </table>
+</html>

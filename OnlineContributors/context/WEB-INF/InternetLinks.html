@@ -1,0 +1,10 @@
+<ul>
+    <span jwcid="@Foreach" source="ognl:links" value="ognl:currentLink">
+        <span jwcid="@If" condition="ognl:showCurrentLink">
+            <li>
+            	<a jwcid="@Any" href="ognl:currentLinkUrl" target="new"><span jwcid="@Insert" value="ognl:currentLinkText"/></a>&nbsp;
+                <span jwcid="@Insert" value="ognl:currentLink.comments" raw="ognl:true"/>
+            </li>
+        </span>
+    </span>
+</ul>

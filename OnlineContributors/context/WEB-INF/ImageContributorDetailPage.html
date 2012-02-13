@@ -1,0 +1,81 @@
+<html jwcid="@Wrapper" title="ognl:title">
+	<span jwcid="@If" condition="ognl:contributor != null" element="ognl:null">
+    <p jwcid="@If" condition="ognl:previousNodeId == null" align="right">
+    	<a jwcid="@PageLink" page="ImageContributorsPage">Back to List</a>
+    </p>
+    <p jwcid="@Else" align="right">
+		<a jwcid="@ExternalLink" page="PeopleList" parameters="ognl:{previousNodeId}">Back to List</a>            
+	</p>
+	<h2 class="clear"><span jwcid="@Insert" value="ognl:contributor.displayName"/></h2>
+	<img jwcid="@ContributorImage" contributor="ognl:contributor"/>
+    <p>
+        <span jwcid="@Insert" value="ognl:contributor.bio" raw="ognl:true"/>
+    </p>
+    <table>
+        <tr>
+	    	<td>Contributor ID:</td>
+            <td><span jwcid="@Insert" value="ognl:contributor.id"/></td>
+        </tr>
+        <tr>
+            <td>Contributor Type:</td>
+            <td><span jwcid="@Insert" value="ognl:contributorTypeString"/></td>
+        </tr>
+        <span jwcid="@If" condition="ognl:contributor.institution">
+	        <tr>
+	            <td>Institution:</td>
+	            <td><span jwcid="@Insert" value="ognl:contributor.institution"/></td>
+	        </tr>            
+        </span>  
+        <span jwcid="@If" condition="ognl:hasSubjectAreasOfInterest">
+            <tr>
+                <td>Subject Areas of Interest:</td>
+                <td><span jwcid="@Insert" value="ognl:contributor.interestsString"/></td>
+			</tr>
+        </span>  
+        <span jwcid="@If" condition="ognl:hasGeographicAreasOfInterest">
+            <tr>
+                <td>Geographic Areas of Interest:</td>
+                <td><span jwcid="@Insert" value="ognl:contributor.geographicAreaInterest"/></td>
+            </tr>
+        </span>
+        <span jwcid="@If" condition="ognl:!contributor.dontShowEmail && @org.tolweb.treegrow.main.StringUtils@notEmpty(contributor.email)">
+	        <tr>
+	            <td>Email:</td>
+	            <td><a jwcid="@EncodedMailLink" email="ognl:contributor.email"/></td>
+	        </tr>
+        </span>
+        <span jwcid="@If" condition="ognl:contributor.homepage">
+	        <tr>
+	            <td>Webpage:</td>
+	            <td>
+					<a jwcid="@Any" href="ognl:contributor.homepage"><span jwcid="@Insert" value="ognl:contributor.homepage"/></a>                    
+                </td>
+	        </tr>
+        </span>
+        <span jwcid="@If" condition="ognl:hasPublishedPages">
+            <tr>
+                <td>Published Tree of Life Pages:</td>
+                <td><a jwcid="@ExternalLink" page="ViewPublishedPages" parameters="ognl:{contributor.id}">View pages</a></td>
+            </tr>
+        </span>
+        <tr>
+	    	<td>Number of photos:</td>
+            <td><span jwcid="@Insert" value="ognl:numImages"/></td>
+        </tr>        
+    </table>
+    <h4>Images Contributed By <span jwcid="@Insert" value="ognl:contributor.displayName"/></h4>
+	<table jwcid="table@contrib:Table" source="ognl:images" columns="!ID:getId(), !thumbnail, !data"/>
+	<span jwcid="thumbnailColumnHeader@Block">Thumbnail</span>
+	<span jwcid="thumbnailColumnValue@Block">
+        <img jwcid="@ImageThumbnail" image="ognl:components.table.tableRow" isPreview="ognl:false"/>
+	</span>    
+	<span jwcid="dataColumnHeader@Block">Image Data</span>    
+	<span jwcid="dataColumnValue@Block">    
+		<img jwcid="@ImageDataBlock" image="ognl:components.table.tableRow" generateLinks="ognl:true" showThumbnail="ognl:false"/>    
+    </span>
+    <div class="smallmidblock"><strong>Please note:</strong> Most images and other media displayed on the Tree of Life web site are protected by copyright, and the ToL cannot act as an agent for their distribution.  If you would like to use any of these materials for your own projects, you need to ask the copyright owner(s) for permission.  For additional information, please refer to the <a href="/tree/home.pages/tolcopyright.html">ToL Copyright Policies</a>.</div>
+    </span>
+    <span jwcid="@Else" class="error">
+        Sorry, we are unable to locate a contributor with the specified id.
+    </span>
+</html>

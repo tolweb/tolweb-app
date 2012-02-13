@@ -1,0 +1,57 @@
+<form jwcid="@Form" listener="ognl:listeners.uploadNewImageFormSubmit">
+<!-- have a startup/initialization script disable the upload media file submit --> 
+<script jwcid="@Script" script="UploadNewMediaFormInitialState.script"/>  
+<table style="margin: 0;">
+              <tr>
+                <td jwcid="@Any" element="td" style="ognl:!isTreehouses ? 'width: 420px;' : null">
+			      <ol>
+			  <li><strong>Select a media file type:  </strong>
+				<span jwcid="@RadioGroup" selected="ognl:newMediaType">
+			    <ul class="inline" style="margin: 10px 0;">
+			    			     			      <li> <label>
+			      <input jwcid="@Radio" value="ognl:@org.tolweb.tapestry.UploadNewMediaForm@IMAGE"/>
+			      Image</label></li>
+		      			   <li> <label>
+			      <input jwcid="@Radio" value="ognl:@org.tolweb.tapestry.UploadNewMediaForm@SOUND"/>
+			      Sound</label></li>
+		      			   <li> <label>
+			      <input jwcid="@Radio" value="ognl:@org.tolweb.tapestry.UploadNewMediaForm@MOVIE"/>
+			      Movie</label></li>
+			   			    				<li><label>
+			      <input jwcid="@Radio" value="ognl:@org.tolweb.tapestry.UploadNewMediaForm@DOCUMENT"/>
+				  Document </label></li>
+		      </ul>
+                </span>
+			  </li>
+			<li>
+			 Use the <strong>Browse</strong> (<strong>Choose File</strong>) button to locate the file you want to upload from your computer.			
+			    <input jwcid="@Upload" file="ognl:uploadFile" class="block" onclick="enableNewMediaForm()" /></li>
+
+                    <li>Then click on the <strong>Upload Media File</strong>                         button to initiate the upload. 
+                        <input jwcid="uploadMedia@Submit" value="Upload Media File"  class="block" onclick="editNewObject()" />
+</li>
+	  </ol>
+	  <p class="box">If you want to upload large numbers of images, check out our options for <a href="/onlinecontributors/app?service=page&page=ImageZipUpload">Batch Uploading Media Files</a>.</p>
+
+			</td>
+	<span jwcid="@If" condition="ognl:!isTreehouses && !noInstructions">
+                            <td> <dl class="instructions">
+                    <dt>Images </dt>
+                    <dd>Please upload only JPEG, GIF, or PNG files. Ideally your 
+                        master image should be around 800 pixels wide or high 
+                        (<a href="javascript: w = window.open('/tree/sep/expixel.html', 'helpWindow', 'menubar=no,width=850,height=750,toolbar=no,scrollbars=yes'); w.focus();">example</a>). 
+                        See <a href="/tree/sep/images.html">Illustrations for 
+                        Tree of Life Pages</a> for more information.</dd>
+
+                    <dt>Documents </dt>
+                    <dd>Select this media type for uploading text files, PDF, Word, Excel, PowerPoint documents, etc. </dd>
+                    <dt>Size limit </dt>
+                    <dd> You may upload media files up to 100 megabytes. If you have movies that are larger, you can compress them using software like FFmpeg, iMovie, or Windows Movie Maker.
+                        </dd>
+                </dl></td>
+    </span>
+              </tr>
+  </table>
+</form>
+<script jwcid="@Script" script="EditNewObject.script" pageName="EditImageWindowRedirect" 
+ editWindowName="ognl:@org.tolweb.tapestry.EditImageData@EDIT_IMAGE_WINDOW_NAME"/>

@@ -1,0 +1,75 @@
+<form jwcid="@Form" listener="ognl:listeners.doSearch" stateful="ognl:false">
+	<div jwcid="@Any" class="ognl:divClass" style="ognl:divStyle">
+        <span jwcid="@If" condition="ognl:noResults">
+            <span class="error">There were no images found matching your search criteria.  Please try again.</span>
+        </span>
+        <span jwcid="@If" condition="ognl:tooManyResults">
+            <span class="error">There were too many images found matching your search criteria.  Please choose more specific search criteria.</span>
+        </span>        
+        <ul class="nodisc">
+			<li>
+                <label>Find 
+                	<select jwcid="@PropertySelection" model="ognl:mediaTypeModel" value="ognl:mediaTypeSelection"/>  
+ 					that match the following criteria:</label>
+ 				<ul>
+	            <li>Words in Description
+	            	<input jwcid="@TextField" value="ognl:anyText" type="text" size="25" />
+	            </li>        
+	            <li>Featured Organisms
+	            	<input jwcid="@TextField" value="ognl:groupName" size="25" type="text" />
+	            </li>
+	            <li>Location
+	            	<input jwcid="@TextField" value="ognl:locationText" type="text" size="25" />
+	            </li>            
+	            <li>Credited To (Person or Institution)
+	            	<input jwcid="@TextField" value="ognl:credits" type="text" size="25" />
+	            </li>
+	            <li>Content
+	                 <select jwcid="@PropertySelection" model="ognl:@org.tolweb.tapestry.UserImageSearch@CONTENT_SELECTION_MODEL" value="ognl:imageContentSelection"/>
+	            </li>
+            </ul>
+        </ul>
+        <h4 id="SpecimenInfo" class="up" 
+        	style="width: 280px; margin: 25px 0 15px 40px; background-position: 100% 50%;" 
+        	onclick="changeclass('SpecimenInfo', 'down', 'up'); changeclass('SpecimenInfoList', 'show', 'hidden')">Include Specimen Information</h4>
+        <ul class="hidden" style="list-style-type: none; margin: 25px 0 15px 40px;" id="SpecimenInfoList">
+            <li>Specimen Condition:
+            	<select jwcid="@PropertySelection" model="ognl:@org.tolweb.tapestry.UserImageSearch@CONDITION_SELECTION_MODEL" value="ognl:specimenConditionSelection"/>
+            </li>
+            <li> Behavior:
+            	<input jwcid="@TextField" value="ognl:behavior" type="text" size="25" />
+            </li>
+            <li>Life Cycle Stage:
+                <input jwcid="@TextField" value="ognl:lifeCycleStage" type="text" size="25" />
+            </li>
+            <li>Body Part:                     
+            	<input jwcid="@TextField" value="ognl:bodyPart" type="text" size="25" />
+            </li>
+            <li>View:
+				<input jwcid="@TextField" value="ognl:view" type="text" size="25" />
+            </li>
+            <li style="padding: 15px 0 5px 0"><em>Specimen Documentation</em></li>
+            <ul class="nodisc">
+                <li>Collection:                         
+                	<input jwcid="@TextField" value="ognl:collection" type="text" size="25" />
+                </li>
+                <li>Type:
+                    <select jwcid="@PropertySelection" model="ognl:@org.tolweb.tapestry.UserImageSearch@TYPE_SELECTION_MODEL" value="ognl:typeSelection"/>
+                </li>
+                <li>Voucher Number:
+                	<input jwcid="@TextField" value="ognl:voucherNumber" type="text" size="25" />
+                </li>
+                <li>Voucher Collection:
+                	<input jwcid="@TextField" value="ognl:voucherCollection" type="text" size="25" />
+                </li>
+                <li>Collector:
+                    <input jwcid="@TextField" value="ognl:collector" type="text" size="25" />
+                </li>
+                <li>Identified By:
+                    <input jwcid="@TextField" value="ognl:identifiedBy" type="text" size="25" />
+                </li>
+            </ul>
+        </ul>
+        <input style="margin-left: 80%" type="submit" name="Submit" value="Find Media" />
+    </div>
+</form>

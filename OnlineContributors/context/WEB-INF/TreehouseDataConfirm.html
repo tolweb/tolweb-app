@@ -1,0 +1,15 @@
+<html jwcid="@NewBarebonesFormWrapper" title="Confirm Treehouse Data" bodyId="trhsdatabody">
+	<h2>Confirm Treehouse Data</h2>
+    <p>Are you sure you are ready to publish your page?</p>
+
+	<span class="boldtext">Please note:</span>
+	<p>You will not be able to edit your treehouse page again until the ToL Learning 
+		Materials Editor approves your treehouse for publication.</p>
+	<p>You must attach your page to a group for visitors to be able to access it 
+		from ToL branch and leaf pages.</p>
+    <p>You can preview your Treehouse by following this link: <a jwcid="@Any" element="a" href="ognl:workingUrl">preview</a></p>
+	<form jwcid="@Form">
+        <input type="Submit" jwcid="@Submit" listener="ognl:listeners.submitTreehouse" value="Go ahead and publish!"/>
+        <input type="Submit" jwcid="@Submit" listener="ognl:listeners.editTreehouse" value="Return to editing"/>
+    </form>
+</html>

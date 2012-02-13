@@ -1,0 +1,87 @@
+<html jwcid="@FeaturesWrapper" title="Node Object Manager">
+
+	<h2 class="clear">Node Object Manager</h2>
+	<h4>Step 1: Find the objects you want to move</h4>
+	<form jwcid="@Form" listener="ognl:listeners.selectOperation">
+		<p>Find objects by source node id: 
+			<input jwcid="@TextField" value="prop:selectedNodeId" translator="translator:number"/> 
+			<a jwcid="@PageLink" page="FindNodeIds" renderer="ognl:renderer">Find node id...</a>		    
+		    <input value="Find objects by source node id" type="submit">
+		</p>
+		<span jwcid="@If" condition="ognl:errorMessages != null && !errorMessages.empty">
+			<p>An error occurred during the last operation (review the  
+				<a jwcid="@PageLink" page="ViewNodeObjectManagerLog" style="font-weight:bold">log</a>)</p>
+			<ul jwcid="@For" source="prop:errorMessages" value="prop:currentErrorMessage" element="ul">
+				<li><span jwcid="@Insert" value="prop:currentErrorMessage"/></li>
+			</ul>
+		</span>
+	</form>
+	<span jwcid="@If" condition="ognl:selectedNode != null">
+	<form jwcid="@Form" listener="ognl:listeners.moveOperation" clientValidationEnabled="ognl:true"> <!--  -->
+		<p>Move objects attached to source node: <span jwcid="@Insert" value="ognl:nodeName"/>, 
+			node id: <span jwcid="@Insert" value="ognl:nodeId"/></p>
+		<h4>Step 2: Select the objects you want to move</h4>
+		<ul class="nodisc">
+			<li>page: 
+				<ul>
+					<li><input jwcid="@Checkbox" value="prop:currentPageSelected"/>
+						page id: 
+						<a jwcid="@TolPageLink" tolPage="ognl:currentTuple.metaNode.page" isWorking="ognl:true">
+							<span jwcid="@Insert" value="ognl:currentTuple.metaNode.page.pageId" />
+							-&nbsp;<span jwcid="@Insert" value="ognl:currentTuple.metaNode.page.groupName" />
+						</a>
+					</li>
+				</ul>
+			</li>
+			<span jwcid="@If" condition="ognl:allAccessoryPages != null && !allAccessoryPages.empty">
+			<li>accessory pages:
+				<ul jwcid="@For" source="prop:allAccessoryPages" value="prop:currentAccessoryPage" element="ul">
+       				<li><input jwcid="@Checkbox" value="prop:currentAccessoryPageSelected"/> 
+       					accessory page id: 
+       					<a jwcid="@TolPageLink" tolPage="ognl:currentAccessoryPage">
+       						<span jwcid="@Insert" value="ognl:currentAccessoryPage.accessoryPageId" />
+       						-&nbsp;<span jwcid="@Insert" value="ognl:currentAccessoryPage.pageTitle" />
+       					</a>
+       				</li>
+				</ul>			
+			</li>
+			</span>
+			<span jwcid="@If" condition="ognl:allOtherNameIds != null && !allOtherNameIds.empty">
+			<li>other names:
+				<ul jwcid="@For" source="prop:allOtherNameIds" value="prop:currentOtherNameId" element="ul">
+       				<li><input jwcid="@Checkbox" value="prop:currentOtherNameSelected"/> 
+       					other name id: 
+       					<span jwcid="@Insert" value="ognl:currentOtherNameId" />&nbsp;-&nbsp;<span jwcid="@Insert" value="ognl:currentOtherNameText" style="font-weight: bold"/>
+       				</li>
+				</ul>			
+			</li>
+			</span>
+			<span jwcid="@If" condition="ognl:allMediaFiles != null && !allMediaFiles.empty">
+	        <li>media files:
+				<ul jwcid="@For" source="prop:allMediaFiles" value="prop:currentMediaFile" element="ul">
+       				<li><input jwcid="@Checkbox" value="prop:currentMediaFileSelected"/> 
+       					media file id: 
+       					<span jwcid="@Insert" value="ognl:currentMediaFile.id" />
+       					<p style="padding-left: 25px;">
+       						<img jwcid="@ImageThumbnail" image="ognl:currentMediaFile" isPreview="ognl:false"/>
+       					</p>
+       				</li>
+				</ul>			    
+			</li>
+			</span>
+		</ul>			
+		<p><input name="" type="checkbox" value="ognl:shouldPermanentlyInactivate"> 
+			Permanently inactivate source node once objects have been moved.  
+			Note: this can only be done if you remove all objects from the source node.</p>
+		<h4>Step 3: Enter destination node id </h4>
+		<p>Move objects to node with id: 
+			<input jwcid="@TextField" value="ognl:destNodeId" 
+				validators="validators:required[Please specify the {0}.]"
+				displayName="literal:destination node id"
+				translator="translator:number" />
+            <a jwcid="@PageLink" page="FindNodeIds" renderer="ognl:renderer">Find node id...</a></p>
+		<h4>Step 4: Move objects</h4>
+		<input value="Move objects..." type="submit"> 	
+	</form>
+	</span>
+</html>

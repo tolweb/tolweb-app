@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+<body>
+<unique>
+	<![CDATA[
+var editWindow;
+	
+function openOtherEditForm(url) {
+	alert("editWindow is: " + editWindow);
+	if (editWindow && !editWindow.closed) {
+		var hidden = editWindow.document.getElementById('otherEditUrl');
+		hidden.value = url;
+		editWindow.document.forms[0].submit();
+	} else {
+		editWindow = window.open(url, 'editBranchLeaf', 'width=800, height=500, scrollbars=yes, resizable=yes');
+	}
+	editWindow.focus();			
+}
+	]]>
+</unique>	
+</body>
+</script>

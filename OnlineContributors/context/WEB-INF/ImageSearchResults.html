@@ -1,0 +1,63 @@
+<span jwcid="body@Block">
+	<form jwcid="@Form">
+    <input jwcid="@Hidden" value="ognl:editedObjectId"/>
+    <input jwcid="@Hidden" value="ognl:isDelete"/>
+    <input jwcid="@Hidden" value="ognl:callbackType"/>
+    <input jwcid="@Hidden" value="ognl:instructions"/>
+    <input jwcid="@Hidden" value="ognl:linkString"/>
+    <input jwcid="@Hidden" value="ognl:searchPageName"/>
+    <input jwcid="@Hidden" value="ognl:wrapperType"/>
+    <input jwcid="@Hidden" value="ognl:dontShowFilename"/>
+    <input jwcid="@Hidden" value="ognl:mediaType"/>
+    <input jwcid="@Hidden" value="ognl:additionalReturnPageName"/>
+	<h2 class="clear"><span jwcid="@Insert" value="ognl:mediaType"/> Search Results</h2>
+	
+	<p> <span jwcid="@Insert" value="ognl:instructions" raw="ognl:true"/></p>
+    <p>		
+	If you don't see the <span jwcid="@Insert" value="ognl:mediaType != null ? mediaType.toLowerCase() : 'media'"/> you are looking for, you can <a jwcid="@LinkSubmit" listener="ognl:listeners.searchAgain">search 
+    again</a></p>
+    <span jwcid="@ImageInfoGlass"/>
+	<table jwcid="table@contrib:Table" source="ognl:images" columns="ognl:columnsString" convertor="ognl:convertor"/>
+	<span jwcid="thumbnailColumnHeader@Block">Thumbnail</span>
+	<span jwcid="thumbnailColumnValue@Block">
+        <img jwcid="@ImageThumbnail" image="ognl:image"/>
+        <a jwcid="@ViewImageLink" image="ognl:image" classString="viewlinklong">view <span jwcid="@Insert" value="ognl:image.mediaTypeDescription"/> &amp; data</a>
+        <span jwcid="@If" condition="ognl:canEdit && !wasUserSearch">
+                <span jwcid="@If" condition="ognl:callbackType != @org.tolweb.tapestry.ImageSearchResults@EDIT_IMAGE_CALLBACK">
+                    <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(linkString)" element="span">
+				        <a class="ognl:actionLinkClass" jwcid="@LinkSubmit" listener="ognl:listeners.performAction" selected="ognl:selectedImageId" tag="ognl:image.id"><span jwcid="@Insert" value="ognl:linkString"/></a>
+                    </span>
+                </span>
+				<span jwcid="@Else">
+					<a jwcid="@EditImageLink" editWindowName="ognl:editWindowName" image="ognl:image" classString="editlink">edit</a>
+                </span>
+            </span>
+        <span jwcid="@If" condition="ognl:!canEdit && !wasUserSearch">
+        	<span jwcid="@ImageCheckedOutMessage" image="ognl:image"/>
+        </span>                
+    </span>
+	<span jwcid="dataColumnHeader@Block"><span jwcid="@Insert" value="ognl:mediaType"/> Data</span>
+	<span jwcid="dataColumnValue@Block">
+		<span jwcid="@If" condition="ognl:wrapperType == @org.tolweb.tapestry.AbstractWrappablePage@NEW_FORM_WRAPPER && 
+            callbackType == @org.tolweb.tapestry.ImageSearchResults@NO_CALLBACK || 
+            callbackType == @org.tolweb.tapestry.ImageSearchResults@PAGE_IMAGE_NOEDITOR_CALLBACK ||
+            callbackType == @org.tolweb.tapestry.ImageSearchResults@PAGE_MEDIA_CALLBACK"
+            element="ognl:null" volatile="ognl:true">
+            <span jwcid="@ImageDataBlock" image="ognl:image" generateLinks="ognl:false" isEditSearchResults="ognl:true" showThumbnail="ognl:false"
+            	insertImageString="ognl:insertImageString" isSearchResults="ognl:true"
+            	isWysiwygEditSearch="ognl:callbackType == @org.tolweb.tapestry.ImageSearchResults@NO_CALLBACK ||
+            		callbackType == @org.tolweb.tapestry.ImageSearchResults@PAGE_MEDIA_CALLBACK"/>
+        </span>
+        <span jwcid="@Else" element="ognl:null" volatile="ognl:true">
+	        <img jwcid="@ImageDataBlock" image="ognl:image" showThumbnail="ognl:false" 
+            dontShowNotes="ognl:dontShowFilename" isSearchResults="ognl:true"/>
+        </span>
+	</span>
+    </form>
+    <script jwcid="@Script" script="EditObject.script" pageName="ognl:pageName" 
+        editWindowName="ognl:@org.tolweb.tapestry.EditImageData@EDIT_IMAGE_WINDOW_NAME"/>
+    <span jwcid="@If" condition="ognl:includeTinyMceScript" element="ognl:null" volatile="ognl:true">
+	    <script jwcid="@Script" script="Tinymcepopup.script" opener="window.opener"/>
+    </span>
+</span>
+<span jwcid="@WrapperChooser" block="ognl:components.body" title="Image Search Results" wrapperType="ognl:wrapperType"/>

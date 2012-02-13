@@ -1,0 +1,174 @@
+<html jwcid="wrapper@BranchLeafWrapper" tolPage="prop:tolPage" node="prop:node">
+	<span jwcid="@If" condition="ognl:!isLive">
+		<div id="betaalert">Oh my goodness!  Unless you are a Tree of Life developer,
+		you really shouldn't be here.  This page is part of our beta test site, where we
+		develop new features for the ToL, often messing up a thing or two in the
+		process.  Please visit the official version of this page, which is available
+        <a jwcid="@Any" element="a" href="ognl:publicURL">here</a>.</div>
+    </span>
+    <span jwcid="@If" condition="prop:isWorking">
+        <div id="workingsite">
+            <span jwcid="@If" condition="prop:hasUpload">
+                
+            </span>
+        Compare to <a jwcid="@Any" element="a" href="prop:publicURL">published version</a>
+        </div>	
+    </span>    
+    <span jwcid="@PageStatus" status="prop:tolPage.status"/>
+    <span jwcid="@If" condition="ognl:isWorking && isLocked && !isSubmitted">
+		<div class="locked">         
+	        <p><span jwcid="@Insert" value="prop:lockedMessage" raw="ognl:true"/></p>  		
+	        <p>You won't be able to edit it until it's been checked back in. You may want to try again in a little while.</p>
+	    </div>
+    </span>
+    <span jwcid="@If" condition="ognl:isWorking && isSubmitted">
+		<div class="locked">         
+            <p><span jwcid="@Insert" value="prop:submittedMessage" raw="ognl:true"/></p>
+            <p>&nbsp;</p>
+            <p>You won't be able to edit it until an editor has reviewed this page.</p>
+        </div>        
+    </span>
+    <span jwcid="@QuickNav" node="prop:node" helper="ognl:helper"/>
+    <span jwcid="@If" condition="prop:tillusSubmitted">
+		<div jwcid="@NotificationBox">
+			<img src="/tree/img/close.gif" class="closebox" alt="close box" onclick="changeclass('confirm', 'show', 'hide')">
+	        <p>The revised title illustrations have been published. </p>
+	        <p>Thank you!</p>
+        </div>
+    </span>
+    <span jwcid="@If" condition="prop:publicationSelected">
+		<div jwcid="@NotificationBox">
+		<p> This <span jwcid="@Insert" value="prop:tolPage.mappedNode.name"/> page has been submitted for publication, and an editor
+		will now review the page.</p> 
+		<p>Usually submissions are published or
+		revisions are requested within 24 hours.</p>
+		        <p>Thank you!</p>
+		</div>        
+		<span jwcid="@BatchSubmittedEmail" 
+        	publicationBatchId="prop:publicationBatchId" 
+        	rootGroupName="prop:tolPage.mappedNode.name" contributorName="prop:contributor.displayName"/>
+    </span>
+    <span jwcid="@If" condition="prop:pushedPublic">
+        <div jwcid="@NotificationBox">
+            <p>Your revised page has been published.</p>
+            <p>Thank you!</p>
+        </div>
+    </span>
+    <span jwcid="@If" condition="prop:publicationError">
+        <div jwcid="@NotificationBox">
+            <p>There was a problem publishing your revised page.</p>
+            <p>The problem has been emailed to the developers and they will fix it as soon as possible.</p>
+            <p>Thank you for your patience.</p>
+        </div>        
+    </span>
+    <span jwcid="@If" condition="prop:nodeWithNewPageName">
+        <div jwcid="@NotificationBox">
+            <p>Page successfully added to <span jwcid="@Insert" value="prop:nodeWithNewPageName"/></p>
+        </div>
+    </span>
+    <span jwcid="@PageTitle" node="prop:node"/>
+    <a jwcid="@EditBranchLeafPageLink" editPageName="EditPageContributors" editLinkClass="editpage">edit author information</a>    
+  	<a jwcid="@EditBranchLeafPageLink" editPageName="EditGroupProperties" editLinkClass="editpage">edit group properties</a>
+    <span jwcid="@If" condition="prop:addExtraPForContributors">
+		<p>&nbsp;</p>        
+    </span>    
+    <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(authorsString)">
+	    <a href="#AboutThisPage" id="authors"><span jwcid="@Insert" value="prop:authorsString"/></a>
+    </span>
+    <div jwcid="@TitleIllustrations" illustrations="prop:tolPage.titleIllustrations"/>
+	<span jwcid="@BranchLeafNavigationComponents"/>
+	<span jwcid="@If" condition="prop:internetInfoOnTop">
+		<div jwcid="@InformationOnTheInternet" infoString="prop:tolPage.internetInfo"/>
+	</span>
+    <span jwcid="@If" condition="ognl:hasRandomPics">
+	    <span jwcid="@RandomPics" pics="ognl:randomPics"/>    
+    </span>
+    <a jwcid="@EditBranchLeafPageLink" editPageName="EditManageTextSections" editLinkClass="editpage">manage text sections</a>
+	<span jwcid="@TextSections" tolPage="prop:tolPage" useCache="prop:useCache" useGlossary="ognl:useGlossary"/>
+	<span jwcid="@If" condition="ognl:hasOtherNamesToDisplay">
+		<div id="othernames">
+		<h3>
+			<a name="othernames"></a>
+			<a jwcid="@EditBranchLeafPageLink" editPageName="EditTaxonNames">edit taxon names</a>
+		 	Other Names for <span jwcid="@Insert" value="prop:node.pageTitle" raw="ognl:true" />
+		 </h3>
+		<span jwcid="@OtherNamesBlock" synonyms="prop:node.synonyms"/>
+		</div>
+	</span>
+    <span jwcid="@If" condition="ognl:tolPage.references || isWorking">
+        <div id="refs"><a jwcid="@EditBranchLeafPageLink" editLinkClass="ognl:tolPage.references ? 'editfr' : 'editpage'" editPageName="EditReferences">edit references</a>
+        <span jwcid="@If" condition="prop:tolPage.references">
+            <h3><a name="refs"></a> References</h3>
+         	<span jwcid="@ReferencesBlock" references="prop:tolPage.references"/>
+        </span>
+         </div>
+    </span>
+    <span jwcid="@If" condition="ognl:!internetInfoOnTop">
+		<div jwcid="@InformationOnTheInternet" infoString="prop:tolPage.internetInfo"/>
+	</span>
+    <span jwcid="@If" condition="ognl:tolPage.titleIllustrations.size > 0">
+        <div id="titlefigcaption" class="minorsection">
+			<h5><a jwcid="@EditBranchLeafPageLink" editPageName="EditTitleIllustrationsNew">edit title illustrations</a><a name="titlefigcaption"></a>Title Illustrations</h5>
+            <span jwcid="@ImageInfoGlass"/>
+            <span jwcid="@If" condition="ognl:tolPage.printCustomCaption && @org.tolweb.treegrow.main.StringUtils@notEmpty(tolPage.imageCaption)">
+	            <p>
+					<span jwcid="@Insert" value="prop:tolPage.imageCaption" raw="ognl:true"/>            
+	            </p>
+            </span>            
+	        <span jwcid="@Foreach" source="prop:tolPage.titleIllustrations" value="prop:currentIllustration"><span jwcid="@If" condition="ognl:currentIllustration.image != null"><span jwcid="@ImageDataBlock" image="prop:currentIllustration.image" generateLinks="ognl:true" isPreview="ognl:false" showThumbnail="ognl:true" isPageUse="ognl:true" onlyShowCopyright="ognl:!tolPage.printImageData" isTitleIllustrations="ognl:true"/></span></span>
+        </div>
+    </span>
+    <span jwcid="@AboutPage" copyright="prop:tolPage.copyrightHolder" contributors="prop:tolPage.contributors" 
+    	copyrightYear="prop:tolPage.copyrightYear" acknowledgements="prop:tolPage.acknowledgements"
+    	contentChangedDate="prop:tolPage.contentChangedDate" firstOnlineDate="prop:tolPage.firstOnlineDate"
+    	usePermission="prop:tolPage.usePermission" />
+    <span jwcid="@If" condition="prop:isWorking">
+		<div id="tools" class="minorsection">
+	    	<h5>Tools (under development) ....</h5>
+	        <p>These tools may assist you as you develop your Tree of Life pages</p>
+	        <ul>
+	            <li>
+		            <a jwcid="@ExternalLink" page="ExportTaxaNames" parameters="prop:node.nodeId">
+		                <span jwcid="@Insert" value="prop:tolPage.groupName"/> taxa index
+		            </a>
+	            </li>
+                <li>
+                    <a jwcid="@ServiceLink" service="xmldownload" parameters="ognl:{node.nodeId.toString()}"><span jwcid="@Insert" value="prop:tolPage.groupName"/> XML node list without tree structure</a>
+                </li>
+                <li>
+                    <a jwcid="@ServiceLink" service="xmldownload" parameters="ognl:{node.nodeId.toString(), '1'}"><span jwcid="@Insert" value="prop:tolPage.groupName"/> XML node list with tree structure</a>
+                </li>                
+	        </ul>
+	        Page Specifics:
+	        <ul>
+	        	<li>node-id: <span jwcid="@Insert" value="ognl:node.nodeId"/></li>
+	        	<li>page-id: <span jwcid="@Insert" value="ognl:tolPage.pageId"/></li>
+	        </ul>
+            <span jwcid="@PageDescendantStatusComponent" pageId="ognl:tolPage.pageId" nodeId="ognl:node.nodeId" />
+        <span jwcid="@If" condition="prop:showPeopleList">
+        <h5 id="contributorlist">Contributors Who May Edit This Page</h5>
+		<p>If you are a coordinator for this group, you can add other
+		contributors below. Adding a contributor will give this person editing
+		privileges over this branch of the Tree of Life. Contact <span jwcid="@EncodedMailLink" email="treegrow@ag.arizona.edu"/>
+		if you have any questions about managing ToL contributors.</p>        
+        <ul>
+            <li jwcid="@For" source="prop:contributorsWithPermissions" value="prop:currentContributor" style="margin-top: 3px"
+                listener="listener:clearAttachmentName" element="li">
+                <span jwcid="@Insert" value="prop:currentContributor.displayName"/> <span class="property"><span jwcid="@Insert" value="prop:currentContributorNodeNames"/></span>
+                <span jwcid="@If" condition="prop:canRemove" element="ognl:null">
+                    <a jwcid="@DirectLink" style="margin-left: 5px" listener="listener:removePermissionFromContributor" parameters="ognl:{node.nodeId, currentContributor.id}">remove</a>
+                </span>
+            </li>
+        </ul>
+        <span jwcid="@If" condition="ognl:canAddPerson">
+        <p><a jwcid="@DirectLink" listener="ognl:listeners.addContributor" parameters="ognl:node.nodeId">Add a contributor to this list</a></p>
+        </span>
+        </span>
+		<a class="grayfaded noline" jwcid="@ExternalLink" page="AddImageToNode" parameters="ognl:page.node.nodeId" renderer="ognl:rendererFactory.previewLinkRenderer">add an image to this group</a>
+    </div>
+    </span>        
+    <script jwcid="@Script" script="DropDownList.script"/>
+	<span jwcid="@If" condition="ognl:selectedAnchor">
+		<script jwcid="@Script" script="JumpToAnchor.script" anchor="ognl:selectedAnchor"/>    
+	</span>    
+</html>

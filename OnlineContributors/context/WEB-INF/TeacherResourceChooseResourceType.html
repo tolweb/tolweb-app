@@ -1,0 +1,33 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:true" title="TREEHOUSE EDITOR TEACHER RESOURCE MAIN PAGE"
+ isTeacherResourceSelection="ognl:true"">
+<h3 class="sectionheaderblubmnpg"> The Treehouse Editor </h3>
+           <div class="boxtoc">
+		            <h4>Choose A Teacher Resource Type</h4>
+<p class="instructions">Before you begin editing you must choose which type of teacher resource to compose. Each type has a different format. Read about your choices in the <a href="#choices">box below</a>.</p>
+
+  <div id="chooseformat"> <div class="indentleft">
+	<input type="submit" name="Submit" value="Submit" class="floatright" style="margin-right: 200px;">
+	<select jwcid="@PropertySelection" model="ognl:resourceTypeModel" value="ognl:resourceType"/>
+ </div>
+<div class="important">
+ <a name="choices"></a> <h4> Teacher Resource Types </h4>
+   <dl>
+    <dt>Lesson</dt>
+      <dd>
+       Create a lesson plan with the information and materials needed to implement the resource. You will have the option of creating a separate section for students to view.</dd>
+           <dt>Activity</dt>
+      <dd>
+        Present an activity that teachers can implement or offer alone, or as part of a lesson or project. Activities can usually be completed in one session and may focus more closely on a specific learning objective.</dd>
+
+      <dt>Project</dt>
+
+      <dd>
+        Present guidelines for a project. Projects generally extend or apply concepts taught in a course and culminate in a product. You may choose to link individual lessons and activities to the main project page.</dd>
+      <dt>Other teacher resource </dt>
+      <dd>
+        Create a teacher resource that doesn't fit the other categories.
+        </dd>
+  </dl>
+   </div>
+</div>
+</html>

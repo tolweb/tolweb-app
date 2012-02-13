@@ -1,0 +1,196 @@
+<messages>
+<message name="Titles for Articles and Notes">
+<text><![CDATA[
+    <p>Each scientific article or note should have a title that concisely describes 
+        its content.</p>
+
+    <ul>
+        <li> <strong>Full Title</strong>: The full title will be used as the headline 
+            for your article/note.</li>
+        <li><strong>Short Title</strong>: The short title should be no more than 
+            two or three words. This text will be used as the window title for 
+            your article/note and for links to your article/note in the right 
+            sidebar menus of other ToL pages.</li>
+    </ul>
+]]></text>
+</message>
+<message name="Text for Articles and Notes">
+<text><![CDATA[
+    <p>The text box in this section features an <strong>HTML Editor</strong> that will let you format your text without knowledge of HTML codes. This feature is still very much under development, so bear with us as we fix bugs and add new features. If you would rather write <a href="/tree/sep/html.html" target="documentation">HTML codes</a> by hand, you can turn off the editor. </p>
+
+    <h4>Adding Images</h4>
+    <p> Images displayed on ToL pages are retrieved from the ToL image database. 
+        Not all ToL images are available for use on all ToL pages. You will only 
+        be able to select images that have been released by their copyright owners 
+        for your intended use. If you would like to use your own images, you first 
+        need to upload the image files to the ToL database.  When you click on the <span class="blue">Add Image</span> link, you will be able to upload a new image using the lower part of the <em>Add an Image to a Page</em> form. See <a href="/tree/sep/images.html">Illustrations 
+        for Tree of Life Pages</a> for advice on obtaining images for your ToL 
+        pages. </p>
+    <p>To add an image to your page, click on the <strong>Insert Image</strong> button <img src="/tree/js/tinymce/jscripts/tiny_mce/plugins/tol/images/InsertImage.gif" alt=" " /> in the HTML Editor or on the <span class="blue">Add Image</span> link above a text box (when the Editor is turned off). This will open a window that will allow you to 
+        search the ToL Image Database according to a variety of criteria. Once 
+        you have found an image you would like to use, click on the <span class="blue">select</span> link (if you are using the Editor) or click on the <span class="blue">options</span> link (if the Editor is turned off), copy the <strong>ToL Image 
+        Code</strong> and then paste it in the text box in the location where 
+        you would like to have the image displayed. If you are using the Editor, you can format your image using the buttons next to the <strong>Insert Image</strong> button <img src="/tree/js/tinymce/jscripts/tiny_mce/plugins/tol/images/InsertImage.gif" alt=" " />. If the Editor is turned off, the <span class="blue">options</span> link will 
+        give you a number of formatting options for your image (centered, with 
+        a border). For additional options, e.g., for floating images or for the 
+        display of several images next to one another, please have a look at the 
+        <a href="/tree/sep/html.html" target="documentation">HTML for Tree of 
+        Life Pages</a> page.</p>
+
+]]></text>
+</message>
+<message name="References for Articles and Notes">
+<text><![CDATA[
+<p>The References section should contain the bibliographic references for 
+        your article/note. These should follow the format used in the journal 
+        <em>Systematic Biology</em>. The references should include not only cited 
+        papers, but also other general references that are relevant to the topic 
+        of your article/note.</p>
+
+    <p>References should be entered as plain text. Place a carriage return at 
+        the end of each reference and none within a reference. Our system uses 
+        the carriage return as the marker for the end of one reference and the 
+        beginning of the next. Don't use tabs or indents; on ToL pages, references 
+        will automatically be formatted with a hanging indent.</p>
+    <p>Please do not use paragraph tags, links, or any other HTML markup in your 
+        references list. Links should be provided in the <strong>Internet Links</strong>         section. Markup will interfere with the automatic processing of references 
+        in the future ToL references management systems, which will allow us to 
+        link to other databases providing services such as abstracts and full 
+        text delivery.</p>
+]]></text>
+</message>
+<message name="Internet Links for Articles and Notes">
+<text><![CDATA[
+<p>The <strong>Information on the Internet </strong>section provides links 
+        to other internet sites that contain information about the topic of your 
+        article/note. Please note that the Information on the Internet section 
+        is subject to editorial revisions without notice. We may occasionally 
+        check and update the links in this section, and we may also add relevant 
+        links that we come across or that are sent to us by other people.</p>
+
+    <p> Internet links should be entered in an unordered list, e. g.:</p>
+    <ul class="nodiscsmall">
+        <li><strong>&lt;ul&gt;</strong></li>
+        <ul>
+            <li><strong>&lt;li&gt;</strong><strong>&lt;a href="http://url"&gt;</strong>Name 
+                of Site 1<strong>&lt;/a&gt;</strong>. Description for Site 1.<strong>&lt;/li&gt;</strong></li>
+
+            <li><strong>&lt;li&gt;</strong><strong>&lt;a href="http://url"&gt;</strong>Name 
+                of Site 2<strong>&lt;/a&gt;</strong>. Description for Site 2.<strong>&lt;/li&gt;</strong></li>
+        </ul>
+        <li><strong>&lt;/ul&gt;</strong></li>
+    </ul>
+    <p>The <strong>&lt;ul&gt;</strong> and <strong>&lt;/ul&gt;</strong> tags mark 
+        the beginning and the end of your list, and each item in your list starts 
+        with <strong>&lt;li&gt;</strong> and ends with <strong>&lt;/li&gt;</strong>. 
+        Replace <strong>http://url </strong>with the web address for the site, 
+        and add a description if you like.</p>
+]]></text>
+</message>
+<message name="Credits for Articles and Notes">
+<text><![CDATA[
+    <p>The <strong>Contributor</strong> list keeps track of the authors for the 
+        article/note. Only <a href="/tree/home.pages/register.html" target="documentation">registered</a>         ToL contributors can be added to the <strong>Contributor</strong> list. 
+        When you click on the <span class="blue">Add a Contributor from the ToL 
+        Database</span> link, you will be able to search for a contributor in 
+        the database, and you can then add this contributor to the list. Use the 
+        <span class="blue">Shift up</span> and <span class="blue">Shift down</span>         links in the left column to change the sequence of authors. Click on the 
+        <span class="blue">remove</span> link in the right column to remove an 
+        author.</p>
+
+    <p>Only people who have contributed to the scientific content of the page 
+        should be listed as <em>Authors</em>. Generally, the article authors will 
+        also be the <em>Copyright Owners</em>. Use the <strong>Copyright Owner</strong>         text field only if somebody else owns the copyright (e.g., an employer 
+        or a publisher, see <a href="/tree/sep/copyright.html">Copyright Issues</a>         for more information). If a contributor's <em>Correspondent</em> box is 
+        checked, their e-mail address will be printed in the<em> &quot;Correspondence 
+        regarding this page should be directed to...&quot;</em> notice. Note that 
+        throughout the ToL site, email addresses are encoded in order to protect 
+        them from being harvested by spambots. </p>
+
+    <p>The <strong>Copyright Year</strong> will usually be the year in which your 
+        article/note is first published. You can use the <strong>Acknowledgements</strong>         field to recognize funding agencies and people who helped in the creation 
+        of a page, e.g., by providing illustrations or technical assistance. </p>
+   
+]]></text>
+</message>
+<message name="Use of Articles and Notes">
+<text><![CDATA[
+<p>When you contribute to the ToL project, we ask you to give us 
+        a license specifying how the submitted materials can be used. In order 
+        to meet the needs of a diverse community of contributors, we provide a variety of different 
+        options regarding the publication and potential reuse of your materials.  If you would like to change the default license applied to your contributions, follow the 'Review license defaults' link in the Scientific Materials Manager.
+    </p>
+
+]]></text>
+</message>
+<message name="Attaching Articles/Notes to Groups in the Tree of Life">
+<text><![CDATA[
+ <p>Please attach your article/note to one or more groups in the Tree of Life. 
+        It will then be featured in the articles or notes menu of the branch or 
+        leaf pages for this group as well as any other pages attached to such 
+        a branch or leaf page. </p>
+    <p>Please attach your contribution only to those groups for which it is truly 
+        relevant. If your contribution is about several different species, you 
+        may want to consider attaching it to those species as well as to the common 
+        containing group for all species; for example, an article comparing coloration 
+        patterns among several species of <em>Dendrobates</em> poison dart frogs 
+        should be attached to each of the <em>Dendrobates</em> species featured 
+        in the article, and it should be attached to the genus <em>Dendrobates</em>.</p>
+    <p>If your article/note features species or other groups which are not yet 
+        represented in the ToL collection, you can attach your page to the group 
+        that is closest to the missing group, e.g., in the case of a species, 
+        you can use the genus or the family that a species belongs to.</p>
+]]></text>
+</message>
+<message name="Subject/Key Words for Articles and Notes">
+<text><![CDATA[
+<p>(Not yet implemented)</p>
+<p>Indexing the subjects of articles and notes will help us to provide more 
+        powerful search tools to people looking for certain kinds of information 
+        on the ToL web site and on portal sites that feature ToL content in their 
+        catalogues, such as the <a href="http://www.thegateway.org/">Gateway to 
+        Eductional Materials</a> and the <a href="http://www.nsdl.org/">National 
+        Science Digital Library</a>.</p>
+
+    <p>The subjects listed are those most commonly encountered in current ToL 
+        articles and notes. Select all the subjects that are relevant to your 
+        contributions. If no combination of subjects provide an appropriate description 
+        of your article/note, you can enter additional terms in the <strong>Key 
+        Words</strong> field.</p>
+]]></text>
+</message>
+<message name="Editing Privileges for Articles and Notes">
+<text><![CDATA[
+<p>(Not yet implemented)</p>
+    <p> The articles/notes form can be edited by anybody who is listed as an author 
+        or copyright owner. ToL editors and project administrators also have access 
+        to the form. You can provide access privileges to additional ToL contributors 
+        who may serve as technical assistants, copy editors, or reviewers. If 
+        a reviewer helped you improve your contribution, you may want credit this 
+        person as an editor for the page. Do not use editorial credits for technical 
+        assistants; their contribution can be recognized in the acknowledgements.</p>
+]]></text>
+</message>
+<message name="Notes for Articles and Notes">
+<text><![CDATA[
+ <p> The content of the <strong>Notes </strong>field is not printed on the 
+        ToL web site. You can use this field for internal ToL communication about 
+        your article/note. For example, you can leave reminders for yourself or 
+        messages to co-authors or editors. </p>
+
+    <p>&nbsp;</p>
+]]></text>
+</message>
+<message name="Articles and Notes: Save and Preview/Submit for Publication">
+<text><![CDATA[
+<p>Use <strong>Save &amp; Preview</strong> to save the information you entered 
+        in the form to the ToL database. You will then get a preview of the page 
+        you are constructing. The preview page is located on the ToL development 
+        server, which is accessible only to registered ToL contributors. </p>
+    <p>Once you are ready to have your page published on the ToL web site, click 
+        on <strong>Submit for Publication</strong>. This will send a request to 
+        the ToL managing editor to review your page. The editor may then publish 
+        the page directly or get back to you with suggestions for revisions.</p>
+]]></text>
+</message>
+</messages>

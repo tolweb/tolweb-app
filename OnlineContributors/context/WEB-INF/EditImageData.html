@@ -1,0 +1,186 @@
+<html jwcid="@NewFormWrapper" title="Edit Image Data" bodyId="imgdatabody" isImage="ognl:true" 
+	buttonString="Submit Image Data" listener="ognl:listeners.doSave" 
+	rightSideBlock="ognl:components.rightSideBlock" 
+	saveInstructionsBlock="ognl:components.saveInstructionsBlock"
+	tocBlock="ognl:components.tocBlock"> 
+<span jwcid="@If" condition="ognl:wrongPassword">
+    <span class="error">
+        You have entered a wrong username/password combination.  Please check your typing and try again.
+    </span>
+</span>
+<span jwcid="@Else">
+	<h2>Edit Image Data</h2>
+	<div jwcid="@MediaSummaryBox" isImage="ognl:true"/>
+	<div jwcid="@MediaTipsBox" isDocument="ognl:false"/>
+ 	<div jwcid="@MediaCopyrightBox"/>
+	<script jwcid="@Script" script="MediaCopyrightCheckInitialState.script"/>     
+    <div jwcid="mediaUsePermsBox@MediaUsePermissionBox" block1Param="ognl:components.use1Block"
+        block2Param="ognl:components.use2Block" block3Param="ognl:components.use3Block"
+        block4Param="ognl:components.use4Block" block5Param="ognl:components.use5Block"/>
+	<div jwcid="@MediaOtherCreditsBox"/>
+	<div jwcid="@MediaNodeAttachmentsBox"/>            
+  <div id="imgcontent" class="whitebox"> <a name="imgcontent"></a><a jwcid="@HelpLink" helpName="Image Content" pageName="ImageHelpMessagesPage"/>
+            <h4>Image Content</h4>
+			<ul jwcid="@ImageMovieContentCheckboxes"/>              
+			<h5 id="subjecttrigger"  class="triup" onclick="showbranch('subject', 'show', 'hide'); showbranch('subjecttrigger', 'tridown', 'triup')">Subject/Keywords</h5>
+            <div id="subject" class="hide">                
+                <div jwcid="instructionsBlock@Block">
+                <p class="instructions">Some images may be particularly suitable 
+                    to illustrate a particular subject; e.g., a picture of a mating 
+                    pair is an illustration of Neurobiology & Behavior, a diagram showing 
+                    the life cycle of a plant is an illustration of Life History & Development, 
+                    etc. Some subjects are assigned automatically; e. g., if you 
+                    select <strong>Body Part</strong> above, your image will be 
+                    associated with the Morphology &amp; Anatomy subject; if you 
+                    select <strong>Fossil</strong> under <strong>Specimen Information</strong>, 
+                    your image will be associated with the Paleobiology subject. 
+                    You can select additional subjects below, but be sure to limit 
+                    your selection to topics for which your image has special 
+                    relevance. Additional subjects that are not covered in this 
+                    list can be entered in the <strong>Key Words</strong> field 
+                    below.</p>
+                </div>
+				<div jwcid="@Keywords" keywords="ognl:image.keywords" instructionsBlock="ognl:components.instructionsBlock"/>
+            </div>
+	    	            </div>    
+	<div jwcid="@MediaPlaceTimeBox"/> 
+	<div jwcid="@MediaSpecimenBox"/>
+	<div jwcid="@MediaCommentsBox"/>
+	<div jwcid="@MediaAltTextBox" isImage="ognl:true"/>
+	<div id="imgtype" class="whitebox"> <a name="imgtype"></a> 	   
+	<a jwcid="@HelpLink" pageName="ImageHelpMessagesPage" helpName="Image Type" />
+            <h4 class="floatleft">Image Type</h4>
+	    <ul>
+            <li>
+                <select jwcid="@PropertySelection" model="ognl:@org.tolweb.tapestry.EditImageData@IMAGETYPE_MODEL" value="ognl:imageTypeString">
+	        	</select>
+                </li>
+          <li><input jwcid="@Checkbox" value="ognl:image.artisticInterpretation"/>artistic interpretation</li>
+</ul>
+ <label class="box1"><span class="textarealabel">Technical Information</span> <textarea jwcid="@TextArea" value="ognl:image.technicalInformation" cols="35" rows="3"></textarea></label>
+                   </div>
+	<div jwcid="@MediaEditPrivilegesNotesSubmit" isImage="ognl:true"/>
+</span>
+</html>
+
+   <div jwcid="use1Block@Block">
+   <div id="use1" class="hide"> <!-- Restricted use text -->  
+			<p> This option gives media contributors strict control over 
+            the use of their materials. <em>Restricted use</em> media are 
+            provided only for specific use on a particular ToL page. While 
+            these files may be featured in ToL media search results and 
+            collections, they are not available for any other use without 
+            prior consultation with the copyright owner.</p>
+			<p>Restricted media may not generally be modified or edited. 
+            However, visual media may be auto-scaled for use on ToL pages, 
+            and thumbnails will be created for use in captions, search 
+            results etc. Also, the context or presentation of a file may 
+            change if the look of the ToL web site is updated or if new 
+            features affecting page layout are developed.</p>                         
+   </div>
+   </div>
+   <div jwcid="use2Block@Block">
+   <div id="use2" class="hide"> <!-- ToL use only text -->                        
+   			<p>If you select this option, other ToL contributors will be able 
+            to use your media to illustrate the content of their pages (i.e., 
+            branch &amp; leaf pages, other articles &amp; notes, or treehouses).  
+            Whenever a contribution is displayed on a ToL page, it will be 
+            accompanied by a copyright notice informing visitors that 
+            the material is protected by copyright law.</p>
+            <p>If you select <strong>Modification Permitted</strong>, other 
+            ToL contributors will be able to use your contribution, in whole or 
+            in part, in their own montages or collages. If you select 
+            <strong>Minor Modification Only</strong>, your file cannot be 
+            excerpted or used in the creation of derivative media projects.  
+            However, the following minor modifications are permitted:</p>
+            <ul>
+                    <li>Visual media may be auto-scaled for use on ToL 
+                        pages, and thumbnails will be created for use 
+                        in captions, search results etc. They may also 
+                        be cropped, rotated, and small adjustments in 
+                        contrast and sharpness can be made.</li>
+                    <li>The context or presentation of your file may change; 
+                        e.g., this could happen if the look of the ToL 
+                        web site is updated, or if new features affecting 
+                        page layout are developed. </li>
+            </ul>
+   </div>
+   </div>
+   <div jwcid="use3Block@Block">
+   <div id="use3" class="hide"> <!-- ToL & Partner use -->
+            <p>This option  allows the ToL to share your media file with 
+            <a href="http://tolweb.org/tree/home.pages/ToLPartners.html" 
+            target="documentation">select, non-commercial, scientific or 
+            educational partner projects</a>. This means that your media 
+            may be exported to the databases of ToL partner projects, and 
+            they may be displayed on the web sites of these projects. 
+            <span class="red">Note that this license is not sufficient to 
+            let us share your media file with the <a href="http://eol.org">
+            <strong>Encyclopedia of Life</strong></a>. In order to be 
+            compatible with the EOL intellectual property model, you need 
+            to release your media file under a creative commons license. 
+            See above.</span> </p>
+            <p>If you select <strong>Modification Permitted</strong>, other 
+            ToL contributors and partner projects will be able to use your 
+            contribution, in whole or in part, in their own montages or 
+            collages. If you select <strong>Minor Modification Only</strong>, 
+            your file cannot be excerpted or used in the creation of 
+            derivative media projects. However, the following minor 
+            modifications are permitted: </p>
+            <ul>
+                    <li>Visual media may be auto-scaled for use on ToL 
+                        pages, and thumbnails will be created for use 
+                        in captions, search results etc. They may also 
+                        be cropped, rotated, and small adjustments in 
+                        contrast and sharpness can be made.</li>
+                    <li>The context or presentation of your file may change; 
+                        e.g. this could happen if the look of the ToL 
+                        web site updated, if new features affecting 
+                    	page layout are developed, or if your media file 
+                    	is displayed on the web site of a partner project.</li>
+			</ul>  
+   </div>
+   </div>
+   <div jwcid="use4Block@Block">
+   <div id="use4" class="hide">                       
+		 <p><img src="/tree/img/CCsomerights.gif" alt=" " class="floatright">
+         Media files released under a creative commons licenses can be copied, reused, and 
+         distributed by the general public subject to certain restrictions stipulated by the 
+         particular license chosen. Copyright notices for materials released under this option 
+         are marked with the Creative Commons icon and contain a link to the deed for the 
+         selected license. For more information about these licenses, see the 
+         <a href="http://creativecommons.org/licenses/" target="documentation">Creative Commons 
+         web site</a>.</p>
+         <p>We encourage ToL contributors to release media files  under the 
+         <a href="http://creativecommons.org/licenses/by/3.0/">Attribution</a>, 
+         <a href="http://creativecommons.org/licenses/by-nc/3.0/">Attribution-NonCommercial</a>,
+         <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike</a>, 
+         or <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike</a> 
+         Creative Commons license. Only these licenses are compatible with inclusion of materials 
+         in the <a href="http://eol.org"><strong>Encyclopedia of Life</strong></a>.</p>       
+   </div>
+   </div>
+   <div jwcid="rightSideBlock@Block">
+       <a jwcid="@PageLink" page="ImageHelpMessagesPage" id="viewallhelp" target="ImageHelpWindow">View All Edit Image Data Help Topics</a>
+   </div>
+   <div jwcid="saveInstructionsBlock@Block">
+		<span jwcid="@MediaSaveInstructions"/>
+   </div>
+   <div jwcid="tocBlock@Block">
+     <h3>Image Data Sections</h3>
+	  <ul>
+        <li><a href="#copyright">Copyright Information</a></li>
+        <li id="imageuselink"><a href="#mediause">Use Permitted by Copyright Owner</a></li>
+        <li><a href="#credits">Other Credits</a></li>
+        <li><a href="#attach">Attached to Group(s)</a></li>
+        <li><a href="#imgcontent">Image Content</a></li>
+        <li><a href="#location">Place &amp; Time</a></li>
+        <li><a href="#specimen">Specimen Information</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#alttext">Alternative Text</a></li>
+        <li><a href="#imgtype">Image Type/Technical Information</a></li>
+        <li><a href="#privileges">Editing Privileges</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#subm">Submit Image Data</a></li>
+    </ul>
+   </div>                                              

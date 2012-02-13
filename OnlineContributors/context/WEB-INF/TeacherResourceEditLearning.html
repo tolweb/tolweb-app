@@ -1,0 +1,372 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:false" title="Edit Teacher Resource Learning Information"
+	additionalDelegate="ognl:delegate">
+	<div id="learn2infopgtop">
+        <a name="learn2info"></a>
+		<h3 class="sectionheaderblubpg">Step <span jwcid="@Insert" value="ognl:stepNumber"/>. Edit Learning Information</h3>
+        <div class="boxtocpages">
+			<div jwcid="@TreehouseImportantDiv">
+				<li><a href="#trhslevel">Learner Level</a></li>
+				<li><a href="#overview">Resource Overview/Type</a></li>
+				<li><a href="#trhskeywords">Subject Key Words</a></li>
+				<li><a href="#learningstratbox">Teaching/Learning Strategy</a></li>
+				<li><a href="#timeframe">Time Frame/Context </a></li>
+				<li><a href="#language">Language</a></li><li><a href="#edstandards">Standards</a></li>
+				<li></li>
+	        </div>
+            <div jwcid="@RenderBlock" block="ognl:helpBlock"/>
+            <div jwcid="webquestHelpBlock@Block" >
+                <div jwcid="@WebquestHelpDiv">
+                    <li><a jwcid="@HelpLink" pageName="TeacherResourceHelpMessagesPage" helpName="Learning Information"/></li>
+                </div>
+			</div>
+            <div jwcid="teacherResourceHelpBlock@Block">
+                <div jwcid="@TeacherResourceHelpDiv">
+                    <li><a jwcid="@HelpLink" noDiv="ognl:true" pageName="TeacherResourceHelpMessagesPage" helpName="Learning Information">Learning Information</a></li>
+                </div>
+            </div>
+			<div jwcid="@TreehouseWarningDiv"/>	   
+			<div class="spacer">&nbsp;</div>
+	  </div>
+	</div>
+	<div id="teacherlearninfo">
+		<a name="teacherlearninfo"></a>
+		<div class="boxtoc">
+        <a jwcid="@HelpLink" pageName="TeacherResourceHelpMessagesPage" helpName="Learner Level"/>
+		<a name="trhslevel"></a>
+		<h4>Learner Level </h4>
+		<div id="trhslevelteacher">
+			<h5 class="red">ToL Learner Level</h5>
+		    <div class="indentleft">
+				<p><strong>Choose a ToL Learner Level.</strong> You may select all
+				levels that apply to your page.</p>
+                <ul class="inline">
+                  <li>
+                   <label> <input jwcid="@Checkbox" value="ognl:treehouse.isBeginnerLevel"/>
+                    Beginner</label>
+                  </li>
+                  <li>
+					<label><input jwcid="@Checkbox" value="ognl:treehouse.isIntermediateLevel"/>
+					Intermediate</label></li>
+                  <li>      <label> <input jwcid="@Checkbox" value="ognl:treehouse.isAdvancedLevel"/>
+					Advanced</label> </li>
+                </ul>
+			</div>
+		</div>
+		<div id="gradeage">
+            <h5>Target Grade and Age Level</h5>
+			<div class="indentleft">                
+            <label>Select one option:
+                <select jwcid="@PropertySelection" model="ognl:gradeLevelModel" value="ognl:treehouse.gradeLevel"/>
+			</label>
+            <p>  
+            <label>
+		      <input jwcid="@Checkbox" value="ognl:treehouse.gradeModifiable"/> 	        Can be modified for many grade/age levels </label></p>
+		     </div>
+         </div>
+         <div class="spacer">&nbsp;</div>
+	  </div> 				
+        <div class="boxtoc">
+		<div id="brfdescript"><a name="overview" id="overview"></a>
+        	<a jwcid="@HelpLink" pageName="TeacherResourceHelpMessagesPage" helpName="Resource Overview"/>
+			<h4> Resource Overview</h4>
+			<h5 class="red">Description</h5>
+			<div class="indentleft">
+				<label>
+					<textarea jwcid="@TextArea" value="ognl:treehouse.description" cols="60" rows="5"></textarea>
+				</label>
+			</div>
+		</div>	
+		
+			<div id="comments" class="boxtoc">
+	<h4>Comments</h4>              <div class="indentleft">
+                <p class="tiny10text"> Use this section to add any
+					additional information that you would like visitors to know about your
+					treehouse.</p>
+<textarea jwcid="@TextArea" value="ognl:treehouse.comments" cols="50" rows="3"></textarea>
+                </div>
+          </div>
+		
+		
+		
+		
+		<div id="trhsmetatype">
+<h4>Resource Type</h4>
+
+ <h5 class="long">Additional Treehouse Type</h5>
+<div class="indentleft">
+  <p> This treehouse is a <strong><span jwcid="@Insert" value="ognl:treehouse.treehouseTypeString"/></strong>.
+  <span class="tiny10text">Select additional treehouse types that apply to your resource and that will help others find the resources that they need. </span></p>
+
+        <ul class="inline">
+   <li>
+    <label></label>
+  </li>
+  <li><span>
+    <label>
+      <input jwcid="@Checkbox" value="ognl:treehouse.isGame"/>
+      Game</label>
+  </span></li>
+  <li><span>
+    <label>
+    <input jwcid="@Checkbox" value="ognl:treehouse.isBiography"/>
+    Biography</label>
+  </span></li>
+
+  <li><span>
+    <label>
+
+<span>
+<input jwcid="@Checkbox" value="ognl:treehouse.isInvestigation"/>
+</span>Investigation    </label>
+  </span></li>
+  <li><span>
+    <label>
+    <input jwcid="@Checkbox" value="ognl:treehouse.isStory"/>
+    <span>Story </span> </label>
+  </span></li>
+
+  <li><span>
+    <label>
+    <input jwcid="@Checkbox" value="ognl:treehouse.isArtAndCulture"/>
+   Art and Culture </label>
+  </span></li>
+  <li><span>
+    <label>
+    <input jwcid="@Checkbox" value="ognl:treehouse.isTeacherResource"/>
+   Teacher Resource </label>
+  </span></li>  
+  </ul>
+</div></div>    
+		<div id="activitytype">
+		<h5>Additional Resource Type</h5>
+	    <div class="indentleft">
+          <p class="tiny10text">Select additional resource types that  describe your work. Assigning these categories to your resource will help visitors find your page when they do a treehouse search. <strong>Check all that apply:</strong></p>
+                  <ul class="floatrightlrninfo">              <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isWebBased"/>
+            Web-based resource </label>
+              <label></label>
+            </li>
+            <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isHomeBased"/>
+            Home-based resource</label>
+			 </li>
+
+			 <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isInformal"/>
+            Informal learning resource </label>
+			 </li>
+			 <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isMuseumBased"/>
+            Museum-based resource </label>
+			 </li>
+
+          </ul>
+		   <ul>
+            <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isClassroom"/>
+              Classroom resource </label>
+            </li>
+            <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isLab"/>
+            Lab resource </label>
+            </li>
+            <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isField"/>             Field resource</label>
+            </li>
+			<li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isFieldTrip"/>             Field Trip resource </label>
+
+            </li>
+			         </ul>
+				    </div>
+	</div>
+            
+	</div>
+    <div class="boxtoc">
+		<div id="trhskeywords"><a name="trhskeywords"></a>
+		<h4>Subject/Keywords</h4>
+			<p class="instructions">Select  keywords that match the content area learning of your teacher resource. Please be sure to limit 
+                    your selection to topics for which your teacher resource has special 
+                    relevance. Additional subjects that are not covered in this 
+                    list can be entered in the <strong>Key Words</strong> field 
+                    below.</p>
+        <h5 id="subjecttrigger"  class="tridown" onclick="showbranch('subject', 'hide', 'show'); showbranch('subjecttrigger', 'triup', 'tridown')">Science Subject/Keywords</h5>
+        <div id="subject" class="show"> 	    
+            <div class="indentleft">
+				<div jwcid="@Keywords" keywords="ognl:treehouse.keywords"/>
+        	</div>
+        </div>
+	    </div>
+
+    <div id="crossubkeyword">
+		<h5>Additional Curricular Area Key Words</h5>
+		<div class="indentleft">
+		<ul class="inline"><li>
+		  <input jwcid="@Checkbox" value="ognl:treehouse.isLanguageArts"/>
+		  Language Arts</li><li>
+		  <input jwcid="@Checkbox" value="ognl:treehouse.isTechnology"/>
+		    Technology</li><li>
+		  <input jwcid="@Checkbox" value="ognl:treehouse.isMathematics"/>
+		    Mathematics
+  		  <input jwcid="@Checkbox" value="ognl:treehouse.isHealth"/>
+	          Health</li>
+		    <li>
+		  <input jwcid="@Checkbox" value="ognl:treehouse.isSocialStudies"/>
+	            Social Studies</li><li>
+		  <input jwcid="@Checkbox" value="ognl:treehouse.isArts"/>
+            Arts</li>
+		</ul>
+		</div>
+		</div>
+    </div>
+    <div class="boxtoc" id="learningstratbox"><a name="learningstratbox"></a>
+		<h4>Teaching and Learning Strategy</h4>
+		
+		<p class="instructions">Select the learning and grouping strategies that best describe your resource. 
+            You may select more than one strategy but be sure and select only the most relevant categories.</p>
+ 		<h5 id="strategytrigger"  class="tridown" onclick="showbranch('learnstrategy', 'hide', 'show'); showbranch('strategytrigger', 'triup', 'tridown')"> Strategy</h5>
+        <div id="learnstrategy" class="show">
+            <div class="indentleft">
+	    	  <ul class="floatrightlrninfo">          		   <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isLearningModules"/> Learning Modules/Centers</label>
+		   </li>
+           <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isDiscussion"/> Discussion
+             </label></li>
+           <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isDemonstration"/> Demonstration</label>
+           </li>
+           <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isLecture"/> Lecture</label>
+           </li>
+           <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isPresentation"/> Presentation</label>
+           </li>
+		   <li><label>
+              <input type="checkbox">               Other
+             <input jwcid="@TextField" value="ognl:treehouse.otherLearningStrategy"/></label>
+		 	</li>
+        </ul>
+        <ul>
+           <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isInquiryLearning"/>
+             Inquiry Learning</label></li>
+           <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isHandsOnLearning"/>
+           Hands-on Learning</label>
+             <label></label>
+           </li>
+
+           <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isVisualInstruction"/>
+           Visual Instruction</label></li>
+                      <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isRolePlaying"/>
+           Role-Playing</label></li>
+          <li><label> <input jwcid="@Checkbox" value="ognl:treehouse.isMovement"/>
+           Movement, Play, Games</label></li>
+		     <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isTechnologyIntegration"/> Technology Integration/<br>
+             <span style="display: block; padding-left: 20px;"> Computer Assisted Instruction </span></label>
+          </li>
+        </ul>
+		  	 </div>
+            </div>
+ 		<h5 id="groupingtrigger"  class="triup" onclick="showbranch('groupstrategy', 'show', 'hide'); showbranch('groupingtrigger', 'tridown', 'triup')">Grouping </h5>
+           <div id="groupstrategy" class="hide">	 	 	  <div class="indentleft"> <p>Select Grouping Organization (select all that apply) </p>
+	   <ul class="floatrightlrninfo">
+             <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isHeterogeneous"/>               </label>
+Heterogeneous grouping</li> <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isHomogeneous"/>               </label>
+Homogeneous grouping</li>
+           <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isCrossAge"/>                Cross age or multi-age teaching</label>
+           </li>
+        </ul> <ul>  <li><label> <input jwcid="@Checkbox" value="ognl:treehouse.isIndividualized"/>
+           Individualized instruction</label></li>
+           <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isLargeGroup"/>               </label>
+Large Group instruction</li>
+           <li><label>
+              <input jwcid="@Checkbox" value="ognl:treehouse.isSmallGroup"/>               Small Group instruction</label>
+             </li>
+                          </ul>    		 </div><div></div></div>            
+ </div>
+    <div class="boxtoc">
+		<div id="timeframe"><a name="timeframe"></a>
+	
+	<h4>Time Frame</h4>
+    
+  <p class="instructions">Please indicate the time needed for the activity and the time frame, for example: This activity will take about 45 minutes per session over the course of 3 to 4 sessions.</p>
+<div class="indentleft">  <p>Suggested time frame:<span>
+         <input jwcid="@TextArea" value="ognl:treehouse.timeFrame" cols="60" rows="5"/></span></p>
+  </div>
+ <div id="sequencecon"> <h5> Sequence and Context </h5>
+  
+ <p class="instructions">Describe in what context you present this resource. For example, indicate if this treehouse is an introductory lesson, a stand-alone lesson, an anticipatory set, a culminating activity, or part of a unit or extended project (indicate what part). <em>Note that you may add this resource to a teacher resource portfolio that presents to others a group of resources in an integrated context. </em></p>
+  	<div class="indentleft"><textarea jwcid="@TextArea" value="ognl:treehouse.sequenceContext" cols="60" rows="5"/>
+   </div></div>
+		</div></div>
+<div id="language" class="boxtoc"><a name="language"></a>
+            <h4>Language</h4>
+          <div class="indentleft"> <p><strong>Languages that apply to this resource:</strong></p>
+            <ul class="inline">
+             <li> <label>
+                <input jwcid="@Checkbox" value="ognl:treehouse.languages.english"/>
+              English</label></li>
+           <li>  <label>                 
+                <input jwcid="@Checkbox" value="ognl:treehouse.languages.spanish"/>
+              Spanish</label></li>
+              <li>
+              <label>
+                <input jwcid="@Checkbox" value="ognl:treehouse.languages.german"/>
+              German</label></li>
+              <li>
+               <label> 
+                <input jwcid="@Checkbox" value="ognl:treehouse.languages.french"/>
+              French</label></li>
+            </ul>
+			<p class="extrapad"><label>Other language 
+			  <inpuw jwcid="@TextField" value="ognl:treehouse.languages.otherLanguage"/></label></p>
+        </div>
+          </div> 
+<div id="edstandards">
+    <a name="edstandards"></a>
+	<div id="standards" class="boxtoc">
+	  <a jwcid="@HelpLink" pageName="TeacherResourceHelpMessagesPage" helpName="Education Standards"/>
+	<h4>Standards</h4>
+	<div id="statestandards">
+		<h5> State Education Standards </h5>
+		<div class="indentleft"><p><label> State: 
+			<input jwcid="@TextField" type="text" size="10" value="ognl:treehouse.stateStandards"/></label></p>
+    		<p><label>Subject Areas</label> 
+			<input jwcid="@TextArea" cols="50" rows="2" value="ognl:treehouse.stateStandardsSubjects"/>
+		</p>
+        </div>
+		<p class="instructions">
+		Add State Education Standards by writing them in the space below.
+		</p>   
+        <div class="indentleft">
+                <p><strong>Standards Text</strong></p>  
+				<textarea jwcid="@PreparedTextArea" cols="50" rows="20" valuePath="stateStandardsValue" textAreaId="statestandards" 
+                	useDefaultText="ognl:false" useEditor="prop:useHTMLEditor"/>
+		</div>
+        </div>
+		<h5>National Education Standards </h5>
+		<div class="indentleft" id="natstandards"> <p><label> Subject Areas
+		<input jwcid="@TextArea" cols="50" rows="2" value="ognl:treehouse.nationalStandardsSubjects"/>
+		</label></p>
+		</div>
+		<p class="instructions">
+		Add National Education Standards by writing them in the space below.       
+		</p>   
+        <div class="indentleft">
+           <p><strong>Standards Text</strong></p>
+   			<textarea jwcid="@PreparedTextArea" cols="50" rows="20" valuePath="nationalStandardsValue" textAreaId="nationalstandards" 
+               useDefaultText="ognl:false" useEditor="prop:useHTMLEditor"/>
+		</div>
+	</div>   
+</div>
+</div>
+</html>

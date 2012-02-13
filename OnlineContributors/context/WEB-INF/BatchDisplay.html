@@ -1,0 +1,29 @@
+<span jwcid="@Insert" value="ognl:page.error" class="error" raw="ognl:true"/>
+<form jwcid="@Form" listener="ognl:page.listeners.submitPages">
+<span jwcid="@If" condition="ognl:isEditor">
+    <input jwcid="@Hidden" value="ognl:page.publicationBatchID"/>
+</span>
+<span jwcid="@Foreach" source="ognl:page.batches" value="ognl:page.currentBatch" index="ognl:page.batchIndex">
+	<div class="publish">
+        <span jwcid="@UploadedPagesDisplay" isEditor="ognl:isEditor" uploadedPages="ognl:page.currentSortedUploadedPages"/>
+        <span jwcid="@If" condition="ognl:isEditor">
+            <p>If you would like to send some comments to the contributor who submitted
+               these pages, you may do so here:</p>
+            <p>
+               <textarea jwcid="@TextArea" value="ognl:page.comments" rows="20" cols="70"/>
+            </p>
+        </span>
+        <span jwcid="@If" condition="ognl:isEditor" element="ognl:null">
+		<input jwcid="@Submit" value="ognl:'Publish checked pages'"/>            
+        <input jwcid="@Submit" value="Reject pages" selected="ognl:page.rejectedBatch" tag="ognl:page.currentBatch"/>
+        </span>
+        <span jwcid="@Else" element="ognl:null">
+	           <input jwcid="@PropertySelection" model="ognl:page.revisionTypeModel" 
+	               value="ognl:page.currentBatch.revisionType" class="floatright"/>
+		<input jwcid="@Submit" value="Publish checked pages" selected="ognl:page.submittedBatch" tag="ognl:page.currentBatch"/>            
+		<label>Comments
+		<textarea jwcid="@TextArea" name="Submission Comment" value="ognl:page.currentBatch.submissionComment" cols="40" rows="3"></textarea>  </label>           
+        </span>
+    </div>
+</span>
+</form>

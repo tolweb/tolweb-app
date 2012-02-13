@@ -1,0 +1,322 @@
+<html jwcid="@BuildTreehouseWrapper" title="Treehouse Materials Manager"> <a
+jwcid="editLink@DirectLink" listener="ognl:listeners.editObject"/>
+<h1 class="clear">Treehouse Materials Manager</h1>
+
+<span jwcid="@If" condition="ognl:contributor.isLearningEditor">
+<!--<h5>Use regular media form</h5>
+<form jwcid="@Form" listener="listener:updateMediaFormPreference">
+<input jwcid="@Checkbox" value="prop:useRegularImageForm" onclick="document.forms[0].submit()"/> Use regular media form
+</form>-->
+<h5>Edit Submitted Treehouses</h5> <ul> <li><a jwcid="@PageLink"
+page="EditSubmittedTreehouses">Edit Submitted Treehouses</a></li> </ul>
+<h5>Edit New Treehouse Contributors</h5> <ul> <li><a jwcid="@PageLink"
+page="EditNewTreehouseContributors">Edit New Treehouse
+Contributors</a></li> </ul> 
+<h5>Edit New Classroom Projects</h5> <ul> <li><a jwcid="@PageLink"
+page="EditNewClassroomProjects">Edit New Classroom Projects</a></li> </ul>
+</span>
+ <span jwcid="@If"
+condition="ognl:newObjectUploaded"> <div jwcid="@RedirectDiv"
+url="ognl:redirectUrl"/> </span>
+<div id="trhsmanagercontainer"> <div class="solidborder"><img src="/tree/learn/lisa.images/trhouseimage/treeoflife09sm3.gif" width="79" height="70" class="floatright" style="margin: 0 -25px 0 0;">
+<span jwcid="@If" condition="ognl:mostRecentlyEditedTreehouses.size > 0">
+	<div class="blueboxtoplinks" id="mostrecent">
+	<p class="smspacebot"><strong></strong>  Would you like to edit one of your most recently worked on treehouses? </p>
+	<table class="nomarg">
+	<span jwcid="@Foreach" source="ognl:mostRecentlyEditedTreehouses" value="ognl:currentTreehouse">	
+	<tr>
+	<td class="titleColumnValue">
+		<a jwcid="@TreehouseTitleCondLink" isTreehouses="ognl:true" treehouse="ognl:currentTreehouse"/>
+	</td>
+	
+	<td class="IDColumnValue"><span jwcid="@Insert" value="ognl:currentTreehouse.accessoryPageId"/></td>
+	
+	<td class="historyColumnValue">
+        <a jwcid="@TreehouseSubmittedOrEditLink" treehouse="ognl:currentTreehouse"
+            isTeacher="ognl:false" pageName="TreehouseEditNotes" anchor="commsection">                                
+			comments/questions page history
+        </a>        
+	</td>
+	<td class="editColumnValue">
+        <a jwcid="@GenericLink" renderer="ognl:rendererFactory.previewLinkRenderer" href="ognl:workingUrl">
+            preview
+        </a>
+	</td>
+	<td class="selectColumnValue">
+        <a jwcid="@TreehouseSubmittedOrEditLink" treehouse="ognl:currentTreehouse" isTeacher="ognl:false"
+            showSubmittedMessage="ognl:false">
+			edit
+        </a>
+	</td>
+	</tr>
+    </span>
+	</table> 
+</div>    
+</span>    
+
+<table><tr><td style="width: 220px;"> <ul class="boxtoc">
+        <li> <a href="#upload" class="noline">Create a new treehouse</a></li>
+        <li><a href="#edit" class="noline">Find and edit one of your treehouses</a></li>
+        <li><a href="#delete" class="noline">Delete a treehouse</a></li>
+</ul>   
+<span jwcid="@If" condition="ognl:!isStudent && hasProjects">
+    <dl class="indent15"><dt><a jwcid="@DirectLink" target="registration"
+listener="ognl:listeners.editRegistrationInfo">Update registration information</a></dt>
+    <dd class="small" style="margin-left: 5px;">Change your password and other personal information.</dd>
+	</dl>    
+</span>
+    </td>
+    <td>  
+<dl class="main">        
+<dt><a jwcid="@PageLink" anchor="upload" target="edit" page="ImagesManager">Go to the Media Manager</a></dt>
+<dd class="small" style="margin-left: 5px;">Upload media (images, audio and video) to the ToL database without editing a treehouse.</dd>
+<span jwcid="@If" condition="ognl:!isStudent">
+<dt><a jwcid="@DirectLink" listener="ognl:listeners.registerNewProject" class="teacherresource">Register a Classroom Project</a></dt>
+<dd>Teachers, use this option to allow your students to complete individual, group and whole class projects.</dd>
+<dt><img src="/tree/learn/lisa.images/trhouseimage/teacherresiconmini.jpg" class="floatright"><a jwcid="@PageLink" page="ClassroomProjectsMaterialsManager" class="teacherresource">Go to the Classroom Project Manager</a></dt> 
+   <dd>View and edit treehouses that belong to your classroom projects. Manage classroom projects.</dd>
+<span jwcid="@If" condition="ognl:hasProjects" element="ognl:null">   
+<dt><a jwcid="@PageLink" page="TeacherEditSubmittedTreehouses" class="teacherresource">Review Submitted Student Treehouses</a></dt>
+   <dd>Once students submit treehouses for review/publication, you (the teacher) will need to review them before you submit them for publication on the ToL.</dd>
+</span>
+<span jwcid="@Else" element="ognl:null">
+    <dt><a jwcid="@DirectLink" target="registration"
+listener="ognl:listeners.editRegistrationInfo">Update registration information</a></dt>
+    <dd class="small" style="margin-left: 5px;">Change your password and other personal information.</dd>
+</span>
+</span>
+</dl>
+  
+    
+  
+     </td>
+</tr>
+
+	  </table></div>
+  
+
+<a name="upload"></a> 
+<div class="solidborder"> <h3>Compose a new treehouse</h3> 
+<form name="form3" jwcid="@Form" listener="ognl:listeners.composeNewTreehouseSubmit">
+<table id="trhsmanagercats" style="padding: 0 5px 15px 5px; margin-top: 0;"> 
+	<tr>
+	    <th style="padding: 0;" colspan="2"><h4 style="padding: 0;">Create a <strong>Treehouse</strong></h4></th>
+	    <th style="padding: 0;"><h4 style="width: 225px; padding: 0;">Create a <strong>Treehouse Portfolio</strong></h4></th>
+	</tr>    
+	<tr>
+		<td colspan="2"><p style="margin-top: 0;">Choose the type of treehouse that best fits what you would like to compose from the list below, then click create treehouse. <a href="#moreinfo">See below</a> to find out more about each category. </p></td>
+		<td rowspan="8" style="width: 220px; border-left: 1px dotted #ccc; padding-left: 15px;">
+			<p style="margin-top: 0;">A portfolio is for linking together a group of related pages. <a href="#moreinfoportfo">See below</a> for more information about portfolios.</p>
+			<p>Note  that <span class="teacherresource"><strong>teacher resource</strong></span> treehouses by default function as portfolios.</p>
+			<p>&nbsp;</p>
+			<p>
+				<input jwcid="@Submit" listener="ognl:listeners.newPortfolioSelected" onclick="editNewObject()" value="Create Portfolio"/>
+			</p>
+
+<p class="teacherresource">&nbsp; </p></td>
+  </tr>    
+    <span jwcid="@RadioGroup"
+selected="ognl:treehouseType"> <tr>                     
+<td><a href="#invest"><img src="/tree/learn/lisa.images/trhouseimage/investiconmini.jpg" alt="investigation icon" width="25" height="36" border="0" style="padding-left: 3px;">
+</a></td> <td width="275" class="investigation"  style="width: 275px;"> <input type="radio" jwcid="@Radio"
+value="ognl:@org.tolweb.hibernate.MappedAccessoryPage@INVESTIGATION"/>
+<strong> Investigation</strong></td>
+</tr>
+
+<tr>               <td><a href="#story"><img src="/tree/learn/lisa.images/trhouseimage/storiesiconmini.jpg" alt="story icon" width="39" height="36" border="0"></a></td>
+ <td class="stories"><input
+type="radio" jwcid="@Radio"
+value="ognl:@org.tolweb.hibernate.MappedAccessoryPage@STORY"/> <strong>
+Story</strong></td>
+
+</tr> <tr>               
+     <td><a href="#fungames"><img src="/tree/learn/lisa.images/trhouseimage/fungamesiconmini.jpg" alt="fun and games icon" width="35" height="36" border="0"></a></td>
+ <td class="games"><input
+type="radio" jwcid="@Radio"
+value="ognl:@org.tolweb.hibernate.MappedAccessoryPage@GAME"/>
+<strong>Fun and Games</strong></td> </tr>
+
+<tr>                
+<td><a href="#artculture"><img src="/tree/learn/lisa.images/trhouseimage/artculticonmini.jpg" alt="art and culture icon" width="36" height="36" border="0"></a></td>
+ <td class="artculture"><input
+type="radio" jwcid="@Radio"
+value="ognl:@org.tolweb.hibernate.MappedAccessoryPage@ARTANDCULTURE"/>
+<strong> Art and Culture</strong></td>
+
+</tr> <tr>       
+     <td><a href="#teacherresource"><img src="/tree/learn/lisa.images/trhouseimage/teacherresiconmini.jpg" alt="teacher resources icon" width="41" height="36" border="0"></a></td>
+
+ <td class="teacherresource"><input
+type="radio" jwcid="@Radio"
+value="ognl:@org.tolweb.hibernate.MappedAccessoryPage@TEACHERRESOURCE"/>
+<strong>Teacher Resource</strong></td> </tr>
+
+
+<tr>   
+<tr>       
+     <td><a href="#webquest"><img src="/tree/learn/lisa.images/trhouseimage/webqiconportfo.jpg" width="35" height="30" border="0"></a></td>
+
+ <td class="webquest"><input
+type="radio" jwcid="@Radio"
+value="ognl:@org.tolweb.tapestry.TreehouseMaterialsManager@WEBQUEST"/>
+<strong>WebQuest</strong></td> </tr>
+
+
+<tr>                 
+
+     <td><a href="biography"><img src="/tree/learn/lisa.images/trhouseimage/bioiconmini.jpg" alt="biography icon" width="28" height="30" border="0" style="padding-left: 7px;"></a></td>
+
+ <td class="bio"><input type="radio"
+jwcid="@Radio"
+value="ognl:@org.tolweb.hibernate.MappedAccessoryPage@BIOGRAPHY"/>
+<strong>Biography</strong></td> </tr> </span> <tr> <td>&nbsp;</td> <td><input jwcid="@Submit" type="submit" name="Submit" onclick="editNewObject()" value="Create Treehouse"/></td> </tr> </table> </form>
+
+</div>
+
+
+<a name="edit"></a>
+ <div class="solidborder"> <h3>Edit one of your treehouse contributions</h3>
+<span jwcid="@TreehouseSearch" instructions="ognl:searchInstructionsString" linkString="edit"
+callbackType="ognl:@org.tolweb.tapestry.TreehouseSearchResults@EDIT_PAGE"
+	wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@BUILD_TREEHOUSE_WRAPPER"
+	containingPageNoResultsAnchor="edit"
+    searchPageName="TreehouseMaterialsManager">
+<p>To <strong>edit</strong> a treehouse you must first find it in the ToL database. Type search criteria in 
+one of the search fields below and click find treehouse. We recommend you type search criteria into only 
+one field. To view all of your treehouses,  click show all my treehouses.</p>
+    </span>
+</div>
+
+<a name="delete"></a> 
+<div class="solidborder"><h3 class="delete">Delete one of your treehouse contributions from the ToL database</h3>
+<span jwcid="@TreehouseSearch"
+	instructions="Click the 'delete' link to delete your treehouse"
+	linkString="delete"
+	callbackType="ognl:@org.tolweb.tapestry.TreehouseSearchResults@DELETE_PAGE"
+	wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@BUILD_TREEHOUSE_WRAPPER"
+	containingPageNoResultsAnchor="delete"
+    searchPageName="TreehouseMaterialsManager">
+<p>To <strong>delete</strong> a treehouse you must first find it in the ToL database. Type search 
+criteria in one of the search fields below and click find treehouse. We recommend you type search 
+criteria into only one field. To view all of your treehouses, click show all my treehouses. </p>
+    </span>
+    </div> 
+
+
+
+<div class="solidborder">
+<h4 class="highlight"><a name="moreinfo"></a><strong>More information about treehouse
+contribution categories</strong></h4>
+
+
+<p>Building treehouses offers you the opportunity to publish work that
+is related to the study of organisms and biodiversity. <strong>Though
+you must initially select one type of treehouse contribution, you will
+be able to  assign multiple treehouse types to your work once you are in
+the treehouse data entry page. </strong>This means that if you have an
+investigation that you would also like to call a story, just choose one
+of the categories to start off. Then, in the Treehouse Type section of
+the treehouse data entry page, you can check off the other treehouse
+categories that you would like to call your work. </p>
+
+<p>Below is a brief explanation of each category. 
+For more information and ideas see <a href="/tree/learn/TreehouseActivities/BuildActivity.html" target="fullHelpWindow"><strong>Fun Treehouse Building Activities</strong></a>. </p>
+
+<a name="invest"></a><p><img src="/tree/learn/lisa.images/trhouseimage/investiconmini.jpg" alt="investigation icon" width="25" height="36"><span class="investigation"><strong> Investigation</strong></span>:
+Choose an investigation to publish a</p> 
+<ul class="dot"> <li>Science
+experiment or project </li> <li>Field study</li> <li>Scientific
+investigation or research study</li> <li>Science journal entry</li>
+
+<li>Scientific observation of an organism</li> 
+<li class="nodisc"><a href="#upload" class="noline"> return to compose a new treehouse contribution</a>
+</ul> <a name="story"></a>
+<p><img src="/tree/learn/lisa.images/trhouseimage/storiesiconmini.jpg" alt="story icon" width="39" height="36"><span
+class="stories"><strong>Story:</strong></span> Publish your story! We
+are looking for</p> 
+<ul class="dot"> <li> Nonfiction and fictional
+stories, from accounts of neighborhood wildlife  to tales of life as a
+lion</li> <li>Stories about your experiences exploring organisms in the
+field, classroom or lab</li> <li> Picture books</li> <li>News stories
+and interviews</li> 
+<li class="nodisc"><a href="#upload" class="noline"> return to compose a new treehouse contribution</a>
+</li>
+</ul>
+<a name="fungames"></a>
+<p><img src="/tree/learn/lisa.images/trhouseimage/fungamesiconmini.jpg" alt="fun and games icon" width="32" height="32"><span class="games"><strong>Fun and Games:</strong></span> Let's
+play! Some example of games we would like you to contribute are</p> 
+<ul
+class="dot"> <li>Computer games</li> <li>Playground games</li> <li>Card
+games</li> <li>Trivia games</li> <li>Game cards </li>
+<li class="nodisc"><a href="#upload" class="noline"> return to compose a new treehouse contribution</a>
+ </ul><a name="artculture"></a>
+
+<p><img src="/tree/learn/lisa.images/trhouseimage/artculticonmini.jpg" alt="art and culture icon" width="32" height="32"><span class="artculture"><strong>Art and Culture:</strong></span>
+Some examples of art and culture contributions we welcome are</p> 
+<ul
+class="dot"> <li> Instructions on how to create organism related arts
+and crafts projects</li> <li>Poems and songs </li> <li>Folk remedies for
+various ailments, recipes for the kitchen</li> <li>Descriptions of
+economic and cultural use of organisms (such as corn, reindeer, scarab
+beetles, silk worms)</li> <li class="dot">A multimedia gallery or
+&quot;art exhibit&quot;</li>
+<li class="nodisc"><a href="#upload" class="noline"> return to compose a new treehouse contribution</a></ul> 
+
+<a name="teacherresource" id="teacherresource"></a>
+<p><img src="/tree/learn/lisa.images/trhouseimage/teacherresiconmini.jpg" alt="teacher resources icon" width="41" height="36"><span
+class="teacherresource"><strong>Teacher Resources:</strong></span> Add
+materials to guide teaching and learning such as</p> 
+<ul class="dot">
+
+<li>Units, lessons and activities</li>
+<li>Assessments </li>
+<li>Glossary word lists </li> <li>Materials to guide student exploration
+</li> <li>Print, media and internet resources </li>
+ <li class="nodisc"><a href="#upload" class="noline"> return to compose a new treehouse contribution</a>
+</ul>
+
+<a name="webquest" id="webquest"></a>
+<p><img src="/tree/learn/lisa.images/trhouseimage/webqiconportfo.jpg" width="35" height="30"><span
+class="webquest"><strong>WebQuests:</strong></span> Create an interactive activity for </p> 
+<ul class="dot">
+
+<li>Exploring and learning about a topic </li> 
+<li>Guiding others through web resources </li>
+<li>Helping learners use information for their own purposes </li> 
+</ul>
+
+<p><a href="#upload" class="noline"> Return to compose a new treehouse contribution</a>
+</p>
+
+
+<p><a name="biography"></a><a href="#biography"><img src="/tree/learn/lisa.images/trhouseimage/bioiconmini.jpg" alt="biography icon" width="28" height="30" border="0"></a> <span class="bio"><strong>Biography:</strong></span> Here you can
+pen a biography of a scientist. <br>
+<a href="#upload" class="noline" style="padding-left: 35px;"> return to compose a new treehouse contribution</a>
+</p>
+
+</div>
+
+<div class="solidborder">
+<h4 class="highlight"><strong><a name="moreinfoportfo"></a>More information about treehouse portfolios</strong></h4>
+<p>Choosing to create a <strong>portfolio</strong> offers the opportunity to present  different ToL pages as a group of complementary materials. Because teacher resources often need to collect several pages in order to teach a concept,  by default all teacher resources have the option to add portfolio pages. </p>
+<p><strong>You can add  to a portfolio:</strong></p>
+<ul>
+  <li> Pages that you have authored.</li>
+  <li>Pages by other authors for whom you have permission to edit their pages. </li>
+  </ul>
+<p><strong>Other special portfolio features:</strong></p>
+<ul>
+  <li> You can create sections for the portfolio pages you are adding. For example, if you are creating a portfolio called the <em>Insects of San Antonio, </em>you can create sections to organize pages by different types of insects or  sections to organize pages by different habitats.</li>
+  <li>You can choose to display some of the data sections of the portfolio you create on the pages that you include in the portfolio. The data sections that you can display on pages added to the portfolio are References, Information on the Internet, and Learning Information. For example, when Rachel adds her <em>Rachel's Backyard Bugs</em> investigation treehouse to the portfolio she is creating called <em>Insects of San Antonio, </em>she can choose to display the References of <em>Insects of San Antonio</em> on <em>Rachel's Backyard Bugs</em>. Visitors to <em>Rachel's Backyard Bugs</em> will then see both the treehouse page's references as well as any references that were added to the portfolio <em>Insects of San Antonio</em>.</li>
+</ul>
+<p><a href="#upload" class="noline">Return to compose a new treehouse portfolio</a> </p>
+</div>
+</div>
+
+<script jwcid="@Script" script="EditNewObject.script"
+pageName="EditTreehouseWindowRedirect"
+editWindowName="ognl:editWindowName"/> 
+<span jwcid="@If" condition="ognl:selectedAnchor">
+<span jwcid="@Script" script="JumpToAnchor.script" anchor="ognl:selectedAnchor"/>
+</span>
+</html>

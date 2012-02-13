@@ -1,0 +1,21 @@
+<html jwcid="@btol/ProjectWrapper" title="prop:title" includeDojo="ognl:false">
+	<h2 class="clear"><span jwcid="@Insert" value="prop:title"/></h2>
+	<span jwcid="@If" condition="prop:defaultsApplied">
+		<script jwcid="@Script" script="ReloadOpener.script"/>
+        <p>Defaults Successfully Applied</p>
+	    <a href="javascript:window.close();">Close window</a>        
+    </span>
+    <span jwcid="@Else">    
+	    <form jwcid="@Form" listener="listener:applyDefaults">
+	    <ul class="nodisc">
+	        <li>Sequence Status: <input jwcid="@PropertySelection" value="prop:statusSelection" model="prop:statusModel"/></li>
+	        <li>For Taxa: <input jwcid="@PropertySelection" value="prop:taxaSelection" model="prop:taxaModel"/></li>
+	        <li>Genes:
+				<ul jwcid="@btol/GeneSelectionList" genes="prop:allGenes" selectedGenes="prop:genesToAssign"/>
+	        </li>
+	        <li><p><input jwcid="@Checkbox" value="prop:overwriteExisting"/> Overwrite existing sequence status information</p></li>
+	    </ul>
+	    <input jwcid="@Submit" value="Apply Defaults"/> 
+	    </form>
+    </span>
+</html>

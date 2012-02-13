@@ -1,0 +1,15 @@
+<tr>    
+    <td>
+        <span jwcid="@If" condition="ognl:height > 0" element="ognl:null"><span jwcid="@Insert" value="ognl:height"/>px</span>
+        <span jwcid="@Else" element="ognl:null">Master<a class="noline" href="#size">*</a></span>            
+    </td>
+    <td class="code">
+        <span jwcid="@If" condition="ognl:!page.isWysiwyg" element="ognl:null">
+			<span jwcid="@Insert" raw="ognl:true"
+            value="ognl:nonJavascriptInsertImageUrl"/>
+        </span>
+        <span jwcid="@Else" element="ognl:null">
+			<a jwcid="@Any" element="a" href="ognl:javascriptInsertImageUrl">select</a>
+        </span>
+	</td>
+</tr>

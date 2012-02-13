@@ -1,0 +1,13 @@
+<html jwcid="@NewBarebonesFormWrapper" title="ognl:'Confirm ' + mediaType + ' Data'">
+    <form jwcid="@Form">
+    <input jwcid="@Hidden" value="ognl:editedObjectId"/>
+	<h2>Confirm <span jwcid="@Insert" value="ognl:mediaType"/> Data</h2>
+    <p>The following is a preview of the <span jwcid="@Insert" value="ognl:mediaType"/> Data you have entered.  If you are satisfied with the 
+    data, press the "Accept <span jwcid="@Insert" value="ognl:mediaType"/> Data" button to save your changes.  To return to editing and
+    revise the data press the "Edit <span jwcid="@Insert" value="ognl:mediaType"/> Data" button.</p>
+    <span jwcid="@ImageDataBlock" image="ognl:image" isPreview="ognl:true"/>
+    <p></p>
+        <input type="Submit" jwcid="@Submit" action="listener:editImage" value="ognl:'Edit ' + mediaType + ' Data'"/>
+        <input type="Submit" jwcid="@Submit" action="listener:saveImage" value="ognl:'Accept ' + mediaType + ' Data'"/>        
+    </form>
+</html>

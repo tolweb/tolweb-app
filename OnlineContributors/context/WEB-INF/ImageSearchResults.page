@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page-specification PUBLIC 
+  "-//Apache Software Foundation//Tapestry Specification 3.0//EN" 
+  "http://jakarta.apache.org/tapestry/dtd/Tapestry_3_0.dtd">
+<page-specification class="org.tolweb.tapestry.ImageSearchResults">
+    <description>Image Search Results Page for ToL Images</description>
+    <property-specification name="images" type="java.util.List" persistent="yes"/>
+    <property-specification name="isDelete" type="boolean"/>
+    <property-specification name="callbackType" type="int"/>
+    <property-specification name="instructions" type="java.lang.String"/>
+    <property-specification name="linkString" type="java.lang.String"/>
+    <property-specification name="searchPageName" type="java.lang.String"/>
+    <property-specification name="dontShowFilename" type="boolean"/>
+    <property-specification name="editedObjectId" type="java.lang.Long"/>
+    <property-specification name="selectedImageId" type="java.lang.Long"/>
+    <property-specification name="editWindowName" type="java.lang.String"/>
+    <property-specification name="mediaType" type="java.lang.String"/>
+    <property-specification name="additionalReturnPageName" type="java.lang.String"/>
+</page-specification>

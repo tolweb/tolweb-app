@@ -1,0 +1,21 @@
+<span jwcid="@MailBlock" html="ognl:false" 
+	smtp="localhost" 
+	from="treegrow@tolweb.org" 
+	to="ognl:{webServicesKey.userEmail}"
+	subject="ognl:@org.tolweb.content.NewWebServicesKeyEmail@EMAIL_TITLE" >
+You are already signed up to use the Tree of Life Web Services.
+
+Perhaps you have forgotten or misplaced your User Key:
+
+Web Services User Key: <span jwcid="@Insert" value="ognl:webServicesKey.webServicesKey"/>
+
+Please have a look at the Tree of Life Web Services documentation for information about our response format and content of ToL response documents:
+http://webservices.tolweb.org/
+
+For instructions on how to use the Tree of Life Web Services, please see the quickstart tutorial:
+http://tolweb.org/tree/home.pages/webservicestutorial.html
+
+We thank you for your interest in using our content.
+
+The Tree of Life team: http://tolweb.org/tree/home.pages/homepeople.html     
+</span>

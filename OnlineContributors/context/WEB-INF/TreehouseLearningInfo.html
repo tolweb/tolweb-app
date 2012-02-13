@@ -1,0 +1,108 @@
+<ul class="brlearnlist">
+	<li>ToL Learner Level:
+		<ul class="inline">
+       		<li><span jwcid="@Insert" value="ognl:treehouse.learnerLevelString"/></li>
+		</ul>
+	</li>
+		<li>Target Grade/Age Level:
+			<ul class="inline">
+				<li><span jwcid="@Insert" value="ognl:teacherResource.gradeLevelLabel"/>. </li>
+				<span jwcid="@If" condition="ognl:teacherResource.gradeModifiable">
+				    <li>Can be modified for many age/grade levels</li>
+				</span>
+			</ul>
+		</li>
+        <span jwcid="@If" condition="ognl:isTeacherResource">
+        <span jwcid="@If" condition="ognl:hasObjective">
+		<li>Learning Objective(s). Learners will:
+			<ul class="learnobjectivelist">
+				<li jwcid="@Insert" value="ognl:objectiveString" raw="ognl:true"/>
+			</ul>
+		</li>
+        </span>
+        </span>
+        <span jwcid="@If" condition="ognl:hasResourceType">
+		<li>Type of Activity
+			<ul class="inline">
+				<li><span jwcid="@Insert" value="ognl:resourceType"/></li>
+			</ul>
+		</li>
+        </span>
+        <span jwcid="@If" condition="ognl:keywordsList.size > 0">
+		<li>Science Subject / Key Words
+			<ul>
+                <li jwcid="@Insert" value="ognl:keywordsString" raw="ognl:true"/>
+			</ul>
+		</li>
+        </span>
+        <span jwcid="@If" condition="ognl:teacherResource.hasStateStandards">
+		<li><span jwcid="@Insert" value="ognl:teacherResource.stateStandards"/> State Education Standards: (<a href="#statestandards">view standards</a>):
+			<ul class="inline">
+                <li jwcid="@Insert" value="ognl:stateStandardsSubjectsString" raw="ognl:true"/>
+			</ul>
+		</li>
+        </span>
+        <span jwcid="@If" condition="ognl:teacherResource.hasNationalStandards">
+		<li>National Education Standards (<a href="#natstandards">view standards</a>):
+			<ul class="inline">
+                <li jwcid="@Insert" value="ognl:nationalStandardsSubjectsString" raw="ognl:true"/>
+			</ul>
+		</li>
+      	</span>
+        <span jwcid="@If" condition="ognl:hasTimeFrame">
+		<li>Suggested Time Frame
+			<ul>
+                <li jwcid="@Insert" value="ognl:timeFrameString" raw="ognl:true"/>
+			</ul>
+		</li>
+        </span>
+        <span jwcid="@If" condition="ognl:hasSequence">
+		<li>Sequence and Context
+            <ul>
+				<li jwcid="@Insert" value="ognl:sequenceString" raw="ognl:true"/> 
+			</ul>
+		</li>
+        </span>
+    <span jwcid="@If" condition="ognl:hasAdditionalTypes">
+	<li>Additional Treehouse Type:
+		<ul class="inline">
+            <li jwcid="@Insert" value="ognl:additionalTypesString" raw="ognl:true"/>
+		</ul>
+	</li>
+	</span>
+        <span jwcid="@If" condition="ognl:hasCurricularAreas">
+		<li>Curricular Areas:
+			<ul class="inline">
+				<li jwcid="@Insert" value="ognl:curricularAreasString" raw="ognl:true"/>
+			</ul>
+		</li>
+      	</span>
+        <span jwcid="@If" condition="ognl:languages.size > 0">
+		<li>Language:
+			<ul class="inline">
+                <li jwcid="@Insert" value="ognl:languagesString" raw="ognl:true"/>
+			</ul>
+		</li>
+		</span>
+        <span jwcid="@If" condition="ognl:strategies.size > 0">
+		<li>Teaching and Learning Strategy:
+			<ul>
+                <li jwcid="@Insert" value="ognl:strategiesString" raw="ognl:true"/>
+			</ul>
+		</li>
+        </span>
+        <span jwcid="@If" condition="ognl:groupings.size > 0">
+		<li>Grouping:
+			<ul class="inline">
+				<li jwcid="@Insert" value="ognl:groupingsString" raw="ognl:true"/>
+			</ul>
+		</li>
+		</span>
+    <span jwcid="@If" condition="ognl:hasComments">
+	<li>Comments
+		<ul>
+			<li><span jwcid="@Insert" value="ognl:treehouse.comments" raw="ognl:true"/></li>
+		</ul>
+	</li>
+  	</span>
+</ul>

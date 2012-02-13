@@ -1,0 +1,45 @@
+<span jwcid="body@Block">
+    <form jwcid="@Form">
+    <input jwcid="@Hidden" value="ognl:wrapperType"/>
+    <input jwcid="@Hidden" value="ognl:returnPageName"/>
+    <input jwcid="@Hidden" value="ognl:onlySelectPagedNodes"/>
+    <input jwcid="@Hidden" value="ognl:editedObjectId"/> 
+    <input jwcid="@Hidden" value="ognl:callbackType"/>   
+    <input jwcid="@Hidden" value="ognl:searchPageName"/>
+    <input jwcid="@Hidden" value="ognl:additionalValues"/>    
+    <input jwcid="@Hidden" value="ognl:checkPossibleParent"/>
+	<a jwcid="@ReturnToEditingLink"/>
+	<h2 class="clear">Group Search Results</h2>
+	<p>Click the 'select' link to add that group to your image.  If you don't see the group you are looking for, then you can
+	<a jwcid="@LinkSubmit" listener="ognl:listeners.searchAgain">search again</a></p>
+	<span jwcid="@If" condition="ognl:onlySelectPagedNodes">
+        <p class="helpdiv">Nodes with an asterisk next to them do not have pages attached to them.  By clicking the 'select' link, you will attach your work to the containing group's page, which is the group name in parentheses.</p>
+    </span>
+	<table jwcid="table@contrib:Table" source="ognl:nodes" columns="name, ID:getNodeId(), !select" 
+    	row="ognl:node" convertor="ognl:convertor"/>
+    <span jwcid="nameColumnHeader@Block">Name</span>
+    <span jwcid="nameColumnValue@Block">
+        <a jwcid="@GenericLink" href="ognl:previewPageUrl" target="branch" disabled="ognl:!nodeHasPage">
+            <span jwcid="@Insert" value="ognl:node.name"/>
+        </a>
+        <span jwcid="@If" condition="ognl:onlySelectPagedNodes && !hasPage">
+			*&nbsp; (<a jwcid="@GenericLink" href="ognl:containingPageUrl" target="branch" disabled="ognl:noPublicPage"><span jwcid="@Insert" value="ognl:containingPageName"/></a>)
+            <span jwcid="@If" element="ognl:null" condition="ognl:noPublicPage">
+				<span class="error small">The page for this group is not yet
+				published! Your work can be published only if it is attached to at least one group
+				with a published branch or leaf page.</span>                
+            </span>
+        </span>
+        <span jwcid="@If" condition="ognl:checkPossibleParent && error != null">
+            <span class="error small"><span jwcid="@Insert" value="ognl:error"/></span>
+        </span>
+    </span>
+	<span jwcid="selectColumnHeader@Block">&nbsp;</span>
+	<span jwcid="selectColumnValue@Block">
+        <span jwcid="@If" condition="ognl:showSelectLink">
+	    	<a jwcid="@LinkSubmit" listener="ognl:listeners.selectNode" selected="ognl:selectedNodeId" tag="ognl:node.nodeId">select</a>
+        </span>
+	</span>
+    </form>
+</span>
+<span jwcid="@WrapperChooser" wrapperType="ognl:wrapperType" title="Group Search Results" block="ognl:components.body"/>

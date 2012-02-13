@@ -1,0 +1,89 @@
+<span jwcid="@If" condition="ognl:contributors.size > 0 || copyrightString || correspondenceString || @org.tolweb.treegrow.main.StringUtils@notEmpty(acknowledgements)">
+	<div id="AboutThisPage" class="minorsection">
+	    <h5><a jwcid="@EditBranchLeafPageLink" editPageName="EditPageContributors">edit author information/credits</a><a name="AboutThisPage"></a>About This <span jwcid="@Insert" value="ognl:pageType"/></h5>
+        <span jwcid="@Insert" value="ognl:acknowledgements" raw="ognl:true"/>
+	    <span jwcid="@Foreach" source="ognl:contributors" value="ognl:currentContributor">
+	        <span jwcid="@If" condition="ognl:currentContributor.isAuthor">
+				<p><span jwcid="@ContributorDetails" contributor="ognl:currentContributor.contributor"/></p>
+	        </span>
+	    </span>
+        <span jwcid="@If" condition="ognl:correspondenceString">
+        	<p id="correspondence">
+				<span jwcid="@Insert" value="ognl:correspondenceString" raw="ognl:true"/>
+            </p>
+        </span>
+        <span jwcid="@If" condition="ognl:!isPublicDomain">
+			<p id="pagecopyright"><span jwcid="@Insert" value="ognl:copyrightString" raw="ognl:true"/></p>
+	        <div jwcid="@If" condition="ognl:isBranchOrLeaf" element="div">
+				<span jwcid="@If" condition="ognl:isCreativeCommons">
+		            <span jwcid="@AboutPageLicense" pageName="ognl:titleCitationString" tolPageUrl="ognl:citationUrl" 
+		            	contributorName="ognl:page.authorsString" usePermission="ognl:usePermission" />           
+                </span>
+                <span jwcid="@Else" id="pagecopyright">
+                    <p>All Rights Reserved.</p>
+                </span>
+	        </div>
+			<div jwcid="@Else" element="div">
+	                <span jwcid="@If" condition="ognl:isCreativeCommons">
+			            <span jwcid="@AboutPageLicense" pageName="ognl:page.actualTreehouse.pageTitle" tolPageUrl="ognl:page.publicURL" 
+			            	contributorName="ognl:page.authorsString" usePermission="ognl:usePermission" />           
+	                </span>
+	                <span jwcid="@Else" id="pagecopyright">
+	                    <p>All Rights Reserved.</p>
+	                </span>                
+            </div>
+        </span>
+        <span jwcid="@Else">
+            <p id="pagecopyright">This page is in the Public Domain</p>
+        </span>
+        
+
+        
+        <span jwcid="@If" condition="ognl:firstOnlineDate || contentChangedDate">
+			<ul id="pagedata">
+                <span jwcid="@If" condition="ognl:firstOnlineDate">
+					<li>First online <span jwcid="@Insert" value="ognl:firstOnlineString"/></li>
+                </span>
+                <span jwcid="@If" condition="ognl:contentChangedDate">
+					<li>Content changed <span jwcid="@Insert" value="ognl:contentChangedString"/></li>
+                </span>
+			</ul>
+        </span>
+        <span jwcid="@If" condition="ognl:canPublish">
+            <form jwcid="@Form" listener="ognl:page.listeners.publishPage" focus="ognl:false">
+           <input jwcid="@Hidden" value="ognl:pageId"/>
+           <input jwcid="@PropertySelection" model="ognl:page.revisionTypeModel" 
+               value="ognl:page.revisionType" class="floatright"/>                       
+        	<a jwcid="@LinkSubmit" selected="ognl:page.pageId" tag="ognl:page.tolPage.pageId" 
+                class="editpage submit">publish only this page</a>
+            </form>
+        </span>
+        <span jwcid="@If" condition="ognl:page.canEdit && !canPublish">
+			<div class="locked">         
+		        <p><span jwcid="@Insert" value="ognl:publishErrorMessage"/></p>
+		    </div>            
+        </span>
+
+        <div jwcid="@If" condition="ognl:isBranchOrLeaf && !page.isWorking" id="pagecitation" element="div">
+			<h6>Citing this page:</h6>
+            <p class="cite"> <span jwcid="@Insert" value="ognl:authorCitationString"/>
+                <span jwcid="@Insert" value="ognl:yearCitationString"/><span jwcid="@Insert" value="ognl:titleCitationString" raw="ognl:true"/>
+                <span jwcid="@Insert" value="ognl:versionDateString"/><span jwcid="@Insert" value="ognl:pageStatusString"/>  <span class="url"><span jwcid="@Insert" value="ognl:citationUrl"/></span>
+                <em>in</em> The Tree of Life Web Project, <span class="url">http://tolweb.org/</span>
+            </p>
+			<ul jwcid="@If" condition="ognl:hasAnyVersions" class="nodisc" element="ul">
+                <li><a onclick="changeclass('archived', 'show', 'hide')">View previous versions of this page</a>
+                <ul jwcid="@ArchivedVersionsList" archivedVersions="ognl:archivedVersions" 
+                	isOnlyMajorVersions="ognl:true">
+                    <li jwcid="@If" condition="ognl:hasAnyVersions">
+						<a jwcid="@ExternalLink" page="ViewAllPageRevisions" parameters="ognl:{page.tolPage.pageId}">see full version history</a>
+                    </li>
+                </ul>
+				</li>
+			</ul>   
+        </div>
+        <div jwcid="@If" condition="ognl:isBranchOrLeaf && !page.isWorking" element="onl:null">
+        <a class="grayfaded noline" jwcid="@DirectLink" listener="ognl:page.listeners.gotoEditPage" parameters="ognl:page.node.nodeId">edit this page</a>        
+        </div>
+    </div>
+</span>

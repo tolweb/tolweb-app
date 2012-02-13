@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component-specification
+    PUBLIC "-//Apache Software Foundation//Tapestry Specification 4.0//EN"
+    "http://jakarta.apache.org/tapestry/dtd/Tapestry_4_0.dtd">
+<component-specification class="org.tolweb.tapestry.Login" allow-informal-parameters="no">
+
+
+    <!--
+    <component id="loginForm" type="Form">
+        <binding name="listener" expression="listeners.loginSubmit"/>
+        <binding name="delegate" expression="beans.delegate"/>
+    </component>
+    <component id="emailField" type="ValidField">
+        <binding name="value" expression="email"/>
+        <binding name="validator" expression="beans.emailValidator"/>
+        <binding name="displayName" expression="displayNameCode"/>
+        <static-binding name="size" value="18"/>
+    </component>
+    <component id="passwordField" type="ValidField">
+        <binding name="value" expression="password"/>
+        <binding name="validator" expression="beans.emailValidator"/>
+        <binding name="hidden" expression="true"/>
+        <static-binding name="displayName" value="Password"/>
+        <static-binding name="size" value="18"/>        
+    </component>
+    -->
+</component-specification>

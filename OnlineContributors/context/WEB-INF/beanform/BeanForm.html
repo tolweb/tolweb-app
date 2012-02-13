@@ -1,0 +1,56 @@
+<!-- If this component is already inside a form, don't render another form. -->
+<span jwcid="isInsideAForm">
+        <span jwcid="renderBlock1"/>
+</span>
+<span jwcid="isNotInsideAForm">
+        <form jwcid="beanForm">
+                <span jwcid="renderBlock2"/>
+        </form>
+</span>
+
+<!-- The main content block. -->
+<span jwcid="block">
+        <table class="beanFormTable">
+                <span jwcid="beanPropertyRow">
+                        <span jwcid="hasCustomField">
+                            	<span jwcid="@If" condition="ognl:hasCustomLabel(beanProperty)">
+                                <span jwcid="@RenderBlock" block="ognl:getCustomLabelBlock(beanProperty)"/>
+                                </span>
+                                <span jwcid="@Else">
+								<td class="beanFormLeftColumn"><span jwcid="customFieldLabel"/></td>                                    
+                                <td class="beanFormRightColumn"><span jwcid="customFieldBlock"/></td>
+                                </span>                                
+                        </span>
+                        <span jwcid="noCustomField">
+                            	<span jwcid="readOnlyIf">
+                                    <td class="beanFormLeftColumn"><span jwcid="readOnlyLabel"/></td>
+                                    <td class="beanFormRightColumn"><span jwcid="readOnlyInsertText"/></td>
+                                </span>
+                                <span jwcid="notReadOnly">
+	                                <span jwcid="isString">
+	                                        <td class="beanFormLeftColumn"><span jwcid="beanPropertyLabel_Text"/></td>
+	                                        <td class="beanFormRightColumn"><span jwcid="beanPropertyField_Text"/></td>
+	                                </span>
+	                                <span jwcid="isBoolean">
+	                                        <td class="beanFormLeftColumn"><span jwcid="beanPropertyLabel_Checkbox"/></td>
+	                                        <td class="beanFormRightColumn"><span jwcid="beanPropertyField_Checkbox"/></td>
+	                                </span>
+	                                <span jwcid="isNumber">
+	                                        <td class="beanFormLeftColumn"><span jwcid="beanPropertyLabel_Number"/></td>
+	                                        <td class="beanFormRightColumn"><span jwcid="beanPropertyField_Number"/></td>
+	                                </span>
+	                                <span jwcid="isDate">
+	                                        <td class="beanFormLeftColumn"><span jwcid="beanPropertyLabel_Date"/></td>
+	                                        <td class="beanFormRightColumn"><span jwcid="beanPropertyField_Date"/></td>
+	                                </span>
+                                </span>
+                        </span>
+                </span>
+                <td colspan="2" class="beanFormButtonColumn">
+                        <span jwcid="hasSave"><span jwcid="beanFormSave"/></span>
+                        <span jwcid="hasCancel"><span jwcid="beanFormCancel" onclick="this.form.events.cancel()"/></span>
+                        <span jwcid="hasRefresh"><span jwcid="beanFormRefresh" onclick="this.form.events.refresh()"/></span>
+                        <span jwcid="hasDelete"><span jwcid="beanFormDelete"/></span>
+                </td>
+        </table>
+</span>

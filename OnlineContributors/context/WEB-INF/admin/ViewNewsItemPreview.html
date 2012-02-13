@@ -1,0 +1,11 @@
+<html jwcid="@AboutWrapper" title="Tree of Life News Items">
+	<form jwcid="@Form">
+		<h2 class="clear">Preview Tree of Life News Items #<span jwcid="@Insert" value="ognl:currentNewsItem.newsItemId"/></h2>
+		<dl>
+			<dt><span jwcid="@Insert" value="ognl:currentNewsItem.createdDate"/></dt>
+			<dd><span jwcid="@Insert" value="ognl:currentNewsItem.newsItemText" raw="ognl:true"/></dd>
+		</dl>
+		<input jwcid="@Submit" value="Publish" listener="ognl:listeners.doItemActivate" />
+		<input jwcid="@Submit" value="Edit" listener="ognl:listeners.doEdit" />	
+	</form>
+</html>

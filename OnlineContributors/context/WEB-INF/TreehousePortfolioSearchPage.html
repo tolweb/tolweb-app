@@ -1,0 +1,22 @@
+<html jwcid="@NewBarebonesFormWrapper" title="ognl:'Find Pages to Add to Your ' + editedObjectType" bodyId="trhsdatabody">
+<form jwcid="@Form">
+    <input jwcid="@Hidden" value="ognl:returnPageName"/>
+	<a jwcid="@ReturnToEditingLink"/>
+</form>
+<h2>Find Pages to Add to Your <span jwcid="@Insert" value="ognl:editedObjectType"/></h2>
+<h4 class="topborder"><strong>Search for Treehouses, Articles, and Notes</strong></h4>
+<span jwcid="@TreehouseSearch" instructions="Click the 'select' link to select a page to add to your portfolio"
+    linkString="select" callbackType="ognl:@org.tolweb.tapestry.TreehouseSearchResults@ADD_TO_PORTFOLIO"
+    searchPageName="TreehousePortfolioSearchPage" isBoth="ognl:true"
+	dontCheckPermissions="ognl:dontCheckPermissions" returnPageName="ognl:returnPageName"
+	editedObjectType="ognl:editedObjectType"
+	additionalValues="ognl:#@java.util.Hashtable@{ 'returnPageName' : returnPageName, 
+		'dontCheckPermissions' : dontCheckPermissions, 'editedObjectType' : editedObjectType }"/>
+<h4 class="topborder"><strong>Search for Branch or Leaf Pages</strong></h4>
+<form jwcid="@NodesSearch" onlySelectPagedNodes="ognl:true" returnPageName="ognl:returnPageName"
+	wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@NEW_FORM_WRAPPER"
+    callbackType="ognl:@org.tolweb.tapestry.FindNodesResults@ADD_PORTFOLIO_PAGE_CALLBACK"
+	requireEditPermissions="ognl:!dontCheckPermissions"
+	additionalValues="ognl:#@java.util.Hashtable@{ 'returnPageName' : returnPageName, 
+		'dontCheckPermissions' : dontCheckPermissions, 'editedObjectType' : editedObjectType }"/>
+</html>

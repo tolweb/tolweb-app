@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>OnlineContributors</name>
+	<comment></comment>
+	<projects>
+		<project>TolwebHibernate</project>
+		<project>TolwebUtils</project>
+		<project>TreeGrow</project>
+		<project>TreeGrowServer</project>
+		<project>WebappLibsTapestry4.0</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+</projectDescription>

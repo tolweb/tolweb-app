@@ -1,0 +1,101 @@
+<html jwcid="@EditBranchLeafPageWrapper" title="ognl:'Edit Title Illustrations for ' + tolPageName"
+	editedObjects="Title Illustrations" notesProperty="page.tolPage.titleIllustrationsNotes">
+    <span jwcid="@If" condition="ognl:tolPage.titleIllustrations.size > 0" element="ognl:null">        
+		<div id="titleillustrations" class="whitebox">	        
+		<div class="instructions">                 
+		    <h5 id="trigger1" class="triup" onclick="showbranch('help1', 'show', 'hide'); showbranch('trigger1', 'tridown', 'triup')">Instructions</h5>
+			<div id="help1" class="hide">   
+			<p> Your title illustrations should give the reader a general impression of what the organisms in your group look like. Therefore, they should generally show whole organisms (or substantial portions), not just certain body parts. Good pictures of live specimens are preferred whenever they are available. For some organisms, especially rare or extinct groups, this will not be possible.You can choose to have a single title picture, or you can display several pictures next to one another. Ideally, if more than one species is pictured, they should span the phylogenetic and structural diversity of the group. It is also good to include well-known members of the clade, or representatives of the most speciose subgroups. It will often be impossible to show all of this, so some compromise needs to be reached.</p>
+			<p>For general information about finding and processing title illustrations for ToL pages, please have a look at <a href="/tree/sep/images.html">Illustrations for Tree of Life Pages</a>.</p>
+			<h6>Assembling the Title Illustrations Array</h6>
+		        <p> The grey box below lets you assemble 
+		            a title image array for your ToL page. </p>
+		        <p>To place images in the array:</p> <ul class="disc"> <li> Click on <span class="wbuttons">+</span> to choose an image to add to the array. You can either select an image from the ToL database, or you can upload a new image to the ToL Database, which will then automatically be placed in the title illustrations array once the upload is complete. The new image will appear to the right of the clicked <span class="wbuttons">+</span> button</li> <li>Click on <span class="wbuttons">&#8211;</span> to remove a chosen image from the array</li> <li> Click on <span class="wbuttons">&lt;</span> or <span class="wbuttons">&gt;</span> to shift an image to the left or right, respectively</li> </ul>                     
+		        <p>By default, title illustrations on branch pages are set 
+		            to a size of 250 pixels high, and title illustrations 
+		            on leaf pages are set to a size of 300 pixels high  (if the master images are large enough to accommodate these heights). If 
+		            you select <strong>Custom Heights</strong>, you will be 
+		            able to override default sizes for the current array.  If there is more than one title illustration, the pictures should ideally all be the same height (in pixels), as this looks much better than illustrations that are of different heights.</p>
+		          <h6>Publishing Title Illustrations</h6>  
+		  <p> Changes to title illustration arrays can now be published directly without having to go through editorial review. Once you have created an array you want to publish, view the page, and click on the <strong>publish title illustrations</strong> button, which is located immediately below the <strong>edit title illustrations</strong> button. The revised title illustrations array will then be published immediately .</p>
+
+<p><strong>Note</strong>: the <strong>publish title illustrations</strong> button will be available only if the page itself has already been published; i. e., you cannot publish title illustrations for unpublished pages. </p>        
+		    </div>
+		</div>            
+        <div id="tillusarray">
+            <table>
+                <tr>
+	                <span jwcid="@For" source="ognl:tolPage.titleIllustrations" index="ognl:index" value="ognl:currentIllustration" element="ognl:null" convertor="ognl:convertor">
+		                <td> 
+		                    <span jwcid="@If" condition="ognl:canMoveLeft" element="ognl:null">
+		                        <a jwcid="@LinkSubmit" selected="ognl:moveLeftIndex" tag="ognl:index" title="shift left" class="singleshift">&lt;</a>
+		                    </span>
+		                    <span jwcid="@If" condition="ognl:canMoveBoth" element="ognl:null">                        
+		                        <div class="wbuttons"> <a jwcid="@LinkSubmit" selected="ognl:moveLeftIndex" tag="ognl:index" title="shift left">&lt;</a><a jwcid="@LinkSubmit" selected="ognl:moveRightIndex" tag="ognl:index" title="shift right">&gt;</a></div>
+		                    </span>
+		                    <span jwcid="@If" condition="ognl:canMoveRight" element="ognl:null">                    
+		                    	<a jwcid="@LinkSubmit" selected="ognl:moveRightIndex" tag="ognl:index" title="shift right" class="singleshift">&gt;</a>
+		                    </span>
+		                    <img jwcid="@ImageThumbnail" image="ognl:currentIllustration.image"/>
+	                        <div class="wbuttons">
+		                        <a jwcid="@LinkSubmit" selected="ognl:deleteIndex" tag="ognl:index" title="remove image from array">&#8211;</a>
+		                        <a jwcid="@LinkSubmit" selected="ognl:addIndex" tag="ognl:index" title="add a picture from the ToL database">+</a>                 
+		                    </div>
+	                        <span jwcid="@If" condition="ognl:tolPage.titleIllustrationHeight == @org.tolweb.tapestry.EditTitleIllustrations@CUSTOM_SELECTION">
+				                <select jwcid="@PropertySelection" model="ognl:currentSelectionModel" value="ognl:versionName"/>
+	                        </span>
+		            	</td>
+	                </span>
+            	</tr>
+            </table>
+            <div class="spacer">&nbsp;</div>
+            <span jwcid="@If" condition="ognl:differentVersionHeights">
+            	    <p id="tilluswarning">You have selected different heights for your 
+                title illustrations. Arrays generally look better if illustrations 
+                are of equal heights.</p>
+            </span>                
+        </div>
+        <h5>Title Image Size:</h5>
+        <span jwcid="@RadioGroup" selected="ognl:tolPage.titleIllustrationHeight">
+    	    <ul class="radiogroup">
+
+	            <li>                 <input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.tapestry.EditTitleIllustrations@TOL_DEFAULT_SELECTION" onclick="document.forms[0].submit();"/>
+    	            <label>ToL Default <span class="tinytext">(<span jwcid="@Insert" value="ognl:tolDefaultHeight"/> high)</span></label>
+	            </li>
+                <!--
+	            <li>                 <input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.tapestry.EditTitleIllustrations@BRANCH_DEFAULT_SELECTION" onclick="document.forms[0].submit();" disabled="ognl:noBranchDefaultSet"/>
+    	            <label>Branch Default <span class="tinytext"><span jwcid="@Insert" value="ognl:branchDefaultString"/></span></label>
+	            </li>	
+	            -->
+	            <li>                 <input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.tapestry.EditTitleIllustrations@CUSTOM_SELECTION" onclick="document.forms[0].submit();"/>
+    	            <label>Custom Heights</label>
+        	    </li>
+	        </ul>
+        </span>
+        </div>
+		<div id="captions" class="whitebox"> 	<h4>Captions for Title Illustrations</h4>
+		<span><div class="instructions">                 <h5 id="trigger2" class="triup" onclick="showbranch('help2', 'show', 'hide'); showbranch('trigger2', 'tridown', 'triup')">                     Instructions </h5>
+                <div id="help2" class="hide">                     <p> Captions for title illustrations are displayed alongside thumbnails near the bottom of ToL branch and leaf pages. By default, a selection of image data (stored in the ToL database) is displayed as the caption for each title illustrations. If you deselect <strong>Display Image Data</strong>, only the copyright information gets displayed alongside the thumbnail for each title image.</p> <p> You can add a custom caption for your title illustration array, which will then be displayed above the thumbnails and image data.</p>
+                                    </div>
+            </div></span>
+        <ul class="box1">
+            <li>
+                <input jwcid="@Checkbox" value="ognl:tolPage.printImageData" name="Image Data"/> 
+                <label for="Image Data">Display Image Data</label>
+            </li>
+            <li>
+                <input jwcid="@Checkbox" value="ognl:tolPage.printCustomCaption" name="Custom Caption"/> 
+                <label for="Custom Caption">Display Custom Caption: </label>
+                <textarea jwcid="@TextArea" value="ognl:tolPage.imageCaption" name="Custom Caption Text" cols="50" rows="10">Type your custom caption here.</textarea>
+            </li>
+        </ul>
+	</div>        
+    </span>  
+    <span jwcid="@Else" element="ognl:null">
+		<div id="titleillustrations" class="whitebox">
+		<a jwcid="@LinkSubmit" selected="ognl:addIndex" tag="ognl:-1" class="largelink">Add the first image to the title illustration array</a>
+        </div>
+    </span>  
+    <div jwcid="@AutoSave" autoSaveFrequency="ognl:900" contributorId="ognl:contributor.id" 
+    	editHistoryId="ognl:page.editedPage.editHistoryId"/>        
+</html>

@@ -1,0 +1,28 @@
+<html jwcid="@Shell" title="ognl:title" stylesheet="ognl:editSimpleMediaAsset" delegate="ognl:delegate" doctype="ognl:doctype">
+	<body jwcid="@Body" id="trhssimplemedia">
+		<div id="editmediaformtop">
+            <p class="small floatright">simple media form</p>
+		 	<h1 class="mediaform">Media Editing Form</h1>
+		</div>
+        <form jwcid="imageForm@Form" listener="ognl:page.listeners.simpleImageSave">
+		<div class="trhseditstepstop">
+			<ol class="editstepslist">
+            <span jwcid="@If" condition="ognl:isStep1And2">
+				<li class="required">1. <a class="required" href="#step1CopyrightUse">Edit Copyright &amp; Use</a></li>
+				<li class="required">2. <a class="required" href="#step2GroupType">Edit Group &amp; Type</a></li>
+				<li>3. <a jwcid="@LinkSubmit" listener="ognl:page.listeners.goToStep3">Edit Additional Info</a></li>
+            </span>
+            <span jwcid="@Else">
+				<li class="required">1. <a class="required" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToStep1And2">Edit Copyright &amp; Use</a></li>
+				<li class="required">2. <a class="required" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToStep1And2">Edit Group &amp; Type</a></li>
+				<li>3. Edit Additional Info</li>
+            </span>
+		  </ol>
+		</div>
+        <div class="bodybox">
+        	<span jwcid="@RenderBody"/>    
+        </div>
+        </form>        
+		<script jwcid="@Script" script="../ShowBranch.script"/>            
+    </body>
+</html>

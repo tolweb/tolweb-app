@@ -1,0 +1,51 @@
+<a name="localnav"></a><img jwcid="@Any" element="img" src="ognl:pageTypeImageLocation" id="pagetype" class="ognl:imageClass" onclick="changeclass('pttip', 'show', 'hide')" />
+    <div id="pttip" class="hide"><img src="/tree/img/close.gif" class="closebox" alt="close box" onclick="changeclass('pttip', 'show', 'hide')" /> 
+	<span jwcid="@If" condition="ognl:isBranchPage">
+		 <p>This page is a 
+            <strong class="branch">Tree of Life Branch Page</strong>.</p>
+        <p>Each ToL branch page provides a synopsis of the characteristics of 
+            a group of organisms representing a branch of the Tree of Life. The 
+            major distinction between a <em>branch</em> and a <em>leaf</em> of 
+            the Tree of Life is that each branch can be further subdivided into 
+            descendent branches, that is, subgroups representing distinct genetic 
+            lineages.</p>        
+    </span>
+    <span jwcid="@If" condition="ognl:isLeafPage">
+		<p>This page is a
+            <strong class="leaf">Tree of Life Leaf Page</strong>.</p>     
+        <p>Each ToL leaf page provides a synopsis of the characteristics of 
+            a group of organisms representing a leaf at the tip of the Tree of Life. The 
+            major distinction between a <em>leaf</em> and a <em>branch</em> of 
+            the Tree of Life is that a leaf cannot generally be further
+			subdivided into subgroups representing distinct genetic lineages.</p>
+    </span>
+    <span jwcid="@If" condition="ognl:isTreehouse">
+		<p>This page is a <strong>treehouse</strong> that is attached to a
+            <strong jwcid="@Any" element="strong" class="ognl:attachmentPageType"><span jwcid="@Insert" value="ognl:attachmentPageType"/> of the Tree of Life</strong>.</p>
+	     <p>Treehouses are ToL pages designed for children and the young at heart.</p>               
+    </span>
+    <span jwcid="@If" condition="ognl:isNote">
+        <p>This page is a <strong>note</strong> that is attached to a
+            <strong jwcid="@Any" element="strong" class="ognl:attachmentPageType"> <span jwcid="@Insert" value="ognl:attachmentPageType"/> of the Tree of Life</strong>.</p>
+	     <p>ToL notes provide brief accounts of characteristics, short summaries,
+			commentaries, media files, taxonomic information, or identification tools 
+            for a given group of organisms.</p>    
+    </span>
+    <span jwcid="@If" condition="ognl:isArticle">
+		<p>This page is an <strong>article</strong> that is attached to a
+            <strong jwcid="@Any" element="strong" class="ognl:attachmentPageType"> <span jwcid="@Insert" value="ognl:attachmentPageType"/> of the Tree of Life</strong>.</p>
+	     <p>ToL articles provide more in-depth information about important features
+			of a given group of organisms.</p>
+    </span>
+    <span jwcid="@If" condition="ognl:isImageGallery">
+        <p>This page is a collection of images that are attached to a
+            <strong jwcid="@Any" element="strong" class="ognl:attachmentPageType"> <span jwcid="@Insert" value="ognl:attachmentPageType"/> of the Tree of Life</strong>.</p>            
+    </span>
+    <span jwcid="@If" condition="ognl:isPeopleList">
+        <p>This page is a collection of people that are attached to a
+            <strong jwcid="@Any" element="strong" class="ognl:attachmentPageType"> <span jwcid="@Insert" value="ognl:attachmentPageType"/> of the Tree of Life</strong>.</p>        
+    </span>
+		<p>For a more detailed explanation of the different ToL page types, have a look at the 
+            <a href="/tree/home.pages/structure.html">Structure of the Tree of Life</a> page.</p>
+	    <span class="close" onclick="changeclass('pttip', 'show', 'hide')">close box</span>
+    </div>

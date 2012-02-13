@@ -1,0 +1,10 @@
+<span jwcid="@Foreach" source="ognl:pages" value="ognl:currentPage" index="ognl:index">
+   	<li jwcid="@Any" element="li" class="ognl:liClass">
+       <span jwcid="@If" condition="ognl:!isIndexPage">
+           <a jwcid="@TolPageLink" tolPage="ognl:null" emitTags="ognl:!isThisPage" groupName="ognl:currentGroupName" nodeId="ognl:currentNodeId"><span jwcid="@Insert" value="ognl:currentGroupNameWithSpaces"/></a>
+       </span>
+       <span jwcid="@Else">
+			<a jwcid="@ExternalLink" disabled="ognl:isThisPage" page="TaxaIndex" parameters="ognl:{currentNodeId, projectId}"><span jwcid="@Insert" value="ognl:currentGroupNameWithSpaces"/></a>               
+       </span>
+	</li>
+</span>

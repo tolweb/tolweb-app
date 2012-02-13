@@ -1,0 +1,30 @@
+<html jwcid="@EditBranchLeafPageWrapper" title="ognl:'Edit ' + tolPageName + ' Internet Links'"
+	editedObjects="Information on the Internet" notesProperty="page.tolPage.internetLinksNotes">
+	<div class="whitebox" id="internetlinks">
+	   <h4>Information on the Internet</h4>
+            <div class="instructions">                 
+            <h5 id="trigger1" class="triup" onclick="showbranch('help1', 'show', 'hide'); showbranch('trigger1', 'tridown', 'triup')">Instructions</h5>
+			<div id="help1" class="hide">				    
+                <p>The <strong>Information on the Internet </strong>section provides 
+                    links to other internet sites that contain information 
+                    about a given group of organisms. Please note that the 
+                    Information on the Internet section is subject to editorial 
+                    revisions without notice. We may occasionally check and 
+                    update the links in this section, and we may also add 
+                    relevant links that we come across or that are sent to 
+                    us by other people.</p>
+				
+			<p>Enter your links in an unordered HTML list like this:</p>
+			<ul class="nodiscsmall"> 		
+                <li><strong>&lt;ul&gt;</strong></li> 		
+                <ul> <li><strong>&lt;li&gt;</strong><strong>&lt;a href="http://url"&gt;</strong>Name of Site 1<strong>&lt;/a&gt;</strong>. Description for Site 1.<strong>&lt;/li&gt;</strong></li> 		<li><strong>&lt;li&gt;</strong><strong>&lt;a href="http://url"&gt;</strong>Name of Site 2<strong>&lt;/a&gt;</strong>. Description for Site 2.<strong>&lt;/li&gt;</strong></li> 		</ul> 		<li><strong>&lt;/ul&gt;</strong></li> 		</ul> 		<p>The <strong>&lt;ul&gt;</strong> and <strong>&lt;/ul&gt;</strong> tags mark the beginning and the end of your list, and each item in your list starts with <strong>&lt;li&gt;</strong> and ends with <strong>&lt;/li&gt;</strong>. Replace <strong>http://url </strong>with the web address for the site, and add a description if you like.  If you want to structure your list with headers, use <strong>&lt;h4&gt;</strong> tags.</p>
+		
+			</div>
+            </div>
+			<h5>HTML Interface</h5>
+			<textarea jwcid="@TextArea" value="ognl:tolPage.internetLinks" cols="60" rows="20" class="box1" id="linksArea"></textarea>	
+    </div>
+    <div jwcid="@AutoSave" autoSaveFrequency="ognl:120" textareaId="linksArea" valuePath="internetLinks"
+    	editedObjectId="ognl:page.tolPage.pageId" contributorId="ognl:contributor.id" 
+    	editHistoryId="ognl:page.editedPage.editHistoryId"/>    
+</html>

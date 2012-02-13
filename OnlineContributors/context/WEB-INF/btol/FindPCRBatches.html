@@ -1,0 +1,42 @@
+<html jwcid="@btol/ProjectWrapper" title="Find PCR Reactions">
+	<h2>Find PCR Reactions</h2>
+    <span jwcid="@If" condition="ognl:errorMessage">
+		<div class="fix">
+			<h3>Error</h3>
+			<ul>
+				<li><span jwcid="@Insert" value="prop:errorMessage"/></li>
+			</ul>
+        </div>
+    </span>
+    <p>Enter one or more fields below to search for pcr reactions</p>
+    <div style="background: #f6f6f6; border: 1px solid #5d5040; padding: 25px">      
+	    <form jwcid="@Form" listener="listener:findBatches">
+			<ul class="nodisc">
+	            <li><strong>Start Date:</strong>
+	            	<input jwcid="@btol/ThreeFieldDate" year="prop:startYear" month="prop:startMonth" day="prop:startDay"/>
+	            </li>        
+	            <li><strong>End Date:</strong>
+	            	<input jwcid="@btol/ThreeFieldDate" year="prop:endYear" month="prop:endMonth" day="prop:endDay"/>
+	            </li>
+                <li><strong>Person:</strong>                   
+                	<input jwcid="@PropertySelection" value="prop:person" model="prop:personSelectionModel"/>
+				</li>
+                <li><strong>Gene:</strong>
+                	<input jwcid="@PropertySelection" value="prop:gene" model="prop:geneSelectionModel"/>
+                </li>
+                <li><strong>Reaction Number:</strong>
+                	<input jwcid="@TextField" value="prop:reactionNumber"/>
+                </li>
+                <li><strong>Extraction:</strong>
+                	<input jwcid="@TextField" value="prop:extraction"/>
+                </li>
+                <li><strong>Taxon:</strong>
+                	<input jwcid="@TextField" value="prop:taxon"/>
+                </li>
+                <li><strong>Protocol:</strong>
+                	<input jwcid="@PropertySelection" value="prop:protocol" model="prop:protocolSelectionModel"/>
+                </li>               
+	    </form>
+        <input style="margin-left: 300px" type="submit" name="Submit" value="Find Reactions" />        
+    </div>
+</html>

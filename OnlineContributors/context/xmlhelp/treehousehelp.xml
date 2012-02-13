@@ -1,0 +1,518 @@
+<messages>
+
+<message name="Copy Data From Another Treehouse"><text><![CDATA[ <p>This
+option allows you to copy the data from another one of your treehouse
+contributions into the form for the current treehouse.  Using this
+feature can make things easier when you compose multiple treehouses that
+share content such as groups of authors, links to other pages or
+references.</p> <p><strong>Be aware that using this feature will
+replace any information you may already have entered in the current
+form.  Therefore, you should copy data only when you first get started
+building your treehouse.</strong></p> ]]></text> </message>
+
+<message name="ToL Use Permitted by Copyright Owner"><text><![CDATA[
+<p>When you submit your treehouse to the ToL collection, you give the
+ToL permission to use your work in a variety of different ways.  This
+option gives you the opportunity to specify whether your treehouse can
+be shared with other ToL contributors or with ToL partner collections.
+Click on the text next to a radio button to get a detailed explanation
+of each option, or review <a href="/tree/learn/treebuilder.html#howuse">How will the Tree of Life use my work?</a>.</p>
+
+<p>Note that the options provided here regulate the use of your
+treehouse ONLY within the Tree of Life and collaborating projects (if
+you select option 3). If somebody wants to use your treehouse outside of the
+ToL context, they need to separately negotiate appropriate terms with
+the copyright owner.</p>
+
+<p><strong>Also note that the setting you select here applies only to
+the text and overall design of your treehouse.</strong> Any media files
+displayed in your treehouse are governed by a separate license,
+which is specified by the media contributor when the media file is
+uploaded to the ToL database. </p> ]]></text> </message>
+
+<message name="Treehouse Contributors: Authors, Copyright Owners, and
+Correspondents"><text><![CDATA[ <p>Here you can give credit to all the
+people who have participated in the building of your treehouse. By
+default, all contributors are listed as authors, copyright owners, and
+correspondents. Since a contributor may not want to wear all three of
+these hats, you can deselect any of the contributor options by clicking
+inside the corresponding boxes to make the check mark disappear. </p>
+
+<h4>Contributor Roles: </h4> <ul> <li><strong>An author</strong> is a
+person who contributes to the content of the treehouse. You will
+automatically be listed as the first author for your treehouse
+contribution.  If you are writing your treehouse together with other
+people, and you would like to have these people listed as your
+co-authors, they need to first register as ToL treehouse contributors.
+You can then add them to the list of Page Contributors by clicking on
+the <em>Add Contributor</em> link and finding their names in the ToL
+Contributors database. If you want to change the sequence in which
+contributors are listed, you need to delete authors and then add them
+again in the sequence you want.  If you want to acknowledge the
+contributions of people who are not registered ToL contributors, you can
+do so in the <em>Acknowledgements</em> text field.</li> <li><strong>A
+copyright owner</strong> is a person who reserves the right to limit the
+distribution of the treehouse's content. This means that when you are
+the copyright owner, you can determine who else can use your work and
+how they can use it. In general, you and whoever else worked with you on
+the treehouse will be the copyright owners. In some special cases, the
+copyright of a treehouse contribution should not belong to the authors
+but to another person or institution. This could be the case, for
+example, if somebody hired you to create a treehouse for them.  If there
+is such a special copyright owner who is not a registered ToL
+contributor, you can use the <em>Copyright Owner</em> text field to type
+in the name of this person or institution. If you select registered ToL
+contributors as copyright owners AND fill in the <em>Copyright
+Owner</em> text field, the copyright notice will indicate shared
+copyright ownership between all those contributors. The <a
+href="/tree/learn/TreebuilderTools/trcopyright.html"
+target="fullHelpWindow">Copyright Issues</a> page provides more general
+information on this topic.</li> <li><strong>A correspondent</strong> is
+a person who is willing to receive email correspondence from ToL
+visitors who have questions or comments about the treehouse. Young
+Treehouse Builders cannot be selected as correspondents unless their
+parents have given us permission to publish their email address. </li>
+</ul> ]]></text> </message>
+
+<message name="Copyright Date"><text><![CDATA[ <p>The copyright date for
+your treehouse is automatically set to the year it was first published.
+If you substantially revise your treehouse, you can update the copyright
+date. This date should always be a four-digit number referring to the
+year in which the treehouse was created or updated (e.g 2005).</p> ]]></text>
+</message>
+
+
+<message name="Acknowledgements for Treehouse Page"><text><![CDATA[
+<p>Here you can acknowledge any person or institution that has helped
+you in the creation of your treehouse.</p> ]]></text> </message>
+
+
+<message name="Organism Names"><text><![CDATA[
+
+<p>Here we ask you to enter names for the organism(s) that your
+treehouse contribution is about.  ToL visitors looking for information
+about a particular group of organisms will then be able to find your
+treehouse if it is relevant to the groups they are interested in.
+Scientific names are more precise and don't generally vary according to
+geographic location, language, culture etc.  Therefore, it's most
+important to provide a list of accurate scientific names to be linked to
+your contribution.</p>
+
+<p><strong>What is a scientific name? How can I find out the scientific
+name of an organism? </strong>See <a
+href="/tree/learn/TreebuilderTools/BuildingGuide/SciNames.html" target="fullHelpWindow">help with scientific names</a> for assistance.</p> 
+<p>The information in the <em>Organism Names</em> field complements your
+selections in the <em>Attached to Group(s) of Organisms</em> list below.
+When you attach your treehouse to a group of organisms, your
+contribution will automatically get linked to all the names that are
+stored for this group in the ToL database.  For example, when you attach
+a treehouse to the group <em>Coleoptera</em>, it will also get linked to
+<em>beetles</em>, which is the common English name for Coleoptera, as
+well as some names in other languages, like <em>K&auml;fer</em> and
+<em>escarabajo</em>.</p>
+
+<p>The supplemental information in the <em>Organism Names</em> field is
+useful for two reasons:</p>
+
+<ol> <li>Some groups of organisms are not yet represented in the ToL
+project, so you cannot attach your contribution to the appropriate
+group.  For example, if you have a contribution about the ladybug
+beetle, Coccinella septempunctata, you will find that the name of this
+species is not yet in the ToL database, and you will have to attach your
+treehouse to a more general group of beetles.  However, if you add the
+name <em>Coccinella septempunctata</em> to the <em>Organism Names</em>
+field, people searching the ToL for information about Coccinella
+septempunctata will still find it, and when the name of this species is
+added to the ToL database sometime in the future, we will be able to
+attach your contribution to the more appropriate group.</li> <li>As a
+treehouse contributor you do not generally have control over the names
+that are listed for a given group in the ToL database.  However, if you
+want to make sure that your contribution gets associated with a
+particular organism name, for example one that is used in the area where
+you live, you can enter this name into the <em>Organism Names</em>
+field.</li></ol>
+]]></text>
+ </message>
+
+
+
+<message name="Attached to Group(s) of Organisms"><text><![CDATA[
+
+
+<p>When you attach your treehouse to a group of organisms you are
+linking it to a ToL branch or leaf page. Once your treehouse is linked a
+ToL branch or leaf page it becomes accessible to Tree of Life visitors
+from the <em>treehouses</em> menu of that page.  Your treehouse page
+will also contain page elements in the navigation bar from the primary
+group of organisms that you have attached your work to. For example, if
+you attach your treehouse to the Formicidae branch (Ants), your
+treehouse will have a link to the Formicidae branch page in the upper
+right corner, and it will share many of the same right sidebar menu
+items with the Formicidae page.</p> <p>The <em>Attached to Group(s)</em>
+section of your <em>Treehouse Data Entry Form</em> features three main
+columns:</p> <ul> <li><a href="#attach">Attached to Group(s)</a></li>
+<li><a href="#primarygroup">Selecting a Primary Group</a></li> <li><a
+href="#hideshow">Show Link in Treehouses Menu </a></li> </ul> <h5><a
+name="attach"></a>Attached to Group</h5> <p>Please attach your treehouse
+page to the group(s) of organisms in the Tree of Life to which it is
+most relevant. If you have a treehouse about a certain species and that
+species is represented in the ToL database, you should attach it to this
+species. If the species is not yet represented in the ToL database, you
+should attach your treehouse to the group that is closest to the
+species, e.g., the genus or the family to which the species belongs.
+</p> <p><strong>Before you click <em>Add Group</em></strong>
+<strong>please visit <a
+href="/tree/learn/TreebuilderTools/AttachToToL.html"
+target="fullHelpWindow">Attaching your work to a Branch or Leaf of the
+Tree of Life.</a> </strong>This page will provide you with assistance in
+figuring out where to attach your treehouse.</p> <p>When you are ready
+to attach your treehouse to a group of organisms: </p> 
+<ol class="lessmargin"><li><strong>Click on <em>Add
+Group</em></strong><br/>This will take you to a form that lets you
+search for names of groups in the Tree of Life database.</li>
+<li class="padtop"><strong>Type in the scientific name of the group and click <em>Find
+Groups</em></strong><ul><li> The search will first try to find an
+exact match for the name you typed in.  If there is no exact match, it
+will try to find a partial match.
+    <ul class="nodisctrhs" style="padding-bottom: 5px;">
+      <li> Depending on what you typed in for
+    your search you may find nothing, you may get a long list of groups, or
+    you may get exactly what you wanted.  Since the Tree of Life project is
+    still very much under construction, you will not always find a match for
+    the group you are searching for. </li>
+    </ul>
+<li> If you have no luck with the name you
+typed in, you may try a shorter version to get a match for similar
+names. <ul class="nodisctrhs"><li> For example, if you search for <em>Dendrobates azureus</em>, you
+won't get any results, because this species is not yet in the ToL
+database.  The genus <em>Dendrobates</em> is, however, represented, and
+if you search for <em>dendrob</em>, you will get both
+<em>Dendrobates</em> and the family <em>Dendrobatidae</em> as partial
+matches.
+  </ul>
+</li>
+<li>For help see <a
+href="/tree/learn/TreebuilderTools/AttachMediaTrhs.html"
+target="fullHelpWindow">Where Should I Attach My Treehouse and Media Contributions?</a> This page has advice on what to do if the group you are looking for
+    is not yet represented in the ToL database. <a
+href="/tree/learn/TreebuilderTools/BuildingGuide/SciNames.html"
+target="fullHelpWindow">Help with Scientific Names.</a> is also
+    available.
+    </li> 
+</ul>
+</li>
+<li class="padtop"><strong>Check your search results.</strong>
+  <ul>
+    <li>When you get your search results, there will be links to the branch or
+      leaf pages for the organisms linked to the matched names.  You can click
+      on these links to verify that you have found the appropriate group for
+      attaching your treehouse.</li>
+    <li> Sometimes, the name you are looking for
+        will be represented in the ToL database, but the group will not yet have
+        a branch or leaf page attached to it.  If this happens, your search will
+        show the result like this:<br /> 
+        <span style="margin-left: 60px">Gekkota
+        *&nbsp; (Squamata)</span><br />
+        The asterisk * next to Gekkota indicates
+        that Gekkota does not yet have a branch page, but that it is represented
+        as a subgroup on the Squamata (Lizards and Snakes) page. In this case,
+        the Squamata branch page is as close as you are going to get to the
+        group you want (at least for the time being), and your work should be
+        attached to the Squamata.</li>
+  </ul>
+</li>
+<li class="padtop"><strong>Once you have confirmed that you have the right group, click
+the <em>select</em> link next to the group name.</strong>
+<ul><li class="padbottom">This
+  will take you back to the <em>Treehouse Data Entry Form</em>, where you
+  should now see the group you chose in the <em>Attached to Group(s) of
+  Organisms</em> list. When you save and preview your page you should see a links to the pages you attach your treehouse to in the right sidebar menu.</li>
+  </ul></li>
+
+  <li class="nodisctrhs">If your treehouse contains information about more than one group of organisms, you can attach it to all the relevant branches and leaves; just select another group by repeating steps 1-4. If you will attach your page to more than one group please see <a href="#primarygroup">Selecting a Primary Group</a> below. Also, if you have added a group, and then change your mind, you can delete it from the list by clicking on the <em>Remove Group</em> link next to the group name. </li>
+</ol> 
+<h5><a name="primarygroup"></a>Selecting a Primary Group</h5> 
+<p>As the default the first group of organisms that you attach your treehouse to will be selected as the primary group. If you
+  are attaching your treehouse to more than one group of organisms, you
+  will need to choose one of the groups as the primary group.  You can change the selection of the primary group by checking the radio button next to the group that you want to serve as your treehouse's primary group.</p>
+<p>The primary group you attach you work to will be seen as prominent link at the top of
+  the right sidebar of your treehouse page.  Also, the menus in the right
+  sidebar of your treehouse will feature links to other ToL pages
+  providing information about the primary group and its relatives.  Links to the pages
+  of the other, non-primary groups you have attached your work to will be in the <em>linked
+  pages</em> menu in the right sidebar of your treehouse page.  Of course,
+  the branch or leaf pages for all the groups to which you attach your
+  treehouse will feature a link to this
+  treehouse in their <em>treehouses</em> menu.</p>
+<p>To view some examples of how you might choose a primary group see <a
+href="/tree/learn/TreebuilderTools/AttachMediaTrhs.html#primarygroup"
+target="fullHelpWindow">Attaching your work to a Branch or Leaf of the
+Tree of Life.</a></p>
+<h5> <a name="hideshow" id="hideshow"></a>Show Link in Treehouses
+Menu</h5>
+
+<p>Most of the time, you will want to have your treehouse shown in the
+<em>treehouses</em> menus of all the branches and leaves to which it is
+attached.  However, sometimes there may be too many treehouses attached
+to a branch or leaf, or several treehouses may be closely related to one
+another, and it would make sense to combine them into something like a
+<em>treehouse neighborhood</em>.  In these cases, the
+<em>treehouses</em> menu should then feature links only to the main
+treehouse neighborhood page, which will provide further links to all the
+individual treehouse pages that make up the neighborhood.  If you want
+to keep individual treehouses from showing up in <em>treehouses</em>
+menus, you can remove the check mark from their box in the <em>Show Link
+in Treehouses Menu</em> column.</p>
+
+<p><strong>For example:</strong>  Parmelia Sulcata composes a treehouse
+game called <em>Lizard Phylogeny Fun</em> that has a main neighborhood
+page with links to ten game card pages on different lizard species.
+Parmelia then attaches the main Lizard and Snake Phylogeny Fun page as
+well as the individual game card pages to the Squamata (Lizards and
+Snakes) branch. Since she only wants the main page to show up in the
+<em>treehouses</em> menu, she clicks in the boxes in the <em>Show Link
+in Treehouses Menu</em> column to remove the check marks for the
+individual game cards.</p> ]]></text>
+
+</message>
+
+
+<message name="Short Title"><text><![CDATA[ <p>The text you enter here
+will be used for the browser window title of your treehouse page and for
+links to your treehouse page in the <em>treehouses</em> menu. This
+should be short, about 2-4 words.</p> ]]></text> </message>
+
+<message name="Full Title"><text><![CDATA[ <p>The text you enter here
+will be used to create the heading for your treehouse page. This heading
+can be longer than the short title, and it should give visitors a good
+idea of the content of your treehouse. </p> ]]></text> </message>
+
+
+<message name="Compose Treehouse Page Text"><text><![CDATA[ 
+<p>You should enter the  content of your treehouse into this field. Web pages are created with a code called HTML. We provide the ToL Easy Editor to write the HTML for you. However, you can also write you own HTML code if you would like, either by turning off the Easy Editor or by clicking the Easy Editor's HTML button. </p>
+<ul class="disc">
+  <li>See <strong><a href="/tree/learn/TreebuilderTools/BuildingGuide/AddTextHTMLEditor.html" target="fullHelpWindow">The ToL Easy Editor</a></strong> to get instructions on how to use the buttons and menus of the toolbar, and to see what browsers work with the Easy Editor. You can also follow some simple instructions to <a href="/tree/learn/TreebuilderTools/BuildingGuide/OtherEditors.html" target="fullHelpWindow">Transfer Text to the  Easy Editor</a> from a word processing document.</li>
+  <li>If you will write your own HTML either with or without the Easy Editor see <a href="/tree/learn/TreebuilderTools/AlltheHTML.html" target="fullHelpWindow"><strong>All the HTML You Need</strong></a></li>
+  <li>Take a look at the <a href="/tree/learn/TreebuilderTools/BuildingGuide/HowRylanTrhs.html" target="fullHelpWindow">How Rylan Created His Treehouse</a> if you want to see how a treehouse builder planned and entered their treehouse text.<a href="/tree/learn/TreebuilderTools/BuildingGuide/AddTextHTMLEditor.html" target="fullHelpWindow"></a></li>
+</ul>
+]]></text>
+</message>
+
+
+<message name="The Easy Editor Toolbar"><text><![CDATA[
+
+  <p>Use the buttons and menus in the Easy Editor's toolbar to format text and insert images and media (without writing HTML). </p>
+<p>If you hold your mouse over each button, you will see the button's function. Pull down the menus to see the  formatting options that are available.<br />
+<strong>See <a href="/tree/learn/TreebuilderTools/BuildingGuide/AddTextHTMLEditor.html" target="fullHelpWindow"><strong>The ToL Easy Editor</strong></a> for detailed assistance with how to use buttons and menus of the Easy Editor. </strong></p>
+<ul class="disc">
+  <li><strong>To use the Easy Editor we recommend that users download the free browser Firefox from <a href="mozilla.org" target="fullHelpWindow">mozilla.org</a></strong></li>
+  <li><strong>The ToL Easy Editor works with</strong> Firefox, Netscape and other Mozilla browsers on Windows and Mac.  <em>Internet Explorer only works on Windows.</em> </li>
+  <li><strong>On the Mac The Easy Editor does not work</strong> in Opera, Safari (has very limited capabilities) or Internet Explorer (Mac IE). If the Easy Editor is <em>not</em> working you must either <a href="/tree/learn/TreebuilderTools/AlltheHTML.html" target="fullHelpWindow">write your own HTML</a> or use another browser. <strong>We recommend that Mac users download the free browser Firefox from mozilla.org</strong></li>
+</ul>
+
+
+
+]]></text> </message>
+
+<message name="What if the Easy Editor is not Working?"><text><![CDATA[
+<ul>
+				<li><strong>The ToL Easy Editor works in:</strong> Internet Explorer, Firefox, Netscape and other Mozilla browsers on Windows and Mac (*excluding Mac Internet Explorer). </li>
+				<li><strong>Browsers with limitations:</strong> Safari on the Mac has very limited Easy Editor functionality.</li>
+			<li><strong>Recommended browsers:</strong> We recommend using the web browser Firefox when you edit your treehouse pages. We find that Firefox best supports all the features of the ToL Easy Editor. Using Firefox will help ensure that everything functions properly. Firefox is free to download at www.mozilla.org</li>
+				<li><strong>If the Easy Editor is working </strong>you will see the Easy Editor toolbar buttons directly above the text box.</li>
+
+				<li><strong>If the Easy Editor toolbar does not appear </strong> either <a href="/tree/learn/TreebuilderTools/AlltheHTML.html" target="fullHelpWindow">write your own HTML</a> directly into the text box or use another web browser.</li>
+			</ul>
+]]></text> </message>
+
+<message name="Add Media to Your Treehouse"><text><![CDATA[
+
+<ul>
+  <li>    <a href="#insert">Insert images/media files with the Easy Editor</a></li>
+  <li><a href="#insertno">Insert images/media files <em>without</em> the Easy Editor </a></li>
+  <li><a href="#modify">Modifying images, restricted images.</a> </li>
+  <li><a href="#add">Uploading (Adding) New Image/Media files to the ToL Database</a></li>
+  <li><a href="#linksimages">Related Links</a></li>
+</ul>
+
+<h5>Insert images with the ToL Easy Editor</h5>
+					 <ol> <li>Click on the place you want the image or media file to go in the text box.</li>
+			          <li>Click on the insert image button <img src="/tree/learn/lisa.images/documentimages/InsertImage.gif" width="20" height="20"> in the Easy Editor toolbar to insert an image and click on the insert media button <img src="/tree/learn/lisa.images/documentimages/mediabuttonsm.jpg" width="20" height="20"> to insert a sound, movie or document.</li>
+			          <li>Search for an image or media file to insert. When you find the file you want in the results window, click select to insert the image or media file into the text box.		               *For images if you click on &quot;options&quot; from the image results window you can select a size for your image. The default size is 250px high.</li>
+				      <li>To format images that have been inserted, first click on the image, then use the image formatting buttons (located next to the insert image button). </li>
+				      <li>The copyright information and scientific name will be automatically added underneath the image. By clicking in front of the copyright information, you can also add a caption explaining what the image is about, the type of organism featured in the image, or other relevant information.</li>
+				   <li><strong>*Note</strong> that to delete an image you must click on it first and then click the delete button <img src="/tree/learn/lisa.images/buttonforeditor/delete.gif" width="20" height="20" class="greyborder2">. Note also that if you do not like where you have placed an image in your page that you should delete it first and then re-insert it in your preferred location. </li>
+				      <li style="list-style-type: none;"><em>Add images and media to your treehouse when the ToL Easy Editor is <strong>not</strong> working by following the steps for adding media below.</em></li>
+				    </ol>
+		        <h5><a name="insertno" id="insertno"></a>Insert images and other media (sounds, movies and documents) <em style="text-decoration: underline;">without</em> the Easy Editor</h5>
+                
+		    	  <ol>    	  <li><strong>Click the &quot;Add Media&quot; button </strong>to search for media in the ToL database.</li>
+               <li><strong>Next, locate the Media File ID#.</strong> You can locate the ID# of the Media file in the media search results window.</li>
+
+               <li>To insert images, type TOLIMG and the the ID# of the image file. For sounds, movies and documents, type TOLMEDIA and the ID# of the sound, movie or document file in the text box where you would like the image or media file to appear.<strong> For example: TOLIMG1234 or TOLMEDIA1234</strong></li>
+               <li>Add copyright information directly after the place you have added the media file. You will find copyright information in the media search window. <strong>For example, for images write: TOLIMG1234 and for other media write: TOLMEDIA1234 </strong></li>
+               <li>You can also add a caption explaining what the image is about, the type of organism featured in the image, or other relevant information. </li>
+               <li><strong>Shrink an image</strong> by writing the ToL code for images plus a size. <strong>For example: TOLIMG1234SIZE100</strong>. You can shrink images in increments of 50px, down to a height of 100px.</li>
+</ol>			    <p class="whitebox">Finally, click <a href="#trhssavepreview">save and preview</a>  to see if the media file appears the way you want it to.                 
+             </p>
+<p><strong><a name="modify" id="modify"></a>Modifying images: </strong></p> 
+<p>If the image that you want to use in your page turns out to be unsatisfactory in some manner, depending on the ToL use model of the image, you may be able to modify the media file to your specifications.  For now, see <a href="/tree/learn/TreebuilderTools/trcopyright.html" target="fullHelpWindow">Copyright Issues</a> and  <a href="/tree/learn/TreebuilderTools/BuildingGuide/AddingMedia1.html" target="fullHelpWindow">Getting Media to Add to Your Treehouse</a> for more information.
+</p>
+<p><strong>Restricted images/media: </strong>Please note that some ToL contributors have reserved the use of their media only for specific purposes, so you will not be able to use any media file in the ToL collection for your treehouse. Your search for media will only find media that has been released by their copyright owners for use anywhere on the ToL. However, if you try and use a restricted image or media file in your treehouse you will not be able to save and preview your page and there will be an error message telling you that your tried to use a restricted image or media file.</p><h4><a name="add" id="add"></a>Uploading (Adding) New Media Files to the ToL Database</h4>
+<p>If you would like to upload new media to the ToL database you can:
+<ul>
+<li>Upload an image from the "add image&quot; interface accessed after clicking the add media button, or upload a media file from the "add media file" interface, accessed after selecting the add media button. </li>
+<li>Go to step #3 (in most treehouse editing forms) Upload/Edit Media</li>
+<li>Go to the <a href="/onlinecontributors/app?service=page&page=ImagesManager#upload" class="noline" target="edit">Media Manager</a></li></ul>
+Once media files are uploaded to the ToL database they can be found by clicking the Add Image or Add Media buttons. You can also keep a record of images you have uploaded with <a href="/tree/learn/TreebuilderTools/DataEntry/ImgIDworksht.html" target="fullHelpWindow">a worksheet for keeping a record of image ID numbers and copyright information.</a></p>
+<h5><a name="linksimages" id="linksimages"></a>Related links: </h5>
+<p><a href="/tree/learn/TreebuilderTools/BuildingGuide/AddingMedia.html" target="fullHelpWindow">Adding Media</a></p>
+
+]]></text> </message>
+
+
+<message name="References"><text><![CDATA[ <p>In the <em>References</em>
+section you should include any references that you have cited in your
+text. You can also list any books, articles or other resources that may
+be of interest to people looking for more information on the topics
+covered in your treehouse. For example, if you wrote a page on whales,
+and you have a lot of great books and videos on this topic we would
+appreciate if you could share the reference information for these
+resources.  Note that internet links should go in a separate section
+below.</p>
+
+<p><strong>Please separate your references with carriage returns (click
+enter/return to produce a line break between each reference).</strong>
+Each entry will be formatted into a paragraph with a hanging indent, so
+please do not use carriage returns (click enter/return) within a
+reference. Also, please do not use paragraph tags or any other HTML
+markup in the <em>References</em> field.</p> ]]></text> </message>
+
+
+<message name="Information on the Internet"><text><![CDATA[ <p>Here you
+can list other web sites that are relevant to the content of your
+treehouse. You should include any sites that you have cited in your text
+along with other online resources that may be of interest to people
+looking for more information about the topics covered in your
+treehouse.</p> <p>For each site in your list, you should provide the
+<strong>url</strong> (web address) and the <strong>name</strong> of the
+site or web page. You can also add <strong>comments</strong> about the
+content of the site. Use the Add Fields button to generate fields for
+additional web sites.</p> ]]></text> </message>
+
+
+<message name="Treehouse Type"><text><![CDATA[ <p>In this section you
+can assign additional treehouse types to your work. If you select more
+than one treehouse type for your page, visitors who search on
+<em>treehouse type</em> will find your page in each category that you
+have assigned to your treehouse. For example, if you choose to give your
+treehouse the investigation, story and teacher resource treehouse types,
+visitors will find your page listed under all three categories. You may
+choose as many categories as you think apply to your page and that would
+help others find what they are looking for when they search for
+treehouses.</p> ]]></text>
+
+</message>
+
+<message name="ToL Learner Level"><text><![CDATA[ <p>Here you can select
+any combination of the three levels that are listed: beginner,
+intermediate and advanced. These categories will help people find
+treehouses to visit that  match their level of experience with the
+material that is presented in the page. </p>
+<p><strong>Choose:</strong></p> <ul> <li><strong> Beginner</strong> if
+your treehouse introduces a topic in a way that <strong>any learner,
+regardless of their experience </strong> with the subject matter could
+understand and appreciate.</li> <br /> <li><strong>
+Intermediate</strong> if your treehouse presents material in a way that
+would be easier to understand and appreciate if a <strong>learner has
+some knowledge</strong> of the subject matter.</li> <br />
+<li><strong>Advanced</strong> if your treehouse presents material in a
+way that requires that the <strong>learner has a good deal of prior
+knowledge </strong>of the subject matter. </li> </ul> ]]></text>
+
+</message>
+
+
+
+<message name="Notes"><text><![CDATA[ <p>You can use the Notes field to
+communicate with Easy Editors and contributors about your treehouse. For
+example, you can write a note if there is something you think we should
+know about your page or if you have a question. You can also enter
+reminders for yourself or messages to your co-authors or Easy Editors.
+</p> ]]></text> </message>
+
+
+<message name="Comments"><text><![CDATA[ <p>Here you can enter any
+information about your treehouse that you think may be of interest but
+that is not covered in any of the other fields in this form. For
+example, you can provide information about why you chose your treehouse
+topic, how you figured out where to attach your page, who you think
+might be interested in your page, and any grade level information you
+think might be useful for teachers.</p> ]]></text> </message>
+
+
+<message name="Add Portfolio Pages and Sections"><text><![CDATA[ <p>You can only add ToL pages that you have authored or that you have permission to edit. Every time you add a link, a comments box will appear where you can tell visitors to your portfolio about the pages it contains. You can change the order of the portfolio page links that you add with the arrow buttons on the left. 
+If you would like, you can add sections to your portfolio and then add portfolio page links to the sections that you create.</p> ]]></text> </message>
+
+
+
+<message name="Edit Portfolio Page Links"><text><![CDATA[ <p>After you add pages to your portfolio use the comments box to write explanations such as:
+</p><ul>
+<li>a summary of the page you are linking to</li>
+<li>a preview of what is to come when a visitor goes to a page you link to in your portfolio</li>
+<li>explain why the page is included in the portfolio</li></ul> 
+<p>You can also add a thumbnail image that represents the page that you have added by clicking the add image button.</p>
+]]></text> </message>
+
+
+<message name="Export Data To Other Contributions you have Authored"><text><![CDATA[ <p>Here you can choose to display 
+some of the data sections of this portfolio on the pages that you include in the portfolio. 
+You can export the following sections of this portfolio to pages you link to in the portfolio:</p>
+ <ul><li> References</li>
+    <li>Internet Links</li>
+    <li> Learning Information</li></ul>
+    <p>This feature is very helpful because you can enable several pages to share references, internet links and learning information without having to update
+    each page. The portfolio page will serve as the master page, and if you make changes in the portfolio page to one of the sections you have exported, the pages in the 
+    portfolio will be updated. If a page you have included in the portfolio has its own learning information, internet links etc., both the information from the portfolio and the page's information will be displayed.</p>
+    
+]]></text> </message>
+
+
+
+<message name="Save and Preview"><text><![CDATA[ <p>You must click on
+the <em>Save and Preview</em> button at the bottom of the <em>Treehouse
+Data Entry Form</em> to save your work to the ToL Database. When you do
+this, a new browser window will open, and it will show you what the
+current version of your treehouse would look like if it were published. 
+The preview you are getting is not on the actual <em>live</em> ToL web
+site; it's in a special preview and development part of the site, which
+is accessible only to Tree of Life authors and developers.</p> <p>
+<strong>Don't close the treehouse data entry window without clicking
+<em>Save and Preview</em> first, or you will lose your work!</strong>
+Once you have clicked <em>Save and Preview</em>, you can safely close
+both the preview and treehouse editing windows. <p>Note that your
+connection to the ToL database will time out if you don't do anything
+(e.g., save and preview, attach to group, add a contributor) for about
+an hour, so if you decide to leave your computer or work on something
+else for a while, make sure to click <em>Save and Preview</em> before
+you go. </p> ]]></text> </message>
+
+<message name="Submit"><text><![CDATA[ 	<p>When you are satisfied
+with your page you should submit it for publication. Before you submit,
+you should make sure that your treehouse is attached to a group of
+organisms.  This will link it to a ToL branch or leaf page, so visitors
+to the ToL can find it.</p> <p>Once you click <em>Submit for
+Publication</em>, you will not be able to edit your treehouse until the
+ToL Learning Materials Editor approves it for publication.  The Editor
+may get back to you with suggestions for improvements, and you will then
+be able to edit and fix up your page before submitting the revised
+version again for publication.  When the Editor approves the final
+version of your treehouse, it will get published on the live ToL site,
+and you will receive an email with its URL (web address).  Once the
+treehouse is published, you will be able to come back and update or
+improve it whenever you like.  Each time you make a change, you will submit
+it for publication, and the Editor will review the latest version before
+putting it up on the live ToL site.</p> ]]></text> </message>
+
+
+</messages>

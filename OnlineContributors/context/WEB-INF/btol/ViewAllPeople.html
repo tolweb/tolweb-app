@@ -1,0 +1,24 @@
+<html jwcid="@btol/ProjectWrapper" title="View All People">
+<h2 class="clear">All People</h2>
+<table jwcid="@contrib:Table" source="ognl:people" row="ognl:currentPerson"
+    columns="Last Name:lastName, First Name:firstName, Email:email, !edit, !remove"
+    pageSize="30">
+    <td jwcid="editColumnHeader@Block"></td>
+    <td jwcid="editColumnValue@Block">
+        <span jwcid="@If" condition="prop:canEditCurrentPerson">
+        <a jwcid="@ExternalLink" page="btol/EditContributor" parameters="ognl:{currentPerson.id, pageName}">edit</a>
+        </span>
+	</td>
+    <td jwcid="removeColumnHeader@Block"></td>
+    <td jwcid="removeColumnValue@Block">
+        <span jwcid="@If" condition="ognl:showRemoveLink">
+        	<a jwcid="@DirectLink" listener="listener:removePersonFromProject" parameters="ognl:{currentPerson.id}">remove</a>
+        </span>
+	</td>
+</table>
+<span jwcid="@If" condition="prop:canDoMolecular">
+<p>
+<a jwcid="@DirectLink" listener="listener:editNewObject">Add another person</a>
+</p>	
+</span>
+</html>

@@ -1,0 +1,27 @@
+<span jwcid="@If" condition="ognl:teacherResource.hasStateStandards || teacherResource.hasNationalStandards">
+<div id="standards">
+	<h3><a name="standards"></a>Education Standards </h3>
+    <span jwcid="@If" condition="ognl:teacherResource.hasStateStandards">
+	<h4><a name="statestandards"></a>State Education Standards </h4>
+	<ul class="brlearnlist">
+		<li><span jwcid="@Insert" value="ognl:teacherResource.stateStandards"/> Education Standards
+			<ul class="inline"><li jwcid="@Insert" value="ognl:stateStandardsSubjectsString" raw="ognl:true"/></ul>
+        </li>
+	</ul>
+    <p>
+        <span jwcid="@Insert" value="ognl:stateStandardsValue" raw="ognl:true"/>
+    </p>
+    </span>
+    <span jwcid="@If" condition="ognl:teacherResource.hasNationalStandards">
+	<h4><a name="natstandards"></a>National Education Standards</h4>
+	<ul class="brlearnlist">
+		<li> National Education Standards
+			<ul class="inline"><li jwcid="@Insert" value="ognl:nationalStandardsSubjectsString" raw="ognl:true"/></ul>
+		</li>
+	</ul>
+    <p>
+        <span jwcid="@Insert" value="ognl:nationalStandardsValue" raw="ognl:true"/>
+    </p>
+    </span>
+</div>
+</span>

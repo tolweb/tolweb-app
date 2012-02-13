@@ -1,0 +1,21 @@
+<div id="location" class="whitebox"> <a name="location"></a>
+	<a jwcid="@HelpLink" pageName="ognl:page.helpPageName" helpName="Place and Time"/> 
+	<h4>Place & Time</h4>
+	<p class="instructions">For <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/>s of specimens, provide information 
+	    about where and when the organism was collected. If the organism 
+	    is not native to the location where it was found, you can also 
+	    provide information about its origin.</p>
+	<ul class="fields">
+        <li>
+            <label>Location 
+            <input size="45" type="text" jwcid="@TextField" value="ognl:media.geoLocation" />
+            </label>
+        </li>
+        <li>
+            <label>Date/Time 
+             <input jwcid="@TextField" type="text" size="45" value="ognl:media.userCreationDate" />
+            </label>
+        </li>
+	</ul>
+</div>
+

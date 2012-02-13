@@ -1,0 +1,51 @@
+<html jwcid="@btol/ProjectWrapper" title="Edit Gene">
+	<span jwcid="@If" condition="ognl:wasSaved">
+        <h2 class="clear">Gene successfully saved</h2>
+        You may now return to your edit form, reload your browser and it will appear in the list.
+        <p class="center">
+            <a href="javascript:window.close();">Close Window</a>
+        </p>
+    </span>
+    <span jwcid="@Else">
+	<h2 class="clear">Edit Gene</h2>
+    <span jwcid="@If" condition="ognl:validationDelegate.hasErrors">
+        <h3 class="error"><span jwcid="@Delegator" delegate="ognl:validationDelegate.firstError"/></h3>
+    </span>
+    <span jwcid="@Else">
+    	<p>Fields marked with a '*' are required.</p>        
+    </span>    
+    <form jwcid="@Form" success="listener:saveGene" delegate="ognl:validationDelegate" clientValidationEnabled="ognl:true">
+		<ul class="nodisc">
+            <li><span jwcid="@FieldLabel" field="component:nameField">Name</span>&nbsp;
+                <input jwcid="nameField@TextField" value="prop:gene.name"
+                validators="validators:required" displayName="Name*"/>
+			</li>
+            <li><span jwcid="@FieldLabel" field="component:abbrevNameField">Abbreviated Name</span>&nbsp;
+                <input jwcid="abbrevNameField@TextField" value="prop:gene.abbreviatedName"
+                displayName="Abbreviated Name"/>
+			</li>            
+            <li>Drosophila Name&nbsp;
+                <input jwcid="drosophilaNameField@TextField" value="prop:gene.drosophilaName"
+                displayName="Drosophila Name"/>
+			</li>
+            <li>Tribolium Length&nbsp;
+                <input jwcid="lengthField@TextField" value="ognl:gene.triboliumLength"
+                translator="translator:number"
+                displayName="Tribolium Length"/>
+			</li>
+            <li><span class="top">Synonyms&nbsp;</span>
+                <textarea jwcid="@TextArea" value="prop:gene.synonyms" cols="70" rows="8"/>
+            </li>
+            <li>Important for <span jwcid="@Insert" value="prop:project.name"/>
+                <input jwcid="@Checkbox" value="prop:gene.important"/>
+            </li>
+            <li>Hidden (won't show up in most contexts)&nbsp;
+                <input jwcid="@Checkbox" value="prop:gene.hidden"/>
+            </li>            
+            <li>
+                <input jwcid="@Submit" value="Save Gene"/>
+            </li>
+        </ul>
+	</form>
+    </span>
+</html>

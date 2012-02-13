@@ -1,0 +1,21 @@
+<html jwcid="@NewBarebonesFormWrapper" title="Delete Page Confirm" bodyId="articlesbody">
+<span jwcid="@If" condition="ognl:!pageDeleted" element="ognl:null">
+<h2>Really Delete Page Attached to <span jwcid="@Insert" value="ognl:tolPageName"/>?</h2>
+<p class="error">
+    If you delete this page you will lose all text sections, references, internet links, and
+    all other information associated with it.  This operation cannot be undone.  Are
+    you sure you wish to continue?
+</p>
+<form jwcid="@Form">
+	<input jwcid="@Hidden" value="ognl:editedObjectId"/>    
+    <input jwcid="@Hidden" value="ognl:otherEditPageName"/>
+    <input jwcid="@Submit" listener="ognl:listeners.deletePage" label="Yes, Delete the Page"/>
+    <input jwcid="@Submit" listener="ognl:listeners.returnToEditing" label="No, Return to Editing"/>
+</form>
+</span>
+<span jwcid="@Else" element="ognl:null">
+<h2>Page has been deleted</h2>
+<p class="center"><form><input jwcid="@Any" element="input" type="button" value="Close Window and Go Back To Editing"
+    onclick="ognl:'javascript:window.opener.location=' + workingPageUrl + ';window.close();'"/></form></p>
+</span>
+</html>

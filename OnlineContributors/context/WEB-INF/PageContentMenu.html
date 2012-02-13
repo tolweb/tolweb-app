@@ -1,0 +1,47 @@
+<h4 class="open" id="pagecontent" onclick="changeclass('pagecontent', 'open', 'closed'); changeclass('contentmenu', 'open', 'closed')"><span jwcid="@Insert" value="ognl:pageType"/> Content</h4>
+	<ul id="contentmenu" class="open">
+		<span jwcid="@If" condition="ognl:!isBranchOrLeaf">
+            <li jwcid="@If" condition="ognl:page.pageContentMenuBlock == null" element="li">
+				<a href="#content">Main Content</a>
+            </li>
+            <li jwcid="@Else" element="ognl:null">
+                <span jwcid="@RenderBlock" block="ognl:page.pageContentMenuBlock"/>
+            </li>
+		</span>
+		<span jwcid="@If" condition="ognl:hasInternetInfo && page.internetInfoOnTop">
+			<li><a href="#www">Information on the Internet</a></li>
+		</span>        
+        <span jwcid="@If" condition="ognl:page.hasRandomPics">
+            <li><a href="#randompics">Random Images from this group</a></li>
+        </span>
+        <span jwcid="@If" condition="ognl:isBranchOrLeaf">
+            <span jwcid="@Foreach" source="ognl:textSections" value="ognl:currentTextSection">
+                <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(currentTextSection.text)">
+	                <li>
+	                    <a jwcid="@Any" element="a" href="ognl:'#' + currentTextSectionAnchor">
+	                        <span jwcid="@Insert" value="ognl:currentTextSection.heading"/>
+	                    </a>
+	                </li>
+                </span>
+            </span>
+        </span>
+        <span jwcid="@If" condition="ognl:showPortfolioLink">
+            <li><a href="#portfopages">Portfolio Pages</a></li>
+        </span>
+        <span jwcid="@If" condition="ognl:hasOtherNames">
+        	<li><a href="#othernames">Other Names</a></li>
+        </span>
+		<span jwcid="@If" condition="ognl:hasRefs">
+			<li><a href="#refs">References</a></li>
+		</span>        
+		<span jwcid="@If" condition="ognl:hasInternetInfo && !page.internetInfoOnTop">
+			<li><a href="#www">Information on the Internet</a></li>
+		</span>
+        <span jwcid="@If" condition="ognl:hasLearningInfo">
+			<li><a href="#learninfo">Learning Information</a></li>
+        </span>
+        <span jwcid="@If" condition="ognl:isBranchOrLeaf && hasTitleIllustrations">
+            <li><a href="#titlefigcaption">Title Illustrations</a></li>
+        </span>
+		<li><a href="#AboutThisPage">About This Page</a></li>
+	</ul>

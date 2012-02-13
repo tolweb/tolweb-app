@@ -1,0 +1,28 @@
+<html jwcid="@btol/ProjectWrapper" title="Upload Extractions">
+	<h2 class="clear">Upload Extractions</h2>
+    <span jwcid="@If" condition="ognl:errorMessage || hasExistingExtractions || delegate.hasErrors">
+		<div class="fix">
+			<h3>Error</h3>
+			<ul>
+				<li><span jwcid="@Delegator" delegate="prop:delegate.firstError"/></li>
+			</ul>
+            <span jwcid="@If" condition="prop:hasExistingExtractions">
+                <ul>
+                    <li jwcid="@For" source="prop:existingExtractionNames" value="prop:currentExistingCode" element="li">
+						<span jwcid="@Insert" value="prop:existingCodeString"/>
+                    </li>
+                </ul>
+            </span>
+        </div>
+    </span>    
+    <h4>Text Format</h4>
+    <p>Text should be in a tab-separated format with the fields according to <a href="btol/extractions.csv">this example</a><p/>
+    <h4>Reaction Text</h4>
+    <form jwcid="@Form" success="listener:uploadExtractions">
+		<span jwcid="@btol/UploadFileOrTypeText" objectType="extractions"/>
+		<span jwcid="@FieldLabel" field="component:collectionSelection"/> 
+        <input jwcid="collectionSelection@PropertySelection" value="ognl:selectedCollection" 
+        	model="prop:collectionSelectionModel" displayName="Source Collection:" validators="validators:required"/>
+        <input jwcid="@Submit" value="Upload Extractions"/>
+    </form>
+</html>

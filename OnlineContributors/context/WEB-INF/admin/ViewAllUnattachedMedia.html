@@ -1,0 +1,15 @@
+<html jwcid="@Wrapper" title="ognl:title">
+	<h2 class="clear">Unattached Tree of Life Media</h2>
+	
+	<table jwcid="table@contrib:Table" source="ognl:unattachedMedia" row="ognl:currentMedia"
+        	columns="ognl:columnsString" class="border" pageSize="50" />
+        <span jwcid="thumbnailColumnHeader@Block"></span>
+        <span jwcid="thumbnailColumnValue@Block">
+        	<img jwcid="@ImageThumbnail" image="ognl:currentMedia" isPreview="ognl:false"/>
+		</span>        
+		<span jwcid="dataColumnHeader@Block">Media Data</span>    
+		<span jwcid="dataColumnValue@Block">    
+			<img jwcid="@ImageDataBlock" image="ognl:currentMedia" generateLinks="ognl:true" showThumbnail="ognl:false"/>    
+	    </span>
+
+</html>

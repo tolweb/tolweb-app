@@ -1,0 +1,28 @@
+<html jwcid="@FeaturesWrapper" title="Taxa Import Record">
+    <p>[<a jwcid="@PageLink" page="taxaimport/ViewAllTaxaImportRecords" >Return to viewing taxa import records...</a>]
+    [<a jwcid="@PageLink" page="xml/TaxaImportHome" >Taxa Import Home</a>]</p>
+	<h2 class="clear">Taxa Import Record for <span jwcid="@Insert" value="ognl:currentBasalNodeName"/> (<span jwcid="@Insert" value="ognl:date"/>)</h2>
+	<!--  <p> <span jwcid="@Insert" value="ognl:manifest" raw="ognl:true"/> </p> -->
+
+	<div style="float: right">	
+	</div>	
+	<table>
+		<tr>
+			<td><strong>clade name:</strong> <span jwcid="@Insert" value="ognl:currentBasalNodeName"/> </td>
+			<td><strong>log id:</strong> <span jwcid="@Insert" value="ognl:currentRecord.id"/> </td>  
+		</tr>
+		<tr>
+			<td colspan="2">	  
+				<p><strong>reconcile with previous:</strong> <span jwcid="@Insert" value="ognl:currentRecord.reconcileWithPrevious"/></p>	  
+				<p><strong>preserve node name info:</strong> <span jwcid="@Insert" value="ognl:currentRecord.preserveNodeName"/></p>
+				<p><strong>preserve node properties:</strong> <span jwcid="@Insert" value="ognl:currentRecord.preserveNodeProperties"/></p>
+			</td>
+		</tr>
+	</table>
+	<a onclick="changeclass('manifest', 'show', 'hide')" class="edittoggle">show taxa import ingest xml</a>	
+	<div id="manifest" class="hide">
+		<pre>
+<span jwcid="@Insert" value="ognl:displayXml" />
+		</pre>
+	</div>
+</html>

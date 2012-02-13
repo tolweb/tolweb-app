@@ -1,0 +1,66 @@
+<html jwcid="@Shell" title="ognl:title" additionalDelegate="ognl:delegate" stylesheet="ognl:stylesheet">
+<body jwcid="@Body">
+<a name="skip"></a><a id="skip" class="hidden" href="#maincontent" title="Skip navigation">Skip to main content</a>
+<a href="#toc" class="hidden" title="Table of Contents">Go to table of contents</a>
+<a href="#localnav" class="hidden" title="Section navigation">Go to navigation for this section of the ToL site</a>
+<a href="#quicklinks" class="hidden" title="Go to quick links">Go to quick links</a>
+<a href="#quicksearch" class="hidden" title="Go to quick search">Go to quick search</a>
+
+<a href="#leftsidebar" class="hidden" title="Detailed site navigation">Go to detailed site links</a>
+  
+ <a href="http://tolweb.org/tree/phylogeny.html" title="Tree of Life Home Page"
+id="HomeLink">&nbsp;</a>
+<a href="http://tolweb.org/tree/phylogeny.html" id="ToLWebProject"><img src="img/ToLWebProject.gif" alt="go to the Tree of Life home page" title="Tree of Life Home Page"/></a> 
+<div id="sitenav" class="on"> <a name="sitenav"></a> 
+    <h3 class="hidden">Site Navigation</h3>
+    <ul>
+        <li><a href="http://tolweb.org/tree/home.pages/browsing.html">Browse</a></li>
+        <li><a href="http://tolweb.org/tree/home.pages/treehelp.html">Help</a></li>
+
+        <li><a href="http://tolweb.org/tree/home.pages/projectfeatures.html">Features</a></li>
+        <li><a href="http://tolweb.org/tree/learn/learning.html">Learning</a></li>
+        <li><a href="http://tolweb.org/tree/home.pages/contributions.html">Contribute</a></li>
+        <li><a href="http://tolweb.org/tree/home.pages/abouttol.html">About</a></li>
+    </ul>
+</div>
+
+<form method="get" action="/tree/home.pages/search.html" id="quicksearch">
+    <a name="quicksearch"></a>
+    <input type="text" name="q" size="10" />
+    <input type="submit" name="sa" value="Search" />
+    <div><a href="http://tolweb.org/tree/home.pages/search.html">advanced</a></div>
+</form>  
+    <span jwcid="@If" condition="ognl:contributorExists">
+        <div class="logout">You are logged in as <span jwcid="@Insert" value="ognl:contributor.displayName"/>.  [
+        <a jwcid="@ServiceLink" service="ognl:@org.apache.tapestry.Tapestry@RESTART_SERVICE">Logout</a>]</div>
+    </span>
+    <span jwcid="@RenderBody"/>
+<a href="#skip" class="hidden" title="Go to top">go to beginning of page</a>
+
+<div id="footer"> <a name="footer"></a> 
+  <div id="quicklinks"> <a name="quicklinks"></a> 
+    <ul>
+      <li><a href="http://tolweb.org/tree/phylogeny.html">Home</a></li>
+
+      <li><a href="http://tolweb.org/tree/home.pages/finding.html">Browse</a></li>
+      <li><a href="http://tolweb.org/tree/home.pages/treehelp.html">Help</a></li>
+      <li><a href="http://tolweb.org/tree/home.pages/projectfeatures.html">Features</a></li>
+      <li><a href="http://tolweb.org/tree/learn/learning.html">Learning</a></li>
+      <li><a href="http://tolweb.org/tree/home.pages/contributions.html">Contribute</a></li>
+      <li><a href="http://tolweb.org/tree/home.pages/abouttol.html">About</a></li>
+
+      <li class="lastquick"><a href="http://tolweb.org/tree/home.pages/search.html">Search</a></li>
+    </ul>
+  </div>
+  <span class="policy"><a href="http://tolweb.org/tree/home.pages/ToLPrivacyPolicy.html">Privacy 
+  Policy</a> &#8212; <a href="http://tolweb.org/tree/home.pages/tolcopyright.html">Copyright Policies</a></span> 
+  <p class="copyright">Tree of Life design and icons copyright &copy; 1995-2004 
+    Tree of Life Project. All rights reserved.</p>
+
+</div>
+
+<a href="#quicksearch" id="toplink">top</a>
+<div id="hidesitelinks" class="show" onclick="toggleLeftSidebar()">&nbsp;</div>
+    <script jwcid="@Script" script="/WEB-INF/Onload.script"/>
+</body>
+</html>

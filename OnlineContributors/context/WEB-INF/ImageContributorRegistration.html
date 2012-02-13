@@ -1,0 +1,155 @@
+<span jwcid="@Wrapper" title="Tree of Life Images Contributors Registration">
+<h2 class="clear">ToL Media Contributor Registration</h2>
+            <p>Before signing up as a ToL Media Contributor, please make 
+              sure you are aware of your rights and responsibilities by reading 
+              the <a href="/tree/home.pages/ToLPrivacyPolicy.html">Tree 
+              of Life Privacy Policy</a> and the <a href="#TermsAndConditions">Terms 
+              and Conditions for ToL Image/Media Contributors</a> below.</p>
+
+            <strong>Required information is marked with an asterisk*</strong>
+            <form jwcid="@Form" listener="listener:registrationFormSubmit" delegate="ognl:delegate" clientValidationEnabled="ognl:true">
+              <table>
+                  <span jwcid="@If" condition="ognl:existingContributor != null">
+                      <tr>
+                          <td colspan="4" class="error">You have already registered with the ToL using that email address.  If you would like a new password to be emailed to that address, please <a jwcid="@DirectLink" listener="ognl:listeners.emailPassword">click here</a>.</td>
+                      </tr>
+                  </span> 
+                  <span jwcid="@If" condition="ognl:error != null">
+                      <tr>
+                          <td colspan="4" class="error"><span jwcid="@Insert" value="ognl:error"/></td>
+                      </tr>
+                  </span>                  
+                <tr>                   <th style="widht: 200px"><span jwcid="@FieldLabel" field="component:surnameField" /></th>
+                  <td><input jwcid="surnameField@TextField" size="50" validators="validators:required"
+                  		displayName="Surname*" value="ognl:editedContributor.surname"/></td>
+                  <td colspan="2" rowspan="2" style="background: #F6F6F6"><p class="small">Your 
+                    first name and surname will be used in the <a href="/tree/home.pages/tolcopyright.html">copyright 
+                    notices</a> and other credit lines for contributed images 
+                    and other media.</p></td>
+                </tr>
+                <tr>                   <th><span jwcid="@FieldLabel" field="component:firstNameField" /></th>
+
+                  <td><input jwcid="firstNameField@TextField" size="50" validators="validators:required"
+                  		displayName="First Name*" value="ognl:editedContributor.firstName" /></td>
+                  <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>                   <th>Institution</th>
+                  <td><input jwcid="institutionField@TextField" size="50" value="ognl:editedContributor.institution" /></td>
+                  <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>                   <td>&nbsp;</td>
+                  <td colspan="3" style="background: #F6F6F6"> <p class="small">If 
+                      you are affiliated with an institution such as a university, 
+                      museum, or school, you can provide this information, which 
+                      will then be printed on your personal ToL contributor profile page, which will be listed on the <a href="/onlinecontributors/app?service=page&page=ImageContributorsPage">ToL 
+                      Media Contributors</a> page. </p></td>
+                </tr>                
+                <tr>                   <th rowspan="2"><span jwcid="@FieldLabel" field="ognl:components.emailField" /></th>
+                  <td><input jwcid="emailField@TextField" size="50" validators="validators:required,email"
+                  		displayName="Email*" value="ognl:editedContributor.email"/></td>
+                  <td> <input jwcid="dontPrintEmailCheckBox@Checkbox" value="ognl:editedContributor.dontShowEmail"/></td>
+                  <td class="small">Do not publish</td>
+                </tr>
+                <tr>                   <td colspan="3" style="background: #F6F6F6"> <p class="small">This 
+                      email address will be your User ID for logging into the 
+                      ToL system, We will send your password to this address, 
+                      and we need to keep it on file, so we can contact you if 
+                      there are questions about your contributions.</p>
+
+                    <p class="small"> By default, we will publish your 
+                      email address on your personal ToL contributor profile page. Throughout the ToL site, 
+                      email addresses are encoded in the source code in order 
+                      to protect them from being harvested by spambots. By 
+                      checking the box on the right, you can choose to not have 
+                      your email address published on the ToL web site at all.</p></td>
+                </tr>                
+                <tr>                   <th>Web Page URL</th>
+                  <td colspan="3"><input jwcid="urlField@TextField" value="ognl:editedContributor.homepage" size="50"/></td>
+                </tr>
+                <tr>                   <td >&nbsp;</td>
+                  <td colspan="3" style="background: #F6F6F6"> <p class="small">You 
+                      can enter the url for your home page in this field. We will 
+                      then publish this url on your personal ToL contributor profile page.</p></td>
+                </tr>                
+                <tr>                   <th>Biographical Information</th>
+                  <td colspan="3"><textarea jwcid="bioArea@TextArea" cols="50" rows="5" value="ognl:editedContributor.bio"></textarea></td>
+                </tr>
+                <tr>                   <td>&nbsp;</td>
+                  <td colspan="3" style="background: #F6F6F6"> <p class="small">You 
+                      can enter a couple of paragraphs to introduce yourself to 
+                      ToL visitors. Tell us about your background (professional 
+                      or academic training or experience) and your interests. 
+                      This information will be printed on your personal ToL contributor profile page. </p></td>
+                </tr>                
+                <tr><th>Your Photo</th>
+                  <td colspan="3"><input jwcid="imageUpload@Upload" file="ognl:imageFile"/>
+                </tr>
+                <tr>                   <td>&nbsp;</td>
+                  <td colspan="3" style="background: #F6F6F6"> <p class="small">You 
+                      can upload a small picture of yourself (not more than 200x200 
+                      pixels, please). The picture will then be displayed with 
+                      your biographical information.</p></td>
+                </tr>
+                <span jwcid="@If" condition="ognl:!isNewContributor">
+                    <tr>                   <th>New Password</th>
+                      <td><input jwcid="@TextField" hidden="ognl:true" value="ognl:password1" type="text" size="50" /></td>
+                      <td colspan="2">&nbsp;</td>
+                    </tr>                
+                    <tr>                   <th>New Password (again)</th>
+                      <td><input jwcid="@TextField" hidden="ognl:true" value="ognl:password2" type="text" size="50" /></td>
+                      <td colspan="2">&nbsp;</td>
+                    </tr>                                
+                </span>
+              </table>
+            <a name="TermsAndConditions"></a>
+            
+            <p class="topborder">In order to register as a ToL Media Contributor, you must 
+              agree to the following </p>
+            <h4>Terms and Conditions for ToL Media Contributors:</h4>
+            <p>ToL Media contributors must be at least 18 years old. (Kids 
+              under 18 will soon be able to contribute images and media after registering
+              as Junior Treehouse Builders.)</p>
+            <p>ToL Media Contributors may upload materials to the Tree of 
+              Life database and send emails and other communications to Tree of 
+              Life staff and contributors, so long as the content is not illegal, 
+              obscene, threatening, defamatory, an invasion of privacy, infringing 
+              of intellectual property rights or otherwise injurious to third 
+              parties. ToL contributors may not use false email addresses, impersonate 
+              any person or entity, or otherwise mislead as to the origin of any 
+              communication, message or other content. While the Tree of Life 
+              Project is not obliged to review all content that is published by 
+              contributors on the Tree of Life web site, we reserve the right 
+              to delete any contribution, or take action against any registered 
+              account, at any time, for any reason.</p>
+
+            <p>ToL Media Contributors generally keep the copyright for materials submitted 
+              to the Tree of Life database, and a copyright notice is always printed 
+              alongside contributions displayed on the ToL web site. When a contributor 
+              uploads images or other media to the Tree of Life database, he or 
+              she can specify the intended use of the contribution by the Tree of Life. 
+              The default license for ToL media contributions is the <a href="javascript: w = window.open('http://creativecommons.org/licenses/by-nc/3.0/', 'documentation', 'width=800, height=800, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">Creative Commons Attribution-NonCommercial License</a>,
+               but contributors can choose one of the other licensing options described on the <a href="javascript: w = window.open('/tree/home.pages/toluse.html', 'documentation', 'width=800, height=800, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">Tree of Life Use of Contributions</a> page.   
+              </p>
+           
+            <p> ToL Media Contributors voluntarily grant the ToL Project 
+              and its collaborators non-exclusive, royalty-free, and full rights 
+              to use the submitted images/media according to the selected model 
+              of use. To the best of the contributor's knowledge, use of the contribution 
+              by the Tree of Life Project does not violate any intellectual property 
+              rights and will not cause injury to any person or entity. The Tree 
+              of Life Project or its collaborators take no responsibility and 
+              assume no liability for any contribution made by the contributor 
+              or a third party.</p>
+            <p>When registering as a ToL Media Contributor, you release 
+              the ToL Project, its employees, contractors, consultants, and collaborators 
+              from any and all damages, claims, causes of action, liabilities, 
+              and expenses relating to your participation, or exclusion or disqualification 
+              from participation, in the Tree of Life Project. </p>
+
+            <p><span jwcid="@If" condition="ognl:isNewContributor"><input jwcid="@Checkbox" value="ognl:agreeToTerms"/>
+              I agree with the terms and conditions outlined above.</span></p>
+            <p class="right">               <input type="submit" name="Submit" value="Submit Registration">
+            </p>
+            </form>
+
+</span>

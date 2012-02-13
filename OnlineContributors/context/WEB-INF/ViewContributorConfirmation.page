@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page-specification PUBLIC 
+  "-//Apache Software Foundation//Tapestry Specification 3.0//EN" 
+  "http://jakarta.apache.org/tapestry/dtd/Tapestry_3_0.dtd">
+<page-specification class="org.tolweb.tapestry.ViewContributorConfirmation">
+    <description>Registration Confirmation Page for ToL Scientific Contributors</description>
+    <property-specification name="contributor" type="org.tolweb.treegrow.main.Contributor"/>
+    <property-specification name="isFromRegistration" type="boolean"/>
+    <property-specification name="nodesSet" type="java.util.Set"/>
+    <property-specification name="fromWorkingNode" type="org.tolweb.hibernate.MappedNode"/>
+</page-specification>

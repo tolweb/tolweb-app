@@ -1,0 +1,30 @@
+<html jwcid="@Shell" title="ognl:title" delegate="ognl:delegate" stylesheets="ognl:stylesheets">
+<span jwcid="dojoBlock@Block">
+  <script type="text/javascript">
+  djConfig = { isDebug: false,
+               baseRelativePath: "js/dojo",
+               preventBackButtonFix: false,
+               parseWidgets: false,
+      		   disableFlashStorage: true
+             };
+  </script>
+  <script jwcid="@Any" type="text/javascript" src="ognl:baseURL + '/js/dojo/dojo.js'"></script>  
+</span>
+<body jwcid="@Body" id="ognl:bodyId">
+    <a name="top"></a>
+    <span jwcid="@RenderBody"/>
+    <div jwcid="@StandardMenus"/>    
+    <div jwcid="@Footer"/>    
+    <script jwcid="@Script" script="Onload.script"/>
+    <script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-6410837-1");
+			pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+</body>
+</html>

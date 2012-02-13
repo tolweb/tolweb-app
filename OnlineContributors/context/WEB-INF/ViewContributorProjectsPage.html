@@ -1,0 +1,24 @@
+<html jwcid="@BuildTreehouseWrapper" title="ognl:title">
+    <p align="right">
+		<a jwcid="@ExternalLink" page="ContributorDetailPage" parameters="ognl:{viewedContributor.id}">Back to Profile Page</a>            
+	</p>
+    <div id="trhsmanagercontainer">
+	<div class="solidborder">
+    <h3><span jwcid="@Insert" value="ognl:viewedContributor.displayName"/>'s Classroom Projects </h3>
+	<table jwcid="@contrib:Table" source="ognl:projects" row="ognl:currentProject" columns="!title, !id, !view">
+		<span jwcid="titleColumnHeader@Block">Project Title / Group</span>
+		<span jwcid="titleColumnValue@Block">
+		    <span jwcid="@Insert" value="ognl:currentProject.name"/> / <span jwcid="@Insert" value="ognl:currentProject.classGroup"/>
+		</span>    
+		<span jwcid="idColumnHeader@Block">ID</span>    
+		<span jwcid="idColumnValue@Block">    
+			<span jwcid="@Insert" value="ognl:currentProject.projectId"/>
+		</span>
+        <span jwcid="viewColumnHeader@Block">Project Treehouses</span>
+        <span jwcid="viewColumnValue@Block">
+            <a jwcid="@ExternalLink" page="ClassroomProjectOverview" parameters="ognl:{currentProject.projectId}">View published treehouses in this project</a>
+        </span>        
+     </table>         	
+    </div>
+    </div>
+</html>

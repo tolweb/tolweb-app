@@ -1,0 +1,64 @@
+<table>
+	<tr>
+        <td>Contributor Name:</td>
+        <td><span jwcid="@Insert" value="ognl:contributor.displayName"/></td>
+    </tr>
+    <tr>
+        <td>Contributor Email:</td>
+        <td><span jwcid="@Insert" value="ognl:contributor.email"/></td>
+    </tr>
+    <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(contributor.homepage)">
+	    <tr>
+	        <td>Web Page URL</td>
+	        <td><span jwcid="@Insert" value="ognl:contributor.homepage"/></td>
+	    </tr>
+    </span>
+    <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(contributor.institution)">
+	    <tr>
+	        <td>Institution/School</td>
+	        <td><span jwcid="@Insert" value="ognl:contributor.institution"/></td>
+	    </tr>
+    </span>    
+    <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(contributor.city)">
+	    <tr>
+	        <td>City</td>
+	        <td><span jwcid="@Insert" value="ognl:contributor.city"/></td>
+	    </tr>
+    </span>    
+    <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(contributor.state)">
+	    <tr>
+	        <td>State</td>
+	        <td><span jwcid="@Insert" value="ognl:contributor.state"/></td>
+	    </tr>
+    </span>        
+    <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(contributor.country)">
+	    <tr>
+	        <td>Country</td>
+	        <td><span jwcid="@Insert" value="ognl:contributor.country"/></td>
+	    </tr>
+    </span>    
+    <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(contributor.bio)">
+	    <tr>
+	        <td>Biographical Information</td>
+	        <td><span jwcid="@Insert" value="ognl:contributor.bio"/></td>
+	    </tr>
+    </span>     
+	<span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(imageUtils.getContributorImageUrl(contributor))">
+        <tr>
+            <td>Image</td>
+            <td><img jwcid="@ContributorImage" contributor="ognl:contributor" includeFullURL="ognl:true"/></td>
+        </tr>
+    </span>
+    <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(contributor.category)">
+	    <tr>
+	        <td>Category</td>
+	        <td><span jwcid="@Insert" value="ognl:contributor.category"/></td>
+	    </tr>
+    </span>
+    <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(contributor.plans)">
+	    <tr>
+	        <td>Plans</td>
+	        <td><span jwcid="@Insert" value="ognl:contributor.plans"/></td>
+	    </tr>        
+    </span>  
+</table>

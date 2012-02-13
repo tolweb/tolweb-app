@@ -1,0 +1,29 @@
+<div id="imgdatatips" class="yellowbox"><a name="imgdatatips"></a>            
+	<a jwcid="@PageLink" page="ognl:page.helpPageName" renderer="ognl:rendererFactory.helpRenderer"><img src="/tree/images/tip.gif" class="floatright"></a> <p> The 
+        information provided in this form will be stored with your <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/> 
+        in the ToL database. It will be used to generate <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/> captions, 
+        and people can search the ToL for <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/>s meeting certain criteria. 
+        Click on the lightbulbs to get more information about each section 
+        of this form.</p>
+        
+          <p>If you are uploading multiple <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/>s with similar data, you can 
+     <a jwcid="@LinkSubmit" listener="ognl:page.listeners.copyImageData">Copy Data From Another <span jwcid="@Insert" value="ognl:page.mediaType"/></a>. </p>
+        
+    <strong id="imgtipstrigger" title="Information on how to process your media files more efficiently" class="triup" onclick="showbranch('imgtips', 'show', 'hide'); showbranch('imgtipstrigger', 'tridown', 'triup')">Tips for filling out this form</strong> 	    <div id="imgtips" class="hide">
+        <p>You are not expected to put information into every single one 
+            of the fields below. Different fields are relevant for different 
+            <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/>s. Just fill in the ones that are important to you. Sections 
+            of special importance for ToL project administration are highlighted 
+            in red: <span class="boldred">Copyright Information, Use Permitted 
+            by Copyright Owner, <span jwcid="@If" condition="ognl:!isDocument">Attached to Groups</span><span jwcid="@Else">and Document Content</span></span>.</p>
+            
+          <p>  You can use the <em>Copy Data</em> link above to copy data from another
+one of your <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/>s to the current <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/>. This will make things a lot
+easier when you upload multiple <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/>s of the same specimen, for example. Note that
+any data you may already have entered in the current form will be
+overwritten with the copied data, so use the <em>Copy Data</em> tool before 
+            entering any data, and be sure to check your <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/> data to 
+            avoid applying the wrong data to a file!</p> 
+             <p>If you are planning on uploading a lot of images, check out the <a href="javascript: w = window.open('/onlinecontributors/app?service=page&page=ImageZipUpload', 'fullHelpWindow', 'menubar=yes,width=900, height=700,toolbar=yes,scrollbars=yes,resizable=yes'); w.focus();">image batch uploading tools</a>.  Batch uploading tools for other media types will soon become available.</p>
+	</div>
+</div>

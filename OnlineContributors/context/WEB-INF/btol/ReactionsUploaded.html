@@ -1,0 +1,7 @@
+<html jwcid="@btol/ProjectWrapper" title="Reactions Successfully Uploaded">
+<h2 class="clear">PCR Reactions Successfully Uploaded</h2>
+<p>If something looks awry, you may <a jwcid="@DirectLink" listener="listener:deleteAll">delete</a> all of the PCR Batches.</p>
+<span jwcid="@For" source="prop:batches" value="prop:currentBatch" element="div">
+	<span jwcid="@btol/PCRBatchDetail" batch="prop:currentBatch"/>
+</span>
+</html>

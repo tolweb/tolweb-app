@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree-of-life-web version="1.0">
+  <nodes>
+  	<node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+  		<name>Faux lenardsii lenardsii</name>
+  		<nodes>
+		    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+		  		<name>Faux lenardsii seximpressus</name>
+		    </node>  	
+		    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+		      	<name>Faux lenardsii demonica</name>
+		    </node>  		
+  		</nodes>
+  	</node>
+    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+  		<name>Faux lenardsii (placeholder)</name>
+    </node>
+  </nodes>    
+</tree-of-life-web>

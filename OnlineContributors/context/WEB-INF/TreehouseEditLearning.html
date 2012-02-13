@@ -1,0 +1,101 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:false" title="Step #5 Edit Learning Information">
+	<div id="learn2infopgtop">
+        <a name="learn2info"></a>
+		<h3 class="sectionheaderblubpg">Step 5. Edit Learning Information</h3>
+        <div class="boxtocpages">
+			<div jwcid="@TreehouseImportantDiv">
+				<li><a href="#trhsmeta">Treehouse Type</a></li>
+				<li><a href="#trhslevel">ToL Learner Level</a></li>
+				<li><a href="#trhscomments">Comments</a></li>
+	        </div>		     
+			<div jwcid="@TreehouseHelpDiv" 
+                exampleEditingFormUrl="/tree/learn/TreebuilderTools/BuildingGuide/ExampleEditingSteps5.html" 
+                stepNum="5">
+				<h5>Editing tip: </h5>
+					<a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Treehouse Type" noDiv="ognl:true">Treehouse Type</a>
+					<a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Comments" noDiv="ognl:true">Comments</a>
+					<a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="ToL Learner Level" noDiv="ognl:true">Learner Level</a> 
+	        </div>
+	     	 <p><img src="/tree/learn/lisa.images/trhouseimage/learninginfoblu.jpg" alt="Learning Information" width="219" height="145" border="0" class="imgpgs"/></p>
+	         <p class="widthsm">Add learning resource information like learner level and treehouse type so that others can easily find, visit and use your treehouse.</p>
+			<div jwcid="@TreehouseWarningDiv"/>	   
+			<div class="spacer">&nbsp;</div>
+	  </div>      
+		<div class="spacer">&nbsp;</div>
+	</div>
+	
+	<div id="trhshdlearninfo">
+        <a name="trhshdlearninfo"></a>
+        
+		<a name="trhsmeta"></a>
+        <div id="trhsmeta">
+        <div class="spacer">&nbsp;</div> 
+
+            <a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Treehouse Type"/>
+            <h4 class="long">Treehouse Type</h4>
+            <div class="indentleft">
+                <table style="margin-top: 0;">
+                    <tr>
+                        <td>
+                            <p class="tiny10text"> Below you may select additional treehouse types that
+							describe your work and that will help visitors find your page when they
+							do a treehouse search. The first category in the list is the treehouse
+							type that you chose initially.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+								<li><span class="boldtext"><span jwcid="@Insert" value="ognl:treehouse.treehouseTypeString"/></span></li>
+                                <span jwcid="@If" condition="ognl:treehouse.treehouseType != @org.tolweb.hibernate.MappedAccessoryPage@INVESTIGATION">
+									<li><label><input type="checkbox" jwcid="@Checkbox" value="ognl:treehouse.isInvestigation"/>Investigation</label></li>
+								</span>
+                                <span jwcid="@If" condition="ognl:treehouse.treehouseType != @org.tolweb.hibernate.MappedAccessoryPage@STORY">
+                                    <li><label><input type="checkbox" jwcid="@Checkbox" value="ognl:treehouse.isStory"/>Story</label></li>
+                                </span>
+                                <span jwcid="@If" condition="ognl:treehouse.treehouseType != @org.tolweb.hibernate.MappedAccessoryPage@ARTANDCULTURE">
+									<li><label><input type="checkbox" jwcid="@Checkbox" value="ognl:treehouse.isArtAndCulture"/>Art and Culture Contribution</label></li> </span>
+                                <span jwcid="@If" condition="ognl:treehouse.treehouseType != @org.tolweb.hibernate.MappedAccessoryPage@TEACHERRESOURCE">
+									<li><label><input type="checkbox" jwcid="@Checkbox" value="ognl:treehouse.isTeacherResource"/>Teacher Resource</label></li></span>
+                                <span jwcid="@If" condition="ognl:treehouse.treehouseType != @org.tolweb.hibernate.MappedAccessoryPage@GAME">
+                                    <li><label><input type="checkbox" jwcid="@Checkbox" value="ognl:treehouse.isGame"/>Game</label></li>
+                                </span>
+                                <span jwcid="@If" condition="ognl:treehouse.treehouseType != @org.tolweb.hibernate.MappedAccessoryPage@BIOGRAPHY">
+									<li><label><input type="checkbox" jwcid="@Checkbox" value="ognl:treehouse.isBiography"/>Biography</label></li>
+                                </span>
+							</ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="trhslevel">
+            <a name="trhslevel"></a>
+            <a jwcid="@HelpLink" helpName="ToL Learner Level" pageName="TreehouseHelpMessagesPage"/>
+            <h4>ToL Learner Level</h4>
+            <div class="indentleft">
+				<p><strong>Choose a ToL Learner Level:</strong><br> You may select all
+				levels that apply to your page.</p>
+                <table cellspacing="0" cellpadding="5">
+                    <tr>
+                        <td><input type="checkbox" jwcid="@Checkbox" value="ognl:treehouse.isBeginnerLevel"/>Beginner</td>
+                        <td><input type="checkbox" jwcid="@Checkbox" value="ognl:treehouse.isIntermediateLevel"/>Intermediate</td>
+						<td><input type="checkbox" jwcid="@Checkbox" value="ognl:treehouse.isAdvancedLevel"/>Advanced</td>
+                    </tr>
+                </table>
+			</div>
+        </div>
+        <div id="trhscomments">
+            <a name="trhscomments"></a>
+            <h4 class="floatleft">Comments</h4>
+            <a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Comments"/>
+            <div class="indentleft">
+                <p class="tiny10text"> Use this section to add any
+					additional information that you would like visitors to know about your
+					treehouse.</p>
+                <textarea jwcid="@TextArea" value="ognl:treehouse.comments" cols="50" rows="3"></textarea>
+               <div class="spacer">&nbsp;</div>
+			</div>
+		</div>
+    </div>
+</html>

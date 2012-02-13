@@ -1,0 +1,10 @@
+<p>You may either upload a text file from your computer or type the <span jwcid="@Insert" value="prop:objectType"/> in directly on this page:</p>
+<span jwcid="@RadioGroup" selected="ognl:page.uploadOption">      
+    <ul class="nodisc" style="padding-left:0px">
+    <li><input jwcid="@Radio" value="ognl:page.uploadFileOption" id="fileRadio"/> Use the <strong>Browse</strong> (<strong>Choose File</strong>) button to locate the file you want to upload from your computer. 
+    <input jwcid="@Upload" file="ognl:page.uploadFile" onFocus="document.getElementById('fileRadio').click()"/>
+    </li>
+	<li><input jwcid="@Radio" value="ognl:page.useTextOption" id="textRadio"/> Type or paste the text in the following field:<br/>
+    <textarea jwcid="@TextArea" value="ognl:page.typedText" rows="30" cols="70" onFocus="document.getElementById('textRadio').click();"/></li>
+    </ul>
+</span>

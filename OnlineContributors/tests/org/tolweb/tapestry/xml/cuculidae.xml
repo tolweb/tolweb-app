@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree-of-life-web version="1.0">
+  <nodes>
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+      <name>Cuculinae</name>
+      <rank>Family</rank>
+    </node>      
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+      <name>Couinae</name>
+      <rank>Family</rank>
+	</node>
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+      <name>Centropodinae</name>
+      <rank>Family</rank>
+	</node>
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+      <name>Crotophaginae</name>
+      <rank>Family</rank>
+	</node>
+    <node extinct="false" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+      <name>Neomorphinae</name>
+      <rank>Family</rank>
+	</node>			
+  </nodes>
+</tree-of-life-web>

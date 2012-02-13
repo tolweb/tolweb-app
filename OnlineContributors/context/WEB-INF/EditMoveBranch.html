@@ -1,0 +1,17 @@
+<html jwcid="@EditBranchLeafPageWrapper" editedObjects="Parent Node" notesProperty=""
+	title="ognl:'Move ' + tolPageName" isMedia="ognl:true">
+	<h2><span class="edit">Move</span> <em><span jwcid="@Insert" value="ognl:page.tolPageName"/></em></h2>
+    <span jwcid="@If" condition="ognl:error == null" element="ognl:null">
+        <h3 jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(newParentName)">Successfully moved <span jwcid="@Insert" value="ognl:tolPageName"/> to <span jwcid="@Insert" value="ognl:newParentName"/></h3>
+	    <p>Enter the name of the new parent group you wish to move <span jwcid="@Insert" value="ognl:tolPageName"/> to.</p>
+		<form jwcid="@NodesSearch" onlySelectPagedNodes="ognl:false" returnPageName="ognl:pageName"
+			wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@NEW_FORM_WRAPPER" editedObjectId="ognl:editedObjectId"
+			callbackType="ognl:@org.tolweb.tapestry.FindNodesResults@MOVE_BRANCH_CALLBACK" requireEditPermissions="ognl:true"
+	    	checkPossibleParent="ognl:true"/>
+    </span>
+    <span jwcid="@Else" element="ognl:null">
+        <p class="error"><span jwcid="@Insert" value="ognl:error"/></p>
+    </span>
+    <div jwcid="@AutoSave" autoSaveFrequency="ognl:900" contributorId="ognl:contributor.id" 
+    	editHistoryId="ognl:page.editedPage.editHistoryId"/>	
+</html>

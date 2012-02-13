@@ -1,0 +1,88 @@
+<html jwcid="@ScientificWrapper" title="Edit New Scientific Contributors">
+	<a jwcid="@PageLink" page="ScientificMaterialsManager">Back to Scientific Materials Manager</a>
+	<h2 class="clear">New Scientific Contributors</h2>
+    <span jwcid="@If" condition="ognl:approvedContributor != null">
+        <span jwcid="@Insert" value="ognl:approvedContributor.displayName"/> was successfully approved.  An email
+        has been sent informing them of their registration.
+	<span jwcid="@MailBlock" smtp="localhost" subject="Tree of Life Registration Approved" to="ognl:{approvedContributor.email, configuration.notesEditorEmail}" from="treegrow@tolweb.org" html="ognl:false">
+Hello, we are happy to inform you that you are now registered
+as a contributor to the Tree of Life Web Project.
+
+You can login as a Tree of Life contributor with the following User ID and
+password.<span jwcid="@Insert" value="ognl:'\n'"/>
+
+User ID:
+Use your full e-mail address
+Password:
+<span jwcid="@Insert" value="ognl:newPassword"/>
+
+We recommend that you login and change your password to something that's easy for you 
+to remember. To login go to:
+http://contribute.tolweb.org/
+
+Then follow the links provided in the Scientific Materials Manager.
+
+In order to get started, have a look at the ToL documentation for scientific contributors:
+http://tolweb.org/tree/sep/scicontent.html
+
+If you have any questions or need help with anything, please contact treegrow@tolweb.org
+
+Refer to the Tree of Life Privacy Policy for details about the ToL's use of your personal information: 
+http://tolweb.org/tree/home.pages/ToLPrivacyPolicy.html
+
+By uploading materials to our database as a registered Tree of Life contributor, you agree to the following terms and conditions:
+
+ToL scientific contributors may upload materials to the Tree of Life database and send emails and other communications to Tree of Life staff and contributors, so long as the content is not illegal, obscene, threatening, defamatory, an invasion of privacy, infringing of intellectual property rights or otherwise injurious to third parties. ToL contributors may not use false email addresses, impersonate any person or entity, or otherwise mislead as to the origin of any communication, message or other content. While the Tree of Life Project is not obliged to review all content that is published by contributors on the Tree of Life web site, we reserve the right to delete any contribution, or take action against any registered account, at any time, for any reason.
+
+ToL scientific contributors keep the copyright for materials submitted to the Tree of Life database, and a copyright notice is printed alongside copyright-protected contributions displayed on the ToL web site.  By default, ToL contributions are released under the Creative Commons Attribution-NonCommercial License:
+http://creativecommons.org/licenses/by-nc/3.0/
+Contributors who prefer another license can specify alternative default licenses for their text and media contributions (follow the 'Review license defaults' link in the Scientific Materials Manager).  Licenses for individual contributions can also be specified in the page or media data entry forms.  For an overview of available licensing options, see Tree of Life Use of Contributions:
+http://tolweb.org/tree/home.pages/toluse.html
+
+ToL scientific contributors voluntarily grant the ToL Project and its collaborators non-exclusive, royalty-free, and full rights to use the submitted materials according to the selected license. To the best of the contributor's knowledge, use of the contribution by the Tree of Life Project does not violate any intellectual property rights and will not cause injury to any person or entity. The Tree of Life Project or its collaborators take no responsibility and assume no liability for any contribution made by the contributor or a third party.
+
+When registering as a ToL scientific contributor, you release the ToL Project, its employees, contractors, consultants, and collaborators from any and all damages, claims, causes of action, liabilities, and expenses relating to your participation, or exclusion or disqualification from participation, in the Tree of Life Project.
+
+If you are not willing to accept these terms and conditions or if you are not interested in contributing to the Tree of Life Web Project, please notify us as soon as possible by replying to this message. Upon request, we will immediately remove your record from our database.
+
+We are looking forward to working with you on your pages.
+
+The Tree of Life team: http://tolweb.org/tree/home.pages/homepeople.html  
+
+<span jwcid="@If" condition="ognl:comments">
+The Tree of Life editor, <span jwcid="@Insert" value="ognl:contributor.displayName"/> (<span jwcid="@Insert" value="ognl:contributor.email"/>), had the following comments:
+
+<span jwcid="@Insert" value="ognl:'\n'" raw="ognl:true"/>                        
+<span jwcid="@Insert" value="ognl:comments" raw="ognl:true"/>
+
+                        
+	</span>
+
+Thanks for participating in the Tree of Life Web Project.
+	</span>
+	</span>
+    <span jwcid="@If" condition="ognl:rejectedContributor != null">
+    	<span jwcid="@Insert" value="ognl:rejectedContributor.displayName"/> was successfully rejected.  An email
+        has been sent informing them of their rejection.
+        <span jwcid="@MailBlock" from="ognl:configuration.notesEditorEmail" smtp="localhost" subject="Tree of Life Contributions"
+            to="ognl:{rejectedContributor.email, configuration.notesEditorEmail}" html="ognl:false">
+<span jwcid="@Insert" value="ognl:comments"/>
+        </span>
+    </span>
+    <span jwcid="@If" condition="ognl:newContributors.size > 0">
+		<table jwcid="table@contrib:Table" source="ognl:newContributors" columns="!Data, !Approve, !Reject"/>
+	    <span jwcid="DataColumnHeader@Block">Contributor Data</span>
+	    <span jwcid="DataColumnValue@Block">
+            <span jwcid="@ContributorDataBlock" contributor="ognl:components.table.tableRow"/>
+            <p><a jwcid="@ExternalLink" page="ViewContributorConfirmation" parameters="ognl:{components.table.tableRow.id}">full info</a></p>
+        </span>
+	        <span jwcid="ApproveColumnHeader@Block">&nbsp;</span>
+		<span jwcid="ApproveColumnValue@Block">
+	        <a jwcid="@DirectLink" listener="ognl:listeners.approveContributor" parameters="ognl:components.table.tableRow.id">Approve</a>
+	    </span>
+	    <span jwcid="RejectColumnHeader@Block">&nbsp;</span>
+		<span jwcid="RejectColumnValue@Block">
+	        <a jwcid="@DirectLink" listener="ognl:listeners.rejectContributor" parameters="ognl:components.table.tableRow.id">Reject</a>
+	    </span>        
+    </span>
+</html>

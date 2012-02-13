@@ -1,0 +1,118 @@
+<html jwcid="@EditBranchLeafPageWrapper" editedObjects="Page Authors/Credits" notesProperty="page.tolPage.contributorsNotes"
+	title="ognl:'Edit ' + tolPageName + ' Authors/Credits'" 
+	previewAnchor="AboutThisPage" additionalDelegate="ognl:baseDelegate">
+	<div class="whitebox" id="credits">
+        <div class="instructions">
+            <h5 id="trigger1" class="triup" onclick="showbranch('help1', 'show', 'hide'); showbranch('trigger1', 'tridown', 'triup')">Instructions </h5>
+                <div id="help1" class="hide"> 		  <p>Contributors need to be registered before 
+                they can be added to the <strong>Contributor</strong> list. Only 
+                people who have contributed to the scientific content of the page 
+                should be listed as authors. Other people (e.g., technical assistants) 
+                can be recognized in the <strong>Acknowledgements</strong>. Generally, 
+                the article authors will also be the copyright owners. Use the 
+                <strong>Copyright Owner</strong> field below only if somebody 
+                else owns the copyright (e.g., an employer or a publisher).</p>
+			</div>
+		</div>
+	    <table class="binbox">
+			<tbody>
+				<tr>                         
+                    <th>Shift</th>
+                    <th>Contributor</th>
+                    <th>Author</th>
+                    <th>Copyright</th>
+                    <th>Correspondent</th>
+				</tr>
+	        <tr jwcid="sortableTable@SortableTable" values="ognl:tolPage.contributors"
+	            canMove="ognl:true" canRemove="ognl:true"
+	            currentObject="ognl:currentContributor" rowSpanString="ognl:rowspan"
+                index="ognl:index" minMoveUpIndex="ognl:0">
+				<td jwcid="@Any" element="td" rowspan="ognl:rowspan" class="contributor"><span jwcid="@Insert" value="ognl:index + 1"/>. <span jwcid="@Insert" value="ognl:currentContributor.contributor.displayName"/></td>
+				<td jwcid="@Any" element="td" rowspan="ognl:rowspan"><input jwcid="@Checkbox" value="ognl:currentContributor.isAuthor"/></td>
+				<td jwcid="@Any" element="td" rowspan="ognl:rowspan"><input jwcid="@Checkbox" value="ognl:currentContributor.isCopyOwner"/></td>
+				<td jwcid="@Any" element="td" rowspan="ognl:rowspan"><input jwcid="@Checkbox" value="ognl:currentContributor.isContact"/></td>
+            </tr> 
+            <tr>
+                <td>&nbsp;</td>
+				<td colspan="5" class="editor"><a jwcid="@LinkSubmit" listener="ognl:listeners.searchForContributor">Add a Contributor from the ToL Database</a></td>
+            </tr>
+        </table>
+		<ul class="fields" style="">
+                <li>                     <label>Copyright Owner <span class="tinytext">(if not a ToL 
+                    contributor)</span> <input jwcid="@TextField" value="ognl:tolPage.copyrightHolder" size="30" /> </label>
+                </li>
+                <li>                     <label>Copyright Year 
+                    <input jwcid="@TextField" value="ognl:tolPage.copyrightYear" size="4" type="text"/>
+                     </label>
+
+                </li>
+                <li><label><span class="floatleft">Acknowledgements</span>  <div style="text-align: right">
+                    <textarea cols="60" rows="20" mce_editable="true" jwcid="@TextArea" value="ognl:tolPage.acknowledgements"></textarea></div> </label>
+                </li>
+		            </ul>
+        </div>
+    
+        <div id="articleuse" class="whitebox"><a name="articleuse"></a> <a jwcid="@HelpLink" pageName="ArticleHelpMessagesPage" helpName="Use of Articles and Notes"/>
+                    <h4 class="long">Use Permitted by Copyright Owners</h4>
+            <div class="instructions">	   
+                <p>The default licenses selected below are derived from the preferences
+	        	of the first author as specified in their <a href="/tree/home.pages/register.html" 
+                target="documentation">registration record</a>.  You can override the default by 
+                selecting another license from the list, which will then be used for the text of this 
+		        web page but not your other text contributions. For more detailed information about 
+                available licensing options, see <a href="/tree/home.pages/toluse.html" 
+                target="documentation">ToL Use of Contributions</a>.</p>
+			    <p>Note that the options you specify here apply only to the text of your page. The 
+                use of any image or other media files that may be featured on your page is specified 
+                separately by the copyright owners/contributors of these files.</p>
+			</div>
+            <div jwcid="use1Block@Block">
+                <div id="use1" class="hide">
+                    Materials in the public domain may be freely reproduced, 
+                    distributed, modified, built upon, or otherwise exploited by anyone for any purpose, 
+                    commercial or non-commercial, and in any way, with or without attribution to the 
+                    original source.
+                </div>
+            </div>
+            <div jwcid="use2Block@Block">
+				<div id="use2" class="hide">                         
+					If you select this option, your text can be displayed only on the Tree of Life web site.
+                </div>                
+            </div>
+            <div jwcid="use4Block@Block">
+				<div id="use4" class="hide">                         
+                    Text released under a creative commons licenses can be copied, reused, and 
+                    distributed by the general public as long as attribution regarding the source 
+                    of the information is maintained. Licenses are available that restrict the 
+                    commercial use and the adaptation and modification of text. Copyright notices 
+                    for materials released under this option are marked with the Creative Commons 
+                    icon and contain a link to the deed for the selected license. For more 
+                    information about these licenses, see the <a href="http://creativecommons.org/licenses/" 
+                    target="documentation">Creative Commons web site</a>. We encourage ToL 
+                    contributors to release their text contributions under a creative commons 
+                    license, because these licenses will let us share materials with the 
+                    <a href="http://eol.org"><strong>Encyclopedia of Life</strong></a> (see 
+                    <a href="javascript: w = window.open('/tree/home.pages/toleol.html', 'ToL/EOL Collaboration', 'resizable,height=800,width=1100,scrollbars=yes'); w.focus();">ToL/EOL
+                    Collaboration</a>). All creative commons licenses that permit the reuse and 
+                    adaptation of text are compatible with the EOL intellectual property model,
+                    i. e., <a href="http://creativecommons.org/licenses/by/3.0/">Attribution</a>, 
+                    <a href="http://creativecommons.org/licenses/by-nc/3.0/">Attribution-NonCommercial</a>, 
+                    <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike</a>,
+                    and <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike</a>.
+                </div>                
+            </div>
+			<span jwcid="usePerms@UsePermissionRadios" permissableObject="ognl:mappedPage" 
+			 isImage="ognl:false" dontShowOption3="ognl:true" dontShowTolModOption="ognl:true" 
+             use1Block="ognl:components.use1Block" use2Block="ognl:components.use2Block" 
+             use4Block="ognl:components.use4Block"  />
+			<label class="rememberdefault"><input jwcid="@Checkbox" type="checkbox" name="checkbox" 
+            	value="ognl:rememberSelected"/>Remember this option for my future text contributions</label>
+        </div>    
+    
+    <div jwcid="@AutoSave" autoSaveFrequency="ognl:900" contributorId="ognl:contributor.id" 
+    	editHistoryId="ognl:page.editedPage.editHistoryId"/>        
+    <span jwcid="@If" condition="ognl:newlyApprovedContributor != null">
+<span jwcid="@NewScientificContributorEmail" contributor="ognl:newlyApprovedContributor" 
+nodesString="ognl:node.name" editingContributor="ognl:contributor"/>        
+    </span>
+</html>

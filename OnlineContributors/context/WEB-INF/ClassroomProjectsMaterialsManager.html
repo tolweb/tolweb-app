@@ -1,0 +1,187 @@
+<html jwcid="@BuildTreehouseWrapper" title="Classroom Projects Materials Manager">
+<span jwcid="@If" condition="ognl:showAllProjectsLink || showAllProjectsClicked">
+	<script jwcid="@Script" script="JumpToAnchor.script" anchor="searchresults"/>    
+</span>
+	<div class="floatright">
+ <ul class="pages">
+   <li class="small">Return to the:
+     <ul><li><a jwcid="@PageLink" page="TreehouseMaterialsManager">Treehouse Manager</a></li> 
+     </ul>
+     </li>
+     </ul>
+</div>
+	<h1 class="clear"><span class="teacherresource">Classroom Projects Materials Manager</span></h1>
+	<div id="trhsmanagercontainer">
+        <div class="solidborder">
+          <img src="/tree/learn/lisa.images/trhouseimage/teacherresicon.jpg" width="72" height="73" class="floatright" style="margin: 0 -25px 0 0;">
+			<table>
+                <tr>
+                    <td style="width: 220px;">
+                        <ul class="boxtoc">
+							<li><a href="#classroom" class="noline">Register new classroom projects</a></li>
+							<span jwcid="@If" condition="ognl:projects.size > 0">                            
+								<li><a href="#edit" class="noline">Manage and edit classroom projects and treehouses</a></li>
+                            </span>
+						</ul>
+						
+					<p class="indent15"><a jwcid="@DirectLink" target="registration" listener="ognl:listeners.editRegistrationInfo"><strong>Update registration information</strong></a></p>
+					</td>
+					<td>
+						
+							<dl class="main"><dt><a jwcid="@PageLink" page="TeacherEditSubmittedTreehouses">Review Submitted Student Treehouses</a></dt>
+							<dd>Once students submit treehouses for review/publication, you will need to review them before you submit them for publication on the ToL.
+                            </dd>
+						<dt>
+                            <a jwcid="@PageLink" anchor="upload" target="edit" page="ImagesManager">Go to the Media Manager</a></dt>
+							<dd>Upload media (images, audio and video) to the ToL database.</dd>
+						
+                        <dt>
+                            <a jwcid="@PageLink" page="TreehouseMaterialsManager">Go to the Treehouse Manager</a>
+						</dt>
+						</dl>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<a name="classroom"></a>
+        <div class="solidborder">
+            <h3>Register a New Classroom Project</h3>
+            <dl>
+				<dt><a jwcid="@DirectLink" listener="ognl:listeners.registerNewProject">Register a Classroom Project</a></dt>
+				<dd>Teachers, use this option to allow your students to complete individual, group and whole 
+                    class projects.  Students will not need to have email addresses to register and will log-in 
+                    with pseudonyms.</dd>
+			</dl>
+		</div>
+		<a name="edit"></a>
+        
+		<div class="solidborder">
+            <h3>View and Edit Classroom Projects</h3>
+            <a name="findspecific"></a>
+            <h4>Find a Specific Project or Treehouse to View/Edit </h4>
+			<p class="instructions" style="font-size: 12px;">To find classrooms projects or individual student treehouses that match 
+                specific search criteria, enter text into one of the search fields below and click on the find 
+                project or find treehouse button. Once a project is found click on the &quot;edit&quot; link  
+                in order to view project information and preview, edit/delete, and comment on the student created 
+                treehouses in the project. Please close classroom projects when students have completed 
+                their work.</p>
+            <span jwcid="@If" condition="ognl:(treehouses == null || treehouses.size == 0) && projects.size == 0">
+                <span class="error">There were no matches to your search.  Please try using different search terms.</span>
+            </span>
+            <form jwcid="@Form" listener="ognl:listeners.doSearch" delegate="ognl:beans.delegate">
+			<span jwcid="@If" condition="ognl:beans.delegate.hasErrors">
+				<span class="error"><span jwcid="@Delegator" delegate="ognl:beans.delegate.firstError"/></span>
+			</span>                   
+			<table class="findtable">
+			    <tr>
+			      <th colspan="2" class="boldtext">Find classroom projects</th>
+			      <th colspan="2" class="boldtext">Find individual student treehouses </th>
+			    </tr>
+			    <tr> <td class="boldtext">Words in the title</td> 
+			      <td class="boldtext"><input jwcid="@TextField" value="ognl:projectTitle"/></td>
+			      <td class="boldtext">Words in the title</td>
+			      <td class="boldtext">
+					<input jwcid="@TextField" value="ognl:treehouseTitle"/>
+			      </td>
+			    </tr>
+			    <tr> <td class="boldtext"><span jwcid="@FieldLabel" field="component:projectIdField"/></td> 
+			      <td class="boldtext"><input jwcid="projectIdField@TextField" value="ognl:projectId" 
+                  						displayName="Project ID" translator="translator:number" validators="validators:min=1"/></td>
+			      <td class="boldtext"><span jwcid="@FieldLabel" field="component:treehouseProjectIdField"/></td>
+			      <td class="boldtext"><input jwcid="treehouseProjectIdField@TextField" value="ognl:treehouseProjectId" 
+                  						displayName="Project ID" translator="translator:number" validators="validators:min=1"/>
+			      </td>
+			    </tr>    
+                <tr>
+                  <td>&nbsp;</td>
+                  <td align="right"><p>
+                    <input jwcid="@Submit" value="Find Project" listener="ognl:listeners.findProject"/>
+                  </p>
+                  <p><span class="indent10"><span class="tiny">(results will display below)</span> </span></p></td>
+                  <td class="boldtext">Student Last Name or Pseudonym </td>
+                  <td align="right"><span class="boldtext">
+                    <input jwcid="@TextField" value="ognl:studentName"/>
+                    <input jwcid="@Submit" value="Find Treehouse" listener="ognl:listeners.findTreehouse"/></span>
+                    <p class="indent10"><span class="tiny">(results will display below)</span>                     
+                  <span class="boldtext">                    </span></td>
+                </tr>
+			</table>        
+            </form>
+            <span jwcid="@If" condition="ognl:!showAllProjectsLink">
+	            <h4> <a name="viewall" id="viewall"></a>View/Edit All Classroom Projects </h4>
+	        </span>
+            <a name="searchresults"></a>
+	        <span jwcid="@If" condition="ognl:projects.size > 0">
+				<p class="instructions" style="font-size: 12px;">Click on the &quot;edit&quot; link below in order 
+                    to view project information and preview, edit/delete, and comment on the student created 
+                    treehouses in the project. Please close classroom projects when students have completed their 
+                    work. </p>
+				<table jwcid="projectsTable@contrib:Table" source="ognl:projects" row="ognl:currentProject" columns="!title, !id, !edit, !delete">
+					<span jwcid="titleColumnHeader@Block">Project Title / Group</span>
+					<span jwcid="titleColumnValue@Block">
+					    <span jwcid="@Insert" value="ognl:currentProject.name"/> / <span jwcid="@Insert" value="ognl:currentProject.classGroup"/>
+					</span>    
+					<span jwcid="idColumnHeader@Block">ID</span>    
+					<span jwcid="idColumnValue@Block">    
+						<span jwcid="@Insert" value="ognl:currentProject.projectId"/>
+					</span>
+					<span jwcid="editColumnHeader@Block">&nbsp;</span>
+					<span jwcid="editColumnValue@Block">
+					    <span jwcid="@If" condition="ognl:currentProject.isApproved" element="ognl:null">
+					    <a jwcid="@ExternalLink" page="ClassroomProjectPage" parameters="ognl:currentProject.projectId">manage project, edit/add comments to student treehouses</a>
+					    </span>
+					    <span jwcid="@Else" element="ognl:null">
+					        Project is pending approval
+					    </span>
+					</span>
+					<span jwcid="deleteColumnHeader@Block">&nbsp;</span>
+					<span jwcid="deleteColumnValue@Block">
+					    <span jwcid="@If" condition="ognl:currentProject.isApproved && !currentProject.isClosed" element="ognl:null">
+							<a jwcid="@DirectLink" listener="ognl:listeners.closeProject" parameters="ognl:currentProject.projectId">close</a>
+					    </span>
+					    <span jwcid="@If" condition="ognl:currentProject.isClosed">
+					        Project is closed
+					    </span>
+					</span>
+				</table>
+            </span>
+            <span jwcid="@If" condition="ognl:treehouses != null && treehouses.size > 0">
+				<p class="instructions" style="font-size: 12px;">Click on the &quot;edit&quot; link below in order 
+                    to edit treehouses in the project.</p>                
+				<table jwcid="treehousesTable@contrib:Table" cellpadding="3" source="ognl:treehouses" columns="!treehouseTitle, !preview, !history, !select" row="ognl:currentTreehouse">
+					<span jwcid="treehouseTitleColumnHeader@Block">Title</span>
+					<span jwcid="treehouseTitleColumnValue@Block">
+						<a jwcid="@TreehouseTitleCondLink" isTreehouses="ognl:true" treehouse="ognl:currentTreehouse"/>
+				    </span>        
+					<span jwcid="previewColumnHeader@Block">Preview</span>
+					<span jwcid="previewColumnValue@Block">
+				        <a jwcid="@GenericLink" renderer="ognl:rendererFactory.previewLinkRenderer" href="ognl:currentWorkingUrl">
+				            preview
+				        </a>
+				    </span>
+					<span jwcid="historyColumnHeader@Block">Add Comments / View Page History</span>
+					<span jwcid="historyColumnValue@Block">
+                        <a jwcid="@TreehouseSubmittedOrEditLink" treehouse="ognl:currentTreehouse"
+                            isTeacher="ognl:true" pageName="TreehouseEditNotes" anchor="commsection">                                
+							comments/questions<br/> page history                            
+                        </a>
+				    </span>    
+					<span jwcid="selectColumnHeader@Block">Edit</span>
+					<span jwcid="selectColumnValue@Block">
+                        <a jwcid="@TreehouseSubmittedOrEditLink" treehouse="ognl:currentTreehouse"
+                            isTeacher="ognl:true" showSubmittedMessage="ognl:false">edit</a>        
+					</span>                
+	            </table>                    
+			</span>
+	<span jwcid="@If" condition="ognl:showAllProjectsLink">
+		<div class="whitebox"><h4>Search Results</h4>
+        <form jwcid="@Form" listener="ognl:listeners.showAllProjects">
+			<p class="instructions">
+	         <label class="large">To view/edit all of your classroom projects, click here to 
+	         <input type="submit" name="Show " value="Show All Classroom Projects">
+	         </label>
+			</p>                   
+        </form>
+		</div>        
+    </span>
+</html>

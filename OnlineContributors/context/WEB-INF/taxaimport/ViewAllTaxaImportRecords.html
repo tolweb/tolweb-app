@@ -1,0 +1,15 @@
+<html jwcid="@FeaturesWrapper" title="View All Taxa Import Records">
+<p>[<a jwcid="@PageLink" page="xml/TaxaImportHome" >Taxa Import Home</a>]</p>
+<h2 class="clear">All Taxa Import Records</h2>
+	<table jwcid="table@contrib:Table" source="ognl:taxaImportRecords" row="ognl:currentTaxaImportRecord" 
+        	columns="ognl:columnsString" class="border" pageSize="50">
+        <span jwcid="viewColumnHeader@Block"></span>
+        <span jwcid="viewColumnValue@Block">
+            <a jwcid="@ExternalLink" page="taxaimport/ViewTaxaImportRecord" parameters="ognl:{currentTaxaImportRecord.id}">view</a>
+		</span>
+        <span jwcid="basalNodeColumnHeader@Block">basal node</span>
+        <span jwcid="basalNodeColumnValue@Block">
+			<span jwcid="@Insert" value="ognl:currentBasalNodeName" />
+		</span>		
+    </table>
+</html>

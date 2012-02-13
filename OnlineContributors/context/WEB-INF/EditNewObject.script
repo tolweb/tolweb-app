@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+<input-symbol key="editWindowName" class="java.lang.String" required="yes"/>	
+<input-symbol key="pageName" class="java.lang.String" required="yes"/>	
+<body>
+<unique>
+	<![CDATA[
+	function uploadNewMediaFormInitialState() {
+		toggleNewMediaForm(true);
+	}
+	
+	function enableNewMediaForm() {
+		toggleNewMediaForm(false);
+	}
+
+	function toggleNewMediaForm(toggle) {
+		var sub = document.getElementById("uploadMedia");
+		sub.disabled = toggle;		
+	}
+		
+	function editNewObject() {
+		var win = window.open('/onlinecontributors/app?service=page&page=${pageName}', '${editWindowName}', 'width=900, height=700, location=no, menubar=no, status=no, toolbar=no, scrollbars=yes, resizable=yes');
+		win.focus();
+	}
+	]]>
+</unique>	
+</body>
+</script>

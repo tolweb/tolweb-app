@@ -1,0 +1,38 @@
+<messages>
+<message name="Title Illustrations">
+<text><![CDATA[<p> The <strong>Edit Title Illustrations</strong> form lets you assemble a 
+        title image array for your branch or leaf page. </p>
+
+    <p>To place images in the array:</p>
+
+    <ul class="disc">
+        <li> Click on <span class="wbuttons">+</span> to choose an image from 
+            the ToL database to add to the array. The new image will appear to 
+            the right of the clicked <span class="wbuttons">+</span> button</li>
+        <li>Click on <span class="wbuttons">&#8211;</span> to remove a chosen 
+            image from the array</li>
+
+        <li> Click on <span class="wbuttons">&lt;</span> or <span class="wbuttons">&gt;</span>             to shift an image to the left or right, respectively</li>
+    </ul>
+    <p>By default, title illustrations on branch pages are set to a size of 250 
+        pixels high, and title illustrations on leaf pages are set to a size of 
+        300 pixels high. The <em>Branch Defaults</em> panel of <strong>TreeGrow</strong>'s 
+        <em>Node Data Window</em> also lets you set a default for a given node 
+        and its descendents. If you select <strong>Custom Heights</strong>, you 
+        will be able to override default sizes for the current array.</p>
+
+    <p>Click on <strong>Save &amp; Preview</strong> to see what your title illustrations 
+        array will look like on your branch or leaf page.</p>]]></text>
+</message>
+<message name="Captions for Title Illustrations">
+<text><![CDATA[    <p> Captions for title illustrations are displayed alongside thumbnails near 
+        the bottom of ToL branch and leaf pages. By default, a selection of image 
+        data (stored in the ToL database) is displayed as the caption for each 
+        title illustrations. If you deselect <strong>Display Image Data</strong>, 
+        only the copyright information gets displayed alongside the thumbnail 
+        for each title image.</p>
+
+    <p> You can add a custom caption for your title illustration array, which 
+        will then be displayed above the thumbnails and image data.</p>]]></text>
+</message>
+</messages>

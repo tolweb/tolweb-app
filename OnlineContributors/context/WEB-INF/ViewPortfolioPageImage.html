@@ -1,0 +1,10 @@
+<span jwcid="@If" condition="ognl:portfolioPage.hasImage">
+	<a jwcid="@ExternalLink" page="PortfolioViewPage"
+	    parameters="ognl:{page.treehouse.id, portfolioPage.destinationType, portfolioPage.destinationId}">                                        
+	    <span jwcid="@If" condition="ognl:hasImage">                        
+			<img jwcid="@Any" src="ognl:thumbnailUrl" 
+	        	class="thumbnailgoto"/>
+	    </span>
+	</a>
+	<span class="captionleft"><span jwcid="@Insert" value="ognl:copyrightString" raw="ognl:true"/></span>
+</span>

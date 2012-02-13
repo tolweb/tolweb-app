@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page-specification PUBLIC 
+  "-//Apache Software Foundation//Tapestry Specification 3.0//EN" 
+  "http://jakarta.apache.org/tapestry/dtd/Tapestry_3_0.dtd">
+<page-specification class="org.tolweb.tapestry.Home">
+    <description>Landing page for Online Contributions</description>
+    <component id="wrapper" type="Wrapper">
+        <static-binding name="title">Online Contributions Home</static-binding>
+    </component>
+    <component id="registrationLink" type="PageLink">
+        <static-binding name="page">ImageContributorRegistration</static-binding>
+    </component>
+    <component id="loginLink" type="PageLink">
+        <static-binding name="page">ContributingImages</static-binding>
+    </component>
+</page-specification>

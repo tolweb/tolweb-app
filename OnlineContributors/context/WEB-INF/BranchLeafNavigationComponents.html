@@ -1,0 +1,79 @@
+<span jwcid="@If" condition="ognl:page.isWorking && page.canEdit && !page.node.isLeaf">    
+	<div class="editpage">
+		<span jwcid="@Any" element="span" id="subgroupnames" class="ognl:page.openSubgroups ? 'down' : 'up'" onclick="changeclass('subgrouplist', 'show', 'hide'); changeclass('subgroupnames', 'down', 'up')">add/edit subgroups</span>
+		<img src="/tree/img/devicons/edit.gif" title="edit"/>
+        <img src="/tree/img/devicons/addgroups.gif" title="add subgroups"/>
+        <img src="/tree/img/devicons/addpage.gif" title="create page"/>
+	    <ul jwcid="@Any" element="ul" id="subgrouplist" class="ognl:page.openSubgroups ? 'show' : 'hide'">
+            <li jwcid="@For" source="ognl:page.namedNodesOnPage" value="ognl:page.currentNode" element="li">
+                <span jwcid="@InvokeListener" listener="listener:establishCachedNodeValues"/>
+				<span jwcid="@Insert" value="ognl:page.currentNode.name"/>
+                <span jwcid="@If" condition="ognl:currentNodeNoPermissions">
+                    <img src="/tree/img/devicons/redlock.gif" title="you do not have access privileges for this branch"/> 
+                </span>
+                <span jwcid="@Else">
+                    <span jwcid="@If" condition="ognl:currentNodeSubmitted">
+						<img src="/tree/img/devicons/greylock.gif" title="branch is pending publication"/>
+                    </span>
+                    <span jwcid="@Else">
+		                <a jwcid="@EditBranchLeafPageLink" editPageParams="ognl:page.currentNodeEditPageParameters" editPageName="EditTaxonNames" editLinkClass="ognl:null" title="edit"><img src="/tree/img/devicons/edit.gif"/></a>
+		                <span jwcid="@If" condition="ognl:showAddSubgroupsLink">
+		                	<a jwcid="@ExternalLink" page="UploadNewNodes" parameters="ognl:{currentNode.nodeId, true}" title="add subgroups"><img src="/tree/img/devicons/addgroups.gif"/></a> 
+		                </span>
+                        <span jwcid="@Else">
+                            <span jwcid="@If" condition="ognl:currentNodeDownloaded">
+                                <img src="/tree/img/devicons/blacklock.gif" title="branch is checked out in TreeGrow"/>
+                            </span>
+                        </span>
+		                <span jwcid="@If" condition="ognl:showAddPageLink">
+		                    <a jwcid="@DirectLink" listener="listener:createPageForNode" title="create page" parameters="ognl:{page.tolPage.pageId, currentNode.nodeId}"><img src="/tree/img/devicons/addpage.gif"></a>
+		                </span>
+                    </span>
+                </span>
+            </li>
+            <span jwcid="@If" condition="ognl:showRootAddSubgroupsLink">
+                <li><a jwcid="@ExternalLink" page="UploadNewNodes" parameters="ognl:{page.node.nodeId, true}" title="add subgroups"><img src="/tree/img/devicons/addgroups.gif"> add more subgroups of <span jwcid="@Insert" value="ognl:page.node.name"/></a></li>
+            </span>
+		</ul>
+    </div>
+</span>
+<span jwcid="@If" condition="ognl:page.tolPage.leadText">
+    <div id="leadtext"><span jwcid="@Insert" value="ognl:page.tolPage.leadText" raw="ognl:true"/></div>
+</span>
+<span jwcid="@If" condition="ognl:tolPage.writeAsList || showOnlyTaxonLists">
+    <ul jwcid="@TaxonList" rootNode="ognl:node"/>
+    <span jwcid="@If" condition="ognl:page.canEdit && !node.isLeaf">
+		<a jwcid="@DirectLink" listener="ognl:listeners.setShowTree" class="edittoggle" parameters="ognl:tolPage.pageId">display tree</a>        
+    </span>
+</span>
+<span jwcid="@If" condition="ognl:showTreeDiagram">
+    <img jwcid="@TreeImg" tolPage="ognl:tolPage" isWorking="ognl:page.isWorking"/>
+    <img src="/tree/img/help.gif" id="treehelp" alt="Interpreting the tree" onclick="changeclass('treecomment', 'show', 'hide')" />
+	<span jwcid="@If" condition="ognl:page.canEdit">
+    	<a jwcid="@DirectLink" listener="ognl:listeners.setWriteAsList" class="edittoggle" parameters="ognl:tolPage.pageId">display list</a>        
+    </span>
+	<div id="treecomment" class="hide">
+		<img src="/tree/img/close.gif" class="closebox" alt="close box" onclick="changeclass('treecomment', 'show', 'hide')" />
+		<p>This tree diagram shows the relationships between several groups of organisms.</p>
+		<p>The root of the current tree connects the organisms featured in this tree to their containing group and the rest of the Tree of Life. The basal branching point in the tree represents the ancestor of the other groups in the tree. This ancestor diversified over time into several descendent subgroups, which are represented as internal nodes and terminal taxa to the right.</p>
+		<img src="/tree/img/TreeHelpImage.gif" alt="example of a tree diagram" />
+		<p>You can click on the root to travel down the Tree of Life all the way to the root of all Life, and you can click on the names of descendent subgroups to travel up the Tree of Life all the way to individual species.</p>
+		<p>For more information on ToL tree formatting, please see <a href="/tree/home.pages/treeinterpret.html">Interpreting the Tree or Classification</a>. To learn more about phylogenetic trees, please visit our <a href="/tree/learn/concepts/concepts.html">Phylogenetic Biology</a> pages.</p>
+		<span class="close" onclick="changeclass('treecomment', 'show', 'hide')">close box</span>
+	</div>
+</span>
+<a jwcid="@EditBranchLeafPageLink" editPageName="EditTreeText" editLinkClass="editpage">edit <span jwcid="@If" condition="ognl:node.isLeaf" element="ognl:null">lead text</span><span jwcid="@Else" element="ognl:null">text before/after tree/list</span></a>
+<span jwcid="@If" condition="ognl:showAfterTreeDiv">
+      <div id="aftertree">
+          <p jwcid="@If" condition="ognl:hasIncompleteSubgroups" element="p">
+          	Note: this <span jwcid="@Insert" value="ognl:treeOrListString"/> is still under construction.
+			It does not yet contain all known <span jwcid="@Insert" value="ognl:basicPageTitle" raw="ognl:true"/> subgroups.
+          </p>
+          <span jwcid="@If" condition="ognl:showTreeText">
+      	  	<span jwcid="@Insert" value="ognl:tolPage.postTreeText" raw="ognl:true"/>
+          </span>
+      </div>
+</span>
+<span jwcid="@If" condition="ognl:page.node.nodeId != 1">
+<div id="containing">Containing group: <em jwcid="@Insert" value="ognl:openContainingGroupEm" raw="ognl:true"/><a jwcid="@Any" element="a" href="ognl:parentGroupLinkString"><span jwcid="@Insert" value="ognl:parentGroupName"/></a><em jwcid="@Insert" value="ognl:closeContainingGroupEm" raw="ognl:true"/></div>
+</span>

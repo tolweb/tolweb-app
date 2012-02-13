@@ -1,0 +1,89 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:false" 
+title="ognl:'Step #' + stepNumber + ' Edit Notes'" isNotes="ognl:true" 
+additionalDelegate="ognl:commentsEditorDelegate">
+	<div id="trhs2notes">
+        <a name="trhs2notes"></a>
+		<h3 class="sectionheaderblubpg">Step <span jwcid="@Insert" value="ognl:stepNumber"/>. Add Notes and Comments</h3>
+        <div class="boxtocpages">
+			<div jwcid="@TreehouseImportantDiv">
+				
+                	<li><a href="#commsection">Add Comments, Notes & Questions for Yourself, Teachers and Editors</a></li>
+	<li><a href="#commquest">View Page Comments/History</a></li>
+	<li><a href="#trhsnotes">Add Image/Media Permission Notes</a></li>
+	        </div>		     
+			<div jwcid="@TreehouseHelpDiv" stepNum="7" exampleEditingFormUrl="/tree/learn/TreebuilderTools/BuildingGuide/ExampleEditingSteps7.html">
+				
+	        </div>
+			<div jwcid="@TreehouseWarningDiv"/>	   
+			<div class="spacer">&nbsp;</div>
+	  </div>      
+		<div class="spacer">&nbsp;</div>
+	</div>
+	<div class="spacer">&nbsp;</div>
+        
+       
+
+		<div id="commsection"><a name="commsection"></a>  <div id="commentsquestion" class="boxtoc"><h3>Page Communication / History</h3>
+          <h4>Add Comments Notes and Questions</h4>
+   <div class="importantnar" style="float:right; width: 100px;">
+ <p>This section is for you, your teacher (if you are working as part of a classroom project) and ToL editors 
+     to add comments about your page. When you click submit, comments will be added to the <a href="#commquest">page comments and history section below</a>. </p>
+ </div>
+	<textarea jwcid="@TextArea" value="ognl:newComment" cols="55" rows="30" mce_editable="true"/>
+<div class="importantnar">
+           <p><span class="small">If you want your teacher and/or the ToL learning materials editor to receive an email when you add your comment check the appropriate boxes before you click submit comments/questions.</span></p>
+           <ul class="radiocheck">
+            <li jwcid="@If" condition="ognl:isStudent">
+              <input jwcid="@Checkbox" value="ognl:emailTeacher"/>
+              Send an email to your teacher with this comment/question.       </li>
+            <li>
+              <input jwcid="@Checkbox" value="ognl:emailEditor"/>
+              Send an email to the ToL learning materials editor with this comment/question. </li>
+          </ul>
+		<br />
+		   <p>
+		   <input jwcid="@Submit" listener="ognl:listeners.submitComments" value="Submit comments/questions"/></p>
+		   </div></div>
+       <div class="spacer">&nbsp;</div>
+       
+       
+         <div id="commquest" class="boxtoc" style="padding-top: 0;">
+		<span jwcid="@If" condition="ognl:comments.size > 0">            
+	  <h4 style="padding-left: 0;"><a name="commquest"></a>Page Comments, Notes and History</h4>
+      <span jwcid="@Foreach" source="ognl:comments" value="ognl:currentComment">
+	 	<hr class="greyline2">  <ul class="comments">
+	    <li>Comments added by <span jwcid="@Insert" value="ognl:commentAuthorDisplayName"/></li>
+	    <li>Comments Added on <span jwcid="@Insert" value="ognl:currentComment.commentDate"/></li>
+        </ul>
+		<span jwcid="@Insert" value="ognl:currentComment.comment" raw="ognl:true"/>
+    </span>
+    </span>
+   	</div> 
+     <div class="spacer">&nbsp;</div>
+             
+       
+<div id="trhsnotes">
+            <a name="trhsnotes"></a>
+            <h4>Image and Media Permission Notes</h4> 
+            <div class="importantnar">
+            <a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Notes"/>
+            <p><strong><em>Notes are not part of the printed treehouse page.</em></strong> 
+            Use this section to add the content of the permission note(s) you have received from copyright holders of images and media that you have used in your page that you have not created yourself (or obtained from the ToL database).</p></div>
+        <div class="indentleft">
+            <p><textarea jwcid="@TextArea" value="ognl:treehouse.notes" cols="55" rows="30"></textarea></p>
+            <p><input jwcid="@Submit" value="Save Notes" class="padbutton"/></p>
+		</div></div>
+		</div>
+            
+</html>
+<span jwcid="@If" condition="ognl:submittedComment">
+    <span jwcid="@MailBlock" from="treehouses@tolweb.org" subject="New Comment Submission for Treehouse"
+        smtp="localhost" to="ognl:emailAddresses" html="ognl:false">
+There was a comment submitted for the treehouse '<span jwcid="@Insert" value="ognl:treehouse.pageTitle"/>' by
+<span jwcid="@Insert" value="ognl:contributor.displayName"/>.  The comment follows:
+<span jwcid="@Insert" value="ognl:'\n'"/>
+<span jwcid="@Insert" value="ognl:submittedComment" raw="ognl:true"/>
+<span jwcid="@Insert" value="ognl:'\n'"/>
+You may view the treehouse at the following URL: <span jwcid="@Insert" value="ognl:workingUrl"/>        
+    </span>
+</span>

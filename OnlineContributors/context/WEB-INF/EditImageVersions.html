@@ -1,0 +1,108 @@
+<html jwcid="@NewBarebonesFormWrapper" title="Image Versions"> 
+	<span jwcid="@If" condition="ognl:newVersionUrl"> 
+	    <div jwcid="@RedirectDiv" url="ognl:newVersionUrl"/>
+	</span>    
+    <h2>Versions for Image #<span jwcid="@Insert" value="ognl:image.id"/></h2>
+<p>
+    When you upload an image to the ToL database, we automatically generate 
+    several, scaled versions of your image for use in different ToL contexts. 
+    Below, you can view the different versions currently available in the ToL 
+    system.  You can replace the master image if a better version becomes available, and you can upload additional, scaled versions that you have created yourself.  
+</p>
+<p>For more information about the management of ToL image versions, click on the 
+    lightbulb <a jwcid="@HelpLink" pageName="ImageHelpMessagesPage" helpName="Image Versions Help" />
+</p>
+<form jwcid="@Form" listener="ognl:listeners.editVersionsSubmit">
+<span jwcid="@Hidden" value="ognl:editedObjectId"/>    
+<div id="uplversions">
+<image jwcid="@ImageThumbnail" image="ognl:image" isPreview="ognl:true" classString="floatleft"/> <h3>Upload Another Version of ToL Image ID#<span jwcid="@Insert" value="ognl:image.id"/></h3>
+<p>Click on the <strong>Browse</strong> (Choose file) button to locate the file to upload from your computer. Then click on the <strong>Upload New Version</strong> button.   </p>
+    <input jwcid="@Upload" file="ognl:uploadFile"/>
+    <input jwcid="@Submit" value="Upload New Version" listener="ognl:listeners.uploadNewVersionSubmit"/>
+    
+    <p class="clear">If the image you are uploading should replace the current master file, be sure to select it in the master column below.</p>
+</div>
+<a id="returnLink" jwcid="@LinkSubmit" listener="ognl:listeners.returnSelected">Return to Editing</a>     
+<table class="centered">
+    <tr>        
+        <th>Name</th>
+        <th>Filename</th>
+        <th>Dimensions</th>
+        <th>File Size</th>
+        <th>Master</th>
+        <th>MaxSize</th>
+        <th>Contributor</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+    </tr>
+    <span jwcid="@For" source="ognl:versions" element="tr" 
+        value="ognl:currentVersion" index="ognl:versionIndex" convertor="ognl:convertor">
+        <td height="25">
+            <span jwcid="@If" condition="ognl:currentVersion.contributor != null">
+                <input type="text" jwcid="@TextField" size="15" value="ognl:currentVersion.versionName"/>
+            </span>
+            <span jwcid="@If" condition="ognl:currentVersion.contributor == null">
+	            <span jwcid="@Insert" value="ognl:currentVersion.versionName" class="ognl:imageVersionClassname"/>
+            </span>
+        </td>
+        <td height="25" class="url"><span jwcid="@Insert" value="ognl:currentVersion.fileName"/></td>
+        <td height="25"><span jwcid="@Insert" value="ognl:currentVersion.width + 'x' + currentVersion.height"/></td>
+        <td height="25"><span jwcid="@Insert" value="ognl:currentVersion.fileSize"/></td>
+		<span jwcid="@If" condition="ognl:versionIndex == 0">
+            <td jwcid="@Any" element="td" rowspan="ognl:versions.size">
+	            <table class="radiogroup">
+					<span jwcid="@RadioGroup" selected="ognl:selectedMasterIndex">
+	    	            <span jwcid="@For" source="ognl:versions" element="tr" 
+                            index="ognl:otherIndex" convertor="ognl:convertor">
+	                    	<td height="25">
+                                <span jwcid="@If" condition="ognl:canSelectMaster">
+	                                <span jwcid="@Radio" value="ognl:otherIndex" onclick="document.forms[0].submit();"/>
+                                </span>
+							</td>
+		                </span>
+					</span>
+	            </table>
+            </td>
+		</span>
+		<span jwcid="@If" condition="ognl:versionIndex == 0">
+            <td jwcid="@Any" element="td" rowspan="ognl:versions.size">
+	            <table class="radiogroup">
+					<span jwcid="@RadioGroup" selected="ognl:selectedMaxIndex">
+	    	            <span jwcid="@For" source="ognl:versions" element="tr" 
+                            index="ognl:otherIndex" convertor="ognl:convertor">
+	                    	<td height="25">
+                                <span jwcid="@If" condition="ognl:!isDeprecatedAutoVersion">
+	                                <span jwcid="@Radio" value="ognl:otherIndex" onclick="document.forms[0].submit();"/>
+                                </span>
+                            </td>
+		                </span>
+					</span>
+	            </table>
+            </td>
+		</span>
+        <td height="25"><span jwcid="@Insert" value="ognl:currentVersion.contributor != null ? currentVersion.contributor.displayName : 'automatic'"/>
+        <td height="25">
+            <span jwcid="@If" condition="ognl:currentVersion.fileName == null">
+                <a jwcid="@PopupLinkSubmit" listener="listener:generateNewVersion" 
+                    selected="ognl:versionToGenerate" tag="ognl:currentVersion"
+                    height="ognl:heightString" width="ognl:widthString" popuppage="ImageVersionPreviewWindow"
+                    windowName="ognl:currentVersion.versionId">view</a> 
+            </span>
+            <span jwcid="@If" condition="ognl:currentVersion.fileName != null">
+				<a jwcid="@GenericLink" href="ognl:imageUtils.getUrlForVersion(currentVersion)" renderer="ognl:popupRenderer">view</a> 
+            </span>            
+        </td>
+        <td height="25">
+			<span jwcid="@If" condition="ognl:canDeleteVersion">
+                <a jwcid="@LinkSubmit" listener="ognl:listeners.deleteVersion" selected="ognl:versionToDelete" tag="ognl:currentVersion">delete</a>
+			</span>
+        </td>
+    </span>
+</table>
+
+
+<div class="rightfield">
+	<input jwcid="@Submit" value="Done" listener="ognl:listeners.returnSelected"/>
+</div>
+</form>
+</html>

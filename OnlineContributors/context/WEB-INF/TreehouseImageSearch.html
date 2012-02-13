@@ -1,0 +1,43 @@
+<html jwcid="@NewBarebonesFormWrapper" title="Search for Media" cssName="trhsform.css">
+	<span jwcid="@If" condition="ognl:newObjectUploaded">
+		<div jwcid="@RedirectDiv" url="ognl:editObjectUrl"/>
+	</span>
+	<h2>Add an Image to a Treehouse Page</h2>
+    <h4 class="topborder">Find images to insert into your page</h4>
+	<div class="instructions">
+	   	    <p class="small"> Images displayed on ToL pages are retrieved from the ToL 
+	        image database. Use the fields below to find the image you want. Once you find an image you would like to use 
+        click &quot;insert&quot; to add the image to your page.   Note that not all ToL images are available for use on all ToL pages. Your search will retrieve only images that have been released by their copyright owners for your intended use. <a href="#tips">See search tips for help.</a></p>
+	</div>
+    <span  jwcid="@ImageSearch" 
+      callbackType="ognl:callbackType" linkString="ognl:null" 
+      searchPageName="TreehouseImageSearch" searchOnlyContributorsImages="ognl:false"
+    	wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@NEW_FORM_WRAPPER"
+    	imageUse="ognl:@org.tolweb.treegrow.main.NodeImage@RESTRICTED_USE"
+    	instructions="ognl:instructionsString" editedObjectId="ognl:pageId"/>
+	<a name="upload"></a>
+    <h4 class="topborder">Add a new media file to the ToL database</h4>
+	<div class="instructions">
+	    <p class="small">If you would like to use media that is not yet in the ToL database, you can upload it here.  Please be sure to provide data for the media in the form that opens after the media is uploaded.</p>
+	</div>
+	<div class="indentleft">
+		<p>Choose a file to upload from your computer then click on the Upload New Media button.</p>    
+    </div>
+	<form jwcid="@UploadNewImageForm" isTreehouses="ognl:true"/>    
+	<h4 class="topborder">Search tips</h4>
+	<div class="instructions">
+	    <a name="tips"></a>
+		<p class="indentleft">The following tips will help you find the maximum number of results and/or complete a successful search for media in the ToL database. </p>
+		<ul class="infolist">
+			<li><strong>Less is more.</strong> Typing text into <em>only one search field</em> will help maximize your results. Also, typing in less text will help avoid typos and misspellings. </li>
+			<li><strong>Don't type something into each search field. </strong>The exception is if you are looking for a very specific type of media file.</li>
+			<li><strong>Don't use spaces between words that you are searching for. </strong>The exception is if you are searching on a scientific name for a group of organisms or the name of a copyright holder. However, we still recommend you initially type in only one word. </li>
+			<li><strong>If you contributed the media yourself </strong>and you are the copyright owner, you can search by your name in the <strong>Copyright Owner</strong> field. </li>
+			<li><strong>If you know the name of the file</strong> you contributed you can use the <strong>File Name</strong> field. </li>
+			<li><strong>When looking for media you did not contribute, </strong> type search criteria in the &quot;<strong>Attached to Group</strong>&quot; and &quot;<strong>Text in Any Media Data Field</strong>&quot; sections. We recommend that you try typing in what you are looking for in &quot;<strong>Attached to  Group</strong>&quot; first, because if we have an image or other media file of this organism you should be able to find it in this way. However, if you are using a common name for a group of organisms (such as butterfly rather than Lepidoptera) you may be more successful if you type text into &quot;<strong>Text in any Media Data Field</strong>&quot;.</li>
+			<li><strong>See </strong><a href="/tree/learn/TreebuilderTools/BuildingGuide/SciNames.html" target="fullHelpWindow">help with scientific names</a> to find out some of the scientific names you can use to search for media of various organisms. </li>
+			<li>For additional examples see <a href="/tree/learn/TreebuilderTools/BuildingGuide/MediaSearchHelpCS.html" target="fullHelpWindow">help finding media in the ToL database</a></li>
+		</ul>
+	</div>
+	<p><a href="javascript:window.close();" class="center">close window</a></p>
+</html>

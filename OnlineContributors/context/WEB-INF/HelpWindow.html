@@ -1,0 +1,12 @@
+<html jwcid="@Shell" title="ognl:' Help: ' + helpTitle" stylesheet="ognl:stylesheetToUse">
+	<body jwcid="@Body" id="hintsbod">
+	   <div id="hintscontent">
+        <h3><span jwcid="@Insert" value="ognl:helpTitle"/></h3>
+        <p>
+    		        <span jwcid="@Insert" value="ognl:helpString" raw="ognl:true"/>        
+       </p>				
+       <p><a id="closewindowlink" href="#" onclick="javascript:window.close()">Close Window</a>
+       </p>    
+        </div>
+    </body>
+</html>

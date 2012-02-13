@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+	<input-symbol key="hiddenId" class="java.lang.String"/>
+	<input-symbol key="invisibleclass" class="java.lang.String"/>	
+	<input-symbol key="editTierPrefix" class="java.lang.String"/>
+	<input-symbol key="editLarvaePrefix" class="java.lang.String"/>
+	<input-symbol key="editMicroCTPrefix" class="java.lang.String"/>
+	<input-symbol key="listPrefix" class="java.lang.String"/>
+	<input-symbol key="noCloseAttribute" class="java.lang.String"/>
+	<input-symbol key="expandMostAttribute" class="java.lang.String"/>
+	<body>
+	<![CDATA[	
+		var openUrl = 'img/triopen.gif';
+		var closeUrl = 'img/triclosed.gif';
+		function openCloseAll(open, isMost) {
+			var showHide = open ? 'show' : 'hide';
+			var src = open ?  openUrl : closeUrl;
+			var nsrc = open ? closeUrl : openUrl;
+			var listId = "txlist";
+			var taxonList = document.getElementById(listId);
+			var childLists = taxonList.getElementsByTagName("ul");
+			for (var i = 0; i < childLists.length; i++) {
+				var currentList = childLists[i];
+				var expandList = !isMost;
+				if (isMost) {
+					// check to see if it has the special attribute
+					// if it doesn't it shouldn't get expanded
+					var expandMost = currentList.getAttribute('${expandMostAttribute}');
+					if (expandMost != null) {
+						expandList = true;
+					}
+				}
+				if (expandList) {				
+					currentList.className = showHide;
+					var digitRegex = /[^\d]*(\d+)/;
+					var matchResult = currentList.id.match(digitRegex);
+					if (matchResult) {
+						var numbers = matchResult[1];			
+						var imgId = 'ach' + numbers;
+						var currentImg = document.getElementById(imgId);
+						if (currentImg) {
+							currentImg.setAttribute('src', src);
+							currentImg.setAttribute('nsrc', nsrc);				
+							checkChangeClass(currentImg, !open);
+						}
+					}
+				}
+			}
+		}
+		function initOpenCloseImages() {
+			if (!document.getElementById){ return };
+			var imgTemp = new Array();
+			var imgarr = document.getElementsByTagName('img');
+			for (var i = 0; i < imgarr.length; i++) {
+				if (imgarr[i].getAttribute('nsrc')) {
+					imgTemp[i] = new Image();
+					imgTemp[i].src = imgarr[i].getAttribute('nsrc');
+					imgarr[i].style.cursor = 'pointer';
+					imgarr[i].onclick = function() {
+						imgOriginSrc = this.getAttribute('src');
+						imgNewSrc = this.getAttribute('nsrc');
+						this.setAttribute('src', imgNewSrc);
+						this.setAttribute('nsrc', imgOriginSrc);
+						var isNowClosed = (imgNewSrc == closeUrl);			
+						// only check if hiding internal nodes is set to be on
+						checkChangeClass(this, isNowClosed);
+					}
+				}
+			}
+		}
+		/*
+		 * The idea here is that if an internal node is marked as invisible, when it is
+		 * closed it needs to have its class assigned to the minimum tier of its descendants.
+		 * If it is going to open then check to see if there is a hidden form element with
+		 * the id invisible and read its attribute.  If present, then change the link back to
+		 * the class invisible
+		 */
+		function checkChangeClass(img, isClosing) {
+			var hideInternalNodesElement = document.getElementById('${hiddenId}');		
+			var hideInternalNodesValue = hideInternalNodesElement.value;		
+			// only worry about this if we are hiding internal nodes			
+			if (hideInternalNodesValue == 'T') {
+			    //alert("hide internal nodes true");
+				var parentLink = img.parentNode;
+				var imageId = img.id;
+				var digitRegex = /[^\d]*(\d+)/;
+				var matchResult = imageId.match(digitRegex);
+				var numbers = matchResult[1];
+				//alert("numbers are: " + numbers);
+	
+				var listId = '${listPrefix}' + numbers;
+				var tierLink = document.getElementById('${editTierPrefix}' + numbers);
+				var larvaeLink = document.getElementById('${editLarvaePrefix}' + numbers);
+				var adultLink = document.getElementById('${editAdultPrefix}' + numbers);
+				var dnaLink = document.getElementById('${editDnaPrefix}' + numbers);
+				var microCTLink = document.getElementById('${editMicroCTPrefix}' + numbers);							
+				if (isClosing) {
+					/*tierLink.setAttribute('class', tierLink.getAttribute('actualClass'));
+					larvaeLink.setAttribute('class', larvaeLink.getAttribute('actualClass'));
+					adultLink.setAttribute('class', adultLink.getAttribute('actualClass'));
+					dnaLink.setAttribute('class', dnaLink.getAttribute('actualClass'));					*/
+					if (tierLink) {
+						tierLink.className = tierLink.getAttribute('actualClass');
+					}
+					if (larvaeLink) {
+						larvaeLink.className = larvaeLink.getAttribute('actualClass');
+					}
+					if (adultLink) {
+						adultLink.className = adultLink.getAttribute('actualClass');
+					}
+					if (dnaLink) {
+						dnaLink.className = dnaLink.getAttribute('actualClass');
+					}
+					if (microCTLink) {
+						microCTLink.className = microCTLink.getAttribute('actualClass');
+					}					
+				} else {
+					// if it's opening we can just set it's class back to invisible
+					// as long as it doesn't have the special attribute
+					var noCloseAttr = tierLink.getAttribute('${noCloseAttribute}');
+					if (noCloseAttr == null || noCloseAttr != '1') {
+						/*alert("should be setting class attributes to: ${invisibleclass}");
+						tierLink.setAttribute('class', '${invisibleclass}');
+						larvaeLink.setAttribute('class', '${invisibleclass}');
+						adultLink.setAttribute('class', '${invisibleclass}');
+						dnaLink.setAttribute('class', '${invisibleclass}');*/
+						if (tierLink) {
+							tierLink.className = '${invisibleclass}';
+						}
+						if (larvaeLink) {
+							larvaeLink.className = '${invisibleclass}';
+						}
+						if (adultLink) {
+							adultLink.className = '${invisibleclass}';
+						}
+						if (dnaLink) {
+							dnaLink.className = '${invisibleclass}';												
+						}
+						if (microCTLink) {
+							microCTLink.className = '${invisibleclass}';												
+						}						
+					}
+				}
+			}
+		}
+		
+		function openPopupWindow(url) {
+			var newWindow = window.open(url, 'additionalFields', 'width=900, height=550, scrollbars=yes, resizable=yes');
+			newWindow.focus();
+		}
+	]]>
+    </body>
+	<initialization>
+	initOpenCloseImages();
+	</initialization>    
+</script>

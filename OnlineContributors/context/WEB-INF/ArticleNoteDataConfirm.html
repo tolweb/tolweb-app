@@ -1,0 +1,13 @@
+<html jwcid="@NewBarebonesFormWrapper" title="Confirm Article/Note Data" bodyId="trhsdatabody">
+	<h2>Confirm Article/Note Data</h2>
+    <p>Are you sure you are ready to publish your page?</p>
+
+	<span class="boldtext">Please note:</span>
+	<p>You will not be able to edit your page again until the ToL 
+		Editor approves your page for publication.</p>
+    <p>You can preview your page by following this link: <a jwcid="@GenericLink" href="ognl:workingUrl" renderer="ognl:rendererFactory.previewLinkRenderer">preview</a></p>
+	<form jwcid="@Form">
+        <input type="Submit" jwcid="@Submit" listener="ognl:listeners.submitTreehouse" value="Go ahead and publish!"/>
+        <input type="Submit" jwcid="@Submit" listener="ognl:listeners.editTreehouse" value="Return to editing"/>
+    </form>
+</html>

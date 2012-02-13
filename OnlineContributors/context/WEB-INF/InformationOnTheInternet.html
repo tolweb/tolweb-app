@@ -1,0 +1,15 @@
+<span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(infoString)">
+<div id="www">
+	<h3><a jwcid="@EditBranchLeafPageLink" editPageName="EditInternetLinks">edit internet links</a>
+    <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(infoString)">
+        <a name="www"></a> Information on the Internet 
+    </span>
+    </h3>
+    <span jwcid="@Insert" value="ognl:infoString" raw="ognl:true"/>
+</div>
+</span>
+<span jwcid="@If" condition="ognl:page.isWorking && !@org.tolweb.treegrow.main.StringUtils@notEmpty(infoString)">
+<div id="www">
+	<a jwcid="@EditBranchLeafPageLink" editPageName="EditInternetLinks" editLinkClass="editpage">edit internet links</a>
+</div>
+</span>

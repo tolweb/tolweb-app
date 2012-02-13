@@ -1,0 +1,10 @@
+<span jwcid="@If" condition="ognl:!isPortfolio" element="ognl:null" volatile="ognl:true">
+<a jwcid="@GenericLink" disabled="ognl:isThisPage" href="ognl:url">
+	<span jwcid="@Insert" value="ognl:currentTreehouse[0]"/>
+</a>
+</span>
+<span jwcid="@Else" element="ognl:null">
+<a jwcid="@ExternalLink" page="PortfolioViewPage" parameters="ognl:{page.treehouse.accessoryPageId, 0, currentTreehouse[1]}">
+	<span jwcid="@Insert" value="ognl:currentTreehouse[0]"/>    
+</a>
+</span>

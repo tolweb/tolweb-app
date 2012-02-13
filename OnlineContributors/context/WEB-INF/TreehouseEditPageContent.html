@@ -1,0 +1,85 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:false" title="Step #2 Edit Page Content (Add Text and Media)" 
+ additionalDelegate="ognl:delegate" onSubmitString="ognl:contributor.dontUseEditor ? null : 'try { tinyMCE.triggerSave(); } catch(e) {} return true;'">
+	<div id="trhs2editpgtop">
+	<a name="trhs2text"></a>
+		<h3 class="sectionheaderblub">Step 2. Edit Page Content <span jwcid="@If" condition="ognl:treehouse.isPortfolio" element="ognl:null">(Portfolio Introduction)</span></h3>    
+		<div class="boxtocpages">
+			<div jwcid="@TreehouseImportantDiv" treehouse="ognl:treehouse">
+				<li><a href="#trhstitles">Add Page Titles</a></li>
+				<li><a href="#trhscomposetext">Compose Text</a></li>
+				<li><a href="#addmedia">Add Images/Media</a></li>
+	        </div>
+            <div jwcid="@RenderBlock" block="ognl:helpBlock"/>
+            <div jwcid="portfolioHelpBlock@Block">
+                <div jwcid="@PortfolioHelpDiv">
+	                <li><a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Compose Treehouse Page Text" noDiv="ognl:true">Add Text</a></li>
+					<li><a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Add Media to Your Treehouse" noDiv="ognl:true">Add Images and Media</a></li>                
+                </div>
+            </div>
+            <div jwcid="treehouseHelpBlock@Block">
+			<div jwcid="@TreehouseHelpDiv" 
+                exampleEditingFormUrl="/tree/learn/TreebuilderTools/BuildingGuide/ExampleEditingSteps2.html"
+                stepNum="2">
+				<ul>
+					<li><a href="/tree/learn/TreebuilderTools/BuildingGuide/BuildersGuide.html" jwcid="@GenericLink" renderer="ognl:helpLinkRenderer">Builders Guide</a></li>
+					<li><a href="/tree/learn/TreebuilderTools/BuildingGuide/AddTextHTMLEditor.html" jwcid="@GenericLink" renderer="ognl:helpLinkRenderer">Using the Easy Editor</a></li>
+					<li><a href="/tree/learn/TreebuilderTools/BuildingGuide/AddingMedia.html" jwcid="@GenericLink" renderer="ognl:helpLinkRenderer">Adding Media </a></li>
+					<li><a href="/tree/learn/TreebuilderTools/trcopyright.html" jwcid="@GenericLink" renderer="ognl:helpLinkRenderer">Copyright Issues </a></li>
+				</ul>
+				<h5>Editing tip: </h5>
+				<ul class="hints">
+                    <li><a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Compose Treehouse Page Text" noDiv="ognl:true">Add Text</a></li>
+						<li><a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Add Media to Your Treehouse" noDiv="ognl:true">Add Images and Media</a></li>    
+                </ul>
+			</div>
+            </div>
+	        <p><img src="/tree/learn/lisa.images/trhouseimage/mediastuffblu.jpg" width="268" height="91" class="imgpgs" style="padding-left: 20px;"></p>
+			<div jwcid="@TreehouseWarningDiv"/>
+			<div class="spacer">&nbsp;</div>
+        </div>
+		<div class="spacer">&nbsp;</div>
+		<a name="trhspagecontent"></a>
+		<div id="trhspagecontent">
+			<h3 class="sectionheaderblusm"><span jwcid="@If" condition="ognl:treehouse.isPortfolio" element="ognl:null">Portfolio Introduction</span><span jwcid="@Else" element="ognl:null">Treehouse Page Content</span></h3>
+			<span jwcid="@TreehouseTitles"/> 
+            <div id="trhscomposetext"> 
+                <a name="trhscomposetext"></a> 
+                <a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Compose Treehouse Page Text"/>	
+                <div class="helprighteasy">
+	  <p class="small">Use the Treehouse Easy Editor toolbar to add text and media.</p>
+	 <ul class="message">
+        <li><a class="underline" href="/tree/learn/TreebuilderTools/BuildingGuide/AddTextHTMLEditor.html" jwcid="@GenericLink" renderer="ognl:helpLinkRenderer">How to Use the Easy Editor</a>
+        </li>
+        <li><a href="javascript: w = window.open('/tree/learn/TreebuilderTools/CopyrightQuiz.html', 'FullHelpWindow', 'width=850,height=500,resizable,scrollbars=yes'); w.focus();" class="underline">Copyright Quiz</a>
+<span class="small">(Make sure you are following the rules for adding images/media.)</span></li>
+      </ul>
+	</div>
+				<h4 class="medium">Treehouse Text and Media</h4>
+                <span jwcid="@HTMLEditorBox"/>
+			</div>                
+
+              
+                        <span jwcid="@If" condition="ognl:nonexistentImageId != null">
+                        <span class="error"> The ToL Image #<span jwcid="@Insert" value="ognl:nonexistentImageId"/> does
+                        	not exist. Please check your typing or locate the correct image id and change the image 
+                        	id. </span> 
+                    </span>
+                    <span jwcid="@If" condition="ognl:forbiddenImageId != null">
+                        <span class="error"> The copyright owner of ToL Image #<span jwcid="@Insert" value="ognl:forbiddenImageId"/>
+                        has restricted the use of this image, and it is not available for use by treehouse builders.
+                        Please select another image from the ToL database. </span>
+                    </span>
+				<span class="indentleft25"><a jwcid="@ImageContributorLink" contributor="ognl:contributor">View all of the media files I have contributed</a></span>				                
+                <textarea jwcid="@PreparedTextArea" valuePath="text" cols="70" rows="45" textAreaId="treehouseContentArea" useEditor="prop:useHTMLEditor"/>
+               <div class="spacer">&nbsp;</div>
+              
+			
+        </div> 
+		
+	<span jwcid="@If" condition="ognl:selectedAnchor"> 
+        <script jwcid="@Script" script="JumpToAnchor.script" anchor="ognl:selectedAnchor"/>
+	</span>     
+    <div jwcid="@TreehouseAutoSave" autoSaveFrequency="ognl:300" textareaId="treehouseContentArea" valuePath="text"
+    	editedObjectId="ognl:treehouse.accessoryPageId" contributorId="ognl:contributor.id" />    
+    </div> <!-- DEVN: this matches a malformed tag believed to be in this template causes "Operation Aborted" bug/error in IE6/7  -->  
+</html>

@@ -1,0 +1,18 @@
+<html jwcid="@AboutWrapper" title="Tree of Life Scientific Contributors">
+	<h1 class="superheader"><a href="/tree/home.pages/people.html">ToL People</a></h1>
+	<h2>Tree of Life Scientific Contributors</h2>
+    <p>Click on a contributor's name to see an overview of their scientific contributions.</p>
+	<table jwcid="table@ContributorsTable" tableModel="ognl:tableModel" row="ognl:currentContributor"/>
+	<span jwcid="displayNameColumnHeader@Block">Name</span>
+	<span jwcid="displayNameColumnValue@Block">
+	    <a jwcid="@ExternalLink" parameters="ognl:currentContributor[3]" page="ContributorDetailPage">
+            <span jwcid="@Insert" value="ognl:name"/>
+        </a>
+	</span>
+    <span jwcid="institutionColumnHeader@Block">Institution</span>
+    <span jwcid="institutionColumnValue@Block">
+        <span jwcid="@Insert" value="ognl:currentContributor[2]"/>
+    </span>
+    <span jwcid="numPagesColumnHeader@Block">Number of Pages</span>
+    <span jwcid="numPagesColumnValue@Block"><span jwcid="@Insert" value="ognl:numPagesForContributor"/></span>
+</html>

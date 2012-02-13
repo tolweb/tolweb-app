@@ -1,0 +1,47 @@
+<p>
+	<em>Project Name</em>
+</p>
+<p>
+	<span jwcid="@Insert" value="ognl:project.name"/>
+</p>
+<p>
+    <em>Student Ages</em>
+</p>
+<p>
+    <span jwcid="@Insert" value="ognl:studentAgesString"/>
+</p>
+<span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(project.classGroup)">
+<p>
+    <em>Class Period/Group</em>
+</p>
+<p>
+    <span jwcid="@Insert" value="ognl:project.classGroup"/>
+</p>
+</span>
+<p>
+    <em>Description</em>
+</p>
+<p>
+    <span jwcid="@Insert" value="ognl:project.description" raw="ognl:true"/>
+</p>
+<p>
+    <em>Student Accounts</em>
+</p>
+<p>
+    <ul>
+        <li jwcid="@Foreach" source="ognl:project.students" value="ognl:currentStudent" element="li">
+            <span jwcid="@Insert" value="ognl:currentStudent.alias"/>
+        </li>
+	</ul>    
+</p>
+<p>
+    <em>Password</em>
+</p>
+<p>
+    <span jwcid="@If" condition="ognl:project.password" element="ognl:null">
+	    <span jwcid="@Insert" value="ognl:project.password"/>
+    </span>
+    <span jwcid="@Else">
+        Students will choose their own passwords for this project.
+    </span>
+</p>

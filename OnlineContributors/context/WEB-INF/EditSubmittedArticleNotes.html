@@ -1,0 +1,59 @@
+<html jwcid="@Wrapper" title="Edit Submitted Articles and Notes">
+	<h1 class="superheader"><a jwcid="@PageLink" page="ScientificMaterialsManager">Scientific Materials Manager</a></h1>
+	<h2 class="clear">Edit Submitted Articles and Notes</h2>
+		<table jwcid="table@contrib:Table" source="ognl:submittedTreehouses" row="ognl:currentPage" columns="PageTitle, Submitter:submittedContributor.displayName, SubmissionDate:submissionDate, Edit, Approve, Reject"/>
+		<span jwcid="PageTitleColumnValue@Block">   
+			<a jwcid="@Any" href="ognl:currentWorkingUrl" target="new">
+                <span jwcid="@Insert" value="ognl:components.table.tableRow.pageTitle"/>
+            </a>
+	    </span>
+        <span jwcid="EditColumnHeader@Block">&nbsp;</span>
+        <span jwcid="EditColumnValue@Block">
+            <a jwcid="@ExternalLink" page="EditArticleNote" renderer="ognl:rendererFactory.editLinkRenderer" parameters="ognl:{contributor.email, contributor.password, components.table.tableRow.accessoryPageId}" >edit</a>
+        </span>
+        <span jwcid="ApproveColumnHeader@Block">&nbsp;</span>
+		<span jwcid="ApproveColumnValue@Block">
+            <a jwcid="@DirectLink" listener="ognl:listeners.approveTreehouse" parameters="ognl:components.table.tableRow.accessoryPageId">Approve</a>
+        </span>
+        <span jwcid="RejectColumnHeader@Block">&nbsp;</span>
+		<span jwcid="RejectColumnValue@Block">
+            <a jwcid="@DirectLink" listener="ognl:listeners.rejectTreehouse" parameters="ognl:components.table.tableRow.accessoryPageId">Reject</a>
+        </span>
+</html>
+
+
+<span jwcid="@If" condition="ognl:wasApprovedTreehouse">
+	<span jwcid="@MailBlock" smtp="localhost" subject="ognl:approvedOrRejectedTreehouse.menu + ' Approved'" to="ognl:{toEmail, configuration.notesEditorEmail}" from="treegrow@tolweb.org" html="ognl:false">
+Hello, we are happy to inform you that your submission, '<span jwcid="@Insert" value="ognl:approvedOrRejectedTreehouse.pageTitle"/>', was approved for publication to the Tree of Life.  You can view your page by visiting this URL: 
+
+<span jwcid="@Insert" value="ognl:publicUrl"/>
+
+<span jwcid="@If" condition="ognl:comments">
+The editor, <span jwcid="@Insert" value="ognl:contributor.displayName"/> (<span jwcid="@Insert" value="ognl:contributor.email"/>), had the following comments regarding your submission:
+
+<span jwcid="@Insert" value="ognl:'\n'" raw="ognl:true"/>                        
+<span jwcid="@Insert" value="ognl:comments" raw="ognl:true"/>
+
+                        
+	</span>
+
+
+Thanks for contributing to the Tree of Life.
+	</span>
+</span>
+<span jwcid="@If" condition="ognl:wasRejectedTreehouse">
+	<span jwcid="@MailBlock" smtp="localhost" subject="ognl:approvedOrRejectedTreehouse.menu + ' Not Approved'" to="ognl:{toEmail, configuration.notesEditorEmail}" from="treegrow@tolweb.org" html="ognl:false">
+Hello, we are writing to inform you that your submission, '<span jwcid="@Insert" value="ognl:approvedOrRejectedTreehouse.pageTitle"/>' was not approved for publication on the Tree of Life.
+<span jwcid="@If" condition="ognl:comments">
+The editor, <span jwcid="@Insert" value="ognl:contributor.displayName"/> (<span jwcid="@Insert" value="ognl:contributor.email"/>) had the following comments regarding your submission:
+
+<span jwcid="@Insert" value="ognl:'\n'" raw="ognl:true"/>                        
+<span jwcid="@Insert" value="ognl:comments" raw="ognl:true"/>
+
+                        
+	</span>
+
+
+Thanks for contributing to the Tree of Life.
+	</span>        
+</span>

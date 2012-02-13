@@ -1,0 +1,37 @@
+<span jwcid="@NewBarebonesFormWrapper" title="ognl:title">
+<div id="mediadata">
+<span jwcid="@If" condition="ognl:image != null">
+	<a href="/tree/phylogeny.html" class="floatright">Tree of Life Home</a>
+    <a href="#survey" class="tinyright">Please take a brief survey below <img src="/tree/img/pencil.gif"></a>    
+	<span jwcid="@If" condition="ognl:isImage" element="ognl:null">
+	    <image jwcid="@Any" src="ognl:imageUrl" />
+	</span>
+	<span jwcid="@Else" element="ognl:null">
+        <h3 jwcid="@If" condition="ognl:hasTitle">
+            <span jwcid="@Insert" value="ognl:unescapedMediaTitle"/>
+        </h3>
+        <span jwcid="@If" condition="prop:showFlashVideo">
+            <script jwcid="@Script" script="Ufo.script"/>
+			<p id="player1"><a href="http://www.macromedia.com/go/getflashplayer">Get the Flash Player</a> to see this player.</p>
+			<script type="text/javascript">
+			var FO = { movie:"/tree/js/flvplayer.swf",width:"<span jwcid="@Insert" value="prop:movieWidth"/>",height:"<span jwcid="@Insert" value="prop:movieHeight"/>",majorversion:"7",build:"0",bgcolor:"#FFFFFF",
+			flashvars:"file=<span jwcid="@Insert" value="prop:movieFilename"/>&showdigits=true&autostart=true&showfsbutton=true" };
+			UFO.create( FO, "player1");
+			</script>
+			<span class="instructions" style="position: absolute; left: 180px; margin-top: 10px">Download for better quality viewing in your media player</span>  
+			<a jwcid="@GenericLink" href="ognl:fullImageUrl" class="viewlinklongmed">Download Movie</a>            
+        </span>
+        <span jwcid="@Else">
+	    <img jwcid="@Insert" value="ognl:thumbnailImage" raw="ognl:true"/><a jwcid="@GenericLink" href="ognl:fullImageUrl" class="viewlinklongmed"><span jwcid="@Insert" value="ognl:mediaActionString"/></a>
+        </span>
+	</span>
+	<a jwcid="@EditImageLink" image="ognl:image" disabled="ognl:!canEdit" classString="ognl:isImage ? 'editlink' : 'editlinkmedsrch'"/> 
+	<span jwcid="@ImageDataBlock" image="ognl:image" generateLinks="ognl:true" 
+	    isPageUse="ognl:false" showThumbnail="ognl:false"/> 
+</span>
+<a href="javascript:window.close();" class="center">close window</a>
+</div>
+<span jwcid="@If" condition="ognl:image != null">
+	<span jwcid="@admin/MediaSurvey" media="ognl:image"/>
+</span>
+</span>

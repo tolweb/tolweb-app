@@ -1,0 +1,162 @@
+<html jwcid="@btol/ProjectWrapper" title="ognl:'Edit Details for ' + nodeName" includeDojo="ognl:true">
+	<span jwcid="@If" condition="ognl:!movedSamplingInfo && !clearedSamplingInfo">
+		<h2 class="clear">Edit Specimen Details for <span jwcid="@Insert" value="ognl:nodeName"/></h2>
+	    <form jwcid="@Form">
+            <p class="right">
+            <input jwcid="@Submit" value="Clear All Sampling Information" listener="listener:clearSamplingInformation"/>
+            </p>
+	        <ul class="nodisc">
+	            <li><label>Tier:</label> <input jwcid="@PropertySelection" value="ognl:additionalFields.tier+1"
+	                model="bean:tierModel" onChange="ognl:tierOnChangeString"/></li>
+	            <li><label>DNA Collection Status:</label>
+                	<span jwcid="@If" condition="prop:canEditDnaSpecimensState"><input jwcid="@PropertySelection" value="ognl:additionalFields.dnaSpecimensState"
+	                model="prop:dnaSpecimensModelForContributor" onChange="prop:dnaSpecimensOnChangeString"/></span>
+                    <span jwcid="@Else">
+                        <span jwcid="@Insert" value="prop:dnaSpecimensState"/>
+                    </span>
+                </li>               
+	            <li><label>Adult Collection Status:</label> <input jwcid="@PropertySelection" value="ognl:additionalFields.adultSpecimensState"
+	                model="bean:specimensModel" onChange="prop:adultSpecimensOnChangeString"/></li>                                                                     
+	            <li><label>Larvae Collection Status:</label> <input jwcid="@PropertySelection" value="ognl:additionalFields.larvalSpecimensState"
+	                model="bean:specimensModel" onChange="prop:larvalSpecimensOnChangeString"/></li>
+	            <li><label>MicroCT Collection Status:</label> <input jwcid="@PropertySelection" id="prop:microCTStatusBoxId" 
+                	value="ognl:additionalFields.microCTState" model="bean:microCTModel" onChange="prop:microCTOnChangeString"/></li>                
+	            <li><label>Mitochondrial Genome Status:</label> <input jwcid="@PropertySelection" id="prop:mtGenomeStatusBoxId" 
+                	value="ognl:additionalFields.mtGenomeState" model="bean:mtGenomeModel" onChange="prop:mtGenomeOnChangeString"/></li>
+			</ul>
+	        <div id="dnafields">
+	            <h4>Specimens for DNA</h4>
+	            <div style="float:left;width:25%;">
+		            <p>Supplier: <input jwcid="@PropertySelection" value="ognl:additionalFields.dnaPossessionPerson"
+		                model="prop:contributorSelectionModel" onChange="prop:dnaPossessionOnChangeString" id="prop:dnaSupplierBoxId"/></p>            
+		    		<p>Destination: <input jwcid="@PropertySelection" value="ognl:additionalFields.dnaDestinationPerson"
+		                model="prop:contributorSelectionModel" onChange="prop:dnaDestinationOnChangeString"/></p>   
+	            </div>
+	            <div>
+	            	<span class="top">Notes:</span> <input jwcid="@TextArea" value="ognl:additionalFields.dnaNotes" cols="53" rows="8"
+	            	onkeyup="prop:dnaNotesOnChangeString"/>
+	            </div>
+	        </div>
+	        <div id="adultfields">        
+	            <h4>Adult Specimens for Morphology</h4>                
+	            <div style="float:left;width:25%;">            
+	            	<p>Supplier: <input jwcid="@PropertySelection" value="ognl:additionalFields.adultPossessionPerson"
+	                	model="prop:contributorSelectionModel" onChange="prop:adultPossessionOnChangeString"/></p>
+	    			<p>Destination: <input jwcid="@PropertySelection" value="ognl:additionalFields.adultDestinationPerson"
+	                	model="prop:contributorSelectionModel" onChange="prop:adultDestinationOnChangeString"/></p>
+	            </div>
+	            <div>
+	                <span class="top">Notes:</span> <input jwcid="@TextArea" value="ognl:additionalFields.adultNotes" cols="53" rows="8"
+	            	onkeyup="prop:adultNotesOnChangeString"/>
+	            </div>
+			</div>            
+	        <div id="larvaefields">
+	            <h4>Larvae Specimens for Morphology</h4>
+	            <div style="float:left;width:25%;">
+		            <p>Supplier: <input jwcid="@PropertySelection" value="ognl:additionalFields.larvalPossessionPerson"
+		                model="prop:contributorSelectionModel" onChange="prop:larvalPossessionOnChangeString"/></p>            
+		    		<p>Destination: <input jwcid="@PropertySelection" value="ognl:additionalFields.larvalDestinationPerson"
+		                model="prop:contributorSelectionModel" onChange="prop:larvalDestinationOnChangeString"/></p>
+	            </div>
+	            <div>
+	                <span class="top">Notes:</span> <input jwcid="@TextArea" value="ognl:additionalFields.larvalNotes" cols="53" rows="8"
+	            	onkeyup="prop:larvalNotesOnChangeString"/>
+	            </div>            
+	        </div>
+	        <div id="larvaefields">
+	            <h4>Specimens for microCT</h4>
+	            <div style="float:left;width:25%;">
+		            <p>Supplier: <input jwcid="@PropertySelection" value="ognl:additionalFields.microCTPossessionPerson"
+		                model="prop:contributorSelectionModel" onChange="prop:microCTPossessionOnChangeString"/></p>            
+	            </div>
+	            <div>
+	                <span class="top">Notes:</span> <input jwcid="@TextArea" value="ognl:additionalFields.microCTNotes" cols="53" rows="8"
+	            	onkeyup="prop:microCTNotesOnChangeString"/>
+	            </div>            
+	        </div>	
+	        <div id="tierfields">
+	            <h4>Tier</h4>        
+	            <div>
+		            <span class="top">Notes:</span> <input jwcid="@TextArea" value="ognl:additionalFields.tierNotes" cols="70" rows="8"
+		            	onkeyup="prop:tierNotesOnChangeString"/>
+	            </div>
+	        </div>
+            <div id="geodist">
+                <h4>Geographic Distribution</h4>
+	            <div>
+		            <span class="top">Notes:</span> <input jwcid="@TextArea" value="ognl:additionalFields.geographicDistribution" cols="70" rows="8"
+		            	onkeyup="prop:geographicDistributionOnChangeString"/>
+	            </div>                
+            </div>
+	    </form>
+	        <h3 id="move">Move Sampling Information to Another Taxon</h3>
+            <span jwcid="@If" condition="prop:wrongNodeName">
+	            <p class="error">There is no destination taxon named <span jwcid="@Insert" value="prop:wrongNodeName"/>.
+	            Please check your spelling and try again.  If you are sure of your spelling, it is possible that this 
+                taxon does not exist in the ToL database.  You can add it by clicking the <img jwcid="@Image" image="prop:plusImage"/> next 
+                to the taxon that will be its parent.  You may also do more advanced tree manipulations with <a href="http://treegrow.tolweb.org" target="treegrow">TreeGrow</a></p>
+            </span>
+            <span jwcid="@Else">
+                <span jwcid="@If" condition="prop:destinationNotDescendant">
+                    <p class="error">The destination taxon, <span jwcid="@Insert" value="prop:destinationNodeName"/>, is not a descendant
+                        of the project's root taxon <span jwcid="@Insert" value="prop:projectRootName"/>.  Please choose another
+                        destination.
+                    </p>
+                </span>
+            </span>
+	        <p>Moving taxon sampling information will clear information on the source taxon (<span jwcid="@Insert" value="prop:nodeName"/>)
+	            and overwrite any values that are currently associated with the destination taxon</p>
+            <span jwcid="@Insert" value="ognl:'<p>'" raw="ognl:true"/>
+        <form jwcid="@Form" listener="listener:toggleAutocompleter">
+            <input jwcid="@Checkbox" value="prop:useAutocompleter" onclick="document.forms[1].submit();"/> Show potential matches as you type
+        </form>
+	    <form jwcid="@Form" listener="listener:moveSamplingInformation">
+            <span jwcid="@If" condition="prop:useAutocompleter">                
+	        <span jwcid="@FieldLabel" field="component:nodeNameCompleter"/> 
+	        <input jwcid="nodeNameCompleter@tacos:Autocompleter" clientOnly="ognl:true" value="ognl:destinationNodeName" 
+	        	listSource="ognl:nodeNames" listener="listener:filterNodes" class="autocomplete"
+	        	validators="validators:required" displayName="Destination Taxon" id="nameField" size="50"/>
+            </span>
+            <span jwcid="@Else">
+	        <span jwcid="@FieldLabel" field="component:nodeNameField"/> 
+	        <input jwcid="nodeNameField@TextField" value="ognl:destinationNodeName" 
+				validators="validators:required" displayName="Destination Taxon" id="nameField" size="50"/>                
+            </span>
+            <span jwcid="@Insert" value="ognl:'</p>'" raw="ognl:true"/>            
+	        <p>
+	            <label>Fields to move:</label>
+	            <ul class="nodisc, inline">
+	                <li>
+	                	<input jwcid="@Checkbox" value="ognl:moveTier"/> Tier
+	                </li>
+	                <li>
+	                	<input jwcid="@Checkbox" value="ognl:moveMtGenome"/>mtGenome
+	                </li>                    
+	                <li>
+	                	<input jwcid="@Checkbox" value="ognl:moveDNA"/> DNA
+	                </li>
+	                <li>
+	                	<input jwcid="@Checkbox" value="ognl:moveAdult"/> Adult
+	                </li>
+	                <li>
+	                	<input jwcid="@Checkbox" value="ognl:moveLarvae"/> Larvae
+	                </li>
+	            </ul>
+	        </p>
+	        <p><input jwcid="@Submit" value="Move Sampling Information"/></p>
+	    </form>
+    </span>
+    <span jwcid="@Else">
+        <h2>Sampling Information Successfully <span jwcid="@Insert" value="ognl:clearedOrMoved"/></h2>
+        <p>You may return to the taxon list for further editing and viewing of sampling information.</p>
+        <p class="center"><a href="javascript:window.close();">Close window</a></p>
+    </span>
+    <span jwcid="@contrib:XTile" listener="listener:handleCallback" 
+        sendName="sendValue" receiveName="recvCompletions"/>
+    <script jwcid="@Script" script="AdditionalFieldsSave.script"
+        symbols="ognl:scriptSymbols"/>
+    <span jwcid="@If" condition="ognl:wrongNodeName || destinationNotDescendant || toggledAutocompleter">
+	    <script jwcid="@Script" script="../JumpToAnchor.script"
+	        anchor="move"/>
+    </span>
+</html>

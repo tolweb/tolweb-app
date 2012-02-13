@@ -1,0 +1,78 @@
+<html jwcid="@btol/ProjectWrapper" title="Edit Primer">
+	<span jwcid="@If" condition="ognl:wasSaved">
+        <h2 class="clear">Primer successfully saved</h2>
+        You may now return to your edit form and continue.
+        <p class="center">
+            <a href="javascript:window.close();">Close Window</a>
+        </p>
+    </span>
+    <span jwcid="@Else">
+	<h2 class="clear">Edit Primer</h2>
+    <span jwcid="@If" condition="ognl:validationDelegate.hasErrors">
+        <h3 class="error"><span jwcid="@Delegator" delegate="ognl:validationDelegate.firstError"/></h3>
+    </span>
+    <span jwcid="@Else">
+    	<p>Fields marked with a '*' are required.</p>        
+    </span>
+    <form jwcid="@Form" success="listener:savePrimer" delegate="ognl:validationDelegate" clientValidationEnabled="ognl:true">
+        <ul class="nodisc">
+            <li><span jwcid="@FieldLabel" field="component:nameField">Name</span>&nbsp;
+                <input jwcid="nameField@TextField" value="ognl:primer.name"
+                validators="validators:required" displayName="Name*" size="20"/>
+			</li>
+            <li><span jwcid="@FieldLabel" field="component:codeField">Code</span>&nbsp;
+                <input jwcid="codeField@TextField" value="ognl:primer.code"
+                validators="validators:required" displayName="Code*"/>
+			</li>
+            <li><span jwcid="@FieldLabel" field="component:sequenceField">Sequence</span>&nbsp;
+            	<textarea jwcid="sequenceField@TextField" value="ognl:primer.sequence" 
+                 validators="validators:required" displayName="Sequence*" size="40"/>
+            </li>
+            <li><input jwcid="@Checkbox" value="ognl:primer.isForward"/>&nbsp;Is Forward
+			</li>                                                                                   
+            <li>Gene* &nbsp;<input jwcid="@PropertySelection" model="ognl:geneModel" 
+               value="ognl:primer.gene"/>&nbsp;<a jwcid="@DirectLink" listener="listener:editNewGene" 
+                   renderer="ognl:geneLinkRenderer">Add a gene</a>
+            </li>
+            <li>&nbsp;</li>
+            <li>Creation Date&nbsp;
+            	<span jwcid="@btol/ThreeFieldDate" year="ognl:primer.creationYear"
+                    month="ognl:primer.creationMonth" day="ognl:primer.creationDay"/>
+            </li>
+            <li>Developer&nbsp;
+                <input jwcid="@PropertySelection" model="ognl:contributorModel"
+                    value="ognl:primer.developer"/>&nbsp;
+                <a jwcid="@PageLink" page="btol/EditContributor" renderer="ognl:peopleLinkRenderer">Add a person</a>
+            </li>
+            <li><span class="top">Reference&nbsp;</span>
+                <input jwcid="@TextArea" value="ognl:primer.reference" cols="70" rows="8"/>
+            </li>
+            <li><span class="top">Notes&nbsp;</span>
+                <input jwcid="@TextArea" value="ognl:primer.notes" cols="70" rows="8"/>
+            </li>
+            <li><span  class="top">Synonyms&nbsp</span>
+            	<ul>
+            	<li jwcid="@For" source="ognl:synonyms" element="li" index="ognl:index">
+                	<input jwcid="@TextField" value="ognl:currentSynonym" size="40"/>
+                    <a jwcid="@LinkSubmit" listener="listener:removeSynonym" selected="ognl:indexToRemove" tag="ognl:index">remove</a>
+                </li>
+                <li><a jwcid="@LinkSubmit" listener="listener:addSynonym" defer="ognl:true">Add a synonym</a></li>
+                </ul>
+            </li>
+            <span jwcid="@If" condition="ognl:canSetPrivate">
+            <li><input jwcid="@Checkbox" value="ognl:primer.privateFlag"/>
+            	<span class="top">&nbsp;Private (visible only to me)</span>
+            </li>
+            </span>
+            <li><input jwcid="@Checkbox" value="prop:primer.defunct"/>&nbsp;Is Defunct
+            </li>
+            <li jwcid="@If" element="li" condition="ognl:!isNewPrimer">
+                ID&nbsp;<span jwcid="@Insert" value="ognl:primer.id"/>
+            </li>
+            <li>
+                <input jwcid="@Submit" value="Save Primer"/>
+            </li>            
+        </ul>
+    </form>
+    </span>
+</html>

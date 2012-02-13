@@ -1,0 +1,31 @@
+   <span jwcid="@Foreach" source="ognl:uploadedPages" value="ognl:page.currentUploadPage"
+       index="ognl:page.index">
+       <span jwcid="@Insert" value="ognl:page.closeListString" raw="ognl:true"/>
+       <span jwcid="@Insert" value="ognl:page.openListString" raw="ognl:true"/>
+       <li>
+           <span jwcid="@If" condition="ognl:!isEditor" element="ognl:null">
+           		<input jwcid="@Checkbox" value="ognl:page.currentUploadPage.shouldBePublished"
+                   disabled="ognl:!page.canPublish"/> 
+           </span>
+           <span jwcid="@Else" element="ognl:null">
+	           <input jwcid="@PropertySelection" model="ognl:page.revisionTypeModel" 
+	               value="ognl:page.currentUploadPage.revisionType" class="floatright"/>               
+           </span>
+           <span jwcid="@If" condition="ognl:page.pageExistsInPublic" element="ognl:null">
+           		<img src="/tree/img/tinypage.gif" alt="page exists on public ToL site" class="details">
+           </span>
+           <span jwcid="@Else" element="ognl:null">
+               <img src="/tree/img/tinynewpage.gif" alt="new page" class="details">
+           </span>
+           	<span jwcid="@Insert" value="ognl:page.currentPageName"/>
+           <a jwcid="@GenericLink" href="ognl:currentUrl"
+           		renderer="ognl:rendererFactory.viewPageRenderer" class="preview">preview</a>
+           <span jwcid="@If" condition="prop:showCheckSubgroupsLink">
+	           <a jwcid="@DirectLink" listener="listener:handleSubgroupsChecking" parameters="ognl:page.batchIndex" class="uncheck"><span jwcid="@Insert" value="prop:checkSubgroupsLinkText"/></a>
+           </span>
+           <span jwcid="@If" condition="ognl:!isEditor" element="ognl:null">
+               <span class="error" jwcid="@Insert" value="ognl:page.currentErrorMessage"/>
+           </span>
+		</li>
+   </span>
+	<span jwcid="@Insert" value="ognl:page.additionalCloseListsString" raw="ognl:true"/>

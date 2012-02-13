@@ -1,0 +1,15 @@
+<html jwcid="@FeaturesWrapper" title="Extinct Check">
+	<form jwcid="@Form">
+	<p>[<a jwcid="@PageLink" page="xml/TaxaImportHome">Workflow Home...</a>]</p>
+		<p>
+			<p>Group: <a jwcid="@Any" element="a" href="prop:workingURL"><span jwcid="@Insert" value="ognl:groupName"/></a></p>
+			<h1>Output Log</h1>
+			<hr>
+		</p>
+		<p>
+			<ul jwcid="@For" source="ognl:outputLog" value="ognl:currentEntry" element="ul">
+				<li><span jwcid="@Insert" value="ognl:currentEntry"/></li>
+			</ul>
+		</p>
+	</form>
+</html>

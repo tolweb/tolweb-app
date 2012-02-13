@@ -1,0 +1,88 @@
+<span jwcid="@If" condition="ognl:portfolios.size > 0"> 
+	<li class="trhsportfo">Portfolios
+		<ul>
+			<span jwcid="@Foreach" source="ognl:portfolios" value="ognl:currentTreehouse">
+	            <li jwcid="@Any" element="li" class="ognl:liTreehouseClass">
+					<a jwcid="@AccessoryOrPortfolioLink" currentTreehouse="ognl:currentTreehouse" isPortfolio="ognl:isPortfolio" isThisPage="ognl:isThisPage"/>                    
+				</li>                
+            </span>
+		</ul>
+	</li>
+</span>    
+<span jwcid="@If" condition="ognl:hasInvestigations"> 
+	<li class="investigation">Investigations
+		<ul>
+			<span jwcid="@Foreach" source="ognl:investigations" value="ognl:currentTreehouse">
+	            <li jwcid="@Any" element="li" class="ognl:liTreehouseClass">
+					<a jwcid="@AccessoryOrPortfolioLink" currentTreehouse="ognl:currentTreehouse" isPortfolio="ognl:isPortfolio" isThisPage="ognl:isThisPage"/>                    
+	            </li>                
+            </span>
+		</ul>
+	</li>
+</span>
+<span jwcid="@If" condition="ognl:hasStories"> 
+	<li class="stories">Stories
+		<ul>
+			<span jwcid="@Foreach" source="ognl:stories" value="ognl:currentTreehouse">
+	            <li jwcid="@Any" element="li" class="ognl:liTreehouseClass">
+					<a jwcid="@AccessoryOrPortfolioLink" currentTreehouse="ognl:currentTreehouse" isPortfolio="ognl:isPortfolio" isThisPage="ognl:isThisPage"/>
+                </li>                
+            </span>
+		</ul>
+	</li>
+</span>
+<span jwcid="@If" condition="ognl:!isPortfolio && funAndGames.size > 0">        
+	<li class="games">Fun &amp; Games
+		<ul>
+			<span jwcid="@Foreach" source="ognl:funAndGames" value="ognl:currentTreehouse">
+	            <li jwcid="@Any" element="li" class="ognl:liTreehouseClass">
+					<a jwcid="@AccessoryOrPortfolioLink" currentTreehouse="ognl:currentTreehouse" isPortfolio="ognl:isPortfolio" isThisPage="ognl:isThisPage"/>                    
+				</li>                
+            </span>
+		</ul>
+	</li>
+</span>           
+<span jwcid="@If" condition="ognl:hasArtAndCulture"> 
+	<li class="artculture">Art &amp; Culture
+		<ul>
+			<span jwcid="@Foreach" source="ognl:artAndCulture" value="ognl:currentTreehouse">
+	            <li jwcid="@Any" element="li" class="ognl:liTreehouseClass">
+					<a jwcid="@AccessoryOrPortfolioLink" currentTreehouse="ognl:currentTreehouse" isPortfolio="ognl:isPortfolio" isThisPage="ognl:isThisPage"/>                    
+                </li>                
+            </span>
+		</ul>
+	</li>
+</span>
+<span jwcid="@If" condition="ognl:hasTeacherResources"> 
+	<li class="teacherresource">Teacher Resources
+		<ul>
+			<span jwcid="@Foreach" source="ognl:teacherResources" value="ognl:currentTreehouse">
+	            <li jwcid="@Any" element="li" class="ognl:liTreehouseClass">
+					<a jwcid="@AccessoryOrPortfolioLink" currentTreehouse="ognl:currentTreehouse" isPortfolio="ognl:isPortfolio" isThisPage="ognl:isThisPage"/>                    
+				</li>                
+            </span>
+		</ul>
+	</li>
+</span>
+<span jwcid="@If" condition="ognl:hasBiographies"> 
+	<li class="bio">Biographies
+		<ul>
+			<span jwcid="@Foreach" source="ognl:biographies" value="ognl:currentTreehouse">
+	            <li jwcid="@Any" element="li" class="ognl:liTreehouseClass">
+					<a jwcid="@AccessoryOrPortfolioLink" currentTreehouse="ognl:currentTreehouse" isPortfolio="ognl:isPortfolio" isThisPage="ognl:isThisPage"/>                    
+				</li>                
+            </span>
+		</ul>
+	</li>
+</span>
+<span jwcid="@If" condition="ognl:webquests.size > 0"> 
+	<li class="webquest">Webquests
+		<ul>
+			<span jwcid="@Foreach" source="ognl:webquests" value="ognl:currentTreehouse">
+	            <li jwcid="@Any" element="li" class="ognl:liTreehouseClass">
+					<a jwcid="@AccessoryOrPortfolioLink" currentTreehouse="ognl:currentTreehouse" isPortfolio="ognl:isPortfolio" isThisPage="ognl:isThisPage"/>                    
+				</li>                
+            </span>
+		</ul>
+	</li>
+</span>

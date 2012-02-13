@@ -1,0 +1,178 @@
+<html jwcid="@NewFormWrapper" title="Edit Document Data" bodyId="documentdatabody" isImage="ognl:true" 
+	buttonString="Submit Document Data" listener="ognl:listeners.doSave"
+	rightSideBlock="ognl:components.rightSideBlock" 
+	saveInstructionsBlock="ognl:components.saveInstructionsBlock"
+	tocBlock="ognl:components.tocBlock"> 
+<span jwcid="@If" condition="ognl:wrongPassword">
+    <span class="error">
+        You have entered a wrong username/password combination.  Please check your typing and try again.
+    </span>
+</span>
+<span jwcid="@Else">
+	<h2>Edit Document Data</h2>
+	<div jwcid="@MediaSummaryBox" isImage="ognl:false" isDocument="ognl:true""/>
+	<div jwcid="@MediaTipsBox" isDocument="ognl:true"/>
+ 	<div jwcid="@MediaCopyrightBox"/>
+    <div jwcid="mediaUsePermsBox@MediaUsePermissionBox"/>
+	<div jwcid="@MediaOtherCreditsBox"/>
+	<div jwcid="@MediaNodeAttachmentsBox"/>            
+	<div id="mediacontent" class="whitebox"> <a name="mediacontent"></a><a jwcid="@HelpLink" helpName="Media Content" pageName="DocumentHelpMessagesPage"/>
+		<h4 class="encourage">Document Content</h4>
+		<div jwcid="@MediaTitleField"/>
+		<div jwcid="@MediaDescriptionArea"/>
+		<div id="doccats">
+			<p class="instructions">Select all document content categories that apply below, but be sure to  limit 
+			your selection to content types that best describe your document. </p>
+			<ul id="doctypelist1">
+				<li>
+					<label>
+	                    <input type="checkbox" jwcid="@Checkbox" value="ognl:document.isResearch"/>Research Report <span class="eg">(e.g. articles, papers etc.)</span>
+					</label>
+				</li>
+				
+				
+				<li>
+					<label>
+	                    <input type="checkbox" jwcid="@Checkbox" value="ognl:document.isFiction"/>Book/article nonfiction
+					</label>
+				</li>
+				
+				<li>
+					<label>
+	                    <input type="checkbox" jwcid="@Checkbox" value="ognl:document.isNonFiction"/>Book/article fiction 
+					</label>
+				</li>
+				
+	            <li>                     
+	                <label>                     
+	                    <input type="checkbox" jwcid="@Checkbox" value="ognl:document.isLiterature"/>Literature Review
+					</label>
+				</li>
+				<li>
+					<label>
+	                    <input type="checkbox" jwcid="@Checkbox" value="ognl:document.isPresentation"/>Presentation
+	                </label>
+				</li>
+				<li>
+	                <label>
+		                <input type="checkbox" jwcid="@Checkbox" value="ognl:document.isDataset"/>Data set 
+					</label>
+				</li>
+				
+				</ul>
+				
+				<ul id="doctypelist2">
+				<li>
+	                <label>
+	                    <input type="checkbox" jwcid="@Checkbox" value="ognl:document.isTeacherResource"/>Teacher Resource
+					</label>
+				</li>
+				<li>
+					<label>
+	                    <input type="checkbox" jwcid="@Checkbox" value="ognl:document.isLesson"/>Lesson, Activity or Project
+					</label>
+				</li>
+				<li>
+	                <label>
+	                	<input type="checkbox" jwcid="@Checkbox" value="ognl:document.isLessonSupport"/>Lesson/Activity Support Materials <span class="eg">(e.g. worksheets, instructions etc.)</span>
+					</label>
+				</li>
+				<li>
+					<label>
+	                  	<input type="checkbox" jwcid="@Checkbox" value="ognl:document.isStandards"/>National/State Education Standards
+					</label>
+				</li>
+				<li>                                         
+	                <label>
+	                    <input type="checkbox" jwcid="@Checkbox" value="ognl:document.isVocabulary"/>Vocabulary Words
+					</label>
+				</li>
+				<li>
+					<label>
+	                    <input type="checkbox" jwcid="@Checkbox" value="ognl:document.isLecture"/>Lecture Notes
+	                </label>
+	            </li>
+			</ul>
+			<div class="indentleft">
+				<label>
+          Other: <input name="" type="text" jwcid="@TextField" value="ognl:document.otherContent"/></label>
+			</div>
+		</div>			
+		
+		<div id="tollearnlevel">
+	        <a jwcid="@HelpLink" helpName="Choose a ToL Learner Level" pageName="DocumentHelpMessagesPage"/>
+		    <h5 class="padleft">ToL Learner Level</h5>
+			<div class="indentleft">
+				<p class="instruct2">You may select all
+				levels that apply to this document.</p>
+	            <ul class="inline">
+					<li>
+						<label><input type="checkbox" jwcid="@Checkbox" value="ognl:document.isBeginner"/>Beginner</label>
+					</li>
+					<li>
+	                    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:document.isIntermediate"/>Intermediate</label>
+	                </li>
+					<li>   
+	                    <label><input type="checkbox" jwcid="@Checkbox" value="ognl:document.isAdvanced"/>Advanced</label>
+	                </li>
+	            </ul>
+			</div>
+		</div>    
+		<div class="spacer">&nbsp;</div>
+		<h5>Subject/Keywords</h5>
+	    <div id="subject" class="show">                
+	        <div jwcid="instructionsBlock@Block">
+	        <p class="instructions">Select  subject keywords below, but be sure to limit 
+	            your selection to topics for which your document  has special 
+	            relevance. Additional subjects that are not covered in this 
+	            list can be entered in the <strong>Key Words</strong> field 
+	            below.</p>
+	        </div>
+			<div jwcid="@Keywords" keywords="ognl:document.keywords" instructionsBlock="ognl:components.instructionsBlock"/>
+	    </div>
+		<div id="medialanguage">
+            <h5>Languages that apply to this resource:</h5>
+            <div class="indentleft">
+	            <ul class="inline">
+	             <li> <label>
+	                <input jwcid="@Checkbox" type="checkbox" value="ognl:media.languages.english"/>
+	              English</label></li>
+	           <li>  <label><input jwcid="@Checkbox" type="checkbox" value="ognl:media.languages.spanish"/>
+	              Spanish</label></li>
+	              <li>
+	              <label>  <input jwcid="@Checkbox" type="checkbox" value="ognl:media.languages.german"/>
+	              German</label></li>
+	              <li>
+	               <label> <input jwcid="@Checkbox" type="checkbox" value="ognl:media.languages.french"/>
+	              French</label></li>
+	            </ul>
+				<p><label>Other language 
+				  <input jwcid="@TextField" value="ognl:media.languages.otherLanguage" type="text"/></label></p>
+            </div>
+        </div>
+	</div>
+	<div jwcid="@MediaCommentsBox"/>
+	<div jwcid="@MediaEditPrivilegesNotesSubmit"/>
+</span>
+</html>
+   <div jwcid="rightSideBlock@Block">
+       <a jwcid="@PageLink" page="DocumentHelpMessagesPage" id="viewallhelp" target="DocumentHelpWindow">View All Edit Document Data Help Topics</a>
+   </div>
+   <div jwcid="saveInstructionsBlock@Block">
+		<span jwcid="@MediaSaveInstructions"/>
+   </div>
+   <div jwcid="tocBlock@Block">
+     <h3>Document  Data Sections</h3>
+	      <ul>
+        <li><a href="#copyright">Copyright Information</a></li>
+        <li id="mediauselink"><a href="#mediause">Use Permitted by Copyright Owner</a></li>
+        <li><a href="#credits">Other Credits</a></li>
+
+        <li><a href="#attach">Attached to Group(s)</a></li>
+        <li><a href="#mediacontent">Document  Content</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#privileges">Editing Privileges</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#subm">Submit Document  Data</a></li>
+    </ul>
+   </div>        

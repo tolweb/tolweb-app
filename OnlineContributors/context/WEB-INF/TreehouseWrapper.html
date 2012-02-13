@@ -1,0 +1,185 @@
+<html jwcid="@CommonWrapper" bodyId="ognl:bodyId" title="ognl:pageMenu"
+	stylesheets="ognl:stylesheets" delegate="ognl:delegate">
+    <div id="maincontent" class="nosb"><a name="maincontent"></a>
+		<span jwcid="@If" condition="ognl:!page.isLive">
+			<div id="betaalert">Oh my goodness!  Unless you are a Tree of Life developer,
+			you really shouldn't be here.  This page is part of our beta test site, where we
+			develop new features for the ToL, often messing up a thing or two in the
+			process.  Please visit the official version of this page, which is available  
+	        <a jwcid="@Any" element="a" href="ognl:page.publicURL">here</a>.</div>        
+	    </span>
+        <span jwcid="@If" condition="ognl:page.isFromPreview" element="ognl:null">
+            <div id="trhspreview" class="blueacross">
+                <div jwcid="@If" condition="ognl:existsInPublic" id="workingsite" class="floatleft">
+		        Compare to <a jwcid="@GenericLink" href="ognl:page.publicURL" renderer="ognl:rendererFactory.previewLinkRenderer">published version</a>
+		        </div>
+                <div jwcid="@Else" id="workingsite" class="floatleft">
+                    This page is not yet published
+                </div>
+				<a jwcid="@DirectLink" listener="ognl:listeners.returnToTreehouseEditing" id="return">Return to Editing</a>                 
+                <h4>Treehouse Preview</h4>                
+             </div>
+	    </span>
+        <span jwcid="@Else">
+		    <span jwcid="@If" condition="ognl:page.isWorking">
+                <div jwcid="@If" condition="ognl:existsInPublic" id="workingsite">
+		        Compare to <a jwcid="@GenericLink" href="ognl:page.publicURL" renderer="ognl:rendererFactory.previewLinkRenderer">published version</a>
+		        </div>
+                <div jwcid="@Else" id="workingsite">
+                    This page is not yet published
+                </div>
+		    </span>    
+        </span>
+	    <span jwcid="@If" condition="ognl:treehouse.isTreehouse" element="ognl:null">
+			<a href="/tree/home.pages/treehouses.html" title="Tree of Life treehouses">
+				<img id="treehouselink" src="/tree/img/treehouse_small.png" alt=" " />
+			</a>
+            <span jwcid="@RenderBlock" block="ognl:teacherResourceBlock"/>
+            <span jwcid="@If" condition="ognl:portfolioPage != null" element="ognl:null">
+                <a linkId="portfoliolink" jwcid="@TolPageLink" tolPage="ognl:treehouse" textSameAsLink="ognl:false">Portfolio: <span jwcid="@Insert" value="ognl:treehouse.pageTitle"/></a>
+            </span>
+            <span jwcid="@If" condition="ognl:additionalPageShortName" element="ognl:null">
+                <div id="rsctypes">
+					<h1 jwcid="@Any" element="h1" class="ognl:page.treehouseHeadlineClass" id="ognl:h1WebquestTRId"><span jwcid="@Insert" value="ognl:treehouse.treehouseTypeString"/></h1>
+            		<h2><span jwcid="@Insert" value="ognl:additionalPageShortName"/></h2>
+                </div>
+            </span>
+            <span jwcid="@Else">
+				<h1 jwcid="@Any" element="h1" class="ognl:page.treehouseHeadlineClass" id="rsctypetitle"><span jwcid="@Insert" value="ognl:actualTreehouse.treehouseTypeString"/></h1>
+            </span>
+	    </span>
+	    <span jwcid="@Else" element="ognl:null">
+	        <span jwcid="@PageStatus" status="ognl:treehouse.isArticle ? treehouse.status : @org.tolweb.hibernate.MappedAccessoryPage@NOTE"/>
+	    </span>
+        <span jwcid="@If" element="ognl:null" condition="ognl:page.canEdit">
+	        <a jwcid="@ExternalLink" page="EditArticleNote" parameters="ognl:{page.contributor.email, page.contributor.password, treehouse.accessoryPageId}" 
+	            renderer="ognl:rendererFactory.branchLeafEditRenderer" class="editlinklong">edit this page</a>
+        </span>
+		<h1 jwcid="@Any" element="h1" class="ognl:titleClass"><span jwcid="@Insert" value="ognl:pageTitle" raw="ognl:true"/></h1>
+	    <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(page.authorsString)">
+		    <a href="#AboutThisPage" id="authors"><span jwcid="@Insert" value="ognl:page.authorsString"/></a>
+	    </span>
+	    <div id="content">
+	        <a name="content"></a>
+            <ul jwcid="@If" condition="ognl:treehouse.isWebquest" class="inlineblock" element="ul">
+				<li jwcid="@Any" element="li" class="ognl:webquestIntroClass"><a jwcid="@ExternalLink" page="WebquestViewIntroduction" parameters="ognl:{treehouse.accessoryPageId}">Introduction</a></li>
+				<li jwcid="@Any" element="li" class="ognl:webquestTaskClass"><a jwcid="@ExternalLink" page="WebquestViewTask" parameters="ognl:{treehouse.accessoryPageId}">Task</a></li>
+				<li jwcid="@Any" element="li" class="ognl:webquestProcessClass"><a jwcid="@ExternalLink" page="WebquestViewProcess" parameters="ognl:{treehouse.accessoryPageId}">Process</a></li>
+				<li jwcid="@Any" element="li" class="ognl:webquestEvaluationClass"><a jwcid="@ExternalLink" page="WebquestViewEvaluation" parameters="ognl:{treehouse.accessoryPageId}">Evaluation</a></li>
+				<li jwcid="@Any" element="li" class="ognl:webquestConclusionClass"><a jwcid="@ExternalLink" page="WebquestViewConclusion" parameters="ognl:{treehouse.accessoryPageId}">Conclusion</a></li>
+				<li jwcid="@Any" element="li" class="ognl:webquestTeacherClass"><a jwcid="@ExternalLink" page="WebquestViewTeacher" parameters="ognl:{treehouse.accessoryPageId}">Teachers</a></li>                
+            </ul>   
+	    	<span jwcid="@RenderBody"/>
+		    <span jwcid="@If" condition="ognl:hasAnyInternetInfo">
+	            <div id="www">
+	            <a name="www"></a>
+	            <h3>Information on the Internet</h3>
+                <span jwcid="@If" condition="ognl:hasBothInternetInfo" element="ognl:null" volatile="ognl:true">
+                    <h4>Page Information on the Internet</h4>
+                    <ul jwcid="@InternetLinks" links="ognl:actualTreehouse.internetLinks"/>
+                    <h4>Portfolio Information on the Internet</h4>
+                    <ul jwcid="@InternetLinks" links="ognl:treehouse.internetLinks"/>
+                </span>
+                <span jwcid="@Else"  element="ognl:null">
+					<ul jwcid="@InternetLinks" links="ognl:actualInternetInfo"/>                    
+                </span>
+				</div>
+		    </span>
+	    </div>
+	    <span jwcid="@If" condition="ognl:hasAnyRefs">
+	        <div id="refs">
+	         <a name="refs"></a>
+	         <h3>References</h3>
+             <span jwcid="@If" condition="ognl:hasBothRefs" element="ognl:null">
+				<h4>Page References</h4>
+				<span jwcid="@ReferencesBlock" references="ognl:actualTreehouse.references"/>
+				<div id="portfoliorefs">
+                    <h4>Portfolio References </h4>
+					<span jwcid="@ReferencesBlock" references="ognl:treehouse.references"/>
+				</div>
+             </span>
+             <span jwcid="@Else" element="ognl:null">
+		         <span jwcid="@ReferencesBlock" references="ognl:actualRefs"/>
+             </span>
+	        </div>
+	    </span>
+        <span jwcid="@If" condition="ognl:showLearningInfo && hasAnyLearningInfo">
+			<div id="learninfo">
+				<a name="learninfo"></a>
+				<h3>Learning Information </h3>            
+	            <span jwcid="@If" condition="ognl:hasBothLearningInfo" element="ognl:null">
+	                <h4>Page Learning Information</h4>
+	            	<span jwcid="@TreehouseLearningInfo" treehouse="ognl:actualTreehouse"/>
+					<h4>Portfolio Learning Information</h4>                   
+	            	<span jwcid="@TreehouseLearningInfo" treehouse="ognl:treehouse"/>
+	            </span>
+	            <span jwcid="@Else">
+	                <span jwcid="@TreehouseLearningInfo" treehouse="ognl:learningInfoTreehouse"/>
+	            </span>
+            </div>
+        </span>
+		<span jwcid="@TeacherResourceEducationStandards"/>        
+        <span jwcid="@AboutOrMinorAboutPage" isMinorAuthor="ognl:page.isMinorAuthor" treehouse="ognl:actualTreehouse"
+            authorsString="ognl:page.authorsString" minorAuthor="ognl:page.minorAuthor" projectName="ognl:page.projectName"
+        	pageType="Page" projectId="ognl:page.projectId" usePermission="ognl:page.usePermission"/>
+    	<span jwcid="@If" condition="ognl:treehouse.isTreehouse" element="ognl:null">
+			<p class="box" id="aboutth"><a href="/tree/home.pages/treehouses.html" title="Tree of Life treehouses"><img src="/tree/img/treehouse_small.png" alt=" " /></a> Treehouses are authored by students, teachers, science enthusiasts, or professional scientists.  Anyone can <a href="/tree/learn/treebuilder.html">sign up as a treehouse contributor</a> and share their knowledge and enthusiasm about organisms. Treehouse contributions are checked for general accuracy and quality by teachers and ToL editors, but they are not usually reviewed by expert scientists.  If you spot an error, please get in touch with the author or the teacher.  For more information about quality control of Tree of Life content, see <a href="/tree/home.pages/pagestatus.html">Status of Tree of Life Pages</a>.</p>
+        </span> 
+        <span jwcid="@If" condition="ognl:portfolioPage != null">
+        	<span jwcid="@AboutOrMinorAboutPage" isMinorAuthor="ognl:page.portfolioIsMinorAuthor" treehouse="ognl:treehouse"
+            authorsString="ognl:page.portfolioAuthorsString" minorAuthor="ognl:page.portfolioMinorAuthor" 
+            projectName="ognl:page.portfolioProjectName" pageType="Portfolio" usePermission="ognl:page.usePermission" />
+        </span> 
+
+	    <span jwcid="@If" condition="ognl:page.useGlossary">
+		    <javascript jwcid="@Script" script="GlossaryTerms.script" vars="ognl:page.javascriptVars"/>
+	    </span>            
+	</div>
+    <div id="localnav">
+	    <span jwcid="@If" condition="ognl:treehouse.primaryAttachedNode != null">
+			<div jwcid="@TreeStructureTip" isTreehouse="ognl:treehouse.isTreehouse" 
+            	isArticle="ognl:!treehouse.isTreehouse && treehouse.isArticle"
+                isNote="ognl:!treehouse.isTreehouse && !treehouse.isArticle" 
+            	attachmentIsBranch="ognl:!isLeaf"
+                attachmentIsLeaf="ognl:isLeaf"/>
+		    <h2 jwcid="@Any" element="h2" class="ognl:branchTitleClass"><a jwcid="@Any" element="a" href="ognl:branchPageLinkString"><span jwcid="@Insert" value="ognl:treehouse.primaryAttachedNode.name"/></a></h2>
+	    </span>
+	    <span jwcid="@If" condition="ognl:treehouse.primaryAttachedNode == null">
+	        <a name="localnav"></a>
+	       	<h2 class="branchtitle"><a href="/tree/home.pages/treehouses.html">ToL Treehouses</a></h2>
+	    </span>
+	    <a name="toc"></a>
+		<h4 jwcid="@PageContentMenu" hasInternetInfo="ognl:hasAnyInternetInfo" hasRefs="ognl:hasAnyRefs" isBranchOrLeaf="ognl:false" 
+			hasLearningInfo="ognl:hasAnyLearningInfo && showLearningInfo" hasOtherNames="ognl:false"/>
+        <span jwcid="@If" condition="ognl:showPortfolioMenu" element="ognl:null">
+			<h4 class="open" id="trhsportfocontent" onclick="changeclass('lrnportfomenusub', 'open', 'closed'); changeclass('trhsportfocontent', 'open', 'closed')">portfolio</h4>
+			<ul id="lrnportfomenusub" class="open">
+                <li><a jwcid="@TolPageLink" tolPage="ognl:treehouse" textSameAsLink="ognl:false"><span jwcid="@Insert" value="ognl:treehouse.pageTitle" raw="ognl:true"/></a></li>
+                <li jwcid="@TreehousesMenu" node="ognl:treehouse.primaryAttachedNode" title="ognl:treehouse.menu"
+                    isPortfolio="ognl:true" treehouses="ognl:portfolioTreehouses"/>
+			</ul>            
+        </span>
+        <span jwcid="@If" condition="ognl:treehouse.isWebquest">
+			<h4 class="open" id="webquestcontent" onclick="changeclass('webquestmenusub', 'open', 'closed'); changeclass('webquestcontent', 'open', 'closed')">WebQuest</h4>
+			<ul id="webquestmenusub" class="open">
+				<li><a jwcid="@ExternalLink" page="WebquestViewIntroduction" parameters="ognl:{treehouse.accessoryPageId}">Introduction</a></li>
+				<li><a jwcid="@ExternalLink" page="WebquestViewTask" parameters="ognl:{treehouse.accessoryPageId}">Task</a></li>
+				<li><a jwcid="@ExternalLink" page="WebquestViewProcess" parameters="ognl:{treehouse.accessoryPageId}">Process</a></li>
+				<li><a jwcid="@ExternalLink" page="WebquestViewEvaluation" parameters="ognl:{treehouse.accessoryPageId}">Evaluation</a></li>
+				<li><a jwcid="@ExternalLink" page="WebquestViewConclusion" parameters="ognl:{treehouse.accessoryPageId}">Conclusion</a></li>
+				<li><a jwcid="@ExternalLink" page="WebquestViewTeacher" parameters="ognl:{treehouse.accessoryPageId}">Teachers</a></li>
+			</ul>
+        </span>
+	    <span jwcid="@If" condition="ognl:treehouse.primaryAttachedNode != null">     
+	    	<span jwcid="@LinkedPages" node="ognl:treehouse.primaryAttachedNode" title="ognl:treehouse.menu"/>
+	    </span>	
+        <h4 jwcid="@PreferencesMenu" isBranchOrLeaf="ognl:false"/>
+		<h3>Explore Other Groups</h3>
+	    <span jwcid="@If" condition="ognl:treehouse.primaryAttachedNode != null">
+			<span jwcid="@OtherGroups" node="ognl:treehouse.primaryAttachedNode"/>
+	    </span>
+	    <span jwcid="@If" condition="ognl:treehouse.nodesSet.size > 1">
+			<span jwcid="@LinkedGroups" linkedGroups="ognl:treehouse.nodesSet" accPage="ognl:treehouse"/>
+		</span><h4 class="nomenu"><a href="/tree?random=true">random page</a></h4>        
+    </div>
+</html>

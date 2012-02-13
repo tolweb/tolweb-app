@@ -1,0 +1,33 @@
+<form jwcid="loginForm">
+	<table class="login">
+		<tr>
+			<td colspan="2"><h4 style="margin-top: 0;"><strong>Treehouse Builder Log-in </strong></h4>
+			<p>Registered  builders sign in here. Once you are logged in, you will go to the Treehouse Editor to build treehouses and add media to the ToL. </p></td>
+		</tr>
+        <span jwcid="@If" condition="ognl:error != null">
+	        <tr>
+	            <td colspan="2"><span class="error"><span jwcid="@Insert" value="ognl:error"/>
+                <span jwcid="@If" condition="ognl:wrongPassword">If you would like a new password<br> to be emailed to the typed email address, please <a jwcid="@DirectLink" listener="ognl:listeners.emailPassword">click here</a>.</span></span></td>
+	        </tr>
+        </span>        
+        <tr>
+            <td class="boldtext"><span jwcid="@FieldLabel" field="component:emailField" /></td>
+            <td><input jwcid="emailField@TextField" type="text" validators="validators:required,minLength=1" 
+            		value="ognl:email" displayName="User ID"/><br />
+              <span class="tiny" style="font-weight: normal;">(email address or student pseudonym)</span></td>
+        </tr>
+        <tr>                   
+            <td class="boldtext"><span jwcid="@FieldLabel" field="component:passwordField" /></td>
+            <td><input type="password" jwcid="passwordField@TextField" 
+            		displayName="Password" validators="validators:required,minLength=1" value="ognl:password" hidden="ognl:true"/></td>
+        </tr>
+        <tr>                    
+            <td>&nbsp;</td>
+            <td align="right">
+            <input type="submit" name="Submit" value="Submit"/></td>
+        </tr>
+        <tr>
+         <td colspan="2"><a href="/tree/learn/TreebuilderTools/HowtoBegin.html#login">Login Help</a> | <a href="/tree/learn/TreebuilderTools/StudentLogin.html">Login Help for Classroom Builders </a></td>
+        </tr>
+    </table>
+</form>

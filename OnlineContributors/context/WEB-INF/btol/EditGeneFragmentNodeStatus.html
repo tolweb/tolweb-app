@@ -1,0 +1,21 @@
+<html jwcid="@btol/ProjectWrapper" title="prop:title" includeDojo="ognl:false">
+		<h2 class="clear"><span jwcid="@Insert" value="prop:title"/></h2>
+	    <form jwcid="@Form">
+            <p class="right">
+            <input jwcid="@Submit" value="Remove Gene Fragment Information" listener="listener:removeGeneFragmentInformation"/>
+            </p>            
+            <ul class="nodisc">
+                <li>Sequence Status <input jwcid="@PropertySelection" value="prop:geneFragmentNodeStatus.status" model="prop:statusModel"
+                	onChange="prop:statusOnChangeString"/></li>                
+                <li>Sequence Source Database <input jwcid="@PropertySelection" value="prop:geneFragmentNodeStatus.source" model="prop:statusSourceModel"
+                	onChange="prop:sourceOnChangeString" /></li>
+                <li>Sequence Source Database Id <input jwcid="@TextField" value="prop:geneFragmentNodeStatus.sourceDbId" onkeyup="prop:sourceIdOnChangeString"/></li>
+            	<li><span class="top">Notes:</span> <input jwcid="@TextArea" value="prop:geneFragmentNodeStatus.statusNotes" cols="53" rows="8"
+	            	onkeyup="prop:statusNotesOnChangeString"/></li>                
+            </ul>
+		</form>
+    <span jwcid="@contrib:XTile" listener="listener:handleCallback" 
+        sendName="sendValue" receiveName="recvCompletions"/>
+    <script jwcid="@Script" script="GeneNodeStatusSave.script"
+        symbols="prop:scriptSymbols"/>
+</html>

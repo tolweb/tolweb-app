@@ -1,0 +1,97 @@
+ 	<div id="specimen" class="whitebox">
+		<a name="specimen"></a> 
+    	<a jwcid="@HelpLink" pageName="ognl:page.helpPageName" helpName="Specimen Information" />
+	      <h4>Specimen Information</h4>
+          <span jwcid="@If" condition="ognl:!isSound" element="ognl:null">
+	        <span jwcid="@RadioGroup" selected="ognl:page.aliveSelection"> 
+	          <ul class="box1">
+	            <li>
+	              <label> 
+	              <input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.tapestry.EditImageData@LIVE_SPECIMEN" />
+	              Live Specimen</label>
+	            </li>
+	            <li>
+	              <label> 
+	              <input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.tapestry.EditImageData@DEAD_SPECIMEN" />
+	              Dead Specimen</label>
+	            </li>
+	            <li>
+	              <label> 
+	              <input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.tapestry.EditImageData@MODEL_SPECIMEN" />
+	              Model</label>
+	            </li>            
+	            <li>
+	              <label> 
+	              <input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.tapestry.EditImageData@FOSSIL_SPECIMEN" />
+	              Fossil</label>
+                  <label class="radiobox">Period 
+                    <input type="text" jwcid="@TextField" value="ognl:media.period" size="30" />
+                    </label>
+	            </li>            
+	            <li>
+	              <label> 
+	              <input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.tapestry.EditImageData@OTHER_SPECIMEN" />
+	              Other</label>
+	              <input type="text" jwcid="@TextField" value="ognl:page.otherAliveText" size="30" />
+	            </li>
+	          </ul>
+	          </span>
+            </span>
+            <label class="specimenlabel"><span class="textarealabel">Behavior</span>
+	          <input type="text" value="ognl:media.behavior" cols="40" rows="2" jwcid="@TextArea" />
+	        </label>
+	        <strong class="specimenlabel">Sex</strong>
+	        <span jwcid="@RadioGroup" selected="ognl:page.imageSexSelection"> 
+	          <ul class="box2">
+	            <li>
+	              <label> 
+	              <input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.tapestry.EditImageData@MALE_SELECTION" />
+	              Male</label>
+	            </li>
+	            <li>
+	              <label> 
+	              <input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.tapestry.EditImageData@FEMALE_SELECTION" />
+	              Female</label>
+	            </li>
+	            <li>
+	              <label> 
+	              <input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.tapestry.EditImageData@OTHER_SELECTION" />
+	              Other</label>
+	              <input jwcid="@TextField" value="ognl:page.imageSexText" type="text" size="30" />
+	            </li>
+	          </ul>
+	          </span>
+	        <label class="specimenlabel">Life Cycle Stage
+	          <input jwcid="@TextField" value="ognl:media.stage" type="text" size="40" />
+	        </label>
+	        <label class="specimenlabel">Body Part
+	          <input jwcid="@TextField" value="ognl:media.bodyPart" type="text" size="40" />
+	        </label>
+            <span jwcid="@If" condition="ognl:!isSound" element="ognl:null">
+		        <label class="specimenlabel">View
+		          <input jwcid="@TextField" value="ognl:media.view" type="text" size="40" />
+		        </label>
+            </span>
+	        <label class="specimenlabel">Size
+	          <input jwcid="@TextField" value="ognl:media.size" type="text" size="40" />
+	        </label>
+            <a jwcid="@HelpLink" helpName="Specimen Documentation" pageName="ognl:page.helpPageName"/>            
+            <h5 id="spdoctrigger" class="triup" onclick="showbranch('specdoc', 'show', 'hide'); showbranch('spdoctrigger', 'tridown', 'triup')">Specimen 
+                Documentation <span class="tinytext">(Collection, Voucher & Type Information)</span></h5>
+		   <div id="specdoc" class="hide">                 <label class="specimenlabel">Collection 
+                <input jwcid="@TextField" value="ognl:media.collection" type="text" size="40" />
+                </label>
+                <strong class="specimenlabel">Type</strong>
+                <select jwcid="@PropertySelection" model="ognl:@org.tolweb.tapestry.EditImageData@TYPE_MODEL" value="ognl:page.typeString"/>
+                <input type="text" jwcid="@TextField" value="ognl:page.otherTypeString"/>
+                <label class="specimenlabel">Voucher Number 
+                <input jwcid="@TextField" value="ognl:media.voucherNumber" type="text" size="40" />
+                </label>
+                <label class="specimenlabel">Voucher Collection 
+                <input jwcid="@TextField" value="ognl:media.voucherNumberCollection" type="text" size="40" />
+                </label>
+                <label class="specimenlabel">Collector 
+                <input jwcid="@TextField" value="ognl:media.collector" type="text" size="40" />
+                </label>
+                           </div>
+    </div>

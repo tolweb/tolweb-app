@@ -1,0 +1,54 @@
+<span jwcid="body@Block">
+    <form jwcid="@Form" stateful="ognl:false" listener="ognl:listeners.searchContributors">
+        <input jwcid="@Hidden" value="ognl:actionType"/>
+        <input jwcid="@Hidden" value="ognl:wrapperType"/>        
+        <input jwcid="@Hidden" value="ognl:editedObjectId"/>
+        <input jwcid="@Hidden" value="ognl:returnPageName"/>        
+        <input jwcid="@Hidden" value="ognl:contributorType"/>
+        <input jwcid="@Hidden" value="ognl:checkEditingPermissions"/>
+        <input jwcid="@Hidden" value="ognl:checkUnapprovedType"/>        
+        <span jwcid="@If" condition="ognl:actionType != @org.tolweb.tapestry.ContributorSearchPage@EDIT_CONTRIBUTOR"
+            element="ognl:null">
+			<a jwcid="@ReturnToEditingLink"/>
+        </span>
+        <span jwcid="@Else" element="ognl:null">
+            <a jwcid="@PageLink" class="rte" page="ScientificRegistrationOverview">Return</a>
+        </span>
+	<h2 class="clear">Contributors Search Page</h2>
+    <p>Please enter one or more values to search for a registered ToL Contributor.</p>
+    <span jwcid="@Insert" value="ognl:error" class="error"/>
+        <table>
+            <tr>
+				<th>Surname</th>
+                <td><input jwcid="@TextField" value="ognl:surname"/></td>
+            </tr>
+            <tr>
+				<th>First Name</th>
+                <td><input jwcid="@TextField" value="ognl:firstName"/></td>
+            </tr>   
+            <span jwcid="@If" condition="ognl:wrapperType == @org.tolweb.tapestry.AbstractWrappablePage@TREEHOUSE_WRAPPER">         
+	            <tr>
+					<th>Pseudonym</th>
+	                <td><input jwcid="@TextField" value="ognl:pseudonym"/></td>
+	            </tr>            
+            </span>
+            <tr>
+				<th>Institution</th>
+                <td><input jwcid="@TextField" value="ognl:institution"/></td>
+            </tr>        
+            <tr>
+				<th>Email</th>
+                <td><input jwcid="@TextField" value="ognl:email"/></td>
+            </tr>			        
+            <tr>
+				<th>Address</th>
+                <td><input jwcid="@TextField" value="ognl:address"/></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td class="right"><input jwcid="@Submit" type="submit" value="Search Contributors"/></td>
+            </tr>
+        </table>
+    </form> 
+</span>
+<span jwcid="@WrapperChooser" block="ognl:components.body" title="Contributors Search" wrapperType="ognl:wrapperType"/>

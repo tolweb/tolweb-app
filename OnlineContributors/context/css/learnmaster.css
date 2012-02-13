@@ -1,0 +1,666 @@
+/*treehouse styles*//* need to add to tol.css*/p.instructions, 
+.instructions, div.instructions, div.instructionshrt, p.instructionshrt, 
+div.instructionshrtsm, p.instructionshrtsm, .instructionslrg, 
+.instructionshrtlrg, div.instructionssm {font-size: 11px; margin: 10px; 
+background-color: #F9F5D7; padding: 5px; border: 1px dotted #ccc; color: 
+#666;}.stickyinstruct, div.stickyinstruct {border: 1px dotted #ccc; 
+background-color: #ffffbb; margin: 10px 0; padding: 10px; color: #666; 
+font-family: Arial, Helvetica, sans-serif; font-size: 
+12px;}div.stickyinstruct ul.browndash li {color: 
+#666;}div.stickyinstruct p, div.stickyinstruct ol, div.stickyinstruct ul 
+{font-size: 12px;}#lrnportfosub, #trhsportfocontent, #webquestcontent 
+{text-transform: lowercase;}a#return {float: left; margin: 0 20px; 
+background-color: #fff; font-size: 13px; padding: 10px; border: 1px solid 
+#5d5040; border-top: none; font-weight: normal; border-left: none; 
+text-align: center; width: 130px;}h2.trhssubtitle {font-size: 11px; 
+font-weight: normal; padding: 0; margin: 0px 0 10px 0; letter-spacing: 
+1px; border-bottom: 1px dotted #5d5040;}h5 {font-size: 12px; font-weight: 
+bold; margin: 15px 0; padding: 0; letter-spacing: 1px;  border-bottom: 1px 
+dotted #5d5040;}/* CSS Document */#leftcol {width: 60%;  float: left;  
+border: solid #ccc;  border-width: 0 2px 0 0; background: #ffffff;  
+color: #333333;  margin: 0 10px 0 0;  padding: 5px 40px;  }#rightcol{ 
+background: #F1F1F5;  color: #333333;  margin: 0;  padding: 10px 10px 10px 
+10px;  }/*in the treehouse editor wysywig styles red, green, small and 
+border are all in tol.css*/.green strong, strong .green {color: #28c128 
+!important;}.red strong, strong .red {color: #cc0000 
+!important;}.lightgreen, .lightgreen strong, strong .lightgreen {color:  
+#C2E0C2; background-color: transparent;}.purple, .purple strong, strong 
+.purple {color: #8060BC !important; background-color: 
+transparent;}.orange, strong .orange, .orange strong {color: #F3B163 
+!important; background-color: transparent;}/* call style: largetext 
+*/.largetext, p.largetext {font-size: 12px;}/* call style xlargetext 
+*/.xlargetext, p.xlargetext, .xlargetextsp, table.xlargetext tr td 
+{font-size: 13px;}.xxlargetext, .xxlargetext, div.xxlargetext p, 
+a.xxlargetext {font-size: 15px;}.grey, .grey strong, strong .grey 
+{background-color: transparent; color: #9B9898 !important;}.pink, strong 
+.pink, .pink strong {background-color: transparent; color: #F2B0EB 
+!important;}.skyblue {background-color: transparent; color: #5E95BF 
+!important; }.newblue {background-color: transparent; color: #1262A7 
+!important;}.lightblue, .lightblue strong, strong .lightblue 
+{background-color: transparent; color: #2C549D !important;}.darkblue, 
+.darkblue strong, strong .darkblue {background-color: transparent; color: 
+#5E8DE3 !important;}.dkblue {background-color: transparent; color: 
+#244A91 !important;}.dkbluebld {background-color: transparent; color: 
+#244A91 !important; font-weight: bold; font-size: 13px;}p.bluebox2, 
+div.bluebox2, .bluebox2, ul.bluebox2, table.bluebox2, tr.bluebox2, 
+td.bluebox2 {border: 3px solid #BDCDEA; background-color:  #CDD6E8; 
+padding: 5px 10px; }ul.bluebox2 {padding: 5px 20px; }p.blueboxlite, 
+div.blueboxlite, .blueboxlite, table.blueboxlite, tr.blueboxlite, 
+td.blueboxlite, div.blueboxnarrow, p.blueboxnarrow, ul.blueboxnarrow, 
+ol.blueboxnarrow, ul.inlinebluelite li, ul.blueboxlite li, a.blueboxlite 
+{border: 3px solid #DBE8F1; background-color:  #E1EAF1; padding: 5px 10px; 
+margin: 10px 0; }a.blueboxlite, a:visited.blueboxlite {font-size: 13px; 
+text-decoration: none; }p.bluebox, div.bluebox, .bluebox, table.bluebox, 
+tr.bluebox, td.bluebox, ul.bluebox li, ol.bluebox li {padding: 5px 10px; 
+border: 1px solid #9999cc; background:  #f2f2ff; margin: 10px 0; }/*for 
+how rylan created his treehouse*/h3.bluegryboxheader, h3.whiteboxheader 
+{margin-bottom: 0; border: 1px solid #9999cc; border-bottom: 
+none;}h3.whiteboxheader {padding: 15px; background-color: 
+#fff;}h3.bluebottom {border-bottom: 1px solid #9999cc; color: 
+#9999cc;}ul.nodisclist, ul.nodisclist ul li {list-style-type: 
+none;}ul.bluebox li, ul.blueboxlite li {list-style-type: 
+none;}div.blueboxnarrow, p.blueboxnarrow, ul.blueboxnarrow, 
+ol.blueboxnarrow {width: 230px; float: right; margin: 0 0 15px 
+15px;}div.blueboxnobord, p.blueboxnobord, div.blueboxnobord, 
+p.blueboxnobord, ul.blueboxnobord, ol.blueboxnobord {padding: 10px 15px; 
+background:  #f2f2ff;}ul.blueboxnobord, ol.blueboxnobord {border: none;  
+margin: 5px 30px 10px 0; padding: 15px 25px 15px 40px;}ul.blueboxnobord 
+li, ol.blueboxnobord li, div.blueboxnobord, p.blueboxnobord {border: 
+none;}ol.bluebox li, ol.blueboxnobord li, ul.blueboxnobord li, 
+div.blueboxnobord, p.blueboxnobord {margin-bottom: 10px; 
+list-style-position: inherit; width: auto;}ol.bluebox, ul.bluebox, 
+ol.bluebox ul li, ul.bluebox ul li, ul.blueboxnobord ul li, 
+ol.blueboxnobord ul li {background-color: transparent; border: none; 
+margin-left: 0;}ol.bluebox ul li, ul.bluebox ul li, ul.blueboxnobord ul 
+li, ol.blueboxnobord ul li {margin-bottom: 0;}img.bordergrey,.bordergrey 
+{border: 1px solid #ccc;}p.borderbox, div.borderbox, table.borderbox, 
+tr.borderbox, td.borderbox, .borderbox {padding: 10px; border: 1px solid 
+#999;}div.borderbox, div.borderboxgrey {margin: 20px 0;}p.borderboxgrey, 
+div.borderboxgrey, table.borderbogreyx, tr.borderboxgrey, 
+td.borderboxgrey, .borderboxgrey { padding: 20px; border: 1px solid 
+#ccc;}/*end wysiwyg styles*//*h3 styles and more for how build 
+treehouses*/h3#planningtrigger, h3#edithelptrigger {font-size: 14px; 
+font-weight: bold; letter-spacing: 1px; color: #000099; border-bottom: 
+none; margin: 10px 0 0 0; padding: 10px; } h3#planningtrigger.triup, 
+h3#edithelptrigger.triup {background-image: 
+url(/tree/css/triclosed_dblue.gif); background-position: 2%; 
+background-repeat: no-repeat; padding: 10px 10px 10px 20px; 
+background-color: #fff;}h3#planningtrigger.triup:hover, 
+h3#planningtrigger.tridown:hover, h3#edithelptrigger.triup:hover, 
+h3#edithelptrigger.tridown:hover {text-decoration: underline; color: 
+#ff3300; cursor: pointer;}h3#planningtrigger.tridown, 
+h3#edithelptrigger.tridown {background-image: 
+url(/tree/css/triopen_dblue.gif); background-position: 2%; 
+background-repeat: no-repeat; padding: 10px 10px 0 20px; margin-bottom: 0; 
+background-color: #F9F5D7; }#planninglist.showlearn, 
+#edithelplist.showlearn {background-color: #F9F5D7; padding: 5px 10px; 
+margin-top: 0;}a.boldblue, a.boldblue:link, a.boldblue:visited 
+{font-size: 11px; letter-spacing: 1px; color: #000099;}#a.boldblue:hover 
+{color: #993333 !important; }h4.blueheader, h4.blueheader2, 
+h3.blueheader, h3.blueheaderlft, ul.pageslargenrm, ol.pageslargenrm, 
+h4.blueheaderlft {text-align: center;  font-size: 16px; font-weight: bold; 
+color: #000099; margin: 5px 0 15px 0; padding: 5px; border: none; 
+letter-spacing: 1px; list-style-type: none; list-style-image: 
+none;}h4.boldblue {text-align: center;}h4.boldbluelft {letter-spacing: 
+0; color: #000099; font-weight: bold;}h3.blueheaderlft, h4.blueheaderlft 
+{text-align: left;  }h4.blueheader2, h4.blueheader {font-weight: normal; 
+font-size: 13px; text-align: left; margin: 5px 0 10px 0; padding: 0 
+5px;}h4.blueheader {text-align: center;}ol.pageslargenrm 
+{list-style-type: decimal; list-style-image: none;}ul.pageslargenrm li, 
+ol.pageslargenrm li {text-align: left; font-weight: normal; 
+padding-bottom: 2px;}h3.teacherresource, h3.games, h3.investigation, 
+h3.artculture, h3.stories, h3.bio { border-top: none; border-bottom: 1px 
+dotted #9c988a; }table h3.teacherresource {border: none; }/*so learing 
+info will clear for porfolios*/#trhsportfolio #learninfo h3 {clear: both; 
+margin: 20px 0;} /*main div with background image for treehouse pages and 
+styles for treehouse pages*/ul.greydot ul li, ul.boxtoc, ul.boxtoc ul, 
+ul.boxtocbrwn ul, ul.greydot3 ul li, ul.greydot3 li, ul.browndot3bld li, 
+ul.browndot3bld ul li, ul.browndot3 ul li, ul.browndot3 li, ul.boxtocwhite 
+ul, ul.brown4, ul.doublelist, ol.doublelist, ul.brwnheadlist, 
+ul.largelist, ul.brown5, ul.brwnheadlist2 ul li, ul.brown5 ul, 
+ul.brlearnlist, ul.brlearnlist ul, ul.brlearnlist2, ul.brlearnlist2 ul 
+{list-style-image: none; list-style-type: none;}ul.brwnheadlist2 ul li 
+{padding-top: 5px;}ul.greydot3 ul li, ul.greydot3, ul.browndot3 ul li, 
+ul.browndot3, ul.browndot3 li, ul.browndot3bld, ul.browndot3bld ul li, 
+ul.browndot4, ul.browndot4 ul li, ul.browndot5toc, ul.browndot5toc ul li, 
+ul.brown4, ul.doublelist, ol.doublelist, ul.brown4 ul li, ul.brown4 ol li, 
+ul.brwnheadlist, ul.brwnheadlist2, ol.brwnheadlist2, ol.brwnheadlist, 
+ul.browndot, ul.brown5 ul ol.browndash li {color: #5d5040; font-size: 
+12px; padding-bottom: 4px;}ul.brlearnlist a {font-weight: normal;  
+}ul.brlearnlist ul, ul.brlearnlist, ul.brlearnlist2, ul.brlearnlist2 ul 
+{color: #5d5040;}ul.brlearnlist, ul.brlearnlist2 {font-weight: bold; 
+font-size: 10px; padding: 0 0 10px 10px; margin-left: 0;}ul.brlearnlist2 
+{font-weight: bold; font-size: 11px; padding: 0 0 0 10px; margin-left: 
+0;}ul.brlearnlist ul {padding: 0 0 0 10px; font-size: 
+10px;}ul.brlearnlist ul.inline, ul.inlineblock, ul.brlearnlist2 ul.inline 
+{padding: 0; display: inline;}ul.brlearnlist ul.inline a {font-size: 
+10px;}ul.brlearnlist2 ul.inline a {font-size: 11px;  }ul.doublelist, 
+ol.doublelist {float: left;}ul.brown4, ul.doublelist, ol.doublelist 
+{margin-bottom: -5px;}ul.doublelist, ol.doublelist {margin-top: 
+20px;}ul.browndot4 {padding-left: 45px;}ul.browndot4 ul li, 
+ul.browndot5toc ul li, ul.browndot li, ul.brwnheadlist2 ol li, 
+ul.brlearnlist ul, ul.brlearnlist li {padding-bottom: 3px; }ul.spacedlist 
+li, ul.spaced, #supportmats ul, #physicalobjects ul {padding-bottom: 
+2px;}ul.spacedlist ul li, #physicalobjects ul {list-style-type: 
+circle;}ul.brlearnlist {font-weight: bold; margin-bottom: 5px; 
+padding-bottom: 0;}ul.brlearnlist ul li, ul.brlearnlist2 ul li 
+{font-weight: normal; display: inline; padding: 2px;}ul.brlearnlist2 ul 
+li {font-weight: normal; display: inline; padding: 2px;}ul.brlearnlist 
+ul.learnobjectivelist {list-style-type: disc !important;}ul.brlearnlist 
+ul.learnobjectivelist li {display: block; list-style-type: disc 
+!important; list-style-image: none; padding: 0;}ol.brwnheadlist li, 
+ol.brwnheadlist2 li, ul.brwnheadlist li, ul.brwnheadlist2 li, 
+ol.brwnheadlist ul li, ul.brwnheadlist ul li, ul.largelist li, 
+ol.brwnheadlist2 ul li, ul.brwnheadlist2 ul li {padding-bottom: 5px; 
+}ol.brwnheadlist2 ul li, ul.brwnheadlist2 ul li, ul.brwnheadlist2 ol li 
+{font-size: 12px;}ul.greydot, ul.greydot2, ul.greydot3, ul.browndot3, 
+ul.browndot3bld {margin: 10px; padding: 1px 1px 1px 30px; 
+list-style-image: url(/tree/learn/lisa.images/trhouseimage/446dot.gif); 
+list-style-position: outside; list-style-type: disc; font-size: 11px; 
+color: #444466;}ul.greydot li a {padding-bottom: 3px; text-decoration: 
+none;  }ul.browndot4, ul.browndot5toc, ul.browndot {list-style-image: 
+url(/tree/learn/lisa.images/trhouseimage/brwndot.gif);list-style-position: 
+outside; list-style-type: disc;}ul.browndot5toc {margin-left: 
+100px;}ul.browndot3 li, ul.browndot3bld li {padding-bottom: 
+10px;}ul.browndot3 li ul {padding-left: 15px; margin-left: 
+0;}ul.greydot2 li {padding-bottom: 5px; font-size: 12px;}ul.greydot li, 
+ul.greydot3 a, ul.browndot3 a, ul.browndot3bld a, ul.browndot4 a, 
+ul.brown4 a, ul.doublelist a, ol.doublelist a, ul.brown5 a, ol.brown4 a, 
+ul.browndot5toc a, ol.brwnheadlist a, ul.brwnheadlist a, ul.largelist a, 
+ul.largelist {padding-bottom: 5px; text-decoration: none; font-size: 
+12px;}ul.largelist a {font-size: 14px;}ul.browndot3bld a {font-weight: 
+bold;}ul.boxtocbrwn ul li, ul.boxtocbrwn, ul.boxtocwhite ul li, 
+ul.boxtocwhite {margin-left: 20px; color:  #9c988a; border: none; padding: 
+0 10px}ul.boxtocbrwn li, ul.boxtocwhite li {padding: 10px 10px 10px 30px; 
+border: 1px solid #9c988a; list-style-image: none; list-style-type: none; 
+background-color: #f8f6eb; margin: 0 0 5px 0; font-size: 
+12px;}ul.boxtocwhite li {background-color: #fff;}ul.boxtocbrwn li a, 
+ul.boxtocwhite li a {text-decoration: none; font-weight: 
+bold;}ul.boxtocbrwn li a:visited, ul.boxtocwhite li a:visited {color: 
+#8141b1; text-decoration: none;}a.spaceda, a.xlargetextsp {padding: 
+5px;}ol.boxtoc li {margin-left: 15px; }ul.boxtoc ul li, ol.boxtoc ul li 
+{padding: 0; margin: 0; font-weight: normal;}#trhsmaincontent 
+{background-color: #fff; background-position: 100% 0;  background-image: 
+url(/tree/learn/lisa.images/trhouseimage/treeoflife09sm3.gif); 
+background-repeat: no-repeat; width: auto; background-color: #fff; margin: 
+0; padding: 0 45px 20px 45px; margin: 50px 160px 0 30px; /*If I don't 
+specify this here, IE Win will set the default margins to 0 */ border: 1px 
+solid #5d5040; }h1#treehousetitle, #treehousetitle h1 {width: 90%; 
+}#treehousetypetitle h1, h1#treehousetypetitle {text-transform: 
+lowercase; font-size: 11px; font-weight: bold; text-align: right; padding: 
+0; margin: 15px 0 10px -30px; letter-spacing: 1px; border: 0; width: 100%; 
+} /* the following 3 styles were added by Katja on 7 October 2004.  They 
+should make the previous 5 styles and the extra styles added by Danny in 
+the document head obsolete.  I also deleted all the styles attached to 
+different resource type header ids. */ p#mattype /*this doens't work!*/ 
+{float:right; margin: 25px -180px 0 0; padding: 0;} #treehouselink, 
+#rsctypetitle, #rsctypetitletch, #rsctypetitlewsub {border: 
+0}#treehouselink {margin-right: -45px; float: right; width: 79px; } 
+/*div id for putting another line in treehouse left corner where says 
+treehouse type next to the treehouse icon only being used for teacher 
+resources at the present time on may*/ #rsctypes {float: right; clear: 
+none;}#rsctypes h2 {padding: 0; margin: 5px 10px 10px 10px ; 
+border-bottom: none; text-transform: lowercase; font-size: 11px; 
+font-weight: normal;}#rsctypetitletch, #rsctypetitleportfo, 
+#rsctypetitlewsub {margin: 10px 10px 0 10px; text-transform: lowercase; 
+font-size: 11px; padding-bottom: 0; }/*end this additonal title in left 
+corner stuff*/#rsctypetitle {font-size: 11px; margin: 10px; 
+text-transform: lowercase; float: right; clear: none; }.editcomments 
+{font-size: 12px; font-weight: bold; color: #cc0000; font-style: italic; 
+}/*added by lisa so the underline of the title doesn't overlap the 
+icon*/h1.trhstitle {border-bottom: none; margin: 50px 50px 15px 0; 
+}h1.trhstitlenosub, h1.trhstitlenosubnotop {border-bottom: 1px dotted 
+#5d5040; margin-right: 45px; margin-bottom: 10px;}h1.trhstitlenosubnotop, 
+h1.trhstitlenotop {margin: 5px 0; clear: both;} h1 {font-size: 16px; 
+margin: 35px 0 20px 0; letter-spacing: 3px; font-weight: bold; padding: 0; 
+}h1.nosub { border-bottom: 1px dotted #5d5040; } h1 span.authority 
+{font-size: 14px; font-style: normal; padding-left: 15px; } img.h1img 
+{padding: 0 0 0 10px; } h1.superheader { /* This is used for section 
+headers in the documentation */ font-size: 12px; border: 0; text-align: 
+left; font-weight: normal; letter-spacing: 2px; margin: 10px -20px 0 0; 
+}h1.superheader a {color: #5d5040; text-decoration: none; 
+}h1.superheader a:hover {color: #5d5040; text-decoration: underline; } 
+h2.subtitle {font-size: 12px; font-weight: normal; padding: 0; color: 
+#908d80; margin: -10px 0 20px 0; letter-spacing: 1px; border: 0; 
+border-bottom: 1px dotted #5d5040; }h2.subtitle span.authority 
+{font-size: 12px; font-style: normal; } h2.supertitle {font-size: 18px; 
+margin: 35px 0 -25px 0; letter-spacing: 3px; font-weight: bold; border: 0; 
+padding: 0; } h2.supertitle span.authority {font-size: 16px; font-style: 
+normal; }/*learning resource info*/div.hidelearn, dd.hidelearn, 
+ul.hidelearn, p.hidelearn, dl.hidelearn, dt.hidelearn {display: none; 
+background: #fff; padding: 5px 5px 5px 10px; width: auto;}div.showlearn, 
+dd.showlearn, ul.showlearn, p.showlearn, dl.showlearn, dt.hidelearn 
+{display: block; background: #fff; padding: 0px 5px 0px 5px; width: 
+auto;}#materialsneed, #learninginfo, #describetrhs, #unitlessonsmore, 
+#www {color: #292828; font-size: 12px;}#www h3 { clear: both; 
+padding-top: 20px;}#collectiontrigger {cursor: pointer; background-repeat: 
+no-repeat; padding-left: 12px; font-family: Helvetica, Trebuchet, Arial, 
+sans-serif; font-size: 11px; color: #808060; font-weight: bold; 
+text-decoration: none; background: #fff; }.triup {background-image: 
+url(/tree/css/tri_learnltr.gif); background-repeat: no-repeat; display: 
+block; background: #fff; padding: 5px 30px 0px 5px; border-style: none; 
+}#natstandardtrig.triup {background-repeat: no-repeat; display: block; 
+background-image: url(/tree/css/triclosed_learnltr.gif); background: #fff; 
+padding: 5px 10px 20px 5px; }#unitlessonstrigger.tridown, 
+#trhsdescribetrigger.tridown, #learninginfotrig.tridown, 
+#lessonstrigger.tridown, #materialstrigger.tridown, 
+#multimediatrig.tridown, #internetlinktrig.tridown, 
+#aboutpgtemptrig.tridown, #titleimagetrig.tridown {background-image: 
+url(/tree/css/triopen_learnltr.gif); background-repeat: no-repeat;  
+border-width: 0px 0px 1px 0px;  border-style: dotted;  border-color: #333; 
+background: #fff; padding: 5px 10px 20px 5px; } 
+#collectiontrigger.tridown, #natstandardtrig.tridown {background-image: 
+url(/tree/css/triopen_learnltr.gif); background-repeat: no-repeat; 
+}/*slist and indention styles in hidden and show identified areas* nat 
+and state standards not on the main unit pages*//*liststyles for top of 
+page that go to anchor links*/#headerlist li {line-height: 1.3;}/*list 
+styles in hide and show areas*/#trhsinternetlinks ul, #materialsneed ul, 
+#describetrhs ul {padding-bottom: 6px; background: #fff; width: auto; 
+font-size: 12px;}#trhsinternetlinks ul li, #materialsneed ul li 
+{padding-bottom: 4px; font-size: 12px;}#unitlessonsmore ul li, 
+#learninginfo ul li {list-style: none; font-size: 12px; padding-bottom: 
+4px;}/*end list styles in hide and show areas*//*styles for 
+indentification areas for each lesson page'sinformation and hidden areas 
+for standards separate linked pages*/#natstandard { list-style: 
+none;}#lessoninfolist { list-style: none; list-style-image: none; 
+font-size: 12px; } #natstandardtrig {cursor: pointer; background-repeat: 
+no-repeat; padding-left: 11px; font-size: 11px; font-weight: bold; 
+text-decoration: none; }#natstandard p {line-height: 1px; font-size: 
+12px;}#natstandard h6 { font-size: 12px;  font-weight: bold;  
+text-align: left;  padding: 1px 0px 1px 0px;  border: 1px dotted #333;  
+margin: 4px 0 7px 0;}/* header styles */h4.largegrey, 
+h4.largegreycenter, h4.grey, .dkgrey {color: #444466;}h4.large, 
+h4.largegrey, h4.largecenter, h4.largegreycenter {font-size: 14px; 
+font-weight: bold; margin-left: 10px;}h4.largecenter, h4.largegreycenter 
+{text-align: center;} .nobordbot{border-bottom: none;}/*header styles 
+used on ?*/h4.biggerb {font-size: 13px; font-weight: 
+bold;}/*basics*//*table styles*/table tr td.top {vertical-align: top; 
+}table tr td.middle {vertical-align: middle; }/*indent 
+styles*/table.indentleft, p.indentleft {padding-left: 20px; }/*image 
+styles*/img.blocksmmarg {text-align: center; margin: 15px auto 5px auto; 
+display: block;}img.brd { text-align: center; border: 1px solid #999; 
+max-width: 100%; margin: 25px auto 5px auto;}img.border {border: 1px 
+solid #444466; margin: 0 20px; }img.centerbrd, img.bordergreyc { 
+text-align: center; display: block; border: 1px solid #999; max-width: 
+100%; margin: 25px auto 5px auto;}img.bordergreyc {border: 1px solid 
+#444466; }/*ul styles*/ul.pages3 {list-style-type: none; 
+list-style-image: none; margin-top: -5px; padding-left: 40px; 
+padding-bottom: 10px; font-weight: bold; }ul.pages3 li {padding-bottom: 
+3px;}ul.pages3 ul {font-weight: normal; list-style-type: circle;} 
+ul.pages3 a, ul.pages3 a:visited, ul pages3 ul a, ul pages3 ul a:visited, 
+ul.pageslargenrm a, ul.pageslargenrm a:visited, ul pageslargenrm ul a, ul 
+pageslargenrm ul a:visited, ol.pageslargenrm a, ol.pageslargenrm 
+a:visited, ol pageslargenrm ol a, ol pageslargenrm ol a:visited 
+{font-size: 11px; letter-spacing: 1px; font-weight: bold; text-decoration: 
+none;}ul.pageslargenrm a, ul.pageslargenrm a:visited, ul pageslargenrm ul 
+a, ul pageslargenrm ul a:visited, ol.pageslargenrm a, ol.pageslargenrm 
+a:visited, ol pageslargenrm ol a, ol pageslargenrm ol a:visited 
+{font-size: 14px; letter-spacing: 1px; font-weight: normal;}ul.pages3 
+a:hover, ul.pages3 a:hover, ol.pages3 a:hover, ol.pages3 a:hover 
+{text-decoration: underline;}/* used for trcopyright page good for 
+columns next to floats, see ul.nodisc for the no disc style*/ul.inline 
+li, ul.inlineblock li, ul.inlinelrninfo li, ul.inlinetrhstoc li, 
+ul.inlinetrhstoc1 li, dl.inline dd {display: inline; padding: 2px; 
+text-align: left;}ul.inlinetrhstoc1 li.nopadleft {padding-left: 
+0;}ul.inlineblock {display: block; padding: 10px 0;}ul.inline, 
+ul.inlineblock {margin: 10px 10px 10px 0; padding-left: 
+0;}ul.inlinetrhstoc {margin: 10px 0; padding: 0;}ul.inlinetrhstoc1 
+{margin: 20px 0 10px 0;  padding: 0;  }ul.inlinetrhstoc li a, 
+ul.inlinetrhstoc1 li a {padding: 10px 0 10px 5px; font-size: 11px; } 
+ul.inlinelrninfo {display: block;}ul.inlinebluelite li {display: inline; 
+padding: 10px; margin: 0 10px; font-size: 14px;}ul.inline li a, 
+ul.inlineblock li a {padding: 10px 5px; font-size: 13px; margin: 
+5px;}ul.inlinebluelite {margin: 10px -20px 10px 0; padding: 
+10px;}ul.inlinetoc {margin-left: 0;}ul.inlinetoc li {display: inline; 
+padding: 10px; margin: 10px; border: 1px solid #ccc;}/*for teacher 
+resources */#supportmats ul.browndot4 li.inline {list-style-image: 
+url(/tree/learn/lisa.images/trhouseimage/446dot.gif); list-style-type: 
+disc;}#supportmats ul.brown4, #supportmats ul.brown4 a {font-size: 
+11px;}#supportmats ul.browndot4 a {text-decoration: underline;}/*for 
+teacher resources */ul.pages4, ul.pages4 ul {padding-left: 0px; 
+}ul.pages4 li {margin-top: 10px; }ul.pages4 a, ul.pages4 a:visited 
+{font-size: 11px; letter-spacing: 1px; font-weight: bold; text-decoration: 
+none; }ul.pages4 ul {padding-left: 15px; }ul.pages4 ul li {margin: 0; } 
+ul.pages4 ul a, ul.pages4 ul a:visited {margin: 0; font-size: 10px; 
+font-weight: normal; } ul.spaced {padding: 0 0 0 40px; line-height: 
+1.5;list-style-type: circle; margin-bottom: 0; }ul.spaceddot {padding: 0 
+0 0 40px; line-height: 1.7;list-style-type: disc; margin-bottom: 0; 
+}ul.circle, li.circle {list-style-type: circle; }ul.dotnegtop 
+{margin-top: -5px; list-style-type: disc; }ul.circlenegtop 
+{list-style-type: circle; margin-top: -5px; }ul.dot, ul.dotsmwd 
+{list-style-type: disc; }li.nodisc, ul.pages4, ul.pages4 ul, 
+ol.nodisc,ul.nodisc {list-style-type: none; list-style-image: 
+none;}ul.dot2child {line-height: 1.4; list-style-type: circle; 
+margin-top: -1px; margin-left: 10px; }ul.nodisc3, .nodisc3 ul 
+{list-style-type: none; list-style-image: none; padding-left: 13px; 
+line-height: 2; }ul.nodisc2, ul.nodisc2 ul {list-style-type: none; 
+list-style-image: none; padding-left: 13px; line-height: 1.4; 
+}ul.nodisc2child {list-style-type: none; list-style-image: none; 
+padding-left: 20px; }ul.nodisc4 {list-style-type: none; list-style-image: 
+none; padding-left: 13px; line-height: 1.4;} ul.nodisc1, ul.nodiscsp, 
+ul.nodiscspex {list-style-type: none; list-style-image: none;} 
+ul.nodisc3child {list-style-type: none; list-style-image: none; 
+margin-left: 0; margin-top: 0; }ul.libottomsp li, ul.libottomspbg li, 
+ol.libottomspbg li, table#standardstech ul li, li.libottomsp, 
+ol.libottomsp li, ul.nodiscsp li {padding-bottom: 3px;}ul.libottomspbg 
+li, ol.bottomsobg li {font-size: 12px;}ul.libottomspex li, 
+ol.libottomspex li, ul.libottomspexnu li, ol.libottomspexnu li, 
+ul.nodiscspex li {padding-bottom: 6px;}ul.libottomspexnu a, 
+ul.libottomspexnu a:visited, ol.libottomspexnu a, ol.libottomspexnu 
+a:visited {text-decoration: none;}ol.libottomspex, ol.doublelist 
+{list-style-type: decimal;}/*toc styles for learning pages*//*not sure 
+if using any longer 9 24*/#learningpgtoc {margin: 10px -30px 0 5px; 
+height: 300px;}#learningpgtoc ul, ul#learningpgtoc {list-style-type: 
+none; list-style-image: none; padding-left: 10px; line-height: 2; }/* 
+For Treehouse home page, treehouse builder and treehouse manager all on 
+tol.css */a.teacherresource, a.games, a.investigation, a.artculture, 
+a.stories, table#trhscatstable a, table#trhscatstable a:visited 
+{text-decoration: none; font-weight: bold; }/*table colors (for attach to 
+tol) and colors in general for bacgrounds*//*standards tables tech etc. 
+to see ul and li style for these table tables see the ul section. these 
+tables use the codes listed below in general table colors section 
+*/table#standardstech tr td, table#standardstech tr td td {width: 
+300px;}td.f2, .f2 {background-color: #f2f2ff;}table.f2border, 
+p.f2border, div.f2box, p.lightpurplebox, div.lightpurplebox 
+{background-color: #f2f2ff; padding: 10px; border: 1px solid 
+#CCCCFF;}table.purpleborder tr td, table.purpleborder, table.greyborder, 
+table.greyborder tr td, table.greyborder tr th {border: 1px solid #CCCCff; 
+border-spacing: 0; border-collapse: collapse; color: 
+#444446;}.greyborder, table.greyborder tr td, table.greyborer tr th 
+{border: 1px solid #CCCCcc;  }table.purpleborder td, table.greyborder td, 
+table.greyborder th { padding: 5px 10px;  }div.f2box {border: 1px dotted 
+#CCCCFF; padding: 5px 25px;}td.purplebg, .purplebg {background-color: 
+#CCCCFF;}td.xltpurplebg, .xltpurplebg {background-color: #FAFAFC; 
+}td.lightbluebg, .lightbluebg {background-color: 
+#CCCCFF;}td.mdlightbluebg, .mdlightbluebg {background-color: 
+#D6D6EA;}td.lightgreenbg, .lightgreenbg {background-color: 
+#99CC99;}td.mdlightgreenbg, .mdlightgreenbg {background-color: 
+#C2E0C2;}td.nicegrygreenbg {background-color: #A2C9A2;}td.xlightgreenbg, 
+.xlightgreenbg {background-color: #E8F5EC;}td.xlightblubg, .xlightblubg 
+{background-color: #E8E8F5;}td.yellowbg, .highlight {background-color: 
+#FFFF99;}div.tryellbox, td.tryellbox, p.tryellbox, table.tryellbox, 
+tr.tryellbox, .tryellbox, ol.tryellbox, ul.tryellbox, ol.webquest li, 
+li.tryellbox {background-color: #F9F5D7; padding: 10px; border: 1px solid 
+#F9F4C6; }/*webquest*//*new styles need to keep may 26*/li.onpage a, 
+li.onpage a:visited, #maincontent li.onpage a:hover {background-color: 
+#fff; padding: 3px 4px; text-align: center; text-decoration: none; color: 
+#000099; border: 2px solid #E2E2EA;}#process ul.brown4 {margin-bottom: 
+15px; }#process ul.brown4 li {padding-bottom: 4px;}#process a 
+{font-size: 12px;}#process p.captionleft a {font-size: 10px; 
+text-decoration: none;}#process a.goto {background-image: 
+url(/tree/learn/lisa.images/trhouseimage/arrownewyell.jpg); 
+background-repeat: no-repeat; background-position: 0; padding-left: 30px; 
+letter-spacing: 1px; font-size: 14px; margin: 5px 15px 5px -5px;}a.goto2 
+{letter-spacing: 1px; font-family:Arial, Helvetica, sans-serif; font-size: 
+13px; margin: 5px 15px 0 10px; display: block;}img.thumbnailgoto {margin: 
+10px 25px 0 25px; border: 1px solid #333; display: block;}#portfopages 
+img.thumbnailgoto {margin: 10px 10px 0 5px; border: 1px solid 
+#333;}#portfopages {padding-bottom: 20px}#portfopages dl {display: 
+block; clear:both; color: #5d5040; padding: 0; margin:  0 0 20px 
+20px;}#portfopages dl dd {margin-left: 30px; }#process p.captionleft 
+{margin: 0 20px 10px 25px;}#portfopages dd .captionleft {float: left; 
+margin: 0; padding: 0; font-size: 9px;}/*end new webquest 
+styles*/td.ltyellowbg {background-color: #ffffcc;}p.greybg, ol.greybg, 
+td.greybg, .greybg, th.greybg {background-color: #f6f6f6;}p.greybg2, 
+ol.greybg2, td.greybg2, .greybg2, th.greybg2 {background-color: 
+#BFBBBB;}.dkgrey {color: #444466; background-color: transparent;}p.brwn, 
+.brwn {color: #5d5040;}/*.brown in tol.css is the same as 
+above*//*header styles colors teacher resources and 
+standards*/.teacherheadnobord { color: #993333;  border: none;}.subhead 
+{ margin-bottom: 0;  }p.green {background-color: transparent; color: 
+#28c128; }/* colors for treehouse elements and 
+standards*/h3.teacherresource, h3.games, h3.investigation, h3.artculture, 
+h3.stories, h3.bio {font-size: 14px; font-weight: bold; margin: 25px 0 
+15px 0; letter-spacing: 2px; border-bottom: 1px dotted #5d5040; 
+padding-bottom: 2px; border-top: none; }h4.overview {font-size: 11px; 
+margin-bottom: 5px;}p.overview {padding-top: 0; margin-top: 
+0;}.teacherresource, #treehousemenu ul.arialtr li a:hover, #trteachtheme 
+h1.trhstitle, #trteachtheme h1.trhstitlenosub, #trteachtheme 
+h1.trhstitlenosubnotop, #trteachtheme h1.trhstitlenotop, #trteachtheme 
+h2.trhssubtitle, #trteachtheme h4, #trteachtheme #rsctypes h2 {color: 
+#993333;}.games, #trgametheme h1.trhstitle, #trgametheme 
+h1.trhstitlenosub, #trgametheme h1.trhstitlenosubnotop #trgametheme 
+h2.trhssubtitle, #trgametheme h4 { color: #009933;}.investigation, 
+p.investigation, #trinvestheme h1.trhstitle, #trinvestheme 
+h2.trhssubtitle, #trinvestheme h1.trhstitlenosub, #trinvestheme 
+h1.trhstitlenosubnotop, #trinvestheme h4, h3.investigation {color: 
+#4261C7; }.webquest, p.webquest, #trwebqtheme h1.trhstitle, #trwebqtheme 
+h2.trhssubtitle, #trwebqtheme h1.trhstitlenosub, #trwebqtheme 
+h1.trhstitlenosubnotop, #trwebqtheme #rsctypes h2, #treehousemenu 
+li.webquest a:hover, #treehouseclosemenu li.webquest a:hover {color: 
+#CBA100 !important;  }#trwebqtheme h4 {color: #CBA100;}/*this can be 
+removed after it is added to live tol.css*/#treehousemenu li.webquest a, 
+#treehouseclosemenu li.webquest a {color: #CEB554 !important; }/*end this 
+can be removed after it is added to live tol.css*/.internetinfo {color: 
+#6B47B3;  }.artculture, #trarttheme h4, #trarttheme h1.trhstitle, 
+#trarttheme h1.trhstitlenosub, #trarttheme h2.trhssubtitle {color: 
+#6B47B3; }.bio, #trbiotheme h1.trhstitle, #trbiotheme h1.trhstitlenosub, 
+#trbiotheme h2.trhssubtitle, .trsectend, #trbiotheme h4 {color: 
+#666666;}.multimedia { color: #333366;}.relatedresources {color: 
+#806A60; }.stories, #trstorytheme h1.trhstitle, #trstorytheme 
+h1.trhstitlenosub, #trstorytheme h2.trhssubtitle, #trstorytheme h4{color: 
+#FB8751;}.tolbrown {color: #5d5040; }.tolbrownbgbld {color: #5d5040; 
+font-weight: bold; font-size: 12px; letter-spacing: 2px; font-family: 
+Arial, Helvetica, sans-serif;}/*menus for treehouse types in right 
+sidebar*//* for right sidebar for treehouse teacher resource 
+*/#trteachtheme #localnav li.open, #trteachtheme #localnav li.closed 
+{background-image: url(/tree/img/triopenlight.gif); color: #5d5040; 
+background-repeat: no-repeat; background-position: 0 2px; padding-left: 
+22px; }#trteachtheme #localnav li.closed {background-image: 
+url(/tree/img/triclosedlight.gif); padding-left: 20px;}#localnav 
+ul#supportmatsmenu {margin: 0; padding: 0; line-height:normal; } 
+ul#supportmatsmenu li{margin-left: 10px; padding: 0; } /*for the right 
+sidebar done in april 05*/#sectionnav ul.nomenulearn {list-style: none; 
+list-style-image: none; background-color: transparent; } #sectionnav 
+h1.trhsnomenutop a {color: #5d5040 !important; display: block; 
+text-decoration: none !important; }#sectionnav h4.nomenulearnheader, 
+#sectionnav h4.nomenulearnheader a, #sectionnav h4.nomenulearnheader 
+a:visited, #sectionnav h4.helplink a, #sectionnav h4.helplink a:visited 
+{border: 0; font-size: 11px; color: #5d5040 !important; display: block; 
+text-decoration: none !important; }#sectionnav h4.nomenulearnheader a, 
+#sectionnav h4.nomenulearnheader a:visited {border-bottom: 0;}#sectionnav 
+h4.helplink a, #sectionnav h4.helplink a:visited {font-family: Helvetica, 
+Arial, sans-serif; font-size: 10px !important; margin-left: 
+-10px;}#sectionnav ul.nomenulearn li{font-size: 10px; text-indent: -8px; 
+text-transform: none; background-image: none; line-height: 1.2; 
+font-weight: normal; border: 0; color: #908d80; letter-spacing: 0; 
+font-family: verdana, heletica, arial, sans-serif; }ul#treehousemenu li, 
+ul#treehouseclosemenu li, ul#phylobiomenu li, ul#builderstoolkitmenu li, 
+ul#learningoverviewmenu ul li, li.learnmenu, ul#addingmediamenu li, 
+ul#teacherresmenu li, ul#buildingtrhsmenu li, ul#tipsguidetrhsmenu li, 
+ul#aboutlearnmenu li, ul#buildingtrhopensmenu li, ul#trhstoolkitmenu li, 
+ul#builderstoolkitmenuopen li {font-size: 10px; font-family: verdana, 
+heletica, arial, sans-serif; line-height: 1.2;}ul#builderstoolkitmenu li 
+{margin-right: -3px;}ul#treehousemenu ul, ul#phylobiomenu ul, 
+ul#builderstoolkitmenu ul, ul.nomenulearn ul, ul#addingmediamenu, 
+ul#teacherresmenu, ul#buildingtrhsmenu {margin-left: 
+0;}ul#learningoverviewmenu li {padding-left: 5px;}ul#treehousemenu 
+a:hover.artculture, ul#treehousemenu a:hover.games, ul#treehousemenu 
+a:hover.stories, ul#treehousemenu a:hover.investigation, ul#treehousemenu 
+a:hover.teacherresource, ul#treehousemenu a:hover.bio {text-decoration: 
+none; background-color: transparent;  cursor: 
+pointer;}a:hover.artculture, a:hover.games, a:hover.stories, 
+a:hover.investigation, a:hover.teacherresource, a:hover.bio 
+{text-decoration: none; background-color: transparent; color: #ff3300; 
+cursor: pointer;}ul#treehousemenu a.artculture, ul#treehousemenu a.games, 
+ul#treehousemenu a.stories, ul#treehousemenu a.investigation, 
+ul#treehousemenu a.teacherresource, ul#treehousemenu a.bio 
+{text-decoration: none; background-color: transparent; cursor: pointer; 
+font-weight: normal;}a.artculture, a.games, a.stories, a.investigation, 
+a.teacherresource, a.bio {text-decoration: none; background-color: 
+transparent; cursor: pointer;}ul#treehousemenu a.investigation, 
+ul#treehousemenu li.investigation a:hover, ul#treehousemenu 
+a:hover.investigation, ul#treehouseclosemenu li.investigation a:hover, 
+a.investigation {color: #3333FF !important; }ul#treehousemenu a.stories, 
+ul#treehousemenu li.stories a:hover, ul#treehousemenu a:visited.stories, 
+ul#treehouseclosemenu li.stories a:hover, a.stories, h3.stories {color: 
+#ff6600 !important; }ul#treehousemenu a.games, ul#treehousemenu li.games 
+a:hover, ul#treehousemenu a:visited.games, ul#treehouseclosemenu li.games 
+a:hover, a.games, h3.games {color: #009933 !important; } ul#treehousemenu 
+a.artculture, ul#treehousemenu li.artculture a:hover, ul#treehousemenu 
+a:visited.artculture, ul#treehouseclosemenu li.artculture a:hover, 
+a.artculture, h3.artculture {color: #6B47B3 !important; }ul#treehousemenu 
+a.bio, ul#treehousemenu li.bio a:hover, ul#treehousemenu a:visited.bio, 
+ul#treehouseclosemenu li.bio a:hover, a.bio, h3.bio {color: #666 
+!important; } ul#treehousemenu a.teacherresource, ul#treehousemenu 
+li.teacherresource a:hover, ul#treehousemenu a:visited.teacherresource, 
+ul#treehouseclosemenu li.teacherresource a:hover , a.teacherresource, 
+h3.teacherresource {color: #993333 !important; }#sectionnav 
+li.investigation a {color: #9B9BFB !important; }#sectionnav li.stories a 
+{color: #FFA060 !important; }#sectionnav li.games a {color: #61B47D 
+!important; } #sectionnav li.artculture a {color: #9C8FB6 !important; } 
+#sectionnav li.bio a {color: #999 !important; } #sectionnav 
+li.teacherresource a {color: #9B7A7A !important; }/*end for the right 
+sidebar April 05*/#sectionnav ul.arial li {margin-right:0px; 
+padding-right: 0; }#sectionnav ul.arial li a {font-family: Arial, 
+Helvetica, sans-serif; color: #9c988a !important; }#treehousemenu 
+ul.arialtr li a {font-family: Arial, Helvetica, sans-serif; color: #9B7A7A 
+!important; }/*end right sidebar added June 05*//*header 
+styles*/h5.center, h4.center, h2.center, div.center {text-align: center; 
+display: block; }/*treehouseheader for forms*/#trhshead h1 { font-size: 
+11px; position: absolute; top: 50px; padding: 30px 0 0 0; font-weight: 
+bold; text-transform: lowercase; letter-spacing: 1px;  }/* trhsathor 
+sections in Treehouse pages */.floatleftlogo {margin: 0; display: inline; 
+vertical-align: middle;}.caption {font-size: 10px;}/*media resources 
+need to change to clear both but make sure the dissapearing bug doesn't 
+should remove? June 13 until make decisions as to this 
+section*/#mediaresources {margin: 10px 0;  color: #5d5040;}#movies, 
+#sounds, #documents {margin: 0; padding: 0;}#mediaresources h4 { color: 
+#5d5040; }#mediaresources img.icon, #mediaresources img.iconnothumb 
+{border: none; padding: 0 10px 30px 10px;}#mediaresources img.iconnothumb 
+{padding: 3px 10px 20px 10px;  margin: 0;  border: none;  
+}#mediaresources img {margin: 10px 10px 10px 0; border: 1px solid 
+#5d5040; float: left;}#mediaresources div.mediaobject {padding-top: 5px; 
+margin-bottom: 15px;}#mediaresources ul, #mediaresources ul.nothumb 
+{font-size: 10px; list-style-type: none; color: #5d5040;  margin: 10px 
+10px 0 10px; padding: 0px 0 5px 0px;  width: auto;}#mediaresources #docs 
+img.iconnothumb {padding: 10px 10px 30px 10px;}#mediaresources ul li 
+{padding-bottom: 1px; }/*end media resources*//*portfolio*//* new may 
+26 ul class for top of page to have two rows*//*Teacher Resources and 
+portfolio*/div.portfolistitem, .clear, div.spacer {clear: both;}/*not 
+sure if I need these*/div.portfolistitem div.floatleft { width: 
+125px;}#portfopages img.floatleft {padding-bottom: 10px;}#portfopages h4 
+{font-size: 15px; clear: both; padding-top: 10px;}/*not sure if I need 
+these end*//*Teacher Resources stuff for mockups for presentation of how 
+main page and portfolio displayed at top*/#teachlrnsect a, #teachlrnsect2 
+a, #teachlrnsect a:visited, #teachlrnsect2 a:visited {color: #5d5040; 
+text-decoration: none;}#teachlrnsect2 ul, #teachlrnsect ul {padding: 2px 
+0 0 0; margin: 0 0 0 0px; list-style-type: none;}#teachlrnsect2 ul li, 
+#teachlrnsect ul li {margin: 0; padding-left: 3px; list-style-type: none; 
+display: inline;}#teachlrnsect ul li {display: block; }/*for portoflio 
+pages and teacher resources top left when not a list*/#portfoliolink, 
+#teachlrnsect2, #teachlrnsect {float: left; margin: 15px 0 0 -20px; 
+padding: 1px 5px; text-decoration: none; color:#5d5040; font-family: 
+Arial, Helvetica, sans-serif; letter-spacing: 1px; width: 70%; }/*end 
+Teacher Resources stuff for mockups for presentation of how main page and 
+portfolio displayed at top*/ul.inlinetocteacher {margin: 10px 20px; 
+float: right; }ul.inlinetocteacher li.teacherbox {border: 1px solid 
+#A85555; background-color: #F4DDDD; padding: 10px; }ul.inlinetocteacher 
+li.learnerbox {padding: 10px; border: 1px solid #6A8DA8; background-color:  
+#E1EAF1;}ul.inlinetocteacher li.learnerbox a, ul.inlinetocteacher 
+li.teacherbox a {text-decoration: underline;}#collectiontrigger {cursor: 
+pointer; background-repeat: no-repeat; font-family: Helvetica, Trebuchet, 
+Arial, sans-serif; font-size: 11px; color: #808060; font-weight: bold; 
+background: transparent; }#collectiontrigger.triup { background-repeat: 
+no-repeat; display: block; background-image: 
+url(/tree/css/triclosed_learn.gif); padding: 0 0 15px 
+12px;}#collectiontrigger.tridown { background-repeat: no-repeat; display: 
+block; background-image: url(/tree/css/triopen_learn.gif); padding: 0 0 0 
+12px; }#trhsdescribetrigger, #learninginfotrig, #lessonstrigger, 
+#unitlessonstrigger, #materialstrigger, #multimediatrig, 
+#internetlinktrig, #aboutpgtemptrig, #titleimagetrig, #instructionstrig { 
+cursor: pointer; background-repeat: no-repeat; color:  #993333; 
+background: transparent; }#trhsdescribetrigger, #learninginfotrig, 
+#lessonstrigger, #unitlessonstrigger, #materialstrigger, #multimediatrig, 
+#internetlinktrig, #TRHSCHANGEaboutpgtemptrig, #CHANGEtitleimagetrig, 
+#instructionstrig {background-repeat: no-repeat; display: block; 
+background-image: url(/tree/css/triclosed_learnltr.gif); padding: 0 0 12px 
+12px;}#natstandardtrig.triup {background-repeat: no-repeat; display: 
+block; background-image: url(/tree/css/triclosed_learnltr.gif);  
+margin-left: -11px; padding: 0 0 9px 12px; }#trhsdescribetrigger.tridown, 
+#learninginfotrig.tridown, #lessonstrigger.tridown, 
+#unitlessonstrigger.tridown, #materialstrigger.tridown, 
+#multimediatrig.tridown, #internetlinktrig.tridown, 
+#aboutpgtemptrig.tridown, #titleimagetrig.tridown, 
+#instructionstrig.tridown {background-image: 
+url(/tree/css/triopen_learnltr.gif); background-repeat: no-repeat;  
+display: block; padding: 0 0 4px 12px; border-style: dotted;  
+border-bottom-color: #333; display: block; border-width: 0px 0px 1px 0px; 
+} /*end teacher resources*//* about this page gives 
+space*/#AboutThisPage {padding-top: 20px;}/*Fun ways to get started 
+building treehouses*//*treehouse building guide*/#lrngtocstyle { border: 
+1px dotted #999;  padding: 5px 15px 15px 15px;}#lrngtocstyle ul 
+{font-family: Verdana, Arial, Helvetica, sans-serif; letter-spacing: 2px; 
+font-size: 12px;  font-weight: normal;  width: auto; line-height: 2;  
+list-style: none;  margin: 10px 0 15px 0;  }#lrngtocstyle ul li ul li { 
+letter-spacing: 0;  list-style: none;  font-size: 11px;  line-height: 1; 
+margin-left: 15px;  }#lrngtocstyle h4 ul { letter-spacing: 0;  
+list-style: none;  font-size: 11px;  line-height: 1;  margin-top: -10px;  
+list-style: circle;  }ul.attachhelp {font-size: 12px; padding: 10px; 
+letter-spacing: 1px; line-height: 2; list-style: none; margin: -10px 
+30px;}/*box styles*/div.pinkbox {border: 1px dotted #9c988a; background: 
+#f8f6eb; padding: 5px 15px; width: auto; float: left; margin-top: 
+-200px;}div.catsbox {border: 1px dotted #9c988a; background: #f8f6eb; 
+padding: 5px 15px; width: 300px; float: left; margin-top: 
+-200px;}p.rightbox, div.rightbox, td.rightbox, table.rightbox, 
+tr.rightbox, .rightbox, div.rightboxsolid, p.rightboxsolid {border: 1px 
+dotted #9c988a; background: #f8f6eb; padding: 15px; margin-top: 15px; 
+width: auto;}div.rightboxsolid, p.rightboxsolid {border: 1px dotted 
+#9c988a; padding: 5px 15px;}div.rightboxsmflt, div.rfltboxnobrd, 
+p.rightboxsmflt {float: right; width: 200px; color: #5d5040; 
+background-color: #fff; border:  1px dotted #ccc; padding: 0 10px; margin: 
+10px 0 15px 15px; }div.rfltboxnobrd {width: 240px; color: #5d5040; 
+border: none;}div.leftsmbox {background: transparent; padding: 30px 0 0 
+10px; margin-top: 30px; border: none; font-size: 12px; float: right; 
+width: 175px}/*div.f2box see above*/div.extreehousebox, p.extreehousebox 
+{width: 250px; float: right; margin-left: 20px; padding: 5px 10px; border: 
+1px solid #ccc; background: transparent; margin-top: 5px;}p.brownbox, 
+div.brownbox {border: 1px dotted #9c988a; background: #f8f6eb; padding: 
+15px; margin-top: 20px; width: auto;}p.whitebox, div.whitebox {border: 
+1px dotted #9c988a; background: transparent; padding: 5px 25px; 
+margin-top: 10px; width: auto;}li.pagestep {padding: 5px 10px 5px 20px; 
+width: 255px; background:  #f2f2ff; border: 1px dotted #ccc; margin: 10px 
+0px;}p.whitebox2, div.whitebox2, h3.whitebox2 { background: #fff; 
+padding: 5px 15px; width: auto;}h3.whitebox2, h3.whitebox3 {margin: 5px 
+-20px; padding: 10px; color: #000099; border-bottom: none;}h3.whitebox3 
+{margin: 0 -10px;}p.leftbox, div.leftbox {border: 1px dotted #9c988a; 
+background: #f8f6eb; padding: 15px; margin-top: 20px; width: 
+200px;}div.indentleft, p.indentleft {padding-left: 30px;}ul.browndash li 
+{list-style-type: disc; list-style-image: 
+url(/tree/learn/lisa.images/trhouseimage/browndot2.gif); color:  #5d5040; 
+padding-bottom: 2px;  }ul.browndash {padding-left:5px;  margin-left: 
+15px;  } ul.browndash ol li {list-style-image: none;  list-style-type: 
+decimal;  }ul.dash li {list-style-type: disc; list-style-image: 
+url(/tree/learn/lisa.images/trhouseimage/browndot2.jpg);  }ol.boxtoc li, 
+div.boxtoc, div.boxtochelp, #saveworktoc, div.boxtocpages {padding: 15px; 
+border: 5px solid #E2E2EA; list-style-position: inside; background-color: 
+#E4E4E9;}ul.boxtoc li {padding: 10px; border: 3px solid #E2E2EA; 
+list-style-position: inside; background-color: #E4E4E9; margin-bottom: 
+5px; color: #444466; width: auto; margin-left: -30px; text-align: 
+left;}div.trhshelpmini {float: right; width: 195px; margin: 20px 10px; 
+background-color: #E4E4E9; padding: 5px 10px 10px 20px; border: 4px solid 
+#E2E2EA;}a.thrshelpeditpgs {background-color: #E8F5EC; padding: 5px; 
+border: 1px solid #89A795;}div.trhshelpmini ul a {width: 125px; margin: 
+5px 20px 10px 20px; padding: 1px; letter-spacing: 
+1px;}h5.trhshelpheadmini {margin: -5px -10px -5px -20px; padding: 5px 
+10px; background-color:  #E2E2EA; letter-spacing: 2px; border-bottom: 1px 
+solid #E2E2EA; text-align: center;  }h3.sectionheader, h2.sectionheader, 
+h4.sectionheader, h5.sectionheader, #trhshelplist2 h3, 
+h3.sectionheadertble, h4.trhsmaintocheader, h3.sectionheaderblu, 
+h3.sectionheaderblub, h3.sectionheaderblubpg, h3.bluegryboxheader { 
+background-color: #E4E4E9;  letter-spacing: 2px; border-bottom: 1px solid 
+#E2E2EA; margin-top: 0; padding: 15px;}h1.sectionheaderbluc 
+{background-color: #E4E4E9;  letter-spacing: 2px; border-bottom: 1px solid 
+#ccc; margin: 0 -25px 0 -25px; padding: 15px 10px; color: #000099; 
+font-size: 15px; text-align: center;}h3.sectionheaderblubpg {width: 
+605px; margin: 0;}h3.sectionheaderblu, h3.sectionheaderblub, 
+h3.sectionheaderblubpg {background-color: #e2e2ea; text-align: center; 
+}#trhssummaryhead h3.sectionheaderblub, h3.sectionheaderblub, 
+h3.sectionheaderblubpg {font-size: 15px; margin: 0;}/*for return to edit 
+at top of treehouse preview*/div.blueacross {background-color: #E4E4E9; 
+border-bottom: 1px solid #ccc; padding: 5px 10px 40px 10px;  margin: 0 
+-45px;}#trhspreview h4 {font-size: 14px; margin: 10px 10px 0 10px;float: 
+left;}#trhspreview #workingsite {margin: 0; font-family: Arial, 
+Helvetica, sans-serif; color: #5d5040; width: 85px; font-size: 
+10px;}#aboutth img {float: right; background-color: 
+transparent; margin: -5px -10px 0 0; border: 0;}

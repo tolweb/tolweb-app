@@ -1,0 +1,21 @@
+<div class="trhshelpmini">
+	<h5 class="trhshelpheadmini"> Get Help</h5>
+	<h5>Click on the lightbulbs in each section. </h5>
+	<h5>View Example: </h5>
+	<a href="ognl:exampleEditingFormUrl" jwcid="@GenericLink" renderer="ognl:page.helpLinkRenderer"> Editing form</a> | 
+    <span jwcid="@If" condition="ognl:page.isPortfolio" element="ognl:null">
+		<a href="/tree/learn/Portfolios/Portfolios.html" jwcid="@GenericLink" renderer="ognl:page.helpLinkRenderer">Portfolios</a><br>        
+    </span>
+    <span jwcid="@If" condition="ognl:page.isWebquest" element="ognl:null">
+		<a href="/tree/learn/WebQuests/WebQuests.html" jwcid="@GenericLink" renderer="ognl:page.helpLinkRenderer">WebQuests</a><br>        
+    </span>    
+    <span jwcid="@If" condition="ognl:page.isTeacherResource" element="ognl:null">
+		<a href="/tree/learn/TeacherResources/TeacherResources.html" jwcid="@GenericLink" renderer="ognl:page.helpLinkRenderer">Teacher Resources</a><br>        
+    </span>     
+    <span jwcid="@If" condition="ognl:!page.isPortfolio && !page.isWebquest && !page.isTeacherResource" element="ognl:null">
+    <a href="ognl:helpPageUrl" jwcid="@GenericLink" renderer="ognl:page.helpLinkRenderer"><span jwcid="@Insert" value="ognl:pageType"/></a><br>
+    <a href="ognl:'/tree/learn/TreebuilderTools/BuildingGuide/HowRylanTrhs' + stepNum + '.html'" jwcid="@GenericLink" renderer="ognl:page.helpLinkRenderer">Rylan's editing process</a>      
+    </span>
+    <h5><a href="/tree/learn/TreebuilderTools/toolkithome.html" jwcid="@GenericLink" renderer="ognl:page.helpLinkRenderer"><strong>Builders Toolkit</strong></a></h5>
+	<span jwcid="@RenderBody"/>
+</div>

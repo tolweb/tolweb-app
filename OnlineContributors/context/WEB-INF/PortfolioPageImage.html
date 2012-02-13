@@ -1,0 +1,16 @@
+<span jwcid="@If" condition="ognl:portfolioPage.hasImage" element="ognl:null">
+<div class="floatright">
+  <p><img jwcid="@Any" src="ognl:imageUrl" height="50"/><br>
+        <span jwcid="@RenderBody"/>
+    </p>
+  </div>
+</span>
+<span jwcid="@Else" element="ognl:null">
+    <span jwcid="@If" condition="ognl:isEdit" element="ognl:null">
+		<div class="floatright">
+			<p>
+				<input value="Add Image" class="small" jwcid="@Submit" selected="ognl:page.pageToAddImageTo" tag="ognl:portfolioPage"/>
+			</p>
+		</div>
+    </span>
+</span>

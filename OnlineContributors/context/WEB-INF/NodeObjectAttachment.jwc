@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component-specification PUBLIC
+  "-//Apache Software Foundation//Tapestry Specification 4.0//EN"
+  "http://jakarta.apache.org/tapestry/dtd/Tapestry_4_0.dtd">
+
+<component-specification class="org.tolweb.tapestry.NodeObjectAttachment" 
+    allow-body="no" allow-informal-parameters="yes">
+    <description>A component to represent an attached object and whether it needs to be moved</description>
+    <parameter name="objectType" required="yes"/>
+    <parameter name="objectIndex" required="yes"/>    
+</component-specification>

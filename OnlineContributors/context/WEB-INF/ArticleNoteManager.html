@@ -1,0 +1,26 @@
+<html jwcid="@ScientificWrapper" title="Manage Articles & Notes">
+<h1 class="superheader"><a jwcid="@PageLink" page="ScientificMaterialsManager">Scientific Materials Manager</a></h1>
+    <h2 class="clear">Manage Scientific Articles and Notes</h2>
+       <ul class="links">
+        <li><strong> <a jwcid="@DirectLink" listener="ognl:listeners.createNewNote" renderer="ognl:rendererFactory.editLinkRenderer">Create a new 
+            article/note</a></strong></li>
+        <li><strong> <a href="#edit">Edit one of my articles/notes</a></strong></li>
+        <li><strong> <a href="#delete">Delete one of my articles/notes</a></strong></li>
+
+        <li><strong><a href="/onlinecontributors/app?service=page&page=ImagesManager">Upload/edit/delete 
+            images</a></strong> <span class="tiny">(goes to the Media manager)</span></li>
+    </ul>
+        <h3><a name="edit"></a>Edit one of my articles/notes</h3>
+        <form jwcid="@TreehouseSearch" callbackType="ognl:@org.tolweb.tapestry.TreehouseSearchResults@EDIT_ARTICLE_NOTE" instructions="Click the 'edit' link to edit your article/note"  linkString="edit" isTreehouses="ognl:false"
+            searchPageName="ArticleNoteManager"
+            wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@SCIENTIFIC_WRAPPER"> 
+    <p>Find articles/notes that match the following criteria:</p>
+    	</form>
+    
+       <h3 class="red"><a name="delete" id="delete"></a>Delete one of my articles/notes</h3>
+        <form jwcid="@TreehouseSearch" callbackType="ognl:@org.tolweb.tapestry.TreehouseSearchResults@DELETE_ARTICLE_NOTE" instructions="Click the 'delete' link to delete your article/note"  
+            linkString="delete" isTreehouses="ognl:false" searchPageName="ArticleNoteManager" 
+            wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@SCIENTIFIC_WRAPPER"> 
+    <p>Find articles/notes that match the following criteria:</p>
+    	</form>
+</html>

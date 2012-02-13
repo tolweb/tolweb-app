@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+<input-symbol key="pageContent" class="java.lang.String"/>
+<body>
+<unique>
+<![CDATA[
+var step_aboutpage = 'About this Page';
+var step_pagecontent = '${pageContent}';
+var step_uploadeditmedia = 'Upload/Edit Media';
+var step_refsinternetinfo = 'References and Links';
+var step_learninginfo = 'Learning Information';
+var step_attachtogroup = 'Attach to Group';
+var step_notes = 'Add Notes';
+var step_publish = 'Publish';
+var step_wqintrotask = 'WebQuest Introduction and Task';
+var step_wqprocess = 'WebQuest Process';
+var step_wqevalconc = 'WebQuest Evaluation and Conclusion</a>';
+var step_wqteacherpage = 'WebQuest Teacher Page';
+var step_trsupportmats = 'Support Materials';
+var step_portfoliopages = 'Portfolio Pages';
+]]>
+</unique>
+</body>
+</script>

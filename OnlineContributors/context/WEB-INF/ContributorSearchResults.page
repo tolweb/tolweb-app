@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page-specification PUBLIC 
+  "-//Apache Software Foundation//Tapestry Specification 3.0//EN" 
+  "http://jakarta.apache.org/tapestry/dtd/Tapestry_3_0.dtd">
+<page-specification class="org.tolweb.tapestry.ContributorSearchResults">    
+    <description>Search Results Page for Tree of Life Contributors</description>
+    <property-specification name="contributors" type="java.util.List" persistent="yes"/>
+    <property-specification name="actionType" type="byte"/>
+    <property-specification name="editedObjectId" type="java.lang.Long"/>
+    <property-specification name="selectedContributorId" type="int"/>
+    <property-specification name="contributorType" type="byte"/>
+</page-specification>

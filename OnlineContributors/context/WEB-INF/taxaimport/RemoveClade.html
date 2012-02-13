@@ -1,0 +1,61 @@
+<html jwcid="@NewBarebonesFormWrapper" title="Taxa Import Workflow: Remove Clade" bodyId="articlesbody">
+<span jwcid="@If" condition="ognl:!warned && !wasDeleted && !showDownloadedNodes" element="ognl:null">
+<h2>Taxa Import Workflow: Remove Clade</h2>
+<p class="error">
+    This action will inactivate all subgroups of the basal node.  These groups will be removed for the current tree structure, but they will
+    remain in the system, so they can be resurrected at a later time.  
+</p>
+	<form jwcid="@Form">
+		<p>	
+			Enter basal node id: 
+			<input jwcid="@TextField" value="ognl:basalNodeId"  translator="translator:number" validators="validators:required" />
+			<a jwcid="@PageLink" page="FindNodeIds" renderer="ognl:renderer">Find node id...</a>
+		</p>
+		<p><label><input type="checkbox" jwcid="@Checkbox" value="ognl:createObjectManifest"/>create object manifest for clade</label></p>		
+		<p><label><input type="checkbox" jwcid="@Checkbox" value="ognl:clearOtherNames"/>clear Other Names for subgroups</label></p>
+	    <p><input jwcid="@Submit" listener="ognl:listeners.issueWarning" label="Yes, Remove the Subgroups!"/>
+	    <input jwcid="@Submit" listener="ognl:listeners.returnToManager" label="Cancel"/></p>
+	</form>	
+</span>
+<span jwcid="@If" condition="ognl:warned" element="ognl:null">
+<h2>Do you really want to remove all subgroups of "<span jwcid="@Insert" value="ognl:basalNodeName"/>"?</h2>
+<p class="error">
+    This action will inactivate all descendants of <span jwcid="@Insert" value="ognl:basalNodeName"/>.  
+    Are you sure you wish to continue? 
+</p>
+	<form jwcid="@Form" name="secondForm">
+		<input jwcid="@Hidden" value="ognl:basalNodeId"/>
+		<input jwcid="@Hidden" value="ognl:basalNodeName"/>
+		<input jwcid="@Hidden" value="ognl:clearOtherNames"/>
+		<input jwcid="@Hidden" value="ognl:continue" name="confirm" />
+	    <input jwcid="@Submit" listener="ognl:listeners.removeClade" label="Yes! I REALLY want to remove all of the subgroups!" />
+	    <input jwcid="@Submit" listener="ognl:listeners.returnToManager" label="Cancel"/>
+	</form>
+</span>
+<span jwcid="@If" condition="ognl:wasDeleted" element="ognl:null">
+	<h2>Subgroups have been inactivated and removed from the tree structure.</h2>
+	
+	<span jwcid="@If" condition="ognl:duplicateNames != null && !duplicateNames.isEmpty">
+		<h3 class="error">Warning - Clade Contains Duplicate Names</h3>
+		<ul jwcid="@For" source="ognl:duplicateNames" value="ognl:currentDuplicateName" element="ul">
+			<li> <span jwcid="@Insert" value="ognl:currentDuplicateName" /> appears more than once in the inactivated clade. </li>
+		</ul>
+	</span>
+	
+	<a jwcid="@PageLink" page="xml/TaxaImportHome">Workflow Home...</a>
+</span>
+<span jwcid="@If" condition="ognl:showDownloadedNodes" element="ognl:null">
+	<h2>Clade contains downloaded nodes!</h2>
+	<p>A clade cannot be removed while a contributor has nodes downloaded.  Please use the information below to resolve the downloads.  Or email treegrow@tolweb.org</p>
+	<ul jwcid="@For" source="ognl:downloadedNodes" value="ognl:currentDownloadedNode" element="ul">
+		<li><p>root node: <span jwcid="@Insert" value="ognl:currentDownloadedNode.rootNode.name"/> 
+				(<span jwcid="@Insert" value="ognl:currentDownloadedNode.rootNode.nodeId"/>) <br/>
+				contributor: <span jwcid="@Insert" value="ognl:contributorForCurrentDownloadedNode"/> <br/>
+				downloaded: <span jwcid="@Insert" value="ognl:currentDownloadedNode.downloadDate"/> <br/> 
+				ip: <span jwcid="@Insert" value="ognl:currentDownloadedNode.ipAddress"/> 
+			</p>				
+		</li>
+	</ul>
+	<a jwcid="@PageLink" page="xml/TaxaImportHome">Workflow Home...</a>
+</span>
+</html>

@@ -1,0 +1,28 @@
+<table jwcid="table@contrib:Table" source="ognl:projects" row="ognl:currentProject" columns="!title, !id, !edit, !delete">
+	<span jwcid="titleColumnHeader@Block">Project Title / Group</span>
+	<span jwcid="titleColumnValue@Block">
+	    <span jwcid="@Insert" value="ognl:currentProject.name"/> / <span jwcid="@Insert" value="ognl:currentProject.classGroup"/>
+	</span>    
+	<span jwcid="idColumnHeader@Block">ID</span>    
+	<span jwcid="idColumnValue@Block">    
+		<span jwcid="@Insert" value="ognl:currentProject.projectId"/>
+	</span>
+	<span jwcid="editColumnHeader@Block">&nbsp;</span>
+	<span jwcid="editColumnValue@Block">
+	    <span jwcid="@If" condition="ognl:currentProject.isApproved" element="ognl:null">
+	    <a jwcid="@ExternalLink" page="ClassroomProjectPage" parameters="ognl:currentProject.projectId">manage project, edit/add comments to student treehouses</a>
+	    </span>
+	    <span jwcid="@Else" element="ognl:null">
+	        Project is pending approval
+	    </span>
+	</span>
+	<span jwcid="deleteColumnHeader@Block">&nbsp;</span>
+	<span jwcid="deleteColumnValue@Block">
+	    <span jwcid="@If" condition="ognl:currentProject.isApproved && !currentProject.isClosed" element="ognl:null">
+			<a jwcid="@DirectLink" listener="ognl:listeners.closeProject" parameters="ognl:currentProject.projectId">close</a>
+	    </span>
+	    <span jwcid="@If" condition="ognl:currentProject.isClosed">
+	        Project is closed
+	    </span>
+	</span>
+</table>

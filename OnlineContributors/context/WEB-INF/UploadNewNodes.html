@@ -1,0 +1,172 @@
+<html jwcid="@Wrapper" title="Upload New Nodes">
+<h2 class="clear">Batch Upload New Tree of Life Taxa</h2>
+<span jwcid="@If" condition="ognl:existingNodeNames != null || errorMessage != null">
+    <form jwcid="@Form">
+        <input jwcid="@Hidden" value="ognl:previousString"/>
+        <input jwcid="@Hidden" value="ognl:useTaxonLists"/>
+        <input jwcid="@Hidden" value="ognl:attachToExistingNodes"/>
+        <input jwcid="@Hidden" value="ognl:extinctIndicatorString"/>
+		<input jwcid="@Hidden" value="ognl:sourceDbIdSeparatorString"/>                
+        <input jwcid="@Hidden" value="ognl:nodeId"/>
+        <input jwcid="@Hidden" value="ognl:createPageOption"/>
+        <input jwcid="@Hidden" value="ognl:createPagesSuperfamily"/>
+        <input jwcid="@Hidden" value="ognl:createPagesSubfamily"/>
+        <input jwcid="@Hidden" value="ognl:createPagesFamily"/>
+        <input jwcid="@Hidden" value="ognl:createPagesTribe"/>
+        <span jwcid="@If" condition="ognl:existingNodeNames != null">
+    <p>The following taxa already exist in the database: <span jwcid="@Insert" value="ognl:existingNodeNamesString"/>
+    Do you wish to continue uploading?</p>
+    <input jwcid="@Submit" value="No, Cancel" listener="listener:cancelUpload"/>
+    <input jwcid="@Submit" value="Yes, Continue" listener="listener:uploadPreviousString"/>    
+    	</span>
+        <span jwcid="@Else">
+            <p class="error"><span jwcid="@Insert" value="prop:errorMessage"/></p>
+        </span>
+    </form>
+</span>
+<span jwcid="@Else">
+	<p jwcid="@If" condition="ognl:nodeId == null">
+	    Search for the parent node for the new nodes, or the parent page if attaching to multiple
+	    existing terminal nodes: 
+		<form jwcid="@NodesSearch" wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@DEFAULT_WRAPPER"
+	        returnPageName="ognl:pageName" onlySelectPagedNodes="ognl:false" requireEditPermissions="ognl:true"
+	        callbackType="ognl:@org.tolweb.tapestry.FindNodesResults@UPLOAD_NEW_NODES_CALLBACK"/>
+	</p>
+	<p jwcid="@Else">
+		<form jwcid="@Form" listener="listener:uploadNewNodes">
+	        <input jwcid="@Hidden" value="ognl:nodeId"/>
+            <div class="box" style="width: 275px; float: right">
+				<div>
+                    <input jwcid="@Checkbox" value="ognl:incompleteSubgroups"/>Mark <span jwcid="@Insert" value="ognl:nodeName"/> taxon list as incomplete
+               		<input jwcid="@Submit" value="Save Changes" listener="listener:markIncomplete"/>
+                </div>
+	            (Click "Save Changes" to mark the taxon list as incomplete without uploading new nodes)
+            </div>            
+	        <p>Uploaded taxa will be attached to <span jwcid="@Insert" value="ognl:nodeName"/></p>
+			<p class="instructions" style="width: 50%">See instructions for <a href="#format">Formatting 
+            	Your Taxon List</a> below, and make sure you select the proper <a href="#options">
+                Options</a> for your list. You may either upload a text file from your computer,
+			    or paste the taxon list directly in the textbox below. To initiate the upload, click on 
+                the <a href="#upload">Upload New Nodes</a> button.
+            </p>
+
+           
+	<hr/>  
+		<p>You may either upload a text file from your computer or type the taxa in directly on this page:</p>
+		<span jwcid="@RadioGroup" selected="ognl:uploadOption">      
+	        <ul class="nodisc">
+	        <li><input jwcid="@Radio" value="ognl:@org.tolweb.tapestry.UploadNewNodes@UPLOAD_FILE" id="fileRadio"/> Use the <strong>Browse</strong> (<strong>Choose File</strong>) button to locate the file you want to upload from your computer. 
+	        <input jwcid="@Upload" file="ognl:uploadFile" onFocus="document.getElementById('fileRadio').click()"/>
+	        </li>
+			<li><input jwcid="@Radio" value="ognl:@org.tolweb.tapestry.UploadNewNodes@USE_TEXT" id="textRadio"/> Type or paste the text in the following field:<br/>
+	        <textarea jwcid="@TextArea" value="ognl:typedText" rows="30" cols="70" onFocus="document.getElementById('textRadio').click();"/></li>
+	        </ul>
+	    </span>
+	        <p><input jwcid="@Checkbox" value="ognl:attachToExistingNodes"/> Attach new nodes to existing terminal nodes if names match.</p>        
+	        <!--
+	        <p>Select the format of the file you are uploading <input jwcid="@PropertySelection" model="ognl:fileTypeModel" value="ognl:fileType"/>
+	        <p>Enter the regular expression to match names and authorities (leave blank if already tab-separated) <input jwcid="@TextField" value="ognl:nameRegexString"/></p>
+	        <p>Enter the replacement regular expression for names and authorities (this should be tab-separated in the format <em>name&lt;tab&gt;date</em>) <input jwcid="@TextField" value="ognl:nameRegexReplacementString"/></p>
+	        -->	        
+	        <p>Enter the extinct indicator string (assumed to be immediately after the taxon name) <input jwcid="@TextField" value="ognl:extinctIndicatorString"/></p>	
+	        <p>Choose a source database for the node <input jwcid="@PropertySelection" model="ognl:databaseModel" value="ognl:sourceDatabase"/></p>
+	        <p>Enter the source database node id separator (assumed to be after the date) <input jwcid="@TextField" value="ognl:sourceDbIdSeparatorString"/></p>
+	        <p>Automatically create pages based on the following rules:</p>
+	        <ul class="nodisc">
+	        <span jwcid="@RadioGroup" selected="ognl:createPageOption">
+	            <li>
+	                <input jwcid="@Radio" value="ognl:@org.tolweb.tapestry.UploadNewNodes@ALL_NAMED"/>
+	                <label>Create pages for all named nodes</label>
+	            </li>
+	            <li>
+	                <input jwcid="@Radio" value="ognl:@org.tolweb.tapestry.UploadNewNodes@ALL_NON_TERMINAL"/>
+					<label>Create pages for all named nodes except terminal nodes</label>
+	            </li>
+	            <li>
+	                <input jwcid="@Radio" value="ognl:@org.tolweb.tapestry.UploadNewNodes@SPECIFY_RANKS"/>
+	                <label>Create pages only for the following taxa:</label>
+			        <ul>
+			            <li>
+			                <input jwcid="@Checkbox" value="ognl:createPagesSuperfamily"/>
+			                <label>all taxa ending in "oidea" (superfamilies)</label>
+			        	</li>
+			            <li>
+			                <input jwcid="@Checkbox" value="ognl:createPagesFamily"/>
+			                <label>all taxa ending in "idae" (families)</label>
+			        	</li>
+			            <li>
+			                <input jwcid="@Checkbox" value="ognl:createPagesSubfamily"/>
+			                <label>all taxa ending in "inae" (subfamilies)</label>
+			        	</li>
+			            <li>
+			                <input jwcid="@Checkbox" value="ognl:createPagesTribe"/>
+			                <label>all taxa ending in "ini" (tribes)</label>
+			        	</li>
+			        </ul>                
+				</li>            
+	        </span>
+	        <li><input jwcid="@Checkbox" value="ognl:useTaxonLists"/>Create pages with taxon lists instead of trees</li>
+	        </ul>
+	        <input jwcid="@Submit" value="Upload New Nodes"/>        
+	    </form>
+	<div class="instructions">
+       	<h4><a name="format"></a>Formatting Your Taxon List</h4>
+
+		<p>
+		Here are some instructions on how to create the taxon list for your batch
+	    upload. If you wish to do more complex manipulations, you should use 
+        <a href="http://treegrow.tolweb.org/"><em>TreeGrow</em></a>. If there are 
+        problems with the taxa you have uploaded, <em>TreeGrow</em> will also let 
+        you delete some or all of the new branches. You can then fix the problems 
+        and upload a revised list.
+        </p>
+	    <p class="box">
+        Note that you cannot use the <strong>tab</strong> key in the text box above. 
+        If you want to structure your list or have authority data included, you need 
+        to create your taxon list in another application. Simple text editors like 
+        <em>Notepad</em> (on Windows) or <em>TextEdit</em> (on the Mac) are best for 
+        this. You can also use <em>MS Word</em> or <em>Excel</em>, but you may run 
+        into problems with the display of special characters like &eacute; or &uuml;. 
+        </p>
+        <p>Your list of taxa should be of the following format: </p>
+		<ol>
+			<li>Each line should have one and<strong> only one taxon</strong>.</li>
+			<li>The <strong>rank</strong> of the taxon should <strong>not</strong> be included.</li>
+			<li>If you wish, the <strong>author and date</strong> of the taxon can be included
+			    as follows, where <span class="pre">&lt;tab&gt;</span> indicates a tab:
+			    <p class="pre"><strong>taxon name</strong>&lt;tab&gt;<strong>author</strong>&lt;tab&gt;<strong>date</strong></p>
+	    	</li>
+			<li>If there are any parentheses in the author data of leaf nodes, the name
+			    will be marked as a <strong>new combination</strong>.</li>
+
+			<li>Taxa that are indented (using tabs) and that are listed below another taxon
+				will be included as <strong>subgroups</strong> of that taxon. For example, 
+            	with this list: 
+<p class="pre">
+	    <strong>A</strong>	    <br>
+	    &lt;tab&gt;<strong>B
+	    </strong><br>
+	    &lt;tab&gt;<strong>C
+	    </strong><br>
+
+	    &lt;tab&gt;&lt;tab&gt;<strong>D
+	    </strong><br>
+	    &lt;tab&gt;&lt;tab&gt;<strong>E
+	    </strong><br>
+	    <strong>F</strong>	    <br>
+	    <strong>G</strong> 
+</p>
+			Taxa A, F, and G will be added to [<span jwcid="@Insert" value="ognl:nodeName"/>], with B and C as subgroups of A,
+			and with D and E as subgroups of C.</li>
+			<li>In the case of <strong>monotypic taxa</strong>, please do <strong>not</strong> 
+            	create separate taxa for different ranks. Always use the most specific name available 
+            	for a group; i. e., in the case of a monotypic genus, use the name of the species, 
+            	not the name of the genus. If you would rather have the name of the genus show up on 
+            	the page of the containing group, you can achieve this by using the <em>Preferred Label</em> 
+                option. For instructions on how to do this, see:  <a href="/tree/sep/tech/taxonnames.html">ToL Web Tools: Taxon Names</a>.</li>
+		</ol>
+
+	</div>         
+	</p>
+</span>
+</html>

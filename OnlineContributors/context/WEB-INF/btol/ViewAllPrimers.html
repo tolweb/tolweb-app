@@ -1,0 +1,25 @@
+<html jwcid="@btol/ProjectWrapper" title="View All Primers">
+<h2 class="clear">All Primers</h2>
+<form jwcid="@Form">
+<p>Show primers for gene: <input jwcid="@PropertySelection" value="ognl:selectedGene" model="ognl:geneSelectionModel" onchange="document.forms[0].submit()"/></p>
+<p><input jwcid="@Checkbox" value="prop:showDefunct" onchange="document.forms[0].submit()"/>Show Defunct Primers</p>
+<!--
+<p><input jwcid="@Checkbox" value="ognl:showNotes" onclick="showHideNotes(this.checked)"/>Show Notes</p>
+-->
+</form>
+<table jwcid="@contrib:Table" source="ognl:primers" row="ognl:currentPrimer"
+    columns="ognl:columnsString" pageSize="20" id="ognl:tableId">
+    <td jwcid="detailsColumnHeader@Block"></td>
+    <td jwcid="detailsColumnValue@Block"><a jwcid="@DirectLink" listener="listener:viewFullPrimerInfo" parameters="ognl:{currentPrimer.id}">details</a></td>    
+    <td jwcid="editColumnHeader@Block"></td>
+    <td jwcid="editColumnValue@Block"><a jwcid="@ExternalLink" page="btol/EditPrimer" parameters="ognl:{currentPrimer.id, pageName}">edit</a></td>
+    <td jwcid="deleteColumnHeader@Block"></td>
+    <td jwcid="deleteColumnValue@Block"><a jwcid="@btol/DeleteObjectLink" idToDelete="ognl:currentPrimer.id"/></td>
+    <td jwcid="notesColumnHeader@Block"></td>
+    <td jwcid="notesColumnValue@Block"></td>
+</table>
+<p>
+<a jwcid="@DirectLink" listener="listener:editNewObject">Add another primer</a>
+</p>
+<script jwcid="@Script" script="ShowNotes.script" tableId="ognl:tableId" showNotes="ognl:showNotes"/>
+</html>

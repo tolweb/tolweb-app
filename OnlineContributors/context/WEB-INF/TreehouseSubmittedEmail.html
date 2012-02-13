@@ -1,0 +1,34 @@
+<span jwcid="@MailBlock" from="treehousesubmission@tolweb.org" smtp="localhost" 
+subject="ognl:isStudent ? 'Treehouse submitted to teacher' : (isTeacher ? page.contributor.displayName + ' submitted student treehouse to ToL ' : 'New treehouse submission')" 
+to="ognl:emailAddresses" html="ognl:false">
+<span jwcid="@If" condition="ognl:isStudent" element="ognl:null">
+There was a treehouse submitted to you for review
+entitled '<span jwcid="@Insert" value="ognl:treehouse.pageTitle"/>' from <span jwcid="@Insert" value="ognl:page.contributor.displayName"/>
+on <span jwcid="@Insert" value="ognl:new java.util.Date()"/>
+<span jwcid="@Insert" value="ognl:'\n'" raw="ognl:true"/>
+Student treehouses are not submitted to the ToL for publication until you 
+review them for a few key areas. To do so, login and select to "Review 
+Submitted Treehouses"  from either the treehouse manager or the classroom 
+manager.
+
+From the "Review Submitted Treehouses" page you can view the treehouse and the 
+areas to be reviewed and decide if the treehouse is ready to be submitted to 
+the ToL for publication, or if it should be returned to the student to revise.
+
+Note that the student had to check off a list that indicated their treehouse 
+was ready for publication before it was submitted to you. 
+You can view an example of what this checklist consists of at: 
+http://www.tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/PublishChecklist.html    
+</span>
+<span jwcid="@Else" element="ognl:null">
+There was a treehouse submission entitled '<span jwcid="@Insert" value="ognl:treehouse.pageTitle"/>'
+    from <span jwcid="@Insert" value="ognl:page.contributor.displayName"/> (<span jwcid="@Insert" value="ognl:page.contributor.email"/>)
+    at <span jwcid="@Insert" value="ognl:new java.util.Date()"/>.
+
+You can view the treehouse by following this URL: 
+    
+<span jwcid="@Insert" value="ognl:workingUrl"/>
+
+Happy editing.
+</span>
+</span>

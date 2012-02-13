@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<info primitiveTypes='element'>
+	<hide property='position'/>
+	<element name='FieldNode'>
+		<attribute name="id" property="id"/>
+		<attribute name="name" property="name"/>
+		<addDefaults/>
+	</element>
+</info>

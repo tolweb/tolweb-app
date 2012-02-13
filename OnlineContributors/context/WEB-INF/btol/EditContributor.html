@@ -1,0 +1,45 @@
+<html jwcid="@btol/ProjectWrapper" title="Edit Person">
+	<span jwcid="@If" condition="ognl:wasSaved">
+        <h2 class="clear">Person successfully saved</h2>
+        You may now return to your edit form, reload your browser and they will appear in the list.
+        <p class="center">
+            <a href="javascript:window.close();">Close Window</a>
+        </p>
+    </span> 
+    <span jwcid="@Else">
+		<h2 class="clear">Edit Person</h2>
+	    <span jwcid="@If" condition="ognl:validationDelegate.hasErrors">
+	        <h3 class="error">
+                <span jwcid="@Delegator" delegate="ognl:validationDelegate.firstError"/>
+			</h3>
+	    </span>    
+	    <span jwcid="@Else">
+	    	<p>Fields marked with a '*' are required.</p>
+	    </span>        
+	    <form jwcid="@Form" success="listener:saveContributor" delegate="ognl:validationDelegate" clientValidationEnabled="ognl:true">
+		    <ul class="nodisc">
+		        <li><span jwcid="@FieldLabel" field="component:lastNameField">Last Name</span> 
+		        	<input jwcid="lastNameField@TextField" value="ognl:contributorToEdit.lastName"
+		            validators="validators:required" displayName="Last Name*"/></li>                
+		        <li><span jwcid="@FieldLabel" field="component:firstNameField">First Name</span>
+		            <input jwcid="firstNameField@TextField" value="ognl:contributorToEdit.firstName" 
+		            displayName="First Name"/></li>
+		        <li><span jwcid="@FieldLabel" field="component:emailField">Email</span>
+		        	<input jwcid="emailField@TextField" value="ognl:contributorToEdit.email"
+		            displayName="Email*" validators="validators:email" size="40"/></li>
+		        <li><span jwcid="@FieldLabel" field="component:initialsField">Initials</span>
+		        	<input jwcid="initialsField@TextField" value="ognl:contributorToEdit.initials"
+		            displayName="Initials*" size="40"/></li>
+                <span jwcid="@If" condition="prop:samePerson">
+                <li><label>New password</label> <input jwcid="password1Field@TextField" value="prop:password1" hidden="ognl:true"/></li>
+                <li><label>New password (again)</label> <input jwcid="password2Field@TextField" value="prop:password2" hidden="ognl:true"/></li>                
+                </span>
+                <span jwcid="@If" condition="prop:editorIsAdministrator">
+                    <li><span jwcid="@Checkbox" value="prop:isProjectMember" disabled="prop:editedIsAdministrator"/> Is project member</li>
+                    <li><span jwcid="@Checkbox" value="prop:canViewMolecular" disabled="prop:editedIsAdministrator"/> Can view molecular</li>                                        
+                </span>
+		        <li><input jwcid="@Submit" value="Save Person"/></li>
+		    </ul>
+	    </form>
+    </span>
+</html>

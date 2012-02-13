@@ -1,0 +1,47 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:false" title="Web Quest Evaluation and Conclusion" additionalDelegate="ognl:delegate">
+<div id="trhs2editpgtop">
+	<a name="trhs2text"></a>
+	<h3 class="sectionheaderblub">Step 4. Edit WebQuest Evaluation and Conclusion</h3>
+    <div class="boxtocpages">
+        <div jwcid="@TreehouseImportantDiv">
+			<li><a href="#wqevaluation">Evaluation</a></li>
+			<li><a href="#wqconclusion">Conclusion</a></li>
+			<li><a href="#addmedia">Add Media</a></li>
+        </div>
+		<div jwcid="@WebquestHelpDiv">
+			<li><a jwcid="@HelpLink" noDiv="ognl:true" pageName="WebquestHelpMessagesPage" helpName="WebQuest Evaluation and Conclusion">WebQuest Evaluation and Conclusion</a></li>
+        </div>
+		<div jwcid="@TreehouseWarningDiv">
+			<div class="importantnartop">
+                <h5>WebQuest Instructions</h5>
+				The learners who will engage in the WebQuest are the intended audience for the sections that you will compose on this page.
+			</div>
+            <div class="spacer">&nbsp;</div>
+        </div>
+    </div>
+	<div id="webquestcontent">
+		<a name="webquestcontent"></a>
+		<h3 class="sectionheaderblubtop">WebQuest Evaluation and Conclusion</h3>
+		<div class="boxtoc" id="wqevaluation"><a name="wqevaluation"></a>
+        	<a jwcid="@HelpLink" pageName="WebquestHelpMessagesPage" helpName="WebQuest Evaluation"/>
+			<h4>Evaluation</h4>
+			<p class="instructionshrt">
+				Explain the methods of assessment used to evaluate the objectives of this WebQuest.</p>
+            <div jwcid="@HTMLEditorBox"/>
+            <textarea jwcid="@PreparedTextArea" valuePath="evaluation" cols="ognl:60" rows="ognl:30" useEditor="prop:useHTMLEditor"></textarea>
+        </div>
+		<div class="topbottom2">
+			<a href="#trhseditnav">top</a> | <a href="#trhssavepreview">go to save and preview!</a>
+		</div>
+		<div class="spacer">&nbsp;</div>
+        <div id="wqconclusion" class="boxtoc">
+            <a name="wqconclusion"></a>
+            <a jwcid="@HelpLink" pageName="WebquestHelpMessagesPage" helpName="WebQuest Conclusion"/>
+            <h4>Conclusion</h4>
+            <div class="instructionshrtlrg">
+				<p>Add a conclusion below.</p>
+			</div>
+            <div jwcid="@HTMLEditorBox" idIndex="ognl:2"/>
+            <textarea jwcid="@PreparedTextArea" valuePath="conclusion" cols="ognl:60" rows="ognl:30" useEditor="prop:useHTMLEditor"></textarea>
+        </div>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<info primitiveTypes="element">
+  <element name="node">
+    <attribute name="extinct" property="extinct"/>
+    <attribute name="id" property="id"/>
+    <attribute name="position-confidence" property="confidence" />
+    <attribute name="phylesis" property="phylesis"/>
+    <attribute name="leaf" property="leaf"/>
+    <attribute name="has-page" property="hasPage"/>
+    <attribute name="ancestor-with-page" property="ancestorWithPage"/>
+    <attribute name="italicize-name" property="italicizeName"/>
+    <attribute name="incomplete-subgroups" property="incompleteSubgroups"/>
+    <attribute name="show-authority" property="showAuthority"/>
+    <attribute name="show-authority-containing" property="showAuthorityContaining"/>
+    <attribute name="is-new-combination" property="isNewCombination"/>
+    <attribute name="combination-date" property="combinationDate"/>
+    <attribute name="child-count" property="childCount"/>
+    <element name="name-comment" property="nameComment" />
+    <element name="combination-author" property="combinationAuthor" />
+    <element name="auth-date" property="authDate" />
+    <element name="geographic-distribution" property="geographicDistribution" />
+    <element name="source-information" property="sourceInformation" />
+    <addDefaults />
+  </element>
+</info>

@@ -1,0 +1,2343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tree-of-life-web version="1.0">
+  <nodes>
+    <node italicize-name="true">
+      <name>Algophilus</name>
+      <auth-date>1924</auth-date>
+      <authority>Zimmermann</authority>
+      <rank>Subgenus</rank>
+      <nodes>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus lathridioides</name>
+          <auth-date>1924</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) South Africa.</description>
+          </geographic-distribution>
+        </node>
+      </nodes>
+    </node>
+    <node italicize-name="true">
+      <name>Apteraliplus</name>
+      <auth-date>1943</auth-date>
+      <authority>Chandler</authority>
+      <rank>Subgenus</rank>
+      <nodes>
+        <node italicize-name="true" leaf="true" is-new-combination="true">
+          <name>Haliplus parvulus</name>
+          <auth-date>1913</auth-date>
+          <authority>Roberts</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Brychius parvulus</name>
+              <authority>Roberts</authority>
+              <auth-date>1913</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus wallisi</name>
+              <authority>Hatch</authority>
+              <auth-date>1944</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NA) US (California, Oregon, Washington)</description>
+          </geographic-distribution>
+        </node>
+      </nodes>
+    </node>
+    <node italicize-name="true">
+      <name>Haliplidius</name>
+      <auth-date>1928</auth-date>
+      <authority>Guignot</authority>
+      <rank>Subgenus</rank>
+      <nodes>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus confinis</name>
+          <auth-date>1828</auth-date>
+          <authority>Stephens</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus confinis</name>
+              <authority>var. concolor Lentz</authority>
+              <auth-date>1879</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus confinis</name>
+              <authority>var. halberti Bullock</authority>
+              <auth-date>1928</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Haliplus confinis</name>
+              <authority>var. nebulosus Stephens</authority>
+              <auth-date>1828</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="3">
+              <name>Haliplus lineatus</name>
+              <authority>Aub??</authority>
+              <auth-date>1836:21</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="4">
+              <name>Haliplus confinis</name>
+              <authority>var. pallens Fowler</authority>
+              <auth-date>1887</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Austria, Belgium, Byelorussia, Croatia, Czech Republic, Denmark, Finland, France, Germany, Great Britain, Greece, Hungary, Iraq, Ireland, Italy, Kazakhstan, Latvia, Netherlands, Norway, Poland, Russia (Central European Territory, East Siberia, North European Territory, South European Territory, West Siberia), Slovakia, Slovenia, Spain, Sweden, Switzerland, Transcaucasia, Turkey, Ukraine, Yugoslavia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true" is-new-combination="true">
+          <name>Haliplus obliquus</name>
+          <auth-date>1787</auth-date>
+          <authority>Fabricius</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Dytiscus obliquus</name>
+              <authority>Fabricius</authority>
+              <auth-date>1787</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus albinus</name>
+              <authority>Reitter</authority>
+              <auth-date>1911</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Dytiscus amoenus</name>
+              <authority>Olivier</authority>
+              <auth-date>1795</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="3">
+              <name>Haliplus albinus</name>
+              <authority>var. muelleri Reitter</authority>
+              <auth-date>1912</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Austria, Belgium, Bosnia Herzegovina, Bulgaria, Byelorussia, Croatia, Czech Republic, Denmark, Finland, France, Germany, Great Britain, Greece, Hungary, Iran, Iraq, Ireland, Italy, Latvia, Liechtenstein, Luxembourg, Morocco, Netherlands, Norway, Poland, Romania, Russia (Central European Territory, South European Territory, Siberia), Slovakia, Slovenia, Spain, Sweden, Switzerland, Transcaucasia, Turkey, Ukraine, Yugoslavia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus rejseki</name>
+          <auth-date>2003</auth-date>
+          <authority>&amp;#8776;&amp;#8224;&amp;#8776;&amp;#8226;astn&amp;#8730;&amp;#937; &amp;amp; Boukal</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) China (Sichuan). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus subseriatus</name>
+          <auth-date>1921</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Argentina, Chile, Falkland Islands. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus varius</name>
+          <auth-date>1822</auth-date>
+          <authority>Nicolai</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus maritimus</name>
+              <authority>Fairmaire &amp; Laboulb??ne</authority>
+              <auth-date>1855</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus pictus</name>
+              <authority>Mannerheim</authority>
+              <auth-date>1844</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Belgium, Byelorussia, Czech Republic, Finland, France, Germany, Great Britain, Italy, Netherlands, Poland, Russia (Central European Territory, North European Territory, South European Territory), Slovakia, Ukraine. </description>
+          </geographic-distribution>
+        </node>
+      </nodes>
+    </node>
+    <node italicize-name="true">
+      <name>Haliplus</name>
+      <auth-date>1802</auth-date>
+      <authority>Latreille</authority>
+      <rank>Subgenus</rank>
+      <othernames>
+        <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+          <name>Haliplinus</name>
+          <authority>Guignot</authority>
+          <auth-date>1939</auth-date>
+        </othername>
+      </othernames>
+      <nodes>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus aliae</name>
+          <auth-date>2003</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) China (Tianjin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus apicalis</name>
+          <auth-date>1868</auth-date>
+          <authority>Thomson</authority>
+          <rank>Species</rank>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus =?</name>
+          <auth-date>1828</auth-date>
+          <authority>Haliplus brevis Stephens</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus striatus</name>
+              <authority>Sharp</authority>
+              <auth-date>1869</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus strigatus</name>
+              <authority>Roberts</authority>
+              <auth-date>1913</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, British Columbia, Manitoba, Northwest Territories, Saskatchewan, Yukon Territory), US (Alaska, Colorado, Minnesota, New Mexico, North Dakota, South Dakota, Utah, Washington, Wyoming); (PL) Belgium, Denmark, Germany, Great Britain, Hungary, Ireland, Netherlands, Norway, Poland, Russia (North European Territory, West Siberia), Sweden. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus blanchardi</name>
+          <auth-date>1913</auth-date>
+          <authority>Roberts</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Ontario, Quebec), US (Connecticut, Georgia, Illinois, Louisiana, Massachusetts, Michigan, Minnesota, Missouri, New Jersey, New York, Rhode Island, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus distinctus</name>
+          <auth-date>1933</auth-date>
+          <authority>Wallis</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (British Columbia), US (Colorado, Idaho, Montana, Utah). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus dorsomaculatus</name>
+          <auth-date>1924</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus allisonae</name>
+              <authority>Brigham</authority>
+              <auth-date>1977</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NA) Canada (British Columbia), US (California, Idaho, Montana, Oregon, Utah, Washington, Wyoming). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus falli</name>
+          <auth-date>1940</auth-date>
+          <authority>Mank</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Manitoba, Northwest Territories, Quebec, Yukon Territory), US (Alaska). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus fluviatilis</name>
+          <auth-date>1836</auth-date>
+          <authority>Aub&amp;#8730;&amp;#169;</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus fluviatilis</name>
+              <authority>var. maculatus Gozis</authority>
+              <auth-date>1915</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus fluviatilis</name>
+              <authority>var. mannerheimi Gozis</authority>
+              <auth-date>1915</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Afghanistan, Austria, Belgium, Bosnia Herzegovina, Bulgaria, Byelorussia, Croatia, Czech Republic, Denmark, Finland, France, Germany, Great Britain, Greece, Hungary, Ireland, Italy, Kazakhstan, Kyrgyzstan, Latvia, Luxembourg, Macedonia, Netherlands, Poland, Romania, Russia (Central European Territory, East Siberia, North European Territory, South European Territory, West Siberia), Slovakia, Spain, Sweden, Transcaucasia, Turkey, Ukraine, Yugoslavia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus fulvicollis</name>
+          <auth-date>1837</auth-date>
+          <authority>Erichson</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus jakowlewi</name>
+              <authority>Semenov</authority>
+              <auth-date>1898</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Belgium, Bosnia Herzegovina, Bulgaria, Byelorussia, Caucasus, Croatia, Czech Republic, Denmark, Finland, France, Germany, Greece, Hungary, Italy, Kazakhstan, Netherlands, Norway, Poland, Russia (Central European Territory, North European Territory, South European Territory, West Siberia), Slovakia, Sweden, Transcaucasia, Ukraine, Yugoslavia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus furcatus</name>
+          <auth-date>1887</auth-date>
+          <authority>Seidlitz</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus fluviatilis</name>
+              <authority>var. mannerheimii Seidlitz</authority>
+              <auth-date>1887</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Armenia, Austria, Belgium, Byelorussia, China (Heilongjiang), Denmark, Estonia, Finland, France, Georgia, Germany, Great Britain, Hungary, Italy, Kazakhstan, Latvia, Netherlands, Poland, Romania, Russia (South European Territory, West Siberia), Slovakia, Sweden, Ukraine. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus harminae</name>
+          <auth-date>1990</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) China (Hubei). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus heydeni</name>
+          <auth-date>1875</auth-date>
+          <authority>Wehncke</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus foveostriatus</name>
+              <authority>Thomson</authority>
+              <auth-date>1884</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus multipunctatus</name>
+              <authority>Wehncke</authority>
+              <auth-date>1875</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Haliplus ruficollis</name>
+              <authority>var. pedemontanus Fiori</authority>
+              <auth-date>1904</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="3">
+              <name>Haliplus fulvicollis</name>
+              <authority>var. romanus Fiori</authority>
+              <auth-date>1904</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Armenia, Austria, Belgium, Bosnia Herzegovina, Bulgaria, Byelorussia, Caucasus, Croatia, Czech Republic, Denmark, Finland, France, Germany, Great Britain, Greece, Hungary, Iran, Italy, Latvia, Liechtenstein, Kazakhstan, Macedonia, Netherlands, Norway, Poland, Romania, Russia (Central European Territory, East Siberia, North European Territory, South European Territory, West Siberia), Slovakia, Slovenia, Spain, Sweden, Switzerland, Transcaucasia, Turkestan, Turkey, Ukraine. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus fuscicornis</name>
+          <auth-date>Vondel</auth-date>
+          <authority>Holmen</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Russia (East Siberia), Kazakhstan</description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus immaculatus</name>
+          <auth-date>1877</auth-date>
+          <authority>Gerhardt</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Austria, Belgium, Byelorussia, Czech Republic, Denmark, Estonia, Finland, France, Germany, Great Britain, Hungary, Ireland, Latvia, Luxembourg, Netherlands, Norway, Poland, Romania, Russia (Central European Territory, East Siberia, Far East, North European Territory, West Siberia), Slovakia, Spain, Sweden, Ukraine. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus immaculicollis</name>
+          <auth-date>1828</auth-date>
+          <authority>Harris</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus americanus</name>
+              <authority>Aub??</authority>
+              <auth-date>1838</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus pallidus</name>
+              <authority>Roberts</authority>
+              <auth-date>1913</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Haliplus robertsi</name>
+              <authority>Zimmermann</authority>
+              <auth-date>1924</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, British Columbia, Labrador, Manitoba, New Brunswick, Newfoundland, Nova Scotia, Northwest Territories, Ontario, Quebec, Prince Edward Island, Saskatchewan, Yukon Territory), St. Pierre &amp; Miquelon, US (Alaska, Arizona, California, Colorado, Connecticut, District of Columbia, Idaho, Illinois, Indiana, Iowa, Maine, Maryland, Massachusetts, Michigan, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, New York, North Dakota, Ohio, Oregon, Pennsylvania, Rhode Island, South Carolina, South Dakota, Texas, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming); (NT) Mexico. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus interjectus</name>
+          <auth-date>1937</auth-date>
+          <authority>Lindberg</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Finland, Latvia, Russia (East Siberia, Far East, North European Territory, West Siberia). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus japonicus</name>
+          <auth-date>1873</auth-date>
+          <authority>Sharp</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus hummeli</name>
+              <authority>Falkenstr??m</authority>
+              <auth-date>1932</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>haliplus brevior</name>
+              <authority>Nakane</authority>
+              <auth-date>1963</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Haliplus rishwani</name>
+              <authority>Makhan</authority>
+              <auth-date>1999</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) China (Beijing, Guizhou, Jiangsu, Sichuan, Shanghai, Yunnan), Japan (Hokkaido, Honshu, Kyushu), Russia (Far East).</description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus kamiyai</name>
+          <auth-date>1963</auth-date>
+          <authority>Nakane</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Japan (Honshu)</description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus kirgisiensis</name>
+          <auth-date>2006</auth-date>
+          <authority>Holmen &amp;amp; Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Kyrgyzstan </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus lineolatus</name>
+          <auth-date>1844</auth-date>
+          <authority>Mannerheim</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus browneanus</name>
+              <authority>Sharp</authority>
+              <auth-date>1913</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus brownei</name>
+              <authority>Sharp</authority>
+              <auth-date>1913</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Haliplus nomax</name>
+              <authority>var. laevigatus Falkenstr??m</authority>
+              <auth-date>1936</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="3">
+              <name>Haliplus nomax</name>
+              <authority>F.Balfour-Browne</authority>
+              <auth-date>1911</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="4">
+              <name>Haliplus schaumi</name>
+              <authority>Solsky</authority>
+              <auth-date>1867</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="5">
+              <name>Haliplus transversus</name>
+              <authority>Thomson</authority>
+              <auth-date>1870</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Austria, Belgium, Bulgaria, Byelorussia, Denmark, Finland, France, Germany, Great Britain, ? Iraq, Ireland, Italy, Kazakhstan, Latvia, Mongolia, Netherlands, Norway, Poland, Russia (Central European Territory, East Siberia, North European Territory, West Siberia), Sweden, Switzerland, Transcaucasia, Ukraine. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus longulus</name>
+          <auth-date>1850</auth-date>
+          <authority>LeConte</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus hoppingi</name>
+              <authority>Wallis</authority>
+              <auth-date>1933</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, British Columbia, Manitoba, New Brunswick, Northwest Territories, Nova Scotia, Ontario, Prince Edward Island, Quebec, Saskatchewan), US (California, Colorado, Idaho, Illinois, Indiana, Iowa, Maine, Massachusetts, Michigan, Minnesota, Montana, Nevada, New Jersey, New York, North Carolina, North Dakota, Ohio, Oregon, Rhode Island, South Dakota, Washington, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus regimbarti</name>
+          <auth-date>1908</auth-date>
+          <authority>Zaitzev</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus brevis</name>
+              <authority>Wehncke</authority>
+              <auth-date>1880</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus sauteri</name>
+              <authority>Zimmermann</authority>
+              <auth-date>1924:</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) China (Anhui, Fujian, Guangdong, Guizhou, Henan, Hunan, Jiangsu, Jiangxi, Shandong, Zhejiang), Taiwan. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true" is-new-combination="true">
+          <name>Haliplus ruficollis</name>
+          <auth-date>1774</auth-date>
+          <authority>De Geer</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Dytiscus ruficollis</name>
+              <authority>De Geer</authority>
+              <auth-date>1774</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus affinis</name>
+              <authority>Stephens</authority>
+              <auth-date>1828</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Dytiscus impressus</name>
+              <authority>Fabricius</authority>
+              <auth-date>1787</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="3">
+              <name>Dytiscus marginepunctatus</name>
+              <authority>Panzer</authority>
+              <auth-date>1793</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="4">
+              <name>Haliplus fluviatilis</name>
+              <authority>var. maculatus Seidlitz</authority>
+              <auth-date>1887</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="5">
+              <name>Haliplus fluviatilis</name>
+              <authority>ab. seidlitzi Csiki</authority>
+              <auth-date>1946</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="6">
+              <name>Haliplus rubicundus</name>
+              <authority>Babington</authority>
+              <auth-date>1836</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Afghanistan, Armenia, Austria, Belgium, Bosnia Herzegovina, Bulgaria, Byelorussia, Caucasus, Croatia, Czech Republic, Denmark, Estonia, Finland, France, Great Britain, Germany, Greece, Hungary, Iran, Iraq, Ireland, Italy, Kazakhstan, Latvia, Luxembourg, Macedonia, Netherlands, Norway, Poland, Portugal, Romania, Russia (East Siberia, North European Territory, South European Territory, West Siberia), Slovakia, Slovenia, Spain, Sweden, Switzerland, Tadzhikistan, Transcaucasia, Turkestan, Turkey, Ukraine, Uzbekistan, Yugoslavia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus samojedorum</name>
+          <auth-date>1880</auth-date>
+          <authority>J.Sahlberg</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Russia (East Siberia, Far East, West Siberia). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus sibiricus</name>
+          <auth-date>1860</auth-date>
+          <authority>Motschulsky</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus alsaticus</name>
+              <authority>Scriba</authority>
+              <auth-date>1905</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus borealis</name>
+              <authority>Gerhardt</authority>
+              <auth-date>1877</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Haliplus holsaticus</name>
+              <authority>Reitter</authority>
+              <auth-date>1908</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="3">
+              <name>Haliplus lindbergi</name>
+              <authority>Falkenstr??m</authority>
+              <auth-date>1939</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="4">
+              <name>Haliplus sahlbergi</name>
+              <authority>Falkenstr??m</authority>
+              <auth-date>1939</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="5">
+              <name>Haliplus wehnckei</name>
+              <authority>Gerhardt</authority>
+              <auth-date>1877</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Andorra, Austria, Belgium, Bulgaria, Byelorussia, Czech Republic, Denmark, Estonia, Finland, France, Germany, Great Britain, Hungary, Ireland, Italy, Kazakhstan, Kyrgyzstan, Latvia, Liechtenstein, Macedonia, Mongolia, Netherlands, Norway, Poland, Romania, Russia (East Siberia, Far East, Central European Territory, North European Territory, South European Territory, West Siberia), Spain, Sweden, Transcaucasia, Turkey, Uzbekistan. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus simplex</name>
+          <auth-date>1863</auth-date>
+          <authority>Clark</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus minutus</name>
+              <authority>Takizawa</authority>
+              <auth-date>1931</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus medvedevi</name>
+              <authority>Gramma</authority>
+              <auth-date>1980</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) China (Anhui, Beijing, Guangdong, Heilongjiang, Jiangsu, Jilin, Liaoning, Nei Mongol, Shandong, Zhejiang), Japan (Hokkaido, Honshu), Mongolia, North Korea, Russia (Far East). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus stagninus</name>
+          <auth-date>1949</auth-date>
+          <authority>Leech</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, British Columbia, Manitoba, Northwest Territories, Saskatchewan, Yukon Territory), US (Colorado, North Dakota, South Dakota, Washington). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus steppensis</name>
+          <auth-date>1954</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) China (Heilongjiang), Mongolia, Russia (West Siberia). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus turkmenicus</name>
+          <auth-date>2006</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Turkmenia</description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus zacharenkoi</name>
+          <auth-date>1973</auth-date>
+          <authority>Gramma &amp;amp; Prysnyi</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Russia (South European Territory), Ukraine. </description>
+          </geographic-distribution>
+        </node>
+      </nodes>
+    </node>
+    <node italicize-name="true">
+      <name>Liaphlus</name>
+      <auth-date>1928</auth-date>
+      <authority>Guignot</authority>
+      <rank>Subgenus</rank>
+      <othernames>
+        <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+          <name>Haliaplus</name>
+          <authority>??d??m</authority>
+          <auth-date>1993</auth-date>
+        </othername>
+        <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+          <name>Hoplites</name>
+          <authority>Kinel</authority>
+          <auth-date>1929</auth-date>
+        </othername>
+      </othernames>
+      <nodes>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus abbreviatus</name>
+          <auth-date>1880</auth-date>
+          <authority>Wehncke</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus gafnyi</name>
+              <authority>Vondel</authority>
+              <auth-date>1991</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus villiersi</name>
+              <authority>Legros</authority>
+              <auth-date>1972</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Afghanistan, China (Xinjiang), Cyprus, Egypt, Iran, Iraq, Israel, Syria. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus africanus</name>
+          <auth-date>1838</auth-date>
+          <authority>Aub&amp;#8730;&amp;#169;</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) South Africa. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus alastairi</name>
+          <auth-date>1988</auth-date>
+          <authority>Watts</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Australia (Northern Territory, Queensland, Western Australia). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus alluaudi</name>
+          <auth-date>1903</auth-date>
+          <authority>R&amp;#8730;&amp;#169;gimbart</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) Madagascar, Mauritius. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus andalusicus</name>
+          <auth-date>1872</auth-date>
+          <authority>Wehncke</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Algeria, France, Italy, Morocco, Portugal, Spain, Tunisia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus angusi</name>
+          <auth-date>1991</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Russia (South European Territory, West Siberia). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus angustifrons</name>
+          <auth-date>1892</auth-date>
+          <authority>R&amp;#8730;&amp;#169;gimbart</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus shanicus</name>
+              <authority>Guignot</authority>
+              <auth-date>1956</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(OR) Bangladesh, Burma, India, Sri Lanka, Thailand, Vietnam; (PL) Nepal, Pakistan. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus apostolicus</name>
+          <auth-date>1933</auth-date>
+          <authority>Wallis</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Nova Scotia, Quebec), US (Minnesota, Nebraska, New Hampshire, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus arrowi</name>
+          <auth-date>1936</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) Burma, India, Laos, Pakistan; (PL) Nepal. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus aspilus</name>
+          <auth-date>1957</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) Madagascar. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus astrakhanus</name>
+          <auth-date>1991</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Russia (South European Territory). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus australis</name>
+          <auth-date>1862</auth-date>
+          <authority>Clark</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Australia (New South Wales, Queensland, South Australia, Victoria). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus bachmanni</name>
+          <auth-date>1970</auth-date>
+          <authority>Vidal Sarmiento &amp;amp; Grosso</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Argentina, Brazil, Paraguay. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus basinotatus</name>
+          <auth-date>1924</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus basinotatus</name>
+              <authority>latiusculus Nakane</authority>
+              <auth-date>1985</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) China (Heilongjiang, Liaoning, Jilin, Nei Mongol), Japan (Kyushu, Shikoku), North Korea, Russia (Far East), South Korea. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus bonariensis</name>
+          <auth-date>1869</auth-date>
+          <authority>Steinheil</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Argentina, Uruguay. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus brasiliensis</name>
+          <auth-date>1924</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Brazil. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus camposi</name>
+          <auth-date>1948</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Colombia, Ecuador, Trinidad, Venezuela. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus canadensis</name>
+          <auth-date>1933</auth-date>
+          <authority>Wallis</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, British Columbia, Manitoba, Newfoundland, Northwest Territories, Nova Scotia, Ontario, Prince Edward Island, Quebec, Saskatchewan), US (Colorado, Massachusetts, Michigan, Minnesota, North Dakota, South Dakota, Vermont, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus carinatus</name>
+          <auth-date>1936</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Cuba. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus chinensis</name>
+          <auth-date>1932</auth-date>
+          <authority>Falkenstr&amp;#8730;&amp;#8706;m</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) China (Beijing, Fujian, Guizhou, Jiangsu, Nei Mongol, Shandong, Shanghai, Shanxi, Sichuan, Xinjiang, Yunnan, Zhejiang), Korea. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus columbiensis</name>
+          <auth-date>1933</auth-date>
+          <authority>Wallis</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, British Columbia, Northwest Territories). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus concolor</name>
+          <auth-date>1852</auth-date>
+          <authority>LeConte</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (California, Oregon, Texas, Washington); (NT) Mexico (Baja California, Nayarit). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus confluentus</name>
+          <auth-date>1913</auth-date>
+          <authority>Roberts</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (District of Columbia, Florida, Georgia, Maryland, South Carolina, Virginia); (NT) Bahamas, Mexico. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus connexus</name>
+          <auth-date>1912</auth-date>
+          <authority>Matheson</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Labrador, Manitoba, New Brunswick, Nova Scotia, Ontario, Quebec), US (Connecticut, District of Columbia, Illinois, Maine, Massachusetts, Michigan, Minnesota, Nebraska, New Hampshire, New York, North Carolina, North Dakota, Pennsylvania, Vermont, Wisconsin).</description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus crassus</name>
+          <auth-date>1930</auth-date>
+          <authority>Chapin</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Brazil, Panama, Paraguay, Venezuela. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus cribrarius</name>
+          <auth-date>1850</auth-date>
+          <authority>LeConte</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, British Columbia, Labrador, Manitoba, New Brunswick, Newfoundland, Northwest Territories, Nova Scotia, Ontario, Prince Edward Island, Quebec, Saskatchewan, Yukon Territory), US (Colorado, Connecticut, Dakota, Illinois, Indiana, Maine, Michigan, Minnesota, Nebraska, New Hampshire, New York, Vermont, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus cubensis</name>
+          <auth-date>1930</auth-date>
+          <authority>Chapin</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus bierigi</name>
+              <authority>Guignot</authority>
+              <auth-date>1936</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NT) Bahamas, Cuba, Domican Republic, Jamaica, Mexico, Puerto Rico, Saint Croix. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus cylindricus</name>
+          <auth-date>1913</auth-date>
+          <authority>Roberts</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (Arizona, California). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus dalmatinus</name>
+          <auth-date>1900</auth-date>
+          <authority>G.M&amp;#8730;&amp;#186;ller</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus dalmatinus</name>
+              <authority>var. weberi G.M??ller 1900</authority>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Albania, Bosnia Herzegovina, Croatia, Greece, ? Transcaucasia, Turkey. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus davidi</name>
+          <auth-date>1991</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) China (Beijing, Heilongjiang, Yunnan), Japan (Okinawa), Vietnam. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus diopus</name>
+          <auth-date>1955</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) Vietnam. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus diruptus</name>
+          <auth-date>1947</auth-date>
+          <authority>J.Balfour-Browne</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) Burma, India, Vietnam; (PL) China (Anhui, Beijing, Fujian, Guizhou, Hainan, Heilongjiang, </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus Hong</name>
+          <auth-date>Hubei</auth-date>
+          <authority>Kong</authority>
+          <rank>Species</rank>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus discessus</name>
+          <auth-date>1936</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus natalensis</name>
+              <authority>var. discessus Guignot</authority>
+              <auth-date>1936</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(AF) Benin, Guinea, Ivory Coast, Mali, Nigeria, Somalia, Tchad, Togo, Zaire. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus ebolovensis</name>
+          <auth-date>1955</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) Cameroun, Zaire. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus excoffieri</name>
+          <auth-date>1991</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) China (Yunnan). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus eximius</name>
+          <auth-date>1863</auth-date>
+          <authority>Clark</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus emmerichi</name>
+              <authority>Falkenstr??m</authority>
+              <auth-date>1936</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus hiogoensis</name>
+              <authority>Kano &amp; Kamiya</authority>
+              <auth-date>1931</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Haliplus modestus</name>
+              <authority>Zimmermann</authority>
+              <auth-date>1924:</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(OR) Indonesia (Sumatra), Vietnam; (PL) China (Beijing, Fujian, Guangdong, Guizhou, Hunan, Jiangsu, Liaoning, Shanghai, Sichuan, Xinjiang, Zhejiang), Japan (Honshu), Korea. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus exsecratus</name>
+          <auth-date>1936</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) South Africa, Zimbabwe. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus ferruginipes</name>
+          <auth-date>1892</auth-date>
+          <authority>R&amp;#8730;&amp;#169;gimbart</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus nicholasi</name>
+              <authority>Watts</authority>
+              <auth-date>1988</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(AU) Australia (Northern Territory, Queensland), Indonesia (West New Guinea), Papua New Guinea. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus figuratus</name>
+          <auth-date>1908</auth-date>
+          <authority>J.Sahlberg</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) Egypt. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus flavicollis</name>
+          <auth-date>1834</auth-date>
+          <authority>Sturm</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus flavicollis</name>
+              <authority>var. expallidus Zaitzev</authority>
+              <auth-date>1908</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus flavicollis</name>
+              <authority>var. pallidus Semenov</authority>
+              <auth-date>1904</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Austria, Belgium, Bosnia Herzegovina, Bulgaria, Byelorussia, Croatia, Czech Republic, Denmark, Finland, France, Germany, Great Britain, Greece, Hungary, Iran, Iraq, Ireland, Italy, Kazakhstan, Latvia, Luxembourg, Macedonia, Mongolia, Netherlands, Norway, Poland, Romania, Russia (Central European Territory, North European Territory, South European Territory, West Siberia), Slovakia, Slovenia, Spain, Sweden, Switzerland, Transcaucasia, Turkestan, Turkey, Ukraine, Uzbekistan, Yugoslavia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true" is-new-combination="true">
+          <name>Haliplus fulvus</name>
+          <auth-date>1801</auth-date>
+          <authority>Fabricius</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Dytiscus fulvus</name>
+              <authority>Fabricius</authority>
+              <auth-date>1801</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus fulvus</name>
+              <authority>var. carlittensis R??gimbart</authority>
+              <auth-date>1901</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Dytiscus interpunctatus</name>
+              <authority>Marsham</authority>
+              <auth-date>1802</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="3">
+              <name>Haliplus lapponum</name>
+              <authority>Thomson</authority>
+              <auth-date>1856</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="4">
+              <name>Haliplus lapponum</name>
+              <authority>var. niger Seidlitz</authority>
+              <auth-date>1887</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="5">
+              <name>Haliplus pyraeneus</name>
+              <authority>Delarouz??e</authority>
+              <auth-date>1857</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="6">
+              <name>Haliplus salinarius</name>
+              <authority>Wallis</authority>
+              <auth-date>1933</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="7">
+              <name>Haliplus fulvus</name>
+              <authority>sparreschneideri Munster</authority>
+              <auth-date>1922</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="8">
+              <name>Haliplus subguttatus</name>
+              <authority>Roberts</authority>
+              <auth-date>1913</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="9">
+              <name>Haliplus unicolor</name>
+              <authority>Fiori</authority>
+              <auth-date>1914</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="10">
+              <name>Haliplus fulvus</name>
+              <authority>var. unicolor Munster</authority>
+              <auth-date>1922</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, British Columbia, Manitoba, Newfoundland, Northwest Territories, Nova Scotia, Ontario, Quebec, Saskatchewan), US (California, Colorado, Idaho, Illinois, Indiana, Maine, Massachusetts, Michigan, Minnesota, Montana, Nebraska, New York, North Dakota, Oregon, South Dakota, Utah, Washington, Wisconsin); (PL) Albania, Algeria, Andorra, Austria, Belgium, Bosnia Herzegovina, Bulgaria, Byelorussia, Caucasus, Croatia, Czech Republic, Denmark, Faeroe Islands, Finland, France, Germany, Great Britain, Greece, Hungary, Iceland, Iraq, Ireland, Italy, Kazakhstan, Latvia, Macedonia, Mongolia, Morocco, Netherlands, Norway, Poland, Portugal, Romania, Russia (Central European Territory, East Siberia, North European Territory, South European Territory, West Siberia), Slovakia, Slovenia, Spain, Sweden, Transcaspia, Transcaucasia, Turkestan, Turkey, Ukraine, Yugoslavia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus fuscipennis</name>
+          <auth-date>1855</auth-date>
+          <authority>Germain</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Chile. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus garambanus</name>
+          <auth-date>1958</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) Zaire. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus gracilis</name>
+          <auth-date>1913</auth-date>
+          <authority>Roberts</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (California, Oregon, Washington). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus gravidus</name>
+          <auth-date>1838</auth-date>
+          <authority>Aub&amp;#8730;&amp;#169;</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus brandeni</name>
+              <authority>Wehncke</authority>
+              <auth-date>1883</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus obconicus</name>
+              <authority>R??gimbart</authority>
+              <auth-date>1889</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Haliplus robustus</name>
+              <authority>Sharp</authority>
+              <auth-date>1877</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NT) Antigua, Argentina, Barbados, Bolivia, Bonaire, Brazil, Colombia, Costa Rica, Cura??ao, Dominican Republic, Ecuador, Galapagos Islands, Guadeloupe, Guatemala, Guyana, Haiti, Margarita, Maria Galante, Mexico, Panama, Paraguay, Puerto Rico, Saint Martin, Santo Domingo, Surinam, Trinidad, Venezuela. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus guttatus</name>
+          <auth-date>1836</auth-date>
+          <authority>Aub&amp;#8730;&amp;#169;</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus pelopis</name>
+              <authority>J.Sahlberg</authority>
+              <auth-date>1908</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Algeria, Croatia, France, Greece, Hungary, Italy, Malta, Morocco, Spain, Tunisia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus havaniensis</name>
+          <auth-date>1880</auth-date>
+          <authority>Wehncke</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (Florida); (NT) Bahamas, Cuba, Dominican Republic, Jamaica. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus holmeni</name>
+          <auth-date>1991</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) China (Yunnan). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus incrassatus</name>
+          <auth-date>1899</auth-date>
+          <authority>R&amp;#8730;&amp;#169;gimbart</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) Madagascar. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus indicus</name>
+          <auth-date>1899</auth-date>
+          <authority>R&amp;#8730;&amp;#169;gimbart</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus pulchellus</name>
+              <authority>var. indicus R??gimbart</authority>
+              <auth-date>1899</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus agarwali</name>
+              <authority>Vazirani</authority>
+              <auth-date>1984</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(OR) Bangladesh, India, Nepal. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus indistinctus</name>
+          <auth-date>1928</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Argentina, Bolivia, Brazil, Chile, Paraguay, Trinidad, Venezuela. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus insularis</name>
+          <auth-date>1960</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) Madagascar. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus javanicus</name>
+          <auth-date>1993</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) Indonesia (Java). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus kapuri</name>
+          <auth-date>1975</auth-date>
+          <authority>Vazirani</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) India. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus kotoshonis</name>
+          <auth-date>1931</auth-date>
+          <authority>Kano &amp;amp; Kamiya</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Japan (Ryukyu Islands), Taiwan; (OR) ? Laos. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus kulleri</name>
+          <auth-date>1988</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus jaechi</name>
+              <authority>Vondel</authority>
+              <auth-date>1991</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus ortali</name>
+              <authority>Vondel</authority>
+              <auth-date>1991</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Cyprus, Iran, Iraq, Israel, Lebanon, Syria, Turkey. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true" is-new-combination="true">
+          <name>Haliplus laminatus</name>
+          <auth-date>1783</auth-date>
+          <authority>Schaller</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Dytiscus laminatus</name>
+              <authority>Schaller</authority>
+              <auth-date>1783</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus ater</name>
+              <authority>W.Redtenbacher</authority>
+              <auth-date>1842</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Haliplus cinereus</name>
+              <authority>Aub??</authority>
+              <auth-date>1836</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="3">
+              <name>Haliplus laminatus</name>
+              <authority>??? var. punctulatus Penecke</authority>
+              <auth-date>1901</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="4">
+              <name>Haliplus lombardus</name>
+              <authority>Fiori</authority>
+              <auth-date>1904</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Albania, Austria, Belgium, Byelorussia, Bosnia Herzegovina, Bulgaria, Croatia, Czech Republic, Denmark, France, Germany, Great Britain, Hungary, Iraq, Ireland, Italy, Liechtenstein, Luxembourg, Macedonia, Netherlands, Poland, Romania, Russia (Central European Territory), Slovakia, Slovenia, Spain, Sweden, Switzerland, Ukraine, Yugoslavia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus lamottei</name>
+          <auth-date>1954</auth-date>
+          <authority>Legros</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) Guinea. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus leechi</name>
+          <auth-date>1933</auth-date>
+          <authority>Wallis</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus leechi</name>
+              <authority>carteri Leech</authority>
+              <auth-date>1949</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, British Columbia, Northwest Territories, Saskatchewan, Yukon Territory), US (Alaska, California, Colorado, Idaho, Montana, North Dakota, Oregon, South Dakota, Utah, Washington). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus maculatus</name>
+          <auth-date>1860</auth-date>
+          <authority>Motschulsky</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus syriacus</name>
+              <authority>Wehncke</authority>
+              <auth-date>1880</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus zimmermanni</name>
+              <authority>Gschwendtner</authority>
+              <auth-date>1921</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Afghanistan, Austria, Bosnia and Herzegovina, Czech Republic, Greece, Hungary, Israel, Iraq, ? Italy, Kazakhstan, Kyrgyzstan, ? Poland, Romania, Russia (South European Territory), Slovakia, Syria, Turkmenistan, Turkey, Ukraine, Yugoslavia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus maculicollis</name>
+          <auth-date>1924</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Argentina, Uruguay. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus maculipennis</name>
+          <auth-date>1864</auth-date>
+          <authority>Schaum</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus abyssinicus</name>
+              <authority>R??gimbart</authority>
+              <auth-date>1895</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus maculipennis</name>
+              <authority>capensis Gu??orguiev</authority>
+              <auth-date>1967</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(AF) Benin, Egypt, Ethiopia, Ivory Coast, South Africa, Sudan, Tchad, Zaire. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus manipurensis</name>
+          <auth-date>1966</auth-date>
+          <authority>Vazirani</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) India. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus methneri</name>
+          <auth-date>1926</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) Guinea-Bissau, Ivory Coast, Kenya, Namibia, Nigeria, Sudan, Tanzania, Tchad, Zimbabwe. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus mimulus</name>
+          <auth-date>1956</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) Botswana, South Africa, Tanzania. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus mucronatus</name>
+          <auth-date>1828</auth-date>
+          <authority>Stephens</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus badius</name>
+              <authority>Aub??</authority>
+              <auth-date>1836</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus parallelus</name>
+              <authority>Babington</authority>
+              <auth-date>1836</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Haliplus siculus</name>
+              <authority>Wehncke</authority>
+              <auth-date>1883</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Albania, Algeria, Austria, Belgium, Bulgaria, Croatia, Czech Republic, France, Great Britain, Germany, Greece, Iraq, Italy, Kyrgyzstan, Libya, Macedonia, Morocco, Netherlands, Portugal, Russia (North European Territory), Slovenia, Spain, Switzerland, Tunisia, Turkey, Ukraine, Yugoslavia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus nanus</name>
+          <auth-date>1936</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Cuba. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus napolovi</name>
+          <auth-date>2003</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) Vietnam. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus natalensis</name>
+          <auth-date>1880</auth-date>
+          <authority>Wehncke</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus nigrosignatus</name>
+              <authority>R??gimbart</authority>
+              <auth-date>1895</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(AF) Angola, Benin, Botswana, Burkina Faso, Ethiopia, Gabon, Ivory Coast, Kenya, Nigeria, Sierra Leone, Somalia, South Africa, Tanzania, Togo, Uganda, Zaire, Zimbabwe. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus nedungaduensis</name>
+          <auth-date>1993</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) India. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus nitens</name>
+          <auth-date>1850</auth-date>
+          <authority>LeConte</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Northwest Territories, Ontario), US (Michigan, Minnesota, Texas, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus oblongus</name>
+          <auth-date>1921</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Argentina, Uruguay. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus ornatipennis</name>
+          <auth-date>1921</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Argentina, Bolivia, Brazil, Paraguay, Peru. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus ovalis</name>
+          <auth-date>1884</auth-date>
+          <authority>Sharp</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Japan (Honshu, Kyushu, Shikoku). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus panamanus</name>
+          <auth-date>1930</auth-date>
+          <authority>Chapin</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus soekhnandanae</name>
+              <authority>Makhan</authority>
+              <auth-date>1992</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NT) Bolivia, Guyana, Panama, Surinam, Venezuela. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus perroti</name>
+          <auth-date>1950</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) India, Vietnam; (PL) Pakistan. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus peruanus</name>
+          <auth-date>1924</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Peru. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus philippinus</name>
+          <auth-date>1930</auth-date>
+          <authority>Chapin</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) Burma, Indonesia (Java), Laos, Philippines, Thailand, Vietnam. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus pruthii</name>
+          <auth-date>1966</auth-date>
+          <authority>Vazirani</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) India. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus pulchellus</name>
+          <auth-date>1863</auth-date>
+          <authority>Clark</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus oceanicus</name>
+              <authority>R??gimbart</authority>
+              <auth-date>1886:</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(OR) India, Indonesia (Java, Sulawesi, Sumatra), Laos, Sri Lanka, Thailand, Vietnam; (PL) China (Fujian, Yunnan). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus rubidus</name>
+          <auth-date>1857</auth-date>
+          <authority>Perris</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus perforatus</name>
+              <authority>Schaum</authority>
+              <auth-date>1859</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Canary Islands, France, Italy, Morocco, Portugal, Spain. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus rufescens</name>
+          <auth-date>1894</auth-date>
+          <authority>R&amp;#8730;&amp;#169;gimbart</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) South Africa. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus salmo</name>
+          <auth-date>1933</auth-date>
+          <authority>Wallis</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, British Columbia, Northwest Territories, Saskatchewan), US (Colorado). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus samosirensis</name>
+          <auth-date>1993</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) Indonesia (Kalimantan, Sumatra). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus sharpi</name>
+          <auth-date>1880</auth-date>
+          <authority>Wehncke</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus amrishi</name>
+              <authority>Makhan</authority>
+              <auth-date>1999</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus tsukushiensis</name>
+              <authority>Yoshimura</authority>
+              <auth-date>1932</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) China (Anhui, Fujian, Guizhou, Jiangsu, Liaoning, Shanghai, Sichuan, Yunnan), Japan (Hokkaido, Kyushu, Shikoku), North Korea, Taiwan. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus signatipennis</name>
+          <auth-date>1892</auth-date>
+          <authority>R&amp;#8730;&amp;#169;gimbart</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Indonesia (Seram), Papua New Guinea. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus signatus</name>
+          <auth-date>1882</auth-date>
+          <authority>Sharp</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Guatemala, Mexico, Nicaragua, Panama. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus sindus</name>
+          <auth-date>1988</auth-date>
+          <authority>Watts</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Australia (Northern Territory, Queensland). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus solitarius</name>
+          <auth-date>1882</auth-date>
+          <authority>Sharp</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) El Salvador, Guatemala, Honduras, Mexico, Nicaragua. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus srilankanus</name>
+          <auth-date>1993</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(OR) Sri Lanka. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus stepheni</name>
+          <auth-date>1988</auth-date>
+          <authority>Watts</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Australia (Northern Territory, Queensland, Western Australia). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus testaceus</name>
+          <auth-date>1924</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Argentina, Brazil, Uruguay. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus testudo</name>
+          <auth-date>1862</auth-date>
+          <authority>Clark</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus nigrolineatus</name>
+              <authority>Wehncke</authority>
+              <auth-date>1883</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(AU) Australia (New South Wales, Northern Territory, Queensland, South Australia, Victoria). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus thoracicus</name>
+          <auth-date>1923</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Brazil. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus timmsi</name>
+          <auth-date>1995</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Australia (Northern Territory, Queensland). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus tumidus</name>
+          <auth-date>1880</auth-date>
+          <authority>LeConte</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus curtulus</name>
+              <authority>Sharp</authority>
+              <auth-date>1887:</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NA) US (Arizona, California, Texas); (NT) Cuba, Guatemala, Mexico. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus ungularis</name>
+          <auth-date>1933</auth-date>
+          <authority>Wallis</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (British Columbia). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus uniformis</name>
+          <auth-date>1920</auth-date>
+          <authority>Zimmermann</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus concolor</name>
+              <authority>R??gimbart</authority>
+              <auth-date>1894</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(AF) South Africa. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus valdiviensis</name>
+          <auth-date>1980</auth-date>
+          <authority>Moroni</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NT) Chile. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus vancouverensis</name>
+          <auth-date>1912</auth-date>
+          <authority>Matheson</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, British Columbia), US (Oregon, Washington). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus varicator</name>
+          <auth-date>1954</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) Mozambique. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus variegatus</name>
+          <auth-date>1834</auth-date>
+          <authority>Sturm</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus variegatus</name>
+              <authority>galilea J.Sahlberg</authority>
+              <auth-date>1913</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus leopardinus</name>
+              <authority>J.Sahlberg</authority>
+              <auth-date>1900</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Haliplus variegatus</name>
+              <authority>var. obsoletus Westhoff</authority>
+              <auth-date>1881</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="3">
+              <name>Haliplus subnubilus</name>
+              <authority>Babington</authority>
+              <auth-date>1836:</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="4">
+              <name>Haliplus transvolgensis</name>
+              <authority>Semenov</authority>
+              <auth-date>1904</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(PL) Algeria, Austria, Belgium, Bosnia Herzegovina, Bulgaria, Byelorussia, Croatia, Cyprus, Czech Republic, Denmark, Finland, France, Great Britain, Germany, Greece, Hungary, Ireland, Israel, Italy, Kyrgyzstan, Latvia, Macedonia, Netherlands, Norway, Poland, Romania, Russia (Central European Territory, South European Territory), Slovakia, Slovenia, Spain, Sweden, Switzerland, Syria, Transcaucasia, Turkey, Ukraine, Yugoslavia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus venustus</name>
+          <auth-date>1894</auth-date>
+          <authority>R&amp;#8730;&amp;#169;gimbart</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AF) Guinea-Bissau, Ivory Coast, Mocambique, Namibia, Nigeria, South Africa, Tanzania, Tchad, Zimbabwe. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus wattsi</name>
+          <auth-date>1995</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Australia (Northern Territory, Queensland, Western Australia), Papua New Guinea. </description>
+          </geographic-distribution>
+        </node>
+      </nodes>
+    </node>
+    <node italicize-name="true">
+      <name>Neohaliplus</name>
+      <auth-date>1911</auth-date>
+      <authority>Netolitzky</authority>
+      <rank>Subgenus</rank>
+      <othernames>
+        <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+          <name>Protohaliplus</name>
+          <authority>Scholz</authority>
+          <auth-date>1929</auth-date>
+        </othername>
+      </othernames>
+      <nodes>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus bistriatus</name>
+          <auth-date>1880</auth-date>
+          <authority>Wehncke</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Australia (Northern Territory, Queensland, South Australia, Western Australia). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus fuscatus</name>
+          <auth-date>1862</auth-date>
+          <authority>Clark</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Australia (? New South Wales, Queensland, South Australia, Victoria, Western Australia). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus gibbus</name>
+          <auth-date>1862</auth-date>
+          <authority>Clark</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Australia (? New South Wales, South Australia, Tasmania, Victoria, Western Australia). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus hydei</name>
+          <auth-date>1995</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Australia (Queensland). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true" is-new-combination="true">
+          <name>Haliplus lineatocollis</name>
+          <auth-date>1802</auth-date>
+          <authority>Marsham</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Dytiscus lineatocollis</name>
+              <authority>Marsham</authority>
+              <auth-date>1802</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="1">
+              <name>Haliplus lineatocollis</name>
+              <authority>arabicus Zaitsev</authority>
+              <auth-date>1953</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="2">
+              <name>Haliplus lineatocollis</name>
+              <authority>var. beckmanni Ahlwarth</authority>
+              <auth-date>1913</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="3">
+              <name>Haliplus bistriolatus</name>
+              <authority>Duftschmid</authority>
+              <auth-date>1805</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="4">
+              <name>Haliplus lineatocollis</name>
+              <authority>var. directus Gozis</authority>
+              <auth-date>1915</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="5">
+              <name>Haliplus lineatocollis</name>
+              <authority>var. intemeratus Gozis</authority>
+              <auth-date>1915</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="6">
+              <name>Haliplus lineatocollis</name>
+              <authority>var. pallidus J.Sahlberg</authority>
+              <auth-date>1903</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="7">
+              <name>Haliplus lineatocollis</name>
+              <authority>var. pici R??gimbart</authority>
+              <auth-date>1895</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="8">
+              <name>Haliplus lundbladi</name>
+              <authority>Falkenstr??m</authority>
+              <auth-date>1939b</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="9">
+              <name>Haliplus melanocephalus</name>
+              <authority>Stephens</authority>
+              <auth-date>1828</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="10">
+              <name>Haliplus suffusus</name>
+              <authority>Wollaston</authority>
+              <auth-date>1863</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="11">
+              <name>? </name>
+              <authority>yticus thoracicus Geoffroy</authority>
+              <auth-date>1785</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="12">
+              <name>Haliplus transversalis</name>
+              <authority>Gautier des Cottes</authority>
+              <auth-date>1861</auth-date>
+            </othername>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="13">
+              <name>Haliplus trimaculatus</name>
+              <authority>Drapiez</authority>
+              <auth-date>1820</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(AF) Eritrea, Ethiopia, (PL) Algeria, Armenia, Austria, Azerbaijan, Belgium, Bosnia Herzegovina, Bulgaria, Byelorussia, Canary Islands, Caucasus, Croatia, Czech Republic, Denmark, Egypt, France, Germany, Great Britain, Greece, Hungary, Iran, Ireland, Israel, Italy, Lebanon, Liechtenstein, Libya, Macedonia, Malta, Morocco, Netherlands, Poland, Portugal, Romania, Russia (Central European Territory, South European Territory), Saudi Arabia, Slovakia, Slovenia, Spain, Sweden, Switzerland, Syria, Tchad, Transcaucasia, Tunisia, Turkey, Ukraine, Yemen, Yugoslavia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus ruficeps</name>
+          <auth-date>1861</auth-date>
+          <authority>,  Chevrolat</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(PL) Algeria, Morocco. </description>
+          </geographic-distribution>
+        </node>
+      </nodes>
+    </node>
+    <node italicize-name="true">
+      <name>Paraliaphlus</name>
+      <authority>Guignot 1930 NA NT </authority>
+      <rank>Subgenus</rank>
+      <nodes>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus annulatus</name>
+          <auth-date>1913</auth-date>
+          <authority>Roberts</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus minor</name>
+              <authority>Zimmermann</authority>
+              <auth-date>1924</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NA) US (Alabama, Arkansas, Florida, Georgia, Massachusetts, Minnesota, South Carolina, Texas); (NT) Mexico, Nicaragua. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus borealis</name>
+          <auth-date>1850</auth-date>
+          <authority>LeConte</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, Manitoba, New Brunswick, Nova Scotia, Ontario, Quebec, Saskatchewan), US (? California, Colorado, Connecticut, Illinois, Indiana, Iowa, Kansas, Kentucky, Massachusetts, Michigan, Minnesota, Missouri, Montana, New York, North Dakota, Ohio, Pennsylvania, South Dakota, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus deceptus</name>
+          <auth-date>1912</auth-date>
+          <authority>Matheson</authority>
+          <rank>Species</rank>
+          <othernames>
+            <othername is-important="false" is-preferred="false" italicize-name="false" sequence="0">
+              <name>Haliplus suturalis</name>
+              <authority>Roberts</authority>
+              <auth-date>1913</auth-date>
+            </othername>
+          </othernames>
+          <geographic-distribution>
+            <description>(NA) US (Colorado, Kansas, New Mexico, Oklahoma, South Dakota, Texas, Wyoming); (NT) Mexico. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus eremicus</name>
+          <auth-date>1989</auth-date>
+          <authority>Wells</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (Arizona, Nevada). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus fasciatus</name>
+          <auth-date>1838</auth-date>
+          <authority>Aub&amp;#8730;&amp;#169;</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Ontario, Quebec), US (Alabama, Arkansas, Connecticut, District of Columbia, Florida, Georgia, Illinois, Indiana, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Mississippi, Missouri, Nebraska, New Jersey, New York, North Carolina, Pennsylvania, Rhode Island, South Carolina, Texas, Virginia, West Virginia, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus leopardus</name>
+          <auth-date>1913</auth-date>
+          <authority>Roberts</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (British Columbia, New Brunswick, Ontario, Quebec), US (Alabama, Connecticut, District of Columbia, Georgia, Indiana, Louisiana, Maryland, Massachusetts, Minnesota, Missouri, New Jersey, New York, North Carolina, Pennsylvania, Rhode Island, South Carolina, Texas, Virginia, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus lewisii</name>
+          <auth-date>1873</auth-date>
+          <authority>Crotch</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (Texas); (NT) Mexico. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus mimeticus</name>
+          <auth-date>1912</auth-date>
+          <authority>Matheson</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (California); (NT) Mexico (Baja California). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus mutchleri</name>
+          <auth-date>1933</auth-date>
+          <authority>Wallis</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (Florida, North Carolina). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus ohioensis</name>
+          <auth-date>1933</auth-date>
+          <authority>Wallis</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (Illinois, Indiana, Missouri, Ohio, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus oklahomensis</name>
+          <auth-date>1933</auth-date>
+          <authority>Wallis</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (Oklahoma, Texas); (NT) Mexico. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus pantherinus</name>
+          <auth-date>1838</auth-date>
+          <authority>Aub&amp;#8730;&amp;#169;</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (New Brunswick, Nova Scotia, Ontario, Quebec), US (District of Columbia, Georgia, Illinois, Indiana, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, New York, North Carolina, Ohio, Rhode Island, South Carolina, South Dakota, Virginia, West Virginia, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus pseudofasciatus</name>
+          <auth-date>1933</auth-date>
+          <authority>Wallis</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (District of Columbia, Florida, Georgia, Kansas, Massachusetts, Oklahoma, South Carolina, Texas, Virginia). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus punctatus</name>
+          <auth-date>1838</auth-date>
+          <authority>Aub&amp;#8730;&amp;#169;</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (Alabama, Arizona, Arkansas, Colorado, District of Columbia, Florida, Georgia, Illinois, Indiana, Louisiana, Maryland, New Jersey, North Carolina, Oklahoma, Oregon, Pennsylvania, South Carolina, Texas, Virginia). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus rugosus</name>
+          <auth-date>1913</auth-date>
+          <authority>Roberts</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (California); (NT) Mexico (Baja California). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus tortilipenis</name>
+          <auth-date>1972</auth-date>
+          <authority>Brigham &amp;amp; Sanderson</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (Colorado, Illinois, Iowa, Kansas, Minnesota, Missouri, South Dakota, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus triopsis</name>
+          <auth-date>1823</auth-date>
+          <authority>Say</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) Canada (Alberta, Manitoba, Ontario, Quebec); US (Alabama, Arkansas, Colorado, District of Columbia, Florida, Georgia, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Nebraska, New England, New Hampshire, New Jersey, New Mexico, New York, North Carolina, Ohio, Oklahoma, Pennsylvania, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, Virginia, West Virginia, Wisconsin). </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus variomaculatus</name>
+          <auth-date>1973</auth-date>
+          <authority>Brigham &amp;amp; Sanderson</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(NA) US (Illinois, Missouri, Montana). </description>
+          </geographic-distribution>
+        </node>
+      </nodes>
+    </node>
+    <node italicize-name="true">
+      <name>Phalilus</name>
+      <auth-date>1935</auth-date>
+      <authority>Guignot</authority>
+      <rank>Subgenus</rank>
+      <nodes>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus oberthuri</name>
+          <auth-date>1935</auth-date>
+          <authority>Guignot</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Australia (Queensland), New Caledonia. </description>
+          </geographic-distribution>
+        </node>
+        <node italicize-name="true" leaf="true">
+          <name>Haliplus storeyi</name>
+          <auth-date>1995</auth-date>
+          <authority>Vondel</authority>
+          <rank>Species</rank>
+          <geographic-distribution>
+            <description>(AU) Australia (Northern Territory). </description>
+          </geographic-distribution>
+        </node>
+      </nodes>
+    </node>
+  </nodes>	  
+</tree-of-life-web>

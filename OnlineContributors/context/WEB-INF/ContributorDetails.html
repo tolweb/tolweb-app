@@ -1,0 +1,15 @@
+<span jwcid="@contrib:Choose">
+	<span jwcid="@contrib:When" condition="ognl:contributor.homepage != null">
+        <a jwcid="@Any" href="ognl:contributor.homepage"><span jwcid="@Insert" value="ognl:contributor.displayName"/></a>
+    </span>
+	<span jwcid="@contrib:When" condition="ognl:contributor.email != null && !(contributor.dontShowEmail)">
+        <a jwcid="@EncodedMailLink" email="ognl:contributor.email" linkText="ognl:contributor.displayName"/>
+    </span>   
+    <span jwcid="@contrib:Otherwise">
+        <span jwcid="@Insert" value="ognl:contributor.displayName"/>
+    </span>
+    <a jwcid="@ContributorProfileLink" contributor="ognl:contributor"/><br/>
+</span>
+<span jwcid="@If" condition="ognl:contributor.institution != null">    
+	<span jwcid="@Insert" value="ognl:contributor.institution" raw="ognl:true"/><br/>
+</span>

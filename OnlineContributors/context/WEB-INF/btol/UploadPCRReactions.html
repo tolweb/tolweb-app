@@ -1,0 +1,70 @@
+<html jwcid="@btol/ProjectWrapper" title="Upload PCR Reactions" includeDojo="ognl:true">
+	<h2 class="clear">Upload PCR Reactions</h2>
+    <span jwcid="@If" condition="ognl:hasError || hasMissingPrimers || hasMissingProtocols || hasExistingCodes">
+		<div class="fix">
+			<h3>Error</h3>
+            <span jwcid="@If" condition="prop:hasError">
+			<ul>
+				<li><span jwcid="@Insert" value="prop:errorMessage"/></li>
+			</ul>
+            </span>
+            <span jwcid="@If" condition="prop:hasMissingPrimers">
+                <h4>Missing primers</h4>
+                <p>The following primers were not found in the database.  Click on a primer
+                    name to add it to the database.</p> 
+                <ul>
+                	<li jwcid="@tacos:PartialFor" source="prop:missingPrimerNames" value="prop:currentMissingName" element="li" id="prop:currentMissingName">
+                        <a jwcid="@DirectLink" listener="listener:editMissingPrimer" 
+                            parameters="prop:currentMissingName" renderer="prop:rendererFactory.editLinkRenderer"><span jwcid="@Insert" value="prop:currentMissingName"/></a>                       
+                        <!--
+	                        <span jwcid="@If" condition="prop:showEditFields">
+                    			<form jwcid="@tacos:AjaxForm" listener="listener:renamePrimer">                                
+	        						<span jwcid="@FieldLabel" field="component:primerNameCompleter"/> 
+							        <input jwcid="primerNameCompleter@tacos:Autocompleter" value="prop:renamedPrimerName" 
+							        	listSource="prop:possiblePrimerNames" listener="listener:showPossiblePrimerNames" class="autocomplete"
+							        	validators="validators:required" displayName="Existing Primer Name" id="nameField" size="50"/>
+                    			</form>                                    
+	                        </span>
+                            <span jwcid="@Else">
+		                        <a jwcid="@tacos:AjaxDirectLink" listener="listener:showPrimerRenameBox" updateComponents="ognl:{currentMissingName}"
+		                            parameters="prop:currentMissingName">rename existing</a>
+                            </span>
+                            -->
+                    </li>
+                </ul>
+            </span>
+            <span jwcid="@If" condition="prop:hasMissingProtocols">
+                <h4>Missing protocols</h4>
+                <p>The following protocols were not found in the database.  Click on a protocol
+                    name to add it to the database.</p> 
+                <ul>
+                	<li jwcid="@tacos:PartialFor" source="prop:missingProtocolNames" value="prop:currentMissingName" element="li">
+                        <a jwcid="@DirectLink" listener="listener:editMissingProtocol" 
+                            parameters="prop:currentMissingName" renderer="prop:rendererFactory.editLinkRenderer"><span jwcid="@Insert" value="prop:currentMissingName"/></a>
+                    </li>
+                </ul>
+            </span>  
+            <span jwcid="@If" condition="prop:hasExistingCodes">
+                <h4>Existing reactions</h4>
+                <p>The following reactions already exist in the database.  Duplicate reaction
+                    codes are not allowed.</p>
+                <ul>
+                    <li jwcid="@tacos:PartialFor" source="prop:existingCodes" value="prop:currentExistingCode" element="li">
+                        <span jwcid="@Insert" value="prop:currentExistingCode"/>
+                    </li>
+                </ul>
+            </span>
+        </div>
+    </span>    
+    <h4>Text Format</h4>
+    <p>Text should be in a tab-separated format with the fields according to <a href="btol/pcrreactions.csv">this example</a><p/>
+    <h4>PCR Protocols, Specimen Extractions, and Primers</h4>
+    <p>
+        All PCR Protocols, Specimen Extractions, and Primers must already exist in the BTOL database in order for the upload to proceed.
+    </p>
+    <h4>Reaction Text</h4>
+    <form jwcid="@Form" listener="listener:uploadNewReactions">
+		<span jwcid="@btol/UploadFileOrTypeText" objectType="reactions"/>
+        <input jwcid="@Submit" value="Upload Reactions"/>
+    </form>
+</html>

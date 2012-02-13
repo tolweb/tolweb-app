@@ -1,0 +1,149 @@
+<html jwcid="@Wrapper" title="Tree of Life Home Page Content">
+    <h2>ToL Home Page: Dynamic Content </h2>
+    <h4>News Section</h4>
+    <ul class="nodisc">
+        <li><label>Text for the News section 
+            <textarea name="News" cols="50" rows="3"></textarea>
+
+        </label></li>
+    </ul>
+    <p>
+        
+        <input type="submit" name="Submit" value="Submit">
+    </p>
+    <h4>Add a Group for the Learn About ... Section</h4>
+    <ul class="nodisc">
+        <li jwcid="groupInfo@Any" id="groupInfo">
+            <span jwcid="@If" condition="prop:rootGroupSelected">
+            <form jwcid="@tacos:AjaxForm" listener="listener:findAndSelectRootGroup" delegate="prop:delegate" updateComponents="groupInfo,grpDesc">
+            <span jwcid="@If" condition="ognl:delegate.hasErrors">
+                <span jwcid="@ErrorBox" delegate="prop:delegate"/>
+            </span>
+            <label>Group name: <input jwcid="@TextField" value="prop:rootGroupName"/><input jwcid="@Submit" value="Set group"/></label>
+            </form>
+            </span>
+            <span jwcid="@Else">
+                <span jwcid="@If" condition="ognl:rootGroup != null">
+                <label>Group: <span jwcid="@Insert" value="prop:rootGroup.name"/> 
+                	<a jwcid="@tacos:AjaxDirectLink" listener="listener:chooseRootGroup" updateComponents="ognl:{'groupInfo','grpDesc'}">change</a></label> 
+                </span>
+                <span jwcid="@Else">
+            		<a jwcid="@tacos:AjaxDirectLink" listener="listener:chooseRootGroup" 
+            			updateComponents="ognl:{'groupInfo'}">Select a Group from the ToL Database</a> 
+                </span>
+            </span>
+        </li>			
+	</ul>
+	<form jwcid="@Form" listener="listener:saveFeatureGroup">
+	<ul class="nodisc">		
+        <li>
+            <label>Description <input id="grpDesc" jwcid="grpDesc@TextField" type="text" size="35" value="prop:description"/></label>
+        </li>
+        <li><label>Image id <input name="Image" jwcid="@TextField" type="text" translator="translator:number" value="prop:imageId"/> </label></li>
+        <li><label>Text <textarea name="Text" jwcid="@TextArea" value="prop:featureText" cols="50" rows="3"></textarea></label></li>
+        <li>Category <select jwcid="@PropertySelection" model="prop:categoryModel" value="prop:categorySelection"/></li>
+    </ul>
+       <input type="submit" name="Submit" value="Submit">
+    </form>   
+       <h3>Featured Groups</h3>
+       <h4>Popular Groups</h4>
+       <ul class="links">
+           <li><a href="/Agaricales">Agaricales</a>  <input name="remove" type="submit" id="remove" value="remove">
+
+           </li>
+           <li><a href="/Terrestrial_Vertebrates">Terrestrial Vertebrates</a>   <input name="remove" type="submit" id="remove" value="remove">
+           </li>
+           <li><a href="/Cephalopoda">Cephalopoda</a>
+               <input name="remove11" type="submit" id="remove11" value="remove">
+           </li>
+           <li><a href="/Salientia">Frogs and toads</a> 
+               <input name="remove12" type="submit" id="remove12" value="remove">
+
+           </li>
+           <li></li>
+       </ul>
+       <h4>Recent Additions </h4>
+       <ul class="links">
+           <li><a href="/Pholcidae/2719">Pholcidae</a>
+               <input name="remove2" type="submit" id="remove2" value="remove">
+           </li>
+
+           <li><a href="/Marattiaceae/134249">Marattiaceae</a>
+               <input name="remove3" type="submit" id="remove3" value="remove">
+           </li>
+           <li><a href="/Saccharomycetales/29043">Saccharomycetales</a>
+               <input name="remove4" type="submit" id="remove4" value="remove">
+           </li>
+           <li><a href="/Atlanta_turriculata/28773"><em>Atlanta
+                       turriculata</em></a>
+
+               <input name="remove5" type="submit" id="remove5" value="remove">
+           </li>
+           <li><a href="/Fuscocimex_caecus/134182"><em>Fuscocimex
+                       caecus</em></a>
+               <input name="remove6" type="submit" id="remove6" value="remove">
+           </li>
+           <li><a href="/Isanopus/10272"><em>Isanopus</em></a>
+               <input name="remove7" type="submit" id="remove7" value="remove">
+           </li>
+
+           <li><a href="/Anacardiaceae/21262">Anacardiaceae</a>
+               <input name="remove8" type="submit" id="remove8" value="remove">
+           </li>
+           <li><a href="/Kinetoplastida/98013">Kinetoplastida</a> 
+               <input name="remove9" type="submit" id="remove9" value="remove">
+           </li>
+           <li><a href="/Lathrocasis_tenerrima/22996"><em>Lathrocasis
+                       tenerrima</em></a>
+               <input name="remove10" type="submit" id="remove10" value="remove">
+
+           </li>
+       </ul>
+       <h4>Well-developed Groups </h4>
+       <ul class="links">
+           <li><a href="/Cephalopoda">Cephalopoda</a>
+               <input name="remove102" type="submit" id="remove102" value="remove">
+           </li>
+           <li><a href="/Bracteon">Bembidion (Bracteon)</a> 
+               <input name="remove103" type="submit" id="remove103" value="remove">
+
+           </li>
+           <li><a href="/Prodoxidae">Prodoxidae</a>
+               <input name="remove104" type="submit" id="remove104" value="remove">
+           </li>
+           <li><a href="/Salticidae">Salticidae</a>
+               <input name="remove105" type="submit" id="remove105" value="remove">
+           </li>
+           <li><a href="/Astacidea">Freshwater crayfish</a> 
+               <input name="remove106" type="submit" id="remove106" value="remove">
+
+           </li>
+           <li><a href="/Salientia">Frogs and toads</a> 
+               <input name="remove107" type="submit" id="remove107" value="remove">
+           </li>
+       </ul>
+       <h4>Obscure Groups </h4>
+       <ul  class="links">
+           <li><a href="/Zoraptera">Zoraptera</a>   <input name="remove" type="submit" id="remove" value="remove">
+
+           </li>
+           <li><a href="/Lathrocasis_tenerrima"><em>Lathrocasis tenerrima</em></a>   <input name="remove" type="submit" id="remove" value="remove">
+            </li>
+           <li><a href="/Protatlanta_souleyeti"><em>Protatlanta souleyeti</em></a>   <input name="remove" type="submit" id="remove" value="remove">
+            </li>
+           <li><a href="/notholaenids">Notholaenids</a>   <input name="remove" type="submit" id="remove" value="remove">
+
+           </li>
+           <li><a href="/Polacanthidae">Polacanthidae</a>   <input name="remove" type="submit" id="remove" value="remove">
+           </li>
+           <li><a href="/Aspidogastrea">Aspidogastrea</a>   <input name="remove" type="submit" id="remove" value="remove">
+            </li>
+           <li><a href="/Gregarina">Gregarina</a>   <input name="remove" type="submit" id="remove" value="remove">
+
+           </li>
+           <li><a href="/Philothalpus/10281"><em>Philothalpus</em></a>   <input name="remove" type="submit" id="remove" value="remove">
+            </li>
+       </ul>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+</html>

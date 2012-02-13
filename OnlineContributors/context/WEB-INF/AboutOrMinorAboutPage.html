@@ -1,0 +1,11 @@
+<span jwcid="@If" condition="ognl:!isMinorAuthor" element="ognl:null">
+    <span jwcid="@AboutPage" copyright="ognl:treehouse.copyright" contributors="ognl:treehouse.contributors" 
+    copyrightYear="ognl:treehouse.copyrightYear" acknowledgements="ognl:treehouse.acknowledgements" 
+    pageType="ognl:pageType" usePermission="ognl:treehouse.usePermission" />
+</span>
+<span jwcid="@Else" element="ognl:null">
+    <span jwcid="@MinorAboutPage" authorsString="ognl:authorsString" contributors="ognl:treehouse.contributors" 
+    projectName="ognl:projectName" teacher="ognl:minorAuthor.teacher" copyrightYear="ognl:treehouse.copyrightYear"
+    pageType="ognl:pageType" acknowledgements="ognl:treehouse.acknowledgements" projectId="ognl:projectId"
+    usePermission="ognl:treehouse.usePermission" />
+</span>

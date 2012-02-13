@@ -1,0 +1,113 @@
+<html jwcid="@EditTreehouseMediaWrapper" title="ognl:'Step #' + stepNumber + ' Upload, Edit and Delete Media'">
+	<span jwcid="@If" condition="ognl:newObjectUploaded">
+		<div jwcid="@RedirectDiv" url="ognl:editObjectUrl"/>
+	</span>
+	<div id="learn2infopgtop">
+        <a name="learn2info"></a>
+		<h3 class="sectionheaderblubpg">Step <span jwcid="@Insert" value="ognl:stepNumber"/>. Upload / Edit Media</h3>
+        <div class="boxtocpages">
+			<div jwcid="@TreehouseImportantDiv">
+				<li><a href="#upload">Upload Media</a></li>
+				<li><a href="#edit">Edit Media Data</a></li>
+				<li><a href="#delete">Delete Media</a></li>
+	        </div>		     
+			<div jwcid="@TreehouseHelpDiv" stepNum="3" exampleEditingFormUrl="/tree/learn/TreebuilderTools/BuildingGuide/ExampleEditingSteps3.html">
+				<ul>
+					<li><a href="/tree/learn/TreebuilderTools/BuildingGuide/AddingMedia.html" jwcid="@GenericLink" renderer="ognl:helpLinkRenderer">Adding Media</a></li>
+                    <li><a href="/tree/learn/TreebuilderTools/BuildingGuide/AddingMedia2.html" jwcid="@GenericLink" renderer="ognl:helpLinkRenderer">Upload Media</a></li>
+					<li><a href="/tree/learn/TreebuilderTools/BuildingGuide/HelpImageForm.html" jwcid="@GenericLink" renderer="ognl:helpLinkRenderer">Image Data Form Help</a></li>					
+					<li><a href="/tree/learn/TreebuilderTools/ToLTech/Toltech.html" jwcid="@GenericLink" renderer="ognl:helpLinkRenderer">Multimedia Reference</a></li>
+					<li><a href="/tree/learn/TreebuilderTools/trcopyright.html" jwcid="@GenericLink" renderer="ognl:helpLinkRenderer">Copyright Issues</a></li>                    
+				</ul>
+	        </div>
+	     	 <p><img src="/tree/learn/lisa.images/trhouseimage/mediastuffblu.jpg" width="268" height="91" class="imgpgs" style="padding-left: 20px;"></p>
+			<div jwcid="@TreehouseWarningDiv">
+               
+            </div>	   
+			<div class="spacer">&nbsp;</div>
+	  </div>      
+		<div class="spacer">&nbsp;</div>
+	</div>
+	<div id="trhsuploadeditpg">
+		<a name="upload"></a>
+      <div class="helprighteasy"><strong class="red">Stop!</strong> Make sure you are following <a href="javascript: w = window.open('/tree/learn/TreebuilderTools/trcopyright.html', 'FullHelpWindow', 'width=850,height=500,resizable,scrollbars=yes'); w.focus();" class="underline"><strong>copyright rules</strong></a> before you upload media to the Tree of Life.</div>
+        <h3 class="sectionheaderblu"> Upload /Edit Media </h3>
+		<h4 class="long">Upload a new media file </h4>
+        <p style="padding-left: 50px;">To upload a new media file follow the steps below:
+		<form jwcid="@UploadNewMediaForm" isTreehouses="ognl:true"/>
+		<div class="importantnar">
+			<dl>
+
+                    <dt>Images </dt>
+                    <dd>Please upload only JPEG, GIF, or PNG files. Ideally your 
+                        master image should be around 800 pixels wide or high 
+                        (<a href="javascript: w = window.open('/tree/sep/expixel.html', 'helpWindow', 'menubar=no,width=850,height=750,toolbar=no,scrollbars=yes'); w.focus();">example</a>). 
+                        See The <a href="/tree/learn/TreebuilderTools/ToLTech/Toltech.html" target="FullHelpWindow">Multimedia Reference</a> and <a href="/tree/learn/TreebuilderTools/BuildingGuide/AddingMedia.html" target="FullHelpWindow">Adding Media</a> for more information.</dd>
+
+                    <dt>Documents </dt>
+                    <dd>Select this media type for uploading text files, PDF, Word, Excel, PowerPoint documents, etc. </dd>
+
+                    <dt>Size limit </dt>
+                    <dd> You may upload media files up to 5 megabytes. 
+                        Most sound and movie files under one minute will fit this 
+                        requirement. If you would like to contribute a larger file, contact <a jwcid="@EncodedMailLink" email="learning@tolweb.org"/> for instructions.</dd>
+      </dl>
+			
+	
+                
+		  </div>	   
+	</div>
+    <div class="spacer">&nbsp;</div>
+    <div id="trhseditmediapg"><a name="edit"></a>
+<h4 class="long">Edit data for one of my media files in the ToL database</h4>	           
+<div class="indentleft"> <p>To edit a media file you must first find it in the ToL database. Type search criteria 
+    in one of the search fields below and click find media. We recommend you type search criteria into only 
+    one field. If you are having trouble finding media files you have uploaded to the ToL visit your media 
+    contributor page to <a jwcid="@ImageContributorLink" contributor="ognl:contributor"><strong>view all of the media files that you have contributed to the ToL</strong></a>.</p>
+           <form jwcid="@ImageSearch" showMediaTypeSelection="ognl:true"
+           		callbackType="ognl:@org.tolweb.tapestry.ImageSearchResults@EDIT_IMAGE_CALLBACK"
+           		searchPageName="ognl:pageName" showStrongInstructions="ognl:true" thclass="boldtext"
+           	  headerElement="td" mediaIdString="Media File ID"
+               instructions="<p>When you click on the <em>edit</em> link next a thumbnail, a new window will open that lets you edit the data for this image.</p>
+<p>Please note that you can edit only one image at a time.  If you would like to edit several images in a row, make sure to submit your image data before clicking on a new <em>edit</em> link.</p>" linkString="edit"
+				buttonText="Find Media Files" containingPageNoResultsAnchor="edit"
+           		editWindowName="treehouseEditMedia"/>
+<p>Note: You will only be able to edit images that you have contributed yourself 
+or for which you own the copyright.</p>
+<div class="topbottom2"><a href="#pagetop">top</a></div>
+<div class="bottomspacer">&nbsp;</div><div class="bottomspacer">&nbsp;</div><div class="bottomspacer">&nbsp;</div>
+         			  </div>
+	</div>   
+<div class="bottomspacer">&nbsp;</div>    
+	<div id="trhsdelmediapg">
+		 <a name="delete"></a>             
+         <h4 class="long">Delete one of my media files from the ToL database</h4>
+		<div class="indentleft">
+            <p>To delete a media file you must first find it in the ToL database. Type search criteria in one of the search fields below and click find media. We recommend you type search criteria into only one field.</p>
+           <form jwcid="@ImageSearch" showMediaTypeSelection="ognl:true"
+           		callbackType="ognl:@org.tolweb.tapestry.ImageSearchResults@DELETE_IMAGE_CALLBACK"
+           		searchPageName="ognl:pageName" showStrongInstructions="ognl:true" thclass="boldtext"
+           	  headerElement="td" mediaIdString="Media File ID" tableClass="deletemedia"
+               instructions="Click the 'delete' link to delete that image" linkString="delete"
+           		buttonText="Find Media Files" containingPageNoResultsAnchor="delete" />
+            <p>Note: You will only be able to edit images that you have contributed yourself 
+or for which you own the copyright.</p>           
+       </div>
+
+                <div class="topbottom2"><a href="#pagetop">top</a></div><div
+class="bottomspacer">&nbsp;</div> <div class="bottomspacer">&nbsp;</div><div class="bottomspacer">&nbsp;</div><div class="bottomspacer">&nbsp;</div>
+    </div>
+<div class="bottomspacer">&nbsp;</div>
+<div class="mailme">
+<p>Contact Lisa Schwartz, ToL Learning Materials Editor, at
+    <a jwcid="@EncodedMailLink" email="learning@tolweb.org"/>
+</p>
+</div>
+ <div class="savesspacer">&nbsp;</div>
+ <script jwcid="@Script" script="EditNewObject.script"
+pageName="EditImageWindowRedirect"
+editWindowName="imageEditWindow"/> 
+<span jwcid="@If" condition="ognl:selectedAnchor">
+<span jwcid="@Script" script="JumpToAnchor.script" anchor="ognl:selectedAnchor"/> 
+</span>
+</html>

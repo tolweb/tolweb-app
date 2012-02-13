@@ -1,0 +1,23 @@
+<span jwcid="@If" condition="ognl:teacherResource.hasPreparation">
+	<div id="prep">
+	    <a name="prep"></a>
+	    <h3>Preparation</h3>
+	    <p><span jwcid="@Insert" value="ognl:teacherResource.preparation" raw="ognl:true"/></p>
+	</div>
+</span>
+<span jwcid="@If" condition="ognl:teacherResource.hasPhysicalObjects">
+	<div id="physicalobjects">
+        <a name="physicalobjects"></a>
+		<h3>Physical Materials and Tools</h3>
+        <ul>
+			<span jwcid="@Insert" value="ognl:physicalMaterialsString" raw="ognl:true"/>
+		</ul>
+	</div>
+</span>
+<span jwcid="@If" condition="ognl:teacherResource.hasPriorKnowledge">
+    <div id="priorknow">
+        <a name="prioknow"></a>
+		<h3>Prior Knowledge</h3>
+		<p><span jwcid="@Insert" value="ognl:teacherResource.priorKnowledge" raw="ognl:true"/></p>
+	</div>
+</span>

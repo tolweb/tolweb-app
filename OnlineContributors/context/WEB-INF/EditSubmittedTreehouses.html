@@ -1,0 +1,64 @@
+<html jwcid="@BuildTreehouseWrapper" title="Edit Submitted Treehouses">
+	<a jwcid="@PageLink" page="TreehouseMaterialsManager">Back to Treehouse Materials Manager</a>
+	<h2 class="clear">Edit Submitted Treehouses</h2>
+		<table jwcid="table@contrib:Table" source="ognl:submittedTreehouses" row="ognl:currentPage" columns="PageTitle, Submitter:submittedContributor.displayName, SubmissionDate:submissionDate, Edit, Approve, Reject"/>
+		<span jwcid="PageTitleColumnValue@Block">  
+            <span jwcid="@Insert" value="ognl:openPublishedSpan" raw="ognl:true"/> 
+			<a jwcid="@Any" href="ognl:currentWorkingUrl" target="new">
+                <span jwcid="@Insert" value="ognl:components.table.tableRow.pageTitle"/>
+            </a>
+            <span jwcid="@Insert" value="ognl:closePublishedSpan" raw="ognl:true"/>
+	    </span>
+        <span jwcid="EditColumnHeader@Block">&nbsp;</span>
+        <span jwcid="EditColumnValue@Block">
+            <a jwcid="@DirectLink" listener="ognl:listeners.editTreehouse" raw="ognl:true" renderer="ognl:rendererFactory.editLinkRenderer" parameters="ognl:components.table.tableRow.accessoryPageId">Edit</a>
+        </span>
+        <span jwcid="ApproveColumnHeader@Block">&nbsp;</span>
+		<span jwcid="ApproveColumnValue@Block">
+            <a jwcid="@DirectLink" listener="ognl:listeners.approveTreehouse" parameters="ognl:components.table.tableRow.accessoryPageId">Approve</a>
+        </span>
+        <span jwcid="RejectColumnHeader@Block">&nbsp;</span>
+		<span jwcid="RejectColumnValue@Block">
+            <a jwcid="@DirectLink" listener="ognl:listeners.rejectTreehouse" parameters="ognl:components.table.tableRow.accessoryPageId">Reject</a>
+        </span>
+        <script jwcid="@Script" script="EditObject.script" pageName="TreehouseSearchResults" 
+            editWindowName="ognl:editWindowName"/>
+</html>
+
+
+<span jwcid="@If" condition="ognl:wasApprovedTreehouse">
+	<span jwcid="@MailBlock" smtp="localhost" subject="Treehouse Submission Approved" to="ognl:emailAddresses" from="treehouses@tolweb.org" html="ognl:false" bcc="">
+Hello, we are happy to inform you that your treehouse submission, '<span jwcid="@Insert" value="ognl:approvedOrRejectedTreehouse.pageTitle"/>', was approved for publication to the Tree of Life.  You can view your
+treehouse by visiting this URL: <span jwcid="@Insert" value="ognl:publicUrl"/>
+<span jwcid="@If" condition="ognl:comments">
+The treehouse editor, <span jwcid="@Insert" value="ognl:contributor.displayName"/> (<span jwcid="@Insert" value="ognl:contributor.email"/>) had the following comments regarding your submission:
+
+            <span jwcid="@Insert" value="ognl:'\n'" raw="ognl:true"/>            
+            <span jwcid="@Insert" value="ognl:comments"/>
+
+                        
+        </span>
+
+Thank you for contributing treehouses to the Tree of Life.
+	</span>
+</span>
+<span jwcid="@If" condition="ognl:wasRejectedTreehouse">
+	<span jwcid="@MailBlock" smtp="localhost" subject="Treehouse Submission Not Approved" to="ognl:emailAddresses" from="treehouses@tolweb.org" html="ognl:false">
+        Hello, we are writing to inform you that your treehouse submission, '<span jwcid="@Insert" value="ognl:approvedOrRejectedTreehouse.pageTitle"/>' was not approved for publication to the Tree of Life.
+        <span jwcid="@If" condition="ognl:checkedAreas">
+        The following areas were marked as needing attention:
+		<span jwcid="@Insert" value="ognl:'\n'" raw="ognl:true"/>
+        <span jwcid="@Insert" value="ognl:checkedAreas"/>
+        </span>
+        <span jwcid="@If" condition="ognl:comments">
+    	The treehouse editor, <span jwcid="@Insert" value="ognl:contributor.displayName"/> (<span jwcid="@Insert" value="ognl:contributor.email"/>) had the following comments regarding your submission:
+
+            <span jwcid="@Insert" value="ognl:'\n'" raw="ognl:true"/>            
+            <span jwcid="@Insert" value="ognl:comments"/>
+
+                        
+        </span>
+        
+        Thank you for contributing treehouses to the Tree of Life.
+	</span>        
+</span>

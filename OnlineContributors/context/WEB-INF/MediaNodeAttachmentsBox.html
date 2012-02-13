@@ -1,0 +1,31 @@
+<div id="attach" class="whitebox"> <a name="attach"></a><a jwcid="@HelpLink" pageName="ognl:page.helpPageName" helpName="Attached to Group(s)" />
+    <h4>Attached to Group(s)</h4>
+	<div class="instructions"><p>Attach your image to one or more species.  If you
+        cannot identify specimens to species, if your image represents a larger
+        group, or if relevant species are not yet represented in the database,
+        you can attach
+        it to a group deeper in the tree (e. g., a genus). If you do this,
+        enter the  <strong>Scientific
+        Name</strong>  below, so we can update
+         the  attachment as soon as the group becomes available.</p><p>Note that your image can be featured in ToL image collections only if it is attached to a group.</p> 
+	</div>
+    <ul class="box1">
+        <li><a jwcid="@LinkSubmit" listener="ognl:page.listeners.addGroupSubmit">Add 
+            a Group from the ToL Database</a></li>        
+		<span jwcid="@For" source="ognl:media.nodesSet" element="ognl:null" value="ognl:currentNode" convertor="ognl:convertor"> 
+        	<li class="group"><span jwcid="@Insert" value="ognl:currentNode.name"/> <a jwcid="@LinkSubmit" listener="ognl:page.listeners.removeGroup" selected="ognl:page.nodeToDelete" tag="ognl:currentNode" class="remove">Remove</a></li>
+        </span>
+    </ul>
+    <ul>
+        <li>
+	        <label class="specimenlabel">Scientific Name
+	          <input jwcid="@TextField" type="text" value="ognl:media.scientificName" size="40" />
+	        </label>
+        </li>
+        <li>
+	        <label class="specimenlabel">Identified By
+	          <input jwcid="@TextField" value="ognl:media.identifier" type="text" size="40" />
+            </label>        
+        </li>
+    </ul>
+</div>

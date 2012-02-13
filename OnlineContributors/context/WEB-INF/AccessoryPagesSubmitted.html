@@ -1,0 +1,17 @@
+<html jwcid="@Wrapper" title="Pages Submitted">
+<h2 class="clear">Pages Submitted</h2>
+The following pages were submitted for publication:
+<ul>
+    <span jwcid="@Foreach" source="ognl:submittedPages" value="ognl:currentPage">
+        <li><span jwcid="@Insert" value="ognl:currentPage.menu"/></li>
+    </span>
+</ul>
+Thank you!
+<span jwcid="@If" condition="ognl:!wasEditor">
+An editor will now review your submission. Usually submissions are published or
+revisions are requested within 24 hours.
+<span jwcid="@ArticleNoteSubmittedEmail" submittedArticleNotes="ognl:submittedPages" 
+    contributor="ognl:submittedContributor"/>
+</span>
+<p>You can now go back to the <a jwcid="@PageLink" page="UserSubmitPublication">publication manager</a>
+</html>

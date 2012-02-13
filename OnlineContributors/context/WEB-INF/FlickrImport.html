@@ -1,0 +1,13 @@
+<html jwcid="@Wrapper">
+<h2 class="clear">Flickr Photo Importer</h2>
+<span jwcid="@If" condition="ognl:errorMessage">
+<p class="error">There was a problem importing the image.  Please make sure you typed the url correctly.</p>
+</span>
+<form jwcid="@Form" listener="listener:importPhoto">
+    Enter the url or flickr photo id of the photo you want to upload to the ToL database: <input jwcid="@TextField" value="prop:urlOrId"/> <input jwcid="@Submit" value="Import"/>
+    <div class="hidden">
+ 	<div jwcid="@MediaCopyrightBox"/>
+    <div jwcid="mediaUsePermsBox@MediaUsePermissionBox"/>
+    </div>
+</form>
+</html>

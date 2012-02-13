@@ -1,0 +1,17 @@
+<html jwcid="@Wrapper" title="Contributor Registration Confirmation">
+	<h2 class="clear">Treehouse Contributor Registration Confirmation</h2>
+	            <h4> ToL Treehouse Contributor</h4>
+	            <p> Your registration will be reviewed by ToL learning materials coordinator. 
+	              Once your participation has been approved, you will receive a user 
+	              ID and password that will allow you to upload materials into the 
+	              ToL database.</p>
+</html>
+<span jwcid="@MailBlock" from="treehouses@tolweb.org" smtp="localhost" subject="New Treehouse Contributor Registration" to="ognl:{configuration.learningEditorEmail}"
+    html="ognl:true">
+A new user has signed up to be a treehouse contributor.  Here is their relevant information:
+<span jwcid="@ContributorDataBlock" contributor="ognl:contributor"/>
+
+You may activate this user's account by logging in to the Online Treehouse Pages
+located at <a href="http://tolweb.org/onlinecontributors/app?service=page&page=TreehouseContributorLogin">
+http://tolweb.org/onlinecontributors/app?service=page&page=TreehouseContributorLogin</a>    
+</span>

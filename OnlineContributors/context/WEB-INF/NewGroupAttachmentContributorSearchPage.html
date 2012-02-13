@@ -1,0 +1,51 @@
+<html jwcid="@Wrapper" title="Create A New Group Assignment">
+    <form jwcid="@Form" stateful="ognl:false" listener="ognl:listeners.searchContributors">
+        <input jwcid="@Hidden" value="ognl:actionType"/>
+        <input jwcid="@Hidden" value="ognl:wrapperType"/>        
+        <input jwcid="@Hidden" value="ognl:editedObjectId"/>
+        <input jwcid="@Hidden" value="ognl:returnPageName"/>        
+        <input jwcid="@Hidden" value="ognl:contributorType"/>
+        <input jwcid="@Hidden" value="ognl:checkEditingPermissions"/>
+        <input jwcid="@Hidden" value="ognl:checkUnapprovedType"/>        
+        <span jwcid="@If" condition="ognl:actionType != @org.tolweb.tapestry.ContributorSearchPage@EDIT_CONTRIBUTOR"
+            element="ognl:null">
+			<a jwcid="@ReturnToEditingLink"/>
+        </span>
+        <span jwcid="@Else" element="ognl:null">
+            <a jwcid="@PageLink" class="rte" page="ScientificRegistrationOverview">Return</a>
+        </span>
+	<h2 class="clear">Create A New Group Assignment for <span jwcid="@Insert" value="ognl:nodeName"/></h2>
+  	<p>Use the Search form below to give editing privileges to a person who
+            is already a registered Tree of Life contributor. You can also
+            <a jwcid="@DirectLink" listener="ognl:listeners.addNewContributor" parameters="ognl:editedObjectId">register a new ToL contributor
+            for this group</a>.</p>    
+    <p>Please enter one or more values to search for a registered ToL Contributor.</p>
+    <span jwcid="@Insert" value="ognl:error" class="error"/>
+        <table>
+            <tr>
+				<th>Surname</th>
+                <td><input jwcid="@TextField" value="ognl:surname"/></td>
+            </tr>
+            <tr>
+				<th>First Name</th>
+                <td><input jwcid="@TextField" value="ognl:firstName"/></td>
+            </tr>   
+            <tr>
+				<th>Institution</th>
+                <td><input jwcid="@TextField" value="ognl:institution"/></td>
+            </tr>        
+            <tr>
+				<th>Email</th>
+                <td><input jwcid="@TextField" value="ognl:email"/></td>
+            </tr>			        
+            <tr>
+				<th>Address</th>
+                <td><input jwcid="@TextField" value="ognl:address"/></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td class="right"><input jwcid="@Submit" type="submit" value="Search Contributors"/></td>
+            </tr>
+        </table>
+    </form> 
+</html>

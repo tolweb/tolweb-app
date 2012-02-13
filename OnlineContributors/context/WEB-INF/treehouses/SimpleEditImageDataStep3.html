@@ -1,0 +1,44 @@
+<html jwcid="wrapper@treehouses/EditSimpleMediaWrapper" title="Treehouse Builders Media Form">
+	<div class="floatright top">
+	    <a name="subm"></a> <input jwcid="@Submit" value="save & submit data" id="subm" listener="listener:submitData"/>
+	</div>
+	<h2 class="copychoicelong">Step 3. Additional Information </h2>
+    <span jwcid="@If" condition="ognl:errorMessage">
+		<div class="fix">
+			<h3>Error</h3>
+			<ul>
+				<li><span jwcid="@Insert" value="ognl:errorMessage"/></li>
+			</ul>
+        </div>
+    </span> 
+	<div id="imgcontent" class="whitebox">
+        <a name="imgcontent"></a>
+		<a jwcid="@HelpLink" helpName="Image Content" pageName="ImageHelpMessagesPage"/>
+        <h4>Image Content</h4>
+        <ul jwcid="@ImageMovieContentCheckboxes"/>
+		<h5 id="subjecttrigger"  class="triup" onclick="showbranch('subject', 'show', 'hide'); showbranch('subjecttrigger', 'tridown', 'triup')">Subject/Keywords</h5>
+            <div id="subject" class="hide"> 
+            <span jwcid="instructionsBlock@Block">
+ <p class="instructions">Some images may be particularly suitable 
+                    to illustrate a particular subject; e.g., a picture of a mating 
+                    pair is an illustration of Neurobiology & Behavior, a diagram showing 
+                    the life cycle of a plant is an illustration of Life History & Development, 
+                    etc. Some subjects are assigned automatically; e. g., if you 
+                    select <strong>Body Part</strong> above, your image will be 
+                    associated with the Morphology &amp; Anatomy subject; if you 
+                    select <strong>Fossil</strong> under <strong>Specimen Information</strong>, 
+                    your image will be associated with the Paleobiology subject. 
+                    You can select additional subjects below, but be sure to limit 
+                    your selection to topics for which your image has special 
+                    relevance. Additional subjects that are not covered in this 
+                    list can be entered in the <strong>Key Words</strong> field 
+                    below.</p>
+ 			</span>
+		<span jwcid="@Keywords" instructions="component:instructionsBlock" keywords="ognl:keywords"/>
+ </div>
+</div>						
+<div jwcid="@MediaPlaceTimeBox"/>
+<div jwcid="@MediaSpecimenBox"/> 	
+<div jwcid="@MediaAltTextBox"/>
+<div class="floatright"><a name="subm"></a> <input jwcid="@Submit" value="save & submit data" id="subm" listener="listener:submitData"/></div><div class="spacer">&nbsp;</div>
+</html>

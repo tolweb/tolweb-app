@@ -1,0 +1,72 @@
+<html jwcid="@NewBarebonesFormWrapper" bodyId="publish" title="Publish Your Treehouse" 
+cssName="trhsform.css">
+<span jwcid="@If" condition="ognl:beans.delegate.hasErrors" class="error">
+    <span jwcid="@Delegator" delegate="ognl:beans.delegate.firstError"/>
+</span>
+<form jwcid="@Form" listener="ognl:listeners.submitTreehouse" delegate="ognl:beans.delegate">    
+<div class="boxtoc">
+<h3><span class="boldtext">Please note:</span> </h3>
+  <p class="largeindent">When you click submit for publication your treehouse will go first to your teacher to review. If everything looks ok, your teacher will submit the treehouse to the ToL for publication. If you need to fix anything it will be returned to you to revise.  </p>
+  <p class="largeindent"><strong>Once you click &quot;submit for publication&quot; you will not be able to edit your treehouse again until it is either published or returned to you to revise. </strong></p>
+  <div class="important">
+ <p class="floatright"><strong>Preview your Treehouse by following this link: </strong><a jwcid="@GenericLink" href="ognl:workingUrl" renderer="ognl:rendererFactory.viewPageRenderer">preview</a>
+	<h3>Publishing Checklist</h3>
+    <p class="largeindent"><strong>Before you click submit for publication you must check the boxes below to let your teacher and ToL editors  know that you have checked over your page. </strong>Checking a box means that you have checked for and corrected any problems for the corresponding areas. </p>
+
+  <p class="largeindent"> <strong>If you can't check off some of the boxes below, please <a jwcid="@PageLink" page="TreehouseEditor">return to editing to fix the problem</a>. </strong></p>
+  <ul class="nodisclist" style="padding-right: 20px;">
+    <li>
+      <input jwcid="@Checkbox" displayName="No personal information in my treehouse" value="ognl:personalInfoSelected"
+          validators="validators:required"/>
+          <strong class="red">Personal information (name, photos, email, address).
+      </strong>            <ul>
+        <li> I do not have personal information on my page unless I have received permission in writing from my parent/guardian and permission from my school.</li>
+
+      </ul>
+    </li>
+    <li> <strong class="red">
+    Copyright of media files (<a href="/tree/learn/TreebuilderTools/trcopyright.html" target="newHelpWindow">Copyright Rules and Issues</a> | <a href="/tree/learn/TreebuilderTools/CopyrightQuiz.html" target="newHelpWindow">The Copyright Quiz</a>)
+    </strong>            <ul class="nodisclist">
+      <li>
+      <input jwcid="@Checkbox" displayName="All images have copyright" value="ognl:imageCopyrightSelected"
+          validators="validators:required"/>
+      All images in my treehouse have copyright and/or credits information listed underneath them and  all media files have copyright/credits information in the media details window when they are clicked on.
+<em> The source for all images/media found outside of the ToL on the web is indicated, e.g. the name of the site and its URL (web address).</em></li>
+      <li>
+      <input jwcid="@Checkbox" displayName="Images marked as copyrighted to me were created by me" value="ognl:myImagesCopyrightSelected"
+          validators="validators:required"/>
+        Images/media marked as copyrighted to me were created by me.</li>
+      <li>
+      <input jwcid="@Checkbox" displayName="Permission received for copyrighted images" value="ognl:imagesCopyrightPermissionSelected"
+          validators="validators:required"/>
+		Permission has been received in writing for any copyrighted media files found on the web, or in print sources. <strong>Permission notes need to be pasted into the notes field of the  media data form.</strong></li>
+
+      <li>
+      <input jwcid="@Checkbox" displayName="Image data filled out correctly" value="ognl:imageDataFilledOutSelected"
+          validators="validators:required"/>
+The media data forms for the media in this page are filled out correctly.     </li>
+      </ul>
+    </li>
+    <li>
+      <input jwcid="@Checkbox" displayName="Content/Design/Spelling" value="ognl:grammarSelected"
+          validators="validators:required"/>
+       <strong class="red">   Content/Design/Spelling (<a href="http://www.tolweb.org/tree/learn/TreebuilderTools/BuildingGuide/DesignGuidelines.html" target="newHelpWindow">Design Guidelines</a> | <a href="http://www.tolweb.org/tree/learn/TeacherResources/BasicGuidelines.html" target="newHelpWindow">Basic Treehouse Guidelines</a>)      </strong>           <ul class="nodiscspaced">
+
+      <li> If your work has  glaring spelling and grammar errors or lack of basic content please revise it before you submit your treehouse for publication. However, don't hesitate to submit your page if you have some formatting problems (e.g. the spacing is off or you are having trouble removing the color from some text) because it is easy for us to reformat your pages. Also, we realize that there are quirks in the Easy Editor that may cause formatting problems for you.</li>
+      </ul>
+    </li>  </ul>
+
+       <p>Remember that you must attach your page to a group for visitors to be able to access it from ToL branch and leaf pages. We will check to make sure you have attached your treehouse to the best place on the ToL. </p>
+  <p>
+  <input jwcid="@Submit" value="Return to editing" listener="ognl:listeners.returnToEditing"/>
+  <input jwcid="@Submit" value="Go ahead and submit to your teacher for review/publication!"/></p>
+</div>
+  	  </div>
+	<div class="spacer">&nbsp;</div>
+	<div class="spacer">&nbsp;</div>
+	<div class="spacer">&nbsp;</div>
+	<div class="spacer">&nbsp;</div>
+    <div class="savesspacer">&nbsp;</div>
+	<div class="savesspacer">&nbsp;</div>
+</form>
+</html>

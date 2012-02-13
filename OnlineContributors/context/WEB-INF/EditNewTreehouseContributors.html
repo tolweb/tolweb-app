@@ -1,0 +1,45 @@
+<html jwcid="@BuildTreehouseWrapper" title="Edit New Treehouse Contributors">
+	<a jwcid="@PageLink" page="TreehouseMaterialsManager">Back to Treehouse Materials Manager</a>
+	<h2 class="clear">New Treehouse Contributors</h2>
+    <span jwcid="@If" condition="ognl:approvedContributor != null">
+        <span jwcid="@Insert" value="ognl:approvedContributor.displayName"/> was successfully approved.  An email
+        has been sent informing them of their activation.
+        <span jwcid="@NewPasswordEmail" contributor="ognl:approvedContributor" isMedia="ognl:false"
+        	additionalComments="ognl:comments" additionalEmail="ognl:configuration.learningEditorEmail"/>
+	</span>
+    <span jwcid="@If" condition="ognl:rejectedContributor != null">
+    	<span jwcid="@Insert" value="ognl:rejectedContributor.displayName"/> was successfully rejected.  An email
+        has been sent informing them of their rejection.
+        <span jwcid="@MailBlock" from="ognl:configuration.learningEditorEmail" smtp="localhost" subject="Tree of Life Treehouse Contributions"
+            to="ognl:{rejectedContributor.email, configuration.learningEditorEmail}" html="ognl:false">
+Hello,
+
+We regret to inform you that we cannot register you as a Treehouse Builder at 
+the present time. Either your plans for treehouse building do not fit with the 
+goals of the Learning with the Tree of Life project or the information that you 
+entered in some of the required fields is not valid.  Please contact us if you 
+would like to discuss this matter further.
+
+<span jwcid="@Insert" value="ognl:'\n'" raw="ognl:true"/>                                    
+<span jwcid="@Insert" value="ognl:comments"/>
+<span jwcid="@Insert" value="ognl:'\n'" raw="ognl:true"/>                        
+            
+Regards,
+Lisa Schwartz            
+        </span>
+    </span>
+    <span jwcid="@If" condition="ognl:newContributors.size > 0">
+		<table jwcid="table@contrib:Table" source="ognl:newContributors" columns="!Data, !Approve, !Reject"/>
+	    <span jwcid="DataColumnHeader@Block">Contributor Data</span>
+	    <span jwcid="DataColumnValue@Block"><span jwcid="@ContributorDataBlock" contributor="ognl:components.table.tableRow"/></span>
+	
+	        <span jwcid="ApproveColumnHeader@Block">&nbsp;</span>
+		<span jwcid="ApproveColumnValue@Block">
+	        <a jwcid="@DirectLink" listener="ognl:listeners.approveContributor" parameters="ognl:components.table.tableRow.id">Approve</a>
+	    </span>
+	    <span jwcid="RejectColumnHeader@Block">&nbsp;</span>
+		<span jwcid="RejectColumnValue@Block">
+	        <a jwcid="@DirectLink" listener="ognl:listeners.rejectContributor" parameters="ognl:components.table.tableRow.id">Reject</a>
+	    </span>        
+    </span>
+</html>

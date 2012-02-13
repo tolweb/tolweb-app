@@ -1,0 +1,239 @@
+<html jwcid="@Wrapper" title="ognl:!isNonCoreContributor ? 'ToL Scientific Core Contributors Registration' : 'ToL People Registration'">
+<h2 jwcid="@If" condition="ognl:!isNonCoreContributor" class="clear" element="h2">ToL Scientific Core Contributor Registration</h2>
+<h2 jwcid="@Else" class="clear" element="h2">ToL People Registration</h2>
+<span jwcid="@If" condition="ognl:isNewContributor && !isNonCoreContributor" element="ognl:null">
+    <p>This page lets you register other biologists as ToL scientific core contributors. When you submit this registration form, our system will send a message to the registrant with information on how to get started as a ToL contributor. If you know what licenses your collaborator prefers for their text and media contributions, you can edit their default licenses after submitting the registration.  If you are not sure, you can leave the default licenses in place.  The registration message will contain information on how they can review and edit their license preferences themselves.</p>
+
+<p>As always, if you have any questions or concerns, contact <a href="mailto:treegrow@tolweb.org">treegrow@tolweb.org</a>.
+	    <p class="bottomborder"><strong>Required information is marked with an asterisk*</strong></p>
+</span>
+<span jwcid="@If" condition="ognl:isNewContributor && isNonCoreContributor" element="ognl:null">
+    <p>On this page, you can register as someone interested in a particular group
+        on the Tree of Life. You can register for any number of groups you care about.  Once you have registered as an enthusiast for a given group, you will be listed on the <strong>ToL People</strong> page for that group. The information you enter in this form will be shown on your personal profile page on the ToL web site, so other people with similar interests will be able to learn more about you and contact you if you provide an email or homepage address.</p>
+</span>
+	<form jwcid="@Form" listener="listener:registrationFormSubmit" delegate="ognl:delegate">        
+    <input jwcid="@Hidden" value="ognl:isNonCoreContributor"/>
+	<span jwcid="@If" condition="ognl:beans.delegate.hasErrors">        
+		<span class="error"><span jwcid="@Delegator" delegate="ognl:beans.delegate.firstError"/></span>
+	</span>       
+	  <span jwcid="@If" condition="ognl:existingContributor != null">
+			<span class="error">Somebody has already registered with the ToL using that email address.  If you need help updating your account, contact <a href="mailto:treegrow@tolweb.org">treegrow@tolweb.org</a>. If you would like a new password to be emailed to that address, please <a jwcid="@DirectLink" listener="ognl:listeners.emailPassword">click here</a>.</span>
+	  </span> 
+	  <span jwcid="@If" condition="ognl:error != null">
+			<span jwcid="@Insert" value="ognl:error" class="error"/>
+	  </span>      
+<span jwcid="@If" element="ognl:null" condition="ognl:!isNewContributor">
+	<span jwcid="@ExistingSciContributorTopForm"/>
+</span>    
+    <ul class="registration">
+        <li jwcid="@If" condition="ognl:!isNewContributor" element="li">
+			<strong>Required information is marked with an asterisk*</strong>
+        </li>
+        <li> 
+            <label>
+            <span jwcid="@FieldLabel" field="component:surnameField" raw="ognl:true"/>
+            <input jwcid="surnameField@TextField" value="ognl:editedContributor.surname" size="30" 
+            	validators="validators:required" displayName="Surname*"/>
+			</label>
+        </li>        
+        <li> 
+            <label>
+            <span jwcid="@FieldLabel" field="component:firstNameField" raw="ognl:true"/>
+            <input jwcid="firstNameField@TextField" value="ognl:editedContributor.firstName" size="30" 
+            	validators="validators:required" displayName="First Name*"/>
+            </label>
+        </li>
+        <li> 
+            <label>
+                <span jwcid="@FieldLabel" field="component:emailField" raw="ognl:true" /> 
+                <input jwcid="emailField@TextField" value="ognl:editedContributor.email" size="30"
+                validators="validators:required,email" displayName="Email*"/>
+            </label>
+            <label class="checkbox"> 
+            <input jwcid="@Checkbox" value="ognl:editedContributor.dontShowEmail"/>
+            Do not publish</label>
+        </li>
+
+        <li class="topborder"> 
+            <label>Web Page URL 
+            <input jwcid="@TextField" value="ognl:editedContributor.homepage" size="40"/>
+            </label>
+        </li>
+        <li> 
+            <label>Institution
+                <input jwcid="@TextField" value="ognl:editedContributor.institution" size="40"/>
+            </label>
+        </li>
+        <li> 
+            <label><span class="textarealabel">Address</span> 
+            	<textarea jwcid="@TextArea" value="ognl:editedContributor.address" cols="30" rows="4"/>
+            </label>
+        </li>
+        <li> 
+            <label><span class="textarealabel">Biographical Information</span> 
+            	<textarea jwcid="@TextArea" value="ognl:editedContributor.bio" cols="30" rows="5"/>
+            </label>
+        </li>
+        <li> 
+            <label>Photo 
+				<input jwcid="@Upload" file="ognl:imageFile" size="30"/>
+            </label>
+        </li>
+    </ul>
+    <div class="registerhelp"> 
+        <span jwcid="@If" condition="ognl:!isNonCoreContributor">
+        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " />        
+			The contributor's  
+            <strong>name</strong> will be published on the ToL web site in copyright
+             notices and credit lines for your contributions. You may choose
+            to  withhold the <strong>e-mail</strong> address from publication,
+            but  we need to have it on file for legal and administrative purposes.
+            Note that throughout the ToL site, email addresses are encoded in
+            order to protect them from being harvested by spambots.</p>
+        </span>
+        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " />We
+             encourage contributors to provide  <strong>web page url</strong>, <strong>institutional
+              affiliation,</strong> and <strong>mailing address</strong>. This
+              information  may be published in credit lines of ToL pages and
+              on  personal  profile pages. Making available this information
+              about our scientific  contributors greatly contributes to the transparency
+              and accountability  of the ToL project.</p>
+        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " /><strong>Biographical
+                information</strong> will be printed on
+             personal profile pages. It can be accompanied by a small picture
+            (not more than 250x250 pixels, please). </p>
+    </div>
+    <span jwcid="@If" condition="ognl:!isNonCoreContributor" element="ognl:null">
+    <p class="topborder" style="clear: both">Please enter the following information, which we will use for administrative purposes only:</p>
+    </span>
+    <p jwcid="@Else" style="clear: both" element="p"/>
+    <ul class="registration"> 
+        <li>
+            <span jwcid="@If" condition="ognl:!isNonCoreContributor" element="ognl:null">
+            Group Assignments:
+            </span>
+            <span jwcid="@Else" element="ognl:null">
+            Groups I am interested in:
+            </span>
+            	<ul jwcid="@For" source="ognl:nodes" value="ognl:currentNode" element="ul">
+                    <li><span jwcid="@Insert" value="ognl:currentNode.name"/> <a jwcid="@LinkSubmit" selected="ognl:nodeIdToDelete" tag="ognl:currentNode.nodeId" class="remove">Remove</a></li>
+                </ul>
+                <ul>
+                    <li><a jwcid="@LinkSubmit" listener="listener:addGroup">Add a Group from the ToL Database</a></li>
+                </ul>
+        </li>
+        <span jwcid="@If" element="ognl:null" condition="ognl:!isNonCoreContributor">
+	    <li>
+            <label><span class="textarealabel">List groups here that are not
+            yet in the database: </span> 
+            <textarea jwcid="@TextArea" value="ognl:editedContributor.plans" name="textarea" cols="40" rows="4"></textarea>
+            </label>
+        </li>        
+        <li> 
+            <label> 
+            <input jwcid="@Checkbox" value="ognl:editedContributor.willingToCoordinate"/>
+            The contributor will coordinate these groups</label>
+            <ul>
+                <li>
+                    <label><span class="textarealabel">Comments</span>
+                   <textarea jwcid="@TextArea" value="ognl:editedContributor.coordinationComments" cols="25" rows="4"></textarea>
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li jwcid="@If" condition="ognl:!isNonCoreContributor" element="li">
+        Limits of Group Assignments:
+            	<ul jwcid="@For" source="ognl:cutoffNodes" value="ognl:currentNode" element="ul">
+                    <li><span jwcid="@Insert" value="ognl:currentNode.name"/> <a jwcid="@LinkSubmit" selected="ognl:cutoffNodeIdToDelete" tag="ognl:currentNode.nodeId" class="remove">Remove</a></li>
+                </ul>
+                <ul>
+                    <li><a jwcid="@LinkSubmit" listener="listener:addCutoffGroup">Add a Group from the ToL Database</a></li>
+                </ul>            
+        </li>
+        <li> 
+            <label>Phone 
+            <input jwcid="@TextField" size="20" value="ognl:editedContributor.phone"/>
+            </label>
+        </li>
+        <li> 
+            <label>Fax 
+            <input jwcid="@TextField" size="20" value="ognl:editedContributor.fax"/>
+            </label>
+        </li>
+        </span>
+    </ul>
+    <div class="registerhelp"> 
+        <span jwcid="@If" condition="ognl:!isNonCoreContributor" element="ognl:null">
+	        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " />You
+	            can make group assignments within the groups for which you have editing
+	            privileges. When you assign a group to a contributor, this person
+	            will automatically be given editing privileges for this group. You
+	            can also make group assignments by adding a registered contributor
+	            as an author to a ToL branch or leaf page.</p>
+		     
+	        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " />Authors
+	             of branch pages generally <a href="javascript: w = window.open('/tree/sep/contributing.html', 'documentation', 'width=900, height=700, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">coordinate</a> 
+	            the development of pages for subgroups. Uncheck <strong>The contributor
+	            will  coordinate
+	            ...</strong> if the person will not participate in the coordination
+	            of the branch. If they will coordinate only certain subgroups,
+	            list those groups in the 
+	            <strong>Comments</strong> field. </p>
+	
+	        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " /><strong>Phone</strong> and <strong>fax</strong> numbers
+	            will not be  published. We request this information for administrative
+	            purposes  only. </p>
+        </span>
+        <span jwcid="@Else" element="ognl:null">
+	        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " />You
+	            may add as many groups as you want.  Adding a
+	        	group causes you to be listed on a page of all people who are interested
+	        	in that group.</p>            
+        </span>
+    </div>    
+    <div jwcid="@If" condition="ognl:isNonCoreContributor" class="clear">
+        <h4>Areas of Interest</h4>
+    	<span jwcid="@ContributorInterests" contributor="ognl:editedContributor"/>
+    </div>
+    <span jwcid="@If" condition="ognl:isNewContributor && !isNonCoreContributor" element="ognl:null">
+<a name="TermsAndConditions"></a>
+    <h4 class="topborder" style="clear: both">Terms and Conditions for ToL Scientific Contributors</h4>
+    <p>ToL scientific contributors may upload materials to the Tree of Life database 
+        and send emails and other communications to Tree of Life staff and contributors, 
+        so long as the content is not illegal, obscene, threatening, defamatory, 
+        an invasion of privacy, infringing of intellectual property rights or 
+        otherwise injurious to third parties. ToL contributors may not use false 
+        email addresses, impersonate any person or entity, or otherwise mislead 
+        as to the origin of any communication, message or other content. While 
+        the Tree of Life Project is not obliged to review all content that is 
+        published by contributors on the Tree of Life web site, we reserve the 
+        right to delete any contribution, or take action against any registered 
+        account, at any time, for any reason.</p>
+    <p>ToL scientific contributors keep the copyright for materials submitted 
+        to the Tree of Life database, and a copyright notice is printed alongside 
+        copyright-protected contributions displayed on the ToL web site. 
+        By default, ToL contributions are released under the <a href="javascript: w = window.open('http://creativecommons.org/licenses/by-nc/3.0/', 'documentation', 'width=800, height=800, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">Creative Commons Attribution-NonCommercial License</a>. 
+        Contributors who prefer another license can specify alternative default licenses for their text and media contributions (follow the 'Review license defaults' link in the Scientific Materials Manager).
+        Licenses for individual contributions can also be specified in the page or media data entry forms. 
+        For an overview of available licensing options, see <a href="javascript: w = window.open('/tree/home.pages/toluse.html', 'documentation', 'width=800, height=800, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">Tree of Life Use of Contributions</a>.</p>
+    <p> ToL scientific contributors voluntarily grant the ToL Project and its 
+        collaborators non-exclusive, royalty-free, and full rights to use the 
+        submitted materials according to the selected license. To the best 
+        of the contributor's knowledge, use of the contribution by the Tree of 
+        Life Project does not violate any intellectual property rights and will 
+        not cause injury to any person or entity. The Tree of Life Project or 
+        its collaborators take no responsibility and assume no liability for any 
+        contribution made by the contributor or a third party.</p>
+    <p>When registering as a ToL scientific contributor, you release the ToL Project, 
+        its employees, contractors, consultants, and collaborators from any and 
+        all damages, claims, causes of action, liabilities, and expenses relating 
+        to your participation, or exclusion or disqualification from participation, 
+        in the Tree of Life Project.</p>
+    </span>
+	    <div id="submitregistration">
+	        <input jwcid="reviewLicenses@Checkbox" value="ognl:reviewDefaultLicenses"  displayName="Review default licenses"/>
+	        <span jwcid="@FieldLabel" field="ognl:components.reviewLicenses" prerender="ognl:false"/>
+	    	<input jwcid="@Submit" value="Submit Registration"/>
+	    </div> 
+    </form>
+</html>

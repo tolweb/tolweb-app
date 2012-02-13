@@ -1,0 +1,178 @@
+<messages>
+
+<message name="Copy Data From Another Treehouse"><text><![CDATA[ <p>This
+option allows you to copy the data from another one of your treehouse
+contributions into the form for the current treehouse.  Using this
+feature can make things easier when you compose multiple treehouses that
+share content such as groups of authors, links to other pages or
+references.</p> <p><strong>Be aware that using this feature will
+replace any information you may already have entered in the current
+form.  Therefore, you should copy data only when you first get started
+building your treehouse.</strong></p> ]]></text> </message>
+
+
+<message name="Learning Information"><text><![CDATA[ 
+
+<p>Teacher resources have an expanded learning section with many fields that you can fill out to assist teachers in finding the best resources for their classrooms.
+Only three areas are indicated as required: the Learner Level, Resource Overview Description, and Science Subject Key Words. Fill out as many of the additional fields as you would like. 
+The considerable number of fields we provide are intended to help other teachers search for resources that best fit their needs.</p>
+
+<p>Note that you can also add state and national education standards by typing them into a text field or by adding them as documents.
+</p>
+ ]]></text> </message>
+
+
+
+<message name="Treehouse Type"><text><![CDATA[ <p>In this section you
+can assign additional treehouse types to your work. If you select more
+than one treehouse type for your page, visitors who search on
+<em>treehouse type</em> will find your page in each category that you
+have assigned to your treehouse. For example, if you choose to give your
+treehouse the investigation, story and teacher resource treehouse types,
+visitors will find your page listed under all three categories. You may
+choose as many categories as you think apply to your page and that would
+help others find what they are looking for when they search for
+treehouses.</p> ]]></text>
+
+</message>
+
+<message name="Learner Level"><text><![CDATA[ 
+<h5>ToL Learner Level</h5><p>Here you can select
+any combination of the three levels that are listed: beginner,
+intermediate and advanced. These categories will help people find
+treehouses to visit that  match their level of experience with the
+material that is presented in the page. </p>
+<p><strong>Choose:</strong></p> <ul> <li><strong> Beginner</strong> if
+your treehouse introduces a topic in a way that <strong>any learner,
+regardless of their experience </strong> with the subject matter could
+understand and appreciate.</li> <br /> <li><strong>
+Intermediate</strong> if your treehouse presents material in a way that
+would be easier to understand and appreciate if a <strong>learner has
+some knowledge</strong> of the subject matter.</li> <br />
+<li><strong>Advanced</strong> if your treehouse presents material in a
+way that requires that the <strong>learner has a good deal of prior
+knowledge </strong>of the subject matter. </li> </ul>
+
+<h5>Target Age and Grade Level</h5>
+<p>Here you can indicate a suggested age/grade level. The default is all age and grade levels. If you choose a specific grade and age level, for example grades 3-5 (ages 8-12),
+but you feel that the resource can be modified for other learner levels check the box that says "Can be modified for many grade/age levels". This information is very helpful for teachers searching for resources to use with their classrooms.</p>
+
+ ]]></text>
+
+</message>
+
+
+
+<message name="Notes"><text><![CDATA[ <p>You can use the Notes field to
+communicate with ToL editors and contributors about your treehouse. For
+example, you can write a note if there is something you think we should
+know about your page or if you have a question. You can also enter
+reminders for yourself or messages to your co-authors or ToL editors.
+</p> ]]></text> </message>
+
+
+<message name="Education Standards"><text><![CDATA[ 
+<h5>State Education Standards</h5>
+<p>Add the state(s) for which you are adding education standards, then list the curricular areas that the standards cover.</p>
+<p>You can copy and paste, or type the standards into the text box where it indicates "standards text" or you can upload a document with the standards. <strong>Note that you can only upload one standards document.</strong></p>
+
+
+<h5>National Education Standards</h5>
+<p>Indicate the subject areas that the standards cover.</p>
+<p>You can copy and paste, or type the standards into the text box where it indicates "standards text" or you can upload a document with the standards. <strong>Note that you can only upload one standards document.</strong></p>
+
+ ]]></text> </message>
+
+
+<message name="Add Portfolio Pages and Sections"><text><![CDATA[ <p>You can only add ToL pages that you have authored or that you have permission to edit. Every time you add a link, a comments box will appear where you can tell visitors to your portfolio about the pages it contains. You can change the order of the portfolio page links that you add with the arrow buttons on the left. 
+If you would like, you can add sections to your portfolio and then add portfolio page links to the sections that you create.</p> ]]></text> </message>
+
+
+
+<message name="Learner Section"><text><![CDATA[ <p>The information that you add here will go on a Learner Section web page. You can send students to this Learner Section 
+to get an introduction to the lesson, instructions for what to do, and to access materials for the lesson. The Learner Section link will be accessible from the top of the teacher resource page, and from the Support Materials section.
+ Note that when you add support materials such as worksheets or assessments, you can choose to have them displayed on the Learner Section. The Information on the Internet and References sections will automatically be displayed on the Learner Section</p>
+]]></text> </message>
+
+
+<message name="Add Documents As Support Materials"><text><![CDATA[ <p>Teachers often need to give to students materials such as worksheets, 
+graphic organizers, assessments and other "handouts". You can use the &quot;Add Support Material Documents&quot; feature to add such materials to lesson, project and activity teacher resources. Documents that you add as support materials can be in MS Word, PDF, PowerPoint, Excel and other formats. </p>
+<p>In order to add the document click the &quot;add document link&quot; and either:</p>
+<ul class="libottomspex">
+  <li><strong> Search for a material that you or someone else has already uploaded to the ToL database, and then click select to add the document.</strong> </li>
+  <li> <strong>Upload a new document from your computer to the ToL database,  and <em>then</em> search for and select the document.</strong>
+    <ul>
+      <li>Documents that you upload can be in MS Word, PDF, PowerPoint, Excel and other formats. </li>
+      <li>To upload a new document go to the &quot;add a new document section&quot; and click browse to find a document on your computer. </li>
+      <li>When you have found the material you want on your computer select that document. The name of that document should then show up in the browser window. </li>
+      <li>Click upload new document.</li>
+      <li>Fill out the data entry form for the document. Required fields are indicated in red. </li>
+      <li>Finally, to add the document to your teacher resource, go to the &quot;find document&quot; section to search for and select the document you have just uploaded. </li>
+    </ul>
+  </li>
+</ul>
+    
+]]></text> </message>
+
+<message name="Compose Support Materials"><text><![CDATA[ 	<p>Teachers often need to present to students materials to support a lesson, such as worksheets, graphic organizers, 
+and instructions. You can use the "Compose Support Materials" feature to create a web-based support material for lesson, project and activity teacher resources. 
+If you would like to create more than one support material, simply indicate the number of support materials you would like to add and click the option to add additional support materials.</p>
+<p>Please select the support material type from the drop down menu. If you would like the support material to appear in the Learner Section for students, click the "show link in learner section" option. 
+To delete or change the order of support materials you have created in this way, use the delete link and the up and down arrows.
+</p>
+]]></text> </message>
+<message name="Introduction"><text><![CDATA[<p>
+Add an introduction for the lesson that will help users gain an understanding of the goals, process and outcome of the lesson, project or activity.</p>
+ ]]></text> </message>
+
+<message name="Preparation, Prior Knowledge and Physical Materials and Tools"><text><![CDATA[ 
+<h5>Preparation</h5><p>Discuss any preparation needed or recommended for the lesson/activity.</p>
+<h5>Prior Knowledge</h5><p>Please describe any information students and instructors should already know or be familiar with in order to complete and or teach the activity/lesson.
+</p><h5>Physical Materials and Tools</h5>
+<p>List materials and tools that are needed for the lesson, project or activity.</p>
+ ]]></text> </message>
+ 
+ 
+ <message name="Add Portfolio Pages and Sections"><text><![CDATA[ <p>You can only add ToL pages that you have authored or that you have permission to edit. Every time you add a link, a comments box will appear where you can tell visitors to your portfolio about the pages it contains. You can change the order of the portfolio page links that you add with the arrow buttons on the left. 
+If you would like, you can add sections to your portfolio and then add portfolio page links to the sections that you create.</p> ]]></text> </message>
+
+
+
+<message name="Edit Portfolio Page Links"><text><![CDATA[ <p>After you add pages to your portfolio use the comments box to write explanations such as:
+</p><ul>
+<li>a summary of the page you are linking to</li>
+<li>a preview of what is to come when a visitor goes to a page you link to in your portfolio</li>
+<li>explain why the page is included in the portfolio</li></ul> 
+<p>You can also add a thumbnail image that represents the page that you have added by clicking the add image button.</p>
+]]></text> </message>
+
+
+<message name="Export Data To Other Contributions you have Authored"><text><![CDATA[ <p>Here you can choose to display 
+some of the data sections of this portfolio on the pages that you include in the portfolio. 
+You can export the following sections of this portfolio to pages you link to in the portfolio:</p>
+ <ul><li> References</li>
+    <li>Internet Links</li>
+    <li> Learning Information</li></ul>
+    <p>This feature is very helpful because you can enable several pages to share references, internet links and learning information without having to update
+    each page. The portfolio page will serve as the master page, and if you make changes in the portfolio page to one of the sections you have exported, the pages in the 
+    portfolio will be updated. If a page you have included in the portfolio has its own learning information, internet links etc., both the information from the portfolio and the page's information will be displayed.</p>
+    
+]]></text> </message>
+
+
+ <message name="Learning Objective"><text><![CDATA[ 
+ <p>A learning objective should state concepts that students will engage with during the assignment, 
+ the activity that will activate the learning process, and any product or outcome produced by students 
+ in order to acquire expertise and demonstrate learning. </p>
+ ]]></text> </message>
+
+
+<message name="Lesson Main Page"><text><![CDATA[ <p>The information that you add on the lesson main page will be displayed on the
+page that visitors  see when they access this lesson, project or activity. You do not need to fill out all of the fields. For example, the fields for preparation, prior knowledge, materials,
+ introduction, and evaluation are optional.  However, you <strong>should</strong> fill out the learning objective and lesson, project or activity content fields. </p>
+ ]]></text> </message>
+
+<message name="Resource Overview"><text><![CDATA[ 	<p>Add a brief description of the resource to be used as the resource overview. This description will be used
+in the body of the treehouse lesson, project or activity. The description will also be used to describe the resource when searches are performed.</p> 
+]]></text> </message>
+</messages>

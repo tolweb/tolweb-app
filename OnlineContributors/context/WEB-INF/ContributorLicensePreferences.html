@@ -1,0 +1,161 @@
+<html jwcid="@Wrapper" title="ToL Scientific Core Contributors Registration">
+    <h2 class="clear">Default Licensing Options for <span jwcid="@Insert" value="ognl:currentViewedContributorName"/></h2>
+	<form jwcid="@Form" listener="ognl:listeners.licensePreferencesSubmit">	   
+	<p> Please select the preferred licenses for your Tree of Life contributions below and then click on the <strong>Submit Preferences</strong> button 
+	 at the bottom of this page. These licenses specify how we can use and share your contributions. The licenses you select here will be used as the 
+	 default for your FUTURE contributions. If you would like them to be applied to your previous contributions, be sure to select the relevant options 
+	 in the pink boxes below.  If you co-author ToL pages with other contributors, and individual authors have different license preferences, the first 
+	 author's preference will determine the default license for a given page. You can also override a default license by selecting another license in the 
+	 media or page data forms of individual contributions.  For more detailed information about available licensing options, see <a href="/tree/home.pages/toluse.html">ToL
+	 Use of Contributions</a>.
+	</p>
+	<h3>Text Contributions</h3>
+	<p>I permit the Tree of Life Web Project to use my <strong>TEXT</strong> contributions (web pages) in the following ways: </p>
+	<span jwcid="textLicType@RadioGroup" selected="ognl:textLicenseType">
+	    <ul class="reguse">
+		<li>                   
+			<label>   
+	        <input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.misc.ContributorLicenseInfo@CREATIVE_COMMONS"/>    
+	        Release to the public under a Creative Commons License <img src="/tree/img/cctiny.gif" alt=" "></label>
+		    <input jwcid="@PropertySelection" model="prop:creativeCommonsLicenseTypeSelectionModel" value="prop:textCreativeCommonsLicenseType"/>
+		    <input jwcid="@PropertySelection" model="prop:creativeCommonsLicenseVersionSelectionModel" value="prop:textCreativeCommonsLicenseVersion"/>
+	        <p>Text released under a creative commons licenses can be copied, reused, and distributed by the general public as long as attribution 
+	        regarding the source of the information is maintained. Licenses are available that restrict the commercial use and the adaptation and 
+	        modification of text. Copyright notices for materials released under this option are marked with the Creative Commons icon and contain 
+	        a link to the deed for the selected license.  For more information about these licenses, see the 
+	        <a href="http://creativecommons.org/licenses/" target="documentation">Creative Commons web site</a>. We encourage ToL contributors to 
+	        release their text contributions under a creative commons license, because these licenses will let us share materials with the 
+	        <a href="http://eol.org"><strong>Encyclopedia of Life</strong></a> (see 
+	        <a href="javascript: w = window.open('/tree/home.pages/toleol.html', 'ToL/EOL Collaboration', 'resizable,height=800,width=1100,scrollbars=yes'); w.focus();">ToL/EOL Collaboration</a>).
+			All creative commons licenses that permit the reuse and adaptation of text are compatible with the EOL intellectual property model, i. e., 
+	        <a href="http://creativecommons.org/licenses/by/3.0/">Attribution</a>, 
+	        <a href="http://creativecommons.org/licenses/by-nc/3.0/">Attribution-NonCommercial</a>,
+	        <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike</a>, and 
+	        <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike</a>.</p>
+		</li>
+		<li>                     
+	    	<label>
+			<input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.misc.ContributorLicenseInfo@TOL_USE"/> 
+	        Tree of Life use only </label><p>If you select this option, your text can be displayed only on the Tree of Life web site.</p>
+		</li>
+	    <li>
+	        <label> 
+	        <input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.misc.ContributorLicenseInfo@PUBLIC_DOMAIN"/>
+	        Release in the public domain </label>
+			<p>Materials in the public domain may be freely reproduced, distributed, modified, built upon, or otherwise exploited by anyone for any 
+	        purpose, commercial or non-commercial, and in any way, with or without attribution to the original source.</p>
+		</li>
+		<li class="retroactive">
+			<label>
+			<input type="checkbox" jwcid="@Checkbox" value="ognl:retroTextSelected" />
+	        Apply this license to all my previous text contributions</label>
+			<p>Note that this will apply your default license only to previous contributions where you are the first author.</p>
+	    </li>
+	    </ul>
+    </span>
+    <h3>Media Contributions</h3>
+    <p>I permit the Tree of Life Web Project to use my <strong>MEDIA</strong> contributions (images, movies, sounds, etc.) in the following ways:</p>
+	<span jwcid="mediaLicType@RadioGroup" selected="ognl:mediaLicenseType">
+	    <ul class="reguse">
+	    <li>
+			<label>
+			<input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.misc.ContributorLicenseInfo@CREATIVE_COMMONS"/>
+	        Release to the public under a Creative Commons License <img src="/tree/img/cctiny.gif" alt=" "></label>
+		    <input jwcid="@PropertySelection" model="prop:creativeCommonsLicenseTypeSelectionModel" value="prop:mediaCreativeCommonsLicenseType"/>
+		    <input jwcid="@PropertySelection" model="prop:creativeCommonsLicenseVersionSelectionModel" value="prop:mediaCreativeCommonsLicenseVersion"/>
+	        <p>Media released under a creative commons licenses can be copied, reused, and distributed by the general public as long as attribution
+	        regarding the source of the file is maintained. Licenses are available that restrict the commercial use and the adaptation and 
+	        modification of media files. Copyright notices for materials released under this option are marked with the Creative Commons icon and 
+	        contain a link to the deed for the selected license.  For more information about these licenses, see the 
+	        <a href="http://creativecommons.org/licenses/" target="documentation">Creative Commons web site</a>. We encourage ToL contributors to 
+	        release their media contributions under a creative commons license, because these licenses will let us share materials with the 
+	        <a href="http://eol.org"><strong>Encyclopedia of Life</strong></a> (see 
+	        <a href="javascript: w = window.open('/tree/home.pages/toleol.html', 'ToL/EOL Collaboration', 'resizable,height=800,width=1100,scrollbars=yes'); w.focus();">ToL/EOL Collaboration</a>). 
+	        All creative commons licenses that permit the reuse and adaptation of text are compatible with the EOL intellectual property model, i. e., 
+	        <a href="http://creativecommons.org/licenses/by/3.0/">Attribution</a>, 
+	        <a href="http://creativecommons.org/licenses/by-nc/3.0/">Attribution-NonCommercial</a>, 
+	        <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike</a>, and 
+	        <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike</a>.</p>
+		</li>
+	    <li>
+	    	<label>
+	        <input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.misc.ContributorLicenseInfo@TOL_PARTNER_USE"/>
+			Use on ToL and share with other scientific/educational projects</label> 
+	        <input jwcid="@PropertySelection" model="prop:mediaModificationSelectionModel" value="prop:mediaModificationType"/>
+			<p>In addition to use on the ToL site (see next option), this option allows the ToL to share materials with 
+	        <a href="/tree/home.pages/ToLPartners.html" target="documentation">select, non-commercial, scientific or educational partner 
+	        projects</a>.  This means that media may be exported to the databases of ToL partner projects, and they may be displayed on the web 
+	        sites of these projects. <span class="red">Note that this license is not sufficient to let us share a media file with the 
+	        <a href="http://eol.org"><strong>Encyclopedia of Life</strong></a>. In order to be compatible with the EOL intellectual property model, 
+	        a media file needs to be released under a creative commons license. See above.</span></p>
+	        <p><strong>Modification permitted</strong>: Other ToL contributors will be able to use the media file, in whole or in part, in their own montages 
+	        or collages. <strong>Minor modification only</strong>: The media file cannot be excerpted or used in the creation of derivative media projects.</p>
+		</li>
+	    <li>
+	        <label>
+	        <input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.misc.ContributorLicenseInfo@TOL_USE"/>
+			Tree of Life use only </label> 
+	        <input jwcid="@PropertySelection" model="prop:mediaModificationSelectionModel" value="prop:mediaModificationType"/>
+	        <p>This option allows other ToL contributors to use media to illustrate the content of their pages (i.e., branch &amp; leaf pages, other
+	        articles &amp; notes, or treehouses). Whenever a contribution is displayed on a ToL page, it will be accompanied by a copyright notice 
+	        informing visitors that the material is protected by copyright law.</p>
+			<p><strong>Modification permitted</strong>: Other ToL contributors will be able to use the media file, in whole or in part, in their own montages 
+	        or collages. <strong>Minor modification only</strong>: The media file cannot be excerpted or used in the creation of derivative media projects.</p>
+		</li>
+	    <li>
+			<label>
+	        <input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.misc.ContributorLicenseInfo@ONE_TIME_USE"/>
+	        Restricted to one-time use in specified location </label>
+	            <p>If you select this option, your retain strict control over the
+	                use of your media files. While these files may be featured in
+	                ToL media search results and collections, they are not available
+	                for use by other people on ToL pages or anywhere
+	                else. </p>
+		</li>
+		<li>
+			<label>
+			<input type="radio" jwcid="@Radio" value="ognl:@org.tolweb.misc.ContributorLicenseInfo@PUBLIC_DOMAIN"/>
+			Release in the public domain </label>
+	        <p> Materials in the public domain may be freely reproduced, distributed,
+	                modified, built upon, or otherwise exploited by anyone for any
+	                purpose, commercial or non-commercial, and in any way, with or
+	                without attribution to the original source.</p>
+		</li>
+		<li class="retroactive">
+		<label>
+				<input type="checkbox" jwcid="@Checkbox" value="ognl:retroMediaSelected"/>
+	            Apply this license to all my previous media contributions</label> 
+	            <p>Note that the retroactive application of your preferred license will only affect media contributions for which you own the copyright.  If you have uploaded media files that belong to other people, their licenses will not be changed by this action.</p>
+	        </li>
+		</ul>
+	</span>
+   	<input name="Submit" value="Submit Preferences" id="submitregistration" type="submit">
+	</form>
+	 <div class="instructions">
+	    <h4>A Note About Changing Licenses for Previous Contributions</h4>
+		<p>The ToL system allows you to change licenses for your  contributions
+		    at any time with the touch of a button. However, you should be aware
+		    that eventhough you can change the license under which the ToL distributes
+		    your contributions, you cannot legally revoke a creative commons
+		    license. Once a copy
+		    of your work has been distributed under a given license, it will
+		    travel through cyberspace with that license attached. People
+		    will be able to use and redistribute your materials  under the original
+		    license, even if you change the license for the ToL source file. </p>
+	</div>
+</html>
+
+   	<span jwcid="@If" condition="ognl:isFromRegistration && !emailOtherRegistrationNotice">
+		<span jwcid="@MailBlock" from="treegrow@tolweb.org" smtp="localhost" 
+            subject="ognl:'New ' + viewedContributor.unapprovedContributorTypeString + ' contributor registration'" 
+            to="ognl:{configuration.notesEditorEmail}" html="ognl:false">
+A new contributor has signed up for <span jwcid="@Insert" value="ognl:viewedContributor.unapprovedContributorTypeString"/> contributions to the ToL.
+Once you are logged in, you may view their information at the following URL:
+    
+http://tolweb.org/onlinecontributors/app?service=external&page=ViewContributorConfirmation&sp=<span jwcid="@Insert" value="ognl:viewedContributor.id"/>    
+		</span>
+	</span>    
+	<span jwcid="@If" condition="ognl:isFromRegistration && emailOtherRegistrationNotice">    
+		<span jwcid="@NewScientificContributorEmail" contributor="ognl:viewedContributor" nodesString="ognl:nodesString"
+			 editingContributor="ognl:editingContributor"/>        
+    </span>     

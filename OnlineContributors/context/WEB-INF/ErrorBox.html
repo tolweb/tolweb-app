@@ -1,0 +1,9 @@
+<div class="fix">
+	<h3>Error</h3>
+    <span jwcid="@If" condition="ognl:delegate">
+		<ul>
+			<li><span jwcid="@Delegator" delegate="ognl:delegate.firstError"/></li>
+		</ul>         
+    </span>
+    <span jwcid="@RenderBody"/>
+</div>

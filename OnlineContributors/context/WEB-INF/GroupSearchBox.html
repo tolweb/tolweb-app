@@ -1,0 +1,22 @@
+<form jwcid="@Form" listener="ognl:listeners.search" stateful="ognl:false">
+<div class="box"> 
+	<ul class="nodisc">
+		<li>
+			<label>
+				Group Name 
+	        	<input jwcid="@TextField" name="taxon" size="40" type="text" value="ognl:searchTaxon"/>
+	            <input name="searchSubmit" value="Find" type="submit"/>
+			</label>
+			<ul>
+				<li>
+					<label>
+						Find records that match
+						<select jwcid="@PropertySelection" 
+							model="ognl:groupSearchOptionsModel" value="ognl:optionSelection"/>
+	                </label>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</form>

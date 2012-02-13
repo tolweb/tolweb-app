@@ -1,0 +1,58 @@
+<html jwcid="@Wrapper" title="Contributor Default Licenses...">						  
+	<form jwcid="@Form" listener="ognl:listeners.editDefaultsSubmit">	   
+    <h2 class="clear">Default Licensing Options for <span jwcid="@Insert" value="ognl:currentViewedContributorName"/></h2>
+	<p> You have selected the following default licenses for your contributions:</p>
+	<dl class="indent">
+        <dt>Text contributions (web pages)</dt>
+		<dd><a jwcid="@GenericLink" href="ognl:textLicenseUrl">
+            <span jwcid="@Insert" value="ognl:textLicenseDisplayName"/></a> &ndash; 
+        <span jwcid="@If" condition="prop:textLicenseEOLCompatibility">
+	        <strong class="green">Your text contributions can be shared with the <a href="http://eol.org">EOL</a></strong>            
+        </span>
+        <span jwcid="@Else">        
+			<strong class="red">Your text contributions cannot be shared with the <a href="http://eol.org">EOL</a>, only 
+	        Public Domain and Creative Commons options permitting the creation of derivative materials (CC-BY, CC-BY-NC,
+	        CC-BY-SA,  CC-BY-NC-SA) are compatible with the EOL intellectual property model.</strong>            
+        </span>
+        </dd>
+        <dt>Media contributions (images, movies, sounds, etc.)</dt>
+		<dd><a jwcid="@GenericLink" href="ognl:mediaLicenseUrl"><span jwcid="@Insert" value="ognl:mediaLicenseDisplayName"/></a> &ndash; 
+        <span jwcid="@If" condition="prop:mediaLicenseEOLCompatibility">
+	        <strong class="green">Your media contributions can be shared with the <a href="http://eol.org">EOL</a></strong>            
+        </span>
+        <span jwcid="@Else">        
+			<strong class="red">Your media contributions cannot be shared with the <a href="http://eol.org">EOL</a>, only 
+	        Public Domain and Creative Commons options permitting the creation of derivative materials (CC-BY, CC-BY-NC,
+	        CC-BY-SA,  CC-BY-NC-SA) are compatible with the EOL intellectual property model.</strong>            
+        </span>
+        </dd>
+    </dl>
+
+    <p>These licenses will be applied to all your future contributions to the Tree of Life. 
+        <span jwcid="@If" condition="ognl:wasRetroTextSelected || wasRetroMediaSelected">The licenses for your previous contributions have been <strong>UPDATED</strong>.</span>
+        <span jwcid="@Else">The licenses for your previous contributions remain unchanged.</span></p>    
+	       
+	<input name="Edit Default Licenses" type="submit" id="Edit Default Licenses" value="Edit Default Licenses">
+
+    <p class="topborder">For an overview  of your contributions, go to your 
+        <a jwcid="@ExternalLink" page="ContributorDetailPage" parameters="ognl:currentViewContributorId">Contributor Profile Page</a>. 
+        Note that the licenses of individual contributions may differ from your default license for any of the following reasons:</p>
+    
+	<h4>Text Contributions </h4>
+	<ul>
+	    <li>When updating your default text license, you did not select the <em>Apply this license to all my previous text 
+        contributions</em> option, so your previous text contributions did not get updated to your current default license.</li>
+        <li>You have co-authored a web page with another contributor who has chosen a different default license. The first
+		author's preference determines the default license for a contribution.</li>
+		<li>You or one of your co-authors has changed the license for a given page in the page data form.</li>
+    </ul>
+	<h4>Media Contributions </h4>
+    <ul>
+        <li>When updating your default media license, you did not select the <em>Apply this license to all my previous media 
+        contributions</em> option, so your previous contributions did not get updated to your current default license.</li>
+        <li>You have  changed the license for a given media file in the media data form.</li>
+		<li>You do not own the copyright for a given media file.  You can upload media files for other people, but you cannot 
+        retroactively apply your default license to other people's media files.</li>
+    </ul>
+    </form>
+</html>

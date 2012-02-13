@@ -1,0 +1,16 @@
+<span jwcid="@If" condition="ognl:useCache && output != null">
+	<span jwcid="@Insert" value="ognl:output" raw="ognl:true"/>
+</span>
+<span jwcid="@Else">
+	<span jwcid="@If" condition="ognl:page.isWorking || illustrations.size > 0">
+	<div id="tillus">
+        <span jwcid="@ImageInfoGlass"/>                                        
+		<a jwcid="@EditBranchLeafPageLink" editPageName="EditTitleIllustrationsNew" editLinkClass="editpage">edit title illustrations</a>
+        <span jwcid="@If" condition="ognl:displayPublicationLink && page.canEdit && page.canPublishIllustrations">
+			<a jwcid="@DirectLink" listener="ognl:page.listeners.publishTitleIllustrations" class="editpage submit" parameters="ognl:{page.tolPage.pageId}">publish title illustrations</a>         
+        </span>
+        <span jwcid="@Foreach" source="ognl:illustrations" value="ognl:currentIllustration" index="ognl:index"><span jwcid="@If" condition="ognl:currentIllustration.image != null"><a jwcid="@ViewImageLink" image="ognl:currentIllustration.image"><img jwcid="@Any" element="img" src="ognl:currentImageLocation" class="ognl:currentImageClass" alt="ognl:altText"/></a></span></span>
+	</div>
+	</span>
+	<script jwcid="@Script" script="GlossaryTerms.script" vars=""/>
+</span>

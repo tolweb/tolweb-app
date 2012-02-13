@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+<body>
+function showbranch()
+    {arg = showbranch.arguments;
+     if (document.getElementById(arg[0]).className == arg[1])
+        {document.getElementById(arg[0]).className = arg[2];
+        }
+     else
+        {document.getElementById(arg[0]).className = arg[1];
+        }
+    }
+    
+function changeclass()
+    {arg = changeclass.arguments;
+     var elementName = arg[0];
+     var class1 = arg[1];
+     var class2 = arg[2];
+     if (document.getElementById(elementName).className == class1)
+        {document.getElementById(elementName).className = class2;
+        }
+     else
+        {document.getElementById(elementName).className = class1;
+        }
+    }    
+</body>
+</script>

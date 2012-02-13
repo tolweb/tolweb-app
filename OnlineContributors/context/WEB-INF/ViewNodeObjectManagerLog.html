@@ -1,0 +1,26 @@
+<html jwcid="@FeaturesWrapper" title="Node Object Manager Log">
+	<p style="float:right">
+		<a jwcid="@PageLink" page="NodeObjectManager" >Return to Node Object Manager...</a>
+    </p>
+	<h2 class="clear">Node Object Manager Log</h2>
+	<table jwcid="table@contrib:Table" 
+			source="ognl:records" 
+			row="ognl:currentRecord" 
+        	columns="ognl:columnsString" class="border" pageSize="50">
+        <span jwcid="viewColumnHeader@Block"></span>
+        <span jwcid="viewColumnValue@Block">
+            <a jwcid="@ExternalLink" page="ViewNodeObjectLogEntry"  
+            	parameters="ognl:{currentRecord.id}">view</a>
+		</span>
+        <span jwcid="sourceNodeIdColumnHeader@Block">
+        	<span class="tableHeaderImage">source node</span>
+        </span>
+        <span jwcid="sourceNodeIdColumnValue@Block">
+			<span jwcid="@Insert" value="ognl:currentSourceNodeName" />
+		</span>		
+        <span jwcid="destNodeIdColumnHeader@Block">dest. node</span>
+        <span jwcid="destNodeIdColumnValue@Block">
+			<span jwcid="@Insert" value="ognl:currentDestNodeName" />
+		</span>		
+    </table>
+</html>

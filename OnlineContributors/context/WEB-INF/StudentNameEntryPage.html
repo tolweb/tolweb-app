@@ -1,0 +1,38 @@
+<html jwcid="@BuildTreehouseWrapper" title="Please enter your name">
+<h1>Enter Your Name</h1>
+<p>Before you can begin building your treehouse, we need you to enter your name and choose a password.  Please
+enter it in the fields below:</p>
+<form jwcid="@Form" listener="ognl:listeners.nameFormSubmit" delegate="ognl:beans.delegate">
+    <span jwcid="@If" condition="ognl:passwordsDontMatch">
+        <span class="error">Your passwords don't match.  Please type them carefully and try again.</span>
+    </span>
+    <table>
+        <tr>
+            <td><span jwcid="@FieldLabel" field="component:firstNameField"/></td>
+            <td><input jwcid="firstNameField@TextField" displayName="First Name" 
+                validators="validators:required,minLength=2" value="ognl:contributor.firstName"/></td>
+        </tr>
+        <tr>
+            <td><span jwcid="@FieldLabel" field="component:lastNameField"/></td>
+            <td><input jwcid="lastNameField@TextField" displayName="Last Name" 
+                validators="validators:required,minLength=2" value="ognl:contributor.lastName"/></td>
+        </tr>
+        <span jwcid="@If" condition="ognl:contributor.project.password == null">
+            <tr>
+                <td><span jwcid="@FieldLabel" field="component:password1Field"/></td>
+                <td><input jwcid="password1Field@TextField" displayName="Password"
+                    	validators="validators:required,minLength=2" value="ognl:password1"/></td>
+            </tr>
+            <tr>
+                <td><span jwcid="@FieldLabel" field="component:password2Field"/></td>
+                <td><input jwcid="password2Field@TextField" displayName="Password (again)"
+                    	validators="validators:required,minLength=2" value="ognl:password2"/></td>
+            </tr>
+        </span>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input jwcid="@Submit" type="submit" value="Submit"/></td>
+        </tr>
+    </table>     
+</form>
+</html>

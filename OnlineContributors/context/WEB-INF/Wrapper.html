@@ -1,0 +1,43 @@
+<html jwcid="@CommonWrapper" title="ognl:title" additionalDelegate="ognl:additionalDelegate" stylesheets="ognl:stylesheets" includeDojo="ognl:includeDojo">
+    <div id="maincontent" class="nosb"><a name="maincontent"></a>
+    <span jwcid="@If" condition="ognl:contributor != null">
+        <div class="logout">You are logged in as <span jwcid="@Insert" value="ognl:contributor.displayName"/>.  
+        [<a jwcid="@DirectLink" listener="listener:logout" stateful="ognl:false">Logout</a>] - 
+        [<a jwcid="@PageLink" page="ognl:managerPage" class="bold">Manager</a>]</div>
+    </span>
+    <span jwcid="@RenderBody"/>
+    </div>
+        <div id="sectionnav"><a name="sectionnav"></a> 
+	    <h1>Contribute to the ToL</h1>
+	    <h4 class="nomenu"><a href="/tree/home.pages/contributions.html">ToL Contributions</a></h4>
+	    <h4 class="nomenu"><a href="/tree/home.pages/contcat.html">Ways to Contribute</a></h4>
+	    <h4 class="nomenu"><a href="/tree/home.pages/toluse.html">Use of Contributions</a></h4>
+	    <h4 class="nomenu"><a href="/tree/sep/scicontent.html">Scientific Content</a></h4>
+	    <h4 class="nomenu"><a href="/tree/learn/treebuilder.html">Building Treehouses</a></h4>
+	    <h4 class="open" id="contimg" onclick="changeclass('contimg', 'open', 'closed'); changeclass('contimgmenu', 'open', 'closed')">Images/Media</h4>
+	    <ul id="contimgmenu" class="open">
+	        <li><a href="/tree/home.pages/imagecontributions.html">Images/Media</a></li>
+	        <li><a href="/onlinecontributors/app?service=page/ContributingImages">Media 
+	            Log-In</a></li>
+	        <li><a href="/onlinecontributors/app?service=page/ImagesManager">Media 
+	            Manager</a> 
+	            <ul>
+	                <li><a href="/tree/home.pages/EditImageDataPreview.html">Image 
+	                    Data Preview</a></li>
+	                <li><a href="/onlinecontributors/app?service=page/ImageZipUpload">Batch 
+	                    Upload</a> 
+	                    <ul>
+	                        <li><a href="/tree/sep/imagebatchdata.html">Batch Data</a></li>
+	                        <li><a href="/tree/sep/imagebatchtxt.html">Text Template</a></li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </li>
+	        <li><a href="/tree/home.pages/AttachImageToToL.html">Attach to Group</a></li>
+	        <li><a href="/onlinecontributors/app?service=page/ImageContributorRegistration">Registration</a></li>
+	        <li><a href="/onlinecontributors/app?service=page/ImageContributorsPage">Media 
+	            Contributors</a></li>
+	    </ul>
+	</div>
+    <script jwcid="@Script" script="Onload.script"/>
+</html>

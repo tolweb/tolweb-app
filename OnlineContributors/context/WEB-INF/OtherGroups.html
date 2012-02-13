@@ -1,0 +1,23 @@
+<span jwcid="@If" condition="ognl:useCache && output != null">
+	<span jwcid="@Insert" value="ognl:output" raw="ognl:true"/>
+</span>
+<span jwcid="@Else">
+    <span jwcid="@If" condition="ognl:notRoot">
+		<h4 class="open" id="navother" onclick="changeclass('navother', 'open', 'closed'); changeclass('navothermenu', 'open', 'closed')">other <span jwcid="@Insert" value="ognl:parentGroupName"/></h4>
+        <ul id="navothermenu" class="open">
+			<li jwcid="@TolPagesList" pages="ognl:siblingPages" node="ognl:node" onPageClass="thispage" isDropDownList="ognl:false"/>
+		</ul>
+    </span>
+    <span jwcid="@If" condition="ognl:notRoot">
+		<h4 class="open" id="navdown" onclick="changeclass('navdown', 'open', 'closed'); changeclass('navdownmenu', 'open', 'closed')">containing groups</h4>
+        <ul id="navdownmenu" class="open">
+			<li jwcid="@TolPagesList" pages="ognl:ancestorPages" node="ognl:node" isDropDownList="ognl:false"/>
+		</ul>
+    </span>
+	<span jwcid="@If" condition="ognl:hasSubgroups">
+		<h4 class="open" id="navup" onclick="changeclass('navup', 'open', 'closed'); changeclass('navupmenu', 'open', 'closed')">subgroups</h4>
+        <ul id="navupmenu" class="open">
+            <li jwcid="@TolPagesList" pages="ognl:subgroupPages" node="ognl:node" isDropDownList="ognl:false"/>
+        </ul>
+	</span>
+</span>

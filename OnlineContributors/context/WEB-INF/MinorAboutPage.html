@@ -1,0 +1,21 @@
+<span jwcid="@If" condition="ognl:contributors.size > 0 || copyrightString || correspondenceString || @org.tolweb.treegrow.main.StringUtils@notEmpty(acknowledgements)">
+	<div id="AboutThisPage">
+	    <h5><a name="AboutThisPage"></a>About This <span jwcid="@Insert" value="ognl:pageType"/></h5>
+        <p><span jwcid="@Insert" value="ognl:acknowledgements" raw="ognl:true"/></p>
+        <p>
+	        Author: <span jwcid="@Insert" value="ognl:authorsString" raw="ognl:true"/><br/>
+	        Classroom Project: <a jwcid="@ExternalLink" page="ClassroomProjectOverview" parameters="ognl:projectId"><span jwcid="@Insert" value="ognl:projectName" raw="ognl:true"/></a><br/>
+	        <span jwcid="@Insert" value="ognl:teacher.institution"/><br/>
+	        <span jwcid="@If" condition="ognl:!teacher.dontShowLocation">
+		        <span jwcid="@Insert" value="ognl:teacher.city"/>, <span jwcid="@Insert" value="ognl:teacher.state"/> <span jwcid="@Insert" value="ognl:teacher.country"/>
+	        </span>
+        </p>
+        License: <span jwcid="@Insert" value="ognl:licenseInfo" />        
+        <span jwcid="@If" condition="ognl:teacher.showEmail">
+	        <p id="correspondence">
+	            Correspondence regarding this page should be directed to <span jwcid="@EncodedMailLink" email="ognl:teacher.email" linkText="ognl:teacher.displayName"/>, <span jwcid="@Insert" value="ognl:teacher.institution"/>
+			</p>
+        </span>
+	    <p id="pagecopyright">Page copyright &copy; <span jwcid="@Insert" value="ognl:copyrightYear"/>	<span jwcid="@Insert" value="ognl:copyrightHoldersString"/></p>
+    </div>
+</span>

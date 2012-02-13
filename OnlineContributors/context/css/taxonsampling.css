@@ -1,0 +1,352 @@
+#txlist, #txlist ul {
+list-style-type: none;
+list-style-image: none;
+padding: 1px 0;
+border-bottom: 1px solid #eee;
+}
+
+ul {
+margin-left: 0;
+padding-left: 40px;
+}
+
+#txlist li {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#txlist li a {
+text-decoration: none;
+}
+
+#txlist li em.taxon, #txlist li em.taxoni {
+margin-left: 17px;
+}
+
+#txlist ul li em {
+padding-left: 10px;
+}
+
+#txlist ul ul li em {
+padding-left: 20px;
+}
+
+#txlist ul ul ul li em {
+padding-left: 30px;
+}
+
+#txlist ul ul ul ul li em {
+padding-left: 40px;
+}
+
+#txlist ul ul ul ul ul li em {
+padding-left: 50px;
+}
+
+#txlist ul ul ul ul ul ul li em {
+padding-left: 60px;
+}
+
+#txlist ul ul ul ul ul ul ul li em {
+padding-left: 70px;
+}
+
+#txlist ul ul ul ul ul ul ul ul li em {
+padding-left: 80px;
+}
+
+#txlist ul ul ul ul ul ul ul ul ul li em {
+padding-left: 90px;
+}
+
+#txlist ul ul ul ul ul ul ul ul ul ul li em {
+padding-left: 100px;
+}
+
+#txlist ul ul ul ul ul ul ul ul ul ul ul li em {
+padding-left: 110px;
+}
+
+#txlist ul ul ul ul ul ul ul ul ul ul ul ul li em {
+padding-left: 120px;
+}
+
+#txlist ul ul ul ul ul ul ul ul ul ul ul ul ul li em {
+padding-left: 130px;
+}
+
+#txlist ul ul ul ul ul ul ul ul ul ul ul ul ul ul li em {
+padding-left: 140px;
+}
+
+#txlist ul ul ul ul ul ul ul ul ul ul ul ul ul ul ul li em {
+padding-left: 150px;
+}
+
+#txlist a img {
+padding: 0 2px;
+}
+
+
+#txlist .tier0, #txlist .tier1, #txlist .tier2, #txlist .tier3, #txlist .unassigned, #txlist .invisible, #txlist .hasspecimens, #txlist .needsspecimens,
+#txlist .hasspecimenswrongperson, #txlist .notier, #txlist .tier0havegenome, #txlist .tier1havegenome, #txlist .tier1genomesoon, #txlist .specimensnosupplier,
+#txlist .specimensyousupplier, #txlist .specimensothersupplier, #txlist .ignore, #txlist .actionneeded,
+#txlist .nospecimensyousupplier, #txlist .microctspecimensacquired {
+display: block;
+float: left;
+width: 30px;
+padding: 0 1px;
+overflow: hidden;
+border: 1px solid #fff;
+font-size: 9px;
+color: #fff;
+text-align: center;
+}
+
+#txlist .hasspecimensneedmore, #txlist .hasspecimenswrongpersonneedmore  {
+display: block;
+float: left;
+width: 28px;
+padding: 0 1px;
+overflow: hidden;
+border: 1px solid #fff;
+font-size: 9px;
+color: #fff;
+text-align: center;
+}
+
+#txlist .hasspecimenswrongperson:hover, #txlist .hasspecimensneedmore:hover, #txlist .hasspecimenswrongpersonneedmore:hover {
+border: 1px solid #ff3300;
+text-decoration: none;
+width: 30px;
+}
+
+
+#txlist .tier0:hover, #txlist .tier1:hover, #txlist .tier2:hover, #txlist .tier3:hover, #txlist .unassigned:hover, #txlist .invisible:hover, 
+#txlist .hasspecimens:hover, #txlist .needsspecimens:hover, #txlist .notier:hover, #txlist .tier1havegenome:hover, #txlist .tier0havegenome:hover,
+#txlist .tier1genomesoon:hover, #txlist .specimensnosupplier:hover, #txlist .specimensyousupplier:hover, #txlist .specimensothersupplier:hover, 
+#txlist .ignore:hover, #txlist .actionneeded:hover, #txlist .microctspecimensacquired:hover {
+border: 1px solid #ff3300;
+text-decoration: none;
+}
+
+#txlist .nospecimensyousupplier:hover {
+text-decoration: none;
+}
+
+#txlist .tier1, #txlist .tier0 {
+background: #148aff;
+}
+
+#txlist .tier0havegenome {
+background: #000000;
+}
+
+#txlist .tier1havegenome {
+background: #060353;
+}
+
+#txlist .tier1genomesoon {
+background: #0000ff;
+}
+
+#txlist .tier2 {
+background: #a1c396;
+}
+
+#txlist .tier3 {
+background: #d3e1c6;
+}
+
+#txlist .unassigned {
+background: #f4f4f4;
+color: #000;
+}
+
+#txlist .notier {
+background: #f4f4f4;
+color: #f4f4f4;
+}
+
+#txlist .invisible {
+background: #fff;
+}
+
+#txlist .hasspecimens {
+background: #f4cc8d;   
+color: #000;
+}
+#txlist .needsspecimens {
+background: #cf4f7e;
+color: #000;
+}
+#txlist .specimensnosupplier {
+background: #cf9aad;
+color: #000;
+}
+#txlist .specimensyousupplier {
+background: #00f406;
+color: #000;
+}
+#txlist .specimensothersupplier {
+background: #c1f479;
+color: #000;
+}
+#txlist .nospecimensyousupplier {
+background: #ff4f00;
+color: #000;
+}
+#txlist .ignore {
+background: #b8b8b8;
+color: #000;
+}
+#txlist .actionneeded {
+background: #f4f700;
+color: #000;
+}
+#txlist .hasspecimenswrongperson {
+background: #f4e8d5;
+color: #000;
+}
+#txlist .hasspecimensneedmore {
+background: #f4cc8d;
+border-style: solid;
+border-left-width: 3px;
+border-color: #fff #fff #fff #cf4f7e;
+color: #000;
+}
+#txlist .hasspecimenswrongpersonneedmore {
+background: #f4e8d5;
+border-style: solid;
+border-left-width: 3px;
+border-color: #fff #fff #fff #cf4f7e;
+color: #000;
+}
+
+#txlist .microctspecimensacquired {
+background: #b3b3b3;   
+color: #000;
+}
+em.taxonc {
+font-style: normal;
+}
+
+.columnheader {
+display: block;
+float: left;
+width: 30px;
+padding: 0 1px;
+overflow: hidden;
+border: 1px solid #fff;
+font-size: 9px;
+color: #000;
+text-align: center;
+font-weight: bold;
+}
+
+#columnheadercontainer {
+overflow: auto;
+}
+.top {
+vertical-align: top;
+}
+
+.whitetext {
+color: #fff;
+}
+
+.pre {
+    font-family: Courier, monospace;
+    font-size: 11px;
+    white-space: pre;
+}
+.NotesColumnHeader {
+	display: none;
+}
+.NotesColumnValue {
+	display: none;
+}
+
+  div.auto_complete {
+    width: 600px;
+    background: #fff;
+  }
+  div.auto_complete ul {
+    border:1px solid #888;
+    margin:0;
+    padding:0;
+    width:100%;
+    list-style-type:none;
+  }
+  div.auto_complete ul li {
+    margin:0;
+    padding:3px;
+  }
+  div.auto_complete ul li.selected {
+    background-color: #e8e3cf;
+  }
+  div.auto_complete ul strong.highlight {
+    color: #800;
+    margin:0;
+    padding:0;
+  }
+  
+  div.tierScoreboard {
+  	float: right;
+  }
+  span.tierScoreText {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #908d80;  
+  }
+  
+input { 
+	font-size: 10px;
+}  
+
+.taxonsampling { 
+ 	font-size:12px;
+ 	font-weight:normal;
+	padding:0;
+	color:#908d80;
+	margin:-10px 0 20px 0;
+ 	letter-spacing:1px;
+	border:0;
+	}
+#listhelp	{
+	cursor:pointer;
+	display:block;
+	margin:0 0 10px 0;
+	}	
+* html #dnafields {
+	height: 1%;
+}
+.header	{
+	font-size:12px;
+	font-weight:normal;
+	margin:15px 0 5px 5px;
+	padding:0;
+	letter-spacing:2px;
+	line-height:1.5;
+	color:#5d5040;
+}
+.subheader {
+	font-size:10px;
+	font-weight:bold;
+	margin:15px 0 5px 5px;
+	padding:0;
+	letter-spacing:2px;
+	line-height:1.5;
+	color:#908d80;
+}
+.underlined {
+	border-bottom:1px dotted #5d5040;
+}
+.topmargin {
+	margin-top: 30px;
+}
+#applybtn {
+	padding-bottom: 1px;
+}
+#options {
+	margin-top: 30px;
+}

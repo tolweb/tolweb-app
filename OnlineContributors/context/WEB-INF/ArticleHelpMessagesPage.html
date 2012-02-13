@@ -1,0 +1,27 @@
+<span jwcid="@If" condition="ognl:!selectedHelpTopic">
+	<html jwcid="@NewBarebonesFormWrapper" bodyId="articlesbody" title="All Article/Note Help Topics">
+	<div id="sectionlinks">   
+	    <h3>Article/Note Help Sections</h3>
+	    <ul>
+	        <span jwcid="@Foreach" source="ognl:messageMap.keys" value="ognl:currentKey" element="li">
+	            <a jwcid="@Any" element="a" href="ognl:'#' + currentKey.key"><span jwcid="@Insert" value="ognl:currentKey.key"/></a>
+	        </span>
+	    </ul>
+	<div id="savedata"><a name="savedata"></a>
+	<h4>Save Your Data!</h4>
+	 <p>In order to save the data entered in the article/note data entry form to the ToL database, you need to click on the <span class="smallbold">Submit Data</span> button at the bottom of the article/note data entry page.</p>  <p>Don't close the article/note data entry page without submitting your data first.  Also, your connection to the ToL database will time out in about an hour.  If it takes you longer to finish the form, you should submit an incomplete version first, and then start another session to revise and expand your entries. </p>  </div>
+	</div>
+	<div id="allhints">
+	<h2><img src="/tree/images/tip.gif" border="0" class="inlineimg">Article/Note Help Topics</h2>
+	<span jwcid="@Foreach" source="ognl:messageMap.keys" value="ognl:currentKey">
+	    <div class="helpdiv">
+	        <a jwcid="@Any" name="ognl:currentKey.key"/><h4><span jwcid="@Insert" value="ognl:currentKey.key"/></h4>
+	        <p><span jwcid="@Insert" value="ognl:messageMap.get(currentKey)" raw="ognl:true"/></p>
+	    </div>
+	</span>
+	</html>
+</span>
+<span jwcid="@Else">
+	<html jwcid="@HelpWindow" objectType="Article/Note" helpTitle="ognl:selectedHelpTopic" 
+    helpString="ognl:helpContentForSelectedTopic" isImages="ognl:false"/>
+</span>

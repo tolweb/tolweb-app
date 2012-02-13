@@ -1,0 +1,21 @@
+<html jwcid="@Wrapper" title="ognl:title">
+    <p align="right">
+		<a jwcid="@ExternalLink" page="ContributorDetailPage" parameters="ognl:{viewedContributor.id}">Back to Profile Page</a>            
+	</p>
+	<span jwcid="@If" condition="ognl:viewedContributor != null" element="ognl:null">
+	    <h2 class="clear">Tree of Life Media Contributed By <span jwcid="@Insert" value="ognl:viewedContributor.displayName"/></h2>
+		<table jwcid="table@contrib:Table" source="ognl:images" columns="!ID:getId(), !thumbnail, !data"/>
+		<span jwcid="thumbnailColumnHeader@Block">Thumbnail</span>
+		<span jwcid="thumbnailColumnValue@Block">
+	        <img jwcid="@ImageThumbnail" image="ognl:components.table.tableRow" isPreview="ognl:false"/>
+		</span>    
+		<span jwcid="dataColumnHeader@Block">Media Data</span>    
+		<span jwcid="dataColumnValue@Block">    
+			<img jwcid="@ImageDataBlock" image="ognl:components.table.tableRow" generateLinks="ognl:true" showThumbnail="ognl:false"/>    
+	    </span>
+	    <div class="smallmidblock"><strong>Please note:</strong> Most images and other media displayed on the Tree of Life web site are protected by copyright, and the ToL cannot act as an agent for their distribution.  If you would like to use any of these materials for your own projects, you need to ask the copyright owner(s) for permission.  For additional information, please refer to the <a href="/tree/home.pages/tolcopyright.html">ToL Copyright Policies</a>.</div>
+    </span>
+    <span jwcid="@Else">
+    	No contributor found with that id.
+	</span>
+</html>

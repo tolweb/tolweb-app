@@ -1,0 +1,26 @@
+<span jwcid="@If" condition="ognl:hasMaterials">
+	<div id="supportmats">
+        <a name="supportmats"></a>
+        <h3>Support Materials</h3>
+		<ul class="brown4">
+            <span jwcid="@If" condition="ognl:!isLearnerSection && page.treehouse.hasLearnerSection">
+				<li><a jwcid="@ExternalLink" page="TeacherResourceViewLearner" parameters="ognl:{page.treehouse.accessoryPageId}">Learner Section</a></li>
+            </span>
+            <span jwcid="@Foreach" source="ognl:supportMaterials" value="ognl:currentSupportMaterial"
+                index="ognl:index">
+                <span jwcid="@If" condition="ognl:currentSupportMaterial.hasContent">
+				<li>
+                    <span jwcid="@If" condition="ognl:currentSupportMaterial.documentType"><strong><span jwcid="@Insert" value="ognl:currentSupportMaterial.documentType"/>:</strong></span>
+                	<a jwcid="@ExternalLink" page="TeacherResourceViewSupportMaterial" parameters="ognl:{page.treehouse.accessoryPageId, index}" ><span jwcid="@Insert" value="ognl:currentSupportMaterial.title"/></a>.
+				</li>
+                </span>
+            </span>
+            <span jwcid="@Foreach" source="ognl:supportMaterialDocuments" value="ognl:currentSupportMaterialDocument">
+            	<li><img src="/tree/learn/lisa.images/trhouseimage/docmini.gif" width="25" height="20">
+					<strong><span jwcid="@Insert" value="ognl:currentSupportMaterialDocument.documentType"/></strong>
+                    <a jwcid="@ViewImageLink" image="ognl:currentSupportMaterialDocument.document" onlyUrl="ognl:true"><span jwcid="@Insert" value="ognl:currentSupportMaterialDocument.document.title"/></a>
+				</li>
+            </span>
+		</ul>
+	</div>
+</span>

@@ -1,0 +1,179 @@
+<module id="org.tolweb.tapestry" version="1.0.0">
+	<implementation service-id="tapestry.url.BaseTagWriter">
+		<create-instance class="org.tolweb.hivemind.EmptyBaseTagWriter"/>
+	</implementation>
+    <implementation service-id="tapestry.page.SpecificationResolverDelegate">
+            <invoke-factory>
+                    <construct class="org.tolweb.hivemind.AppSpecRelativeSpecificationResolverDelegate">
+                            <set property="templateExtension" value=".html"/>
+                    </construct>
+            </invoke-factory>
+    </implementation>	
+	<!-- Maximum upload size of files is 200MB = 200*1024*1024 -->
+	<implementation service-id="tapestry.multipart.ServletMultipartDecoder">
+		<create-instance class="org.apache.tapestry.multipart.MultipartDecoderImpl,maxSize=209715200" model="threaded" />
+	</implementation>        
+	<!--	
+	<implementation service-id="tapestry.request.CookieSource">
+		<invoke-factory service-id="hivemind.BuilderFactory" model="singleton" >
+			<construct class="org.tolweb.hivemind.CookieSourceImpl">
+				<set-service property="request" service-id="tapestry.globals.HttpServletRequest"/>
+				<set-service property="response" service-id="tapestry.globals.HttpServletResponse"/>
+				<set property="contributorDAO" value="spring:contributorDAO"/> 
+				<set property="defaultMaxAge" value="${org.apache.tapestry.default-cookie-max-age}"/>
+			</construct>
+		</invoke-factory>
+	</implementation>	
+    <implementation service-id="tapestry.page.SpecificationResolverDelegate">
+            <invoke-factory>
+                    <construct class="org.tolweb.hivemind.FolderSpecificationResolverDelegate">
+                            <set property="pagePaths" value="btol,other"/>
+                            <set property="componentPaths" value="btol,other"/>						
+                    </construct>
+            </invoke-factory>
+    </implementation>
+		-->
+	<service-point id="TolwebCookieSource" interface="org.tolweb.hivemind.CookieAndContributorSource">
+		<invoke-factory service-id="hivemind.BuilderFactory" model="singleton" >
+			<construct class="org.tolweb.hivemind.CookieAndContributorSourceImpl">
+				<set-service property="appStateManager" service-id="tapestry.state.ApplicationStateManager"/>								
+				<set-service property="request" service-id="tapestry.globals.HttpServletRequest"/>
+				<set-service property="response" service-id="tapestry.globals.HttpServletResponse"/>
+				<set-service property="requestCycle" service-id="tapestry.globals.IRequestCycle"/>								
+				<set-object property="contributorDAO" value="spring:contributorDAO"/> 
+				<set-object property="passwordUtils" value="spring:passwordUtils"/> 
+				<set-object property="projectDAO" value="spring:projectDAO"/>				
+				<set property="defaultMaxAge" value="${org.apache.tapestry.default-cookie-max-age}"/>
+			</construct>
+		</invoke-factory>
+	</service-point>
+	<service-point id="ImageHelper" interface="org.tolweb.hivemind.ImageHelper">
+		<invoke-factory service-id="hivemind.BuilderFactory" model="singleton" >
+			<construct class="org.tolweb.hivemind.ImageHelperImpl">
+				<set-service property="appStateManager" service-id="tapestry.state.ApplicationStateManager"/>				
+				<set-object property="workingNodeDAO" value="spring:workingNodeDAO"/> 
+				<set-object property="imageDAO" value="spring:imageDAO"/> 				
+				<set-object property="workingPageDAO" value="spring:workingPageDAO"/> 								
+				<set-object property="publicPageDAO" value="spring:publicPageDAO"/>				
+				<set-object property="imageUtils" value="spring:imageUtils"/>
+				<set-object property="usePermissionHelper" value="spring:usePermissionHelper"/>
+				<set-object property="serverXMLReader" value="spring:serverXMLReader"/>
+				<set-object property="externalService" value="engine-service:external"/>
+			</construct>
+		</invoke-factory>
+	</service-point>	
+	<service-point id="AccessoryPageHelper" interface="org.tolweb.hivemind.AccessoryPageHelper">
+		<invoke-factory service-id="hivemind.BuilderFactory" model="singleton" >
+			<construct class="org.tolweb.hivemind.AccessoryPageHelperImpl">
+				<set-service property="appStateManager" service-id="tapestry.state.ApplicationStateManager"/>				
+				<set-service property="requestCycle" service-id="tapestry.globals.IRequestCycle"/>				
+				<set-object property="usePermissionHelper" value="spring:usePermissionHelper"/>
+				<set-object property="accessoryPageSubmitter" value="spring:accessoryPageSubmitter"/>
+				<set-object property="reorderHelper" value="spring:reorderHelper"/>
+				<set-object property="workingAccessoryPageDAO" value="spring:workingAccessoryPageDAO"/>
+			</construct>
+		</invoke-factory>
+	</service-point>		
+	<service-point id="ContributorUploader" interface="org.tolweb.hivemind.ContributorUploader">
+		<invoke-factory service-id="hivemind.BuilderFactory" model="singleton" >
+			<construct class="org.tolweb.hivemind.ContributorUploaderImpl">
+				<set-object property="contributorDAO" value="spring:contributorDAO"/> 
+				<set-object property="editHistoryDAO" value="spring:miscEditHistoryDAO"/> 				
+				<set-object property="permissionChecker" value="spring:permissionChecker"/>
+				<set-object property="serverXMLReader" value="spring:serverXMLReader"/>
+			</construct>
+		</invoke-factory>
+	</service-point>
+	<service-point id="TapestryHelper" interface="org.tolweb.hivemind.TapestryHelper">
+		<invoke-factory service-id="hivemind.BuilderFactory" model="singleton" >
+			<construct class="org.tolweb.hivemind.TapestryHelperImpl">
+				<set-object property="externalService" value="engine-service:external"/>
+				<set-object property="pageService" value="engine-service:page"/>				
+				<set-object property="tableColumnModelSource" value="service:tapestry.contrib.TableColumnModelSource"/>
+				<set-object property="tableColumnSource" value="service:tapestry.contrib.TableColumnSource"/>
+				<set-object property="request" value="service:tapestry.globals.WebRequest"/>
+			</construct>
+		</invoke-factory>		
+	</service-point>	
+	<service-point id="ProjectHelper" interface="org.tolweb.hivemind.ProjectHelper">
+		<invoke-factory service-id="hivemind.BuilderFactory" model="singleton" >
+			<construct class="org.tolweb.hivemind.ProjectHelperImpl">
+				<set-object property="projectDAO" value="spring:projectDAO"/>
+			</construct>
+		</invoke-factory>		
+	</service-point>	
+	<service-point id="FlickrImporter" interface="org.tolweb.flickrimport.FlickrImporter">
+		<invoke-factory service-id="hivemind.BuilderFactory" model="singleton" >
+			<construct class="org.tolweb.flickrimport.FlickrImporter">
+				<set-object property="imageDAO" value="spring:imageDAO"/>
+				<set-object property="nodeDAO" value="spring:nodeDAO"/>
+			</construct>
+		</invoke-factory>		
+	</service-point>	
+	<contribution configuration-id="tapestry.state.ApplicationObjects">
+		<state-object name="contributor" scope="session">
+			<invoke-factory object="service:NullStateObjectFactory"/>
+		</state-object>
+		<state-object name="project" scope="session">
+			<invoke-factory object="service:NullStateObjectFactory"/>
+		</state-object>		
+		<state-object name="treehouse" scope="session">
+			<invoke-factory object="service:NullStateObjectFactory"/>
+		</state-object>			
+        <state-object name="isToolTryout" scope="session">
+            <invoke-factory object="service:BooleanFactory"/>
+        </state-object>			
+		<state-object name="previousTreehousePageName" scope="session">
+			<invoke-factory object="service:NullStateObjectFactory"/>
+		</state-object>
+		<state-object name="image" scope="session">
+			<create-instance class="org.tolweb.treegrow.main.NodeImage"/>
+		</state-object>
+        <state-object name="useRegularImageForm" scope="session">
+            <invoke-factory object="service:BooleanFactory"/>
+        </state-object>					
+	</contribution>
+    <service-point id="BooleanFactory" interface="org.apache.tapestry.engine.state.StateObjectFactory">
+        <invoke-factory>
+			<construct class="org.tolweb.hivemind.BooleanFactory">
+				<set property="booleanState" value="false"/>
+			</construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="NullStateObjectFactory" interface="org.apache.tapestry.engine.state.StateObjectFactory">
+        <invoke-factory>
+			<construct class="org.tolweb.hivemind.NullStateObjectFactory"/>
+        </invoke-factory>
+    </service-point>
+	<service-point id="ChromatogramDownloadService" interface="org.apache.tapestry.engine.IEngineService">
+		<invoke-factory>
+			<construct class="org.tolweb.btol.services.ChromatogramDownloadService">
+				<set-object property="linkFactory" value="service:tapestry.url.LinkFactory"/>
+				<set-object property="chromatogramSearcher" value="spring:chromatogramSearcher"/>
+				<set-object property="gelImageUtils" value="spring:gelImageUtils"/>				
+			</construct>
+		</invoke-factory>
+	</service-point>
+	<service-point id="XMLDownloadService" interface="org.apache.tapestry.engine.IEngineService">
+		<invoke-factory>
+			<construct class="org.tolweb.btol.services.XMLDownloadService">
+				<set-object property="workingNodeDAO" value="spring:workingNodeDAO"/>				
+				<set-object property="serverXMLWriter" value="spring:serverXMLWriter"/>
+			</construct>
+		</invoke-factory>
+	</service-point>	
+	<service-point id="TestContentService" interface="org.apache.tapestry.engine.IEngineService">
+		<invoke-factory>
+			<construct class="org.tolweb.btol.services.TestContentService">
+				<set-object property="workingNodeDAO" value="spring:workingNodeDAO"/>				
+				<set-object property="serverXMLWriter" value="spring:serverXMLWriter"/>
+			</construct>
+		</invoke-factory>
+	</service-point>		
+	<contribution configuration-id="tapestry.services.ApplicationServices">
+		<service name="chromatogramdownload" object="service:org.tolweb.tapestry.ChromatogramDownloadService"/>
+		<service name="xmldownload" object="service:org.tolweb.tapestry.XMLDownloadService"/>
+		<service name="testcontent" object="service:org.tolweb.tapestry.TestContentService"/>
+	</contribution>
+</module>
+

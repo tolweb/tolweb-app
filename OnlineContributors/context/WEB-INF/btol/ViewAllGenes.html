@@ -1,0 +1,18 @@
+<html jwcid="@btol/ProjectWrapper" title="View All Genes">
+<h2 class="clear">All Genes</h2>
+	<table jwcid="table@contrib:Table" source="ognl:genes" 
+        columns="name:Name:name, drosophilaName:Drosophila Name:drosophilaName, triboliumLength:Tribolium Length:triboliumLength, synonyms:Synonyms:synonyms, !edit, !delete" 
+    	row="ognl:currentGene" pageSize="20">
+        <span jwcid="editColumnHeader@Block"></span>
+        <span jwcid="editColumnValue@Block">
+            <a jwcid="@ExternalLink" page="btol/EditGene" parameters="ognl:{currentGene.id, pageName}">edit</a>
+		</span>
+        <span jwcid="deleteColumnHeader@Block"></span>
+        <span jwcid="deleteColumnValue@Block">
+            <a jwcid="@btol/DeleteObjectLink" idToDelete="ognl:currentGene.id"/>
+		</span>
+    </table>
+	<p>
+	<a jwcid="@DirectLink" listener="listener:editNewObject">Add another gene</a>
+	</p>
+</html>

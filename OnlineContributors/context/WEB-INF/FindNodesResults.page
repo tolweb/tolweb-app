@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page-specification PUBLIC 
+  "-//Apache Software Foundation//Tapestry Specification 3.0//EN" 
+  "http://jakarta.apache.org/tapestry/dtd/Tapestry_3_0.dtd">
+<page-specification class="org.tolweb.tapestry.FindNodesResults">
+    <description>Node Search Results Page for ToL Nodes</description>
+	<property-specification name="nodes" type="java.util.List" persistent="yes"/>
+    <property-specification name="searchPageName" type="java.lang.String"/>  
+    <property-specification name="onlySelectPagedNodes" type="boolean"/>
+    <property-specification name="hasPage" type="boolean"/>
+    <property-specification name="editedObjectId" type="java.lang.Long"/>
+    <property-specification name="selectedNodeId" type="java.lang.Long"/>
+    <property-specification name="callbackType" type="int"/>
+    <property-specification name="additionalValues" type="java.util.Hashtable"/>
+    <property-specification name="checkPossibleParent" type="boolean"/>
+    <property-specification name="error" type="java.lang.String"/>
+    <property-specification name="nodeToMove" type="org.tolweb.hibernate.MappedNode"/>
+</page-specification>

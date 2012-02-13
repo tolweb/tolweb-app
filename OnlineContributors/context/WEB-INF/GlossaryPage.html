@@ -1,0 +1,50 @@
+<html jwcid="@FeaturesWrapper" title="Tree of Life Glossary" includeDojo="ognl:true">
+<span jwcid="@If" condition="ognl:page.useGlossary">
+    <javascript jwcid="@Script" script="GlossaryTerms.script" vars="ognl:page.javaScriptVars"/>
+</span>
+<h2>Tree of Life Glossary</h2>
+<p>
+	The ToL Glossary is still under construction.  We expect to greatly expand it
+	over the next few months.  The current page contains a listing of all the
+	available ToL Glossary terms. 
+</p>
+
+<p>
+	You can set your preferences for browsing the ToL web site so that words
+	contained in the glossary list are highlighted on ToL pages, and definitions are
+	displayed when you move the cursor over a highlighted word.  If you would like
+	to try this now, click on the <strong>Turn Glossary On</strong> button below,
+	and then go to a ToL page that features some of the terms in the list below (the
+	<a href="/tree?group=Eukaryotes&contgroup=Life_on_Earth">Eukaryotes</a> page is
+	a good one).  Note that you can turn the Glossary function on and off on any ToL
+	branch page, leaf page, other article, note, or treehouse.  Open the
+	<strong>preferences</strong> menu and select either  <strong>Show Glossary
+	Entries</strong> or <strong>Hide Glossary Entries</strong>. 
+</p>
+<!-- figure out how we're going to post this page and toggle on the Show_glossary cookie value -->
+<form jwcid="@Form" listener="ognl:listeners.showGlossaryOn">
+	<input type="hidden" name="Show_glossary" value="1">
+	<input type="submit" value="Turn Glossary On">
+</form>
+<!-- 
+<ul jwcid="@For" source="ognl:currentAccessoryPages" value="ognl:currentAccessoryPage" element="ul">
+								<li>accessory page id: <span jwcid="@Insert" value="ognl:currentAccessoryPage.id" /></li>
+</ul>
+ -->
+
+<dl id="GlossaryDefinitions">
+	<span jwcid="@For" source="ognl:currentGlossaryEntries" value="ognl:currentGlossaryEntry">
+	<!-- now we need to produce all glossary terms here -->
+	<!-- note: we don't need to filter on !hide because the DAO does that -->
+	<a jwcid="@Any" name="ognl:currentGlossaryEntry.word" element="a"></a>
+	<dt>
+		<span class="boldtext"> <span jwcid="@Insert" value="ognl:currentGlossaryEntry.word" /></span>: 
+		<span jwcid="@If" condition="ognl:currentGlossaryEntryHasMore">
+			<!-- (optional plurals or synonyms here as common separated list) -->
+			<span jwcid="@Insert" value="ognl:currentGlossaryEntryPluralsSynonyms" />
+		</span>
+	</dt> 
+    <dd><span jwcid="@Insert" value="ognl:currentGlossaryEntryDefinition" raw="ognl:true"/></dd>
+	</span>
+</dl>
+</html>

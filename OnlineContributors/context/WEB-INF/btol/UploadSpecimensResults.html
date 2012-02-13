@@ -1,0 +1,29 @@
+<html jwcid="@btol/ProjectWrapper" title="Upload Specimens Results">
+	<h2 class="clear">Upload Specimens Results</h2>
+    <p>Here are the results of your upload.  If something looks awry, you may <a jwcid="@DirectLink" listener="listener:deleteAll">delete</a> all of
+    	the extractions.</p>
+    <span jwcid="@If" condition="ognl:specimens != null && specimens.size > 0">
+	<!-- <table jwcid="table@contrib:Table" source="prop:specimens" 
+        columns="family:Family:family, subfamily:Subfamily:subfamily, tribe:Tribe:tribe, genus:Genus:genus, species:Species:species, 
+        identificationStatus:Identification Status:identificationStatus,
+        identificationNotes:Identification Notes:identificationNotes, nodeId:ToL Node Id:nodeId, collectionDataSource:Collection Data Source:collectionDataSource, 
+        collectionDataSourceId:Collection Data Source Id:collectionDataSourceId, date:Collection Date:creationDateString, collectionTime:Collection Time:collectionTime, country:Country:country,
+        adminDivision1:First Administrative Division:adminDivision1, adminDivision2:Second Administrative Division:adminDivision2,
+        location1:General Location:location1, location2:Specific Location:location2, latitude:Latitude:latitude, longitude:Longitude:longitude,
+        elevation:Elevation:elevation, habitat:Habitat:habitat, collectionMethod:Collection Method:collectionMethod,
+        preservationMethod:Preservation Method:preservationMethod, currentCondition:Current Condition:currentCondition,
+        lifeStage:Life Stage:lifeStage, sex:Sex:sex, collector:Collector:collector, credit:Credit:credit,
+        collection:Collection:collection, notes:Notes:notes, !edit, !delete" 
+    	row="prop:currentSpecimen" pageSize="100">
+        <span jwcid="editColumnHeader@Block"></span>
+        <span jwcid="editColumnValue@Block">
+            <a jwcid="@ExternalLink" page="btol/EditSpecimen" parameters="ognl:{currentSpecimen.id, pageName}">edit</a>
+		</span>
+        <span jwcid="deleteColumnHeader@Block"></span>
+        <span jwcid="deleteColumnValue@Block">
+            <a jwcid="@btol/DeleteObjectLink" idToDelete="prop:currentSpecimen.id"/>
+		</span>
+    </table> -->
+    <table jwcid="@btol/SpecimensTable" specimens="prop:specimens"/>
+    </span>
+</html>

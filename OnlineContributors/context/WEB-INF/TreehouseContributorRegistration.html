@@ -1,0 +1,220 @@
+<html jwcid="@Wrapper" title="Treehouse Builder Registration">
+<p><a id="trhsreturnlink" href="#"
+onclick="javascript:window.opener.focus();return false;">Materials
+Manager or My Search Results</a> </p><h1 class="clear">ToL Treehouse Builder Registration</h1> 
+ <div class="stickies" style="width: auto;"><p class="large">Before signing up as a
+ToL Treehouse Contributor, please make sure you are aware of your rights
+and responsibilities by reading the <a
+href="/tree/home.pages/ToLPrivacyPolicy.html" class="boldtext">Tree of
+  Life Privacy Policy</a>, and the <a href="#TermsAndConditions"
+class="boldtext">Terms and Conditions for ToL Treehouse Contributors</a> (below). </p><p><strong class="large"><span class="red">The registration form on this page is for
+individual treehouse contributors who
+are over 18 years of age.</span></strong></p> <ul> <li>If you are younger than
+18 please be patient.  We will have Young Treehouse Builder registration
+available in a few months. In the meantime those under 18 can participate if their teachers register a classroom project.</li>
+
+<li>If you are a teacher and would like to register a classroom project, first register yourself, 
+then log-in and choose to register a classroom project.
+</ul>
+ <p class="large"><strong class="red">Required information is shown in red and marked with an
+asterisk*</strong></p></div>
+
+ <span jwcid="@If"
+condition="ognl:existingContributor != null"><h3 class="error">You have already registered with the ToL using that email
+address.  If you would like a new password to be emailed to that
+address, please <a jwcid="@DirectLink"
+listener="ognl:listeners.emailPassword">click here</a>.</h3>
+</span>
+<span jwcid="@If" condition="ognl:delegate.hasErrors">
+    <h3 class="error"><span jwcid="@Delegator" delegate="ognl:delegate.firstError"/></h3>
+</span>    
+ <span jwcid="@If" condition="ognl:error != null"> <tr>
+<h3 class="error"><span jwcid="@Insert"
+value="ognl:error"/></h3> </span> 
+<form jwcid="@Form"
+listener="listener:registrationFormSubmit"
+delegate="ognl:delegate" clientValidationEnabled="ognl:true">
+
+<h3> Name </h3>
+<p>Your first name and surname will be used in the <a href="/tree/home.pages/tolcopyright.html">copyright notices</a> and other credit lines for your contributions.</p>   
+<p><span jwcid="@FieldLabel" field="component:surnameField" raw="ognl:true"/> 
+	<input jwcid="surnameField@TextField" size="50" value="ognl:editedContributor.surname"
+    	validators="validators:required" displayName="ognl:surnameDisplayName"/></p>
+<p><span jwcid="@FieldLabel" field="component:firstNameField" raw="ognl:true" />
+	<input jwcid="firstNameField@TextField" size="50" value="ognl:editedContributor.firstName"
+    	validators="validators:required" displayName="ognl:firstNameDisplayName"/></p>
+
+<h3>Email Address and Web Page URL</h3>
+<p>This email address will be your User ID for logging into the ToL system, and we will send your password to this address. We need to keep your email address on file, so we can contact you if there are questions about your contributions.</p>
+<p> By default, we will publish your email address on the contributor's personal profile page and in the credit lines for your contributions. Throughout the ToL site, email addresses are encoded in order to protect them from being harvested by spambots. By checking the box below, you can choose to not have your email address published on the ToL web site.</p>
+
+<p> <span jwcid="@FieldLabel" field="component:emailField" raw="ognl:true" />
+	<input jwcid="emailField@TextField" size="50" value="ognl:editedContributor.email"
+    	validators="validators:required,email" displayName="ognl:emailDisplayName"/></p>
+<p><input jwcid="@Checkbox" value="ognl:editedContributor.dontShowEmail"/><strong>  Do not publish my email address</strong></p>
+
+<p> You can enter the url for your home page in the field below. We will then publish
+this url, rather than your email address, on the contributor's personal profile page.
+</p>
+<p><strong>Web Page URL</strong> <input jwcid="@TextField" value="ognl:editedContributor.homepage" type="text" size="50"/>
+</p>
+
+<h3>Institution/School and Location</h3>
+<p>If you provide this information, it will be printed on the contributor's personal profile page 
+    and in the credit lines for your contributions.</p>
+<p><strong>Institution/School</strong>
+ <input jwcid="@TextField" value="ognl:editedContributor.institution" type="text" size="50"/></p>
+
+<p class="floatleft"><strong>
+Location </strong></p>
+ <p> By default, we will publish your location on the contributor's personal profile page and in the credit lines 
+        for your contributions. By checking the box on the right, you can choose to not have your location published on
+		the ToL web site.</p>
+<table cellpadding="2" cellspacing="0"> 
+<tr>  
+      <td>City</td> <td><input jwcid="@TextField" value="ognl:editedContributor.city" type="text" size="30"/></td> 
+</tr>
+
+<tr>                         
+    <td>State</td> <td><input jwcid="@TextField" value="ognl:editedContributor.state" type="text" size="30"/></td> 
+</tr> 
+<tr>                        
+	<td>Country</td> <td><input jwcid="@TextField" value="ognl:editedContributor.country" type="text" size="30"/></td> 
+</tr>
+<tr>
+	<td valign="bottom"><input jwcid="@Checkbox" value="ognl:editedContributor.dontShowLocation"/>&nbsp;Do not publish</td>
+
+</tr></table>
+
+<h3>Treehouse Building Plans</h3>
+<p>Enter information below that briefly explains your plans for building treehouses. You can include a few sentences about the types of treehouses you will build, the group(s) of organism(s) you may compose treehouses about, and any other relevant information.</p>
+
+<p><strong class="red"><span jwcid="@FieldLabel" field="ognl:components.plansArea"/></strong></p>
+
+<p><textarea jwcid="plansArea@TextArea"
+value="ognl:editedContributor.plans" cols="50" rows="5" displayName="Treehouse Building Plans*"
+validators="validators:required"/></p>
+
+
+<h3><strong>Biographical Information for Personal Profile Page </strong></h3>
+<p>This information will be printed on the contributor's personal profile page. We request this information for two reasons:</p>
+<ul>
+  <li>So visitors to the ToL site can do a search for treehouses authored by a particular kind of treehouse builder; e.g., a middle school teacher may want to explore the work of other middle school teachers.</li>
+  <li>So we can we can keep track of what kinds of people sign up as treehouse builders. This will help us to gear our development efforts towards specific audiences</li>
+  </ul>
+<p><strong>Biographical Information</strong></p>
+<p>Below you can enter a couple of paragraphs to introduce yourself to ToL visitors. Tell us about your background (professional or academic training or experience) and your interests. This information will be printed on the contributor's personal profile page.</p>
+
+ <p><textarea jwcid="@TextArea"
+value="ognl:editedContributor.bio" cols="50" rows="5"/> </p>                  
+               
+
+ <strong>Add Your Photo </strong>
+  <p>You can upload a small picture of yourself (not more than 200x200 pixels, please). The picture will then be displayed with your biographical information on the contributor's personal profile page.
+    </p>
+
+ <p> <input jwcid="@Upload" file="ognl:imageFile"/>
+</p> 
+
+ <span jwcid="@RadioGroup" selected="ognl:categorySelection">                
+<p><strong class="red">How Would You Categorize
+Yourself?*</strong></p>
+
+<p
+>This information will be printed on the contributor's personal profile page. We request this information for two reasons:</p>
+<ul>
+  <li>So visitors to the ToL site can do a search for treehouses authored by a particular kind of treehouse builder; e.g., a middle school teacher may want to explore the work of other middle school teachers.</li>
+  <li>So we can we can keep track of what kinds of people sign up as treehouse builders. This will help us to gear our development efforts towards specific audiences</li>
+  </ul>
+<p>
+
+<table style="margin: 0 0 20px 0; padding-top: 0;"><tr>
+<td width="20" valign="top"><input type="radio"
+jwcid="@Radio"
+value="ognl:@org.tolweb.tapestry.TreehouseContributorRegistration@
+ENTHUSIAST_SELECTION"/></td> <td valign="top" class="boldtext">Nature
+Enthusiast <br> (not a college/university student, educator, or
+scientist)</td> <td valign="top">&nbsp;</td> <td
+valign="top" class="smallplain">&nbsp;</td> </tr> <tr> <td valign="top"
+class="smallplain"><input type="radio" jwcid="@Radio"
+value="ognl:@org.tolweb.tapestry.TreehouseContributorRegistration@
+STUDENT_SELECTION"/></td> <td colspan="3" valign="top"
+class="boldtext">College/University Student</td> </tr> <tr>             
+     <td valign="top" class="smallplain"><input type="radio"
+jwcid="@Radio"
+value="ognl:@org.tolweb.tapestry.TreehouseContributorRegistration@
+EDUCATOR_SELECTION"/></td> <td colspan="3" valign="top"
+class="boldtext">Educator</td> </tr> <tr>                   <td
+valign="top" class="smallplain">&nbsp;</td> <td colspan="3" valign="top"
+class="smallplain"><select jwcid="@PropertySelection"
+model="ognl:@org.tolweb.tapestry.TreehouseContributorRegistration@
+EDUCATOR_MODEL" value="ognl:educatorString"/></td> </tr> <tr>           
+       <td valign="top" class="smallplain"><input type="radio"
+jwcid="@Radio"
+value="ognl:@org.tolweb.tapestry.TreehouseContributorRegistration@
+SCIENTIST_SELECTION"/></td> <td colspan="3" valign="top"
+class="boldtext">Scientist <br> (non-academic)</td> </tr> <tr>          
+        <td valign="top" class="smallplain"><input type="radio"
+jwcid="@Radio"
+value="ognl:@org.tolweb.tapestry.TreehouseContributorRegistration@
+OTHER_SELECTION"/></td> <td colspan="3" valign="top"
+class="boldtext">Other <input jwcid="@TextField"
+value="ognl:otherCategoryString" type="text" size="50"/></td></tr>
+
+
+</table> 
+</span>
+    <span jwcid="@If" condition="ognl:!isNewContributor">
+        <p><strong class="red">New Password</strong>
+	<input jwcid="@TextField" hidden="ognl:true" value="ognl:password1" type="text" size="50" /></p>
+	<p><strong class="red">New Password (again)</strong>
+    <input jwcid="@TextField" hidden="ognl:true" value="ognl:password2" type="text" size="50" /></p></span>
+
+  <div class="whitebox" style="padding-top: 5px;">
+
+<a name="TermsAndConditions"></a> <p><strong>In order to register as a ToL
+Treehouse Builder, you must agree to the following </strong></p> <h4><strong>Terms and
+Conditions for ToL Treehouse Builders:</strong></h4> 
+<p>ToL Treehouse Builders
+must be at least 18 years old. Kids under 18 must register as Young Treehouse Builders when this option becomes available.</p>
+
+<p>ToL Treehouse Builders may upload materials to the Tree of Life
+database and send emails and other communications to Tree of Life staff
+and contributors, so long as the content is not illegal, obscene,
+threatening, defamatory, an invasion of privacy, infringing of
+intellectual property rights or otherwise injurious to third parties.
+Treehouse Builders may not use false email addresses, impersonate any
+person or entity, or otherwise mislead as to the origin of any
+communication, message or other content. While the Tree of Life Project
+is not obliged to review all content that is published by contributors
+on the Tree of Life web site, we reserve the right to delete any
+contribution, or take action against any registered account, at any
+time, for any reason.</p> 
+<p>ToL Treehouse Builders generally keep the
+copyright for materials submitted to the Tree of Life database, and a copyright notice is always printed alongside contributions displayed on the ToL web site. When a contributor uploads treehouses, images or other media to the Tree of Life database, he or she is asked to specify the intended use of the contribution based on the license options described on the <a href="http://tolweb.org/tree/home.pages/toluse.html">Tree of Life Use of Contributions page</a>.</p> 
+<p> ToL Treehouse Builders voluntarily grant the ToL Project and its
+collaborators non-exclusive, royalty-free, and full rights to use the
+submitted materials according to the selected license. To the best of the contributor's knowledge, use of the contribution
+by the Tree of Life Project does not violate any intellectual property
+rights and will not cause injury to any person or entity. The Tree of
+Life Project or its collaborators take no responsibility and assume no
+liability for any contribution made by the contributor or a third
+party.</p>
+
+<p>When registering as a ToL Treehouse Builder, you release
+the ToL Project, its employees, contractors, consultants, and
+collaborators from any and all damages, claims, causes of action,
+liabilities, and expenses relating to your participation, or exclusion
+or disqualification from participation, in the Tree of Life Project.
+</p>
+<div class="stickies" style="width: auto; margin: 10px 20px;">
+    <span jwcid="@If" condition="ognl:isNewContributor">
+        <p class="large"><strong>
+        <input jwcid="agreeBox@Checkbox" value="ognl:agreeToTerms" displayName="I agree with the terms and conditions outlined above." validators="validators:required"/>
+<span jwcid="@FieldLabel" field="component:agreeBox" prerender="ognl:false"/></strong></p></span>
+<p align="right"><input jwcid="@Submit" type="submit" value="Submit Registration"/></p>
+<!-- <strong class="large">Send me updates about treehouse building and new Tree of Life features.</strong> -->
+</div></div>
+</form> 
+</html>
+

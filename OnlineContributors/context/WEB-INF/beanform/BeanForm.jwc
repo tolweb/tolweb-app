@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE component-specification PUBLIC
+        "-//Apache Software Foundation//Tapestry Specification 4.0//EN"
+        "http://jakarta.apache.org/tapestry/dtd/Tapestry_4_0.dtd">
+
+<component-specification class="beanform.BeanForm" allow-body="no" allow-informal-parameters="yes">
+
+        <description>A form that provides edit capabilities for a Java Bean.</description>
+
+        <parameter name="bean" required="true"/>
+        <parameter name="properties" required="false"/>
+        <parameter name="save" required="false"/>
+        <parameter name="delete" required="false"/>
+
+        <parameter name="method" required="false"/>
+        <parameter name="success" required="false"/>
+        <parameter name="cancel" required="false"/>
+        <parameter name="refresh" required="false"/>
+        <parameter name="listener" required="false"/>
+        <parameter name="stateful" required="false"/>
+        <parameter name="direct" required="false"/>
+        <parameter name="delegate" required="false"/>
+        <parameter name="clientValidationEnabled" required="false"/>
+        <parameter name="focus" required="false"/>
+        <parameter name="scheme" required="false"/>
+        <parameter name="port" required="false"/>
+        <parameter name="readOnly" required="false"/>
+
+        <property name="beanProperty"/>
+
+        <component id="isInsideAForm" type="If">
+                <binding name="condition" value="isInsideAForm() || readOnly"/>
+        </component>
+        <component id="isNotInsideAForm" type="Else"/>
+
+        <component id="block" type="Block"/>
+        <component id="renderBlock1" type="RenderBlock">
+                <binding name="block" value="component:block"/>
+        </component>
+        <component id="renderBlock2" type="RenderBlock">
+                <binding name="block" value="component:block"/>
+        </component>
+        
+    	<component id="readOnlyIf" type="If">
+            	<binding name="condition" value="readOnly"/>
+        </component>
+        <component id="notReadOnly" type="Else"/>
+        <component id="readOnlyLabel" type="Insert">
+            	<binding name="value" value="page.getMessage(beanProperty.name)"/> 
+        </component>
+        <component id="readOnlyInsertText" type="Insert">
+            	<binding name="value" value="(beanProperty.name)(bean)"/> 
+        </component>
+
+        <component id="beanForm" type="Form">
+                <binding name="method" value="method"/>
+                <binding name="success" value="success"/>
+                <binding name="cancel" value="cancel"/>
+                <binding name="refresh" value="refresh"/>
+                <binding name="listener" value="listener"/>
+                <binding name="stateful" value="stateful"/>
+                <binding name="direct" value="direct"/>
+                <binding name="delegate" value="delegate"/>
+                <binding name="clientValidationEnabled" value="clientValidationEnabled"/>
+                <binding name="focus" value="focus"/>
+                <binding name="scheme" value="scheme"/>
+                <binding name="port" value="port"/>
+        </component>
+        <component id="beanPropertyRow" type="For">
+                <binding name="source" value="beanProperties"/>
+                <binding name="value" value="beanProperty"/>
+                <binding name="element" value="'tr'"/>
+        </component>
+
+        <component id="hasCustomField" type="If">
+                <binding name="condition" value="(hasCustomField(beanProperty) and !readOnly) || hasCustomLabel(beanProperty) "/>
+        </component>
+        <component id="noCustomField" type="Else"/>
+
+        <component id="customFieldLabel" type="FieldLabel">
+                <binding name="field" value="getCustomField(beanProperty)"/>
+        </component>
+        <component id="customFieldBlock" type="RenderBlock">
+                <binding name="block" value="getCustomFieldBlock(beanProperty)"/>
+        </component>
+
+        <component id="isString" type="If">
+                <binding name="condition" value="beanProperty.isString()"/>
+        </component>
+        <component id="isBoolean" type="If">
+                <binding name="condition" value="beanProperty.isBoolean()"/>
+        </component>
+        <component id="isNumber" type="If">
+                <binding name="condition" value="beanProperty.isNumber()"/>
+        </component>
+        <component id="isDate" type="If">
+                <binding name="condition" value="beanProperty.isDate()"/>
+        </component>
+
+        <component id="beanPropertyLabel_Text" type="FieldLabel">
+                <binding name="field" value="component:beanPropertyField_Text"/>
+        </component>
+        <component id="beanPropertyField_Text" type="TextField">
+                <binding name="value" value="(beanProperty.name)(bean)"/>
+                <binding name="disabled" value="beanProperty.readOnly"/>
+                <binding name="displayName" value="page.getMessage(beanProperty.name)"/>
+                <binding name="validators" value="getValidatorList(beanProperty,#this)"/>
+        </component>
+
+        <component id="beanPropertyLabel_Checkbox" type="FieldLabel">
+                <binding name="field" value="component:beanPropertyField_Checkbox"/>
+        </component>
+        <component id="beanPropertyField_Checkbox" type="Checkbox">
+                <binding name="value" value="(beanProperty.name)(bean)"/>
+                <binding name="disabled" value="beanProperty.readOnly"/>
+                <binding name="displayName" value="page.getMessage(beanProperty.name)"/>
+                <binding name="validators" value="getValidatorList(beanProperty,#this)"/>
+        </component>
+
+        <component id="beanPropertyLabel_Number" type="FieldLabel">
+                <binding name="field" value="component:beanPropertyField_Number"/>
+        </component>
+        <component id="beanPropertyField_Number" type="TextField">
+                <binding name="value" value="(beanProperty.name)(bean)"/>
+                <binding name="disabled" value="beanProperty.readOnly"/>
+                <binding name="displayName" value="page.getMessage(beanProperty.name)"/>
+                <binding name="validators" value="getValidatorList(beanProperty,#this)"/>
+				<binding name="translator" value="translator:number,pattern=#.#######"/>                
+        </component>
+
+        <component id="beanPropertyLabel_Date" type="FieldLabel">
+                <binding name="field" value="component:beanPropertyField_Date"/>
+        </component>
+        <component id="beanPropertyField_Date" type="DatePicker">
+                <binding name="value" value="(beanProperty.name)(bean)"/>
+                <binding name="disabled" value="beanProperty.readOnly"/>
+                <binding name="displayName" value="page.getMessage(beanProperty.name)"/>
+                <binding name="validators" value="getValidatorList(beanProperty,#this)"/>
+        </component>
+
+        <component id="hasSave" type="If">
+                <binding name="condition" value="save!=null"/>
+        </component>
+        <component id="hasCancel" type="If">
+                <binding name="condition" value="cancel!=null"/>
+        </component>
+        <component id="hasRefresh" type="If">
+                <binding name="condition" value="refresh!=null"/>
+        </component>
+        <component id="hasDelete" type="If">
+                <binding name="condition" value="delete!=null"/>
+        </component>
+
+        <component id="beanFormSave" type="Submit">
+                <binding name="label" value="page.getMessage('save')"/>
+                <binding name="listener" value="save"/>
+        </component>
+        <component id="beanFormCancel" type="Button">
+                <binding name="label" value="message:cancel"/>
+        </component>
+        <component id="beanFormRefresh" type="Button">
+                <binding name="label" value="message:refresh"/>
+        </component>
+        <component id="beanFormDelete" type="Submit">
+                <binding name="label" value="message:delete"/>
+                <binding name="listener" value="delete"/>
+        </component>
+
+</component-specification>

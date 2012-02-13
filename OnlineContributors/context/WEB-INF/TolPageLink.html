@@ -1,0 +1,14 @@
+<span jwcid="@If" condition="ognl:emitTags" element="ognl:null">
+<a jwcid="@GenericLink" href="ognl:urlString" target="ognl:target" 
+id="ognl:linkId" title="ognl:title" class="ognl:classString">
+	<span jwcid="@If" condition="ognl:!textSameAsLink" element="ognl:null"">
+<span jwcid="@RenderBody"/>
+    </span>
+    <span jwcid="@Else" element="ognl:null">
+<span jwcid="@Insert" value="ognl:urlString"/>
+    </span>
+</a>
+</span>
+<span jwcid="@Else" element="ognl:null">
+<span jwcid="@RenderBody"/>
+</span>

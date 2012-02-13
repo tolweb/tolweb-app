@@ -1,0 +1,217 @@
+<html jwcid="@Wrapper" title="Batch Upload Content" includeDojo="ognl:true">
+    <h2 class="clear"> Batch Uploading Content for Tree of Life Pages </h2>
+    <span jwcid="@If" condition="prop:uploadSuccessful">
+        <h3>Upload Successful</h3>
+    </span>
+    <span jwcid="@If" condition="ognl:uploadErrorString != null">
+        <h3>Upload Error</h3>
+        <p><span jwcid="@Insert" value="prop:uploadErrorString"/></p>
+    </span>
+    <ol>
+        <li>Download data template in XML format </li>
+        <li>Edit XML file</li>
+        <li>Upload XML file</li>
+        <ul class="nodisc">
+            <form jwcid="@Form" listener="listener:uploadNodes" delegate="prop:delegate">
+            <li>
+				<input jwcid="@Upload" file="prop:uploadFile"/>
+            </li>
+            <li>
+                <input jwcid="@Submit" value="Upload Data"/>
+            </li>
+            </form>
+        </ul>
+        <!--
+        <li>Verify uploaded data        <span class="red">(later)</span></li>
+        <li>Commit uploaded data to the ToL Development database <span class="red">(later)</span></li>
+        -->
+    </ol>
+    <h3>Download Data Template</h3>
+    <ol>
+        <li>Which group do you want to download?
+            <ul class="nodisc">
+                <li jwcid="groupInfo@Any" id="groupInfo">
+                    <span jwcid="@If" condition="prop:rootGroupSelected">
+                    <form jwcid="@tacos:AjaxForm" listener="listener:findAndSelectRootGroup" delegate="prop:delegate" updateComponents="groupInfo,downloadForm">
+                    <span jwcid="@If" condition="ognl:delegate.hasErrors">
+                        <span jwcid="@ErrorBox" delegate="prop:delegate"/>
+                    </span>
+                    Group name: <input jwcid="@TextField" value="prop:rootGroupName"/><input jwcid="@Submit" value="Set root group"/>
+                    </form>
+                    </span>
+                    <span jwcid="@Else">
+                        <span jwcid="@If" condition="ognl:rootGroup != null">
+                        Root group: <span jwcid="@Insert" value="prop:rootGroup.name"/> <a jwcid="@tacos:AjaxDirectLink" listener="listener:chooseRootGroup" updateComponents="groupInfo,downloadForm">change</a> 
+                        </span>
+                        <span jwcid="@Else">
+                    		<a jwcid="@tacos:AjaxDirectLink" listener="listener:chooseRootGroup" updateComponents="ognl:{'groupInfo'}">Select a Group from the ToL Database</a> <span class="red">(one group only)</span>
+                        </span>
+                    </span>
+                </li>
+                <!--
+                <li>If you do not want to download the entire branch, you can
+                limit your download by excluding individual subgroups. </li>
+				-->
+            </ul>
+        </li>
+        <!--
+        <li>Do not include the following subgroups in the download: 
+            <ul class="nodisc">
+                <li><a href="#">Select a Group from the ToL Database</a> <span class="red">(should
+                        have the option to exclude multiple groups)</span></li>
+            </ul>
+        </li>
+        -->
+                        <!--
+        <li>Specify what you want to download
+            
+            <ul class="nodisc">
+                <li><strong>Tree Structure
+                    </strong>
+                    <span class="red">(later)</span>
+                    <ul>
+                        <li>
+                            <input name="radiobutton" type="radio" value="radiobutton" checked>
+                        Omit tree structure: simple representation of  data, easy to edit by hand </li>
+                        <li>
+                            <input name="radiobutton" type="radio" value="radiobutton">
+                            Include tree structure: representation of  data
+                            in a nested hierarchy,  difficult to edit by hand </li>
+                    </ul>
+                </li>
+
+                <li><strong>Nodes</strong>
+                    <ul>
+                        <li>
+                            Node ID 
+                        and Node Name
+                                <ul>
+
+                            <li><span class="red">(downloads: NODES:node_id,
+                                    node_Name,
+                                    italicizeName)</span></li>
+                        </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox4" value="checkbox">
+                            Other Names 
+                            <ul>
+                                <li><span class="red">(downloads: NODES:
+                                    node_Note, OTHERNAMES: name, is_important, is_preferred,
+                                    italicize, comment)</span></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox5" value="checkbox">
+                            Authority Data 
+                            <ul>
+                                <li><span class="red">(downloads: NODES:
+                                    authority, auth_year, show_name_authority, showAuthorityInContainingGroup,
+                                    nameComment, isNewCombination, combinationAuthor,
+                                    combinationDate; if Other Names is also checked,
+                                    include: NODES:
+                                    show_important_authority, show_supertitle_authority,
+                                    OTHERNAMES: authority, auth_year, comment)</span></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" name="checkbox3" value="checkbox">
+                            Node Properties
+                            (extinct, leaf, phylesis, confidence
+                                    of placement) 
+                            <ul>
+                                <li><span class="red">(downloads: NODES: node_Extinct,
+                                        node_Confidence, node_Phylesis, node_Leaf, hasIncompleteSubgroups)</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><strong>Pages</strong>
+                <span class="red">(We need an easy way to create new pages and
+                new text sections!)</span>
+                        <ul>
+                        <li>
+                            <input type="checkbox" name="checkbox32" value="checkbox">
+                            Tree/List Formatting
+                            <ul>
+                                <li><span class="red">(downloads: PAGES: writeaslist)</span> </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox33" value="checkbox">
+                            Text Sections
+                            <ul>
+                                <li><span class="red">(downloads: SECTIONS: section_title,
+                                section_text, page_order)</span> </li>
+                            </ul>
+
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox352" value="checkbox"> 
+                            Lead Text
+                            <ul>
+                                <li><span class="red">(downloads: PAGES: page_leadtext)</span></li>
+    </ul>
+                        </li>
+                        <li>
+
+                            <input type="checkbox" name="checkbox353" value="checkbox"> 
+                            After Tree Text
+                            <ul>
+                                <li><span class="red">(downloads: PAGES: page_aftertreetext)</span></li>
+    </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox35" value="checkbox">
+                            Acknowledgements
+                            <ul>
+
+                                <li><span class="red">(downloads: PAGES:
+                                page_notes)</span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox3543" value="checkbox"> 
+                            References
+                            <ul>
+                                <li><span class="red">(downloads: PAGES: refs)</span></li>
+    </ul>
+
+                        </li>
+                        <li>
+                            <input type="checkbox" name="checkbox354" value="checkbox">
+                            Information on the Internet
+                            <ul>
+                                    <li><span class="red">(downloads: PAGES:
+                                        internetinfo_text)</span></li>
+                            </ul>
+                        </li>
+                        <li>
+
+                            <input type="checkbox" name="checkbox3542" value="checkbox"> 
+                            Page Status
+                            <ul>
+                                <li><span class="red">(downloads: PAGES: status)</span> </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>People</strong><strong> </strong> <span class="red">(later)</span> </li>
+
+                <li><strong>Media</strong><strong> </strong> <span class="red">(later)</span> </li>
+            </ul>
+        </li>
+                -->        
+    </ol>
+    <h4 jwcid="downloadForm@Any" id="downloadForm">
+        <span jwcid="@If" condition="ognl:rootGroup != null">
+        <form jwcid="@Form" listener="listener:downloadData">
+        <input jwcid="@Submit" value="Download Data"/>
+        </form>
+        </span>
+    </h4>
+</html>

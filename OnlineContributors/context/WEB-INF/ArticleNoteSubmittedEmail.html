@@ -1,0 +1,8 @@
+<span jwcid="@MailBlock" from="articlesubmission@tolweb.org" smtp="localhost" subject="New article/note submission" to="ognl:{configuration.notesEditorEmail}" html="ognl:false">
+The following articles or notes were submitted by: <span jwcid="@Insert" value="ognl:contributor.displayName"/> (<span jwcid="@Insert" value="ognl:contributor.email"/>)
+    at <span jwcid="@Insert" value="ognl:new java.util.Date()"/>.
+<span jwcid="@Foreach" source="ognl:submittedArticleNotes" value="ognl:currentArticleNote">
+<span jwcid="@Insert" value="ognl:currentArticleNote.menu"/> -- <span jwcid="@Insert" value="ognl:currentWorkingUrl"/>
+</span>
+Happy editing.
+</span>

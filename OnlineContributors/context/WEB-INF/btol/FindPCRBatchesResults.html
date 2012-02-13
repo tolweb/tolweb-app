@@ -1,0 +1,8 @@
+<html jwcid="@btol/ProjectWrapper" title="PCR Search Results">
+<h2 class="clear">PCR Search Results</h2>
+<p>The following reactions matched your search.  If you don't see the reaction you are looking 
+    for, you can <a jwcid="@PageLink" page="btol/FindPCRBatches">search again</a>.</p>
+<span jwcid="@For" source="prop:batches" value="prop:currentBatch">
+    <span jwcid="@btol/PCRBatchDetail" batch="prop:currentBatch" showAddImageLink="ognl:true"/>
+</span>
+</html>

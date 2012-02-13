@@ -1,0 +1,294 @@
+<html jwcid="@NewFormWrapper" title="ognl:title" bodyId="articlesbody" isAccPage="ognl:true" additionalDelegate="ognl:delegate"
+rightSideBlock="ognl:components.rightSideBlock" saveInstructionsBlock="ognl:components.saveInstructionsBlock" tocBlock="ognl:components.tocBlock">
+	<span jwcid="@Hidden" value="ognl:editedObjectId"/>
+	<span jwcid="@If" condition="ognl:error">
+        <br/>
+        <span jwcid="@Insert" value="ognl:error" class="error"/>        
+    </span>
+    <span jwcid="@Else">
+	<span jwcid="@If" condition="ognl:previewSelected">
+    	<div jwcid="@RedirectDiv" url="ognl:workingUrl"/>
+    </span>
+    <h2>Edit <em><span jwcid="@Insert" value="ognl:accPage.pageTitle"/></em></h2>
+    <span jwcid="@If" condition="ognl:staleForm">
+		<br/><span class="error">Your form submission is out of date.  Please try again.</span>
+    </span>
+        <div id="articlesummary" class="whitebox">             <ul class="box1">
+                <li><a jwcid="@GenericLink" renderer="ognl:rendererFactory.previewLinkRenderer" href="ognl:workingUrl" class="url"><span jwcid="@Insert" value="ognl:workingUrl"/></a></li>
+                    <li>Created by <span jwcid="@Insert" value="ognl:accPage.submittedContributor != null ? accPage.submittedContributor.displayName : ''"/> on 
+                        <span jwcid="@Insert" value="ognl:accPage.creationDate"/> (server time)</li>
+                    <li>Last edited by <!-- <span jwcid="@Insert" value="ognl:accPage.lastEditedContributor.displayName"/> --> on
+                    	 <span jwcid="@Insert" value="ognl:accPage.lastEditedDate"/> (server time) </li>
+                </ul>                   </div>
+        <div id="articletitle" class="whitebox"><a name="articletitle"></a> <div jwcid="@HelpLink" helpName="Titles for Articles and Notes" pageName="ArticleHelpMessagesPage"/>
+            <h4>Titles</h4>
+	    <p class="instructions">The <strong>Full Title</strong> will be used 
+                as the headline for your page. The <strong>Short Title</strong>                 will be used for menus and window titles.</p>
+            <ul class="fields">
+                <li>                     <label>Full Title
+                    <input jwcid="@TextField" value="ognl:accPage.pageTitle" size="45"/></label>
+                    </li>
+                <li>                     <label>Short Title
+                    <input jwcid="@TextField" value="ognl:accPage.menu" size="30"/></label>
+                </li>
+
+            </ul>
+        </div>
+              <div id="articlesections" class="whitebox"> <a name="articlesections"></a> <div jwcid="@HelpLink" helpName="Text for Articles and Notes" pageName="ArticleHelpMessagesPage"/> 
+            <h4>Text</h4>
+            <div class="instructions">
+           
+			<p>The text box below features an <strong>Easy Editor</strong>
+			that will let you format your text without knowledge of HTML codes.
+			This feature is still very much under development, so bear with us as
+			we fix bugs and add new features. If you would rather write 
+        	<a href="javascript: w = window.open('/tree/sep/html.html', 'documentation', 'width=900, height=700, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">HTML 
+                codes</a> by hand, you can switch to advanced mode.</p>
+				<input jwcid="@SetEditorPreferenceButton"/>
+                       <p>Note that images and other media displayed on ToL pages are retrieved from the ToL image 
+                database. If you would like to use your own images, you first 
+                need to upload the files using the <a jwcid="@PageLink" page="ImagesManager" renderer="ognl:imagesManagerRenderer">ToL 
+                image contribution tools</a>. See <a jwcid="@GenericLink" href="/tree/sep/images.html" renderer="ognl:imagesHelpRenderer">Illustrations 
+                for Tree of Life Pages</a> for advice on obtaining images for 
+                your ToL pages.
+                </p>
+				</div>
+				
+
+            <ul class="fields">
+                <li jwcid="@If" condition="ognl:!useEditor">
+                	<a jwcid="@ExternalLink" title="Add an image from the ToL database" page="ArticleNoteImageSearch" parameters="ognl:{editedObjectId, true, !useEditor}" class="addimage" renderer="ognl:rendererFactory.imagesSearchRenderer">Add Image</a>
+				</li>                    
+                <li><textarea jwcid="@PreparedTextArea" useTreehouseImageFormat="ognl:false"  useEditor="ognl:useEditor" cols="75" rows="40" targetObject="ognl:accPage" valuePath="text"/>
+                </li>
+
+                <!-- <li class="controlboxes"><a href="#bigger" class="tinyright">Bigger 
+                    Box</a> <a href="#reset" class="tinyright">Reset Size</a></li> -->       </ul>
+	    	  
+            </div>
+        <div id="articlerefs" class="whitebox"> <a name="articlerefs"></a><div jwcid="@HelpLink" helpName="References for Articles and Notes" pageName="ArticleHelpMessagesPage"/>
+            <h4>References</h4>
+            <p class="instructions"> References should be entered as plain text. 
+                Place a carriage return at the end of each reference and none 
+                within a reference. ToL references are automatically formatted, 
+                so please do not use paragraph tags or any other HTML markup in 
+                your references list.</p>
+            <textarea jwcid="@TextArea" value="ognl:accPage.references" cols="60" rows="10" class="box1"/>
+            <!-- <a href="#bigger" class="tinyright">Bigger Box</a> -->             <div class="spacer">&nbsp;</div>
+        </div>
+        <div id="articlewww" class="whitebox"> <a name="articlewww"></a><div jwcid="@HelpLink" helpName="Internet Links for Articles and Notes" pageName="ArticleHelpMessagesPage"/>
+            <h4>Internet Links</h4>
+            <p class="instructions"> Internet links should be entered in an <a href="/tree/sep/html.html#lists" target="documentation">unordered 
+                list</a>. You can use the code in the box as a template for your 
+                list. Each item in your list should start with &lt;li&gt; and 
+                end with &lt;/li&gt;. Replace <em>http://url</em> with the web 
+                address for the site.</p>
+             <textarea jwcid="@TextArea" value="ognl:accPage.internetInfo" cols="60" rows="10" class="box1"/>
+            <!-- <a href="#bigger" class="tinyright">Bigger Box</a> -->             <div class="spacer">&nbsp;</div>
+        </div>
+		         <div id="articlecredits" class="whitebox"><a name="articlecredits"></a><div jwcid="@HelpLink" helpName="Credits for Articles and Notes" pageName="ArticleHelpMessagesPage"/>
+            <h4>Authors/Credits</h4>
+            <table class="binbox">
+                <tr>                     
+                    <th>Shift</th>
+                    <th>Contributor</th>
+                    <th>Author</th>
+                    <th>Copyright</th>
+                    <th>Correspondent</th>
+                </tr>
+
+			<span jwcid="@For" source="ognl:accPage.contributors" value="ognl:currentContributor" index="ognl:index" convertor="ognl:contributorConvertor"> 
+				<tr>
+                    <td jwcid="@Any" element="td" class="ognl:moveUpOrDownClass">
+                        <span jwcid="@If" condition="ognl:canMoveBoth || canMoveUp" element="ognl:null">
+                            <a jwcid="@LinkSubmit" selected="ognl:moveUpIndex" tag="ognl:index" class="ognl:moveUpClass">up</a>
+                        </span>
+                        <span jwcid="@If" condition="ognl:canMoveDown" element="ognl:null">
+                            <a jwcid="@LinkSubmit" selected="ognl:moveDownIndex" tag="ognl:index" class="tinytext">down</a>
+                        </span>
+                    </td>
+			        <td jwcid="@Any" element="td" class="contributor" rowspan="ognl:currentRowspan">
+			            <span jwcid="@Insert" value="ognl:index + 1"/>.
+						<span jwcid="@Insert" value="ognl:currentContributor.contributor.displayName"/>
+			        </td>
+			        <td jwcid="@Any" element="td" rowspan="ognl:currentRowspan">
+			            <input type="checkbox"  jwcid="@Checkbox" value="ognl:currentContributor.isAuthor"/>
+			        </td>
+			        <td jwcid="@Any" element="td" rowspan="ognl:currentRowspan">
+			            <input type="checkbox"  jwcid="@Checkbox" value="ognl:currentContributor.isCopyOwner"/>
+			        </td> 
+			        <td jwcid="@Any" element="td" rowspan="ognl:currentRowspan">
+			            <input type="checkbox"  jwcid="@Checkbox" value="ognl:currentContributor.isContact"/>
+					</td>
+			        <td jwcid="@Any" element="td" class="remove" rowspan="ognl:currentRowspan">
+			            <a jwcid="@LinkSubmit" selected="ognl:deleteIndex" tag="ognl:index">
+			                Remove </a>
+					</td>
+				</tr>
+                <span jwcid="@If" condition="ognl:canMoveBoth" element="ognl:null">
+                    <tr>
+						<td class="down"><a jwcid="@LinkSubmit" selected="ognl:moveDownIndex" tag="ognl:index">down</a></td>
+                    </tr>
+                </span>
+			</span>
+				<tr>
+                    <td>&nbsp;</td>
+                    <td colspan="5" class="editor"><a jwcid="@LinkSubmit" listener="ognl:listeners.contributorSearchSubmit">Add a Contributor from the ToL Database</a></td>
+                </tr>
+           </table>
+            <p class="instructions">Contributors need to be registered before 
+                they can be added to the <strong>Contributor</strong> list. Only 
+                people who have contributed to the scientific content of the page 
+                should be listed as authors. Other people (e.g., technical assistants) 
+                can be recognized in the <strong>Acknowledgements</strong>. Generally, 
+                the article authors will also be the copyright owners. Use the 
+                <strong>Copyright Owner</strong> field below only if somebody 
+                else owns the copyright (e.g., an employer or a publisher).</p>
+
+            <ul class="fields" style="floatleft">
+                <li>                     <label>Copyright Owner <span class="tinytext">(if not a ToL 
+                    contributor)</span>                     <input jwcid="@TextField" value="ognl:accPage.copyright" size="30"/>
+                    </label>
+                </li>
+                <li>                     <label>Copyright Year 
+                    <input jwcid="@TextField" value="ognl:accPage.copyrightYear" size="4"/>
+                    </label>
+
+                </li>
+                <li>                     <label><span class="textarealabel">Acknowledgements</span><textarea jwcid="@TextArea" value="ognl:accPage.acknowledgements" cols="40" rows="5"/>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div id="articleuse" class="whitebox"><a name="articleuse"></a> <a jwcid="@HelpLink" pageName="ArticleHelpMessagesPage" helpName="Use of Articles and Notes"/>
+                    <h4 class="long">Use Permitted by Copyright Owners</h4>
+            <div class="instructions">	   
+                <p>The default licenses selected below are derived from the preferences
+	        	of the first author as specified in their <a href="/tree/home.pages/register.html" 
+                target="documentation">registration record</a>.  You can override the default by 
+                selecting another license from the list, which will then be used for the text of this 
+		        web page but not your other text contributions. For more detailed information about 
+                available licensing options, see <a href="/tree/home.pages/toluse.html" 
+                target="documentation">ToL Use of Contributions</a>.</p>
+			    <p>Note that the options you specify here apply only to the text of your page. The 
+                use of any image or other media files that may be featured on your page is specified 
+                separately by the copyright owners/contributors of these files.</p>
+			</div>
+            <div jwcid="use1Block@Block">
+                <div id="use1" class="hide">
+                    Materials in the public domain may be freely reproduced, 
+                    distributed, modified, built upon, or otherwise exploited by anyone for any purpose, 
+                    commercial or non-commercial, and in any way, with or without attribution to the 
+                    original source.
+                </div>
+            </div>
+            <div jwcid="use2Block@Block">
+				<div id="use2" class="hide">                         
+					If you select this option, your text can be displayed only on the Tree of Life web site.
+                </div>                
+            </div>
+            <div jwcid="use4Block@Block">
+				<div id="use4" class="hide">                         
+                    Text released under a creative commons licenses can be copied, reused, and 
+                    distributed by the general public as long as attribution regarding the source 
+                    of the information is maintained. Licenses are available that restrict the 
+                    commercial use and the adaptation and modification of text. Copyright notices 
+                    for materials released under this option are marked with the Creative Commons 
+                    icon and contain a link to the deed for the selected license. For more 
+                    information about these licenses, see the <a href="http://creativecommons.org/licenses/" 
+                    target="documentation">Creative Commons web site</a>. We encourage ToL 
+                    contributors to release their text contributions under a creative commons 
+                    license, because these licenses will let us share materials with the 
+                    <a href="http://eol.org"><strong>Encyclopedia of Life</strong></a> (see 
+                    <a href="javascript: w = window.open('/tree/home.pages/toleol.html', 'ToL/EOL Collaboration', 'resizable,height=800,width=1100,scrollbars=yes'); w.focus();">ToL/EOL
+                    Collaboration</a>). All creative commons licenses that permit the reuse and 
+                    adaptation of text are compatible with the EOL intellectual property model,
+                    i. e., <a href="http://creativecommons.org/licenses/by/3.0/">Attribution</a>, 
+                    <a href="http://creativecommons.org/licenses/by-nc/3.0/">Attribution-NonCommercial</a>, 
+                    <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike</a>,
+                    and <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike</a>.
+                </div>                
+            </div>
+			<span jwcid="@UsePermissionRadios" permissableObject="ognl:accPage" 
+			 isImage="ognl:false" dontShowOption3="ognl:true" dontShowTolModOption="ognl:true" 
+             use1Block="ognl:components.use1Block" use2Block="ognl:components.use2Block" 
+             use4Block="ognl:components.use4Block"  />
+            <label class="rememberdefault"><input jwcid="@Checkbox" type="checkbox" name="checkbox" value="ognl:rememberSelected"/>
+            Remember this option for my future articles/notes</label>
+        </div>
+        <div id="articleattach" class="whitebox"> <a name="articleattach"></a> <a jwcid="@HelpLink" helpName="Attaching Articles/Notes to Groups in the Tree of Life" pageName="ArticleHelpMessagesPage"/>
+        <h4>Attached to Group(s)</h4>
+            <p class="instructions"> Please attach your article/note to the group(s) 
+                for which the information you provide is most relevant. Articles/notes 
+                are featured as links in the right sidebar of the branch or leaf 
+                pages of the groups to which they are attached.</p>
+			<table class="binbox">
+                    <tr>
+                        <th style="min-width: 120px">Attached to Group</th><th>Primary Group</th><th><strong>Show Link</strong></th><th>&nbsp;</th>
+					</tr>
+                    <span jwcid="@RadioGroup" selected="ognl:primaryGroup">
+                        <span jwcid="@For" source="ognl:accPage.nodesSet" value="ognl:currentNode" index="ognl:index" convertor="ognl:nodeConvertor">
+                            <tr>
+								<td><span jwcid="@Insert" value="ognl:currentNode.node.name"/></td>
+                                <td><input type="radio" jwcid="@Radio" value="ognl:currentNode.node.nodeId"/></td>
+								<td><input type="checkbox" jwcid="@Checkbox" value="ognl:currentNode.showLink"/></td>
+                                <td><a jwcid="@LinkSubmit" selected="ognl:nodeIdToDelete" tag="ognl:currentNode.node.nodeId" class="remove">Remove</a></td>
+                            </tr>
+                        </span>
+                    </span>                
+					<tr>
+                        <td colspan="4" class="editor"><a jwcid="@LinkSubmit" listener="ognl:listeners.addGroupSubmit" class="add">Add a Group from the ToL Database</a></td>
+                    </tr>
+			</table>
+	           </div>
+     <div id="articlenotes" class="whitebox"> <a name="articlenotes"></a>             
+     <a jwcid="@HelpLink" helpName="Notes for Articles and Notes" pageName="ArticleHelpMessagesPage"/>
+            <h4>Notes</h4>
+
+            <p class="instructions">Notes are not printed on web pages. You can 
+                use this space to record notes for yourself or for your co-authors.</p>
+            <textarea jwcid="@TextArea" value="ognl:accPage.notes" cols="50" rows="4" class="box1" />
+        </div>
+<a name="articlepreview"></a> 	    	    <a jwcid="@HelpLink" helpName="Articles and Notes: Save and Preview/Submit for Publication" pageName="ArticleHelpMessagesPage"/>
+           <input jwcid="@Submit" id="previewbutton" listener="ognl:listeners.previewSubmit" onclick="openPreview()" value="Save & Preview"/>         <div class="spacer">&nbsp;</div>
+
+<div id="articlesubmit">
+<a name="articlesubmit"></a> 		 <input jwcid="@Submit" id="submitbutton" value="Submit for Publication" listener="ognl:listeners.submitSelected"/>
+
+</div>
+<span jwcid="@If" condition="ognl:selectedAnchor != null">
+<script jwcid="@Script" script="JumpToAnchor.script" anchor="ognl:selectedAnchor"/>  
+</span>
+<script jwcid="@Script" script="EditTreehouseFunctions.script" pageName="ArticleNotePreviewPage"/>
+<script jwcid="@Script" script="ClickHandler.script"/>
+</span>
+</html>
+<span jwcid="rightSideBlock@Block">
+    <a jwcid="@PageLink" page="ArticleHelpMessagesPage" id="viewallhelp" target="ArticleHelpWindow">View All Help Topics for This Form</a>
+    <a jwcid="@PageLink" class="managerlink" page="ScientificMaterialsManager" renderer="ognl:rendererFactory.managerRenderer">Scientific Materials Manager</a> 
+</span>
+<span jwcid="tocBlock@Block">
+		<h3>Sections of This Form</h3>
+        <ul>
+        <li><a href="#articletitle">Titles</a></li>
+        <li><a href="#articlesections">Text</a></li>
+        <li><a href="#articlerefs">References</a></li>
+
+        <li><a href="#articlewww">Internet Links</a></li>
+        <li><a href="#articlecredits">Authors/Credits</a></li>
+        <li><a href="#articleuse">Use Permitted by Copyright Owners</a></li>
+        <li><a href="#articleattach">Attached to Group(s)</a></li>
+        <li><a href="#articlenotes">Notes</a></li>
+        <li><a href="#articlepreview">Save &amp; Preview</a></li>
+        <li><a href="#articlesubmit">Submit for Publication</a></li>        
+</span>
+<span jwcid="saveInstructionsBlock@Block">
+    <h4>Save Your Data!</h4>        
+	        <p>In order to save the data entered in this form to the ToL database, 
+	            you need to click on <span class="smallbold">Save &amp; Preview</span>.</p>
+	        <p>Don't close this window without saving your data first. Also, your 
+	            connection to the ToL database will time out in about an hour of inactivity. 
+	            If it takes you longer to finish your contribution, you 
+	            should save an incomplete version along the way to keep your connection 
+	            active.</p>    
+</span>

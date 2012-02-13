@@ -1,0 +1,14 @@
+<html jwcid="@FeaturesWrapper" title="Node Load - Test Page">
+  <form jwcid="@Form">
+	<p>
+		Node Id To Load: <span jwcid="@TextField" value="ognl:nodeId" translator="translator:number" />
+		<input jwcid="@Submit" value="Load" listener="ognl:listeners.doLoad"/>
+		<span jwcid="@If" condition="ognl:nodeId != null">  
+		<h3>Node Info:</h3>
+		<span jwcid="@Insert" value="ognl:nodeInfo" />
+		<h3>Meta Node Info:</h3>
+		<span jwcid="@Insert" value="ognl:metaNodeInfo" />
+		</span>
+	</p>  
+  </form>
+</html>

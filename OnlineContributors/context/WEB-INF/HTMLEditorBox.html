@@ -1,0 +1,25 @@
+<h4 jwcid="@Any" element="h4" id="ognl:h4Trigger" class="triup" onclick="ognl:triggerClickString">How to use or turn off the Easy Editor</h4>
+<div jwcid="@Any" element="div" id="ognl:divTrigger" class="hide"> 
+    <div class="specfeature">
+		<a jwcid="@HelpLink" noDiv="ognl:true" helpName="Compose Treehouse Page Text" pageName="TreehouseHelpMessagesPage">Add Text</a>
+		<a jwcid="@HelpLink" noDiv="ognl:true" helpName="The Easy Editor Toolbar" pageName="TreehouseHelpMessagesPage">The Easy Editor Toolbar</a>
+		<a jwcid="@HelpLink" noDiv="ognl:true" helpName="What if the Easy Editor is not Working?" pageName="TreehouseHelpMessagesPage">What if the Easy Editor is not Working?</a>
+	
+    
+  
+           
+  
+            
+<p style="padding-top: 15px;"><strong>To use the ToL Easy Editor,</strong> simply type your treehouse page text into the  box below. Use the buttons in the Easy Editor's toolbar, located at the top of the text box, to add styles to your text.
+</p>
+			
+			<p><strong>To edit the HTML code</strong> click the HTML button in the editor's tool bar. You may also edit HTML by turning off the  Easy Editor*.
+              <input jwcid="@Checkbox" value="ognl:page.dontUseEditor"/>
+              turn off the Easy Editor.
+              <input jwcid="@Submit" label="Submit" listener="ognl:page.listeners.setEditorPreference"/>
+            </p>
+			<p class="tinytext"> *If checked, the Easy Editor will remain off for all subsequent treehouse editing.
+              Uncheck the box and submit again to turn the editor back on. </p>
+</div>
+</div>
+<div jwcid="@AddMediaInstructions" idIndex="ognl:idIndex"/>

@@ -1,0 +1,198 @@
+<html jwcid="@Wrapper" title="ToL General Scientific Contributors Registration">
+    <h2 class="clear">ToL General Scientific Contributor Registration</h2>
+    <span jwcid="@If" element="ognl:null" condition="ognl:isNewContributor">
+    <p>Please make sure you are aware of your rights and responsibilities by
+        reading  the <a href="javascript: w = window.open('/tree/home.pages/ToLPrivacyPolicy.html', 'documentation', 'width=900, height=700, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">Tree
+        of Life Privacy Policy</a> (which provides detailed information on the
+        use of the personal  information requested below) and the <a href="#TermsAndConditions">Terms
+         and Conditions for ToL Scientific Contributors</a> (below).</p>
+	    <p class="bottomborder"><strong>Required information is marked with an asterisk*</strong></p>
+    </span>
+	<span jwcid="@If" condition="ognl:beans.delegate.hasErrors">
+		<span class="error"><span jwcid="@Delegator" delegate="ognl:beans.delegate.firstError"/></span>
+	</span>       
+	  <span jwcid="@If" condition="ognl:existingContributor != null">
+			<span class="error">You have already registered with the ToL using that email address.  If you would like a new password to be emailed to that address, please <a jwcid="@DirectLink" listener="ognl:listeners.emailPassword">click here</a>.</span>
+	  </span> 
+	  <span jwcid="@If" condition="ognl:error != null">
+			<span jwcid="@Insert" value="ognl:error" class="error"/>
+	  </span>          
+	<form jwcid="@Form" listener="ognl:listeners.registrationFormSubmit" delegate="ognl:beans.delegate">
+<span jwcid="@If" element="ognl:null" condition="ognl:!isNewContributor">
+	<span jwcid="@ExistingSciContributorTopForm" isCoreContributor="ognl:false"/>
+</span>        
+    <ul class="registration">
+        <li> 
+            <label>
+            <span jwcid="@FieldLabel" field="component:surnameField" raw="ognl:true"/> 
+            <input jwcid="surnameField@TextField" size="30" value="ognl:editedContributor.surname" validators="validators:required"
+            	displayName="Surname*"/>
+			</label>
+        </li>        
+        <li> 
+            <label>
+            <span jwcid="@FieldLabel" field="component:firstNameField" raw="ognl:true"/>
+            <input jwcid="firstNameField@TextField" value="ognl:editedContributor.firstName" size="30" validators="validators:required"
+            	displayName="First Name*"/>
+            </label>
+        </li>
+        <li> 
+            <label>
+                <span jwcid="@FieldLabel" field="component:emailField" raw="ognl:true" />
+                <input jwcid="emailField@TextField" value="ognl:editedContributor.email" size="30" 
+                	validators="validators:required,email" displayName="Email*"/>
+            </label>
+            <label class="checkbox"> 
+            <input jwcid="@Checkbox" value="ognl:editedContributor.dontShowEmail"/>
+            Do not publish</label>
+        </li>
+
+        <li class="topborder"> 
+            <label>Web Page URL 
+            <input jwcid="@TextField" value="ognl:editedContributor.homepage" size="40"/>
+            </label>
+        </li>
+        <li> 
+            <label>Institution
+                <input jwcid="@TextField" value="ognl:editedContributor.institution" size="40"/>
+            </label>
+        </li>
+        <li> 
+            <label><span class="textarealabel">Address</span> 
+            	<textarea jwcid="@TextArea" value="ognl:editedContributor.address" cols="30" rows="4"/>
+            </label>
+        </li>
+        <li> 
+            <label><span class="textarealabel">Biographical Information</span> 
+            	<textarea jwcid="@TextArea" value="ognl:editedContributor.bio" cols="30" rows="5"/>
+            </label>
+        </li>
+        <li> 
+            <label>Your Photo 
+				<input jwcid="@Upload" file="ognl:imageFile" size="30"/>
+            </label>
+        </li>
+    </ul>
+    <div class="registerhelp"> 
+        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " />Your 
+            <strong>name</strong> will be published on the ToL web site in copyright 
+            notices and credit lines for your contributions. You may choose to 
+            withhold your <strong>e-mail</strong> address from publication, but 
+            we need to have it on file for legal and administrative purposes.</p>
+        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " />We 
+            encourage you to provide your <strong>web page url</strong>, <strong>institutional 
+            affiliation,</strong> and <strong>mailing address</strong>. This information 
+            may be published in credit lines of ToL pages and on your personal 
+            profile page. Making available this information about our scientific 
+            contributors greatly contributes to the transparency and accountability 
+            of the ToL project.</p>
+
+        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " />Your 
+            <strong>biographical information</strong> will be printed on your 
+            personal profile page. It can be accompanied by a small picture (not 
+            more than 200x200 pixels, please). </p>
+    </div>
+    <p class="topborder" style="clear: both">The following information is for 
+        administrative purposes only:</p>
+    <ul class="registration">
+        
+        <li> 
+            <label>
+            Your Planned Contribution(s)*
+            <textarea jwcid="@TextArea"
+				cols="50" rows="5" value="ognl:editedContributor.plans"/>
+            </label>
+        </li>
+	<li> 
+            <label>
+            <span class="textarealabel">Your Qualifications*</span>
+            <textarea jwcid="@TextArea" cols="30" rows="2" 
+                value="ognl:editedContributor.qualifications"/>
+            </label>
+        </li>
+        <li>
+            <label>
+            Your Relevant Publications*
+            <textarea jwcid="@TextArea" cols="50" rows="5" 
+                value="ognl:editedContributor.publications"/>
+            </label>
+        </li>
+        <li> 
+            <label>Phone 
+            <input jwcid="@TextField" size="20" value="ognl:editedContributor.phone"/>
+            </label>
+        </li>
+        <li> 
+            <label>Fax 
+            <input jwcid="@TextField" size="20" value="ognl:editedContributor.fax"/>
+            </label>
+
+        </li>
+    </ul>
+    <div class="registerhelp"> 
+        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " />In 
+            order to qualify as a ToL general scientific contributor, you need 
+            to be a <strong>professional scientist, science educator, or advanced 
+            graduate student</strong>. If you do not meet these qualifications, 
+            you can contribute to the project by becoming a <a jwcid="@PageLink" page="TreehouseContributorLogin">treehouse 
+            builder</a>.</p>
+        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " />Please 
+            provide a brief summary of your planned contribution(s). Be sure to 
+            include information about the group(s) of organisms to which your 
+            page(s) should be attached.</p>
+        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " />Please 
+            list only publications for which you are the author or co-author. 
+            If you want to write about a topic on which you have not yet published, 
+            include information documenting this topic as one of your current 
+            research efforts, e.g., funded grants, research web sites, presentations 
+            at professional meetings, etc.</p>
+
+        <p><img src="/tree/img/tinylightbulb.gif" class="floatright" alt=" " />Your 
+            <strong>phone</strong> or <strong>fax</strong> number will not be 
+            published. We request this information for administrative purposes 
+            only. </p>
+    </div>
+    <span jwcid="@If" condition="ognl:isNewContributor" element="ognl:null">    
+    <p class="topborder" style="clear: both"><a name="TermsAndConditions"></a>In 
+        order to register as a ToL Scientific Contributor, you must agree to the 
+        following</p>
+    <h4>Terms and Conditions for ToL Scientific Contributors</h4>
+
+    <p>ToL scientific contributors may upload materials to the Tree of Life database 
+        and send emails and other communications to Tree of Life staff and contributors, 
+        so long as the content is not illegal, obscene, threatening, defamatory, 
+        an invasion of privacy, infringing of intellectual property rights or 
+        otherwise injurious to third parties. ToL contributors may not use false 
+        email addresses, impersonate any person or entity, or otherwise mislead 
+        as to the origin of any communication, message or other content. While 
+        the Tree of Life Project is not obliged to review all content that is 
+        published by contributors on the Tree of Life web site, we reserve the 
+        right to delete any contribution, or take action against any registered 
+        account, at any time, for any reason.</p>
+    <p>ToL scientific contributors keep the copyright for materials submitted 
+        to the Tree of Life database, and a copyright notice is printed alongside 
+        copyright-protected contributions displayed on the ToL web site. 
+        By default, ToL contributions are released under the <a href="javascript: w = window.open('http://creativecommons.org/licenses/by-nc/3.0/', 'documentation', 'width=800, height=800, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">Creative Commons Attribution-NonCommercial License</a>. 
+        Contributors who prefer another license can specify alternative default licenses for their text and media contributions (follow the 'Review license defaults' link in the Scientific Materials Manager).
+        Licenses for individual contributions can also be specified in the page or media data entry forms. 
+        For an overview of available licensing options, see <a href="javascript: w = window.open('/tree/home.pages/toluse.html', 'documentation', 'width=800, height=800, scrollbars=yes, resizable=yes, toolbar=yes'); w.focus();">Tree of Life Use of Contributions</a>.</p>
+    <p> ToL scientific contributors voluntarily grant the ToL Project and its 
+        collaborators non-exclusive, royalty-free, and full rights to use the 
+        submitted materials according to the selected license. To the best 
+        of the contributor's knowledge, use of the contribution by the Tree of 
+        Life Project does not violate any intellectual property rights and will 
+        not cause injury to any person or entity. The Tree of Life Project or 
+        its collaborators take no responsibility and assume no liability for any 
+        contribution made by the contributor or a third party.</p>
+    <p>When registering as a ToL scientific contributor, you release the ToL Project, 
+        its employees, contractors, consultants, and collaborators from any and 
+        all damages, claims, causes of action, liabilities, and expenses relating 
+        to your participation, or exclusion or disqualification from participation, 
+        in the Tree of Life Project.</p>
+    <label> 
+        <input jwcid="agreeBox@Checkbox" value="ognl:agreeToTerms" displayName="I agree with the terms and conditions outlined above." validators="validators:required"/>
+		<span jwcid="@FieldLabel" field="component:agreeBox" prerender="ognl:false"/></label>
+    </span>
+    	<input jwcid="@Submit" id="submitregistration" value="Submit Registration"/>
+    </form>
+</html>

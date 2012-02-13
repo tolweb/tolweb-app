@@ -1,0 +1,45 @@
+<!DOCTYPE component-specification PUBLIC "-//Apache Software Foundation//Tapestry Specification 4.0//EN" "http://jakarta.apache.org/tapestry/dtd/Tapestry_4_0.dtd">
+<component-specification class="org.tolweb.tapestryenhancements.PopupLinkSubmit" allow-body="yes" allow-informal-parameters="yes" deprecated="no">
+
+  <description>
+  Creates a hyperlink that submits its enclosing form using JavaScript.
+  </description>
+
+  <parameter name="disabled"/>
+  <parameter name="selected"/>
+  <parameter name="tag"/>
+  <parameter name="id" property="idParameter" default-value="id"/>
+
+  <parameter name="listener">
+      <description>
+          A listener that is notified if this component is triggered.
+      </description>
+  </parameter>
+  <parameter name="action">
+      <description>
+          A listener that is notified if this component is triggered
+          just before the form's listener, after all components 
+          enclosed by the Form have had a chance to update their properties.
+      </description>
+  </parameter>
+  <parameter name="parameters">
+    <description>
+    An object, or list of objects, gathered when the link is triggered and 
+    made available as listener parameters in the request cycle, making
+    the parameters available to a deferred listener.
+    </description>
+  </parameter>
+  
+  <parameter name="popuppage" property="popupPage" required="yes"/>
+
+  <parameter name="popupparameters" property="popupParameters" required="no"/>  
+    <parameter name="width" required="yes"/>
+    <parameter name="height" required="yes"/>    
+    <parameter name="windowName" required="no" default-value="'newWindow'"/>
+      
+  <reserved-parameter name="name"/>
+  <reserved-parameter name="href"/>
+
+  <inject property="listenerInvoker" object="infrastructure:listenerInvoker"/>
+  <inject property="script" type="script" object="PopupLinkSubmit.script"/>
+</component-specification>

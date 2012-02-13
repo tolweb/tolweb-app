@@ -1,0 +1,90 @@
+<html jwcid="@FeaturesWrapper" title="ognl:title">
+  <form jwcid="@Form" listener="ognl:listeners.userKeySubmit">
+    <h2>Tree of Life Web Services: User Key </h2>
+	<span jwcid="@If" condition="ognl:delegate.hasErrors">
+		<span class="error">
+		<ul jwcid="@For" source="ognl:delegate.fieldTracking" value="ognl:currentFieldTracking" element="ul">
+			<li>
+				<span jwcid="@Delegator" delegate="ognl:currentFieldTracking.errorRenderer" element="span"/>
+			</li>
+		</ul>
+		</span>
+	</span>    
+    <p>
+    	In order to use the Tree of Life web services, you need to have a user
+    	key. The information you provide here will help us to keep track of how
+    	the services are used. 
+    </p>
+    <ul class="nodisc gap10">
+        <li><label for="nameField">Name </label>
+        	<input jwcid="@TextField" name="nameField" value="ognl:userName" 
+        		id="nameField" size="30" type="text" validators="validators:required"/></li>
+
+        <li><label for="emailField">Email </label> 
+                <input jwcid="@TextField" name="emailField" value="ognl:userEmail" 
+                	id="emailField" size="30" type="text" validators="validators:required,email"/></li>
+        <li><label for="urlField">Project URL/Homepage </label> 
+                <input jwcid="@TextField" name="urlField" value="ognl:userUrl" 
+                	id="urlField" size="30" type="text" validators="validators:required"/></li>
+        <li><label for="description">Intended Use</label> 
+            <ul>
+                <li>
+                <label for="descriptionarea" class="textarealabel">
+                	Briefly describe how you are going to use the Tree of Life data 
+                </label>
+            	<textarea jwcid="@TextArea" value="ognl:intendedUse" name="descriptionarea" 
+            		id="description" cols="60" rows="5" validators="validators:required"></textarea>
+
+            </li>
+                <li>Which of the following categories describes your intended
+                    use? 
+                    <ul jwcid="@RadioGroup" selected="ognl:licenseCategory" class="radiogroup">
+                        <li>
+                        	<label>
+                        	<input type="radio" jwcid="@Radio" 
+                        		value="ognl:@org.tolweb.content.licensing.ContentLicenseClass@NonCommercialWithModification"/> 
+                            Non-commercial use WITH modification/adaptation
+                            </label>
+                        </li>
+                        <li>
+                        	<label>
+                        	<input type="radio" jwcid="@Radio" 
+                        		value="ognl:@org.tolweb.content.licensing.ContentLicenseClass@NonCommercialWithoutModification"/>
+                            Non-commercial use WITHOUT modification/adaptation
+                            </label>
+                        </li>
+                        <li>
+                        	<label>
+                        	<input type="radio" jwcid="@Radio" 
+                        		value="ognl:@org.tolweb.content.licensing.ContentLicenseClass@CommercialWithModification"/>
+                            Commercial use WITH modification/adaptation
+                            </label>
+						</li>
+                        <li>
+                        	<label>
+                        	<input type="radio" jwcid="@Radio" 
+                        		value="ognl:@org.tolweb.content.licensing.ContentLicenseClass@CommercialWithoutModification"/>
+                            Commercial use WITHOUT modification/adaptation
+                            </label>
+                       	</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="checkbox">
+        	<label>
+		    <input name="checkbox" type="checkbox" jwcid="takesResponsibility@Checkbox" value="ognl:takesResponsibility" validators="validators:required"/>
+		   	I understand that  it is my responsibility to make sure that my use of ToL data complies with the licenses specified
+		   	by the copyright owners of materials distributed through the Tree of Life web services.</label>
+        </li>
+        <li class="checkbox">    
+        	<input name="Submit" value="Submit" type="submit" class="floatright"/>
+			<label>
+		    <input name="checkbox" type="checkbox" jwcid="compliesWithTerms@Checkbox" value="ognl:compliesWithTerms" validators="validators:required"/>
+		    I agree to comply with the <a href="/tree/home.pages/webservices.html#termsofuse">Tree of Life Web Services Terms of Use</a>
+		    </label>
+
+        </li>
+    </ul>
+  </form>
+</html>

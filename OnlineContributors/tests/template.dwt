@@ -1,0 +1,165 @@
+<html>
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>Tree of Life</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META NAME="Description" CONTENT="The Tree of Life Web Project is a global, collaborative effort documenting biodiversity and the phylogeny of life.  Its goal is to compile information about the evolutionary history and characteristics of all organisms.">
+<META NAME="Keywords" CONTENT="tree of life, biodiversity, phylogeny, systematics, phylogenetic relationships, biological database, bioinformatics, evolution, natural history, life, organisms, species, clades, plants, animals, fungi, protists, bacteria, botany, zoology, microbiology, taxonomy, classification, biological diversity, flora, fauna, wildlife, fossils, paleontology, conservation, phylogenetic biology, phylogenetic trees, mammal, bird, dinosaur, amphibian, reptile, invertebrate"> 
+<link rel="Shortcut Icon" type="image/ico" href="/favicon.ico" />
+<link rel="stylesheet" href="/tree/css/tolhome.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFee" text="#000000" marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" link="#000099" vlink="#9900CC">
+
+
+<script language="javascript">
+
+  var agt=navigator.userAgent.toLowerCase();
+
+  if (agt.indexOf('omniweb') > 0  ||  agt.indexOf('icab') > 0  ||  agt.indexOf('konqueror') > 0  ||  agt.indexOf('webtv') > 0) {
+  
+    var loc = window.document.URL;
+    replace_pt = loc.indexOf('home.pages');    
+    var new_loc = loc.substring(0,replace_pt);
+    new_loc = new_loc + "home.nom";    
+    new_loc = new_loc + loc.substring( replace_pt +10, 100);   
+    this.location = new_loc;
+	  
+}
+</script>
+
+<SCRIPT language=JavaScript>
+/*
+ Milonic DHTML Website Navigation Menu
+ Written by Andy Woolley
+ Copyright 2002 (c) Milonic Solutions. All Rights Reserved.
+ Please visit http://www.milonic.co.uk/menu or e-mail menu3@milonic.com
+ You may use this menu on your web site free of charge as long as you
+ place prominent links to http://www.milonic.co.uk/menu and you inform
+ us of your intentions with your URL AND ALL copyright notices remain
+ in place in all files including your home page.
+ Commercial support contracts are available on request if you cannot comply
+with the above rules.
+*/
+</SCRIPT>
+	
+	<SCRIPT language=JavaScript>
+	 function Oerr(){return true;}
+ 		self.onerror=Oerr
+	</SCRIPT>
+	
+	<SCRIPT language=JavaScript src="/tree/menus/newabout_array.js" type=text/javascript></SCRIPT>
+	<SCRIPT language=JavaScript src="/tree/menus/mmenu.js" type=text/javascript></SCRIPT>
+
+  
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr bgcolor="#9999CC"> 
+      
+    <td align="left" valign="top"><img src="/tree/home.pages/pictures/pixel.gif" width="40" height="60" alt="&nbsp;" border="0"></td>
+      <td align="left" valign="top" height="60">
+        <table width="660" height="60" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+            
+          <td width="160" bgcolor="#9999CC" align="center" valign="middle"><a href="/tree/home.pages/abouttol.html"><img src="/tree/images/newabouttitle.gif" width="240" height="60" border="0" alt="Tree of Life Web Project"></a><a href="#maincontent"><img src="/tree/images/pixel.gif" width="1" height="1" alt="skip navigation" border="0"></a><a href="/tree/home.pages/accessibility.html"><img src="/tree/images/pixel.gif" width="1" height="1" alt="ToL accessibility" border="0"></a></td>
+          <td width="100" align="center" valign="middle" bgcolor="#9999CC" height="60"><a href="/tree/phylogeny.html"><img src="/tree/images/aboutsmallworld.gif" width="100" height="60" border="0" alt="ToL logo"></a></td>
+            
+          <td width="70" align="center" valign="middle" bgcolor="#9999CC"><a href="/tree/phylogeny.html" class="abouttop">&nbsp;<span class="abouttopcap">H</span>OME&nbsp;</a></td>
+            
+          <td width="90" align="center" valign="middle" bgcolor="#9999CC"><a href="/tree/home.pages/finding.html" class="abouttop">&nbsp;<span class="abouttopcap">B</span>ROWSE&nbsp;</a></td>
+            
+          <td width="90" align="center" valign="middle" bgcolor="#9999CC"><a href="/tree/home.pages/search.html" class="abouttop">&nbsp;<span class="abouttopcap">S</span>EARCH&nbsp;</a></td>
+            
+          <td width="70" align="center" valign="middle" bgcolor="#9999CC"><a href="/tree/home.pages/treehelp.html" class="abouttop">&nbsp;<span class="abouttopcap">H</span>ELP&nbsp;</a></td>
+            <td align="center" valign="middle" bgcolor="#9999CC">&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+      <td align="left" valign="top" height="60" width="100%"><a name="top">&nbsp;</a></td>
+    </tr>
+  </table>
+  <table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+    <tr>
+      <td bgcolor="#9999CC" valign="top" align="center" height="200%"> 
+        <table border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><img src="/tree/home.pages/pictures/pixel.gif" alt=" " width="150" height="1"></td>
+        </tr>
+        <tr> 
+          <td height="80" valign="top"> <p><a href="/tree/home.pages/news.html" class="abouttop"> 
+              &nbsp;&nbsp;&nbsp;News</a></p>
+            <p><a href="/tree/home.pages/sitemap.html" class="abouttop">&nbsp;&nbsp;&nbsp;Sitemap</a></p>
+            <p><a href="/tree/home.pages/links.html" class="abouttop">&nbsp;&nbsp;&nbsp;Links</a></p></td>
+        </tr>
+        <tr> 
+          <td height="40" align="center" valign="top"> <p class="aboutleftbold">___________________</p></td>
+        </tr>
+        <tr> 
+          <td height="25" valign="top"> <a href="/tree/home.pages/goals.html" class="aboutleftbold">&nbsp;&nbsp;&nbsp;Goals 
+            of the ToL</a></td>
+        </tr>
+        <tr> 
+          <td height="25" valign="top"><a href="/tree/home.pages/abouttol.html#features" class="aboutleftbold">&nbsp;&nbsp;&nbsp;Project 
+            Features</a></td>
+        </tr>
+        <tr> 
+          <td height="25" valign="top"><a href="/tree/home.pages/mytolexplain.html" class="aboutleft">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyToL 
+            </a></td>
+        </tr>
+        <tr> 
+          <td height="25" valign="top"><a href="/tree/home.pages/peerreview.html" class="aboutleft">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Peer 
+            Review </a></td>
+        </tr>
+        <tr> 
+          <td height="25" valign="top"><a href="/tree/home.pages/forums.html" class="aboutleft">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ToL 
+            Forums </a></td>
+        </tr>
+        <tr> 
+          <td height="25" valign="top"><a href="/tree/home.pages/abouttol.html#contributing" class="aboutleftbold">&nbsp;&nbsp;&nbsp;Contribute 
+            to ToL</a></td>
+        </tr>
+        <tr> 
+          <td height="25" valign="top"><a href="/tree/home.pages/abouttol.html#development" class="aboutleftbold">&nbsp;&nbsp;&nbsp;Project 
+            Development </a></td>
+        </tr>
+        <tr> 
+          <td height="25" valign="top"><a href="/tree/home.pages/abouttol.html#people" class="aboutleftbold">&nbsp;&nbsp;&nbsp;People</a></td>
+        </tr>
+        <tr> 
+          <td height="25" valign="top"><a href="/tree/home.pages/abouttol.html#ackn" class="aboutleftbold">&nbsp;&nbsp;&nbsp;Acknowledgments</a></td>
+        </tr>
+      </table>
+      </td>
+      <td valign="top" width="100%" height="100%"> 
+        <table border="0" cellspacing="0" cellpadding="10">
+          <tr> 
+            <td><a name="maincontent"></a><!-- #BeginEditable "pagecontent" --> 
+              <p class="pageheading">pageheading</p>
+              <p>text</p>
+              <!-- #EndEditable --></td>
+          </tr>
+        </table>
+        
+      <table border="0" cellspacing="0" cellpadding="8" align="center">
+        <tr align="center" valign="middle" bgcolor="f2f2ff"> 
+          <td><a href="/tree/phylogeny.html" class="bottomlinks">Home</a></td>
+          <td><a href="/tree/home.pages/finding.html" class="bottomlinks">Browse</a></td>
+          <td><a href="/tree/home.pages/search.html" class="bottomlinks">Search</a></td>
+          <td><a href="/tree/home.pages/treehelp.html" class="bottomlinks">Help</a></td>
+          <td><a href="/tree/home.pages/news.html" class="bottomlinks">News</a></td>
+          <td><a href="/tree/home.pages/sitemap.html" class="bottomlinks">Sitemap</a></td>
+          <td><a href="/tree/home.pages/links.html" class="bottomlinks">Links</a></td>
+          <td><a href="/tree/home.pages/abouttol.html" class="bottomlinks">About 
+            ToL</a></td>
+          <td><a href="/tree/learn/learning.html" class="bottomlinks">Learning</a></td>
+          <td><a href="#top" class="nolinelink"><img src="/tree/images/top.gif" alt="top" width="30" height="10" border="0"></a></td>
+        </tr>
+      </table>
+      <p class="smallPlainCenter">Copyright &copy; 2004 Tree of Life 
+        Project.<br>
+        All rights reserved. </p><p></p></td>
+    </tr>
+  </table>
+
+</body>
+</html>

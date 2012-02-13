@@ -1,0 +1,12 @@
+<html jwcid="body@Block">
+<h2 class="clear">Really Delete <span jwcid="@Insert" value="ognl:treehouse.pageTitle"/>?</h2>
+<p class="error">Deleting this <span jwcid="@Insert" value="ognl:pageType"/> will cause you to lose all your work and it will not be recoverable.
+Only continue if you do not need this <span jwcid="@Insert" value="ognl:pageType"/> anymore.</p>
+	<form jwcid="@Form">
+        <input type="Submit" jwcid="@Submit" listener="ognl:listeners.deleteTreehouse" value="ognl:'Yes, Delete the ' + pageType"/>
+        <input type="Submit" jwcid="@Submit" listener="ognl:listeners.dontDeleteTreehouse" value="No, I Don't Want to Continue"/>
+    </form>
+</html>
+<span jwcid="@WrapperChooser" block="ognl:components.body" 
+    title="ognl:'Confirm Delete for ' + pageType + ' ' + treehouse.pageTitle"
+    wrapperType="ognl:wrapperType"/>

@@ -1,0 +1,63 @@
+<a name="learnobjsection" id="learnobjsection"></a>
+<div id="learnobjective" class="boxtoc">
+    <a jwcid="@HelpLink" pageName="TeacherResourceHelpMessagesPage" helpName="ToL Learning Objective"/>
+    <h4>Learning Objective(s)</h4>
+	<div class="indentleft">
+		<p class="tiny10text">Please separate each objective with a hard return (e.g. hit enter/return) 
+            so that we can format a list of learning objectives.</p>     
+        <p class="instructions" style="margin-left: 0;">A learning objective should state concepts that 
+            students will engage with during the assignment, the activity that will activate the learning 
+            process, and any product or outcome produced by students in order to acquire expertise and 
+            demonstrate learning.</p>
+		<p><strong>Learners will: </strong></p>
+		<label><textarea jwcid="@TextArea" value="ognl:page.treehouse.learningObjective" name="textfield" cols="60" rows="5"></textarea>
+		</label> 
+	</div>
+</div>
+<div class="spacer">&nbsp;</div>        
+<a name="prep" id="prep"></a>
+<div class="boxtoc">
+	<div id="prepprior">
+        <a jwcid="@HelpLink" pageName="TeacherResourceHelpMessagesPage" helpName="Preparation, Prior Knowledge and Physical Materials and Tools"/>
+		<h4>Preparation </h4>
+		<div class="indentleft">
+		<p>Discuss any preparation needed or recommended for the lesson/activity.</p>
+		<p><span>
+			<textarea jwcid="@TextArea" value="ognl:page.treehouse.preparation" name="textfield" cols="60" rows="5"></textarea>
+		</span></p>
+		</div>
+	</div>
+	<div id="priorknow">
+        <a name="prior" id="prior"></a>
+  			<h4>Prior Knowledge </h4>
+  			<div class="indentleft">
+		<p>Please describe any information students and instructors should <em>already know</em>
+        or be familiar with in order to complete and or teach the activity/lesson.</p>
+		<span>
+			<textarea jwcid="@TextArea" value="ognl:page.treehouse.priorKnowledge" name="textfield" cols="60" rows="5"></textarea>
+   			</span>
+        </div>
+	</div>
+    <span jwcid="@If" condition="ognl:isWebquest" element="ognl:null">
+		<div id="teachertips">
+	        <a name="teachertips"></a>
+	        <a jwcid="@HelpLink" pageName="WebquestHelpMessagesPage" helpName="Teacher Tips"/>
+			<h4>Teacher Tips</h4>
+			<div class="indentleft">
+		        <p>Add tips for teachers to help them use this WebQuest as a learning resource.</p>
+				<textarea jwcid="@TextArea" value="ognl:page.treehouse.teacherTips" name="textfield" cols="60" rows="7"></textarea>
+		 	</div>
+		</div>
+    </span>
+	<div id="physicalobjects">
+        <a name="physicalobjects"></a>
+    
+		<h4>Physical Materials and Tools</h4>
+		
+		<div class="indentleft">
+		<p>To format a list for this section use a hard return between each material. List 
+            resources and tools such as: computer, camera, markers, beakers,  distilled water, etc.</p>
+		<textarea jwcid="@TextArea" value="ognl:page.treehouse.physicalMaterials" name="textfield" cols="60" rows="7"></textarea>
+ 	 	    </div>
+	</div>
+</div>

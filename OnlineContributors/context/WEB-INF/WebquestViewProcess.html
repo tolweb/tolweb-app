@@ -1,0 +1,40 @@
+<html jwcid="@TreehouseWrapper" treehouse="ognl:treehouse" bodyId="trwebqtheme"
+	additionalPageShortName="process">
+	<div id="process">
+        <a name="process"></a>
+        <span jwcid="@Insert" value="ognl:intro" raw="ognl:true"/>
+        <div id="processsteps">
+            <h4>Process Steps</h4>
+			<ol class="brown4">
+            <span jwcid="@Foreach" source="ognl:webquest.portfolio.sections" value="ognl:currentSection"
+                index="ognl:index">
+                <li>
+                    <a jwcid="@Any" element="a" href="ognl:'#linksection' + index"><span jwcid="@Insert" value="ognl:currentSection.title"/></a>
+                </li>
+            </span>
+			</ol>
+		</div>
+		<span jwcid="@Foreach" source="ognl:webquest.portfolio.sections" value="ognl:currentSection"
+			index="ognl:index">
+			<div jwcid="@Any" element="div" id="ognl:'linksection' + index"><a jwcid="@Any" element="a" name="ognl:'linksection' + index"></a>
+			<h3>Step <span jwcid="@Insert" value="ognl:index + 1"/>: <span jwcid="@Insert" value="ognl:currentSection.title"/></h3>
+            	<h4>Process Step Instructions</h4>
+                <p><span jwcid="@Insert" value="ognl:currentSection.instructions" raw="ognl:true"/></p>
+	            <span jwcid="@Foreach" source="ognl:currentSection.pages" value="ognl:currentPage">                   
+					<a jwcid="@GenericLink" href="ognl:destinationUrl" renderer="ognl:renderer" class="goto">
+                        <span jwcid="@Insert" value="ognl:destinationTitle"/>
+                    </a>                                   
+					<img jwcid="@ViewWebquestPageImage" portfolioPage="ognl:currentPage"/> 
+                    <ul class="brown4">
+                    <span jwcid="@Foreach" source="ognl:pageInstructionsList" value="ognl:currentInstruction">
+                        <li><span jwcid="@Insert" value="ognl:currentInstruction" raw="ognl:true"/></li>
+                    </span>
+                    </ul>
+	            </span>
+            </div>
+       </span>
+</div>
+</html>
+<span jwcid="contentMenuBlock@Block">
+    <li><a href="#content">Process</a></li>    
+</span>

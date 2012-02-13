@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="unwar" name="OnlineContributors">
+	<target name="init">
+		<property location="/home/dmandel/tmp/tol" name="war.home"/>
+	</target>	
+	<target depends="init" name="unwar">
+		<unzip src="${war.home}/onlinecontributors.war" dest="${war.home}/output"/>
+	</target>
+</project>

@@ -1,0 +1,16 @@
+<html jwcid="@btol/ProjectWrapper" title="prop:title" includeDojo="ognl:false">
+		<h2 class="clear"><span jwcid="@Insert" value="prop:title"/></h2>
+	    <form jwcid="@Form">
+            <ul class="nodisc">
+                <li>Sequence Status <input jwcid="@PropertySelection" value="prop:geneNodeStatus.status" model="prop:statusModel"
+                	onChange="prop:statusOnChangeString"/></li>                
+                <li>Sequence Source Database <input jwcid="@PropertySelection" value="prop:geneNodeStatus.source" model="prop:statusSourceModel"
+                	onChange="prop:sourceOnChangeString" /></li>
+                <li>Sequence Source Database Id <input jwcid="@TextField" value="prop:geneNodeStatus.sourceDbId" onkeyup="prop:sourceIdOnChangeString"/></li>
+            </ul>
+		</form>
+    <span jwcid="@contrib:XTile" listener="listener:handleCallback" 
+        sendName="sendValue" receiveName="recvCompletions"/>
+    <script jwcid="@Script" script="GeneNodeStatusSave.script"
+        symbols="prop:scriptSymbols"/>
+</html>

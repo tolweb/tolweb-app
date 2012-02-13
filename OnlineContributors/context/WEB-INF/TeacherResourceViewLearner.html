@@ -1,0 +1,44 @@
+<html jwcid="@TreehouseWrapper" treehouse="ognl:treehouse" additionalPageShortName="learner section"
+	bodyId="trteachtheme" teacherResourceBlock="ognl:components.headerBlock" showLearningInfo="ognl:false">
+	<span jwcid="headerBlock@Block">
+        <a jwcid="@TolPageLink" tolPage="ognl:treehouse" linkId="portfoliolink">
+            <span jwcid="@Insert" value="ognl:treehouse.resourceTypeString"/>: <span jwcid="@Insert" value="ognl:treehouse.pageTitle"/>
+        </a>
+    </span>
+	<div id="learninfo">
+		<ul class="brlearnlist">
+            <li>Support Material Type:
+				<ul class="inline">
+					<li>Learner Section </li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<ul class="inlinetrhstoc1">
+		<li jwcid="@RenderBlock" block="ognl:pageContentMenuBlock"/>
+	</ul>
+    <span jwcid="@If" condition="ognl:treehouse.hasLearnerSectionIntro">
+		<div id="lrnrinstructions">
+			<h3><a name="lrnrinstructions">Instructions</a></h3>
+	        <span jwcid="@Insert" value="ognl:instructions" raw="ognl:true"/>
+		</div>
+    </span>
+	<span jwcid="@SupportMaterials" hasMaterials="ognl:treehouse.hasLearnerSupportMaterials"
+        supportMaterialDocuments="ognl:treehouse.learnerSupportMaterialDocuments" 
+        supportMaterials="ognl:treehouse.learnerSupportMaterials"
+    	isLearnerSection="ognl:true"/>    
+</html>
+<span jwcid="contentMenuBlock@Block">
+    <span jwcid="@If" condition="ognl:page.treehouse.hasLearnerSectionIntro">
+		<li><a href="#overview">Instructions</a></li>
+    </span>
+    <span jwcid="@If" condition="ognl:page.treehouse.hasLearnerSupportMaterials">
+		<li><a href="#supportmats">Support Materials</a></li>
+    </span>
+    <span jwcid="@If" condition="ognl:page.treehouse.hasReferences">
+		<li><a href="#refs">References</a></li>
+    </span>
+    <span jwcid="@If" condition="ognl:page.treehouse.hasInternetLinks">
+		<li><a href="#www">Information on the Internet</a></li>
+    </span>
+</span>

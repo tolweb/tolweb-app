@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page-specification PUBLIC 
+  "-//Apache Software Foundation//Tapestry Specification 3.0//EN" 
+  "http://jakarta.apache.org/tapestry/dtd/Tapestry_3_0.dtd">
+<page-specification class="org.tolweb.tapestry.ImageContributorRegistration">
+    <description>Registration Page for ToL Image Contributors</description>
+    <property-specification name="agreeToTerms" type="boolean" />
+    <property-specification name="error" type="java.lang.String" />
+    <property-specification name="password1" type="java.lang.String"/>
+    <property-specification name="password2" type="java.lang.String"/>
+</page-specification>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page-specification PUBLIC 
+  "-//Apache Software Foundation//Tapestry Specification 3.0//EN" 
+  "http://jakarta.apache.org/tapestry/dtd/Tapestry_3_0.dtd">
+<page-specification class="org.apache.tapestry.html.BasePage">
+    <description>Help/login page for Image Contributions</description>
+    <component id="wrapper" type="Wrapper">
+        <static-binding name="title">ToL Media Contributors Log-In</static-binding>
+    </component>
+</page-specification>

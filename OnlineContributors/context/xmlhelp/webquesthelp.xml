@@ -1,0 +1,136 @@
+<messages>
+
+<message name="Copy Data From Another Treehouse"><text><![CDATA[ <p><strong>You currently cannot copy data from another WebQuest into this WebQuest. You can copy data from another treehouse (exluding portfolios and teacher resources) and the fields that match will be copied over.</strong></p><p>This
+option allows you to copy the data from another one of your treehouse
+contributions into the form for the current treehouse.  Using this
+feature can make things easier when you compose multiple treehouses that
+share content such as groups of authors, links to other pages or
+references.</p> <p><strong>Be aware that using this feature will
+replace any information you may already have entered in the current
+form.  Therefore, you should copy data only when you first get started
+building your treehouse.</strong></p> ]]></text> </message>
+
+<message name="WebQuest Introduction"><text><![CDATA[
+<p>Provides an introduction for the learners that will partake in the webquest. WebQuests often ask learners to take on a role, or present a specific scenario. The introduction is where roles and context should be explained.</p>
+
+ ]]></text> </message>
+
+<message name="WebQuest Task"><text><![CDATA[ <p>Reviews the goals of the WebQuest, and the tasks that learners will need to accomplish are clearly laid out.</p>
+ ]]></text> </message>
+
+
+
+
+<message name="WebQuest Evaluation"><text><![CDATA[
+<p>Explains the methods of assessment used to evaluate learners who engaged in the WebQuest. Provides a rubric that describes how learners will be evaluated.
+</p> ]]></text> </message>
+
+
+<message name="WebQuest Process"><text><![CDATA[
+<p> Guide learners through the steps that they will have to go through to meet the goals of the WebQuest. Lead students to on-line resources and instruct them on what they need to do to complete the steps of the WebQuest. </p>
+<ul><li>In the "Process Introduction" add an introduction to the process section that provides an overview of the steps the learners will undertake in order to complete the WebQuest process. </li>
+<li>You can organize students access to the different pages you will add by creating Process Step sections. For example, if you have created a WebQuest where the goal is for students to create a conservation plan for an endangered species, you could divide the Process Steps of the WebQuest into: Characteristics, Habitat, and Environmental Regulations. You can add instructions for each process step.</li><li>Add links to each process step by choosing to add a ToL page or a page on another website. When you choose an external link you will need to add the URL (web address) and page name. For each link you add you can format a list of instructions for learners to follow and add a thumbnail image that helps visually guide the learner (images also act as links to web pages).</li><li>You can move and reorder Process Steps, and links that are part of the Process Steps, by clicking on the up and down arrows.</ul>
+ ]]></text> </message>
+
+<message name="WebQuest Introduction and Task"><text><![CDATA[
+ <ul><li>Add an <strong>introduction</strong> for the learners that will partake in the webquest. WebQuests often ask learners to take on a role, or present a specific scenario. The introduction is where roles and context should be explained.</li>
+   <li> Describe the <strong>task</strong> that the learners will engage in by explaining the goals of the WebQuest, and clearly lay out the tasks that learners must accomplish.</li></ul>
+   ]]></text> </message>
+
+
+<message name="WebQuest Evaluation and Conclusion"><text><![CDATA[
+<ul>
+<li>Explain the methods of assessment used to evaluate learners who engaged in the WebQuest. Provide a rubric that describes how learners will be evaluated.</li>
+<li>Close the WebQuest with a conclusion that summarizes what students should have accomplished and learned. The conclusion 
+can provide additional questions that would help students reflect upon their learning and formulate new ideas, 
+as well as additional links that could point students in the direction of future research.
+</li>
+</ul> 
+]]></text> </message>
+
+
+<message name="WebQuest Teacher Page"><text><![CDATA[
+<p> Add information for teachers to help them use this WebQuest with their students.</p>
+ ]]></text> </message>
+
+<message name="Learning Information"><text><![CDATA[
+<p>Teacher resources have an expanded learning section with many fields that you can fill out to assist teachers in finding the best resources for their classrooms.
+Only three areas are indicated as required: the Learner Level, Resource Overview Description, and Science Subject Key Words. Fill out as many of the additional fields as you would like. 
+The considerable number of fields we provide are intended to help other teachers search for resources that best fit their needs.</p>
+
+<p>Note that you can also add state and national education standards by typing them into a text field or by adding them as documents.
+</p>
+ ]]></text> </message>
+
+<message name="Learning Strategy"><text><![CDATA[
+<p>Here you can acknowledge any person or institution that has helped
+you in the creation of your treehouse.</p> ]]></text> </message>
+
+
+
+<message name="Resource Overview"><text><![CDATA[
+<p>Here you can acknowledge any person or institution that has helped
+you in the creation of your treehouse.</p> ]]></text> </message>
+
+
+<message name="WebQuest Conclusion"><text><![CDATA[
+
+<p>Closes the WebQuest with a conclusion that summarizes what students should have accomplished and learned. 
+The conclusion can provide additional questions that would help students reflect upon their learning and formulate new ideas, as well as additional links that could point students in the direction of future research.</p>
+]]></text>
+ </message>
+
+
+<message name="References"><text><![CDATA[ <p>In the <em>References</em>
+section you should include any references that you have cited in your
+text. You can also list any books, articles or other resources that may
+be of interest to people looking for more information on the topics
+covered in your treehouse. For example, if you wrote a page on whales,
+and you have a lot of great books and videos on this topic we would
+appreciate if you could share the reference information for these
+resources.  Note that internet links should go in a separate section
+below.</p>
+
+<p><strong>Please separate your references with carriage returns (click
+enter/return to produce a line break between each reference).</strong>
+Each entry will be formatted into a paragraph with a hanging indent, so
+please do not use carriage returns (click enter/return) within a
+reference. Also, please do not use paragraph tags or any other HTML
+markup in the <em>References</em> field.</p> ]]></text> </message>
+
+
+<message name="Information on the Internet"><text><![CDATA[ <p>Here you
+can list other web sites that are relevant to the content of your
+treehouse. You should include any sites that you have cited in your text
+along with other online resources that may be of interest to people
+looking for more information about the topics covered in your
+treehouse.</p> <p>For each site in your list, you should provide the
+<strong>url</strong> (web address) and the <strong>name</strong> of the
+site or web page. You can also add <strong>comments</strong> about the
+content of the site. Use the Add Fields button to generate fields for
+additional web sites.</p> ]]></text> </message>
+
+
+
+
+<message name="Notes"><text><![CDATA[ <p>You can use the Notes field to
+communicate with ToL editors and contributors about your treehouse. For
+example, you can write a note if there is something you think we should
+know about your page or if you have a question. You can also enter
+reminders for yourself or messages to your co-authors or ToL editors.
+</p> ]]></text> </message>
+
+
+
+<message name="Process Introduction"><text><![CDATA[ <p>Here you can add an introduction to the process section that provides an overview of the steps the learners will undertake in order to complete the WebQuest process.
+</p> ]]></text> </message>
+
+<message name="WebQuest Process Steps Resource Links"><text><![CDATA[ 
+<p>The Process section of a ToL WebQuest is divided into "Process Steps" to which you will add resource links and instructions. You can add as many process steps as you would like, to do so simply write the number of steps you want to add and click "Add Fields".  Later, if you decide you want to move or delete a process step, simply use the up and down arrows or delete link. Once you have added Process Steps give each step a title. If you would like, you can add instructions for each process step (or you can add instructions for individual resource links that are added to the step).</p> ]]></text> </message>
+
+<message name="WebQuest Resource Links and Instructions"><text><![CDATA[ <p>Add links to ToL pages or to WWW pages outside of the ToL web site (click "Add link to external WWW page"). Every time you add a link, an instructions box will appear where you can write instructions specific to that resource link. You can also choose to add a thumbnail image to accompany the link. To change the order of the resource links use the up and down arrow buttons on the left.
+</p> ]]></text> </message>
+
+
+
+</messages>

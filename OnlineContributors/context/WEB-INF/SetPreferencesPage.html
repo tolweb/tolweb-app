@@ -1,0 +1,164 @@
+<html jwcid="@FeaturesWrapper" title="Setting Your Preferences for Viewing the ToL Site" includeDojo="ognl:true">
+
+  <h2>Setting Your Preferences</h2>
+
+  <p>
+    Here are a few simple options that allow visitors to modify the content and appearance of ToL pages. The current
+    implementation of these customization features is just a prototype for a more complete toolset we have planned for
+    the future. For a more detailed discussion of ToL customization features, please refer to this page:
+    <a href="mytolexplain.html" class="boldtext">
+      Customizing Your View of the Tree of Life
+    </a>
+    .
+  </p>
+  <blockquote>
+    <p class="italictext">
+      <img src="../icons/hand.gif" width="36" height="19">
+      Please note that ToL customization will work only if you have cookies enabled in your browser. Most browsers
+      install with cookies enabled, so you should be fine unless you have actively disabled cookies in your browser's
+      preferences.
+    </p>
+
+  </blockquote>
+  <hr>
+  <p>
+    Here are the customization options that are currently available. Select the ones you would like to use, and then hit
+    the Submit Preferences button below.
+  </p>
+  <form name="prefsForm" jwcid="@Form">
+
+    <table width="75%" border="0" cellspacing="0" cellpadding="4" align="center">
+      <tr>
+        <td>
+          <input type="checkbox" jwcid="@Checkbox" name="glossary" value="ognl:showGlossaryEnabled" />
+        </td>
+
+        <td colspan="2" class="boldtext">
+          Show glossary entries on ToL pages
+        </td>
+      </tr>
+      <tr>
+        <td>
+          &nbsp;
+        </td>
+        <td>
+          &nbsp;
+        </td>
+
+        <td class="tiny">
+          When the glossary function is activated, words contained in the glossary list are highlighted on ToL pages,
+          and definitions are displayed when the visitor moves the mouse over a highlighted word.
+          <a href="mytolexplain.html#glossary">
+            Tell me more about this feature
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <input type="checkbox" jwcid="@Checkbox" name="randpictures" value="ognl:showRandomImagesEnabled" />
+        </td>
+        <td colspan="2" class="boldtext">
+          Include random pictures section on ToL pages
+        </td>
+      </tr>
+      <tr>
+        <td>
+          &nbsp;
+        </td>
+
+        <td>
+          &nbsp;
+        </td>
+
+        <td class="tiny">
+          Default versions of ToL pages usually include only a few carefully chosen pictures to represent the diversity
+          of forms within a group. If you would like to see more pictures, you can use this option to add a section to
+          each ToL page containig a random sampling of pictures from the pages of subgroups.
+          <a href="mytolexplain.html#ShowHideComponents">
+            Tell me more about this feature
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" jwcid="@Checkbox" name="wwwlinks" value="ognl:showLosLinksEnabled" />
+        </td>
+        <td colspan="2" class="boldtext">
+          Show Information on the Internet section near top of ToL pages
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          &nbsp;
+        </td>
+        <td>
+          &nbsp;
+        </td>
+        <td class="tiny">
+          Visitors who want to use the ToL web site primarily as a portal to other sites that provide information about
+          different groups of organisms can use this option to move the weblinks section to a more convenient spot
+          higher up on each ToL page.
+          <a href="mytolexplain.html#ChangeOrder">
+            Tell me more about this feature
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <a name="taxonlist">
+          </a>
+
+          <input type="checkbox" jwcid="@Checkbox" name="taxonlists" value="ognl:showTaxonListsEnabled" />
+        </td>
+        <td colspan="2" class="boldtext">
+          Show only taxon lists on ToL pages
+        </td>
+      </tr>
+      <tr>
+        <td>
+          &nbsp;
+        </td>
+        <td>
+          &nbsp;
+        </td>
+        <td class="tiny">
+          Tree diagrams are an important part of the ToL navigation system, but the image maps we use for these diagrams
+          are not ideally suited for the presentation of information to non-graphical browsers. For people who have
+          difficulties using image map links, we provide the option to navigate the ToL via simple indentend taxon
+          lists.
+          <a href="mytolexplain.html#accessibility">
+            Tell me more about this feature
+          </a>
+        </td>
+      </tr>
+
+      <tr align="left">
+        <td colspan="3">
+          &nbsp;
+        </td>
+      </tr>
+
+      <tr align="left">
+        <td colspan="3">
+          <input type="submit"
+          	jwcid="@Submit" 
+          	name="SubmitPreferences" 
+          	value="Submit Preferences" 
+          	listener="ognl:listeners.setPreferences" />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input 
+ 	      	type="submit"
+            jwcid="@Submit"  
+            name="reset"
+            value="Restore Default Settings"
+            listener="ognl:listeners.resetDefaults" />
+
+        </td>
+      </tr>
+
+    </table>
+  </form>
+</html>

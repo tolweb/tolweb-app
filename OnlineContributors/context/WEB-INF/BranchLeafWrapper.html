@@ -1,0 +1,28 @@
+<html jwcid="@CommonWrapper" title="ognl:title" delegate="ognl:delegate" stylesheets="ognl:stylesheets" additionalDelegate="ognl:syndicationDelegate">
+    <div id="maincontent" class="nosb"><a name="maincontent"></a><span jwcid="@RenderBody"/></div>
+    <div id="localnav">
+		<div jwcid="@TreeStructureTip" isBranch="ognl:!isLeaf" isLeaf="ognl:isLeaf"/>
+	    <h2 jwcid="@Any" class="ognl:titleClass">
+            <a jwcid="@GenericLink" disabled="ognl:!isPeopleList && !isImageGallery && !isMovieGallery" href="ognl:pageUrl">
+                <span jwcid="@Insert" value="ognl:tolPage.groupName"/>
+            </a>
+        </h2>
+	    <a name="toc"></a>
+        <span jwcid="@If" condition="ognl:showPageContentMenu">
+			<h4 jwcid="@PageContentMenu" hasInternetInfo="ognl:hasInternetInfo" hasRefs="ognl:hasRefs" 
+	        	isBranchOrLeaf="ognl:true" hasTitleIllustrations="ognl:tolPage.titleIllustrations.size > 0"
+	        	textSections="ognl:tolPage.textSections" hasOtherNames="ognl:hasOtherNamesToDisplay" />
+        </span>
+    	<span jwcid="@LinkedPages" node="ognl:node" title="ognl:''" isBranchOrLeaf="ognl:true" 
+        	isPeopleList="ognl:isPeopleList" includeLinkPrefix="ognl:isTaxaIndex" isImageGallery="ognl:isImageGallery" isMovieGallery="ognl:isMovieGallery"/>
+        <span jwcid="@If" condition="ognl:isWorking">
+        <h4 jwcid="@ContributorPreferencesMenu"/>
+        </span>
+		<span jwcid="@If" condition="ognl:!isTaxaIndex">        
+		<h4 jwcid="@PreferencesMenu" isBranchOrLeaf="ognl:true"/>
+		<h3>Explore Other Groups</h3>
+		<span jwcid="@OtherGroups" node="ognl:node"/>
+		<h4 class="nomenu"><a href="/tree?random=true">random page</a></h4>        
+        </span>        
+    </div>
+</html>

@@ -1,0 +1,184 @@
+<html jwcid="@FeaturesWrapper" title="Taxa Import - Object Management">
+  <form jwcid="@Form">
+  	<p>[<a jwcid="@PageLink" page="xml/TaxaImportHome">Return to Taxa Import Workflow Home...</a>] 
+  	[<a jwcid="@PageLink" page="taxaimport/ViewObjectManagement">Return to Object Management...</a>]
+  	</p>
+	<span jwcid="@If" condition="ognl:validationDelegate.fieldTracking != null && !validationDelegate.fieldTracking.empty">
+       <ul>
+       		<span jwcid="@For" source="ognl:validationDelegate.fieldTracking" value="ognl:currentFieldTracking">
+          		<li jwcid="@If" condition="ognl:currentFieldTracking.inError"  class="error" element="li">
+          			<span jwcid="@Delegator" delegate="ognl:currentFieldTracking.errorRenderer"/>
+          		</li>
+       		</span>
+       </ul>
+  	</span>
+	<h2 class="clear">Orphaned Nodes in Clade <span jwcid="@Insert" value="ognl:currentBasalNodeName"/></h2>
+	<span jwcid="@If" condition="ognl:swapTuples == null || swapTuples.isEmpty">
+	No orphaned nodes found...
+	</span>
+	<span jwcid="@Else">
+		<div class="instructions">
+		<p>Each of the nodes listed below was present in the classification/tree present in the
+		Tree of Life Web Project before the import, but there is no identically-named node
+		present in the newly imported classification/tree.  These old nodes have not been
+		discarded; instead, they have been inactivated, and are stored in a "holding bin",
+		waiting for you to decide what to do with them and the content (e.g., pages, images) that
+		is attached to them. </p>
+		<p>For each of these nodes, you have three options: (1) move information from the old
+		node to a target node in the new classification, (2) add the old node, with all of its
+		attached information, into the new classification, as a descendant of the specified node
+		in the new classification, (3) delete the old node permanently from the ToL.  </p>
+		<p>If you choose to first option, of moving information to a target node in the new
+		classification, the information that will be moved includes:
+			<ul>
+				<li>The original node ID of the old, currently inactive node. This will replace 
+				the newly-created node ID of the new node.  The value of this is that bookmarks 
+				and databases that have stored the original node ID for that group can still work 
+				if they use the original node ID.</li>
+			    <li>Any pages, other names, and media (images, movies, audio files) that are 
+			    attached to the old node.</li>
+			    <li>Optionally, the name of the old name can be transferred to an Other Name of 
+			    the target node.</li>
+			</ul>
+		The information that will <b>not</b> be moved includes:
+			<ul>
+		        <li>The name of the node.  The name in the new system will continue to be the name 
+		        from the newly imported classification.  You can use the ToL's tools to change the 
+		        name of that node later.</li>
+			</ul>
+		</p>	
+		</div>
+	<ul class="inline">		
+		<li><input jwcid="@Submit" type="submit" value="Check All Replace Target Nodes" listener="ognl:listeners.checkAllReplaceNode" /></li>		
+		<li><input jwcid="@Submit" type="submit" value="Uncheck All Replace Target Nodes" listener="ognl:listeners.uncheckAllReplaceNode" /></li>
+		<li><input jwcid="@Submit" type="submit" value="Check All Nodes Eligible For Retirement" listener="ognl:listeners.checkAllRetireNode" /></li>
+	</ul>
+	<ul class="inline">
+		<li><a jwcid="@Any" element="a" 
+			href="prop:workingURL">View working page for 
+			<span jwcid="@Insert" value="ognl:currentBasalNodeName"/></a></li>
+	</ul>
+	<table jwcid="@For" source="ognl:swapTuples" value="ognl:currentTuple" element="table">
+		<tr>
+			<td jwcid="@Any" style="ognl:nodeBackground">
+				node: <span jwcid="@Insert" value="ognl:currentTuple.metaNode.node.name"/> <br/>
+				created: <span jwcid="@Insert" value="ognl:currentTuple.metaNode.node.created"/>
+			</td>
+			<td jwcid="@Any" style="ognl:nodeBackground">
+				original node id: <span jwcid="@Insert" value="ognl:currentTuple.metaNode.node.id"/> <br/> 
+				updated: <span jwcid="@Insert" value="ognl:currentTuple.metaNode.node.updated"/>
+			</td>  
+		</tr>
+		<tr>
+			<td jwcid="@Any" style="ognl:nodeBackground" colspan="2">	  
+				<span jwcid="@If" condition="ognl:currentTuple.metaNode.hasAttachments">
+					Information attached to the original node:
+					<ul>
+						<span jwcid="@If" condition="ognl:currentTuple.metaNode.hasPageAttached">
+							<li>page id: <a jwcid="@TolPageLink" groupName="ognl:currentTuple.metaNode.node.name" 
+												nodeId="ognl:currentTuple.metaNode.node.nodeId" 
+												isInactiveLink="ognl:true" isWorking="ognl:true">
+											<span jwcid="@Insert" value="ognl:currentTuple.metaNode.page.pageId"/></a>
+								<label>
+									<input type="checkbox" jwcid="@Checkbox" value="ognl:currentTuple.removeAttachedPage"/>
+									remove
+								</label>											
+							</li>
+						</span>
+						<span jwcid="@If" condition="ognl:!currentTuple.metaNode.accessoryPages.empty">
+						<li>accessory pages:
+							<ul>
+								<span jwcid="@For" source="ognl:currentTuple.metaNode.accessoryPages" value="ognl:currentAccessoryPage">
+									<li>accessory page id: <span jwcid="@Insert" value="ognl:currentAccessoryPageLink" raw="ognl:true" />
+									<span jwcid="@Insert" value="ognl:currentAccessoryPage.id" /></li>
+								</span>
+							</ul>
+						</li>
+						</span>
+						<span jwcid="@If" condition="ognl:!currentTuple.metaNode.otherNameIds.isEmpty">
+						<li>other names:
+							<ul> 
+								<span jwcid="@For" source="ognl:currentTuple.metaNode.otherNameIds.keySet" value="ognl:currentOtherNameId">
+									<li>other name id: <span jwcid="@Insert" value="ognl:currentOtherNameId" />
+										<span jwcid="@Insert" value="ognl:currentOtherNameText" /></li>
+								</span>
+							</ul>
+							<label>
+								<input type="checkbox" jwcid="@Checkbox" value="ognl:currentTuple.removeAttachedOtherNames"/>
+								remove all attached othernames
+							</label>								
+						</li>
+						</span>
+						<span jwcid="@If" condition="ognl:!currentTuple.metaNode.media.empty">
+						<li>media files:
+							<ul>
+								<span jwcid="@For" source="ognl:currentTuple.metaNode.media" value="ognl:currentMediaFile">
+									<li>media id: <span jwcid="@Insert" value="ognl:currentMediaFileLink" raw="ognl:true" /></li>
+								</span>
+							</ul>
+							<label>
+								<input type="checkbox" jwcid="@Checkbox" value="ognl:currentTuple.detachAllMedia"/>
+								detach all media
+							</label>								
+						</li>
+						</span>
+						<span jwcid="@If" condition="ognl:!currentTuple.metaNode.contributors.empty">
+						<li>contributors:
+							<ul>
+								<span jwcid="@For" source="ognl:currentTuple.metaNode.contributors" value="ognl:currentContributor">
+									<li>contributor id: <span jwcid="@Insert" value="ognl:currentContributorLink" raw="ognl:true" /></li>
+								</span>
+							</ul>
+						</li>
+						</span>
+					</ul>
+				</span>	 
+				 
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			Options:
+			<ul> 
+				<li>
+					<p>
+						move information (except name) to the following target node in the new, imported classification:
+						<span jwcid="@TextField" value="ognl:currentTuple.targetNodeId" translator="translator:number" /> 
+						<!-- / --> 
+						<a jwcid="@PageLink" page="FindNodeIds" renderer="ognl:renderer">Find new node id...</a>
+						<ul class="nodisc">
+							<li>
+							<label><input type="checkbox" 
+								jwcid="@Checkbox" 
+								value="ognl:currentTuple.replaceTargetNode"/>replace target node</label>
+							</li>
+							<li>
+							<label><input type="checkbox" 
+								jwcid="@Checkbox" value="ognl:currentTuple.moveNameToTarget"/>move <span jwcid="@Insert" value="ognl:currentTuple.metaNode.node.name"/> to be an Other 
+								Name of target node in new, imported classification</label>							
+							</li>
+						</ul>
+					</p>
+				</li>
+				<li>
+					<p>
+						Reactivate original node as an immediate descendent of node id:
+						<span jwcid="@TextField" value="ognl:currentTuple.parentNodeId" translator="translator:number" /> 
+					</p>
+				</li>
+				<span jwcid="@If" condition="ognl:currentTuple.metaNode != null && !currentTuple.metaNode.hasAttachments">
+				<li><label><input type="checkbox" jwcid="@Checkbox" value="ognl:currentTuple.shouldRetireNode"/>retire node permanently</label></li>
+				</span>
+			</ul>	
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<hr />
+			</td>
+		</tr>
+	</table>
+	<input jwcid="@Submit" type="submit" value="Execute"  listener="ognl:listeners.processOperations" />
+	</span>   
+  </form>
+</html>

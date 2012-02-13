@@ -1,0 +1,25 @@
+<html jwcid="@btol/ProjectWrapper" title="View All Protocols">
+<h2 class="clear">All PCR Protocols</h2>
+<form jwcid="@Form">
+<p><input jwcid="@Checkbox" value="prop:showDefunct" onchange="document.forms[0].submit()"/>Show Defunct Protocols</p>
+</form>
+	<table jwcid="table@contrib:Table" source="ognl:protocols" 
+        columns="name:Protocol Name:name, numCycles:Number of Cycles:c1Cycles, annealingTemp:Annealing Temperature:a1Temp, type:Type:protocolTypeString, !details, !edit, !delete" 
+    	row="ognl:currentProtocol" pageSize="20">
+        <span jwcid="detailsColumnHeader@Block"></span>
+        <span jwcid="detailsColumnValue@Block">
+            <a jwcid="@ExternalLink" page="btol/ViewFullPCRProtocolInfo" parameters="ognl:{currentProtocol.id, pageName}">details</a>
+		</span>        
+        <span jwcid="editColumnHeader@Block"></span>
+        <span jwcid="editColumnValue@Block">
+            <a jwcid="@ExternalLink" page="btol/EditPCRProtocol" parameters="ognl:{currentProtocol.id, pageName}">edit</a>
+		</span>
+        <span jwcid="deleteColumnHeader@Block"></span>
+        <span jwcid="deleteColumnValue@Block">
+            <a jwcid="@btol/DeleteObjectLink" idToDelete="ognl:currentProtocol.id"/>
+		</span>
+    </table>
+	<p>
+	<a jwcid="@DirectLink" listener="listener:editNewObject">Add another PCR Protocol</a>
+	</p>
+</html>

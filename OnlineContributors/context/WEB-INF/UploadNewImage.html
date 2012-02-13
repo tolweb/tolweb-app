@@ -1,0 +1,14 @@
+<html jwcid="@NewBarebonesFormWrapper" title="Upload New Image" bodyId="ognl:@org.tolweb.tapestry.AbstractWrappablePage@MEDIA_SEARCH_BODY">
+	<span jwcid="@If" condition="ognl:newObjectUploaded">
+		<div jwcid="@RedirectDiv" url="ognl:editObjectUrl"/>
+	</span>
+	<h3>Add a New Image to the ToL Database</h3>
+	<div class="box1">
+		  <ol>
+      <li>Use the <strong>Browse</strong> (<strong>Choose File</strong>) button to locate the file you want to upload from your computer.</li>
+       <li>Then click on the <strong>Upload New Image</strong> button to initiate the upload.</li>
+      </ol> 
+	<form jwcid="@UploadNewImageForm" nodeId="ognl:nodeId"/>
+	<p class="small">Please upload only JPEG, GIF, or PNG files. Ideally your master image should be around 800 pixels wide or high (<a href="javascript: w = window.open('/tree/sep/expixel.html', 'helpWindow', 'menubar=no,width=850,height=750,toolbar=no,scrollbars=yes'); w.focus();">example</a>).   See <a href="/tree/sep/images.html">Illustrations for Tree of Life Pages</a> for more information.</p>	
+	</div>
+</html>

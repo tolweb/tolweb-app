@@ -1,0 +1,47 @@
+<html jwcid="@StaticWrapper">
+  	<h2>Tree of Life  Search</h2>
+    <p>There's a Google search field available in the top right corner of every
+       page on the ToL site. Use this field to do a search across the entire
+       ToL web site, including all branch and leaf pages, other articles, notes,
+       treehouses, and the site documentation.</p>
+	<form action="http://tolweb.org/tree/home.pages/searchresults.html" id="cse-search-box2">
+  		<div>
+		    <input type="hidden" name="cx" value="009557456284541951685:50nf_5tpvuq" />
+		    <input type="hidden" name="cof" value="FORID:9" />
+		    <input type="hidden" name="ie" value="UTF-8" />
+		
+		    <input type="text" name="q" size="31" />
+		    <input type="submit" name="sa" value="Search" />
+  		</div>
+	</form>
+	<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>
+    <p>For more specific search options, check out our advanced search features: </p>
+    <ul class="nodisc">
+        <li><a href="#group">Group Search</a> (branch or leaf pages for particular
+        groups of organisms)</li>
+
+        <li><a href="#media">Media
+        Search</a> (images, movies, sounds, etc.)</li>
+    </ul>
+    <h3 id="group"><a name="group"></a>Group Search</h3>
+    <p>	Use this search to find Tree of Life branch or leaf pages for a 
+       	particular group of organisms.  Scientific names will work best (e.g., 
+       	Basidiomycota, Polemoniaceae, <em>Vampyroteuthis infernalis</em>), but 
+       	you can try common names (e.g., songbirds, ferns, monarch butterfly).
+		This search will also work for other names such as synonyms that are 
+		stored in our names index.</p>
+
+	<span jwcid="@GroupSearchBox" />
+	
+    <h3 id="media"><a name="media"></a>Media Search</h3>
+    <p> Use this search to find  media (images, movies, sounds, etc.) in
+        the Tree of Life collection. <span class="stickies">You can fill out
+        one or several of the fields below. If your search does not find the
+        media you are looking for, try using fewer search criteria. Some 
+        materials that fit your criteria may not yet have been annotated 
+        accordingly and may therefore not show up in your media search results. 
+        We are continuously improving the annotation of media files, so the 
+        quality of media search results will improve over time.</span></p>
+	<form jwcid="@UserImageSearch" divClass="box"/>
+	
+</html>

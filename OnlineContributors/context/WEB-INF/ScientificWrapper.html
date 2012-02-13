@@ -1,0 +1,102 @@
+<html jwcid="@CommonWrapper" stylesheets="ognl:{tolCssStylesheet, contributeStylesheet}" delegate="ognl:delegate"
+	title="ognl:title" includeDojo="prop:includeDojo">
+	<div id="maincontent" class="nosb"><a name="maincontent"></a>
+    <span jwcid="@If" condition="ognl:contributor != null">
+        <div class="logout">You are logged in as <span jwcid="@Insert" value="ognl:contributor.displayName"/>.  [<a jwcid="@DirectLink" listener="listener:logout" stateful="ognl:false">Logout</a>]</div>
+    </span>
+    <span jwcid="@RenderBody"/>
+    </div>
+    <div id="sectionnav"><a name="sectionnav"></a> 
+    <h1>Contribute to the ToL</h1>
+    <h4 class="nomenu"><a href="/tree/home.pages/contributions.html">ToL Contributions</a></h4>
+    <h4 class="nomenu"><a href="/tree/home.pages/contcat.html">Ways to Contribute</a></h4>
+    <h4 class="nomenu"><a href="/tree/home.pages/toluse.html">Use of Contributions</a></h4>
+    <h4 class="nomenu"><a href="/tree/sep/scicontent.html">Scientific Content</a></h4>
+    <ul class="nomenus"  style="padding-left: 5px">
+        <li>Tools 
+            <ul>
+                <li><a href="/onlinecontributors/app?service=page&page=ScientificContributorsLogin">Scientist 
+                    Log-In</a></li>
+                <li><a href="/onlinecontributors/app?service=page&page=ScientificMaterialsManager">Scientific 
+                    Manager</a></li>
+                <li><a href="/onlinecontributors/app?service=page&page=UserSubmitPublication">Publication 
+                    Manager</a></li>
+                <li><a href="http://working.tolweb.org/tree/phylogeny.html">Development 
+                    Site</a></li>
+                <li><a href="/tree/sep/mcacquire.html">Download TreeGrow</a></li>
+                <li><a href="/tree/sep/newtools.html">What's New?</a></li>
+            </ul>
+        </li>
+    </ul>
+    <h4 class="open" id="corecont" onclick="changeclass('corecont', 'open', 'closed'); changeclass('corecontmenu', 'open', 'closed')">Core 
+        Contributions</h4>
+    <ul id="corecontmenu" class="open">
+        <li><a href="/tree/sep/contributing.html">Administration</a>
+            <ul>
+                <li><a href="/tree/home.pages/participants.html">Branch Coordinators</a></li>
+            </ul>
+        </li>
+        <li><a href="/tree/sep/planning.html">Planning Pages</a> 
+            <ul>
+                <li><a href="/tree/sep/treediv.html">Dividing the Tree</a></li>
+                <li><a href="/tree/sep/branchdesign.html">Branch Design</a></li>
+                <li><a href="/tree/sep/design/trcl.html">Tree/List</a> </li>
+                <li><a href="/tree/sep/leafdesign.html">Leaf Design</a></li>
+            </ul>
+        </li>
+        <li><a href="/tree/sep/usingtreegrow.html">Creating Pages</a> 
+            <ul>
+                <li><a href="/tree/sep/preparetext.html">Technical Help</a></li>
+                <li><a href="/tree/sep/quickstart.html">Quickstart Tutorial</a></li>
+                <li><a href="/tree/sep/mcacquire.html">Download TreeGrow</a></li>
+                <li><a href="/tree/sep/tech/techreference.html">Tech Reference</a></li>
+            </ul>
+        </li>
+    </ul>
+    <h4 class="open" id="notecont" onclick="changeclass('notecont', 'open', 'closed'); changeclass('notecontmenu', 'open', 'closed')">Articles 
+        &amp; Notes</h4>
+    <ul id="notecontmenu" class="open">
+        <li><a href="/tree/sep/articlesnotes.html">Autoring Articles &amp; Notes</a> 
+        </li>
+        <li><a href="/tree/sep/plannote.html">Plan Articles/Notes</a></li>
+        <li><a href="/tree/sep/createnote.html">Create Articles/Notes</a> 
+            <ul>
+                <li><a href="/tree/sep/notetut.html">Notes Tutorial</a></li>
+                <li><a href="/tree/sep/EditArticleForm.html">Form Preview</a></li>
+            </ul>
+        </li>
+    </ul>
+    <h4 class="open" id="tipscont" onclick="changeclass('tipscont', 'open', 'closed'); changeclass('tipscontmenu', 'open', 'closed')">Tips 
+        &amp; Guidelines</h4>
+    <ul id="tipscontmenu" class="open">
+        <li><a href="/tree/sep/pagedesign.html">General Guidelines</a> </li>
+        <li><a href="/tree/sep/images.html">Illustrations</a></li>
+        <li><a href="/tree/sep/copyright.html">Copyright Issues</a></li>
+        <li><a href="/tree/sep/html.html">HTML for ToL Pages</a></li>
+        <li><a href="/tree/sep/faq.html">Scientist FAQ</a></li>
+    </ul>
+    <h4 class="open" id="contimg" onclick="changeclass('contimg', 'open', 'closed'); changeclass('contimgmenu', 'open', 'closed')">Images/Media</h4>
+    <ul id="contimgmenu" class="open">
+        <li><a href="/tree/home.pages/imagecontributions.html">Images/Media</a></li>
+        <li><a href="/onlinecontributors/app?service=page/ImagesManager">Media 
+            Manager</a> 
+            <ul>
+                <li><a href="/tree/home.pages/EditImageDataPreview.html">Image 
+                    Data Preview</a></li>
+                <li><a href="/onlinecontributors/app?service=page/ImageZipUpload">Batch 
+                    Upload</a> 
+                    <ul>
+                        <li><a href="/tree/sep/imagebatchdata.html">Batch Data</a></li>
+                        <li><a href="/tree/sep/imagebatchtxt.html">Text Template</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="/tree/home.pages/AttachImageToToL.html">Attach to Group</a></li>
+    </ul>
+    <h4 class="nomenu"><a href="http://tolweb.org/twiki/bin/view/TWiki/WebHome">Contributors TWiki</a></h4>
+    <h4 class="nomenu"><a href="/tree/home.pages/register.html">Registration</a></h4>
+	<h4 class="nomenu"><a href="/onlinecontributors/app?service=page/ScientificContributorsPage">Contributors 
+        List</a></h4>
+	</div>
+</html>

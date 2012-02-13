@@ -1,0 +1,37 @@
+<span jwcid="@contrib:Choose">
+    <span jwcid="@contrib:When" condition="ognl:wrapperType == @org.tolweb.tapestry.AbstractWrappablePage@BUILD_TREEHOUSE_WRAPPER">
+        <span jwcid="@BuildTreehouseWrapper" title="ognl:title" additionalDelegate="ognl:delegate">
+            <span jwcid="@RenderBlock" block="ognl:block"/>
+        </span>
+    </span>    
+	<span jwcid="@contrib:When" condition="ognl:wrapperType == @org.tolweb.tapestry.AbstractWrappablePage@FORM_WRAPPER">
+		<span jwcid="@NewBarebonesFormWrapper" title="ognl:title" additionalDelegate="ognl:delegate">
+			<span jwcid="@RenderBlock" block="ognl:block"/>
+		</span>
+	</span>
+	<span jwcid="@contrib:When" condition="ognl:wrapperType == @org.tolweb.tapestry.AbstractWrappablePage@DEFAULT_WRAPPER">
+		<span jwcid="@Wrapper" title="ognl:title" additionalDelegate="ognl:delegate">
+			<span jwcid="@RenderBlock" block="ognl:block"/>
+		</span>
+	</span>
+	<span jwcid="@contrib:When" condition="ognl:wrapperType == @org.tolweb.tapestry.AbstractWrappablePage@SCIENTIFIC_WRAPPER">
+		<span jwcid="@ScientificWrapper" title="ognl:title" additionalDelegate="ognl:delegate">
+			<span jwcid="@RenderBlock" block="ognl:block"/>
+		</span>
+	</span>    
+	<span jwcid="@contrib:When" condition="ognl:wrapperType == @org.tolweb.tapestry.AbstractWrappablePage@LEARNING_WRAPPER">
+		<span jwcid="@BuildTreehouseWrapper" title="ognl:title" additionalDelegate="ognl:delegate">
+			<span jwcid="@RenderBlock" block="ognl:block"/>
+	    </span>
+	</span>
+	<span jwcid="@contrib:When" condition="ognl:wrapperType == @org.tolweb.tapestry.AbstractWrappablePage@SEARCH_WRAPPER">
+		<span jwcid="@SearchWrapper" title="ognl:title" additionalDelegate="ognl:delegate">
+			<span jwcid="@RenderBlock" block="ognl:block"/>
+	    </span>
+	</span>
+    <span jwcid="@contrib:Otherwise">
+        <span jwcid="@NewBarebonesFormWrapper" title="ognl:title" bodyId="mediasearchresults">
+            <span jwcid="@RenderBlock" block="ognl:block"/>
+        </span>
+    </span>
+</span>

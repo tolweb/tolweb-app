@@ -1,0 +1,28 @@
+<html jwcid="@FeaturesWrapper" title="ognl:title">
+  <form jwcid="@Form">
+    <h2><span jwcid="@Insert" value="ognl:title" /></h2>
+    <div>
+    	<p>Your Web Services User Key will be mailed to 
+    		[<strong><span jwcid="@Insert" value="ognl:webServicesKey.userEmail" /></strong>].</p>
+		<p>If you believe the message was filtered out by spam controls, try searching for 
+			the subject line :</p>
+		<p style="text-align:center">
+			<strong>			
+			<span jwcid="@Insert" value="ognl:@org.tolweb.content.NewWebServicesKeyEmail@EMAIL_TITLE" />.
+			</strong>
+		</p>
+    	<p>Thank you for signing up</p>	
+    	<p>
+    		<a href="http://tolweb.org/tree/home.pages/homepeople.html">The Tree of Life team</a>
+    	</p>
+    </div>
+    <span jwcid="@If" condition="ognl:fromRegistration">
+    	<span jwcid="@If" condition="ognl:duplicateEntry">
+	   		<span jwcid="@content/NewWebServicesKeyDuplicateEmail" webServicesKey="ognl:webServicesKey" />
+    	</span>
+    	<span jwcid="@Else">
+    		<span jwcid="@content/NewWebServicesKeyEmail" webServicesKey="ognl:webServicesKey" />
+    	</span>
+    </span>
+  </form>
+</html>

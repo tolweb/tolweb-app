@@ -1,0 +1,20 @@
+<form jwcid="@Form" listener="listener:doSearch" delegate="ognl:beans.delegate">
+<!--
+    <input jwcid="@Hidden" value="ognl:returnPageName"/>
+    <input jwcid="@Hidden" value="ognl:onlySelectPagedNodes"/>
+    <input jwcid="@Hidden" value="ognl:editedObjectId"/>    
+	<input jwcid="@Hidden" value="ognl:bodyStyle"/>        
+    <input jwcid="@Hidden" value="ognl:callbackType"/>
+    <input jwcid="@Hidden" value="ognl:requireEditPermissions"/>
+    <input jwcid="@Hidden" value="ognl:additionalValues"/>
+    <input jwcid="@Hidden" value="ognl:checkPossibleParent"/>    
+-->
+<span jwcid="@If" condition="ognl:noResults"><p><span class="error">Sorry, there were no matches to your search.  You can try again or <a jwcid="@PageLink" page="ognl:returnPageName">return to editing</a></span></p></span>
+<table>
+    <tr>
+        <td class="boldtext"><span jwcid="@FieldLabel" field="ognl:components.groupNameField"/></td>
+        <td><input type="text" jwcid="groupNameField@TextField" value="ognl:groupName" validators="validators:required" displayName="Group Name*"/></td>
+        <td><input jwcid="@Submit" type="Submit" value="Find Groups"/></td>
+    </tr>
+</table>
+</form>

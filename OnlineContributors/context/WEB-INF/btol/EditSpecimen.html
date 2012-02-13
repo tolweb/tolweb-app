@@ -1,0 +1,28 @@
+<html jwcid="@btol/ProjectWrapper" title="Edit Specimen">
+	<span jwcid="@If" condition="ognl:wasSaved">
+        <h2 class="clear">Specimen successfully saved</h2>
+        You may now return to your edit form, reload your browser and it will appear in the list.
+        <p class="center">
+            <a href="javascript:window.close();">Close Window</a>
+        </p>
+    </span>
+    <span jwcid="@Else">
+	<h2 class="clear">Edit Specimen <span jwcid="@If" condition="ognl:specimen.id != null && specimen.id.intValue() > 0">ID #<span jwcid="@Insert" value="prop:specimen.id"/></span></h2>
+    <span jwcid="@If" condition="ognl:validationDelegate.hasErrors">
+        <h3 class="error"><span jwcid="@Delegator" delegate="ognl:validationDelegate.firstError"/></h3>
+    </span>
+    <span jwcid="@Else">
+    	<p>Fields marked with a '*' are required.</p>        
+    </span>    
+    <form jwcid="@beanform/BeanForm" bean="ognl:specimen" properties="ognl:propertiesString" save="listener:saveSpecimen"
+        delegate="bean:validationDelegate" clientValidationEnabled="ognl:true" method="post"
+    	readOnly="ognl:false"/>
+    </span>
+    <div jwcid="collectionDateBeanFieldBlock@Block">
+    	<span jwcid="collectionDateBeanField@btol/ThreeFieldDate" year="ognl:specimen.creationYear"
+        month="ognl:specimen.creationMonth" day="ognl:specimen.creationDay" displayName="Collection Date"/>
+    </div>
+    <div jwcid="notesBeanFieldBlock@Block">
+    	<textarea jwcid="notesBeanField@TextArea" displayName="Notes" cols="70" rows="8" value="ognl:specimen.notes"/>
+    </div>    
+</html>    

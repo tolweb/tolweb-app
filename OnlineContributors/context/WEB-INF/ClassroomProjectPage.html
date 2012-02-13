@@ -1,0 +1,85 @@
+<html jwcid="@BuildTreehouseWrapper" title="ognl:project.name">
+	<h1 class="clear">
+        <span jwcid="@Insert" value="ognl:project.name"/><span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(project.classGroup)">, <span jwcid="@Insert" value="ognl:project.classGroup"/></span>
+	</h1>
+	<h2 class="subtitle"> <strong>Classroom Project Page </strong></h2>
+	<div class="stickies" style="width: auto;">
+        <p class="floatright">Return to the 
+		<a jwcid="@PageLink" page="ClassroomProjectsMaterialsManager"><strong>Classroom Materials Manager</strong></a>
+        </p>
+        <h5 class="large" style="padding: 0 20px;"><strong>Instructions</strong></h5>
+		<ul style="letter-spacing: normal;">
+		  <li>To edit a treehouse click &quot;edit&quot;. To delete a treehouse click &quot;delete&quot;. </li>
+		  <li>To give another person permission to edit all of the treehouses in a project click &quot;add editor&quot; to search for a contributor to add.</li>
+		  <li>To add a student to a project click &quot;add students&quot;. Additional pseudonym login names will be added one at a time, as indicated by the number in the project information section. </li>
+		</ul>
+	</div>
+	<table cellpadding="3">
+        <tr>
+			<th class="TitleColumnHeader">
+				Project Title / Group
+            </th>
+			<th class="IDColumnHeader">
+				ID
+            </th>
+		</tr>
+		<tr>
+			<td><strong class="boldblue"><span jwcid="@Insert" value="ognl:project.name"/><span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(project.classGroup)">, <span jwcid="@Insert" value="ognl:project.classGroup"/></span>
+        </strong>
+            </td>
+			<td><span jwcid="@Insert" value="ognl:project.projectId"/></td>
+        </tr>
+		<tr class="yellowbg">
+		    <th class="indentprojcolumn">Project Information </th>
+		    <td class="IDColumnValue">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+				<ul class="nodisc">
+					<li><strong>Description:</strong>
+                    <ul>
+						<li><span jwcid="@Insert" value="ognl:project.description"/></li>
+					</ul>
+					</li>
+					<li><strong>Number of pseudonym login names:</strong>
+                    <ul>
+                        <li><span jwcid="@Insert" value="ognl:project.pseudonym"/>1-<span jwcid="@Insert" value="ognl:project.pseudonym"/><span jwcid="@Insert" value="ognl:numStudents"/>
+                        <form jwcid="@Form" listener="ognl:listeners.addStudent">
+                            <input jwcid="@Submit" value="Add Student" class="small"/>
+                        </form>
+					</ul>
+					</li>
+					<li><strong>Password:</strong>
+                    <ul>
+						<li>
+                            <span jwcid="@If" condition="ognl:@org.tolweb.treegrow.main.StringUtils@notEmpty(project.password)"
+                                element="ognl:null">
+                                <span jwcid="@Insert" value="ognl:project.password"/>
+                            </span>
+                            <span jwcid="@Else" element="ognl:null">
+                                Students will have their own passwords for this project.
+                            </span>
+                        </li>
+					</ul>
+					</li>
+      <li><strong>Editors:
+      </strong>                <ul>
+
+          <li><span jwcid="@Insert" value="ognl:project.teacher.displayName"/></li>
+          <span jwcid="@Foreach" source="ognl:project.additionalEditors" value="ognl:currentEditor">
+          	<li><span jwcid="@Insert" value="ognl:currentEditor.displayName"/> <a jwcid="@DirectLink" listener="ognl:listeners.removeEditor" parameters="ognl:currentEditor.id">delete editor</a></li>
+          </span>
+          <li><a jwcid="@DirectLink" listener="ognl:listeners.searchForEditor">add editor </a></li>
+        </ul>
+      </li>
+      </ul>            </td>
+
+    <td class="IDColumnValue">&nbsp;</td>
+    <td class="editColumnValue">&nbsp;</td>
+    <td class="editColumnValue">&nbsp;</td>
+    <td class="selectColumnValue">&nbsp;</td>
+    <td class="selectColumnValue">&nbsp;</td>
+    </tr>
+  </table>    
+  <table jwcid="@ProjectTreehouses" treehouses="ognl:treehouses" isEditPage="ognl:true"/>	    
+</html>

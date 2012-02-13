@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree-of-life-web version="1.0">
+    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+      <name>Diprotodon</name>
+  	  <auth-date>1838</auth-date>
+      <authority>Owens</authority>	      
+      <rank>Genus</rank>
+      <geographic-distribution>
+        <description>Australia</description>
+      </geographic-distribution>
+      <othernames>
+	      <othername is-important="true" is-preferred="false" sequence="0" italicize-name="true">
+	        <name>Land dogs</name>
+	        <authority>Shaw</authority>
+	        <auth-date>1800</auth-date>
+	      </othername>
+	      <othername is-important="true" is-preferred="false" sequence="0" italicize-name="true">
+	        <name>Diprotodontidae</name>
+	        <authority>Shaw</authority>
+	        <auth-date>1833</auth-date>
+	      </othername>		      
+	  </othernames>		      
+      <nodes>
+	    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+	      <name>Diprotodon opatum</name>
+	      <rank>Species</rank>
+	      <geographic-distribution>
+	        <description>Australia</description>
+	      </geographic-distribution>    
+	    </node>	      
+	    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+	      <name>Diprotodon loderi</name>
+	      <rank>Species</rank>
+	      <geographic-distribution>
+	        <description>Australia</description>
+	      </geographic-distribution>    
+	    </node>
+	    <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true">
+	      <name>Diprotodon annextans</name>
+	      <rank>Species</rank>
+	      <geographic-distribution>
+	        <description>Australia</description>
+	      </geographic-distribution>    
+	    </node>
+ 	      <node extinct="true" position-confidence="confident" phylesis="monophyletic" italicize-name="true" has-page="true">
+	        <name>Diprotodon lenardsii</name>
+	        <rank>Species</rank>
+	        <geographic-distribution>
+	          <description>Australia</description>
+	        </geographic-distribution>    
+	      </node>		    		    		    		    	      
+      </nodes> 
+    </node>      
+</tree-of-life-web>

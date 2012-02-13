@@ -1,0 +1,13 @@
+<span jwcid="@If" condition="ognl:error">
+	<span class="error">Please select a file to upload</span>
+</span>
+<form jwcid="@Form" listener="ognl:listeners.uploadNewImageFormSubmit">
+  <!-- have a startup/initialization script disable the upload media file submit --> 
+  <script jwcid="@Script" script="UploadNewMediaFormInitialState.script"/>
+  <span jwcid="@RenderBody"/>
+  <!-- enable the upload button once the browse button is clicked -->
+  <input jwcid="@Upload" file="ognl:uploadFile" onclick="enableNewMediaForm()"/>
+  <input jwcid="uploadMedia@Submit" value="ognl:'Upload New ' + mediaType" onclick="editNewObject()"/>
+</form>
+<script jwcid="@Script" script="EditNewObject.script" pageName="EditImageWindowRedirect" 
+ editWindowName="ognl:@org.tolweb.tapestry.EditImageData@EDIT_IMAGE_WINDOW_NAME"/>

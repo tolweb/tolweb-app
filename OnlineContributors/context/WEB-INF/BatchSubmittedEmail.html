@@ -1,0 +1,14 @@
+<span jwcid="@MailBlock" to="ognl:configuration.notesEditorEmails" from="TreeGrow Submission Monitor <dmandel@tolweb.org>"
+    smtp="localhost" subject="ognl:contributorName + ' has submitted ' + rootGroupName + ' for approval at ' + new java.util.Date()" html="ognl:false">
+Once you are logged in, you may approve or reject the submission by following the following url:
+<span jwcid="@Insert" value="ognl:'\n'"/>
+http://tolweb.org/onlinecontributors/app?service=external&page=EditorSubmitPublication&sp=l<span jwcid="@Insert" value="ognl:publicationBatchId"/>	
+<span jwcid="@Insert" value="ognl:'\n'"/>
+<span jwcid="@If" condition="ognl:submissionComment">
+The contributor had the following comments regarding the submission:
+<span jwcid="@Insert" value="ognl:'\n'"/>
+<span jwcid="@Insert" value="prop:submissionComment"/>    
+<span jwcid="@Insert" value="ognl:'\n'"/>
+</span>
+Thank you, and have a nice day.
+</span>

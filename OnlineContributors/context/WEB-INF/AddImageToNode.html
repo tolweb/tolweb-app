@@ -1,0 +1,34 @@
+<html jwcid="@NewBarebonesFormWrapper" bodyId="ognl:@org.tolweb.tapestry.AbstractWrappablePage@MEDIA_SEARCH_BODY" title="ognl:title">
+<span jwcid="@If" condition="ognl:newObjectUploaded">
+	<div jwcid="@RedirectDiv" url="ognl:editObjectUrl"/>
+</span>
+    <h2>
+		Add an Image to <span jwcid="@Insert" value="ognl:groupNameFromNodeId" raw="ognl:true"/>
+    </h2>
+
+	<div class="box1">
+        <span jwcid="@If" condition="ognl:justAddedNode || newObjectUploaded" element="ognl:null">
+        <p style="font-weight: bold; font-size: larger;">Image Successfully <span jwcid="@Insert" value="ognl:uploadedAndString"/>Attached to <span jwcid="@Insert" value="ognl:groupNameFromNodeId" raw="ognl:true"/>.
+        <p>You may <a href="javascript:window.close()">close this window</a>, upload more files, or search for additional files to attach to <span jwcid="@Insert" value="ognl:groupNameFromNodeId" raw="ognl:true"/>.</p>        
+        </span>
+        <p jwcid="@Any" element="p" class="ognl:instructionsPClass">
+			Search for <span jwcid="@Insert" value="ognl:anOrAnother"/> existing image file in the ToL database to attach to <span jwcid="@Insert" value="ognl:groupNameFromNodeId" raw="ognl:true"/>.
+        </p>
+    <span jwcid="@ImageSearch" 
+        callbackType="ognl:callbackType" linkString="select" 
+    	searchPageName="AddImageToNode" searchOnlyContributorsImages="ognl:true"
+    	wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@NEW_FORM_WRAPPER"
+    	imageUse="ognl:@org.tolweb.treegrow.main.NodeImage@RESTRICTED_USE" editedObjectId="ognl:nodeId"
+    	mediaType="Image" instructions="ognl:instructionsString" buttonText="Find Images"/>
+	</div>
+	<a name="upload"></a> 
+    <span jwcid="@If" condition="ognl:!searchMedia" element="ognl:null">
+    <h4 class="topborder"><strong>Add a New Image to the ToL Database</strong></h4>
+	<div class="box1">
+	    <p class="small">If you would like to use an image that is not yet in the ToL database, you can upload it here.  Please be sure to provide data for the image in the form that opens after the image is uploaded.</p>
+		<p>Choose a file to upload from your computer then click on the Upload New Image 
+		    button.</p>
+	<form jwcid="@UploadNewImageForm" nodeId="ognl:nodeId"/>
+	</div>    
+    </span>
+</html>

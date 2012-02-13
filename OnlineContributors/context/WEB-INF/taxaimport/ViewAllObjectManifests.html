@@ -1,0 +1,26 @@
+<html jwcid="@FeaturesWrapper" title="View All Object Manifests">
+<p>[<a jwcid="@PageLink" page="xml/TaxaImportHome" >Taxa Import Home</a>]</p>
+<h2 class="clear">All Object Manifests</h2>
+	<table jwcid="table@contrib:Table" source="ognl:objectManifestRecords" row="ognl:currentObjectManifestRecord" 
+        	columns="ognl:columnsString" class="border" pageSize="50">
+        <span jwcid="viewColumnHeader@Block"></span>
+        <span jwcid="viewColumnValue@Block">
+            <a jwcid="@ExternalLink" page="taxaimport/ViewObjectManifest" parameters="ognl:{currentObjectManifestRecord.keyValue}">view</a>
+		</span>
+		<!-- 
+        <span jwcid="reattachColumnHeader@Block"></span>
+        <span jwcid="reattachColumnValue@Block">
+        	<span jwcid="@If" condition="ognl:showProgressLink"> 
+            	<a jwcid="@ExternalLink" page="taxaimport/ViewReattachmentProgress" parameters="ognl:{currentObjectManifestRecord.keyValue}">progress</a>
+            </span>
+            <span jwcid="@Else">        
+            	<a jwcid="@ExternalLink" page="taxaimport/ReattachObjects" parameters="ognl:{currentObjectManifestRecord.keyValue}">reattach</a>
+            </span>
+		</span>
+		-->		
+        <span jwcid="basalNodeColumnHeader@Block">basal node</span>
+        <span jwcid="basalNodeColumnValue@Block">
+			<span jwcid="@Insert" value="ognl:currentBasalNodeName" />
+		</span>		
+    </table>
+</html>

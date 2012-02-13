@@ -1,0 +1,314 @@
+<html jwcid="@BranchLeafWrapper" tolPage="ognl:tolPage" node="ognl:tolPage.mappedNode"
+showPageContentMenu="ognl:false" isTaxaIndex="ognl:true"
+additionalStylesheet="ognl:btolStylesheetAsset" includeDojo="ognl:true">
+<script type="text/javascript">
+        var startObject = new Object();
+        startObject.responseComplete = function(responseElements) {
+			alert("responseElements are: " + responseElements);
+        }    
+</script>
+<!--
+<span jwcid="@QuickNav" node="ognl:node" rootNodeId="ognl:project.rootNodeId"
+	containingGroupBlock="component:containingGroupBlock" containingGroupsBlock="component:containingGroupsBlock"
+	otherGroupsBlock="component:otherGroupsBlock" previousSiblingBlock="component:previousSiblingBlock"
+	nextSiblingBlock="component:nextSiblingBlock" subgroupsBlock="component:subgroupsBlock"
+	groupsHelper="ognl:helper" showByDefault="ognl:true"/>
+-->
+<h1 class="superheader"><a jwcid="@ExternalLink" page="btol/ProjectHome" parameters="ognl:{project.id}"><span jwcid="@Insert" value="ognl:project.name"/> Databases Home</a></h1>
+<span jwcid="@If" condition="prop:noNode">
+    There is no group named <span jwcid="@Insert" value="prop:missingNodeName"/>, please check your spelling.
+</span>
+<span jwcid="@Else">
+<h1 jwcid="@PageTitle" node="ognl:node" isIndexPage="ognl:true"/>
+	<!--
+	<div id="zoomtonode" class="autocomplete">
+        <form jwcid="@tacos:AjaxForm" updateObject="startObject" listener="listener:highlightNode">
+        <input jwcid="@Hidden" value="ognl:pageId"/>            
+        <span jwcid="@FieldLabel" field="component:nodeNameCompleter"/> 
+        <input jwcid="nodeNameCompleter@tacos:Autocompleter" clientOnly="ognl:true" value="ognl:nodeName" 
+        	listSource="ognl:nodeNames" listener="listener:filterNodes" class="autocomplete"
+        	validators="validators:required" displayName="Node name" id="nameField"/>
+        <input jwcid="@tacos:AjaxSubmit" value="Jump to Node"/>
+        </form>
+    </div>
+    -->
+    <span jwcid="@If" condition="ognl:noNodesToDisplay">
+    <div id="openclose">
+	Containing Group: 
+    <a jwcid="@ExternalLink" page="TaxaIndex" parameters="ognl:{parentPageNode.nodeId, projectId}"><span jwcid="@Insert" value="ognl:containingGroupName" raw="ognl:true"/></a>        
+    </div>        
+    <span jwcid="@If" condition="ognl:node.isLeaf">
+        <p class="error">This taxon is designated as a leaf in the tree and has no descendants.</p>
+    </span>
+    <span jwcid="@Else">
+        <p class="error">There are no taxa matching your display options.  Either there are no descendant taxa for this taxon, or
+            your display options prevent them from being shown.</p>
+        <p class="error">To change your display options, choose selections in the "Display Options" section
+            and click the "Apply Options" button.  To add descendant taxa, click the "Add taxa" link below.</p>
+    </span>
+    </span>
+    <span jwcid="@Else">
+    <div id="openclose">
+	    <p>
+            <span jwcid="@If" condition="ognl:!showAllTaxa"><a href="javascript:openCloseAll(true, true)">Expand most lists</a> | </span>            
+	        <a href="javascript:openCloseAll(true, false);">Expand all lists</a> | <a href="javascript:openCloseAll(false, false);">Close all lists</a> 
+            <span jwcid="@If" condition="ognl:!isRoot">| Containing Group: 
+                <a jwcid="@ExternalLink" page="TaxaIndex" parameters="ognl:{parentPageNode.nodeId, projectId}"><span jwcid="@Insert" value="ognl:containingGroupName" raw="ognl:true"/></a>
+            </span>
+	    </p>        
+    </div>
+	<ul jwcid="taxonList@TaxonList" nodes="ognl:nodesToDisplay" rootNode="ognl:node" 
+    	expandCollapseBlock="component:expandCollapse" preNameBlock="component:editInfo" 
+    	isIndex="ognl:true" listId="txlist" columnHeaderBlock="component:columnHeader"
+    	nodeNameBlock="component:nodeName" afterNodeBlock="component:afterNode"/>
+    <span jwcid="@btol/BtolTierScoreboard" nodes="ognl:nodesToDisplay" rootNode="ognl:node" tierSelection="prop:tierSelection" />     
+    <div id="listhelp">
+	<img jwcid="@Image" style="margin-right: 5px;" image="ognl:helpImage" alt="Interpreting the taxonlist" title="Taxon List Legend and help" onclick="changeclass('legendtip', 'show', 'hide')" />
+    <img jwcid="@Image" image="ognl:printerImage" onclick="changeclass('printtip', 'show', 'hide')" alt="Interpreting the taxonlist" title="Printing Instructions"/>
+    </div>
+    <div id="legendtip" class="hide"><img src="img/close.gif" class="closebox" alt="close box" onclick="changeclass('legendtip', 'show', 'hide')" /> 
+		<p class="largebold">Legend</p>    
+		<img jwcid="@Image" image="ognl:legendImage"/>
+		<p class="largebold">Taxon Samping Database</p>        
+		<p>The BTOL taxon sampling database is an information-sharing tool for BTOL collaborators.  
+        It contains a hierarchical list of taxa included in the BTOL project, information on the tier status of each taxon, 
+        and data on the availability and source of specimens for molecular and morphological work.  The database is embedded 
+        in the structure of the <a href="http://tolweb.org">Tree of Life web project</a> and is intended to be interactive.  
+        Users can modify the contents to reflect changes in the sampling status of taxa and the availability of specimens.  
+        The database can also serve to indicate taxa that still need to be collected and distributed.</p>
+		<p class="largebold">Viewing the matrix</p>
+        <p>Clicking on the grey triangles will expand the list for a particular taxon within the current view, and clicking on 
+           taxon names will close the existing view and open just that taxon.  The tab labeled "Expand most lists" will display 
+           just those taxa  included in the BTOL project and opens relatively quickly, while "Expand all lists" displays all 
+           the taxa from the Tree of Life web project but takes longer to load.  Additional options are listed in the "Display Options" 
+           section below the data matrix, but make sure to click the "Apply Options" button to allow the selections take effect.</p>
+		<p>The cells in front of the taxon names contain information on specimen availability and tier status.  The cells are color-coded 
+           and the colors are explained in the legend above.  Letters in the cells indicate source people for specimens of that taxon.</p>
+		<p>Information at lower taxonomic levels is carried through to the higher levels.  For example, if only one species of Cupedidae
+           from Archostemata has sampling information available, the matrix for Archostemata will reflect the information for Cupedidae.
+           Expanding the list will show more detailed information about the sampling status of the contained taxa.<p>
+		<p class="largebold">Adding and changing information</p>
+        <p>New taxa can be added to the project by clicking the add taxa button to the right of the existing taxon that will 
+           contain the new taxon, or by clicking on the "Add Taxa to ####" link below the data matrix.  Taxa can be added either 
+           directly through the web interface or by using the program TreeGrow.  Please remember to verify that the taxa you wish to 
+           add do not already exist in the database by checking the box in Display Options that says "Show taxa that do not have any 
+           sampling information associated with them" and clicking on the "Expand all lists" tab at the top.</p>
+		<p>To change information about specimen availability and tier status, or to add or view notes in the database, clicking in 
+           the matrix will open up an editor window for that taxon.  For example, to change Priacma from a tier 1 to a tier 2 taxon, 
+           click any of the matrix cells for Priacma to open the editor window, and select "tier 2" from the drop-down tier list at the 
+           top of the window.  To explain why the tier status was changed, a note can be added in the Tier notes field at the 
+           bottom of the editor window.</p>
+		<p>If you have any questions about using the taxon sampling database, please contact Alex Wild (<a jwcid="@EncodedMailLink" email="alexwild@email.arizona.edu"/>), 
+           Andrew Lenards (<a jwcid="@EncodedMailLink" email="lenards@email.arizona.edu"/>), or David Maddison (<a jwcid="@EncodedMailLink" email="beetle@ag.arizona.edu"/>).</p>
+	    <span class="close" onclick="changeclass('legendtip', 'show', 'hide')">close box</span>
+    </div>
+    <div id="printtip" class="hide">
+	<img src="img/close.gif" class="closebox" alt="close box" onclick="changeclass('printtip', 'show', 'hide')" />         
+	<h4 id="printinstructions">Printing Instructions</h4>
+    <p>By default, most web browsers do not include background colors when pages are printed.
+       This prevents the Tier, DNA, Adult and Larvae colors from showing up when printing.  In order to fix this 
+        problem, please follow these instructions for the browser of your choice:
+    <h4 id="#firefox">Firefox, Mozilla, or Netscape</h4>
+    <p>On the <em>File</em> menu, click <em>Page Setup</em>. On the <em>Format & Options</em>
+     tab, under <em>Options</em>, check the box called <em>Print background (colors & images)</em>.
+     Click <em>OK</em>.</p>
+    <h4 id="ie">Internet Explorer</h4>
+    <p>Click on the browser&apos;s <em>Tools</em> menu. Select <em>Internet Options</em>, then click on the <em>Advanced</em> tab. 
+    Scroll down to find the <em>Printing</em> heading and check the box called <em>Print Background Colors and Images</em>.</p>
+    <p>Note: Due to bugs in Internet Explorer, printing may not mirror the exact layout on your screen.  Firefox does not suffer
+    from these problems, and is recommended for Windows users if printed layout needs to match screen layout.</p>
+    <h4 id="safari">Safari</h4>
+    <p>On the <em>File</em> menu, click <em>Print</em>.  Click the drop down menu for <em>Copies and Pages</em> and select <em>Safari</em>.
+    Check the box called <em>Print backgrounds</em>.  Click <em>Print</em>.</p>
+ 	<span class="close" onclick="changeclass('printtip', 'show', 'hide')">close box</span>     
+    </div>
+    </span>
+    <div id="addtaxa">
+        <span jwcid="@If" condition="ognl:!node.isLeaf">
+        <p>
+		<a jwcid="@ExternalLink" page="UploadNewNodes" parameters="ognl:{node.nodeId}"><img src="img/plus.gif"/> Add Taxa to <span jwcid="@Insert" value="ognl:node.name"/></a>        
+        </p>
+        </span>
+	</div>
+    <div>
+        <p><a jwcid="@PageLink" page="btol/SpecimenPreservationInstructions">Instructions for preserving and handling DNA specimens</a></p>
+    </div>
+    <div id="options">   
+	<form jwcid="@Form" listener="listener:filterNodes">           
+	<input jwcid="@Hidden" value="prop:pageId" listener="listener:updateNode"/>     
+    <h4 class="underlined">Display Options <input jwcid="@Submit" value="Apply Options" listener="listener:adjustTierValues" id="applybtn"/></h4>
+    <p>Taxa to show:
+       <ul class="nodisc" style="margin-top: -10px; padding-top: 0;">
+    	<li>Tiers: <input jwcid="@PropertySelection" value="prop:tierSelection"
+            model="prop:tierFilterSelectionModel"/></li>
+        <li>Needed: <input jwcid="@PropertySelection" value="prop:neededSelection"
+            model="prop:neededFilterSelectionModel"/></li>
+        <li>Geographic Distribution: <input jwcid="@TextField" value="prop:selectedGeoLocation"/></li>
+        <li>DNA Specimens supplied by: <input jwcid="@PropertySelection" value="prop:supplierFilterSelection" 
+        	model="prop:supplierFilterSelectionModel"/></li>
+        <li><input jwcid="@Checkbox" value="prop:showAllTaxa"/>Show taxa that do not have any 
+        sampling information associated with them</li>
+        <li><input jwcid="@Checkbox" value="prop:showTaxaWithSequences"/>Show only those taxa that have
+        sequence status associated with them</li>
+        <li><input jwcid="@Checkbox" value="prop:showExtinctTaxa"/>Show extinct taxa</li>
+      </ul>
+    </p>
+    <p>
+        <input jwcid="@Hidden" id="ognl:@org.tolweb.tapestry.TaxaIndex@HIDE_INTERNAL_HIDDEN_ID" value="ognl:hideInternalTiers"/>
+        <input jwcid="@Checkbox" value="prop:showInternalTiers"/>Always show tier and collection info for internal taxa
+    </p>
+    <ul class="flushleft nodisc">
+        <li><input jwcid="@Checkbox" value="prop:showDNA"/>Show DNA Information</li>
+        <li><input jwcid="@Checkbox" value="prop:showAdult"/>Show Adult Information</li>
+        <li><input jwcid="@Checkbox" value="prop:showLarvae"/>Show Larvae Information</li>
+        <li><input jwcid="@Checkbox" value="prop:showMicroCT"/>Show MicroCT Information</li>
+        <li><input jwcid="@Checkbox" value="prop:showGeographicInfo"/>Show Geographic Distribution Information</li>  
+		<li><input jwcid="@Checkbox" value="prop:showDnaNotes"/>Show DNA Notes</li> 
+    </ul>
+    <span jwcid="@If" condition="prop:showGenes">
+    <p style="padding-bottom: 0px; margin-bottom: 0px;">Show Sequence Status:<ul jwcid="@btol/GeneFragmentSelectionList" 
+    	geneFragments="prop:allGeneFragments" selectedGeneFragments="prop:displayedGeneFragments"/>
+    </p>
+    </span>
+		</form> 
+    	<span jwcid="@If" condition="prop:showGenes">
+    		<h4 class="underlined topmargin">Set Defaults</h4>
+            <a jwcid="@DirectLink" listener="listener:assignSequenceDefaults" parameters="prop:node.nodeId" renderer="prop:editRenderer">Assign Sequence Status Defaults for Multiple Taxa and Genes</a>
+        </span>
+
+            <h4 class="underlined topmargin">TreeGrow Integration</h4>
+            <form jwcid="@Form" listener="listener:flushCache">
+            <input jwcid="@Hidden" value="prop:pageId"/>
+            <a jwcid="@LinkSubmit">Reload all taxa</a> (Click this link if you have done uploads in TreeGrow and your changes aren't appearing on the page)
+            </form>    
+    </div> 
+	<script jwcid="@Script" script="btol/OpenCloseTaxonLists.script" hiddenId="ognl:@org.tolweb.tapestry.TaxaIndex@HIDE_INTERNAL_HIDDEN_ID"
+    	invisibleclass="prop:invisibleClass" 
+    	editTierPrefix="prop:editTierPrefix" listPrefix="prop:ulIdPrefix"
+    	editLarvaePrefix="prop:editLarvaePrefix" editDnaPrefix="prop:editDnaPrefix" editMicroCTPrefix="prop:editMicroCTPrefix" 
+    	editAdultPrefix="prop:editAdultPrefix" noCloseAttribute="ognl:@org.tolweb.tapestry.TaxaIndex@ALWAYS_SHOW_ATTRIBUTE"
+    	expandMostAttribute="ognl:@org.tolweb.tapestry.TaxaIndex@SHOW_MOST"/>    
+</span>
+</html>
+<div jwcid="columnHeader@Block">
+    <div id="columnheadercontainer">
+    <span jwcid="@If" condition="prop:showDNA">    
+		<div class="columnheader">DNA</div>
+    </span>
+    <span jwcid="@For" source="prop:displayedGeneFragments" value="prop:currentGeneFragment">
+        <div class="columnheader"><span jwcid="@Insert" value="prop:currentGeneFragmentName"/></div>
+    </span>
+    <span jwcid="@If" condition="prop:showAdult">    
+        <div class="columnheader">Adult</div>
+    </span>        
+     <span jwcid="@If" condition="prop:showMicroCT">       
+        <div class="columnheader">MicroCT</div>
+    </span>    
+     <span jwcid="@If" condition="prop:showLarvae">       
+        <div class="columnheader">Larvae</div>
+    </span>        
+        <div class="columnheader">Tier</div>
+        <span class="whitetext">Taxa</span>
+    </div>
+</div>
+<div jwcid="expandCollapse@Block">
+    <span jwcid="@If" condition="ognl:showExpandCollapse" volatile="ognl:true">
+<a jwcid="@Any" onclick="ognl:onClickString" title="show/hide descendents"><img jwcid="@Any" src="img/triclosed.gif" nsrc="img/triopen.gif" id="ognl:anchorLinkId" alt=" " /></a>
+	</span>
+</div>
+<div jwcid="editInfo@Block">
+    <span jwcid="@If" condition="prop:showDNA">
+	    <a jwcid="@DirectLink" listener="listener:editAdditionalFields" 
+	        parameters="prop:currentEditParameters" renderer="prop:editRenderer" 
+	        class="prop:dnaClass" id="prop:editDnaLinkId"
+            actualClass="prop:actualDnaClass"><span jwcid="@Insert" value="prop:dnaText" raw="ognl:true"/></a>      
+    </span>
+    <span jwcid="@For" source="prop:displayedGeneFragments" value="prop:currentGeneFragment">
+        <a jwcid="@ExternalLink" parameters="ognl:{currentNode.nodeId, currentGeneFragment.id}" class="prop:geneNodeStatusClass" id="prop:geneNodeStatusLinkId"
+			page="btol/EditGeneFragmentNodeStatus" renderer="prop:editRenderer"><span jwcid="@Insert" value="prop:geneNodeStatusText" raw="ognl:true"/></a>
+    </span>    
+    <span jwcid="@If" condition="prop:showAdult">
+	    <a jwcid="@DirectLink" listener="listener:editAdditionalFields" 
+	        parameters="prop:currentEditParameters" renderer="prop:editRenderer" 
+	        class="prop:adultClass" id="prop:editAdultLinkId"
+            actualClass="ognl:actualAdultClass"><span jwcid="@Insert" value="prop:adultText" raw="ognl:true"/></a>                      
+    </span>
+    <span jwcid="@If" condition="prop:showMicroCT">
+	    <a jwcid="@DirectLink" listener="listener:editAdditionalFields" 
+	        parameters="prop:currentEditParameters" renderer="prop:editRenderer" 
+	        class="prop:microCTClass" id="prop:editMicroCTLinkId" 
+            actualClass="prop:actualMicroCTClass">&nbsp;</a>
+    </span>    
+    <span jwcid="@If" condition="prop:showLarvae">
+	    <a jwcid="@DirectLink" listener="listener:editAdditionalFields" 
+	        parameters="prop:currentEditParameters" renderer="prop:editRenderer" 
+	        class="prop:larvaeClass" id="prop:editLarvaeLinkId"
+            actualClass="prop:actualLarvaeClass"><span jwcid="@Insert" value="prop:larvaeText" raw="ognl:true"/></a>
+    </span>
+	    <a jwcid="@DirectLink" listener="listener:editAdditionalFields" 
+	        parameters="prop:currentEditParameters" renderer="prop:editRenderer" 
+	        class="prop:tierClass" id="prop:editTierLinkId" 
+            actualClass="prop:actualTierClass" alwaysshow="prop:alwaysShowAttribute"><span jwcid="@Insert" value="prop:tierText"/></a>
+</div>
+<div jwcid="nodeName@Block">
+    <a jwcid="@ExternalLink" page="TaxaIndex" parameters="ognl:{currentNode.nodeId, projectId}">
+        <span jwcid="@Insert" value="ognl:branchPageName"/>
+    </a>
+</div>
+<div jwcid="afterNode@Block">
+    <span jwcid="@If" condition="prop:showPageLink">
+		<a jwcid="@GenericLink" href="prop:workingUrl">
+	        <img src="img/12pxglobe.gif"/>
+		</a>
+    </span>
+    <span jwcid="@If" condition="prop:showAddNodesLink">
+		<a jwcid="@ExternalLink" page="UploadNewNodes" parameters="prop:currentNode.nodeId">
+	        <img src="img/plus.gif"/>
+	    </a>
+    </span>
+    <span jwcid="@If" condition="prop:showCurrentGeoInfo">
+        <span style="margin-left: 20px"><span jwcid="@Insert" value="prop:currentNode.additionalFields.geographicDistribution"/></span>
+    </span>     
+    <span jwcid="@If" condition="prop:showCurrentDnaNotes">
+        <span style="margin-left: 20px"><span jwcid="@Insert" value="prop:currentNode.additionalFields.dnaNotes"/></span>
+    </span>     
+</div>
+<div jwcid="containingGroupBlock@Block">
+	<span jwcid="@If" condition="ognl:!isRoot">    
+		<a jwcid="@ExternalLink" page="TaxaIndex" parameters="ognl:{parentPageNode.nodeId, projectId}" title="ognl:'containing group: ' + containingGroupName"></a>    
+	</span>    
+</div>
+<span jwcid="containingGroupsBlock@Block">
+	<span jwcid="@If" condition="ognl:!isRoot">    
+		<ul>
+		    <li class="list_header">Containing Groups</li>
+		    <li jwcid="@TolPagesList" node="ognl:node" pages="ognl:helper.ancestorPages" projectId="ognl:projectId" isIndexPage="ognl:true"/>
+		</ul>    
+	</span>
+</span>
+<span jwcid="otherGroupsBlock@Block">
+	<span jwcid="@If" condition="ognl:!isRoot">
+		<ul>
+	        <li class="list_header">Other <span jwcid="@Insert" value="ognl:containingGroupName"/></li>
+			<li jwcid="@TolPagesList" node="ognl:node" pages="ognl:helper.siblingPages" projectId="ognl:projectId" isIndexPage="ognl:true"/>
+		</ul>
+	</span>    
+</span>
+<span jwcid="previousSiblingBlock@Block">
+	<span jwcid="@If" condition="ognl:!isRoot">
+	    <a jwcid="@ExternalLink" page="TaxaIndex" parameters="ognl:{helper.previousSiblingId, projectId}" title="ognl:'previous group in ' + containingGroupName + ': ' + helper.previousSiblingName"></a>
+	</span>    
+</span>
+<span jwcid="nextSiblingBlock@Block">
+    <span jwcid="@If" condition="ognl:!isRoot">
+		<a jwcid="@ExternalLink" page="TaxaIndex" parameters="ognl:{helper.nextSiblingId, projectId}" title="ognl:'next group in ' + containingGroupName + ': ' + helper.nextSiblingName"></a>
+    </span>                        
+</span>
+<span jwcid="subgroupsBlock@Block">
+	<span jwcid="@If" condition="ognl:helper.hasSubgroups">
+		<ul>
+            <li class="list_header">Subgroups</li>
+            <li jwcid="@TolPagesList" node="ognl:node" pages="ognl:helper.childPages" projectId="ognl:projectId" isIndexPage="ognl:true"/>
+		</ul>
+    </span>
+</span>

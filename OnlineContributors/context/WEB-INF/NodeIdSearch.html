@@ -1,0 +1,26 @@
+<html>
+<body jwcid="$content$">
+    <ul class="nodisc">
+        <li jwcid="groupInfo@Any" id="groupInfo">
+            <span jwcid="@If" condition="prop:rootGroupSelected">
+            <form jwcid="@tacos:AjaxForm" listener="listener:findAndSelectRootGroup" delegate="prop:delegate" updateComponents="groupInfo">
+            <span jwcid="@If" condition="ognl:delegate.hasErrors">
+                <span jwcid="@ErrorBox" delegate="prop:delegate"/>
+            </span>
+            Group name: <input jwcid="@TextField" value="prop:rootGroupName"/><input jwcid="@Submit" value="Find Node Id"/>
+            </form>
+            </span>
+            <span jwcid="@Else">
+                <span jwcid="@If" condition="ognl:rootGroup != null">
+                Group: <span jwcid="@Insert" value="prop:rootGroup.name"/> (<span jwcid="@Insert" value="prop:rootGroup.nodeId"/>) 
+                	<a jwcid="@tacos:AjaxDirectLink" listener="listener:chooseRootGroup" updateComponents="groupInfo">change</a> 
+                </span>
+                <span jwcid="@Else">
+            		<a jwcid="@tacos:AjaxDirectLink" listener="listener:chooseRootGroup" updateComponents="ognl:{'groupInfo'}">
+            			Select a Node Id</a> <span class="red">(by exact name match)</span>
+                </span>
+            </span>
+        </li>
+    </ul>
+</body>
+</html>

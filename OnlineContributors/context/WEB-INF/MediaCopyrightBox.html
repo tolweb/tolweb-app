@@ -1,0 +1,114 @@
+<div id="copyright" class="whitebox"> <a name="copyright"></a>        
+	<a jwcid="@HelpLink" helpName="Copyright Owner" pageName="ognl:page.helpPageName"/>
+    <h4>Copyright Information</h4>
+	<script type="text/javascript">
+        <!--
+		function copyrightCheckInitialState() {
+			var rad = document.getElementById("noCopyright");
+			if (rad != null && rad.checked) {
+				togglePermissionsBox(true);
+			}
+			rad = document.getElementById("publicDomainRadio");
+			if (rad != null && rad.checked) {
+				toggleNoCopyrightBox();
+			}				
+		}
+		function toggleNoCopyrightBox() {
+			toggleRadio("noCopyright", true);
+			togglePermissionsBox(true);
+		}
+        function togglePermissionsBox(toggle) {    
+    		var div = document.getElementById("mediause"); 
+        	toggleDisabled(div, toggle); 
+        }
+        function toggleOtherCopyright() {
+        	toggleRadio("otherCopyright", true);
+        	toggleRadio("tolUseRadio", true);
+        }
+        function toggleRadio(el, toggle) {
+        	try {
+	        	var rad = document.getElementById(el);
+	        	if (rad != null) {
+	        		rad.checked = toggle;
+	        	} 
+        	} catch(E) { }
+        }
+        function toggleDisabled(el, toggle) {
+            try {
+                el.disabled = toggle;
+                if (toggle) { // if disabled is called, we want to select public domain radio
+                	var rad = document.getElementById("publicDomainRadio");
+                	if (rad != null) {
+                		rad.checked = true;
+                	}
+                }
+            } catch(E){}
+            
+            if (el.childNodes && el.childNodes.length > 0) {
+                for (var x = 0; x < el.childNodes.length; x++) {
+                    toggleDisabled(el.childNodes[x], toggle);
+                }
+            }
+        }        // -->
+    </script>
+	<span jwcid="@RadioGroup" selected="ognl:page.copyHolderSelection">
+    	<ul class="radiogroup">
+            <li>
+                <label><input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.tapestry.EditImageData@CONTRIBUTOR_COPY_OWNER" 
+                			onclick="javascript:togglePermissionsBox(false);toggleRadio('tolUseRadio', true);" />
+                	I own the copyright for this <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/>
+                	<span jwcid="@If" condition="ognl:media.copyrightOwnerContributor != null && media.copyrightOwnerContributor.id == page.contributor.id">
+                        &nbsp;&nbsp;&nbsp; "Copyright &copy; <span class="boldtext"><span jwcid="@Insert" value="ognl:page.contributor.displayName" /></span>"	
+                    </span>
+                </label>
+			</li>
+            <li>
+                <label><input jwcid="@Radio" type="radio" value="ognl:@org.tolweb.tapestry.EditImageData@OTHER_TOL_CONTRIBUTOR_OWNER" 
+                			onclick="javascript:togglePermissionsBox(false);toggleRadio('tolUseRadio', true);" />
+                	The copyright for this <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/> belongs to another <strong>ToL Contributor</strong>, and this contributor has authorized me to submit it to the ToL database.
+				</label>
+                <div id="copycontributor">
+					<span jwcid="@If" element="ognl:null" condition="ognl:media.copyrightOwnerContributor != null && media.copyrightOwnerContributor.id != page.contributor.id"> 
+						<span jwcid="@Insert" value="ognl:media.copyrightOwnerContributor.displayName" />
+      				</span>
+  					<a jwcid="@LinkSubmit" listener="ognl:page.listeners.contributorSearchSubmit">Select a Contributor</a>
+				</div>
+            </li>
+            <li>
+                <label><input jwcid="@Radio" id="otherCopyright" type="radio" value="ognl:@org.tolweb.tapestry.EditImageData@OTHER_COPY_OWNER" 
+                	onclick="javascript:togglePermissionsBox(false);toggleRadio('tolUseRadio', true);" />
+                	 The copyright for this <span jwcid="@Insert" value="ognl:page.lowercaseMediaType"/> belongs to another person who 
+            is not a registered ToL Contributor, and the copyright owner 
+            has authorized me to submit it to the ToL database. </label>
+                <ul>
+                    <li>
+                        <label>Copyright Owner 
+                        <input jwcid="@TextField" type="text" value="ognl:media.copyrightOwner" size="30" 
+                        	onfocus="javscript:toggleOtherCopyright();togglePermissionsBox(false);" />
+                        </label>
+                    </li>
+                    <li>
+                        <label>Email 
+                        <input jwcid="@TextField" type="text" value="ognl:media.copyrightEmail" size="30" 
+                        	onfocus="javscript:toggleOtherCopyright();togglePermissionsBox(false);" />
+                        </label>
+                    </li>
+                    <li>
+                        <label>Homepage Url 
+                        <input jwcid="@TextField" type="text" value="ognl:media.copyrightUrl" size="30" 
+                        	onfocus="javscript:toggleOtherCopyright();togglePermissionsBox(false);" />
+                        </label>
+                    </li>
+            	</ul>
+			</li>
+			<li id="crdate">                      
+                <label>Copyright Date <input jwcid="@TextField" type="text" 
+                	value="ognl:media.copyrightDate" size="4" /></label>
+        	</li>            
+            <li><label><input jwcid="@Radio" type="radio" id="noCopyright" value="ognl:@org.tolweb.tapestry.EditImageData@PUBLIC_DOMAIN" onclick="javascript:togglePermissionsBox(true)" />
+                No copyright owner <i>(Use this option only for media in the public domain!)</i></label>
+            </li>
+        </ul>
+        <div class="clear">&nbsp;</div>
+    </span>
+</div>   

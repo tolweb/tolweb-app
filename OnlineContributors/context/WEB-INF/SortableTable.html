@@ -1,0 +1,28 @@
+<span jwcid="@For" source="ognl:values" value="ognl:currentObject" convertor="ognl:convertor"
+	index="ognl:index" element="ognl:null">
+	<span jwcid="@Insert" value="ognl:rowSpan != null ? null : null"/> 
+<tr>
+<td jwcid="@If" condition="ognl:!canMove || (!canMoveUp && !canMoveDown && !canMoveBoth && !canMoveDownNotBoth)" element="td">    
+    &nbsp;
+</td>
+<td jwcid="@If" condition="ognl:canMoveUp || canMoveBoth" class="up" element="td">
+    <a jwcid="@LinkSubmit" selected="ognl:page.moveUpIndex" tag="ognl:index">up</a>
+</td>
+<td jwcid="@If" condition="ognl:canMoveDown || canMoveDownNotBoth" class="down" element="td">
+    <a jwcid="@LinkSubmit" selected="ognl:page.moveDownIndex" tag="ognl:index">down</a>
+</td>
+<td jwcid="@RenderBody"/>
+<td jwcid="@Any" element="td" class="remove" rowSpan="ognl:rowSpan"> 
+    <span jwcid="@If" condition="ognl:canRemove" element="ognl:null">
+		<a jwcid="@LinkSubmit" selected="ognl:page.deleteIndex" tag="ognl:index">remove</a>
+    </span>
+    <span jwcid="@Else" element="ognl:null">
+        &nbsp;
+    </span>
+</td>
+</tr>
+<tr jwcid="@If" condition="ognl:canMoveBoth" element="tr">
+    <td class="down"><a jwcid="@LinkSubmit" selected="ognl:page.moveDownIndex" tag="ognl:index">down</a></td>
+</tr>
+</span>
+

@@ -1,0 +1,66 @@
+<html jwcid="@BranchLeafWrapper" showPageContentMenu="ognl:false" isImageGallery="prop:isImages" isMovieGallery="prop:isMovies"
+	titleParam="ognl:title" node="ognl:node" tolPage="ognl:tolPage">
+	<span jwcid="@If" condition="ognl:node == null || tolPage == null"
+        element="ognl:null">
+        <p class="error">Sorry, we cannot find the group you are looking for.</p>
+    </span>
+    <span jwcid="@Else" element="ognl:null">
+        <span jwcid="@If" condition="ognl:!noImage" element="ognl:null">
+        <form jwcid="@Form" listener="ognl:listeners.reloadImages" class="galleryoptions">
+            <ul class="nodisc">
+            <li><input jwcid="@Checkbox" value="ognl:showRandom" onclick="document.forms[0].submit()"/>Show <span jwcid="@Insert" value="prop:capitalizedMediaType"/> in Random Order</li>
+            <span jwcid="@If" condition="prop:isImages">
+            <li><input jwcid="@Checkbox" value="ognl:showOnlyTillus" onclick="document.forms[0].submit()"/>Show Only Title Illustrations</li>
+            </span>
+            </ul>
+        </form>                             
+        </span>
+	    <h2><span jwcid="@Insert" value="ognl:groupName"/> <span jwcid="@Insert" value="prop:capitalizedMediaType"/> <span jwcid="@If" condition="ognl:showRandom" element="ognl:null">(Randomly Chosen)</span></h2>
+        <span jwcid="@If" element="ognl:null" condition="ognl:showMoreLink">
+			<a jwcid="@ExternalLink" class="topmore" parameters="ognl:node.nodeId" page="ImageGallery">more <span jwcid="@Insert" value="ognl:groupName"/> <span jwcid="@Insert" value="ognl:imagesTillusString"/> ...</a>
+      	</span>           
+	    <span jwcid="@If" condition="ognl:noImage" element="ognl:null">
+            <p>There are no <span jwcid="@Insert" value="prop:mediaType"/> to show in <span jwcid="@Insert" value="ognl:groupName"/>.  You might
+            want to try its parent group, <a jwcid="@ExternalLink" 
+                page="ImageGallery" parameters="ognl:parentPageNodeId"><span jwcid="@Insert" value="ognl:parentPageName"/></a>.
+            </p>
+	    </span>
+	    <span jwcid="@Else" element="ognl:null">    
+            <span jwcid="@ImageInfoGlass"/>                                
+		    <span jwcid="tableView@contrib:TableView" source="ognl:model" columns="" pageSize="ognl:40"> 
+                <span jwcid="@If" condition="ognl:!showRandom" element="ognl:null">
+                <span jwcid="@contrib:TablePages"/>           
+                </span>
+			<table class="gallery">
+		    <span jwcid="@Foreach" source="ognl:currentTableRows" value="ognl:image" index="ognl:index">
+                <tr jwcid="@Insert" value="ognl:openTableRow" raw="ognl:true"/>
+                <td>
+                    <span jwcid="@ImageThumbnail" image="ognl:currentImageToShow"/>
+                    <span class="caption">
+                        <em><span jwcid="@Insert" value="prop:captionString" raw="ognl:true"/></em>
+                    </span>
+                    <span class="caption">
+                        <span jwcid="@Insert" value="ognl:copyrightString" raw="ognl:true"/>
+                     	<a jwcid="@ContributorProfileLink" contributor="ognl:currentImageToShow.copyrightOwnerContributor"/>                        
+                        <span jwcid="@If" condition="ognl:showOnlyTillus" element="ognl:null">
+                            <div>
+                            <a jwcid="@TolPageLink" groupName="ognl:tillusGroupName" 
+                                nodeId="ognl:tillusNodeId" classString="taxonLink"><span jwcid="@Insert" value="ognl:tillusGroupName"/>
+                            </a>
+                            </div>
+                        </span>
+                    </span>
+                </td>
+		        <tr jwcid="@Insert" value="ognl:closeTableRow" raw="ognl:true"/>
+		    </span>
+            </table>
+            	<span jwcid="@If" condition="ognl:!showRandom" element="ognl:null">
+                <span jwcid="@contrib:TablePages"/>                            
+                </span>
+			</span>       
+	    </span> 
+        <span jwcid="@If" element="ognl:null" condition="ognl:showMoreLink">
+			<a jwcid="@ExternalLink" class="bottommore" parameters="ognl:node.nodeId" page="ImageGallery">more <span jwcid="@Insert" value="ognl:groupName"/> <span jwcid="@Insert" value="ognl:imagesTillusString"/> ...</a>
+      	</span>                
+    </span>
+</html>

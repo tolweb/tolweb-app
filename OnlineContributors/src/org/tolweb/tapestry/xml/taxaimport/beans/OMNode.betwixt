@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<info primitiveTypes="element">
+  <hide property='hasAttachments'/>
+  <hide property='hasPageAttachment'/>
+  <hide property='newId'/>
+  <element name="node">
+    <attribute name="id" property="id"/>
+    <attribute name="name" property="name" />
+    <element name="page" property="page"/>
+    <addDefaults />
+  </element>
+</info>

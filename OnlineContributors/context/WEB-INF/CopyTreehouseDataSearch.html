@@ -1,0 +1,11 @@
+<span jwcid="@NewBarebonesFormWrapper" title="Search for a Treehouse to Copy" bodyId="ognl:@org.tolweb.tapestry.AbstractWrappablePage@TREEHOUSE_BODY">
+	<p align="right"><br><a jwcid="@PageLink" page="TreehouseEditor">Return to Editing</a>&nbsp;&nbsp;&nbsp;</p>
+	<h2>Search for a treehouse to copy</h2>	
+	<p style="color: #cc0000">Please note: copying data from another treehouse will replace any content that you may already have entered in the current treehouse.  If this is not what you want, simply click on the <strong>Return to Editing</strong> link in the upper right corner of this page.</p>	
+    <span jwcid="@TreehouseSearch" 
+        instructions="Click the 'select' link to choose the treehouse whose data you would like to copy" 
+        linkString="select"
+        callbackType="ognl:@org.tolweb.tapestry.TreehouseSearchResults@COPY_PAGE"
+        searchPageName="CopyTreehouseDataSearch"
+    	wrapperType="ognl:@org.tolweb.tapestry.AbstractWrappablePage@TREEHOUSE_WRAPPER"/>
+</span>

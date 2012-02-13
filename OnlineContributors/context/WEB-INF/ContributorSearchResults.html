@@ -1,0 +1,25 @@
+<span jwcid="body@Block">
+	<form jwcid="@Form">
+        <input jwcid="@Hidden" value="ognl:wrapperType"/>
+        <input jwcid="@Hidden" value="ognl:returnPageName"/>
+        <input jwcid="@Hidden" value="ognl:actionType"/>
+        <input jwcid="@Hidden" value="ognl:editedObjectId"/>
+        <input jwcid="@Hidden" value="ognl:contributorType"/>
+        <span jwcid="@If" condition="ognl:actionType != @org.tolweb.tapestry.ContributorSearchPage@EDIT_CONTRIBUTOR" 
+            element="ognl:null">
+		<a jwcid="@ReturnToEditingLink"/>
+        </span>
+        <span jwcid="@Else" element="ognl:null">
+		<a jwcid="@PageLink" class="rte" page="ScientificRegistrationOverview">Return</a>            
+        </span>
+		<h2 class="clear">Contributor Search Results</h2>
+	    <p>Click the 'select' link next to the Contributor you wish to select.  If you don't see the Contributor
+	        you are looking for, <a jwcid="@LinkSubmit" listener="ognl:listeners.returnToSearchPage">click here</a> to search again.</p>
+	    <table jwcid="table@contrib:Table" cellpadding="3" source="ognl:contributors" columns="Name:getDisplayName(), Email:getEmail(), !select"/>
+	    <span jwcid="selectColumnHeader@Block">&nbsp;</span>
+	    <span jwcid="selectColumnValue@Block">
+	        <a jwcid="@LinkSubmit" listener="ognl:listeners.selectContributor" selected="ognl:selectedContributorId" tag="ognl:components.table.tableRow.id">select</a>
+	    </span>
+    </form>
+</span>
+<span jwcid="@WrapperChooser" wrapperType="ognl:wrapperType" title="Contributor Search Results" block="ognl:components.body"/>

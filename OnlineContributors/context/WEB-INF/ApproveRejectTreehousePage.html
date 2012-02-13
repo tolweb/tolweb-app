@@ -1,0 +1,15 @@
+<html jwcid="@Wrapper" title="ognl:(isApprove ? 'Approve ' : 'Reject ') + treehouseToApproveOrReject.pageTitle">
+	<h2 class="clear">
+        <span jwcid="@If" condition="ognl:isApprove">
+            <span jwcid="@Insert" value="ognl:approveString"/> '<span jwcid="@Insert" value="ognl:treehouseToApproveOrReject.pageTitle"/>' for Publication
+        </span>
+        <span jwcid="@Else">
+			Return <span jwcid="@Insert" value="ognl:rejectString"/>  '<span jwcid="@Insert" value="ognl:treehouseToApproveOrReject.pageTitle"/>' for Revision
+        </span> 
+    </h2>
+    Please enter any comments you would like to send the authors in the text box below:
+    <form jwcid="@Form" listener="ognl:listeners.commentsSubmit">
+	    <p><span jwcid="@TextArea" value="ognl:comments" rows="30" cols="60"/></p>	
+        <span jwcid="@Submit" value="ognl:isApprove ? approveString : rejectString"/>
+    </form>
+</html>

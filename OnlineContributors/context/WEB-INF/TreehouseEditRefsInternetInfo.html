@@ -1,0 +1,67 @@
+<html jwcid="@EditTreehouseWrapper" isMainEditPage="ognl:false" title="ognl:'Step #' + stepNumber + ' Edit References and Information on the Internet'">
+	<div id="refinternet2pgtop"><a name="refinternet2pgtop"></a>
+	<h3 class="sectionheaderblubpg">Step <span jwcid="@Insert" value="ognl:stepNumber"/>. Edit References and Information on the Internet</h3>
+    <div class="boxtocpages">
+		<div jwcid="@TreehouseImportantDiv">
+		   <li><a href="#trhs2reference">References</a></li>
+		   <li><a href="#trhs2infointernet">Information on the Internet </a></li>
+        </div>		     
+		<div jwcid="@TreehouseHelpDiv" stepNum="4"
+            exampleEditingFormUrl="/tree/learn/TreebuilderTools/BuildingGuide/ExampleEditingSteps4.html">
+			<h5>Editing tip: </h5>
+			<p><a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="References" noDiv="ognl:true">References</a>
+			<a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Information on the Internet" noDiv="ognl:true">Information on the Internet</a></p>
+        </div>
+     	 <img src="/tree/learn/lisa.images/trhouseimage/reflinksblu.jpg" alt="References and Information on the Internet" width="222" height="93" border="0" class="imgpgs">
+			<div jwcid="@TreehouseWarningDiv"/>	   
+    			<div class="spacer">&nbsp;</div>            
+    	  </div>        
+		<div class="spacer">&nbsp;</div>
+	<div id="trhs2reference">
+		<a name="trhs2reference"></a>
+        
+		<div class="spacer">&nbsp;</div> 
+<a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="References"/>
+  		<h4>References</h4>
+  		<div class="indentleft">
+			<textarea jwcid="@TextArea" value="ognl:treehouse.references" cols="60" rows="40" id="refsArea"></textarea>
+		</div>
+	</div>
+    	  </div>
+	<div class="spacer">&nbsp;</div> 
+    <div id="trhs2infointernet">
+        <a name="trhs2infointernet"></a>
+        
+        <a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Information on the Internet"/>
+		<h4>Information on the Internet</h4>
+		<div class="indentleft">
+			<table>
+				<span jwcid="@ListEdit" source="ognl:linksListEditMap.keys" value="ognl:linksListEditMap.key"
+					listener="ognl:listeners.synchronizeLink">
+					<tr>
+                        <td><strong>Page URL</strong></td> <td><input jwcid="@TextField" value="ognl:currentLink.url" size="50"/></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Name of <br> Site/Page</strong></td>
+                        <td><input jwcid="@TextField" value="ognl:currentLink.siteName" size="50"/></td>
+					</tr>
+                    <tr>
+                        <td><strong>Comments</strong></td> 
+                        <td><textarea jwcid="@TextArea" value="ognl:currentLink.comments" cols="50" rows="3"/></td>
+                    </tr>
+                </span>                
+				<tr>
+					<td colspan="2">Add fields for <input jwcid="@TextField" value="ognl:numExtraLinks" size="2"/> more sites
+					<input type="submit" jwcid="@Submit" listener="ognl:listeners.addLinksSubmit" value="Add Fields"/></td>
+				</tr>
+            </table>
+		</div>
+		<div class="topbottom2">
+            <a href="#pagetop">top</a> | <a href="#trhssavepreview">go to save and preview</a>
+        </div>
+		<div class="bottomspacer">&nbsp;</div>
+        <div class="spacer">&nbsp;</div> 
+	</div>
+    <div jwcid="@TreehouseAutoSave" autoSaveFrequency="ognl:900" textareaId="refsArea" valuePath="references"
+    	editedObjectId="ognl:treehouse.accessoryPageId" contributorId="ognl:contributor.id" />           
+</html>

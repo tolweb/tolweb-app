@@ -1,0 +1,136 @@
+<messages>
+
+ <message name="Document Data"><text><![CDATA[
+ <p>The top of the <strong>Edit Document Data</strong> form provides an overview of administrative information associated with your file; i. e., it lists the file name and the ID number of the media file in the ToL database, and it keeps track of who contributed the file and who last edited the data.</p>
+
+   <p>If you find a flaw in a document file you have uploaded, or if a better version of your file becomes available, you can use the <strong>Replace this document with a different version</strong> link to upload the revised file.   
+</p>                  
+                    ]]></text>
+</message> 
+
+<message name="Copyright Owner">
+<text><![CDATA[<p>As a general rule, the creator of a document owns 
+						  the copyright and has the exclusive right of distribution. You don't have 
+						  to register your work with any authority or agency in order to have it protected by copyright law.</p>
+						  <p>The 
+						  copyright of the creator may be limited if the material in question 
+						  was created as a 'work made for hire', or if the copyright has previously 
+						  been relinquished to a publisher.</p>
+						  
+<p>When you upload a new document file to the ToL database, you will be listed as the copyright owner by default.  If you upload a document for which you do not own the copyright, you need to select another option in the <strong>Copyright Information</strong> section:</p>						  
+						  
+<ul>
+<li>If the person or institution who owns the copyright is a registered ToL contributor, you should use the <strong>Select a Contributor</strong> link to locate the contributor in the ToL database.  You should use this tool, rather than typing the person's name in the <em>Copyright Owner</em> text field below, because it ensures that the document file gets linked to all the other information about the contributor in the ToL database.</li>
+<li>If the copyright owner is not a registered ToL 
+      Contributor, you can type the person's name in the <em>Copyright Owner</em> text field. Also, you 
+      can provide their e-mail address and/or home page url, which will then be 
+      used to create a link in the copyright notice.</li>
+<li>Use the <strong>No copyright owner</strong> option only if you are sure that a document is in the public domain, i.e., nobody can claim the right to limit the 
+      distribution of this document.</li>
+</ul>
+<p>Enter the four-digit year for the copyright 
+      date. You are not required to provide a copyright date, but it's part of 
+      a proper copyright notice. Generally, it's good to use the date of creation 
+      or the date of first publication as the copyright date.</p>						  
+						  
+						  ]]></text>
+</message>                            
+
+<message name="Use Permitted by Copyright Owner">
+<text><![CDATA[
+						
+<p>When you contribute a document to the ToL project, we ask you to give us 
+        a license specifying how the file can be used. In order 
+        to meet the needs of a diverse community of contributors, we provide a variety of different 
+        options regarding the publication and potential reuse of your document. 
+    </p>
+    <p>In the <strong>Edit Document Data</strong> form, you can click on the text next to a radio button to get a detailed explanation of each option.</p>
+						<p> You can change the default license applied to your future media contributions by checking the <strong>Remember this option for my future contributions</strong> box.  </p>
+					<p>Note that the <strong>Use Permitted by Copyright Owner</strong> section is active only for works protected by copyright.  If you have selected <strong>No copyright owner</strong> above, the public domain option is selected automatically.</p>														
+						]]></text>
+</message>    
+
+
+
+<message name="Other Credits">
+<text><![CDATA[
+<ul>
+ <li><strong>Acknowledgements</strong>: Here you can acknowledge any person or institution 
+      that has facilitated the creation or distribution of the document.</li> 
+      <li><strong>Creator</strong>: You can use this field to give credit to the person who created the document. In most cases, the copyright owner and the creator will be the same person, and it's not necessary to credit the creator separately.</li>     
+ 
+ <li><strong>Reference/Source</strong>: Click on the Reference/Source header to open up the section where you can edit this information.
+ <ul>
+  <li><strong>Reference</strong>: If this document was previously published, digitally or in print, 
+      please provide the reference here.  Note that you should not copy and submit other people's documents unless you have their permission or the work is licensed under creative commons or is in the public domain.</li>
+  <li><strong>Source</strong>: If you have copied this document from another website, please provide relevant information here. The <strong>Title of Source File</strong> should be the file name or the title of the page on which the source file is featured. The <strong>Url of Source File</strong> should ideally be the url of the page that provides access to the source file and any data associated with the source file. Select the <strong>Source Collection</strong> from the menu, or enter the relevant data for a new source collection in the <strong>Collection</strong> (name of the collection) and <strong>Homepage</strong> fields. Please try to avoid duplicate entries of source collections.</li>     
+         
+  </ul></li>    
+</ul>      
+      ]]></text>
+</message>                        
+
+
+<message name="Attached to Group(s)">
+<text><![CDATA[<p>When you click on the <strong>Add a Group from the ToL Database</strong> link, you will be able to search for the names of groups in the ToL database.  Please attach your file to that 
+        group in the Tree of Life to which it is most relevant.  </p> 
+        
+        <p>If you have a document featuring information about a certain species and that species is represented 
+        in the ToL database, you should attach it to this species. If the species 
+        is not yet represented in the ToL database, you should attach your file 
+        to the group that is closest to the species, e.g., the genus or the family 
+        that the species belongs to.  If your document is relevant to more than one group (e. g., if it features information about several different species), you can attach it to each of these groups.</p>
+      <p>Attaching media files in the ToL database to groups in the tree will allow people to find resources based on phylogenetic criteria.  For example, when you attach a document with information about platypus to the <em>Ornithorhynchus anatinus</em> group, people will find this file not only if they search for platypus documents, but also if they search for documents about Monotremata, mammals, vertebrates, animals etc.</p>
+]]></text>
+</message>	
+
+
+   <message name="Media Content"><text><![CDATA[
+   <p>Please be sure to provide a <strong>Title</strong> that concisely and accurately describes the content of your document.  You can also provide a more detailed <strong>Description</strong> that can serve as an abstract for your document.</p>
+<p> You can also check one or more features that describe the content of your document and provide information about the intended audience (learner level), relevant subjects and key words. 
+</p><p>   If you go through the trouble of providing detailed metadata about the content of your document, our media database will get better organized, and it will be easier for ToL visitors and page authors to find the media they are most interested in.
+For example, somebody looking for a lesson plan about mating behavior in insects would probably want to focus their search on documents attached to a group in the insect branch that have the <strong>Neurobiology & Behavior</strong> options selected.
+
+</p>                 
+                    ]]></text>
+</message>                     
+
+
+       <message name="Comments"><text><![CDATA[
+                        Here you can enter any information about your 
+document that you think may be of interest but that is not covered in any of 
+      the other fields in this form.
+                    ]]></text>
+</message>   
+
+                                                                                                          
+                                                                                                                                        
+                    <message name="Editing Privileges"><text><![CDATA[
+
+                        <p>By default only the media contributor, the copyright 
+      owner (if a registered ToL contributor), and ToL editors in charge of media 
+      administration have editing privileges for the data associated with a given 
+      media file. You can use this list to provide editing privileges to other ToL 
+      contributors, e.g., your co-authors for ToL pages or people who collaborate 
+      with you in the identification of the organisms in your media files.</p>
+                    ]]></text>
+</message>                                                                                                                                            
+                    <message name="Notes"><text><![CDATA[
+                        <p>The <strong>Notes</strong> field 
+        should be used for internal ToL communication about your media file. You can 
+        use this field to leave reminders for yourself or messages to ToL editors. Also, 
+        other ToL contributors will have access to this field and can leave messages 
+        for you about your file (not yet implemented). For example, somebody may let you know if they 
+        think an organism is misidentified or they may be able to provide additional 
+        information that is not included in your original document data. After reviewing 
+        the information provided by other contributors, you can decide whether 
+        you want to use it to revise your document data.</p>
+
+      <p>The content of this field is not printed on the ToL web site along with 
+        other document data. Also, the general ToL Media Search ignores the <strong>Notes</strong>         text. However, when you do a search across all document data fields in the 
+        ToL Media Manager, the text of the <strong>Notes</strong> field will be included.</p>
+                    ]]></text>
+</message>                                                                                                                                            
+                         
+                                              
+</messages>

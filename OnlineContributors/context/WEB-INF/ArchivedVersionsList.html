@@ -1,0 +1,10 @@
+<ul jwcid="@Any" element="ul" id="archived" class="ognl:isOnlyMajorVersions ? 'hide' : null">
+    <li jwcid="@For" source="ognl:archivedVersions" value="ognl:currentArchivedVersion" element="li">
+        <a jwcid="@GenericLink" href="ognl:currentArchiveUrl">
+			<span jwcid="@Insert" value="ognl:pageTitle" raw="ognl:true"/> 
+            Version <span jwcid="@Insert" value="ognl:currentArchiveDateString"/>
+            (<span jwcid="@Insert" value="ognl:currentArchiveStatus"/>)
+        </a>
+    </li>
+    <li jwcid="@RenderBody"/>
+</ul>

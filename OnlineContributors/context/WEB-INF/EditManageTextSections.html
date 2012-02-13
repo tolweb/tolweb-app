@@ -1,0 +1,48 @@
+<html jwcid="wrapper@EditBranchLeafPageWrapper" editedObjects="Text Sections" notesProperty="page.tolPage.textSectionsNotes"
+	title="ognl:'Manage ' + tolPageName + ' Text Sections'" actionType="Manage">
+        <div class="whitebox" id="managetxt">
+	            <div class="instructions">                 <h5 id="trigger1" class="triup" onclick="showbranch('help1', 'show', 'hide'); showbranch('trigger1', 'tridown', 'triup')">Instructions </h5>
+		<div id="help1" class="hide">                      <p><strong>Introduction</strong>, 
+                        <strong>Characteristics</strong>, and <strong>Discussion 
+                        of Phylogenetic Relationships</strong> (on branch pages only) 
+                        are standard text sections for ToL branch and leaf pages.  These sections cannot be deleted from 
+                        the list (but they won't show up if they're empty). <strong>Introduction</strong> and <strong>Characteristics</strong>                         will always be the first two sections on each page.  You can change the sequence of other sections by clicking on the <span class="blue">up</span>                         and <span class="blue">down</span> links in the left column, and you can delete non-standard (custom) sections by clicking on the <span class="blue">remove</span>                         link in the right column.</p>
+
+		    		    <p>To create a new custom text section, click on the <span class="blue">Add a new section</span>                         link. A new row will then be created in the list, featuring 
+                        a text box where you can type the heading for the new 
+                        section. To edit one of the sections in the list, click 
+                        on the relevant <span class="blue">edit</span> link or 
+                        use one of the links in the right sidebar.</p>
+                </div>
+            </div>	
+	<table class="binbox">
+		<tbody>
+			<tr>
+				<th>Shift</th>
+				<th>Heading</th>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+			</tr>
+	        <tr jwcid="sortableTable@SortableTable" values="ognl:tolPage.textSections"
+	            canMove="ognl:canMoveTextSection" canRemove="ognl:canRemoveTextSection"
+	            currentObject="ognl:currentTextSection" rowSpanString="ognl:rowspan"
+                minMoveUpIndex="ognl:2" index="ognl:index">
+                <td jwcid="@If" condition="ognl:canEditHeading" class="datacell" rowspan="ognl:rowspan" element="td">
+                    <input jwcid="@TextField" value="ognl:currentTextSectionHeading" size="40"/>
+                </td>
+                <td jwcid="@Else" class="stdtext" rowspan="ognl:rowspan" element="td">
+                    <span jwcid="@Insert" value="ognl:currentTextSection.heading"/>
+                </td>
+                <td jwcid="@Any" element="td" rowspan="ognl:rowspan">
+                    <a jwcid="@LinkSubmit" selected="ognl:otherEditPageName" tag="ognl:textSectionEditTag" >edit</a>
+                </td>
+	        </tr>
+            <tr>                         
+                <td colspan="4" class="add"><a jwcid="@LinkSubmit" listener="ognl:listeners.addNewTextSection">Add a new section</a></td>
+            </tr>            
+        </tbody>
+    </table>
+    </div>
+    <div jwcid="@AutoSave" autoSaveFrequency="ognl:900" contributorId="ognl:contributor.id" 
+    	editHistoryId="ognl:page.editedPage.editHistoryId"/>        
+</html>

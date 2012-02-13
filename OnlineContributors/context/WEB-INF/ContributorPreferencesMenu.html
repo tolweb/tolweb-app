@@ -1,0 +1,8 @@
+<h4 class="open" id="navcontrprefs" onclick="changeclass('navcontrprefs', 'open', 'closed'); changeclass('navcontrprefsmenu', 'open', 'closed')">contributor options</h4>                   
+<ul id="navcontrprefsmenu" class="open">
+	<li><a onclick="updatePreference('Preview_mode'); return false;" href="#"><span jwcid="@Insert" value="ognl:previewString"/></a></li>
+    <span jwcid="@If" condition="ognl:inEditMode">
+		<li><a onclick="updatePreference('Hide_editlinks'); return false;" href="#"><span jwcid="@Insert" value="ognl:editString"/></a></li>
+		<li><a onclick="updatePreference('Show_peoplelists'); return false;" href="#"><span jwcid="@Insert" value="ognl:peopleListString"/></a></li>        
+    </span>
+</ul>

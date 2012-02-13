@@ -1,0 +1,23 @@
+<html jwcid="@FeaturesWrapper" title="XML Taxa Import - Confirmation">
+	<h2 class="clear"><span jwcid="@Insert" value="ognl:heading"/></h2>
+	<p>[<a jwcid="@PageLink" page="xml/TaxaImportHome">Workflow Home...</a>]</p>
+	<p><span jwcid="@Insert" value="ognl:message" /></p>
+	<span jwcid="@If" condition="ognl:!hasErrors">
+		<p>Group: <a jwcid="@Any" element="a" href="prop:workingURL"><span jwcid="@Insert" value="ognl:groupName"/></a></p>
+		<span jwcid="@If" condition="ognl:outputLog != null && !outputLog.isEmpty">
+		<p>		
+			<h1>Changes Made</h1>
+			<hr/>
+		</p>
+		<p>
+			<ul jwcid="@For" source="ognl:outputLog" value="ognl:currentEntry" element="ul">
+				<li><span jwcid="@Insert" value="ognl:currentEntry" raw="ognl:true"/></li>
+			</ul>
+			<hr/>
+		</p>
+		</span>
+		<span jwcid="@Else">
+		Page Validity Check: Okay. No changes made.
+		</span>
+	</span>
+</html>

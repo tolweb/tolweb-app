@@ -1,0 +1,52 @@
+<html jwcid="@EditTreehouseWrapper" title="ognl:'Step #' + stepNumber + ' Publish Your Treehouse'" isMainEditPage="ognl:false" isPublish="ognl:true">
+	<div id="publishpgtop">
+        <a name="publishpgtop"></a>
+		<h3 class="sectionheaderblubpg">Step <span jwcid="@Insert" value="ognl:stepNumber"/>. Publish Your Treehouse</h3>
+        <div class="boxtocpages">
+			<div jwcid="@TreehouseImportantDiv">
+			   <li><a href="#trhssavepreview">Save and Preview</a></li>
+			   <li><a href="#trhssubmit">Publish Your Treehouse</a></li>                
+            </div>
+			<div jwcid="@TreehouseHelpDiv" stepNum="8"
+            exampleEditingFormUrl="/tree/learn/TreebuilderTools/BuildingGuide/ExampleEditingSteps8.html">
+				<ul>
+					<li><a href="/tree/learn/TreebuilderTools/BuildingGuide/BuildingSteps.html" target="fullHelpWindow">Building Steps</a></li>				
+				</ul>
+				<h5>Editing tip: </h5>
+				<a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Submit" noDiv="ognl:true">Publish</a><br>
+	        </div>
+			<p><img src="/tree/learn/lisa.images/trhouseimage/publisheditstuff.jpg" width="250" height="197" class="imgpgs" alt="publish your treehouse on the ToL"></p>
+			<p class="widthsm"> When you are satisfied with your page you should submit it for publication on the ToL web 
+                site.  Visitors to the ToL will be able to access your treehouse from the treehouse menu of the ToL 
+                branch or leaf page to which you attached your treehouse.  Once you submit your treehouse for publication 
+                you will not be able to edit it until it has been approved for publication. If there is anything you are 
+                unsure about leave a note for one of the ToL editors in the 
+                <a jwcid="@PageLink" page="TreehouseEditNotes">notes section</a>.</p>
+			<div class="spacer">&nbsp;</div>
+			<div class="spacer">&nbsp;</div>
+	  </div>      
+		<div class="spacer">&nbsp;</div>
+	</div>
+
+
+		<div class="spacer">&nbsp;</div>
+		<div id="trhssavepreviewend">
+            <a name="trhssavepreview"></a>
+           
+            <h3><strong> Save and Preview <br> Your Treehouse</strong></h3>
+			<p>Save and preview your work to make sure it is ready for publication.</p>
+            <p><input jwcid="@Submit" listener="ognl:page.listeners.previewSubmit" type="button" class="trhssavebutton" value="Save and Preview" onclick="openPreview()"/></p>
+		</div>
+		<div id="trhssubmit">
+            <a name="trhssubmit"></a>
+      		<a jwcid="@HelpLink" pageName="TreehouseHelpMessagesPage" helpName="Submit"/>
+			<h3><strong> Publish <br> Your Treehouse</strong></h3>
+			When you are satisfied with your page you should submit it for publication. As soon as your page 
+            has been approved for publication you will receive an email with its URL (web address). <br>
+			<br>
+			<input jwcid="@Submit" listener="ognl:listeners.submitSelected" type="button" value="Submit for Publication" class="trhssubmitbutton" />
+		</div>
+		<div class="spacer">&nbsp;</div> 
+        <div class="savesspacer">&nbsp;</div>
+	<div class="savesspacer">&nbsp;</div>
+</html>

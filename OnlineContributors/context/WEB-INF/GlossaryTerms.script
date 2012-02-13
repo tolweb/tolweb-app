@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+<input-symbol key="vars" class="java.lang.String" required="no"/>
+<body>
+<unique>
+<![CDATA[
+/*************************************************************************
+  This code is from Dynamic Web Coding at http://www.dyn-web.com/
+  Copyright 2003 by Sharon Paine 
+  See Terms of Use at http://www.dyn-web.com/bus/terms.html
+  regarding conditions under which you may use this code.
+  This notice must be retained in the code as is!
+*************************************************************************/
+// NOTE: The functions called onmouseover/out plus the message variables need to be included early in the document 
+// or errors will be triggered if user hovers over tooltip-activating links before page completely loaded
+function doTooltip(e, msg) {
+  if ( typeof Tooltip == "undefined" || !Tooltip.ready ) return;
+  Tooltip.clearTimer();
+  Tooltip.show(e, msg);
+}
+
+function hideTip() {
+  if ( typeof Tooltip == "undefined" || !Tooltip.ready ) return;
+  Tooltip.timerId = setTimeout("Tooltip.hide()", 300);
+}
+
+function initHoverTip() {
+  if ( document.getElementById && document.getElementById(Tooltip.tipID) ) { 
+    Tooltip.followMouse = false;  // must be turned off for this version
+    var tip = document.getElementById(Tooltip.tipID)
+    tip.onmouseout = function(e) { Tooltip.tipOutCheck(e) }
+    tip.onmouseover = function() { Tooltip.clearTimer() }
+  }
+}
+
+Tooltip.tipOutCheck = function(e) {
+  e = dw_event.DOMit(e);
+  // is element moused into contained by tooltip? or tooltip itself?
+  var tooltip = document.getElementById(Tooltip.tipID);
+  var toEl = e.relatedTarget? e.relatedTarget: e.toElement;
+    if ( tooltip != toEl && !contained(toEl, tooltip) ) 
+      Tooltip.hide();
+}
+
+// returns true of oNode is contained by oCont (container)
+function contained(oNode, oCont) {
+  if (!oNode) return; // in case alt-tab away while hovering (prevent error)
+  while ( oNode.parentNode ) {
+    oNode = oNode.parentNode;
+    if ( oNode == oCont ) return true;
+  }
+  return false;
+}
+Tooltip.clearTimer = function() {
+  if (Tooltip.timerId) clearTimeout(Tooltip.timerId);
+}
+var not_monophyletic_tooltip = 'Group is <a href="/tree/home.pages/treeinterpret.html#nonmono">not monophyletic</a>';
+var monophyly_uncertain_tooltip = 'Group <a href="/tree/home.pages/treeinterpret.html#monounc">may not be monophyletic</a>';
+var incert_tooltip = 'Phylogenetic position of group is <a href="/tree/home.pages/treeinterpret.html#incertae">uncertain</a>';
+var extinct_tooltip = 'Group is <a href="/tree/home.pages/treeinterpret.html#extinct">extinct</a>';              
+var incert_not_monophyletic_tooltip = 'Phylogenetic position of group is <a href="/tree/home.pages/treeinterpret.html#incertae">uncertain</a> and group is <a href="/tree/home.pages/treeinterpret.html#nonmono">not monophyletic</a>';
+var incert_monophyly_uncertain_tooltip = 'Phylogenetic position of group is <a href="/tree/home.pages/treeinterpret.html#incertae">uncertain</a> and group <a href="/tree/home.pages/treeinterpret.html#monounc">may not be monophyletic</a>';
+]]>
+</unique>
+${vars}
+</body>
+<initialization>
+<unique>
+Tooltip.init();
+initHoverTip();
+Tooltip.timerId = 0;
+</unique>
+</initialization>
+</script>

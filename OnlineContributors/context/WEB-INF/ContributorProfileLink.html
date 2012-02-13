@@ -1,0 +1,6 @@
+<span jwcid="@If" condition="ognl:contributor != null" volatile="ognl:true">
+<a jwcid="@ExternalLink" page="ContributorDetailPage" parameters="ognl:{contributor.id, fromNodeId}" 
+    title="ognl:contributor.isInstitution ? 'institution profile' : 'contributor profile'">
+	<img jwcid="@Any" src="ognl:imgUrl" alt=" " class="bottomb"/> 
+</a>
+</span>

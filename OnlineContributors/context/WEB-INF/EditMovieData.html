@@ -1,0 +1,92 @@
+<html jwcid="@NewFormWrapper" title="Edit Movie Data" bodyId="moviedatabody" isImage="ognl:true" 
+	buttonString="Submit Movie Data" listener="ognl:listeners.doSave"
+	rightSideBlock="ognl:components.rightSideBlock" 
+	saveInstructionsBlock="ognl:components.saveInstructionsBlock"
+	tocBlock="ognl:components.tocBlock"> 
+<span jwcid="@If" condition="ognl:wrongPassword">
+    <span class="error">
+        You have entered a wrong username/password combination.  Please check your typing and try again.
+    </span>
+</span>
+<span jwcid="@Else">
+	<h2>Edit Movie Data</h2>
+	<div jwcid="@MediaSummaryBox" isImage="ognl:false"/>
+	<div jwcid="@MediaTipsBox" isDocument="ognl:false"/>
+ 	<div jwcid="@MediaCopyrightBox"/>
+    <div jwcid="mediaUsePermsBox@MediaUsePermissionBox"/>
+	<div jwcid="@MediaOtherCreditsBox"/>
+	<div jwcid="@MediaNodeAttachmentsBox"/>            
+  <div id="mediacontent" class="whitebox"> <a name="mediacontent"></a><a jwcid="@HelpLink" helpName="Media Content" pageName="MovieHelpMessagesPage"/>
+            <h4>Movie Content</h4>
+            <div jwcid="@MediaTitleField"/>
+            <div jwcid="@MediaDescriptionArea"/>
+			<ul jwcid="@ImageMovieContentCheckboxes"/>                
+            <div class="spacer">&nbsp;</div>
+			<h5 id="subjecttrigger"  class="triup" onclick="showbranch('subject', 'show', 'hide'); showbranch('subjecttrigger', 'tridown', 'triup')">Subject/Keywords</h5>
+            <div id="subject" class="hide">                
+                <div jwcid="instructionsBlock@Block">
+                <p class="instructions">Some movies may be suitable to illustrate a particular subject; e.g., a 
+                    video of a mating ritual is an illustration of Neurobiology & Behavior, a stop-frame sequence 
+                    of a plant growing or a pupa emerging is an illustration of Life History & Development, etc. 
+                    Some subjects are assigned automatically; e. g., if you select Body Part above, your movie will 
+                    be associated with the Morphology & Anatomy subject; if you select Fossil under Specimen 
+                    Information, your movie will be associated with the Paleobiology subject. You can select 
+                    additional subjects below, but be sure to limit your selection to topics for which your movie 
+                    has special relevance. Additional subjects that are not covered in this list can be entered in
+                    the Key Words field below.</p>
+                </div>
+				<div jwcid="@Keywords" keywords="ognl:movie.keywords" instructionsBlock="ognl:components.instructionsBlock"/>
+            </div>
+	    	            </div>    
+	<div jwcid="@MediaPlaceTimeBox"/> 
+	<div jwcid="@MediaSpecimenBox"/>
+	<div jwcid="@MediaCommentsBox"/>
+	<div jwcid="@MediaAltTextBox"/>    
+	<div id="mediatype" class="whitebox"> <a name="mediatype"></a>            
+    	<a jwcid="@HelpLink" pageName="MovieHelpMessagesPage" helpName="Movie Type" />
+    	<h4>Movie Type</h4>
+        <div class="indentleft">   
+        	<select jwcid="@PropertySelection" model="ognl:@org.tolweb.tapestry.EditMovieData@MOVIETYPE_MODEL" value="ognl:imageTypeString"/>
+			<p class="inline">
+                <label><input jwcid="@Checkbox" value="ognl:movie.artisticInterpretation" name="" type="checkbox"/>
+			Fiction/Performance/Artistic representation</label>
+       </p>      <div class="spacer">&nbsp;</div>
+        <label><span class="textarealabel2">Technical Information</span>
+             <textarea jwcid="@TextArea" value="ognl:movie.technicalInformation" name="$TextArea$1" cols="35" rows="3"></textarea>
+		</label>
+        <div class="indentleft"><p>   <label> Running time
+        	<input jwcid="@TextField" value="ognl:movie.runningTime" size="10"/>        </label>
+    		</p>
+        </div>
+        <div jwcid="@MediaLanguages" languages="ognl:movie.languages"/>
+      </div>
+	</div>
+	<div jwcid="@MediaEditPrivilegesNotesSubmit"/>
+</span>
+</html>
+<div jwcid="rightSideBlock@Block">
+       <a jwcid="@PageLink" page="MovieHelpMessagesPage" id="viewallhelp" target="MovieHelpWindow">View All Edit Movie Data Help Topics</a>
+   </div>
+   <div jwcid="saveInstructionsBlock@Block">
+		<span jwcid="@MediaSaveInstructions"/>
+   </div>
+   <div jwcid="tocBlock@Block">
+     	<h3>Movie Data Sections</h3>
+	    <ul>
+        <li><a href="#copyright">Copyright Information</a></li>
+        <li id="mediauselink"><a href="#mediause">Use Permitted by Copyright Owner</a></li>
+        <li><a href="#credits">Other Credits</a></li>
+        <li><a href="#attach">Attached to Group(s)</a></li>
+
+        <li><a href="#mediacontent">Movie Content</a></li>
+        <li><a href="#location">Place &amp; Time</a></li>
+        <li><a href="#specimen">Specimen Information</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#alttext">Alternative Text</a></li>
+
+        <li><a href="#mediatype">Movie Type/Technical Information</a></li>
+        <li><a href="#privileges">Editing Privileges</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#subm">Submit Movie Data</a></li>
+    </ul>
+   </div>

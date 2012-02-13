@@ -1,0 +1,27 @@
+<form jwcid="@Form" success="listener:loginSubmit">
+    <table>
+        <span jwcid="@If" condition="ognl:error != null">
+	        <tr>
+	            <td colspan="2"><span class="error"><span jwcid="@Insert" value="ognl:error"/>
+                <span jwcid="@If" condition="ognl:wrongPassword">If you would like us to send a new password<br> to your email address, please <a jwcid="@DirectLink" listener="ognl:listeners.emailPassword">click here</a>.</span></span></td>
+	        </tr>
+        </span>
+            <tr>
+                <th><span jwcid="@FieldLabel" field="ognl:components.emailField" raw="ognl:true">Email:</span></th>
+                <td><input jwcid="emailField@TextField" value="ognl:email" size="18"
+                displayName="ognl:displayNameCode" validators="validators:required" />
+            </tr>
+            <tr>
+                <th><span jwcid="@FieldLabel" field="ognl:components.passwordField">Password:</span></th>
+                <td><input jwcid="passwordField@TextField" value="ognl:password" size="18"
+                displayName="Password" validators="validators:required" hidden="ognl:true" />
+            </tr>
+        <tr>
+            <td colspan="2"><input jwcid="@Checkbox" value="ognl:rememberMe"/> Remember me on this computer</td>
+        </tr>	
+        <tr>                    
+            <td class="right" colspan="2">
+            <input jwcid="@Submit" name="Submit" value="Submit"/></td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,19 @@
+<html jwcid="@ScientificMaterialsWrapper" title="Open Publication Batches">
+	<form jwcid="@Form">
+	<span jwcid="@For" source="ognl:openBatches" value="ognl:batchToBePublished" volatile="ognl:true">
+	<div class="publish">
+ 		<p>Batch: <a href="#" jwcid="@ExternalLink" page="EditorSubmitPublication" parameters="ognl:{publicationBatchID}">
+ 		<span jwcid="@Insert" value="ognl:publicationBatchID"/></a> 
+ 		</p>	
+        <p>Submitter: <span jwcid="@If" condition="ognl:batchToBePublished.submittedContributor">
+        <span jwcid="@Insert" value="ognl:batchToBePublished.submittedContributor.displayName"/>
+        </span>
+	    </p>
+        <p>Submission Date:
+            <span jwcid="@Insert" value="ognl:batchToBePublished.submissionDate"/>
+        </p>
+        <span jwcid="@UploadedPagesDisplay" isEditor="ognl:true" uploadedPages="ognl:page.currentSortedUploadedPages"/>
+    </div>
+    </span>
+    </form>
+</html>

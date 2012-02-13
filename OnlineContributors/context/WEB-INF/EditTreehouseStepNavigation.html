@@ -1,0 +1,34 @@
+<div class="trhseditstepstop">
+	<span jwcid="@If" condition="ognl:!page.pageName.equals('TreehouseEditPublish')">
+		<p class="checktoedit">Check <input jwcid="@Checkbox" value="ognl:page.stepIsComplete" />
+		 when this step is complete.
+		</p>
+    </span>
+	<ol class="editstepslist">
+        <li class="noborder">Edit steps:</li>
+		<li jwcid="@Any" element="li" class="ognl:page.aboutProgressClassname"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_aboutpage)" onmouseout="if(hideTip!=null) hideTip()" class="ognl:page.aboutProgressClassnameA" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToAbout"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+		<li jwcid="@Any" element="li" class="ognl:page.contentProgressClassname"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_pagecontent)" onmouseout="if(hideTip!=null) hideTip()" class="ognl:page.contentProgressClassnameA" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToContent"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+        <span jwcid="@If" condition="ognl:page.isWebquest" element="ognl:null">
+            <li jwcid="@Any" element="li" class="ognl:page.processProgressClassname"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_wqprocess)" onmouseout="if(hideTip!=null) hideTip()" class="ognl:page.processProgressClassnameA" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToProcess"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+            <li jwcid="@Any" element="li" class="ognl:page.conclusionProgressClassname"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_wqevalconc)" onmouseout="if(hideTip!=null) hideTip()" class="ognl:page.conclusionProgressClassnameA" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToConclusion"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+            <li jwcid="@Any" element="li" class="ognl:page.teacherPageProgressClassname"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_wqteacherpage)" onmouseout="if(hideTip!=null) hideTip()" class="ognl:page.teacherPageProgressClassnameA" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToTeacherPage"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+        </span>
+		<li jwcid="@Any" element="li" class="ognl:page.mediaProgressClassname"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_uploadeditmedia)" onmouseout="if(hideTip!=null) hideTip()" class="ognl:page.mediaProgressClassnameA" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToMedia"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+		<li jwcid="@Any" element="li" class="ognl:page.refsProgressClassname"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_refsinternetinfo)" onmouseout="if(hideTip!=null) hideTip()" class="ognl:page.refsProgressClassnameA" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToRefs"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+		<li jwcid="@Any" element="li" class="ognl:page.learningProgressClassname"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_learninginfo)" onmouseout="if(hideTip!=null) hideTip()" class="ognl:page.learningProgressClassnameA" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToLearning"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+        <span jwcid="@If" condition="ognl:page.hasSupportMaterials">
+            <li jwcid="@Any" element="li" class="ognl:page.supportProgressClassname"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_trsupportmats)" onmouseout="if(hideTip!=null) hideTip()" class="ognl:page.supportProgressClassnameA" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToSupport"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+        </span>
+        <span jwcid="@If" condition="ognl:page.hasPortfolio" element="ognl:null">
+            <li jwcid="@Any" element="li" class="ognl:page.portfolioProgressClassname"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_portfoliopages)" onmouseout="if(hideTip!=null) hideTip()" class="ognl:page.portfolioProgressClassnameA" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToPortfolio"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+        </span>
+		<li jwcid="@Any" element="li" class="ognl:page.attachProgressClassname"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_attachtogroup)" onmouseout="if(hideTip!=null) hideTip()" class="ognl:page.attachProgressClassnameA" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToAttachments"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+		<li jwcid="@Any" element="li" class="ognl:page.notesProgressClassname"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_notes)" onmouseout="if(hideTip!=null) hideTip()" class="ognl:page.notesProgressClassnameA" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToNotes"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+		<li class="needtoedit"><a onmouseover="if(doTooltip!=null) doTooltip(event,step_publish)" onmouseout="if(hideTip!=null) hideTip()" jwcid="@LinkSubmit" listener="ognl:page.listeners.goToPublish"><span jwcid="@Insert" value="ognl:beans.counter.nextStepNumber"/></a></li>
+	</ol>                     
+</div>
+<script jwcid="@Script" script="GlossaryTerms.script"/>
+<script jwcid="@Script" script="EditTreehouseVars.script" pageContent="ognl:page.isWebquest ? 'Introduction/Task' : 'Page Content'"/>
+<span jwcid="@If" condition="ognl:page.selectedAnchor != null"> 
+    <script jwcid="@Script" script="JumpToAnchor.script" anchor="ognl:page.selectedAnchor"/>
+</span>    

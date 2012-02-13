@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+	<body>
+	<![CDATA[		
+    function reloadOpener() {
+    	var openerDoc = window.opener.document;
+    	if (openerDoc != null) {
+	    	openerDoc.location.reload();
+	    }
+    }    
+	]]>    
+    </body>
+	<initialization>
+		reloadOpener();
+	</initialization>
+</script>

@@ -1,0 +1,67 @@
+<html jwcid="@Wrapper" title="Tree of Life Contributor Registration">
+	<p class="clear" jwcid="@If" condition="ognl:isFromRegistration && emailOtherRegistrationNotice" element="p">
+        Thank you for registering a new ToL contributor.  They will
+        receive an email with instructions on how to login and begin contributing pages.
+    </p>
+    <p class="clear" jwcid="@Else" element="p">Thanks for registering as a ToL <span jwcid="@Insert" value="ognl:contributor.unapprovedContributorTypeString"/> contributor. A ToL editor 
+        will review your registration and contact you to discuss your contribution.</p>        
+    <p>Here is the information you submitted:</p>
+    <ul class="confirmreg">
+        <li><span jwcid="@Insert" value="ognl:contributor.displayName"/></li>
+        <li><span jwcid="@Insert" value="ognl:contributor.email"/> -- <span jwcid="@If" condition="ognl:contributor.dontShowEmail">Do not </span>publish</li>
+        <li><span jwcid="@Insert" value="ognl:contributor.homepage"/></li>
+        <li><span jwcid="@Insert" value="ognl:contributor.institution"/></li>
+        <li><span jwcid="@Insert" value="ognl:contributor.address" raw="ognl:true"/></li>
+        <li><span jwcid="@Insert" value="ognl:contributor.bio" raw="ognl:true"/></li>
+        <li><img jwcid="@ContributorImage" contributor="ognl:contributor"/></li>
+        <li><span jwcid="@Insert" value="ognl:contributor.plans" raw="ognl:true"/></li>
+        <span jwcid="@If" condition="ognl:isGeneralScientificContributor">
+	        <li><span jwcid="@Insert" value="ognl:contributor.qualifications" raw="ognl:true"/></li>
+	        <li><span jwcid="@Insert" value="ognl:contributor.publications" raw="ognl:true"/></li>
+        </span>
+        <span jwcid="@If" condition="ognl:isCoreScientificContributor">
+            <span jwcid="@If" condition="ognl:nodesSet">
+            	<li><span jwcid="@Insert" value="ognl:nodesString"/></li>
+			</span>
+	        <li><span jwcid="@Insert" value="ognl:contributor.assignmentApproval" raw="ognl:true"/></li>
+	        <li>I am <span jwcid="@If" condition="ognl:!contributor.willingToCoordinate">not </span>willing to coordinate the groups assigned to me</li>
+            <li><span jwcid="@Insert" value="ognl:contributor.coordinationComments" raw="ognl:true"/></li>
+            <li><span jwcid="@Insert" value="ognl:contributor.coAuthors" raw="ognl:true"/></li>
+        </span>
+        <li><span jwcid="@Insert" value="ognl:contributor.phone"/></li>
+        <li><span jwcid="@Insert" value="ognl:contributor.fax"/></li>
+  </ul>
+    <p>Don't worry if there are errors in the information above. You will be able 
+        to revise this information <span jwcid="@If" condition="ognl:isFromRegistration && !emailOtherRegistrationNotice">
+        once your registration has been confirmed by
+        a ToL editor</span>. If there are grave errors that need to be corrected immediately 
+        (e.g., an incorrect e-mail address), you can send an e-mail message with 
+        the correct information to 
+        <script language=javascript>
+    var e1 = "treegrow";
+    var e2 = "tolweb";
+    var e3 = "org";
+    document.write("<a href=\"" + "m" + "a" + "i" + "l" + "t" + "o:")
+    document.write(e1 + "@" + e2 + "." + e3 + "\">")
+    document.write(e1 + "@" + e2 + "." + e3 + "</a>.")
+		</script>
+	</p>
+	<span jwcid="@If" condition="ognl:isFromRegistration && !emailOtherRegistrationNotice">
+		<span jwcid="@MailBlock" from="treegrow@tolweb.org" smtp="localhost" subject="ognl:'New ' + contributor.unapprovedContributorTypeString + ' contributor registration'" to="ognl:{configuration.notesEditorEmail}" html="ognl:false">
+		A new contributor has signed up for <span jwcid="@Insert" value="ognl:contributor.unapprovedContributorTypeString"/> contributions to the ToL.
+		Once you are logged in, you may view their information at the following URL:
+		    
+		http://tolweb.org/onlinecontributors/app?service=external&page=ViewContributorConfirmation&sp=<span jwcid="@Insert" value="ognl:contributor.id"/>    
+		</span>
+	</span>
+	<span jwcid="@If" condition="ognl:isFromRegistration && emailOtherRegistrationNotice">
+		<span jwcid="@If" condition="ognl:fromWorkingNode != null">
+            <p>
+            You may now return to the page you were viewing: 
+            <a jwcid="@TolPageLink" isWorking="ognl:true" nodeId="ognl:fromWorkingNode.nodeId" groupName="ognl:fromWorkingNode.name"><span jwcid="@Insert" value="ognl:fromWorkingNode.name"/></a>
+            </p>
+        </span>     
+		<span jwcid="@NewScientificContributorEmail" contributor="ognl:contributor" nodesString="ognl:nodesString"
+		  editingContributor="ognl:editingContributor"/>
+	</span>
+</html>

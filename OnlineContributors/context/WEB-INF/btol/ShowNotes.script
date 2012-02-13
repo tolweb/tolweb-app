@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE script PUBLIC
+	"-//Apache Software Foundation//Tapestry Script Specification 3.0//EN"
+	"http://jakarta.apache.org/tapestry/dtd/Script_3_0.dtd">
+<script>
+	<input-symbol key="tableId" class="java.lang.String"/>
+	<input-symbol key="showNotes" class="java.lang.Boolean"/>
+	<body>
+	<![CDATA[
+		function showHideNotes(selected) {
+			var newDisplayStyle = selected ? 'block' : 'none';
+			updateStyles('th', 'NotesColumnHeader', newDisplayStyle);
+			updateStyles('td', 'NotesColumnValue', newDisplayStyle);
+		}
+		
+		function updateStyles(tagName, className, newDisplayStyle) {
+			var tableElement = document.getElementById('${tableId}');
+			var tharr = document.getElementsByTagName(tagName);			
+			for (var i = 0; i < tharr.length; i++) {
+				var currentTh = tharr[i];
+				if (currentTh.getAttribute('class') == className) {
+					currentTh.style.display = newDisplayStyle;
+				}
+			}		
+		}
+	]]>
+	</body>	
+	<initialization>
+		if (${showNotes}) {
+			updateStyles('th', 'NotesColumnHeader', 'block');
+			updateStyles('td', 'NotesColumnValue', 'block');
+		}
+	</initialization>
+</script>

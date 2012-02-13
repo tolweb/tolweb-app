@@ -1,0 +1,41 @@
+<html jwcid="@btol/ProjectWrapper" title="Edit Gene Fragment">
+	<span jwcid="@If" condition="ognl:wasSaved">
+        <h2 class="clear">Gene Fragment successfully saved</h2>
+        You may now return to your edit form, reload your browser and it will appear in the list.
+        <p class="center">
+            <a href="javascript:window.close();">Close Window</a>
+        </p>
+    </span>
+    <span jwcid="@Else">
+	<h2 class="clear">Edit Gene Fragment</h2>
+    <span jwcid="@If" condition="ognl:validationDelegate.hasErrors">
+        <h3 class="error"><span jwcid="@Delegator" delegate="ognl:validationDelegate.firstError"/></h3>
+    </span>
+    <span jwcid="@Else">
+    	<p>Fields marked with a '*' are required.</p>        
+    </span>    
+    <form jwcid="@Form" success="listener:saveGeneFragment" delegate="ognl:validationDelegate" clientValidationEnabled="ognl:true">
+		<ul class="nodisc">
+            <li><span jwcid="@FieldLabel" field="component:nameField">Name</span>&nbsp;
+                <input jwcid="nameField@TextField" value="prop:geneFragment.name"
+                validators="validators:required" displayName="Name*"/>
+			</li>
+            <li><span jwcid="@FieldLabel" field="component:abbrevNameField">Abbreviated Name</span>&nbsp;
+                <input jwcid="abbrevNameField@TextField" value="prop:geneFragment.abbreviatedName"
+                displayName="Abbreviated Name"/>
+			</li>   
+            <li>Gene* &nbsp;<input jwcid="@PropertySelection" model="ognl:geneModel" 
+               value="ognl:geneFragment.gene"/>&nbsp;
+            </li>                     
+            <li>Important for <span jwcid="@Insert" value="prop:project.name"/>
+                <input jwcid="@Checkbox" value="prop:geneFragment.important"/>
+            </li>
+            <li>Required for Tier&nbsp;<input jwcid="@PropertySelection" model="ognl:requiredForTierModel" 
+               value="ognl:geneFragment.requiredForTier"/>&nbsp;</li>
+            <li>
+                <input jwcid="@Submit" value="Save Gene Fragment"/>
+            </li>
+        </ul>
+	</form>
+    </span>
+</html>
