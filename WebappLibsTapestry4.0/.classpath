@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="activation.jar"/>
+	<classpathentry exported="true" kind="lib" path="antlr-2.7.5H3.jar"/>
+	<classpathentry exported="true" kind="lib" path="aopalliance.jar"/>
+	<classpathentry exported="true" kind="lib" path="asm.jar"/>
+	<classpathentry exported="true" kind="lib" path="asm-attrs.jar"/>
+	<classpathentry exported="true" kind="lib" path="bsf-2.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="cglib-2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-codec-1.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-dbcp-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-logging-1.0.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-pool-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="concurrent-1.3.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="connector.jar"/>
+	<classpathentry exported="true" kind="lib" path="ehcache-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="hibernate3.jar"/>
+	<classpathentry exported="true" kind="lib" path="ognl-2.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="jaas.jar"/>
+	<classpathentry exported="true" kind="lib" path="javassist-3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="jdbc2_0-stdext.jar"/>
+	<classpathentry exported="true" kind="lib" path="jgroups-2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="jta.jar"/>
+	<classpathentry exported="true" kind="lib" path="mail.jar"/>
+	<classpathentry exported="true" kind="lib" path="mysql-connector-java-3.1.10-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="odmg-3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="oro-2.0.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="oscache-2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="proxool-0.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="servlet.jar"/>
+	<classpathentry exported="true" kind="lib" path="spring.jar"/>
+	<classpathentry exported="true" kind="lib" path="tolwebutils.jar"/>
+	<classpathentry exported="true" kind="lib" path="xmlrpc-1.2-b1.jar"/>
+	<classpathentry exported="true" kind="lib" path="junit-4.0.jar" sourcepath="/Users/lenards/.m2/repository/junit/junit/4.0/junit-4.0-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="tolwebhibernate.jar"/>
+	<classpathentry exported="true" kind="lib" path="tapestry-annotations-4.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="hivemind-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="hivemind-lib-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-fileupload-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-io-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="jaxen-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="xalan.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-beanutils-1.7.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-collections-3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="dom4j-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-lang-2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="log4j-1.2.9.jar"/>
+	<classpathentry exported="true" kind="lib" path="tapestry-4.0.2.jar" sourcepath="/home/dmandel/workspace/tapestrysrc"/>
+	<classpathentry exported="true" kind="lib" path="tapestry-contrib-4.0.2.jar"/>
+	<classpathentry kind="lib" path="tapestry-spring-0.1.2.jar"/>
+	<classpathentry kind="lib" path="tapestry-flash-0.1.1.jar"/>
+	<classpathentry kind="lib" path="tapestry-prop.jar"/>
+	<classpathentry exported="true" kind="lib" path="tacos-danny.jar"/>
+	<classpathentry exported="true" kind="lib" path="xml-writer.jar" sourcepath="/XMLWriter"/>
+	<classpathentry exported="true" kind="lib" path="rome-0.9.jar"/>
+	<classpathentry exported="true" kind="lib" path="content-0.4.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="nekohtml.jar"/>
+	<classpathentry exported="true" kind="lib" path="xom-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="mediarss-0.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="commons-digester-1.8.jar" sourcepath="/home/dmandel/workspace/commons-digester-1.8-src/src"/>
+	<classpathentry exported="true" kind="lib" path="commons-betwixt-0.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="ToLEditor.jar"/>
+	<classpathentry exported="true" kind="lib" path="ToLSupportFiles.jar"/>
+	<classpathentry exported="true" kind="lib" path="resolver.jar"/>
+	<classpathentry exported="true" kind="lib" path="serializer.jar"/>
+	<classpathentry exported="true" kind="lib" path="xercesImpl.jar"/>
+	<classpathentry exported="true" kind="lib" path="xml-apis.jar"/>
+	<classpathentry exported="true" kind="lib" path="mime-util-1.0x.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

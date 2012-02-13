@@ -1,0 +1,36 @@
+<project name="commonmacros">
+	<path id="tasks.classpath">
+		<fileset dir="${basedir}/../WebappLibsTapestry4.0/xdocletjars">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	<taskdef name="ssh" classname="com.sshtools.ant.Ssh">
+        <classpath refid="tasks.classpath"/>
+	</taskdef>
+    <taskdef name="password" classname="info.waynegrant.ant.PasswordTask">
+        <classpath refid="tasks.classpath"/>
+    </taskdef>	
+	<macrodef name="deleteexistingthencopy">
+		<attribute name="localfile" description="the path to the local file to send to the server"/>
+		<attribute name="todir" description="the full server path to the directory where the file will be copied"/>
+		<attribute name="filetodelete" description="the full server path to the existing file"/>
+		<sequential>
+			<echo message="username = ${username}, password=${password}"/>
+			<copy file="@{localfile}" tofile="@{localfile}.copy"/>
+			<!--
+			<ssh host="tolweb.org" username="${username}" password="${password}">
+				<exec cmd="rm -rf @{filetodelete}" />
+			</ssh>    	
+			-->
+	        <scp file="@{localfile}.copy" todir="@{todir}" trust="yes" verbose="true"/>
+		</sequential>
+	</macrodef>
+	<target name="password" unless="password">
+    	<property name="host" value="tolweb.org"/>		
+    	<password usernameproperty="username"/>
+        <property name="HostPrefix" value="${username}:${password}@${host}:"/>
+        <property name="PlayHostPrefix" value="${username}:${password}@${host}:"/>    	
+        <property name="NewSystemHostPrefix" value="${username}:${password}@${host}:"/>
+	</target>	
+</project>
+
