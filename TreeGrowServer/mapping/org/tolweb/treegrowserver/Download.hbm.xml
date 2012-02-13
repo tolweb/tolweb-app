@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.treegrowserver.Download"
+        table="Downloads"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="downloadId"
+            column="download_id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <many-to-one
+            name="contributor"
+            class="org.tolweb.treegrow.main.Contributor"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="contributor_id"
+        />
+
+        <property
+            name="downloadDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="date_time"
+        />
+
+        <property
+            name="ipAddress"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="ip"
+        />
+
+        <property
+            name="isActive"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="active"
+        />
+
+        <many-to-one
+            name="rootNode"
+            class="org.tolweb.hibernate.MappedNode"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="rootnode_id"
+        />
+
+        <set
+            name="downloadedNodes"
+            table="Download_Nodes"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="download_id"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.treegrowserver.DownloadNode"
+              >
+        <property
+            name="active"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="active"
+        />
+
+        <property
+            name="wasDeleted"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="deleted"
+        />
+
+        <property
+            name="nodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="node_id"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Download.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

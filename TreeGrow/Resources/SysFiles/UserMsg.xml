@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usermessages>
+    <message name="ACC_LINK_TOOLTIP">
+        <text><![CDATA[<html>         Select the node to which the accessory page is attached and then select the accessory page you would like to link to. <p><p> Note that you can only link to accessory pages that are attached to containing groups of the current group.  If you would like to have an accessory page linked from the pages of a set of groups but not to the page of the groups' containing group, attach it to the containing group and then deselect the box in the <b><i>Show</b></i> column of the <b><i>Accessory Pages</b></i> list.                 ]]></text>
+    </message>
+    <message name="ACC_PAGES_TOOLTIP">
+        <text><![CDATA[<html> Use accessory pages to accommodate content that won't fit on ToL branch and leaf pages.  Links to accessory pages will be available in the <b><i>Extras</b></i>  menu of the branch or leaf page that the accessory page is attached to. <p><p> Use the <b><i>Add</b></i> button to create new accessory pages or new links to accessory pages that are already attached to another ToL branch page.  Use the <b><i>Delete</b></i> button to get rid of an accessory page.                 ]]></text>
+    </message>
+    <message name="ACTION_DELETE_UNDELETABLE_NODE">
+        <text><![CDATA[<html> 100. Sorry, can't let you do that.   This would cause the node for the containing group to be deleted.   However, that node has information attached to it (e.g., a page),  which protects it from being deleted without further consideration.   You can make the containing group node deletable by first deleting  the objects attached to it, or by moving them to other nodes. </html>]]></text>
+    </message>
+    <message name="ADD_IMAGE_TOOLTIP">
+        <text><![CDATA[<html> To add an image to one of your text sections, put the cursor in the position where you want the image to be shown and click the <b><i>Add Image</b></i> button.  You will then be able to select an image to be displayed in the specified position.  <p><p> In order for images to be available for selection, they first need to be added to the  <b><i>Images Pool</i></b> for this branch.  You can do this in the <b><i>Images Window</i></b>, which is available from the <b><i>Window</i></b> menu.         ]]></text>
+    </message>
+    <message name="ANCESTOR_NOT_UPLOADED">
+        <text><![CDATA[<html> 101. You need to upload $%ancestor_name%$<br> before being able to upload the ($%node_name%$) subtree.</html>]]></text>
+    </message>
+    <message name="APPLICATION_CLOSE">
+        <text><![CDATA[<html> 102.  Oh My! An unknown error occurred.<br>  To prevent further errors, please close TreeGrow and open it again.<br>   If this doesn't solve the problem, please send a bug report to treegrow@tolweb.org<br>  describing the circumstances under which it occurs.</html>]]></text>
+    </message>
+    <message name="APPROVAL_PENDING">
+        <text><![CDATA[ 103. This branch has beem submitted for publication. It cannot be downloaded until it is released by the reviewing editor.]]></text>
+    </message>
+    <message name="APPROVAL_PENDING_EDITING_PRIVILEGES">
+        <text><![CDATA[ 104. This branch has been submitted to you for publication. Please review and publish or request revisions from the authors.]]></text>
+    </message>
+    <message name="ATTACH_ERROR">
+        <text><![CDATA[<html> 105. There was a problem attaching the image.<br>  Sometimes it helps to close a window, reopen it, and then try again.<br>   Closing and reopening TreeGrow may also fix the problem.<br>  If this error persists, please send a bug report to treegrow@tolweb.org<br>  describing the circumstances under which it occurs.</html>]]></text>
+    </message>
+    <message name="ATTACH_SUCCESSFUL">
+        <text><![CDATA[<html>106. The image has been attached.</html>]]></text>
+    </message>
+    <message name="BAD_FILE_UPLOAD">
+        <text><![CDATA[<html> 107. The file you are trying to open is out of date.<br>   You may have a newer version on another computer.<br>   In order to edit this branch, you need to find the newer version,<br>  or simply download the current version from the server.</html>]]></text>
+    </message>
+    <message name="BAD_PASSWORD">
+        <text><![CDATA[ 108. There's something wrong with your password.  Please contact treegrow@tolweb.org for assistance.]]></text>
+    </message>
+    <message name="CANCEL_NO_CHECKIN">
+        <text><![CDATA[ 109. I'll check in later, thanks]]></text>
+    </message>
+    <message name="CANCEL_NO_SUBMIT">
+        <text><![CDATA[ 110. Cancel and don't upload]]></text>
+    </message>
+    <message name="CANT_CHECK_IN">
+        <text><![CDATA[<html> 111. There was a problem checking in the branch.<br>  Please close TreeGrow, restart it, and then try again.<br> If this doesn't solve the problem, please send a bug report to treegrow@tolweb.org<br>  describing the circumstances under which it occurs.</html>]]></text>
+    </message>
+    <message name="CANT_CONFIRM_CURR_VER">
+        <text><![CDATA[<html> 112. TreeGrow usually connects to the ToL Database to make sure<br>  the files you are working on are up to date.<br>   Since there is no network connection, this check cannot be performed.<br>   If you are sure you don't have newer versions on another computer, it's safe to continue.<br> Do you wish to continue?</html>]]></text>
+    </message>
+    <message name="CHANGE_PASSWORDS_NO_MATCH">
+        <text><![CDATA[<html> 299. The new passwords you have entered do not match.  Please check your typing and try again</html>]]></text>
+    </message>
+    <message name="CHECKIN_ERROR">
+        <text><![CDATA[<html> 113. There was a problem checking in the branch.<br>  Please close TreeGrow, restart it, and then try again.<br> If this doesn't solve the problem, please send a bug report to treegrow@tolweb.org<br> describing the circumstances under which it occurs.</html>]]></text>
+    </message>
+    <message name="CHECKIN_NO_UPLOAD">
+        <text><![CDATA[114. Don't upload recent changes, just check in the file.  (Note: changes that have not been uploaded will be lost.)]]></text>
+    </message>
+    <message name="CHECKIN_SUBTREE_NO_UPLOAD">
+        <text><![CDATA[<html> 116. Don't upload recent changes, just check in the subtree.<br>   (Note: changes that have not been uploaded will be lost.)</html>]]></text>
+    </message>
+    <message name="CHECKIN_SUCCESS">
+        <text><![CDATA[<html> 117. $%group%$ checked in. Thank you!</html>]]></text>
+    </message>
+    <message name="CHECK_IN_CHANGES">
+        <text><![CDATA[<html> 118. Do you want to check in the file?</html>]]></text>
+    </message>
+    <message name="CHKD_BY_ELSE">
+        <text><![CDATA[<html> 119. This branch has been checked out by $%user%$ on $%time%$.<br>This branch cannot be downloaded until it is checked back in.</html>]]></text>
+    </message>
+    <message name="CHKD_BY_U_INTERNAL">
+        <text><![CDATA[<html> 120. This node is included in your download of the $%nodename%$ branch at depth $%depth%$.<br> You need to check in $%nodename%$ before you can download this subtree by itself.</html>]]></text>
+    </message>
+    <message name="CHK_UPLOAD_CHNGS">
+        <text><![CDATA[ 121. Do you want to upload the changes and check in the file?]]></text>
+    </message>
+    <message name="CHOOSE_FILE_NAME">
+        <text><![CDATA[ 122. Please choose a file name]]></text>
+    </message>
+    <message name="CONFIDENCE_TOOLTIP">
+        <text><![CDATA[<html>           If you select <b><i>incertae sedis in putative position</i></b>, the branch leading to the node will be marked with a question mark on the ToL page for the containing group. <p><p> If you select <b><i>incertae sedis position unspecified</i></b>, the group will be clipped from its position and shown <u>below the tree</u> on the ToL page for the containing group. <p><p> Please note that <b><i>incertae sedis position unspecified</i></b> nodes are subject to restrictions with respect to their position in the tree.  This is because they are not truly part of the tree structure but are placed in a given position only provisionally.  Since such nodes are not valid descendents of their provisional parent nodes, <b><i>incertae sedis position unspecified</i></b>  nodes cannot be part of a dichotomy, i.e., they always need to have at least  two sibling nodes.                 ]]></text>
+    </message>
+    <message name="CONTRIBUTORS_ASSIGNMENT_TOOLTIP">
+        <text><![CDATA[<html>         Contributors should be assigned to the group to which they are expected to contribute.  You can assign contributors to any node within your  realm of authority.  If you would like to have a person assigned to a node for which you do not have assignment privileges, please send a request to<br> treegrow@tolweb.org, and we will take care of it for you. <p><p> By default, <b><i>TreeGrow</i></b> will assign the basal node of the current download  to any new contributors you add to the ToL database.  You can then adjust group assignments as needed. 
+<p><p> 
+A group assignment will provide a person with the privilege to download 
+and edit the assigned node and its descendants, as well as making 
+group assignments to other people within their realm of authority.  
+Group assignments should therefore be made only for ToL authors and 
+coordinators and not for contributors of other materials like images and other media. </html>]]></text>
+    </message>
+    <message name="CONTRIBUTORS_CONTACT_TOOLTIP">
+        <text><![CDATA[<html>         We usually print the address of ToL page authors at the bottom of the page.  If you would  rather not have your address published, you can select <b><i>Do not print on web pages</i></b>, and  we will then only print the name of your Institution as entered in the <b><i>Institution</i></b> field. <p><p> We encourage ToL page authors to provide their e-mail addresses, so people can contact them if they have questions about their work.  We now implement javascript-mediated obfuscation of e-mail addresses when they are printed on ToL pages, so spammers will have a hard time harvesting e-mail addresses from the ToL site.  If you do not want your e-mail address to be printed on ToL pages at all, you can select <b><i>Do not print on web pages</i></b>, and we will honor your request.                                       ]]></text>
+    </message>
+    <message name="CONTRIBUTORS_WINDOW_TOOLTIP">
+        <text><![CDATA[<html> This window provides an overview of all the people that are potential contributors to the nodes included in the current download.  It includes authors of pages attached
+to the nodes as well as coordinators for containing groups all the way down to
+ Life on Earth.  In addition, images-only contributors are listed here, at least for the time being.  <p><p> 
+You can add additional contributors to this <b><i>Contributor Pool</i></b> either by 
+establishing a new entry for a person who is not yet in the ToL contributors database 
+(<b><i>Enter New Contributor</i></b>), or you can fetch registered ToL contributors 
+from the ToL Database (<b><i>Fetch Contributor from Database</i></b>). You will need 
+a network connection to do the latter. 
+<p><p> 
+Once a contributor has been added to the <b><i>Contributor Pool</i></b>, you will be able 
+to simply select this person as a contributor in a variety of different places, e.g., as page authors or as copyright owners. <p><p>
+Any contributors you add will remain in this <b><i>Contributor Pool</i></b> as long as you 
+have the current branch downloaded.  However, when you check in the branch, 
+the <b><i>Contributor Pool</i></b> will be reset to contain only people who are assigned to nodes 
+in a given branch or who are already selected as contributors of materials attached to nodes in the branch.         ]]></text>
+    </message>
+    <message name="CONTRIBUTOR_INFO_NEEDED">
+        <text><![CDATA[<html> 295. Please choose a copyright owner from the list or enter Copyright Holder information manually.</html>]]></text>
+    </message>
+    <message name="COULDNT_PUSH_PUBLIC">
+        <text><![CDATA[<html> 123. There was a problem publishing this branch.<br>Please restart the application and try again.</html>]]></text>
+    </message>
+    <message name="COULDNT_REVERT">
+        <text><![CDATA[<html> 124. Cannot revert.<br> Please restart the application and try again.</html>]]></text>
+    </message>
+    <message name="DELETE_LINKED_ACCESSORY_PAGES">
+        <text><![CDATA[<html> 115. Other ToL pages contain links to the accessory page you want to delete.<br>   If you delete the page here, all of these links will be removed.  <br>Are you sure you want to do this?</html>]]></text>
+    </message>
+    <message name="DELETE_NODE_OK">
+        <text><![CDATA[<html> 125. Is it ok to delete the node $%nodename%$?</html>]]></text>
+    </message>
+    <message name="DESCRIPTION_TOOLTIP">
+        <text><![CDATA[<html><table width="100%"><td width="500">Text entered in the <b><i>Description</i></b> field will be printed as a comment after the taxon name in the tree or taxon list of the page of the containing group.  So keep  it short!         ]]></text>
+    </message>
+    <message name="DESCRIPTION_TOOLTIP_NOPAGE">
+        <text><![CDATA[<html><table width="100%"><td width="500">Descriptions will currently be printed only if a node has a page attached to it.                ]]></text>
+    </message>
+    <message name="DIFF_VER_STILL_DOWNLOAD">
+        <text><![CDATA[<html> 126. Our records show that you have downloaded this branch previously,<br>  but we cannot find the file on your computer. <br> If you don't have a newer version on another computer,<br> it's safe to simply download the current version from the server.<br> Do you want to download?.</html>]]></text>
+    </message>
+    <message name="DOWNLOADING_NEW_VERSION">
+        <text><![CDATA[298.  Downloading the new version of TreeGrow.  Please be patient as this may take a while.]]></text>
+    </message>
+    <message name="DOWNLOAD_AGAIN">
+        <text><![CDATA[<html> 127.  An error occurred during the download.<br> There may have been hickups in the network.<br>  Would you like to try again?</html>]]></text>
+    </message>
+    <message name="DOWNLOAD_TOOLTIP_LOCAL">
+        <text><![CDATA[<html> To begin working on your branch open a file in the Local files panel, or download a new branch  from the ToL Database.  To initiate the download, please type the name of the group you want to work on in the field above, and then click on the <b><i>Find Group</i></b> button.  Then select the group you want to download from the list of names displayed in the box on the left and click on the <b><i>Download</i></b> button.  By default, only the basal page for your group will be downloaded.  If there are additional pages you want to download, you can increase the <b><i>Page depth</i></b> or you can use the <b><i>Fetch Subgroup</b></i> tool in the <b><i>Tree Window</i></b>. ]]></text>
+    </message>
+    <message name="DOWNLOAD_TOOLTIP_NO_LOCAL">
+        <text><![CDATA[<html>To begin working on your branch you need to download the associated materials from the ToL Database.<p><p>  Please type the name of the group you want to work on in the field above, and then click on the <b><i>Find Group</i></b> button.<p><p>Then select the group you want to download from the list of names displayed in the box on the left and click on the <b><i>Download</i></b> button.<p><p>  By default, only the basal page for your group will be downloaded.  If there are additional pages you want to download, you can increase the <b><i>Page depth</i></b> below, or you can use the <b><i>Fetch Subgroup</i></b> tool in the <b><i>Tree Window</i></b>.]]></text>
+    </message>
+    <message name="EDIT_CONTRIBUTORS_TOOLTIP">
+        <text><![CDATA[<html>         This panel lets you edit data for individual contributors.  In order to edit the data, you first need to check them out from the ToL database by clicking on the <b><i>Edit Contributor Data</i></b> button (you need a network connection to do this).  When you are done editing a person's data, please check them back in. <p><p> You will be able to edit the data for any contributor assigned to a node within your realm of authority.  However, we ask that you please not edit other people's data without their explicit permission.               ]]></text>
+    </message>
+    <message name="ERROR_CHK_LOG">
+        <text><![CDATA[<html> 128.  Error Occured. Please close TreeGrow, restart it, and then try again.<br>  If this doesn't solve the problem, please send a bug report to treegrow@tolweb.org <br>describing the circumstances under which it occurs. <br> Tell them there may be more information in the LogFile.</html>]]></text>
+    </message>
+    <message name="ERROR_NEW_VERSION">
+        <text><![CDATA[<html> 129.  There was an error downloading the new version of the application.<br> Don't worry about it now, the application will continue to run normally with the old version.<br> Try updating later.</html>]]></text>
+    </message>
+    <message name="ERROR_NEW_VERSION_CANT_RENAME">
+        <text><![CDATA[<html> 130. There was an error downloading the new version of the application.<br> There may have been hickups in the network. Try downloading again later.<br> The application should continue to run normally with the old version. <br> If it won't start up, please do the following: <ul> <li>If all your recent changes have been uploaded to the ToL server,<br> simply download the new version of TreeGrow manually from<br> http://tolweb.org/tree/sep/mcacquire.html<br>then download your branches from the ToL server.</li> <li>If there are changes in files on your computer that have not yet been uploaded to the ToL server,<br> please contact treegrow@tolweb.org for instructions on how to update without losing your changes.</li> </ul> </html>]]></text>
+    </message>
+    <message name="ERROR_SEARCH">
+        <text><![CDATA[<html> 300.  There was an error searching the image database.  Please contact treegrow@ag.arizona.edu for assistance. ]]></text>
+    </message>
+    <message name="ERROR_UPLOAD_TREE">
+        <text><![CDATA[<html> 131.  Error uploading the branch. $%message%$ please contact treegrow@tolweb.org before doing any more work with this file.</html>]]></text>
+    </message>
+    <message name="ERROR_WRITE_FILE">
+        <text><![CDATA[ 132. There was a problem writing the file to disk.  Please try again or choose another filename.]]></text>
+    </message>
+    <message name="EXPORT_DOWNLOAD">
+        <text><![CDATA[<html> 133.  Export this file and then download the current version from the server?</html>]]></text>
+    </message>
+    <message name="EXPORT_MOVE_RECYCLE">
+        <text><![CDATA[<html> 134.  Export this file and then move it to the recycle bin.<br>  If you want to continue working on this branch, you will need to download the version from the server. <br> Please contact treegrow@tolweb.org for assistance in recovering lost changes from the recycled file.]]></text>
+    </message>
+    <message name="FIRST_TIME_TOOLTIP">
+        <text><![CDATA[<html> When you download a branch of the Tree of Life, the data <br>associated with this branch will be stored in a series of files<br> on your computer.  These files are then modified by <b><i>TreeGrow</b></i><br> as you develop new content for the downloaded group.<p><p>Note that there is no <i><b>Save</b></i> option in <i><b>TreeGrow's File</b></i> menu.<br> This is because any changes you make are immediately<br> saved to the relevant files on your computer.  In order to have<br> these changes reflected in the <i><b>ToL Database</b></i>, you will then<br> periodically upload the revised files to the ToL server.<p><p>
+When you are ready to publish your work or to have it looked<br> at by a ToL editor, go to the <i><b>Upload, preview, submit</b></i> panel<br> of the <i><b>TreeGrow Manager</b></i>.  There you will find a listing of all the<br> ToL pages affected by your revisions and a menu that will allow<br> you to submit these pages to a ToL editor.</html>]]></text>
+    </message>
+    <message name="FOUR_DIGIT_DATE">
+        <text><![CDATA[<html> 135. The date must be a positive 4-digit number</html>]]></text>
+    </message>
+    <message name="HANDBACK_ERROR">
+        <text><![CDATA[<html> 136. There was a problem checking in the branch.<br>Please try again.</html>]]></text>
+    </message>
+    <message name="IMAGES_WINDOW_TOOLTIP">
+        <text><![CDATA[<html> This window provides an overview of all the images that are <i>attached to a node</i>  in the current download or that are <i>used on a page</i> attached to a node in the current  download.   You can edit data for an image either here or in the <b><i>Images Panel</i></b> of the Node Data Window for the node that the image is attached to.<p><p> 
+Why do we have this alternative handling of images in the <b><i>Images Window</i></b> on the one hand and the <b><i>Images Panels</i></b> on the other?  The  <b><i>Images Window</i></b> is meant to be the central place for working with images 
+for the downloaded branch and for editing image data; while the <b><i>Images Panel</i></b> of the Node Data Window is meant to give an overview of those images that are relevant specifically to one particular node.  The significance of the <b><i>Images Panels</i></b> for individual nodes will become increasingly important as we add more images to the ToL database not specifically for use on ToL pages, but for retrieval in phylogenetically structured queries to serve a variety of purposes. </html> ]]></text>
+    </message>
+    <message name="IMAGE_ATTACHMENT_TOOLTIP">
+        <text><![CDATA[<html>When adding new images to the ToL Database, we ask that you attach them to the most specific node possible; i.e., if you have an image of a specimen of a certain species and  the node for this species is represented in the ToL database, you should attach it to the  species node, even if you are going to use the image as a title illustration on the branch  page for the order or the family.  This means that many ToL images will not be attached  to a given node, although they may be used as illustrations on a page attached to this  node. <p><p> Why are we handling image attachments in this way?  It is our goal to impose  phylogenetic structure upon the ToL image collection, so that we can query the ToL image database for images attached to a particular set of nodes; e.g., we could ask for    all the images that are attached to the Tyrannosauridae node and its descendants.  If an  image of a Tyrannosaurus was attached to the Dinosauria page, it wouldn't get picked up in such a query.
+Developing the phylogenetic structure of the ToL image database will long be a work in progress.  
+Since the ToL started out without any attachment data associated with image files, we still have
+much clean-up work to do, and we would appreciate your help in attaching your own images to the 
+proper nodes.  For the time being, we have attached most images to the nodes of the pages they are 
+attached to since we could easily do this automatically.   </html>         ]]></text>
+    </message>
+    <message name="IMAGE_CAPTION_TOOLTIP">
+        <text><![CDATA[<html> Page authors have the option to automatically compile the data stored with images into a caption, or they can write a <b><i>Custom Caption</i></b> themselves. In many cases, the best solution will be a mixed format, with a brief custom  caption giving general information about the image array, followed by a listing of the <b><i>Image Data</i></b>. <p><p>  The display of the two components is controlled by two check boxes, which are both checked by default.  Below the <b><i>Custom Caption</i></b> text field, there's a crude preview of the caption as it is going to be shown on the ToL page.  Note that the image copyright data are always going to get printed, even if you deselect the <b><i>Print Image Data</i></b> option. This means that you need not include any copyright information in your <b><i>Custom Caption</i></b>.                              ]]></text>
+    </message>
+    <message name="IMAGE_CHECKED_OUT">
+        <text><![CDATA[<html> 137. The object was checked out  <ul> <li>by $%username%$ ($%email%$)</li> <li>at $%datetime%$</li> </ul> You won't be able to edit the associated data until it has been checked back in.</html>]]></text>
+    </message>
+    <message name="IMG_DIR_ERROR">
+        <text><![CDATA[<html> 138. Error occured trying to create the directory $%dir%$</html>]]></text>
+    </message>
+    <message name="IMPORTANT_NAMES_TOOLTIP">
+        <text><![CDATA[<html><table width="100%"><td width="500"><b><i>Important Names</i></b>:If you check one or more boxes in the <b><i>Important Names</i></b> column, the associated names will be printed in the subtitle of your ToL page.</td></table></html>                          ]]></text>
+    </message>
+    <message name="IMPORTANT_NAMES_TOOLTIP_NOPAGE">
+        <text><![CDATA[<html><table width="100%"><td width="500"><b><i>Important Names</i></b>:<p><p> You can check one or more boxes in this column to  designate the associated names as <b><i>Important Names</i></b>.  <b><i>Important Names</i></b> are printed as subtitles if there is a page attached to a node.  If there's no  page attached, we currently just store the <b><i>Important Names</i></b> values for future use. </html> ]]></text>
+    </message>
+    <message name="INTERNAL_NODE">
+        <text><![CDATA[<html> 139. Currently, the basal node of a download needs to have a page attached to it.<br>TreeGrow will download the requested node by downloading the branch for the nearest page-carrying containing group, $%ancestor_name%$.</html> ]]></text>
+    </message>
+    <message name="INTERNETLINKS_TOOLTIP">
+        <text><![CDATA[<html> Please use HTML to format your list of Internet Links.  If you need instructions, please have a look at the <b><i>All the HTML You Will Likely Need</i></b> page in the <b><i>ToL Contributors Documentation</b></i>.                               ]]></text>
+    </message>
+    <message name="INVALID_DATE">
+        <text><![CDATA[<html> 140. Date must be a positive 4-digit number.</html>]]></text>
+    </message>
+    <message name="IN_TREE-APPROVAL_PENDING">
+        <text><![CDATA[<html> 141. This branch has beem submitted for publication.<br>  It cannot be downloaded until it is released by the reviewing editor.</html>]]></text>
+    </message>
+    <message name="IN_TREE-CHKD_BY_ELSE">
+        <text><![CDATA[ 142. This node has been checked out by $%user%$ on $%time%$. It cannot be downloaded until it is checked back in.]]></text>
+    </message>
+    <message name="ISPU_INCONSISTENT">
+        <text><![CDATA[<html> 143. Can't do what you are trying to do, because it would adversely affect<br> the placement of a node that is Incertae Sedis Position Unspecified.<br>  Such nodes are subject to restrictions with respect to their position in the tree,<br> because they are not truly part of the tree structure<br> but are placed in a given position only provisionally.<br>  One of the restrictions is that they cannot be part of a dichotomy,<br> i.e., an Incertae Sedis Position Unspecified node needs to have at least two sibling nodes.<br>  In order to achieve the desired tree structure, you need to <br>set the property of the node to Incertae Sedis In Putative Position.</html>]]></text>
+    </message>
+    <message name="JUST_CLOSE_FILE">
+        <text><![CDATA[ 144. Just close the file.]]></text>
+    </message>
+    <message name="LABEL_TOOLTIP">
+        <text><![CDATA[<html><table width="100%"><td width="500"><b><i>Preferred Labels</i></b>:<p><p> If you check one or more boxes in the <b><i>Preferred  Labels</i></b> column, the associated names will be printed in the supertitle of your ToL page, i.e., above the node name.   Also, the first of the selected <b><i>Preferred Labels</i></b>  will be used instead of the node name in the tree or taxon list of the containing group.]]></text>
+    </message>
+    <message name="LABEL_TOOLTIP_NOPAGE">
+        <text><![CDATA[<html><table width="100%"><td width="500"><b><i>Preferred Labels</i></b>:<p><p>   Selecting <b><i>Preferred Labels</i></b> usually has  an effect> on ToL page display only if a node has a page attached to it.  There is one exception to this: when the containing group of an internal node has a taxon list displayed rather than a tree, the <b><i>Preferred Label</i></b> will be printed along with the node name, and the node name will be indented with respect to the <b><i>Preferred Label</i></b>, e.g.:<br> Monotypicfamiliidae (the <b><i>Preferred Labels</i></b>) &nbsp;&nbsp;&nbsp;&nbsp;Monotypicfamilia monotypicus (the node name)                  ]]></text>
+    </message>
+    <message name="LAST_PERMISSION_NO_DELETE">
+        <text><![CDATA[<html> Deleting the last permission in your list of permissions would lock you out of TreeGrow.<br>  Please add another permission for yourself if you want to remove this one.                          ]]></text>
+    </message>
+    <message name="LINK_TOOLTIP">
+        <text><![CDATA[<html><table width="100%"><td width="500">A ToL accessory page can be attached to more than one node.  For example, a page that contains an index of all the species in a group may be attached to all of the branch and leaf pages within this group. <p><p> Check the box in the <b><i>Link</b></i>  column if you want to add to the <b><i>Extras</b></i> menu a link to an accessory page that is already attached to another ToL branch page.  You will then be able to select from a list of accessory pages that are attached to the current group's containing groups.            ]]></text>
+    </message>
+    <message name="LINK_TO_UNUPLOADED_ACC">
+        <text><![CDATA[<html>254. You cannot upload the selected subtree because it links to <br>  an accessory page that has not yet been uploaded.<br> You first need to upload the node to which the linked accessory page is attached.<br>  The easiest thing is to just upload the whole branch.]]></text>
+    </message>
+    <message name="LINK_TO_UNUPLOADED_PAGE">
+        <text><![CDATA[<html>255. You can't upload the selected subtree<br>because there's a containing group node<br>that has not yet been uploaded.<br> Please upload the subtree that contains the containing group node.]]></text>
+    </message>
+    <message name="LOCAL_FILES_TOOLTIP_CONN">
+        <text><![CDATA[<html> In order to access one of the branches you have downloaded from the ToL Database, you can double-click on it in the list above.	If you want to download additional branches, you can  do so in the <b><i>Download from server</b></i> panel.<p><p>  <u>Note</u>: Branches you have downloaded from the ToL Database are stored in files on your computer, so you can work on your ToL pages even if you don't have a network connection.  However, some options like uploading and previewing will not be available when you are offline.<p><p>  It is good practice to upload your changes to the ToL Database whenever you have a network connection.  This will create a backup of your work on the ToL server. The files for a given  branch will remain on your computer until you ask for this  branch to be checked back in.]]></text>
+    </message>
+    <message name="LOCAL_FILES_TOOLTIP_NO_CONN">
+        <text><![CDATA[<html> You currently don't have a network connection, so you can only work on branches that you have previously downloaded from the <b><i>ToL Database</b></i>.  In order to access one of these branches, double-click on it in the list above.	If the <b><i>Local files</b></i> list is empty, you need to establish a network connection, so you can download a branch to work on.<p><p>  The <b><i>Download from server</b></i> panel and the <b><i>Upload, preview, submit</b></i> panel cannot be used when there isn't a network connection, because all the options available in these panels require immediate communication with the <b><i>ToL Database</b></i>.	If you want to do any downloading, uploading, previewing, or submitting, please establish a network connection, and then restart <b><i>TreeGrow</b></i>.<p><p>  <u>Note</u>: Branches you have downloaded from the <b><i>ToL Database</b></i> are stored in files on your computer, so you can work on your ToL pages even if you don't have a network connection. However, some options like uploading and previewing will not be available when you are offline. ]]></text>
+    </message>
+    <message name="LOST_CONNECTION_CHECKIN">
+        <text><![CDATA[<html> 145.  Your connection to the ToL server appears to have died during checkin.<br>Please make sure you have a connection to the internet and restart the application.</html>]]></text>
+    </message>
+    <message name="LOST_CONNECTION_GENERIC">
+        <text><![CDATA[<html> 146. Your connection to the ToL server appears to have died during $%operation%$.<br>Please make sure you have a connection to the internet and restart the application.]]></text>
+    </message>
+    <message name="LOST_CONNECTION_MIDSTREAM_DOWNLOAD">
+        <text><![CDATA[<html> 147. Your connection to the ToL server appears to have died during the download.<br>Please go to the Download From Server Panel of the TreeGrow Manager, and try to download again.<br> Don't worry if the server tells you that the branch is already checked out to you. <br>You can proceed safely with the download.</html>]]></text>
+    </message>
+    <message name="LOST_CONNECTION_UPLOAD">
+        <text><![CDATA[<html> 148. Your connection to the ToL server appears to have died during the upload.<br> Your changes may not have been received by the ToL Database.<br> Please try uploading again.</html>]]></text>
+    </message>
+    <message name="MENU_TOOLTIP">
+        <text><![CDATA[<html><table width="100%"><td width="500">In this column enter the text you want to use to identify the accessory page in the <b><i>Extras</b></i> menu of the branch or leaf page to which the accessory page is attached.</td></table>]]></text>
+    </message>
+    <message name="MOVE_PAGE_DELETE_ACCPAGE">
+        <text><![CDATA[<html> 149. If you move this page to the selected target,<br> the link to the $%page%$ accessory page will be removed,<br> because you can only link to accessory pages that are attached to containing groups. <br>Do you wish to continue?]]></text>
+    </message>
+    <message name="MOVE_RECYCLE">
+        <text><![CDATA[<html> 150. Move to the recycle bin.<br>  Contact treegrow@tolweb.org if you need assistance in recovering data.</html>]]></text>
+    </message>
+    <message name="MOVING_RECYCLE_BIN">
+        <text><![CDATA[<html> 151. Moving to recycle bin.<br>  Contact treegrow@tolweb.org if you need assistance in recovering data.</html>]]></text>
+    </message>
+    <message name="NAMES_TOOLTIP_NOPAGE">
+        <text><![CDATA[<html> When naming nodes in the tree, you will usually want to use the valid, scientific name for  the group.  However, in the case of prominent groups that have widely used, unequivocal  common names (e.g., Green Plants or Terrestrial Vertebrates), using this common name  as the node name may also be appropriate.  <p><p> Please don't use any HTML codes in the <b><i>Name</i></b> field.  They will mess up taxon searches. <p><p> Always use the most specific scientific name available for the group at hand; i. e., in the  case of monotypic families or genera, use the name of the species, NOT the name of the  genus or family, as the node name.  <p><p> You can enter additional names for the group (synonyms, higher taxonomic categories,  common names) into the <b><i>Other Names</i></b> list.  All the names in the <b><i>Other Names</i></b> list will be used to guide visitors to this node in taxon search results.   <p><p> Note that selecting <b><i>Preferred Labels</i></b> (the check box in the column with the label icon) and  <b><i>Important Other Names</i></b>  (the check box in the column with  the <b><i>!</i></b> icon) usually has an effect on ToL page display only if a node has a  page attached to it.  There is one exception to this: when the containing group of an  internal node has a taxon list displayed rather than a tree, the <b><i>Preferred Label</i></b> will be printed along with the node name, and the node name will be indented with  respect to the <b><i>Preferred Label</i></b>, e.g.: Monotypicfamiliidae (the <b><i>Preferred Labels</i></b>) &nbsp;&nbsp;&nbsp;&nbsp;Monotypicfamilia monotypicus (the node name) <p><p> Authority data and descriptions will currently be printed only if a node has a page  attached to it.]]></text>
+    </message>
+    <message name="NAMES_TOOLTIP_PAGE">
+        <text><![CDATA[<html> When naming nodes in the tree, you will usually want to use the valid, scientific name for  the group.  However, in the case of prominent groups that have widely used, unequivocal  common names (e.g., Green Plants or Terrestrial Vertebrates), using this common name  as the node name may also be appropriate.  <p><p> Please don't use any HTML codes in the <b><i>Name</i></b> field.  They will mess up  taxon searches. <p><p> Always use the most specific scientific name available for the group at hand; i. e., in the case of monotypic families or genera, use the name of the species, NOT the name of the  genus or family, as the node name. If you would prefer to have the name of a higher  taxonomic category listed as the name of the group on Tree of Life pages, you can  achieve this by entering that name in the <b><i>Other Names</i></b> list below and then  selecting it as a <b><i>Preferred Label</i></b> (the check box in the column with the label icon). <p><p> You can enter additional names for the group (synonyms, higher taxonomic categories, common names) into the <b><i>Other Names</i></b> list.  All the names in the <b><i>Other Names</i></b> list will be used to guide visitors to the page for this node in taxon search results.  Also, you can designate one or more of the <b><i>Other Names</i></b>  as <b><i>Important Other Names</i></b> by checking the check box in the column with  the <b><i>!</i></b> icon.   <b><i>Important Other Names</i></b> will be printed as subtitles on ToL pages. <p><p> Check the <b><i>Page Title Preview</i></b> below to see how the data you enter in this panel will affect the title array on the ToL page attached to this node.  You can enter  authority data for any of the names you provide.  You need to select the  <b><i>display authority</i></b> box in order for these data to show up in the title array of your ToL pages. <p><p> Anything you enter in the <b><i>Description</i></b> field will be printed as a comment after the taxon name on the page of the containing group.  So keep it short!]]></text>
+    </message>
+    <message name="NAME_REQUIRED">
+        <text><![CDATA[<html> 152. This node has a page, so it must also have a name.</html>]]></text>
+    </message>
+    <message name="NEW_NODES_NO_CUSTOM_DELIMITER">
+        <text><![CDATA[<html> 153. You have selected to use a custom delimiter, but you haven't entered a delimiter to use.  Please type the character that separates your entries in the 'Other' text box.</html>]]></text>
+    </message>
+    <message name="NEW_NODES_NO_NAMES">
+        <text><![CDATA[<html> 154. Please enter names for the new nodes to be added, or click on Cancel.</html>]]></text>
+    </message>
+    <message name="NEW_NODES_NO_NAMES_OR_NUMBERS">
+        <text><![CDATA[<html> 155. Please enter the number of nodes to add or the names of the nodes you wish to add.</html>]]></text>
+    </message>
+    <message name="NEW_NODES_NO_NUMBER">
+        <text><![CDATA[<html> 156. Please enter the number of nodes to add, or click on Cancel.</html>]]></text>
+    </message>
+    <message name="NEW_VERSION_DOWNLOAD_STATUS">
+        <text><![CDATA[<html> 157. Downloading a new version of TreeGrow: </html>]]></text>
+    </message>
+    <message name="NEW_VERSION_TO_DOWNLOAD">
+        <text><![CDATA[<html> 158. There is a new version of TreeGrow available.<br> It's best to update to this new version before continuing work. <br>The download will be done automatically, and it will only take a couple of minutes.<br> Do you want to go ahead and update to the new version?</html>]]></text>
+    </message>
+    <message name="NEW_VERSION_XML_CHANGES_REQUIRED">
+        <text><![CDATA[<html> 159. There is a new version of TreeGrow available. <br> This version has revisions to the XML structure used by the application,<br> so it won't be able to upload any of the files you have currently downloaded.<br> In order to be able to upgrade TreeGrow,<br> you should upload all your changes and then check in all the branches you have downloaded.<br>  Once you have done this, no files will be listed in the Local Files panel of the TreeGrow Manager.<br> The next time you start TreeGrow, <br>you will then have the opportunity to start an automatic upgrade.<br> After TreeGrow is upgraded, you can download your branch(es) again.</html>]]></text>
+    </message>
+    <message name="NODE_HAS_PAGE">
+        <text><![CDATA[<html> 160.  You cannot delete a node that has a page attached to it.<br>  In order to be able to delete this node, you first need to delete the page.<br>  You can do this by opening the Node Data Window,<br> and then selecting Remove Page from the Node menu.</html>]]></text>
+    </message>
+    <message name="NODE_IMAGES_TOOLTIP">
+        <text><![CDATA[<html> This panel shows you all the images that are attached to this node.  You can add  additional images to the node using the <b><i>Add</i></b> button below the  <b><i>Node Images</i></b> list, and you can remove images from this node by using the <b><i>Delete</i></b> button.  Note that removing an image from a node will not delete it from the ToL database.  The image just won't be attached to this node anymore. <p><p> You can edit data for an image either here or in the <b><i>Images Window</i></b> (accessible from the Window menu), which provides an overview of all the images that  are either <i>attached to a node</i> included in the current download or <i>used on a  page</i> attached to a node included in the current download. <p><p> When adding new images to the ToL Database, we ask that you attach them to the most specific node possible; i.e., if you have an image of a specimen of a certain species and the node for this species is represented in the ToL database, you should attach it to the  species node, even if you are going to use the image as a title illustration on the branch  page for the order or the family.  This means that many ToL images will not be attached  to a given node, although they may be used as illustrations on a page attached to this  node. <p><p> Why are we handling image attachments in this way?  It is our goal to impose phylogenetic structure upon the ToL image collection, so that we can query the ToL  image database for images attached to a particular set of nodes; e.g., we could ask for    all the images that are attached to the Tyrannosauridae node and its descendants.  If an  image of a Tyrannosaurus was attached to the Dinosauria page, it wouldn't get picked up  in such a query. <p><p> Fleshing out image data and developing the phylogenetic structure of the ToL image database will long be a work in progress.  Since the ToL started out without any data  associated with image files, we still have much data entry work to do, and we would  appreciate your help in entering data for your own images.  For the time being, we have  attached most images to the nodes of the pages they are attached to (we could easily do  this automatically), and we have entered image data (harvested from custom captions)  for most of the ToL title illustrations.                 ]]></text>
+    </message>
+    <message name="NODE_IS_LOCKED">
+        <text><![CDATA[<html> 161. $%name%$ was checked out by $%username%$ at $%datetime%$. <br> You won't be able to download it until it is checked back in.</html>]]></text>
+    </message>
+    <message name="NODE_IS_SUBMITTED">
+        <text><![CDATA[<html> 162. $%name%$ has been submitted for publication by $%username%$ at $%datetime%$.<br> It cannot be downloaded until it is released by the editor.</html>]]></text>
+    </message>
+    <message name="NOID">
+        <text><![CDATA[ 163. Can't find that username.  Please check your typing or contact treegrow@tolweb.org if you continue having problems.]]></text>
+    </message>
+    <message name="NO_PRIVILEGES_NEW_NODE">
+        <text><![CDATA[ 254.  You cannot assign privileges to a node that doesn't exist in the database.  Please upload your tree and try again.]]></text>
+    </message>
+    <message name="NOT_CHKD_OUT">
+        <text><![CDATA[164. This branch is available for download.]]></text>
+    </message>
+    <message name="NO_CONNECTION_INCOMPLETE_LIST">
+        <text><![CDATA[<html> 165. You currently do not have a connection to the ToL server;<br> therefore, you can only work on files you have downloaded to your computer.<br>  These files are listed in the Local Files panel of TreeGrow Manager.<br> If you want to do any downloading, uploading, previewing, or submitting,<br> please establish a network connection.</html>]]></text>
+    </message>
+    <message name="NO_CONNECTION_LOCAL_NODES_ONLY">
+        <text><![CDATA[<html> 166. You currently do not have a network connection,<br> so you are limited to attaching objects to nodes included in your current download. </html>]]></text>
+    </message>
+    <message name="NO_CONNECTION_NO_BATCHES">
+        <text><![CDATA[<html> 167. You currently do not have a connection to the ToL server.<br> If you want to do any downloading, uploading, previewing, or submitting,<br> please establish a network connection.</html>]]></text>
+    </message>
+    <message name="NO_FILE_GIVEN_LOC">
+        <text><![CDATA[<html> 168. File not present in specified location.</html>]]></text>
+    </message>
+    <message name="NO_ID">
+        <text><![CDATA[<html> 169. Can't find that username.<br>  Please check your typing. <br>Contact treegrow@tolweb.org if you continue having problems.</html>]]></text>
+    </message>
+    <message name="NO_NET_CONNECTION">
+        <text><![CDATA[<html> 170. Sorry could not connect to the ToL server.</html>]]></text>
+    </message>
+    <message name="NO_PERMISSIONS">
+        <text><![CDATA[<html> 171. Your download privileges do not include the selected node.<br>  You can contact treegrow@tolweb.org to request a review of your privileges.</html>]]></text>
+    </message>
+    <message name="NO_PRIVILEGES">
+        <text><![CDATA[<html> 171. Your download privileges do not include the selected node.<br>  You can contact treegrow@tolweb.org to request a review of your privileges.</html>]]></text>
+    </message>
+    <message name="NO_RECORD_FOUND">
+        <text><![CDATA[<html> 172. No matching record found. <br>  Please check your spelling.</html>]]></text>
+    </message>
+    <message name="NO_UPLOADABLE_CHANGES">
+        <text><![CDATA[<html> 173. There haven't been any changes since the last upload.</html>]]></text>
+    </message>
+    <message name="OVERWRITE_PAGE">
+        <text><![CDATA[<html> 174. The target node has a page.<br> Do you want to overwrite it?</html>]]></text>
+    </message>
+    <message name="PAGE_AUTHORS_TOOLTIP">
+        <text><![CDATA[<html>  Click on the <b><i>Add</i></b> button and select the name of a contributor from the contributors list. <p><p>In order for contributors to be available for selection, they first need to be added to the  <b><i>Contributors Pool</i></b> for this branch.  You can do this in the <b><i>Contributors Window</i></b>, which is availabe from the <b><i>Window</i></b> menu.                 ]]></text>
+    </message>
+    <message name="PAGE_ON_A_DESCENDANT">
+        <text><![CDATA[<html> 175. This group cannot be deleted because at least one of its subgroups ($%node%$) has a page.</html>]]></text>
+    </message>
+    <message name="PASSWORD_REQUIRED">
+        <text><![CDATA[ 176.  Please enter your password.]]></text>
+    </message>
+    <message name="PASSWORD_REQUIRED_MANAGER">
+        <text><![CDATA[<html> 177. Please enter your username and password.</html>]]></text>
+    </message>
+    <message name="PREFERENCES_SUCCESS">
+        <text><![CDATA[<html> 178.  Your preferences have been changed.</html>]]></text>
+    </message>
+    <message name="PREVIEW_NO_UPLOAD">
+        <text><![CDATA[<html> 179. Preview, don't upload.</html>]]></text>
+    </message>
+    <message name="PREVIEW_TOOLTIP">
+        <text><![CDATA[<html> In order to get a preview of what your ToL pages will look like, you need to upload <br> your changes to the ToL server.  <b><i>TreeGrow</i></b> will then present you with a window<br>  that gives you the option to <b><i>Preview changes in browser</i></b>.  If you decide to do so,<br>   your default browser will launch and load the basal page of the downloaded branch<br>   in the ToL Development Site.<p><p>    
+The ToL Development Site is now password-protected. Please use the following to gain access:<p><p>  User ID: ToL<br> password: develop<br> </html>]]></text>
+    </message>
+    <message name="PROBLEMS_CHECKING_OUT">
+        <text><![CDATA[<html> 180. In order to edit these data, you have to check them out from the ToL Database.<br> (Image and Contributor data are checked out independently of ToL branches).<br> TreeGrow was unable to complete the checkout, most likely because you are not connected to the network.<br> Please establish a network connection, and then try again.<br>  If the problem persists, contact treegrow@tolweb.org for assistance.</html>]]></text>
+    </message>
+    <message name="PROBLEMS_SEARCHING">
+        <text><![CDATA[<html>There was a problem searching the database.  Any matches you have found are local nodes.  You may want to try your search again.</html>]]></text>
+    </message>
+    <message name="PROBLEM_PUSHING_APPROVAL">
+        <text><![CDATA[There was a problem pushing the changes to the approval database.  Please contact Katja.]]></text>
+    </message>
+    <message name="PROBLEM_PUSHING_PUBLIC">
+        <text><![CDATA[ 182. There was a problem publishing the branch.  Please contact treegrow@tolweb.org for assistance.]]></text>
+    </message>
+    <message name="PROBLEM_REVERT">
+        <text><![CDATA[ 183. There was a problem undoing the last upload.  Please contact treegrow@tolweb.org for assistance.]]></text>
+    </message>
+    <message name="PROBLEM_REVERT_ALL">
+        <text><![CDATA[ 184. There was a problem reverting.  Please contact treegrow@tolweb.org for assistance.]]></text>
+    </message>
+    <message name="PROBLEM_REVERT_APPROVAL">
+        <text><![CDATA[ 185. There was a problem reverting the approval database.  Please contact treegrow@tolweb.org for assistance.]]></text>
+    </message>
+    <message name="REFERENCES_TOOLTIP">
+        <text><![CDATA[<html> Please separate your references with carriage returns.  On ToL pages, each entry will be formatted into a paragraph with a hanging indent, so do not use carriage returns within a reference. <p><p> Please do not use paragraph codes or any other HTML markup in the References text field.  This is likely to cause problems in the future.  While the ToL references are currently stored as plain text, we are planning to implement a more powerful reference management system which will allow us to link to other databases providing services such as abstracts and full text delivery.                 ]]></text>
+    </message>
+    <message name="REVERT_IS_DANGEROUS">
+        <text><![CDATA[<html> 186. Reverting will result in the loss of all related work.<br> Is this really what you want to do?</html>]]></text>
+    </message>
+    <message name="REVERT_PUBLIC_SUCCESS">
+        <text><![CDATA[<html 187. $%group%$ reverted to the public version.</html>]]></text>
+    </message>
+    <message name="ROOT_EXIST_DOWNLOAD">
+        <text><![CDATA[<html> 188. You may already have this node downloaded in another branch.<br> Do you still want to download?</html>]]></text>
+    </message>
+    <message name="SAME_NODENAME_QRY">
+        <text><![CDATA[<html> 189. There is more than one node with name $%name%$ in your tree.<br> Is that what you want?</html>]]></text>
+    </message>
+    <message name="SERVER_PROBLEMS">
+        <text><![CDATA[ 190. There was a problem communicating with the server.  Quitting and restarting the application may help.]]></text>
+    </message>
+    <message name="SHOW_TOOLTIP">
+        <text><![CDATA[<html><table width="100%"><td width="500">Check the box in the <b><i>Show</b></i> column if you want the link to the accessory page to be shown in the <b><i>Extras</b></i> menu of the branch or leaf page that the accessory page is attached to.  If there are very many accessory pages attached to a node, you may not want to have all of them listed in the <b><i>Extras</b></i> menu.  Instead, you can create a listed accessory page with links to additional, excluded accessory pages.                            ]]></text>
+    </message>
+    <message name="ST_CANT_COLLAPSE">
+        <text><![CDATA[ 191. Cannot collapse nodes that have pages attached to them.]]></text>
+    </message>
+    <message name="ST_CONNECTED_SERVER">
+        <text><![CDATA[ 192. Connection to ToL server established.]]></text>
+    </message>
+    <message name="ST_CONNECTING_SERVER">
+        <text><![CDATA[ 193. Connecting to ToL server...]]></text>
+    </message>
+    <message name="ST_CREATED_XML">
+        <text><![CDATA[ 194. XML Document created...]]></text>
+    </message>
+    <message name="ST_CREATING_XML">
+        <text><![CDATA[ 195. Creating XML document...]]></text>
+    </message>
+    <message name="ST_DOWNLDING_COMPLETE_TREE">
+        <text><![CDATA[ 196. Downloading the requested branch...]]></text>
+    </message>
+    <message name="ST_DOWNLD_WND_CLOSED">
+        <text><![CDATA[ 197. TreeGrow Manager closed...]]></text>
+    </message>
+    <message name="ST_DOWNLOADED_TREE">
+        <text><![CDATA[ 198. Branch downloaded...]]></text>
+    </message>
+    <message name="ST_DOWNLOADING_CONTENT">
+        <text><![CDATA[ 199. Downloading content...]]></text>
+    </message>
+    <message name="ST_DOWNLOADING_SUBTREE">
+        <text><![CDATA[ 200. Downloading subtree...]]></text>
+    </message>
+    <message name="ST_DOWNLOADING_TREE">
+        <text><![CDATA[ 201. Downloading the requested branch...]]></text>
+    </message>
+    <message name="ST_DOWNLOAD_COMPLETE">
+        <text><![CDATA[ 202. Download Complete...]]></text>
+    </message>
+    <message name="ST_ERR_CHK_LOG">
+        <text><![CDATA[ 203.  Error occurred. If this happens again, please contact treegrow@tolweb.org for assistance.  More details maybe in the log file.]]></text>
+    </message>
+    <message name="ST_ERR_CHK_PAGEED_SAVING">
+        <text><![CDATA[ 204. Error while checking for save in page...]]></text>
+    </message>
+    <message name="ST_ERR_CREATE_XML">
+        <text><![CDATA[ 205. Error in creating XML document...]]></text>
+    </message>
+    <message name="ST_ERR_EXP_FILE">
+        <text><![CDATA[ 206. Error in creating export file...]]></text>
+    </message>
+    <message name="ST_ERR_OPEN_PAGE_ED">
+        <text><![CDATA[ 207. Error while opening the Node Data Window...]]></text>
+    </message>
+    <message name="ST_ERR_OPEN_TREE_ED">
+        <text><![CDATA[ 208. Error while opening Tree Window...]]></text>
+    </message>
+    <message name="ST_ERR_OPEN_USR_INFO_PANEL">
+        <text><![CDATA[ 209. Error while opening the Preferences panel...]]></text>
+    </message>
+    <message name="ST_ERR_PAGEED_SAVING">
+        <text><![CDATA[ 210. Error occured while saving...]]></text>
+    </message>
+    <message name="ST_EXPORTED_DATA">
+        <text><![CDATA[ 211. Done Exporting data to file...]]></text>
+    </message>
+    <message name="ST_EXPORTING_DATA">
+        <text><![CDATA[ 212. Exporting data...]]></text>
+    </message>
+    <message name="ST_OPENING_FILE">
+        <text><![CDATA[ 213. Opening file...]]></text>
+    </message>
+    <message name="ST_OPENING_TREE_ED">
+        <text><![CDATA[ 214. Opening Tree Window...]]></text>
+    </message>
+    <message name="ST_PAGEED_OPEN">
+        <text><![CDATA[ 215. Node Data Window is open...]]></text>
+    </message>
+    <message name="ST_PAGEED_OPENING">
+        <text><![CDATA[ 216. Node Data Window is being opened...]]></text>
+    </message>
+    <message name="ST_PAGEED_SAVING">
+        <text><![CDATA[ 217. Saving changes to the Node Data Window...]]></text>
+    </message>
+    <message name="ST_RD_DATA_SERV">
+        <text><![CDATA[ 218. Reading data from the ToL server...]]></text>
+    </message>
+    <message name="ST_SAVED_FILE">
+        <text><![CDATA[ 219. Saved the changes to file...]]></text>
+    </message>
+    <message name="ST_SAVING_FILE">
+        <text><![CDATA[ 220. Saving file...]]></text>
+    </message>
+    <message name="ST_SEARCHING">
+        <text><![CDATA[ 221. Searching...]]></text>
+    </message>
+    <message name="ST_SRCH_RESULTS_DISPLAYED">
+        <text><![CDATA[ 222. Search results displayed...]]></text>
+    </message>
+    <message name="ST_TRANSFER_COMPLETE">
+        <text><![CDATA[ 223. Data transfer complete...]]></text>
+    </message>
+    <message name="ST_TREE_ED_CLOSED">
+        <text><![CDATA[ 224. Tree Window closed...]]></text>
+    </message>
+    <message name="ST_UPLOADING_SERVER">
+        <text><![CDATA[ 225. Uploading to the ToL server...]]></text>
+    </message>
+    <message name="ST_UPLOAD_ERR">
+        <text><![CDATA[ 226. Error on uploading...]]></text>
+    </message>
+    <message name="ST_UPLOAD_SUCCESS">
+        <text><![CDATA[ 227. Upload successful...]]></text>
+    </message>
+    <message name="SUBMIT_ERROR">
+        <text><![CDATA[<html> 228. There was a problem submitting the branch for publication.<br> Try restarting the application, and make sure you have a network connection.<br> If the problem persists, contact treegrow@tolweb.org for assistance.</html>]]></text>
+    </message>
+    <message name="SUBMIT_NO_UPLOAD">
+        <text><![CDATA[<html> 229. Submit, don't upload.  Toss recent changes.</html>]]></text>
+    </message>
+    <message name="SUBMIT_SUCCESS">
+        <text><![CDATA[<html> 230.  $%group%$ submitted for publication. Thank you!</html>]]></text>
+    </message>
+    <message name="SUBMIT_TAKE_AWHILE">
+        <text><![CDATA[<html> 231. The Submit process may take a few minutes.<br>  When it is completed, another window will open to confirm your submission.</html>]]></text>
+    </message>
+    <message name="SUBTREE_CHECKED_OUT">
+        <text><![CDATA[<html> 232. The node you are trying to download is checked out by $%user%$.</html>]]></text>
+    </message>
+    <message name="SUBTREE_DOWNLOAD_REQUIRED">
+        <text><![CDATA[<html> 233. You need to download the subtree for this node in order to be able to add subgroups.<br>  Do you want to start the download?</html>]]></text>
+    </message>
+    <message name="TEXTSECTIONS_HTML_TOOLTIP">
+        <text><![CDATA[<html> Please use HTML to format your text.  If you need instructions,  please have a look at the <b><i>All the HTML You Will Likely Need</i></b> page in the <b><i>ToL Contributors Documentation</b></i>.         ]]></text>
+    </message>
+    <message name="TEXTSECTIONS_TOOLTIP">
+        <text><![CDATA[<html> Use the <b><i>Add</b></i> button to create new custom text sections.  Use the <b><i>Delete</b></i> button to get rid of sections.  Standard ToL page sections are shown in blue.  You cannot delete those. <p><p> <b><i>Introduction</b></i> and <b><i>Characteristics</b></i> are always the two first sections on a page.  The order of the other text sections can  be changed by dragging the numbers in the column to the left.         ]]></text>
+    </message>
+    <message name="THREAD_ERROR">
+        <text><![CDATA[<html 234.  A "thread" error occurred while reading the XML file after download.<br> Please contact treegrow@tolweb.org for assistance.</html>]]></text>
+    </message>
+    <message name="TITLE_ILLUSTRATIONS_TOOLTIP">
+        <text><![CDATA[<html>                 This panel lets you select images as title illustrations for your ToL page.  In order for images to be available for selection, they first need to be added to the  <b><i>Images Pool</i></b> for this branch.  You can do this in the <b><i>Images Window</b></i>, which is available from the <b><i>Window</i></b> menu.               ]]></text>
+    </message>
+    <message name="TOO_MANY_RECORDS">
+        <text><![CDATA[<html> 235. Too many records found.<br> Please provide more information to narrow your search.</html>]]></text>
+    </message>
+    <message name="TREEGROW_CLOSING">
+        <text><![CDATA[<html> <b><i>TreeGrow</b></i> is closing now.  Your changes have been saved<br> to a file on your computer.  When you want to resume work<br> on this branch, you can access the associated file in the<br>  <b><i>Local Files</b></i> panel of the <b><i>TreeGrow Manager</b></i>. ]]></text>
+    </message>
+    <message name="TREE_FRAME_TOOLTIP">
+        <text><![CDATA[<html> The <b><i>Tree Window</i></b> lets you create and modify the structure of your branch of the Tree of Life.  In addition, it provides a number of tools for the management of objects that are attached to the nodes in your the tree.<br><br>  Moving your mouse over a toolbar button will give you a hint for the function of that tool.  Some tools will have alternative functions when the modifier key (Mac:option, Linux:ctrl, Windows:alt) is held down.<br><br> In order to edit objects attached to nodes you must first open the <b><i>Node Data Window</i></b> for that node using the <b><i>Open Node Data Window</b></i> tool (the button with the little pencil on the blue rectangle).<br><br>Note that when you close the <b><i>Tree Window</i></b>, you are automatically closing the file for the current branch.</html> ]]></text>
+    </message>
+    <message name="UNDO_LAST_ERROR">
+        <text><![CDATA[<html> 236. There was a problem undoing the last upload.<br> Try restarting the application, and make sure you have a network connection.<br> If the problem persists, contact treegrow@tolweb.org for assistance.</html>]]></text>
+    </message>
+    <message name="UNDO_LAST_SUCCESSFUL">
+        <text><![CDATA[<html> 237. $%group$% reverted to the version before the last upload.</html>]]></text>
+    </message>
+    <message name="UNUP_CHNG_EXIST_DOWNLOAD">
+        <text><![CDATA[<html> 238. It looks like you have another copy of this branch on another computer.<br>  It's safe to proceed, if you know that the most up to date version is on the server.<br>  What do you want to do?</html>]]></text>
+    </message>
+	<message name="UPLOAD_TO_PREVIEW">
+		<text><![CDATA[<html> 300.  This page does not currently exist on the server.<br>  In order to preview it you must do an upload. <br> Would you lie to upload now?]]></text>
+	</message>
+    <message name="UPLOAD_BEFORE_CHECKIN">
+        <text><![CDATA[239. This file contains changes which have not yet been uploaded. These changes will be lost unless you upload them prior to checking in. What do you want to do?]]></text>
+    </message>
+    <message name="UPLOAD_BEFORE_CHECKIN_SUBTREE">
+        <text><![CDATA[<html> 240. There are changes in this subtree which have not yet been uploaded.<br> These changes will be lost unless you upload them prior to checking in.<br> Do you want to upload?</html>]]></text>
+    </message>
+    <message name="UPLOAD_BEFORE_PREVIEW">
+        <text><![CDATA[<html> 241. Do you want to upload your changes before previewing?</html>]]></text>
+    </message>
+    <message name="UPLOAD_FILE_AND_CHECKIN">
+        <text><![CDATA[ 242. Upload the file and check it in]]></text>
+    </message>
+    <message name="UPLOAD_FILE_AND_KEEP">
+        <text><![CDATA[ 243. Upload the file, but keep it checked out.]]></text>
+    </message>
+    <message name="UPLOAD_SUCCESS">
+        <text><![CDATA[<html> 244. Changes for $%group%$ have been uploaded.</html>]]></text>
+    </message>
+    <message name="UPLOAD_SUCCESS_DOWNLOAD_FAILURE">
+        <text><![CDATA[There was a problem reading the response of your upload from the server.  Please contact Katja.]]></text>
+    </message>
+    <message name="UPLOAD_THEN_CHECKIN">
+        <text><![CDATA[ 245. Upload changes, then check in the branch.]]></text>
+    </message>
+    <message name="UPLOAD_THEN_PREVIEW">
+        <text><![CDATA[ 246. Upload changes, then preview on server.]]></text>
+    </message>
+    <message name="UPLOAD_THEN_SUBMIT">
+        <text><![CDATA[247. Upload changes, then submit for publication.]]></text>
+    </message>
+    <message name="UPLOAD_TO_SUBMIT">
+        <text><![CDATA[248. This branch contains changes which have not yet been uploaded. These changes will be lost unless you upload them prior to checking in. What do you want to do?]]></text>
+    </message>
+    <message name="U_AT_ROOT_FILE_EXISTS">
+        <text><![CDATA[ 249. You already checked out this branch on $%date%$, and associated files have been saved on your computer. You can access these files in the Local Files panel of TreeGrow Manager.  Proceeding with the download now will revert the branch to the version that's currently on the ToL server.]]></text>
+    </message>
+    <message name="U_AT_ROOT_NO_FILE">
+        <text><![CDATA[ 250. Our records show that you checked out this branch on $%date%$, but associated files cannot be found on this computer.  If you are sure that you don't have a newer version on another computer, it's safe to download the current version from the ToL server.]]></text>
+    </message>
+    <message name="VALID_DEPTH">
+        <text><![CDATA[<html> 251. Please enter a number between 1 and 5 in the depth field.</html>]]></text>
+    </message>
+    <message name="WHICH_NODE_TO_COLLAPSE">
+        <text><![CDATA[<html> 252. In order to do this, we need to collapse a node.<br>  You can collapse either the containing node or the sister node. Which would you prefer to collapse?</html>]]></text>
+    </message>
+    <message name="WRITEASLIST_TOOLTIP">
+        <text><![CDATA[<html>                 You can use these buttons to change the indentation pattern of the taxon list. Note that descendants will always be indented to the right of their parent nodes. You will only be able to modify the relative depth of indentations.                 ]]></text>
+    </message>
+    <message name="WRONG_PASSWORD">
+        <text><![CDATA[ 253. That was the wrong password.  Please check your typing.  If you continue having problems, contact treegrow@tolweb.org for assistance.]]></text>
+    </message>
+<message name="NO_CONTACT_NO_EMAIL">        
+        <text><![CDATA[<html>          
+This contributor cannot be selected as a correspondent since they have the "Do not print email"<br>
+option selected.  If you wish to mark this contributor as the correspondent, please uncheck<br>
+this option.
+        ]]></text></message>            
+<message name="EXTINCT_PARENT">        
+        <text><![CDATA[<html>          
+You cannot unmark this node as extinct since its parent is extinct.
+        ]]></text></message>                    
+<message name="UPLOAD_SUCCESS">        
+        <text><![CDATA[<html>
+<center>Upload Successful</center><p><p>The ToL Development Site is now password-protected.  Please use the following to gain access:<p><p>User Id: ToL<br>Password: develop<br>        
+        ]]></text></message> 
+<message name="ADD_IMAGE_WINDOW_TOOLTIP">        
+        <text><![CDATA[<html>
+You can add additional images (from your desktop or the ToL database) to the <b><i>
+Image Pool</i></b> using the <b><i>Add</i></b> button.  Any images you add will
+remain in this <b><i>Image Pool</i></b> as long as you have the current branch  
+downloaded.  However, when you check in the branch, the <b><i>Image Pool</i></b>  
+will be reset to contain only images that are attached to nodes and/or pages of a given 
+branch.         
+        ]]></text></message> 
+<message name="EDIT_IMAGE_DATA_TOOLTIP">        
+        <text><![CDATA[<html>        
+In order to edit image  data, you first need to check them out from the ToL database by
+clicking on the <b><i>Edit image data</i></b> button (you need a network connection to
+do this).  When you are done editing image data, please check them back in. 
+<p><p>
+Fleshing out image data will long be a work in progress.  Since the ToL started out
+without any data  associated with image files, we still have much data entry work to do, 
+and we would  appreciate your help in entering data for your own images.  For the time 
+being, we have entered image data (harvested from custom captions) for most of the ToL
+title illustrations.
+<p><p> 
+Currently, you will be able to edit image data for any image attached to a node within
+your realm of authority.  However, we ask that you please not edit the data for other 
+people's images without their explicit permission.  It is our goal to soon implement a more 
+sophisticated system restricting the editing of image data to copyright owners and/or 
+image contributors, and allowing others to just add notes in a special field.
+        ]]></text></message> 
+</usermessages>
+

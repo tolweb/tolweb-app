@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.treegrowserver.Upload"
+        table="Uploads"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="uploadId"
+            column="upload_id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="isClosed"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="closed"
+        />
+
+        <many-to-one
+            name="download"
+            class="org.tolweb.treegrowserver.Download"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="download_id"
+        />
+
+        <property
+            name="isUndoable"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="is_undoable"
+        />
+
+        <property
+            name="uploadDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="date_time"
+        />
+
+        <property
+            name="xmlDoc"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="xml_doc"
+        />
+
+        <set
+            name="uploadedNodes"
+            table="Upload_Nodes"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="upload_id"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.treegrowserver.UploadNode"
+              >
+        <property
+            name="nodeId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="node_id"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <set
+            name="uploadedPages"
+            table="Upload_Pages"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="upload_id"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.treegrowserver.UploadPage"
+              >
+        <property
+            name="pageId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="page_id"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Upload.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

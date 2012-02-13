@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	 <bean id="configurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	   <property name="location"><value>classpath:dbconnection.properties</value></property>
+	 </bean>
+	<bean id="baseDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"><value>${dbdriver}</value></property>		
+		<property name="username"><value>${dbuser}</value></property>
+		<property name="password"><value>${dbpassword}</value></property>
+		<property name="defaultAutoCommit"><value>false</value></property>
+		<property name="defaultReadOnly"><value>false</value></property>		
+	</bean>
+	 <!-- DATA SOURCES -->
+ 	<bean id="dataSource" parent="baseDataSource">
+		<property name="url"><value>${dbbaseurl}${dbmiscname}?zeroDateTimeBehavior=convertToNull&amp;jdbcCompliantTruncation=false</value></property>
+		<property name="defaultAutoCommit"><value>true</value></property>
+	</bean>
+	<bean id="workingDataSource" parent="baseDataSource">
+		<property name="url"><value>${dbbaseurl}${dbworkingname}?zeroDateTimeBehavior=convertToNull&amp;jdbcCompliantTruncation=false</value></property>		
+	</bean>	
+	<bean id="publicDataSource" parent="baseDataSource">
+		<property name="url"><value>${dbbaseurl}${dbpublicname}?zeroDateTimeBehavior=convertToNull&amp;jdbcCompliantTruncation=false</value></property>
+	</bean>		
+	
+	<bean id="miscMappingResources" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>	
+				<value>org/tolweb/hibernate/ClassroomProject.hbm.xml</value>								
+		        <value>org/tolweb/treegrow/main/Contributor.hbm.xml</value>
+		        <value>org/tolweb/hibernate/MappedNode.hbm.xml</value>
+				<value>org/tolweb/hibernate/ExtendedNodeProperties.hbm.xml</value>		        
+				<value>org/tolweb/treegrow/main/Keywords.hbm.xml</value>	
+				<value>org/tolweb/treegrow/main/Languages.hbm.xml</value>							
+		        <value>org/tolweb/treegrow/main/NodeImage.hbm.xml</value>
+		        <value>org/tolweb/treegrow/main/ImageVersion.hbm.xml</value>				
+				<value>org/tolweb/treegrowserver/Upload.hbm.xml</value>
+				<value>org/tolweb/treegrowserver/UploadBatch.hbm.xml</value>
+				<value>org/tolweb/treegrowserver/Download.hbm.xml</value>
+				<value>org/tolweb/treegrowserver/PublicationBatch.hbm.xml</value>	
+				<value>org/tolweb/hibernate/EditedPage.hbm.xml</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="otherMappingResources" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+		        <value>org/tolweb/hibernate/MappedAccessoryPage.hbm.xml</value>
+		        <value>org/tolweb/hibernate/MappedNode.hbm.xml</value>
+				<value>org/tolweb/hibernate/ExtendedNodeProperties.hbm.xml</value>		        
+		        <value>org/tolweb/hibernate/MappedPage.hbm.xml</value>
+		        <value>org/tolweb/hibernate/EditHistory.hbm.xml</value>				
+		        <value>org/tolweb/hibernate/MappedTextSection.hbm.xml</value>				
+				<value>org/tolweb/treegrow/main/Keywords.hbm.xml</value>
+				<value>org/tolweb/treegrow/main/Languages.hbm.xml</value>				
+		        <value>org/tolweb/hibernate/TitleIllustration.hbm.xml</value>
+		        <value>org/tolweb/hibernate/PageAncestor.hbm.xml</value>	
+				<value>org/tolweb/hibernate/Portfolio.hbm.xml</value>
+				<value>org/tolweb/hibernate/PortfolioSection.hbm.xml</value>							
+			</list>
+		</constructor-arg>
+	</bean>		
+	<!-- SESSION FACTORIES -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource"><ref local="dataSource"/></property>
+		<!-- Must references all OR mapping files. -->
+		<property name="mappingResources">
+			<ref bean="miscMappingResources" />
+		</property>		
+		<!-- Set the type of database; changing this one property will port this to Oracle, 
+			 MS SQL etc. -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">${showsql}</prop>
+				<prop key="hibernate.cglib.use_reflection_optimizer">${useoptimizer}</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="workingSessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource"><ref local="workingDataSource"/></property>
+		<!-- Must references all OR mapping files. -->
+		<property name="mappingResources">
+			<ref bean="otherMappingResources"/>
+		</property>		
+		<!-- Set the type of database; changing this one property will port this to Oracle, 
+			 MS SQL etc. -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">${showsql}</prop>
+				<prop key="hibernate.cache.region_prefix">working</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+			</props>
+		</property>
+	</bean>	
+	<bean id="publicSessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource"><ref local="publicDataSource"/></property>
+		<!-- Must references all OR mapping files. -->
+		<property name="mappingResources">
+			<ref bean="otherMappingResources"/>
+		</property>
+		<!-- Set the type of database; changing this one property will port this to Oracle, 
+			 MS SQL etc. -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">${showsql}</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>				
+				<prop key="hibernate.cache.region_prefix">public</prop>
+				<prop key="hibernate.cglib.use_reflection_optimizer">${useoptimizer}</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>				
+				<prop key="hibernate.connection.isolation">2</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- TRANSACTION MANAGERS -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+       <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+    </bean>
+    <bean id="workingTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+       <property name="sessionFactory"><ref bean="workingSessionFactory"/></property>
+    </bean>    
+    <bean id="publicTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+       <property name="sessionFactory"><ref bean="publicSessionFactory"/></property>
+    </bean>
+	<bean id="baseMiscDAO" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager"><ref local="transactionManager"/></property>
+		<property name="target"><ref local="contributorDAOTarget"/></property>
+		<property name="transactionAttributes">
+			<props><prop key="*">PROPAGATION_SUPPORTS</prop></props>
+		</property>
+	</bean>
+	<bean id="baseWorkingDAO" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager"><ref local="workingTransactionManager"/></property>
+		<property name="target"><ref local="workingPageDAOTarget"/></property>
+		<property name="transactionAttributes">
+			<props><prop key="*">PROPAGATION_SUPPORTS</prop></props>
+		</property>		
+	</bean>
+	<bean id="basePublicDAO" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager"><ref local="publicTransactionManager"/></property>
+		<property name="transactionAttributes">
+			<props><prop key="*">PROPAGATION_SUPPORTS</prop></props>
+		</property>
+		<property name="target"><ref local="publicPageDAOTarget"/></property>
+	</bean>	       
+    <bean id="contributorDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="contributorDAOTarget"/></property>
+    </bean>
+    <bean id="contributorDAOTarget" class="org.tolweb.dao.ContributorDAOImpl">
+		<property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+    <bean id="imageDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="imageDAOTarget"/></property>
+    </bean>
+    <bean id="imageDAOTarget" class="org.tolweb.dao.ImageDAOImpl">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+		<property name="nodeDAO"><ref bean="workingNodeDAO"/></property>				            
+		<property name="contributorDAO"><ref bean="contributorDAO"/></property>
+    </bean>
+	
+	<!-- PAGE DAOS 
+	<bean id="approvalPageDAO" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager"><ref local="workingTransactionManager"/></property>
+		<property name="target"><ref local="approvalPageDAOTarget"/></property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="addGroup">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>		
+	</bean>
+    <bean id="approvalPageDAOTarget" class="org.tolweb.dao.PageDAOImpl">
+        <property name="sessionFactory"><ref local="approvalSessionFactory"/></property>
+        <property name="contributorDAO"><ref local="contributorDAO"/></property>			
+		<property name="imageDAO"><ref local="imageDAO"/></property>
+    </bean>	-->
+	<bean id="workingPageDAO" parent="baseWorkingDAO">
+		<property name="target"><ref local="workingPageDAOTarget"/></property>		
+		<property name="transactionAttributes">
+			<props>
+				<prop key="addPageWithId,resetAncestorsForPage,savePage,deletePage">PROPAGATION_REQUIRED,-java.lang.Exception</prop>
+				<prop key="setFirstOnlineDateForPageWithId">PROPAGATION_REQUIRES_NEW</prop>
+				<prop key="*">PROPAGATION_SUPPORTS</prop>
+			</props>
+		</property>
+	</bean>
+    <bean id="workingPageDAOTarget" class="org.tolweb.dao.FilteredPageDAOImpl">
+		<property name="miscNodeDAO"><ref local="nodeDAO"/></property>
+		<property name="workingNodeDAO"><ref local="workingNodeDAO"/></property>
+        <property name="sessionFactory"><ref local="workingSessionFactory"/></property>
+        <property name="contributorDAO"><ref local="contributorDAO"/></property>			
+		<property name="imageDAO"><ref local="imageDAO"/></property>
+		<property name="editHistoryDAO"><ref local="editHistoryDAO"/></property>
+		<property name="reorderHelper"><ref local="reorderHelper"/></property>		
+    </bean>	    
+	<bean id="editHistoryDAO" parent="baseWorkingDAO">
+		<property name="target"><ref local="editHistoryDAOTarget"/></property>		
+	</bean>
+    <bean id="editHistoryDAOTarget" class="org.tolweb.dao.EditHistoryDAOImpl">
+        <property name="sessionFactory"><ref local="workingSessionFactory"/></property>	
+		<property name="contributorDAO"><ref local="contributorDAO"/></property>
+    </bean>		
+	<bean id="miscEditHistoryDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="miscEditHistoryDAOTarget"/></property>		
+	</bean>	  
+    <bean id="miscEditHistoryDAOTarget" class="org.tolweb.dao.EditHistoryDAOImpl">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>	
+		<property name="contributorDAO"><ref local="contributorDAO"/></property>
+		<property name="pageDAO"><ref local="workingPageDAO"/></property>
+    </bean>		
+	<bean id="publicPageDAO" parent="basePublicDAO">
+		<property name="transactionAttributes">
+			<props>
+				<prop key="addPageWithId,resetAncestorsForPage,savePage,deletePage">PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED,-java.lang.Exception</prop>
+				<!--<prop key="addPageWithId">PROPAGATION_REQUIRES_NEW,ISOLATION_READ_COMMITTED</prop> -->
+				<prop key="*">PROPAGATION_SUPPORTS,ISOLATION_READ_COMMITTED</prop>
+			</props>
+		</property>		
+		<property name="target"><ref local="publicPageDAOTarget"/></property>		
+	</bean>
+    <bean id="publicPageDAOTarget" class="org.tolweb.dao.FilteredPageDAOImpl">
+        <property name="sessionFactory"><ref local="publicSessionFactory"/></property>
+        <property name="contributorDAO"><ref local="contributorDAO"/></property>			
+		<property name="imageDAO"><ref local="imageDAO"/></property>
+    </bean>	
+    <bean id="nodeDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="nodeDAOTarget"/></property>
+    </bean>
+    <bean id="nodeDAOTarget" class="org.tolweb.dao.FilteredNodeDAOImpl">
+		<property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+    <bean id="workingNodeDAO" parent="baseWorkingDAO">
+		<property name="target"><ref local="workingNodeDAOTarget"/></property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="addNodeWithId,saveNode,deleteNode">PROPAGATION_REQUIRED,-java.lang.Exception</prop>
+				<prop key="*">PROPAGATION_SUPPORTS</prop>
+			</props>
+		</property>		
+    </bean>
+    <bean id="workingNodeDAOTarget" class="org.tolweb.dao.FilteredNodeDAOImpl">
+        <property name="sessionFactory"><ref local="workingSessionFactory"/></property>
+    </bean>
+    <bean id="publicNodeDAO" parent="basePublicDAO">
+		<property name="target"><ref local="publicNodeDAOTarget"/></property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="addNodeWithId,saveNode,deleteNode">PROPAGATION_REQUIRED,-java.lang.Exception</prop>
+				<prop key="*">PROPAGATION_SUPPORTS</prop>				
+			</props>
+		</property>		
+    </bean>
+    <bean id="publicNodeDAOTarget" class="org.tolweb.dao.FilteredNodeDAOImpl">
+        <property name="sessionFactory"><ref local="publicSessionFactory"/></property>
+    </bean>    
+    
+    <!-- ACCESSORY PAGE DAOS -->
+    <bean id="workingAccessoryPageDAO" parent="baseWorkingDAO">
+		<property name="target"><ref local="workingAccessoryPageDAOTarget"/></property>
+    </bean>
+    <bean id="workingAccessoryPageDAOTarget" class="org.tolweb.dao.AccessoryPageDAOImpl">
+        <property name="sessionFactory"><ref local="workingSessionFactory"/></property>
+        <property name="contributorDAO"><ref local="contributorDAO"/></property>
+		<property name="nodeDAO"><ref bean="workingNodeDAO"/></property>
+		<property name="isWorking"><value>true</value></property>
+    </bean>
+    <bean id="publicAccessoryPageDAO" parent="basePublicDAO">
+		<property name="target"><ref local="publicAccessoryPageDAOTarget"/></property>
+    </bean>	
+    <bean id="publicAccessoryPageDAOTarget" class="org.tolweb.dao.AccessoryPageDAOImpl">
+        <property name="sessionFactory"><ref local="publicSessionFactory"/></property>
+        <property name="contributorDAO"><ref local="contributorDAO"/></property>
+		<property name="nodeDAO"><ref bean="publicNodeDAO"/></property>				
+		<property name="isWorking"><value>false</value></property>			
+    </bean>  	
+    <!--  'Filtered' NODE DAO -->
+    <bean id="filteredNodeDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="filteredNodeDAOTarget"/></property>
+    </bean>
+    <bean id="filteredNodeDAOTarget" class="org.tolweb.dao.FilteredNodeDAOImpl">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+		<property name="isWorking"><value>false</value></property>					
+    </bean>    
+    <bean id="workingFilteredNodeDAO" parent="baseWorkingDAO">
+		<property name="target"><ref local="workingFilteredNodeDAOTarget"/></property>
+    </bean>
+    <bean id="workingFilteredNodeDAOTarget" class="org.tolweb.dao.FilteredNodeDAOImpl">
+        <property name="sessionFactory"><ref local="workingSessionFactory"/></property>
+		<property name="isWorking"><value>true</value></property>					
+    </bean>
+    <!-- 'Filtered' PAGE DAO -->
+	<bean id="workingFilteredPageDAO" parent="baseWorkingDAO">
+		<property name="target"><ref local="workingFilteredPageDAOTarget"/></property>		
+	</bean>
+    <bean id="workingFilteredPageDAOTarget" class="org.tolweb.dao.FilteredPageDAOImpl">
+		<property name="miscNodeDAO"><ref local="filteredNodeDAO"/></property>
+		<property name="workingNodeDAO"><ref local="workingFilteredNodeDAO"/></property>		
+        <property name="sessionFactory"><ref local="workingSessionFactory"/></property>
+        <property name="contributorDAO"><ref local="contributorDAO"/></property>			
+		<property name="imageDAO"><ref local="imageDAO"/></property>
+		<property name="isWorking"><value>true</value></property>		
+		<property name="editHistoryDAO"><ref local="editHistoryDAO"/></property>
+		<property name="reorderHelper"><ref local="reorderHelper"/></property>
+    </bean>
+	<bean id="workingUnfilteredPageDAO" parent="baseWorkingDAO">
+		<property name="target"><ref local="workingUnfilteredPageDAOTarget"/></property>		
+	</bean>
+    <bean id="workingUnfilteredPageDAOTarget" class="org.tolweb.dao.PageDAOImpl">
+		<property name="miscNodeDAO"><ref local="filteredNodeDAO"/></property>
+		<property name="workingNodeDAO"><ref local="workingFilteredNodeDAO"/></property>		
+        <property name="sessionFactory"><ref local="workingSessionFactory"/></property>
+        <property name="contributorDAO"><ref local="contributorDAO"/></property>			
+		<property name="imageDAO"><ref local="imageDAO"/></property>
+		<property name="isWorking"><value>true</value></property>		
+		<property name="editHistoryDAO"><ref local="editHistoryDAO"/></property>
+		<property name="reorderHelper"><ref local="reorderHelper"/></property>
+    </bean>
+	<!-- actual server objects -->
+	<bean id="editedPageDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="editedPageDAOTarget"/></property>		
+	</bean>
+	<bean id="editedPageDAOTarget" class="org.tolweb.dao.EditedPageDAOImpl">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>		
+	</bean>		
+	<bean id="uploadDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="uploadDAOTarget"/></property>
+	</bean>
+	<bean id="uploadDAOTarget" class="org.tolweb.treegrowserver.dao.UploadDAOImpl">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>		
+	</bean>
+	<bean id="uploadBatchDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="uploadBatchDAOTarget"/></property>		
+	</bean>
+	<bean id="uploadBatchDAOTarget" class="org.tolweb.treegrowserver.dao.UploadBatchDAOImpl">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>		
+        <property name="nodeDAO"><ref bean="nodeDAO"/></property>
+		<property name="workingNodeDAO"><ref bean="workingNodeDAO"/></property>
+        <property name="permissionChecker"><ref bean="permissionChecker"/></property>
+	</bean>	
+    <bean id="downloadDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="downloadDAOTarget"/></property>
+    </bean>
+    <bean id="downloadDAOTarget" class="org.tolweb.treegrowserver.dao.DownloadDAOImpl">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+		<property name="nodeDAO"><ref bean="workingNodeDAO"/></property>
+		<property name="uploadDAO"><ref bean="uploadDAO"/></property>
+		<property name="uploadBatchDAO"><ref bean="uploadBatchDAO"/></property>
+		<property name="publicationBatchDAO"><ref local="publicationBatchDAO"/></property>
+		<property name="permissionChecker"><ref local="permissionChecker"/></property>
+		<property name="pageDAO"><ref local="workingPageDAO"/></property>
+		<property name="serverXMLWriter"><ref local="serverXMLWriter"/></property>		
+	</bean>
+	<bean id="publicationBatchDAO" parent="baseMiscDAO">
+		<property name="target"><ref local="publicationBatchDAOTarget"/></property>
+	</bean>
+	<bean id="publicationBatchDAOTarget" class="org.tolweb.treegrowserver.dao.PublicationBatchDAOImpl">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>		
+		<property name="pageDAO"><ref local="workingPageDAO"/></property>
+	</bean>	
+	<bean id="downloadBuilder" class="org.tolweb.treegrowserver.DownloadBuilder">
+		<property name="nodeDAO"><ref bean="workingNodeDAO"/></property>
+		<property name="accPageDAO"><ref bean="workingAccessoryPageDAO"/></property>			
+		<property name="pageDAO"><ref bean="workingPageDAO"/></property>		
+		<property name="imageDAO"><ref bean="imageDAO"/></property>
+		<property name="downloadDAO"><ref bean="downloadDAO"/></property>
+		<property name="contributorDAO"><ref bean="contributorDAO"/></property>		
+		<property name="serverXMLWriter"><ref bean="serverXMLWriter"/></property>
+		<property name="permissionChecker"><ref bean="permissionChecker"/></property>
+	</bean>
+	<bean id="downloadCheckin" class="org.tolweb.treegrowserver.DownloadCheckin">
+		<property name="downloadDAO"><ref bean="downloadDAO"/></property>
+		<property name="miscNodeDAO"><ref bean="nodeDAO"/></property>
+		<property name="workingNodeDAO"><ref bean="workingNodeDAO"/></property>
+		<property name="publicNodeDAO"><ref bean="publicNodeDAO"/></property>		
+		<property name="imageDAO"><ref bean="imageDAO"/></property>
+		<property name="workingAccessoryPageDAO"><ref bean="workingAccessoryPageDAO"/></property>
+		<property name="workingPageDAO"><ref bean="workingPageDAO"/></property>
+	</bean>
+	<bean id="batchResultsBuilder" class="org.tolweb.treegrowserver.BatchResultsBuilder">
+		<property name="downloadDAO"><ref bean="downloadDAO"/></property>		
+		<property name="uploadBatchDAO"><ref bean="uploadBatchDAO"/></property>
+		<property name="nodeDAO"><ref bean="workingNodeDAO"/></property>		
+		<property name="pageDAO"><ref bean="workingPageDAO"/></property>
+	</bean>
+	<bean id="batchSubmitter" class="org.tolweb.treegrowserver.BatchSubmitter">
+		<property name="uploadBatchDAO"><ref bean="uploadBatchDAO"/></property>
+		<property name="workingNodeDAO"><ref bean="workingNodeDAO"/></property>
+		<property name="publicNodeDAO"><ref bean="publicNodeDAO"/></property>		
+		<property name="pageDAO"><ref local="workingPageDAO"/></property>
+		<property name="publicationBatchDAO"><ref local="publicationBatchDAO"/></property>
+	</bean>
+	<bean id="batchComparer" class="org.tolweb.treegrowserver.BatchComparerImpl">
+		<property name="workingPageDAO"><ref local="workingPageDAO"/></property>
+		<property name="workingNodeDAO"><ref local="workingNodeDAO"/></property>
+		<property name="publicPageDAO"><ref local="publicPageDAO"/></property>
+		<property name="publicNodeDAO"><ref local="publicNodeDAO"/></property>		
+	</bean>
+	<bean id="batchPusher" parent="basePublicDAO">
+		<property name="target"><ref local="batchPusherTarget"/></property>	
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-java.lang.Exception</prop>
+			</props>
+		</property>		
+	</bean>
+	<bean id="batchPusherTarget" class="org.tolweb.treegrowserver.BatchPusherImpl"> 
+		<property name="uploadBatchDAO"><ref bean="uploadBatchDAO"/></property>
+		<property name="workingNodeDAO"><ref bean="workingNodeDAO"/></property>
+		<property name="publicNodeDAO"><ref bean="publicNodeDAO"/></property>	
+		<property name="workingPageDAO"><ref bean="workingPageDAO"/></property>
+		<property name="publicPageDAO"><ref bean="publicPageDAO"/></property>					
+		<property name="nodePusher"><ref bean="nodePusher"/></property>
+		<property name="pagePusher"><ref bean="pagePusher"/></property>		
+		<property name="publicAccessoryPageDAO"><ref bean="publicAccessoryPageDAO"/></property>
+		<property name="permissionChecker"><ref local="permissionChecker"/></property>
+		<property name="downloadDAO"><ref local="downloadDAO"/></property>
+		<property name="publicationBatchDAO"><ref local="publicationBatchDAO"/></property>
+		<property name="uploadDAO"><ref local="uploadDAO"/></property>
+		<property name="batchSubmitter"><ref local="batchSubmitter"/></property>
+		<property name="editedPageDAO"><ref local="editedPageDAO"/></property>		
+	</bean>
+    <bean id="pagePusher" class="org.tolweb.dao.PagePusher"/>
+    <bean id="nodePusher" class="org.tolweb.dao.NodePusher"/>	
+	<bean id="serverXMLWriter" class="org.tolweb.treegrowserver.ServerXMLWriter">
+		<property name="nodeDAO"><ref bean="workingNodeDAO"/></property>	
+		<property name="pageDAO"><ref bean="workingPageDAO"/></property>	
+		<property name="accessoryPageDAO"><ref bean="workingAccessoryPageDAO"/></property>
+		<property name="contributorDAO"><ref bean="contributorDAO"/></property>
+		<property name="imageDAO"><ref bean="imageDAO"/></property>
+		<property name="imageUtils"><ref bean="imageUtils"/></property>
+		<property name="textPreparer"><ref bean="textPreparer"/></property>
+		<property name="permissionChecker"><ref bean="permissionChecker"/></property>
+	</bean>
+	<bean id="serverXMLReader" class="org.tolweb.treegrowserver.ServerXMLReader">
+	</bean>
+	<bean id="uploadBuilder" parent="baseWorkingDAO">
+		<property name="target"><ref local="uploadBuilderTarget"/></property>	
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-java.lang.Exception</prop>
+			</props>
+		</property>		
+	</bean>
+	<bean id="uploadBuilderTarget" class="org.tolweb.treegrowserver.UploadBuilderImpl">
+		<property name="uploadDAO"><ref bean="uploadDAO"/></property>
+		<property name="serverXMLReader"><ref bean="serverXMLReader"/></property>
+		<property name="uploadBatchDAO"><ref bean="uploadBatchDAO"/></property>
+		<property name="downloadDAO"><ref bean="downloadDAO"/></property>
+		<property name="nodeDAO"><ref bean="workingNodeDAO"/></property>
+		<property name="miscNodeDAO"><ref bean="nodeDAO"/></property>
+		<property name="publicNodeDAO"><ref bean="publicNodeDAO"/></property>
+		<property name="pageDAO"><ref bean="workingPageDAO"/></property>
+		<property name="nodePusher"><ref bean="nodePusher"/></property>
+		<property name="imageDAO"><ref bean="imageDAO"/></property>
+		<property name="accessoryPageDAO"><ref bean="workingAccessoryPageDAO"/></property>
+		<property name="editedPageDAO"><ref local="editedPageDAO"/></property>
+	</bean>
+	<bean id="publicDownloadBuilder" class="org.tolweb.treegrowserver.DownloadBuilder">
+		<property name="nodeDAO"><ref bean="publicNodeDAO"/></property>
+		<property name="accPageDAO"><ref bean="publicAccessoryPageDAO"/></property>			
+		<property name="pageDAO"><ref bean="publicPageDAO"/></property>		
+		<property name="imageDAO"><ref bean="imageDAO"/></property>
+		<property name="downloadDAO"><ref bean="downloadDAO"/></property>
+		<property name="contributorDAO"><ref bean="contributorDAO"/></property>		
+		<property name="serverXMLWriter"><ref bean="publicServerXMLWriter"/></property>
+	</bean>
+	<bean id="publicServerXMLWriter" class="org.tolweb.treegrowserver.ServerXMLWriter">
+		<property name="nodeDAO"><ref bean="publicNodeDAO"/></property>	
+		<property name="pageDAO"><ref bean="publicPageDAO"/></property>	
+		<property name="accessoryPageDAO"><ref bean="publicAccessoryPageDAO"/></property>
+		<property name="contributorDAO"><ref bean="contributorDAO"/></property>
+		<property name="imageUtils"><ref bean="imageUtils"/></property>
+		<property name="textPreparer"><ref bean="textPreparer"/></property>
+	</bean>
+	<bean id="nodeSearchResultsBuilder" class="org.tolweb.treegrowserver.NodeSearchResultsBuilder">
+		<property name="nodeDAO"><ref bean="workingNodeDAO"/></property>	
+		<property name="pageDAO"><ref bean="workingPageDAO"/></property>	
+		<property name="contributorDAO"><ref bean="contributorDAO"/></property>
+		<property name="downloadDAO"><ref bean="downloadDAO"/></property>
+		<property name="permissionChecker"><ref bean="permissionChecker"/></property>
+	</bean>
+    <bean id="passwordUtils" class="org.tolweb.misc.PasswordUtilsImpl">
+        <property name="MD5Service"><ref bean="MD5service"/></property>
+        <property name="contributorDAO"><ref bean="contributorDAO"/></property>        
+    </bean>
+    <bean id="MD5service" class="org.tolweb.misc.MD5ServiceImpl"/>
+    <bean id="imageUtils" class="org.tolweb.misc.ImageUtilsImpl">
+        <property name="urlPrefix"><value>/tree/ToLimages/</value></property>    
+        <property name="thumbnailUrlPrefix"><value>/tree/ToLthumbs/</value></property>            
+        <property name="imagesDirectory"><value>${imagesDirPrefix}/images/</value></property>
+        <property name="thumbsDirectory"><value>${imagesDirPrefix}/thumbs/</value></property>
+        <property name="contributorsImagesDirectory"><value>${imagesDirPrefix}/contributorsimages/</value></property>
+        <property name="contributorsUrlPrefix"><value>/contributorsimages/</value></property>
+        <property name="defaultThumbnailHeight"><value>100</value></property>
+		<property name="imagesServerPrefix"><value>http://tolweb.org</value></property>
+    </bean>
+	<bean id="textPreparer" class="org.tolweb.misc.TextPreparer"/>
+    <bean id="permissionChecker" parent="baseMiscDAO">
+		<property name="target"><ref local="permissionCheckerTarget"/></property>
+    </bean>
+    <bean id="permissionCheckerTarget" class="org.tolweb.dao.PermissionCheckerImpl">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+		<property name="passwordUtils"><ref bean="passwordUtils"/></property>
+		<property name="contributorDAO"><ref bean="contributorDAO"/></property>
+		<property name="nodeDAO"><ref local="nodeDAO"/></property>
+	</bean>
+	<bean id="reorderHelper" class="org.tolweb.misc.ReorderHelper"/>	
+	<bean id="configuration" class="org.tolweb.misc.Configuration">
+		<property name="smtpHost"><value>${smtpHost}</value></property>
+	</bean>
+	<bean id="cacheAccess" class="org.tolweb.misc.CacheAccessImpl"/>	
+	<bean id="urlBuilder" class="org.tolweb.misc.URLBuilder"/>	
+	<bean id="rendererFactory" class="org.tolweb.misc.RendererFactory"/>
+	<bean id="pageArchiver" class="org.tolweb.archive.BranchLeafPageArchiver"/>	
+</beans>

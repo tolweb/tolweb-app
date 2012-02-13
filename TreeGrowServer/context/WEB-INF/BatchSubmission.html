@@ -1,0 +1,17 @@
+<span jwcid="@Insert" value="ognl:documentString" raw="ognl:true"/>
+<span jwcid="@If" condition="ognl:submittedContributor != null">
+<span jwcid="@MailBlock" from="TreeGrow Submission Monitor <dmandel@tolweb.org>" smtp="localhost" 
+    to="ognl:{'dmandel@tolweb.org', 'treegrow@tolweb.org'}" subject="ognl:submittedContributor.name + ' has submitted ' + rootGroupName + ' for approval at ' + new java.util.Date()"
+    html="ognl:false">
+<span jwcid="@If" condition="ognl:disappearedNodes == null || disappearedNodes.size == 0">
+There were no nodes that disappeared as a result of this submission.
+</span>
+<span jwcid="@If" condition="ognl:disappearedNodes != null && disappearedNodes.size > 0">
+The following nodes will "disappear" if this submission is pushed public:
+<span jwcid="@Foreach" source="ognl:disappearedNodes" value="ognl:currentNode">
+<span jwcid="@Insert" value="ognl:currentNode.name"/>, 
+</span>
+</span>
+Yoy may view a change report for this branch by visiting this URL: http://tolweb.org/treegrowserver/app?service=external/ViewBatchHistory&sp=<span jwcid="@Insert" value="ognl:batchId"/>
+</span>
+</span>

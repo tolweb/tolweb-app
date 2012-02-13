@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="all" name="TreeGrow">
+	<import file="${basedir}/../WebappLibsTapestry4.0/commonmacros.xml"/>	
+    <target name="init">
+    	<property name="build.home" location="${basedir}/.."/>    	
+        <property name="libs.dir" value="${build.home}/WebappLibsTapestry4.0/"/>    	
+        <property environment="env"/>
+        <property location="classes" name="classes.dir"/>
+    	<property location="mesquitelibclasses" name="mesquitelibs.dir"/>
+        <property location="src" name="src.dir"/>
+        <property location="doc/api" name="javadoc.dir"/>
+        <property location="tests" name="tests.dir"/>
+        <property location="${tests.dir}/reports" name="testreports.dir"/>
+        <property name="project.name" value="TreeGrow"/>
+        <property location="ToLEditor.jar" name="jar"/>
+        <property name="MacZip" value="TreeGrow_Mac.zip"/>
+        <property name="MacOldJavaZip" value="TreeGrow_MacOldJava.zip"/>
+    	<property name="MacPlayZip" value="TreeGrow_MacPlay.zip"/>
+    	<property name="MacNewSystemZip" value="TreeGrow_MacNewSystem.zip"/>
+        <property name="MacOldJavaPlayZip" value="TreeGrow_MacOldJavaPlay.zip"/>    	
+        <property name="WinZip" value="TreeGrow_Win.zip"/>
+    	<property name="WinPlayZip" value="TreeGrow_WinPlay.zip"/>
+        <property name="LinZip" value="TreeGrow_Linux.zip"/>
+
+        <property name="Root" value="/data/editor/"/>        
+        <property name="DevRoot" value="/data/deveditor/"/>        
+        <property name="InstallDirectory" value="${Root}installs/"/>        
+        <property name="DevInstallDirectory" value="${DevRoot}installs/"/>        
+        <property name="lib.home" value="/usr/local/apache-ant-1.6.1/lib/"/>
+    	<property name="changelog" value="change.log"/>
+    	<property name="mesquitejars.dir" location="mesquitejars"/>
+    	<property name="supportfiles" location="ToLSupportFiles.jar"/>
+    	<property name="jdom" location="${mesquitejars.dir}/jdom.jar"/>
+    	<property name="httpclient" location="${mesquitejars.dir}/commons-httpclient-3.0.1.jar"/>
+    	<property name="logging" location="${mesquitejars.dir}/commons-logging.jar"/>
+    	<property name="codec" location="${mesquitejars.dir}/commons-codec-1.2.jar"/>
+    	<property name="mesquitelibs.jar" location="ToLBaseClasses.jar"/>
+    	<property name="buildfiles.dir" location="buildfiles"/>
+    	<property name="usermessagefile" value="Resources/SysFiles/UserMsgNew2.xml"/>
+        <path id="compile.classpath">
+            <pathelement location="${supportfiles}" />
+        </path>
+        <path id="test.classpath">
+            <path refid="compile.classpath"/>
+            <pathelement location="${classes.dir}"/>
+            <pathelement location="${tests.dir}"/>
+            <pathelement location="."/>
+            <pathelement location="Images"/>
+            <pathelement location="${env.HOME}/p6spy.jar"/>
+        </path>
+    	<path id="mesquitelib.classpath">
+    		<pathelement location="${jdom}"/>
+    		<pathelement location="${httpclient}"/>
+    		<pathelement location="${logging}"/>
+    		<pathelement location="${codec}"/>
+    	</path>
+    </target>
+	<import file="${basedir}/../WebappLibsTapestry4.0/commonmacros.xml"/>
+    <target depends="init" name="compile">
+        <!-- Both srcdir and destdir should be package roots. -->
+        <mkdir dir="${classes.dir}"/>
+        <javac debug="true" destdir="${classes.dir}" srcdir="${src.dir}" target="1.5" source="1.5">
+            <classpath refid="compile.classpath"/>
+            <exclude name="org/tolweb/treegrow/main/SpecialMacHandler.java" />
+        </javac>
+        <mkdir dir="${classes.dir}/Images" />
+        <copy todir="${classes.dir}/Images">
+            <fileset dir="Images"/>
+        </copy>        
+    </target>
+	
+	<target depends="init" name="mesquitejar">
+		<mkdir dir="${mesquitelibs.dir}"/>
+		<javac debug="true" target="1.4" source="1.4" destdir="${mesquitelibs.dir}" sourcepath="" srcdir="${src.dir}">
+			<classpath refid="mesquitelib.classpath"/>
+			<include name="org/tolweb/base/**/*.java"/>
+			
+			<include name="org/tolweb/treegrow/main/RequestParameters.java"/>
+			<include name="org/tolweb/treegrow/main/XMLConstants.java"/>				
+			<include name="org/tolweb/treegrow/main/StringUtils.java"/>
+			<include name="org/tolweb/treegrow/main/FileUtils.java"/>	
+	<!--
+	So - dependencies... big trouble here - below is the wreckage of trying to get the mesquite-jar to include
+	the convienent and usage Node class - which pulled in OtherName, which pulls in OrderedObject and 
+	ChangedFromServerProvider.... which pulls in more and more and more classes.  Below is when I stopped, 
+	because I'd added all these classes and was getting closer and closer to it working: 15 compile-errors, 
+	9 compile-errors, 7 compile-errors... then 99.  Thus, I stopped and accepted my defeat.  
+			<include name="org/tolweb/treegrow/main/OrderedObject.java"/>	
+			<include name="org/tolweb/treegrow/main/ObjectCloner.java"/>
+			<include name="org/tolweb/treegrow/main/Controller.java"/>	
+			<include name="org/tolweb/treegrow/main/Contributor.java"/>
+			<include name="org/tolweb/treegrow/main/Permission.java"/>	
+			<include name="org/tolweb/treegrow/main/ContributorPermission.java"/>
+	
+			<include name="org/tolweb/treegrow/page/ChangedFromServerProvider.java"/>
+			<include name="org/tolweb/treegrow/page/AuxiliaryChangedFromServerProvider.java"/>
+			<include name="org/tolweb/treegrow/page/InternetLink.java"/>	
+			<include name="org/tolweb/treegrow/page/AccessoryPage.java"/>	
+			<include name="org/tolweb/treegrow/page/TextSection.java"/>	
+			<include name="org/tolweb/treegrow/page/Page.java"/>
+			<include name="org/tolweb/treegrow/page/PageContributor.java"/>
+			<include name="org/tolweb/treegrow/tree/OtherName.java"/>	
+			<include name="org/tolweb/treegrow/tree/Node.java"/>
+	-->
+		</javac>
+		<unjar src="${supportfiles}" dest="${mesquitelibs.dir}"/>
+		<unjar src="${httpclient}" dest="${mesquitelibs.dir}"/>		
+		<unjar src="${codec}" dest="${mesquitelibs.dir}"/>
+		<unjar src="${jdom}" dest="${mesquitelibs.dir}"/>			
+		<unjar src="${logging}" dest="${mesquitelibs.dir}"/>		
+		<!-- remove unneeded things -->
+		<delete dir="${mesquitelibs.dir}/com"/>
+		<delete dir="${mesquitelibs.dir}/layout"/>		
+		<jar destfile="${mesquitelibs.jar}" basedir="${mesquitelibs.dir}"/>
+		<delete dir="${mesquitelibs.dir}"/>
+		<copy file="${mesquitelibs.jar}" todir="/home/dmandel/mesquiteworkspace/Chromaseq/jars/"/>
+	</target>
+
+    <target depends="init,compile" name="jar">
+        <!-- To make a standalone app, insert into <jar>: -->
+        <!-- <manifest><attribute name="Main-Class" value="com.foo.Main"/></manifest> -->
+        <copy file="${src.dir}/org/tolweb/treegrow/main/SpecialMacHandler.class" todir="${classes.dir}"/>
+        <jar basedir="${classes.dir}" compress="true" jarfile="${jar}" manifest="manifest"/>
+        <copy file="${jar}" todir="${libs.dir}"/>
+    </target>
+
+    <target depends="init,jar" description="Build everything." name="all"/>
+
+    <target depends="init" description="Javadoc for my API." name="javadoc">
+        <mkdir dir="${javadoc.dir}"/>
+        <javadoc destdir="${javadoc.dir}" packagenames="*">
+            <sourcepath>
+                <pathelement location="${src.dir}"/>
+            </sourcepath>
+            <classpath>
+                <pathelement location="${supportfiles}" />
+            </classpath>
+        </javadoc>
+    </target>
+	
+	<macrodef name="copyjarsandmessagefile">
+		<attribute name="treegrow.dir"/>
+		<sequential>
+			<copy file="${jar}" todir="@{treegrow.dir}/TreeGrow/Resources/SysFiles"/>
+			<copy file="${supportfiles}" todir="@{treegrow.dir}/TreeGrow/Resources/SysFiles"/>	   	
+			<copy file="${usermessagefile}" todir="@{treegrow.dir}/TreeGrow/Resources/SysFiles"/>
+		</sequential>
+	</macrodef>
+	
+
+	
+	<target name="copybuildfiles">
+    	<copyjarsandmessagefile treegrow.dir="${buildfiles.dir}/TreeGrow_Win"/>
+       	<copyjarsandmessagefile treegrow.dir="${buildfiles.dir}/TreeGrow_Linux"/>    	
+       	<copyjarsandmessagefile treegrow.dir="${buildfiles.dir}/TreeGrow_Mac"/>    	    	
+       	<copyjarsandmessagefile treegrow.dir="${buildfiles.dir}/TreeGrow_MacOldJava"/>
+	</target>
+
+	<macrodef name="deletejarsandmessagefile">
+		<attribute name="treegrow.dir"/>
+		<sequential>
+			<delete file="@{treegrow.dir}/TreeGrow/Resources/SysFiles/ToLEditor.jar"/>
+			<delete file="@{treegrow.dir}/TreeGrow/Resources/SysFiles/ToLSupportFiles.jar"/>	   	
+			<delete file="@{treegrow.dir}/TreeGrow/Resources/SysFiles/UserMsgNew2.xml"/>
+		</sequential>
+	</macrodef>		
+	<target name="deletebuildfiles">
+    	<deletejarsandmessagefile treegrow.dir="${buildfiles.dir}/TreeGrow_Win"/>
+       	<deletejarsandmessagefile treegrow.dir="${buildfiles.dir}/TreeGrow_Linux"/>    	
+       	<deletejarsandmessagefile treegrow.dir="${buildfiles.dir}/TreeGrow_Mac"/>    	    	
+       	<deletejarsandmessagefile treegrow.dir="${buildfiles.dir}/TreeGrow_MacOldJava"/>		
+	</target>
+	
+	<macrodef name="zipnosvn">
+		<attribute name="destfile"/>
+		<attribute name="dir"/>
+		<attribute name="filemode"/>
+		<sequential>
+	        <zip destfile="@{destfile}">
+	        	<zipfileset dir="@{dir}" filemode="@{filemode}">
+		    		<exclude name="**/.svn"/>        	
+	       		</zipfileset>    			
+	    	</zip>			
+		</sequential>
+	</macrodef>
+	
+
+    <!-- removed password from the "depends" targets because we're not able to upload from the script -->
+    <target depends="clean,jar,copybuildfiles" description="Upload Jar file to the server" name="deploydev">
+    	<zipnosvn destfile="${WinZip}" dir="${buildfiles.dir}/TreeGrow_Win" filemode="755"/>
+        <zipnosvn destfile="${MacZip}" dir="${buildfiles.dir}/TreeGrow_Mac" filemode="755"/>
+        <zipnosvn destfile="${MacOldJavaZip}" dir="${buildfiles.dir}/TreeGrow_MacOldJava" filemode="755"/>
+        <zipnosvn destfile="${LinZip}" dir="${buildfiles.dir}/TreeGrow_Linux" filemode="744"/>
+
+<!--  
+        <scp file="${jar}" todir="${HostPrefix}${DevRoot}" trust="true"/>
+        <scp file="${WinZip}" todir="${HostPrefix}${DevInstallDirectory}" trust="true"/>
+        <scp file="${LinZip}" todir="${HostPrefix}${DevInstallDirectory}" trust="true"/>
+        <scp file="${MacZip}" todir="${HostPrefix}${DevInstallDirectory}" trust="true"/>
+        <scp file="${MacNewSystemZip}" todir="${HostPrefix}${DevInstallDirectory}" trust="true"/>
+        <scp file="${MacOldJavaZip}" todir="${HostPrefix}${DevInstallDirectory}" trust="true"/>
+    	<scp file="${changelog}" todir="${HostPrefix}${DevRoot}" trust="true"/>
+    	<antcall target="deletebuildfiles"/>
+ -->    	
+    </target>
+
+    <target depends="clean,jar,copybuildfiles,password" description="Upload Jar file to the server" name="deploy">
+    	<zipnosvn destfile="${WinZip}" dir="${buildfiles.dir}/TreeGrow_Win" filemode="755"/>
+<!--      	
+        <zipnosvn destfile="${MacZip}" dir="${buildfiles.dir}/TreeGrow_Mac" filemode="755"/>
+        <zipnosvn destfile="${MacOldJavaZip}" dir="${buildfiles.dir}/TreeGrow_MacOldJava" filemode="755"/>
+        <zipnosvn destfile="${LinZip}" dir="${buildfiles.dir}/TreeGrow_Linux" filemode="744"/>
+  -->        
+        <scp file="${jar}" todir="${HostPrefix}${Root}" trust="yes"/>
+        <scp file="${WinZip}" todir="${HostPrefix}${InstallDirectory}" trust="yes" />
+<!--          
+        <scp file="${LinZip}" todir="${HostPrefix}${InstallDirectory}" trust="yes"/>
+        <scp file="${MacZip}" todir="${HostPrefix}${InstallDirectory}" trust="yes"/>         
+        <scp file="${MacOldJavaZip}" todir="${HostPrefix}${InstallDirectory}" trust="yes"/>
+  -->                       
+    	<antcall target="deletebuildfiles"/>    	
+    </target>
+	
+    <target depends="clean,jar,copybuildfiles,password" description="Upload Jar file to the server" name="deployplay">
+        <zip destfile="${MacPlayZip}">
+        	<zipfileset dir="${buildfiles.dir}/TreeGrow_MacPlay" filemode="755"/>
+        </zip>
+        <zip destfile="${MacOldJavaPlayZip}">
+            <zipfileset dir="${buildfiles.dir}/TreeGrow_MacOldJavaPlay" filemode="755"/>
+        </zip>
+    	<zip destfile="${WinPlayZip}">
+    		<zipfileset dir="${buildfiles.dir}/TreeGrow_WinPlay" filemode="755"/>
+    	</zip>
+        <scp file="${jar}" todir="${HostPrefix}${DevRoot}" />
+        <scp file="${MacPlayZip}" todir="${HostPrefix}${DevInstallDirectory}"/>                   	
+        <scp file="${MacOldJavaPlayZip}" todir="${HostPrefix}${DevInstallDirectory}"/>               
+        <scp file="${WinPlayZip}" todir="${HostPrefix}${DevInstallDirectory}"/>                   	
+    	<antcall target="deletebuildfiles"/>    	
+    </target>
+
+    <target depends="init" description="Clean all build products." name="clean">
+        <delete dir="${classes.dir}"/>
+    	<delete dir="${mesquitelibs.dir}"/>
+        <delete dir="${javadoc.dir}"/>
+        <delete file="${jar}"/>
+    	<delete file="${mesquitelibs.jar}"/>
+        <delete file="${WinZip}"/>
+        <delete file="${LinZip}"/>
+        <delete file="${MacZip}"/>
+    </target>
+    
+    <target depends="compile" name="test">
+        <javac debug="true" deprecation="true" destdir="${tests.dir}" srcdir="${tests.dir}">
+            <classpath refid="test.classpath"/>
+        </javac>        
+        <junit printsummary="withOutAndErr" fork="yes">
+            <classpath refid="test.classpath"/>
+            <formatter type="xml"/>
+            <batchtest todir="${tests.dir}">
+                <fileset dir="${tests.dir}" includes="**/*Test.class"/>
+            </batchtest>
+        </junit>
+        <junitreport todir="${tests.dir}">
+            <fileset dir="${tests.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${testreports.dir}"/>
+        </junitreport>     
+    </target>
+</project>

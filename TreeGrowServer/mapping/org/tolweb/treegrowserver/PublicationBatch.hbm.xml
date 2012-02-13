@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.treegrowserver.PublicationBatch"
+        table="PublicationBatches"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <many-to-one
+            name="editingContributor"
+            class="org.tolweb.treegrow.main.Contributor"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="editingContributorId"
+        />
+
+        <property
+            name="submissionDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="submissionDate"
+        />
+
+        <many-to-one
+            name="submittedContributor"
+            class="org.tolweb.treegrow.main.Contributor"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="submittedContributorId"
+        />
+
+        <set
+            name="submittedPages"
+            table="SubmittedPages"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+            <cache 
+                usage="nonstrict-read-write" 
+             />
+
+              <key
+                  column="batchId"
+              >
+              </key>
+
+              <composite-element
+                  class="org.tolweb.treegrowserver.SubmittedPage"
+              >
+        <property
+            name="pageId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="pageId"
+        />
+
+        <property
+            name="wasPublished"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="wasPublished"
+        />
+
+        <property
+            name="revisionType"
+            type="int"
+            update="true"
+            insert="true"
+            access="property"
+            column="revisionType"
+        />
+
+              </composite-element>
+
+        </set>
+
+        <property
+            name="wasPublished"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="wasPublished"
+        />
+
+        <property
+            name="decisionDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="decisionDate"
+        />
+
+        <property
+            name="isClosed"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="isClosed"
+        />
+
+        <property
+            name="uploadBatchId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            access="property"
+            column="uploadBatchId"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PublicationBatch.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

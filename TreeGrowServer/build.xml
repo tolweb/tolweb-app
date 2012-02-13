@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="all" name="treegrowserver">
+    <target name="init">
+    	<property name="libs.dir" location="${basedir}/../WebappLibsTapestry4.0"/>    	
+    	<property environment="env"/>    	
+        <property location="classes" name="classes.dir"/>
+        <property location="generatedclasses" name="generatedclasses.dir"/>
+        <property location="mapping" name="mapping.dir"/>    	
+        <property location="src" name="src.dir"/>
+        <property location="doc/api" name="javadoc.dir"/>
+        <property name="project.name" value="${ant.project.name}"/>
+        <property location="${project.name}.jar" name="jar"/>
+        <property location="treegrowserver-dataobjects.jar" name="shimjar"/>
+        <property name="dist.dir" value="dist"/>
+        <property name="context.dir" value="context"/>
+        <property name="tests.dir" value="tests"/>
+        <property name="war" value="treegrowserver.war"/>
+        <property name="testreports.dir" value="${tests.dir}/reports"/>
+        <property name="treegrow.dir" value="${basedir}/../TreeGrow"/>
+    	<property name="tolwebhibernate.dir" value="${basedir}/../TolwebHibernate"/>
+    	<property name="tolwebutils.dir" value="${basedir}/../TolwebUtils"/>
+        <path id="compile.classpath">
+            <fileset dir="${libs.dir}">
+                <include name="*.jar"/>
+            </fileset>
+        </path>
+        <path id="test.classpath">
+            <path refid="compile.classpath"/>
+            <pathelement location="${classes.dir}"/>
+            <pathelement location="${tests.dir}"/>
+            <pathelement location="/home/dmandel/p6spy.jar"/>
+        </path>
+    	<path id="hibernate.classpath">	
+    		<pathelement location="/home/dmandel/hibernate2.1.8/hibernate-2.1/hibernate2.jar"/>
+    		<pathelement location="/home/dmandel/hibernate-extensions-2.1/tools/target/hibernate-tools-2.1/hibernate-tools.jar"/>
+    		<fileset dir="/home/dmandel/hibernate-extensions-2.1/tools/lib/">
+    			<include name="*.jar"/>
+    		</fileset>
+    	</path>
+    </target>
+	<import file="${basedir}/../WebappLibsTapestry4.0/commonmacros.xml"/>
+    <target depends="init" name="compile">
+        <ant dir="${treegrow.dir}" target="jar" inheritAll="false" />
+		<ant dir="${tolwebutils.dir}" target="jar" inheritall="false">
+			<property name="libs.dir" value="${libs.dir}"/>
+    	</ant>
+    	<ant dir="${tolwebhibernate.dir}" target="jar" inheritall="false">
+			<property name="libs.dir" value="${libs.dir}"/>    		
+    	</ant>
+        <mkdir dir="${classes.dir}"/>
+        <javac debug="true" deprecation="true" destdir="${classes.dir}" srcdir="${src.dir}" target="1.5">
+            <classpath refid="compile.classpath" />
+        </javac>
+    </target>
+	
+    <target name="prewarlocal">
+	    <delete file="${classes.dir}/dbconnection.properties"/>
+        <copy file="${src.dir}/dbconnectiondev.properties" tofile="${classes.dir}/dbconnection.properties"/>    
+    </target>
+    <target name="prewartolweb">
+	    <delete file="${classes.dir}/dbconnection.properties"/>    
+        <copy file="${src.dir}/dbconnectionlive.properties" tofile="${classes.dir}/dbconnection.properties"/>        
+    </target>
+    <target name="prewarplay">
+	    <delete file="${classes.dir}/dbconnection.properties"/>    
+        <copy file="${src.dir}/dbconnectionplay.properties" tofile="${classes.dir}/dbconnection.properties"/>        
+    	<copy file="${src.dir}/ehcacheplay.xml" tofile="${classes.dir}/ehcache.xml"/>
+    </target>
+    <target name="prewarbeta">
+	    <delete file="${classes.dir}/dbconnection.properties"/>    
+        <copy file="${src.dir}/dbconnectionbeta.properties" tofile="${classes.dir}/dbconnection.properties"/>        
+    	<copy file="${src.dir}/ehcacheplay.xml" tofile="${classes.dir}/ehcache.xml"/>
+    </target>    	
+    <target name="prewarnewsystem">
+	    <delete file="${classes.dir}/dbconnection.properties"/>    
+        <copy file="${src.dir}/dbconnectionnewsystem.properties" tofile="${classes.dir}/dbconnection.properties"/>        
+    	<delete file="${classes.dir}/ehcache.xml"/>
+    	<copy file="${src.dir}/ehcacheplay.xml" tofile="${classes.dir}/ehcache.xml"/>
+    </target>    
+    <!-- 
+    	guilty-party: Andrew J Lenards <lenards@email.arizona.edu>
+    	date: 2010 Feb. 23
+    	about: generation of Hibernate Mapping files (*.hbm.xml) via xdoclet 
+    	will no longer be used. 
+    	
+    	This affect the following target, deploywar, which was defined as: 
+    	
+    	<target depends="init,clean,generate,prewartolweb,war" name="deploywar">
+      -->
+    <target name="deploywar" depends="init,clean,prewartolweb,war" />
+	
+    <target name="deploywarplay" depends="init,prewarplay,war"/>
+    
+    <target name="deploywarbeta" depends="init,prewarbeta,war"/>
+
+    <target name="deploywarnewsystem" depends="init,prewarnewsystem,war"/>
+	
+    <target name="war" depends="init,compile" >
+        <delete file="${classes.dir}/applicationContext.xml"/>
+        <delete file="${classes.dir}/log4j.properties"/>    	
+    	<delete file="${libs.dir}/treegrowserver.jar"/>
+        <copy file="${src.dir}/applicationContext.xml" todir="${classes.dir}"/>    	
+        <copy file="${src.dir}/log4j.properties" todir="${classes.dir}"/>
+        <!-- move over the Hibernate Mapping files (*.hbm.xml) -->
+		<copy todir="${classes.dir}">
+        	<fileset dir="${mapping.dir}"/>
+  		</copy>
+    	<!-- <copy file="ehcache.xml" todir="${classes.dir}"/> -->
+    	<delete dir="${libs.dir}/bin"/>
+        <mkdir dir="${dist.dir}"/>       
+        <war destfile="${dist.dir}/${war}" webxml="${context.dir}/WEB-INF/web.xml">
+            <classes dir="${classes.dir}"/>
+            <fileset dir="${context.dir}">
+	            <exclude name="WEB-INF/web.xml"/>
+	            <exclude name="WEB-INF/classes/"/>
+            </fileset>
+            <lib dir="${libs.dir}"/>
+        </war>
+    </target>	
+	
+    <!-- 
+    	guilty-party: Andrew J Lenards <lenards@email.arizona.edu>
+    	date: 2010 Feb. 23
+    	about: generation of Hibernate Mapping files (*.hbm.xml) via xdoclet 
+    	will no longer be used. 
+    	
+    	This affect the following target, jar, which was defined as: 
+    	
+    	<target name="jar" depends="init,compile,generate">
+      -->
+    <target name="jar" depends="init,compile">
+        <jar basedir="${classes.dir}" compress="true" jarfile="${jar}"/>
+    	<copy file="${jar}" todir="${libs.dir}"/>    	
+    </target>
+
+	<target name="shimjar" depends="init,clean,compile,generate">
+        <jar compress="true" jarfile="${shimjar}">	
+        	<fileset dir="${classes.dir}" includes="**/*UploadBatch.hbm.xml" />
+        	<fileset dir="${classes.dir}" includes="**/*Download.hbm.xml" />
+        	<fileset dir="${classes.dir}" includes="**/*PublicationBatch.hbm.xml" />
+        	<fileset dir="${classes.dir}" includes="**/*Upload.hbm.xml" />
+        	<fileset dir="${classes.dir}" includes="**/*UploadBatch.class" />
+        	<fileset dir="${classes.dir}" includes="**/*Download.class" />
+        	<fileset dir="${classes.dir}" includes="**/*PublicationBatch.class" />
+        	<fileset dir="${classes.dir}" includes="**/*Upload.class" />        	
+        </jar>
+    	<copy file="${shimjar}" todir="${libs.dir}"/>        
+	</target>
+
+    <target name="all" depends="init,jar" description="Build everything."/>
+
+    <target name="javadoc" depends="init" description="Javadoc for my API.">
+        <mkdir dir="${javadoc.dir}"/>
+        <javadoc destdir="${javadoc.dir}" packagenames="*">
+            <sourcepath>
+                <pathelement location="${src.dir}"/>
+            </sourcepath>
+        </javadoc>
+    </target>
+
+    <target name="clean" depends="init" description="Clean all build products.">
+        <delete dir="${classes.dir}"/>
+        <delete dir="${generatedclasses.dir}"/>
+        <delete dir="${javadoc.dir}"/>
+        <delete dir="${dist.dir}"/>
+        <delete file="${jar}"/>
+        <delete>
+            <fileset dir="${src.dir}" includes="**/*.class"/>
+        </delete>        
+        <delete>
+            <fileset dir="${tests.dir}" includes="**/*.class"/>
+            <fileset dir="${tests.dir}" includes="**/*.html"/>            
+            <fileset dir="${tests.dir}" includes="**/*.xml"/>            
+        </delete>
+        <delete dir="${tests.dir}/reports"/>
+    </target>
+	
+	<target name="copytestfiles">
+        <delete file="${classes.dir}/applicationContext.xml"/>
+        <delete file="${tests.dir}/applicationContext.xml"/>
+        <copy file="${src.dir}/applicationContext.xml" tofile="${tests.dir}/applicationContext.xml"/>
+	</target>	
+	
+    <target name="dbtests" depends="init,compile,jar,copytestfiles">    	
+        <javac srcdir="${tests.dir}" includes="**/*Test.java" debug="true" destdir="${classes.dir}">
+            <classpath refid="test.classpath"/>
+        </javac>
+        <!-- run all tests in the source tree -->
+        <junit printsummary="yes" haltonfailure="no">
+            <classpath refid="test.classpath"/>
+            <formatter type="xml"/>
+            <batchtest todir="${tests.dir}">
+                <fileset dir="${classes.dir}" includes="**/BatchSubmitterTest.class"/>
+            </batchtest>
+        </junit>
+        <junitreport todir="${tests.dir}">
+            <fileset dir="${tests.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${testreports.dir}"/>
+        </junitreport>
+    </target>	
+	
+    <target name="fullxmldump" depends="init,compile,copytestfiles">    	
+        <javac srcdir="${tests.dir}" includes="**/*Test.java" debug="true" destdir="${classes.dir}">
+            <classpath refid="test.classpath"/>
+        </javac>
+        <!-- run all tests in the source tree -->
+        <junit printsummary="yes" haltonfailure="no" fork="yes" maxmemory="1200M">
+            <classpath refid="test.classpath"/>
+            <formatter type="xml"/>
+            <batchtest todir="${tests.dir}">
+                <fileset dir="${classes.dir}" includes="**/FullDataDumpTest.class"/>
+            </batchtest>
+        </junit>
+        <junitreport todir="${tests.dir}">
+            <fileset dir="${tests.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${testreports.dir}"/>
+        </junitreport>
+    </target>	
+    	
+    <!-- this is essentially deprecated guilty-party: Andrew J Lenards <lenards@email.arizona.edu> -->
+    <target name="generate" depends="init,compile" description="Generate hibernate mapping files">
+        <taskdef name="hibernatedoclet"
+            classname="xdoclet.modules.hibernate.HibernateDocletTask">
+       	</taskdef>
+        <hibernatedoclet
+            destdir="${classes.dir}"
+            excludedtags="@version,@author,@todo"
+            mergedir="${classes.dir}"
+            verbose="true">
+            <fileset dir="${src.dir}">
+                <include name="**/*.java"/>
+            </fileset>            	
+            <hibernate version="2.0"/>
+        </hibernatedoclet>
+        <mkdir dir="${generatedclasses.dir}"/>           	
+        <hibernatedoclet
+            destdir="${generatedclasses.dir}"
+            excludedtags="@version,@author,@todo"
+            mergedir="${classes.dir}"
+            verbose="true">
+            <fileset dir="${src.dir}">
+                <include name="**/*.java"/>
+            </fileset>            	
+            <hibernate version="2.0"/>
+        </hibernatedoclet>  
+    	<!-- this is supposed to upgrade the schema to hibernate3 -->
+    	<replace dir="${classes.dir}" value="&lt;hibernate-mapping default-lazy=&quot;false&quot; &gt;">
+    	         <include name="**/*.hbm.xml"/>
+    	         <replacetoken><![CDATA[<hibernate-mapping>]]></replacetoken>
+		</replace>
+		<replace dir="${classes.dir}" value="Hibernate Mapping DTD 3.0">
+    	         <include name="**/*.hbm.xml"/>
+    	         <replacetoken>Hibernate Mapping DTD 2.0</replacetoken>
+		</replace>
+		<replace dir="${classes.dir}" value="hibernate-mapping-3.0.dtd">
+			<include name="**/*.hbm.xml"/>
+			<replacetoken>hibernate-mapping-2.0.dtd</replacetoken>
+		</replace>    	
+    	<replace dir="${generatedclasses.dir}" value="&lt;hibernate-mapping default-lazy=&quot;false&quot; &gt;">
+    	         <include name="**/*.hbm.xml"/>
+    	         <replacetoken><![CDATA[<hibernate-mapping>]]></replacetoken>
+		</replace>
+		<replace dir="${generatedclasses.dir}" value="Hibernate Mapping DTD 3.0">
+    	         <include name="**/*.hbm.xml"/>
+    	         <replacetoken>Hibernate Mapping DTD 2.0</replacetoken>
+		</replace>
+		<replace dir="${generatedclasses.dir}" value="hibernate-mapping-3.0.dtd">
+			<include name="**/*.hbm.xml"/>
+			<replacetoken>hibernate-mapping-2.0.dtd</replacetoken>
+		</replace>    	
+        <copy file="${src.dir}/applicationContext.xml" todir="${generatedclasses.dir}"/>
+    </target>    
+</project>

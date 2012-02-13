@@ -1,0 +1,15 @@
+d43 -- (9/21/2006) TreeGrow 2.1 Release Version
+d42 -- (8/15/2006)  Removed Contributor handling and added new 'no permissions' lock type
+d38 -- (10/14/2005) Fix for old version of release so that page data won't be clobbered
+d37 -- (10/13/2005) TreeGrow 2.0 Release Version!
+d36 -- (10/12/2005) added code for future disabling of downloads.  warning email sent to Katja if TreeGrow conflicts
+d35 -- (10/12/2005) added page deletion warning message and fixed bug with newly added page making node seem not checked out
+d34 -- (10/11/2005) changed the way nodes are downloaded and got rid of the dreaded PageObject and NodeDataPanel
+d33 -- (10/10/2005) gave option to allow users to cancel node deletion after seeing error message
+d32 -- (10/5/2005) added check for deleted nodes with pages and warnings when deleting nodes.
+d31 -- (10/4/2005) TreeGrow 2.0 release candidate?
+d26-d30 -- interim TreeGrow2.0 builds -- history wiped out because Danny forgot which file to edit.
+d25 -- (5/24/2005) -- added support for hierarchical tab-delimited node import
+d24 -- (4/28/2005) -- fixed bug where manual line separators in multinode tool were broken
+d23 -- fixed font and placement issues
+d22 -- initial version with build numbers

@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>History for Upload Batch ID # <span jwcid="@Insert" value="ognl:batch.batchId"/>
+</head>
+<body>
+Root Node: <span jwcid="@Insert" value="ognl:rootNode.name"/><br><br>    
+Differences Between Working & Public:<br>
+<pre>    
+<span jwcid="@Insert" value="ognl:global.batchComparer.compareWorkingBatchToPublicVersion(batch)"/>   
+</pre>
+<span jwcid="@Foreach" source="ognl:batch.uploads" value="ognl:currentUpload">
+	Upload Date: <span jwcid="@Insert" value="ognl:currentUpload.uploadDate"/><br>  
+    Affected Pages:
+    <span jwcid="@Foreach" source="ognl:currentUpload.uploadedPages" value="ognl:currentPage">
+        <span jwcid="@Insert" value="ognl:currentPage.pageId"/>&nbsp;&nbsp; 
+    </span>
+    <br><br>
+</span>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" >
+    <class
+        name="org.tolweb.treegrowserver.UploadBatch"
+        table="Upload_Batches"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="batchId"
+            column="batch_id"
+            type="java.lang.Long"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <many-to-one
+            name="contributor"
+            class="org.tolweb.treegrow.main.Contributor"
+            cascade="none"
+            outer-join="auto"
+            update="true"
+            insert="true"
+            access="property"
+            column="contributor_id"
+        />
+
+        <property
+            name="isClosed"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="closed"
+        />
+
+        <property
+            name="isSubmitted"
+            type="boolean"
+            update="true"
+            insert="true"
+            access="property"
+            column="submitted"
+        />
+
+        <property
+            name="submittedDate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="submitted_date"
+        />
+
+        <set
+            name="uploads"
+            table="Uploads_To_Batches"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="batch_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.treegrowserver.Upload"
+                  column="upload_id"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <set
+            name="editors"
+            table="Editors_For_Batches"
+            lazy="false"
+            inverse="false"
+            cascade="none"
+            sort="unsorted"
+        >
+
+              <key
+                  column="batch_id"
+              >
+              </key>
+
+              <many-to-many
+                  class="org.tolweb.treegrow.main.Contributor"
+                  column="editor_id"
+                  outer-join="auto"
+               />
+
+        </set>
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-UploadBatch.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

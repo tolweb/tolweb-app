@@ -1,0 +1,11 @@
+<html>
+<head>
+
+</head>
+
+<body>
+<span jwcid="@Foreach" source="ognl:batches" value="ognl:currentBatch">
+<a jwcid="@ExternalLink" page="ViewBatchHistory" parameters="ognl:currentBatch.batchId">View batch <span jwcid="@Insert" value="ognl:currentBatch.batchId"/></a>
+</span>   
+</body>
+</html>

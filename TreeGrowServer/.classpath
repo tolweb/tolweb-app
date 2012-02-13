@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="CVS/|org/CVS/|org/tolweb/CVS/|org/tolweb/treegrowserver/CVS/|org/tolweb/treegrowserver/dao/CVS/|org/tolweb/treegrowserver/tapestry/CVS/|org/tolweb/treegrowserver/ServerXMLWriter_childcount.java" kind="src" path="src"/>
+	<classpathentry kind="src" path="mapping"/>
+	<classpathentry excluding="CVS/|org/CVS/|org/tolweb/CVS/|org/tolweb/dao/CVS/|org/tolweb/treegrowserver/CVS/|org/tolweb/treegrowserver/dao/CVS/|reports/" kind="src" path="tests"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/TolwebHibernate"/>
+	<classpathentry kind="src" path="/TolwebUtils"/>
+	<classpathentry kind="src" path="/TreeGrow"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/WebappLibsTapestry4.0"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

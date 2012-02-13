@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="**/CVS*|**/SpecialMacHandler.java|.nbattrs|CVS/|org/CVS/|org/tolweb/CVS/|org/tolweb/treegrow/CVS/|org/tolweb/treegrow/main/.nbattrs|org/tolweb/treegrow/main/CVS/|org/tolweb/treegrow/page/.nbattrs|org/tolweb/treegrow/page/CVS/|org/tolweb/treegrow/page/undo/CVS/|org/tolweb/treegrow/tree/.nbattrs|org/tolweb/treegrow/tree/CVS/|org/tolweb/treegrow/tree/undo/.nbattrs|org/tolweb/treegrow/tree/undo/CVS/|Images/" kind="src" path="src"/>
+	<classpathentry excluding=".#ToLEditor.java.1.35|.nbattrs|.nbintdb|CVS/|Images/CVS/|Resources/|Resources/CVS/|Resources/SysFiles/CVS/|ToLEditor_beta.app/|ToLEditor_dev.app/|libs/|libs/CVS/|src/|tests/|Resources/|src/Images/|support/|support/|mesquitejars/|buildfiles/" kind="src" path=""/>
+	<classpathentry exported="true" kind="lib" path="ToLSupportFiles.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
