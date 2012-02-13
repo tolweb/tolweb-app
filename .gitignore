@@ -1,0 +1,12 @@
+# basic ignore
+.DS_Store
+bin
+dist
+classes
+tmp-classes
+.class
+.settings
+.metadata
+.spindleUI.prefs
+.tapestryplugin
+*~
